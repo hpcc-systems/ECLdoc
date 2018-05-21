@@ -1,0 +1,9 @@
+EXPORT mod_1 := MODULE
+	EXPORT v1 := 2.3;
+	EXPORT m1v4(REAL8 a1) := MODULE
+		EXPORT m1v5 := 4.5 * a1;
+	END;
+	EXPORT m1v6 := FUNCTION
+		RETURN 2.0;
+	END;
+END;
