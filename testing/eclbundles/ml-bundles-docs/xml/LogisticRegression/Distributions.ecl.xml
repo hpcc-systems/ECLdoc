@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Constants.ecl" name="ML_Core.Constants" target="../ML_Core/Constants.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/DoubleFac.ecl" name="ML_Core.Math.DoubleFac" target="../ML_Core/Math/DoubleFac.ecl.xml"/><Source name="LogisticRegression.Distributions" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Distributions.ecl" target="Distributions.ecl.xml">
+  <Definition exported="1" fullname="LogisticRegression.Distributions" inherittype="local" line="5" name="Distributions" type="module">
+   <Definition exported="1" fullname="logisticregression.distributions.normal_cdf" inherittype="local" line="15" name="Normal_CDF" type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>Cumulative Distribution of the standard normal distribution, the probability that a normal random variable will be smaller than x standard deviations above or below the mean. Taken from C/C++ Mathematical Algorithms for Scientists and Engineers, n. Shammas, McGraw-Hill, 1995</content><param>x the number of standard deviations</param><firstline>Cumulative Distribution of the standard normal distribution, the probability that a normal random variable will be smaller than x standard deviations above or below the mean</firstline><returns>probability of exceeding x.</returns></Documentation>
+    <Signature name="Normal_CDF" ret="REAL8" param="(REAL8 x)" hlen="16">REAL8 Normal_CDF(REAL8 x)</Signature><Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.distributions.normal_ppf" inherittype="local" line="40" name="Normal_PPF" type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>Normal Distribution Percentage Point Function. Translated from C/C++ Mathematical Algorithms for Scientists and Engineers, N. Shammas, McGraw-Hill, 1995</content><param>x probability</param><firstline>Normal Distribution Percentage Point Function</firstline><returns>number of standard deviations from the mean</returns></Documentation>
+    <Signature name="Normal_PPF" ret="REAL8" param="(REAL8 x)" hlen="16">REAL8 Normal_PPF(REAL8 x)</Signature><Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.distributions.t_cdf" inherittype="local" line="83" name="T_CDF" type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>Students t distribution integral evaluated between negative infinity and x. Translated from NIST SEL DATAPAC Fortran TCDF.f source</content><param>x value of the evaluation</param><param>df degrees of freedom</param><firstline>Students t distribution integral evaluated between negative infinity and x</firstline><returns>the probability that a value will be less than the specified value</returns></Documentation>
+    <Signature name="T_CDF" ret="REAL8" param="(REAL8 x, REAL8 df)" hlen="11">REAL8 T_CDF(REAL8 x, REAL8 df)</Signature><Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.distributions.t_ppf" inherittype="local" line="212" name="T_PPF" type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>Percentage point function for the T distribution. Translated from NIST SEL DATAPAC Fortran TPPF.f source</content><firstline>Percentage point function for the T distribution</firstline></Documentation>
+    <Signature name="T_PPF" ret="REAL8" param="(REAL8 x, REAL8 df)" hlen="11">REAL8 T_PPF(REAL8 x, REAL8 df)</Signature><Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.distributions.chi2_cdf" inherittype="local" line="290" name="Chi2_CDF" type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>The cumulative distribution function for the Chi Square distribution. the CDF for the specfied degrees of freedom. Translated from the NIST SEL DATAPAC Fortran subroutine CHSCDF.</content><firstline>The cumulative distribution function for the Chi Square distribution</firstline></Documentation>
+    <Signature name="Chi2_CDF" ret="REAL8" param="(REAL8 x, REAL8 df)" hlen="14">REAL8 Chi2_CDF(REAL8 x, REAL8 df)</Signature><Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.distributions.chi2_ppf" inherittype="local" line="399" name="Chi2_PPF" type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>The Chi Squared PPF function. Translated from the NIST SEL DATAPAC Fortran subroutine CHSPPF.</content><firstline>The Chi Squared PPF function</firstline></Documentation>
+    <Signature name="Chi2_PPF" ret="REAL8" param="(REAL8 x, REAL8 df)" hlen="14">REAL8 Chi2_PPF(REAL8 x, REAL8 df)</Signature><Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Signature name="Distributions" ret="" param="" hlen="13">Distributions</Signature><Parents/>
+  </Definition>
+  <Import name="Core_Const" ref="ML_Core.Constants" target="../ML_Core/Constants.ecl.xml">
+   </Import>
+  <Import name="Math" ref="ML_Core.Math" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Math/pkg.toc.xml"/>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

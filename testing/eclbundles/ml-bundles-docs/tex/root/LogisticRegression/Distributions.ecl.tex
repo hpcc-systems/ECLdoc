@@ -1,0 +1,392 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+Distributions
+}
+\hypertarget{ecldoc:toc:LogisticRegression.Distributions}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Constants |
+ML\_Core.Math |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+Distributions}}
+
+\hypertarget{ecldoc:LogisticRegression.Distributions}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Distributions} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:logisticregression.distributions.normal_cdf}{Normal\_CDF}
+: Cumulative Distribution of the standard normal distribution, the probability that a normal random variable will be smaller than x standard deviations above or below the mean
+\item \hyperlink{ecldoc:logisticregression.distributions.normal_ppf}{Normal\_PPF}
+: Normal Distribution Percentage Point Function
+\item \hyperlink{ecldoc:logisticregression.distributions.t_cdf}{T\_CDF}
+: Students t distribution integral evaluated between negative infinity and x
+\item \hyperlink{ecldoc:logisticregression.distributions.t_ppf}{T\_PPF}
+: Percentage point function for the T distribution
+\item \hyperlink{ecldoc:logisticregression.distributions.chi2_cdf}{Chi2\_CDF}
+: The cumulative distribution function for the Chi Square distribution
+\item \hyperlink{ecldoc:logisticregression.distributions.chi2_ppf}{Chi2\_PPF}
+: The Chi Squared PPF function
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Normal\_CDF}}
+
+\hypertarget{ecldoc:logisticregression.distributions.normal_cdf}{}
+\hspace{0pt} \hyperlink{ecldoc:LogisticRegression.Distributions}{Distributions} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} REAL8} & \textbf{Normal\_CDF} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (REAL8 x)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Cumulative Distribution of the standard normal distribution, the probability that a normal random variable will be smaller than x standard deviations above or below the mean. Taken from C/C++ Mathematical Algorithms for Scientists and Engineers, n. Shammas, McGraw-Hill, 1995
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| REAL8 --- the number of standard deviations
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURNS}}}] probability of exceeding x.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Normal\_PPF}}
+
+\hypertarget{ecldoc:logisticregression.distributions.normal_ppf}{}
+\hspace{0pt} \hyperlink{ecldoc:LogisticRegression.Distributions}{Distributions} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} REAL8} & \textbf{Normal\_PPF} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (REAL8 x)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Normal Distribution Percentage Point Function. Translated from C/C++ Mathematical Algorithms for Scientists and Engineers, N. Shammas, McGraw-Hill, 1995
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| REAL8 --- probability
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURNS}}}] number of standard deviations from the mean
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+T\_CDF}}
+
+\hypertarget{ecldoc:logisticregression.distributions.t_cdf}{}
+\hspace{0pt} \hyperlink{ecldoc:LogisticRegression.Distributions}{Distributions} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} REAL8} & \textbf{T\_CDF} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (REAL8 x, REAL8 df)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Students t distribution integral evaluated between negative infinity and x. Translated from NIST SEL DATAPAC Fortran TCDF.f source
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{df}} ||| REAL8 --- degrees of freedom
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| REAL8 --- value of the evaluation
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURNS}}}] the probability that a value will be less than the specified value
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+T\_PPF}}
+
+\hypertarget{ecldoc:logisticregression.distributions.t_ppf}{}
+\hspace{0pt} \hyperlink{ecldoc:LogisticRegression.Distributions}{Distributions} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} REAL8} & \textbf{T\_PPF} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (REAL8 x, REAL8 df)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Percentage point function for the T distribution. Translated from NIST SEL DATAPAC Fortran TPPF.f source
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{df}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Chi2\_CDF}}
+
+\hypertarget{ecldoc:logisticregression.distributions.chi2_cdf}{}
+\hspace{0pt} \hyperlink{ecldoc:LogisticRegression.Distributions}{Distributions} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} REAL8} & \textbf{Chi2\_CDF} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (REAL8 x, REAL8 df)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+The cumulative distribution function for the Chi Square distribution. the CDF for the specfied degrees of freedom. Translated from the NIST SEL DATAPAC Fortran subroutine CHSCDF.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{df}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Chi2\_PPF}}
+
+\hypertarget{ecldoc:logisticregression.distributions.chi2_ppf}{}
+\hspace{0pt} \hyperlink{ecldoc:LogisticRegression.Distributions}{Distributions} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} REAL8} & \textbf{Chi2\_PPF} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (REAL8 x, REAL8 df)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+The Chi Squared PPF function. Translated from the NIST SEL DATAPAC Fortran subroutine CHSPPF.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{df}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

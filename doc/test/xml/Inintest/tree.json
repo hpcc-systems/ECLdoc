@@ -1,0 +1,11 @@
+{
+    "include_path": "/home/tetrapod/source/ecldoc/testing/test/Inintest",
+    "input_root": "/home/tetrapod/source/ecldoc/testing/test",
+    "output_root": "/home/tetrapod/source/ecldoc/doc/test",
+    "tree": {
+        "example_3": {
+            "key": "Example_3.ecl",
+            "tree": "Inintest/Example_3.ecl"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "include_path": "/media/sarthak/Data/ecldoc/testing/ecllibrary/std/system",
+    "input_root": "/media/sarthak/Data/ecldoc/testing/ecllibrary/std",
+    "output_root": "/media/sarthak/Data/ecldoc/testing/ecllibrary/std-docs",
+    "tree": {}
+}

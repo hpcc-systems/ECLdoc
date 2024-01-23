@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="ML_Core.ToField" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/ToField.ecl" target="ToField.ecl.xml">
+  <Definition exported="1" fullname="ml_core.tofield" inherittype="local" line="40" name="ToField" type="macro">
+   <Type type=""/>
+   <Signature name="ToField" ret="" param="(dIn,dOut,idfield='', wifield='', wivalue='',datafields='')" hlen="7">ToField(dIn,dOut,idfield='', wifield='', wivalue='',datafields='')</Signature><Params>
+    <Param name="dIn">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="dOut">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="idfield">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="wifield">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="wivalue">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="datafields">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

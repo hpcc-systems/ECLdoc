@@ -1,0 +1,46 @@
+IMPORTS
+=======
+
+
+std.blas </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl>
+std.BLAS.Types </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+EMBED : Types.matrix_t dimm(BOOLEAN transposeA, BOOLEAN transposeB, BOOLEAN diagonalA, BOOLEAN
+                           diagonalB, Types.dimension_t m, Types.dimension_t n, Types.dimension_t k, Types.value_t
+                           alpha, Types.matrix_t A, Types.matrix_t B, Types.value_t beta=0.0, Types.matrix_t C=[])
+----------------------------------------------------------------------------------------------------------------------------------
+
+Matrix multiply when either A or B is a diagonal and is passed as a vector.
+alpha*op(A) op(B) + beta*C where op() is transpose
+
+Parameter : diagonalB BOOLEAN --- true when B is the diagonal matrix
+
+Parameter : m UNSIGNED4 --- number of rows in product
+
+Parameter : alpha REAL8 --- scalar used on A
+
+Parameter : k UNSIGNED4 --- number of columns/rows for the
+              multiplier/multiplicand
+
+Parameter : C SET ( REAL8 ) --- matrix C or empty
+
+Parameter : diagonalA BOOLEAN --- true when A is the diagonal matrix
+
+Parameter : B SET ( REAL8 ) --- matrix B
+
+Parameter : n UNSIGNED4 --- number of columns in product
+
+Parameter : beta REAL8 --- scalar for matrix C
+
+Parameter : A SET ( REAL8 ) --- matrix A
+
+Parameter : transposeA BOOLEAN --- true when transpose of A is used
+
+Parameter : transposeB BOOLEAN --- true when transpose of B is used
+
+Return : SET ( REAL8 )
+

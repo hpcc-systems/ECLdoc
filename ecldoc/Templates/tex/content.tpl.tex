@@ -1,0 +1,77 @@
+\chapter*{\color{headfile}
+\BLOCK{ if name|length > 1 }
+\BLOCK{ for word in name[:(name|length-1)] }
+{\large \VAR{word|escape_tex}\slash\hspace{0pt}}
+\BLOCK{ endfor } \\
+\BLOCK{ endif }
+\VAR{ name[-1] }
+}
+\hypertarget{ecldoc:toc:\VAR{src.attrib.name}}{}
+\hyperlink{ecldoc:\VAR{ up }}{Go Up}
+
+\BLOCK{ if src.findall('./Import')|length > 0 }
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+\BLOCK{ for imp in src.findall('./Import') }
+\BLOCK{ if 'ref' in imp.attrib }
+\VAR{ imp.attrib['ref']|escape_tex } |
+\BLOCK{ endif }
+\BLOCK{ endfor }
+}
+\end{doublespace}
+\BLOCK{ endif }
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\BLOCK{ for def in defn_tree recursive }
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} \VAR{def.tag.attrib['name'].upper()}}
+\VAR{def.tag.attrib.name|escape_tex}}}
+
+\hypertarget{ecldoc:\VAR{def.tag.attrib.fullname}}{}
+\BLOCK{ for anc in def.tag.iterancestors('Definition')|reverse }
+\hspace{0pt} \hyperlink{ecldoc:\VAR{anc.attrib.fullname}}{\VAR{anc.attrib.name}} \textbackslash\VAR{" "}
+\BLOCK{ endfor }
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} \VAR{def['sign'].attrib['ret']|escape_tex}} & \textbf{\VAR{def['sign'].attrib['name']|escape_tex}} \\
+\hline
+\BLOCK{ if def['sign'].attrib['param'] != '' }
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} \VAR{def['sign'].attrib['param']|escape_tex}}} \\
+\hline
+\BLOCK{ endif }
+\end{tabularx}
+}
+
+\par
+\VAR{def.doc.content}
+\VAR{def.doc.param}
+\VAR{def.doc.field}
+\VAR{def.doc.return}
+\BLOCK{ for tag in def.doc }
+\BLOCK{ if tag not in ['content', 'firstline', 'param', 'return', 'field', 'parent'] }
+\VAR{def.doc[tag]}
+\BLOCK{ endif }
+\BLOCK{ endfor }
+\VAR{def.doc.parent}
+
+\BLOCK{ if def['defns']|length > 0 }
+\textbf{Children}
+\begin{enumerate}
+\BLOCK{ for child in def['defns'] }
+\item \hyperlink{ecldoc:\VAR{child.tag.attrib.fullname}}{\VAR{ child.tag.attrib.name|escape_tex }}
+\BLOCK{ if child.doc['firstline']|length != 0 }
+: \VAR{ child.doc.firstline }
+\BLOCK{ endif }
+\BLOCK{ endfor }
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\VAR{ loop(def['defns']) }
+
+\BLOCK{ else }
+\rule{\linewidth}{0.5pt}
+\BLOCK{ endif }
+\BLOCK{ endfor }

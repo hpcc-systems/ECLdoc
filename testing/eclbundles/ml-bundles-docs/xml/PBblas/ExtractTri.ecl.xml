@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl" name="std.BLAS" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Types.ecl" name="PBblas.internal.Types" target="internal/Types.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl" name="std.system.Thorlib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensions.ecl" name="PBblas.internal.BlockDimensions" target="internal/BlockDimensions.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsMultiply.ecl" name="PBblas.internal.BlockDimensionsMultiply" target="internal/BlockDimensionsMultiply.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsSolve.ecl" name="PBblas.internal.BlockDimensionsSolve" target="internal/BlockDimensionsSolve.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MatDims.ecl" name="PBblas.internal.MatDims" target="internal/MatDims.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MakeR8Set.ecl" name="PBblas.internal.MakeR8Set" target="internal/MakeR8Set.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Converted.ecl" name="PBblas.internal.Converted" target="internal/Converted.ecl.xml"/><Source name="PBblas.ExtractTri" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/ExtractTri.ecl" target="ExtractTri.ecl.xml">
+  <Import name="PBblas" ref="PBblas" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/pkg.toc.xml"/>
+  <Import name="BLAS" ref="std.blas" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/>
+  <Import name="Types" ref="PBblas.Types" target="Types.ecl.xml">
+   </Import>
+  <Import name="int" ref="PBblas.internal" remotescope="1" target="internal/pkg.toc.xml"/>
+  <Import name="iTypes" ref="PBblas.internal.Types" target="internal/Types.ecl.xml">
+   </Import>
+  <Import name="MatDims" ref="PBblas.internal.MatDims" target="internal/MatDims.ecl.xml">
+   </Import>
+  <Import name="Converted" ref="PBblas.internal.Converted" target="internal/Converted.ecl.xml"/>
+  <Definition exported="1" fullname="pbblas.extracttri" inherittype="local" line="29" name="ExtractTri" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi_id">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="x">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="y">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="v">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Extract the upper or lower triangle from the composite output from getrf (LU Factorization).</content><return>Matrix of cells in Layout_Cell format representing a triangular matrix (upper or lower)</return><param>tri Triangle type: Upper or Lower (see Types.Triangle)</param><param>dt Diagonal type: Unit or non unit (see Types.Diagonal)</param><param>A Matrix of cells. See Types.Layout_Cell</param><firstline>Extract the upper or lower triangle from the composite output from getrf (LU Factorization)</firstline><see>Std.PBblas.Types</see></Documentation>
+   <Signature name="ExtractTri" ret="DATASET(Layout_Cell)" param="(Triangle tri, Diagonal dt, DATASET(Layout_Cell) A)" hlen="31">DATASET(Layout_Cell) ExtractTri(Triangle tri, Diagonal dt, DATASET(Layout_Cell) A)</Signature><Params>
+    <Param name="tri">
+     <Type type="unsigned1"/>
+    </Param>
+    <Param name="dt">
+     <Type type="unsigned1"/>
+    </Param>
+    <Param name="A">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Extract the upper or lower triangle from the composite output from getrf (LU Factorization).</content><return>Matrix of cells in Layout_Cell format representing a triangular matrix (upper or lower)</return><param>tri Triangle type: Upper or Lower (see Types.Triangle)</param><param>dt Diagonal type: Unit or non unit (see Types.Diagonal)</param><param>A Matrix of cells. See Types.Layout_Cell</param><firstline>Extract the upper or lower triangle from the composite output from getrf (LU Factorization)</firstline><see>Std.PBblas.Types</see></Documentation>
+   </Source>
+</Meta>

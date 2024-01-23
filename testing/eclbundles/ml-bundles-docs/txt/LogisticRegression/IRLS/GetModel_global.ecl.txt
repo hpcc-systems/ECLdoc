@@ -1,0 +1,41 @@
+IMPORTS
+=======
+
+
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+ML_Core.Types <../../ML_Core/Types.ecl.txt>
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <../../PBblas/Types.ecl.txt>
+LogisticRegression </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/LogisticRegression/pkg.toc.txt>
+LogisticRegression.Constants <../Constants.ecl.txt>
+LogisticRegression.Types <../Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Layout_Model) GetModel_global(DATASET(NumericField) independents,
+                                                DATASET(DiscreteField) dependents, UNSIGNED max_iter=200, REAL8
+                                                epsilon=Constants.default_epsilon, REAL8 ridge=Constants.default_ridge)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Internal function to determine values for the model coefficients and
+selected statistics from building the model.
+
+Parameter : dependents TABLE ( DiscreteField ) --- the dependent values
+
+Parameter : ridge REAL8 --- a value to pupulate a diagonal matrix
+                  that is added to a matrix help assure that the
+                  matrix is invertible.
+
+Parameter : epsilon REAL8 --- the minimum change in the Beta value
+                    estimate to continue
+
+Parameter : independents TABLE ( NumericField ) --- the independent values
+
+Parameter : max_iter UNSIGNED8 --- maximum number of iterations to try
+
+Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+         number , REAL8 value } ) coefficient matrix plus
+         model building statistics
+

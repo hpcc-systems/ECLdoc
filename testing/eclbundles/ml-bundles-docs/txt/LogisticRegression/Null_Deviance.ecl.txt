@@ -1,0 +1,24 @@
+IMPORTS
+=======
+
+
+LogisticRegression </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/LogisticRegression/pkg.toc.txt>
+LogisticRegression.Types <Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Types.Deviance_Record) Null_Deviance(DATASET(Types.Observation_Deviance) od)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Deviance for the null model, that is, a model with only an intercept.
+
+Parameter : od TABLE ( Observation_Deviance ) --- Observation
+               Deviance record set.
+
+Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 classifier ,
+         UNSIGNED8 df , REAL8 deviance , REAL8 AIC } ) a
+         data set of the null model deviances for each work
+         item and classifier.
+

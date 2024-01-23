@@ -1,0 +1,163 @@
+<Meta>
+ <Source name="ML_Core.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Constants.ecl">
+  <Definition body="47"
+              end="224"
+              exported="1"
+              fullname="ML_Core.Constants"
+              inherittype="local"
+              line="4"
+              name="Constants"
+              start="28"
+              type="module">
+   <Definition body="98"
+               end="127"
+               exported="1"
+               fullname="ml_core.constants.pi"
+               inherittype="local"
+               line="8"
+               name="Pi"
+               start="86"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant PI&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="189"
+               end="218"
+               exported="1"
+               fullname="ml_core.constants.root_2"
+               inherittype="local"
+               line="12"
+               name="Root_2"
+               start="173"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant square root of 2&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.Poly" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/Poly.ecl">
+  <Definition body="438"
+              end="706"
+              exported="1"
+              fullname="ml_core.math.poly"
+              inherittype="local"
+              line="10"
+              name="Poly"
+              start="388"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Evaluate a polynomial from a set of co-effs. Co-effs 1 is
+ * assumed to be the HIGH order of the equation.
+ * Thus for ax^2+bx+c - the set would need to be Coef := [a,b,c];
+ *@param x the value of x in the polynomial
+ *@param Coeffs a set of coefficients forthe polynomial. The ALL
+ *              set is considered to be all zero values
+ *@return value of the polynomial at x&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="Coeffs">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.StirlingFormula" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/StirlingFormula.ecl">
+  <Import body="0"
+          end="7"
+          fullname="ML_Core.Math"
+          inherittype="local"
+          line="1"
+          name="Utils"
+          ref="ML_Core.Math"
+          start="7"/>
+  <Import body="0"
+          end="26"
+          fullname="ML_Core.Constants"
+          inherittype="local"
+          line="2"
+          name="Constants"
+          ref="ML_Core.Constants"
+          start="26">
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+  </Import>
+  <Definition body="59"
+              end="73"
+              fullname="ml_core.math.pi"
+              inherittype="local"
+              line="3"
+              name="PI"
+              start="54"
+              type="attribute">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;&#32;&#32;* Constant PI&#10;&#32;&#32;&#32;</content>
+   </Documentation>
+  </Definition>
+  <Definition body="81"
+              end="93"
+              fullname="ml_core.math.poly"
+              inherittype="local"
+              line="4"
+              name="Poly"
+              start="74"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Evaluate a polynomial from a set of co-effs. Co-effs 1 is
+ * assumed to be the HIGH order of the equation.
+ * Thus for ax^2+bx+c - the set would need to be Coef := [a,b,c];
+ *@param x the value of x in the polynomial
+ *@param Coeffs a set of coefficients forthe polynomial. The ALL
+ *              set is considered to be all zero values
+ *@return value of the polynomial at x&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="Coeffs">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="220"
+              end="760"
+              exported="1"
+              fullname="ml_core.math.stirlingformula"
+              inherittype="local"
+              line="10"
+              name="StirlingFormula"
+              start="187"
+              type="function">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Stirling&apos;s formula
+ *@param x the point of evaluation
+ *@return evaluation result&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

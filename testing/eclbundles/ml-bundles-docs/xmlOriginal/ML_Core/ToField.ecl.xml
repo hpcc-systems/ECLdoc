@@ -1,0 +1,35 @@
+<Meta>
+ <Source name="ML_Core.ToField" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/ToField.ecl">
+  <Definition body="2240"
+              end="5538"
+              exported="1"
+              fullname="ml_core.tofield"
+              inherittype="local"
+              line="40"
+              name="ToField"
+              start="2165"
+              type="macro">
+   <Type type=""/>
+   <Params>
+    <Param name="dIn">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="dOut">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="idfield">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="wifield">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="wivalue">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="datafields">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Constants.ecl" name="LogisticRegression.Constants" target="Constants.ecl.xml"/><Source name="LogisticRegression.ExtractReport" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/ExtractReport.ecl" target="ExtractReport.ecl.xml">
+  <Import name="Core_Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Import name="Constants" ref="LogisticRegression.Constants" target="Constants.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.extractreport" inherittype="local" line="31" name="ExtractReport" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="max_iterations">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="epsilon">
+      <Type type="real8"/>
+     </Field>
+     <Field name="dep_vars">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="ind_vars">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="obs">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="builder">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="stats">
+      <Type type="table">
+       <Type fullname="logisticregression.types.classifier_stats" name="Classifier_Stats" type="record"/>
+      </Type>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Extract Report records from model</content><return>the model report dataset</return><param>mod_ds the model dataset</param><firstline>Extract Report records from model</firstline></Documentation>
+   <Signature name="ExtractReport" ret="DATASET(Types.Model_Report)" param="(DATASET(Core_Types.Layout_Model) mod_ds)" hlen="41">DATASET(Types.Model_Report) ExtractReport(DATASET(Core_Types.Layout_Model) mod_ds)</Signature><Params>
+    <Param name="mod_ds">
+     <Type type="table">
+      <Type fullname="ml_core.types.layout_model" name="Layout_Model" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Extract Report records from model</content><return>the model report dataset</return><param>mod_ds the model dataset</param><firstline>Extract Report records from model</firstline></Documentation>
+   </Source>
+</Meta>

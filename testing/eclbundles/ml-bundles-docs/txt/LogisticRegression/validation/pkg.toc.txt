@@ -1,0 +1,17 @@
+++++++++++++++
+  validation
+++++++++++++++
+
+
+
+CONTENTS
+========
+
+file : BinomialRegression.ecl <BinomialRegression.ecl.txt>    
+
+file : discrete_GermanDS.ecl <discrete_GermanDS.ecl.txt>    
+
+file : IrisDS.ecl <IrisDS.ecl.txt>    
+
+file : unit_test_dimm.ecl <unit_test_dimm.ecl.txt>    
+

@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="lib_stringlib" target="lib_stringlib"/><Source name="str" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/str.ecl" target="str.ecl.xml">
+  <Import name="lib_stringlib" ref="lib_stringlib" remotescope="1" target="lib_stringlib/pkg.toc.xml"/>
+  <Definition exported="1" fullname="Str" inherittype="local" line="12" name="Str" type="module">
+   <Definition exported="1" fullname="str.compareignorecase" inherittype="local" line="31" name="CompareIgnoreCase" type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <param>src1 The first string to be compared.</param><param>src2 The second string to be compared.</param><see>Str.EqualIgnoreCase</see><content>Compares the two strings case insensitively. Returns a negative integer, zero, or a positive integer according to whether the first string is less than, equal to, or greater than the second.</content><firstline>Compares the two strings case insensitively</firstline></Documentation>
+    <Signature name="CompareIgnoreCase" ret="INTEGER4" param="(STRING src1, STRING src2)" hlen="26">INTEGER4 CompareIgnoreCase(STRING src1, STRING src2)</Signature><Params>
+     <Param name="src1">
+      <Type type="string"/>
+     </Param>
+     <Param name="src2">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.equalignorecase" inherittype="local" line="42" name="EqualIgnoreCase" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>src1 The first string to be compared.</param><param>src2 The second string to be compared.</param><see>Str.CompareIgnoreCase</see><content>Tests whether the two strings are identical ignoring differences in case.</content><firstline>Tests whether the two strings are identical ignoring differences in case</firstline></Documentation>
+    <Signature name="EqualIgnoreCase" ret="BOOLEAN" param="(STRING src1, STRING src2)" hlen="23">BOOLEAN EqualIgnoreCase(STRING src1, STRING src2)</Signature><Params>
+     <Param name="src1">
+      <Type type="string"/>
+     </Param>
+     <Param name="src2">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.find" inherittype="local" line="54" name="Find" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>src The string that is searched</param><param>sought The string being sought.</param><param>instance Which match instance are we interested in?</param><content>Returns the character position of the nth match of the search string with the first string. If no match is found the attribute returns 0. If an instance is omitted the position of the first instance is returned.</content><firstline>Returns the character position of the nth match of the search string with the first string</firstline></Documentation>
+    <Signature name="Find" ret="UNSIGNED4" param="(STRING src, STRING sought, UNSIGNED4 instance = 1)" hlen="14">UNSIGNED4 Find(STRING src, STRING sought, UNSIGNED4 instance = 1)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="sought">
+      <Type type="string"/>
+     </Param>
+     <Param name="instance">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.findcount" inherittype="local" line="64" name="FindCount" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>src The string that is searched</param><param>sought The string being sought.</param><content>Returns the number of occurences of the second string within the first string.</content><firstline>Returns the number of occurences of the second string within the first string</firstline></Documentation>
+    <Signature name="FindCount" ret="UNSIGNED4" param="(STRING src, STRING sought)" hlen="19">UNSIGNED4 FindCount(STRING src, STRING sought)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="sought">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.wildmatch" inherittype="local" line="75" name="WildMatch" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>pattern The pattern to match against.</param><param>ignore_case Whether to ignore differences in case between characters</param><content>Tests if the search string matches the pattern. The pattern can contain wildcards '?' (single character) and '*' (multiple character).</content><firstline>Tests if the search string matches the pattern</firstline></Documentation>
+    <Signature name="WildMatch" ret="BOOLEAN" param="(STRING src, STRING _pattern, BOOLEAN ignore_case)" hlen="17">BOOLEAN WildMatch(STRING src, STRING _pattern, BOOLEAN ignore_case)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="_pattern">
+      <Type type="string"/>
+     </Param>
+     <Param name="ignore_case">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.contains" inherittype="local" line="87" name="Contains" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>pattern The pattern to match against.</param><param>ignore_case Whether to ignore differences in case between characters</param><content>Tests if the search string contains each of the characters in the pattern. If the pattern contains duplicate characters those characters will match once for each occurence in the pattern.</content><firstline>Tests if the search string contains each of the characters in the pattern</firstline></Documentation>
+    <Signature name="Contains" ret="BOOLEAN" param="(STRING src, STRING _pattern, BOOLEAN ignore_case)" hlen="16">BOOLEAN Contains(STRING src, STRING _pattern, BOOLEAN ignore_case)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="_pattern">
+      <Type type="string"/>
+     </Param>
+     <Param name="ignore_case">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.filterout" inherittype="local" line="98" name="FilterOut" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>filter The string containing the set of characters to be excluded.</param><see>Str.Filter</see><content>Returns the first string with all characters within the second string removed.</content><firstline>Returns the first string with all characters within the second string removed</firstline></Documentation>
+    <Signature name="FilterOut" ret="STRING" param="(STRING src, STRING filter)" hlen="16">STRING FilterOut(STRING src, STRING filter)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="filter">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.filter" inherittype="local" line="108" name="Filter" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>filter The string containing the set of characters to be included.</param><see>Str.FilterOut</see><content>Returns the first string with all characters not within the second string removed.</content><firstline>Returns the first string with all characters not within the second string removed</firstline></Documentation>
+    <Signature name="Filter" ret="STRING" param="(STRING src, STRING filter)" hlen="13">STRING Filter(STRING src, STRING filter)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="filter">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.substituteincluded" inherittype="local" line="121" name="SubstituteIncluded" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>filter The string containing the set of characters to be included.</param><param>replace_char The character to be substituted into the result.</param><see>Std.Str.Translate, Std.Str.SubstituteExcluded</see><content>Returns the source string with the replacement character substituted for all characters included in the filter string. MORE: Should this be a general string substitution?</content><firstline>Returns the source string with the replacement character substituted for all characters included in the filter string</firstline></Documentation>
+    <Signature name="SubstituteIncluded" ret="STRING" param="(STRING src, STRING filter, STRING1 replace_char)" hlen="25">STRING SubstituteIncluded(STRING src, STRING filter, STRING1 replace_char)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="Filter">
+      <Type type="string"/>
+     </Param>
+     <Param name="replace_char">
+      <Type type="string1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.substituteexcluded" inherittype="local" line="135" name="SubstituteExcluded" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>filter The string containing the set of characters to be included.</param><param>replace_char The character to be substituted into the result.</param><see>Std.Str.SubstituteIncluded</see><content>Returns the source string with the replacement character substituted for all characters not included in the filter string. MORE: Should this be a general string substitution?</content><firstline>Returns the source string with the replacement character substituted for all characters not included in the filter string</firstline></Documentation>
+    <Signature name="SubstituteExcluded" ret="STRING" param="(STRING src, STRING filter, STRING1 replace_char)" hlen="25">STRING SubstituteExcluded(STRING src, STRING filter, STRING1 replace_char)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="Filter">
+      <Type type="string"/>
+     </Param>
+     <Param name="replace_char">
+      <Type type="string1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.translate" inherittype="local" line="149" name="Translate" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>search The string containing the set of characters to be included.</param><param>replacement The string containing the characters to act as replacements.</param><see>Std.Str.SubstituteIncluded</see><content>Returns the source string with the all characters that match characters in the search string replaced with the character at the corresponding position in the replacement string.</content><firstline>Returns the source string with the all characters that match characters in the search string replaced with the character at the corresponding position in the replacement string</firstline></Documentation>
+    <Signature name="Translate" ret="STRING" param="(STRING src, STRING search, STRING replacement)" hlen="16">STRING Translate(STRING src, STRING search, STRING replacement)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="search">
+      <Type type="string"/>
+     </Param>
+     <Param name="replacement">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.tolowercase" inherittype="local" line="158" name="ToLowerCase" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><content>Returns the argument string with all upper case characters converted to lower case.</content><firstline>Returns the argument string with all upper case characters converted to lower case</firstline></Documentation>
+    <Signature name="ToLowerCase" ret="STRING" param="(STRING src)" hlen="18">STRING ToLowerCase(STRING src)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.touppercase" inherittype="local" line="166" name="ToUpperCase" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><content>Return the argument string with all lower case characters converted to upper case.</content><firstline>Return the argument string with all lower case characters converted to upper case</firstline></Documentation>
+    <Signature name="ToUpperCase" ret="STRING" param="(STRING src)" hlen="18">STRING ToUpperCase(STRING src)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.tocapitalcase" inherittype="local" line="176" name="ToCapitalCase" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><content>Returns the argument string with the first letter of each word in upper case and all other letters left as-is. A contiguous sequence of alphanumeric characters is treated as a word.</content><firstline>Returns the argument string with the first letter of each word in upper case and all other letters left as-is</firstline></Documentation>
+    <Signature name="ToCapitalCase" ret="STRING" param="(STRING src)" hlen="20">STRING ToCapitalCase(STRING src)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.totitlecase" inherittype="local" line="186" name="ToTitleCase" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><content>Returns the argument string with the first letter of each word in upper case and all other letters lower case. A contiguous sequence of alphanumeric characters is treated as a word.</content><firstline>Returns the argument string with the first letter of each word in upper case and all other letters lower case</firstline></Documentation>
+    <Signature name="ToTitleCase" ret="STRING" param="(STRING src)" hlen="18">STRING ToTitleCase(STRING src)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.reverse" inherittype="local" line="195" name="Reverse" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being reversed.</param><content>Returns the argument string with all characters in reverse order. Note the argument is not TRIMMED before it is reversed.</content><firstline>Returns the argument string with all characters in reverse order</firstline></Documentation>
+    <Signature name="Reverse" ret="STRING" param="(STRING src)" hlen="14">STRING Reverse(STRING src)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.findreplace" inherittype="local" line="205" name="FindReplace" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string that is being transformed.</param><param>sought The string to be replaced.</param><param>replacement The string to be substituted into the result.</param><content>Returns the source string with the replacement string substituted for all instances of the search string.</content><firstline>Returns the source string with the replacement string substituted for all instances of the search string</firstline></Documentation>
+    <Signature name="FindReplace" ret="STRING" param="(STRING src, STRING sought, STRING replacement)" hlen="18">STRING FindReplace(STRING src, STRING sought, STRING replacement)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="sought">
+      <Type type="string"/>
+     </Param>
+     <Param name="replacement">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.extract" inherittype="local" line="215" name="Extract" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string containing the comma separated list.</param><param>instance Which item to select from the list.</param><content>Returns the nth element from a comma separated string.</content><firstline>Returns the nth element from a comma separated string</firstline></Documentation>
+    <Signature name="Extract" ret="STRING" param="(STRING src, UNSIGNED4 instance)" hlen="14">STRING Extract(STRING src, UNSIGNED4 instance)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="instance">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.cleanspaces" inherittype="local" line="225" name="CleanSpaces" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string to be cleaned.</param><content>Returns the source string with all instances of multiple adjacent space characters (2 or more spaces together) reduced to a single space character. Leading and trailing spaces are removed, and tab characters are converted to spaces.</content><firstline>Returns the source string with all instances of multiple adjacent space characters (2 or more spaces together) reduced to a single space character</firstline></Documentation>
+    <Signature name="CleanSpaces" ret="STRING" param="(STRING src)" hlen="18">STRING CleanSpaces(STRING src)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.startswith" inherittype="local" line="236" name="StartsWith" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>src The string being searched in.</param><param>prefix The prefix to search for.</param><content>Returns true if the prefix string matches the leading characters in the source string. Trailing spaces are stripped from the prefix before matching. // x.myString.StartsWith('x') as an alternative syntax would be even better</content><firstline>Returns true if the prefix string matches the leading characters in the source string</firstline></Documentation>
+    <Signature name="StartsWith" ret="BOOLEAN" param="(STRING src, STRING prefix)" hlen="18">BOOLEAN StartsWith(STRING src, STRING prefix)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="prefix">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.endswith" inherittype="local" line="245" name="EndsWith" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>src The string being searched in.</param><param>suffix The prefix to search for.</param><content>Returns true if the suffix string matches the trailing characters in the source string. Trailing spaces are stripped from both strings before matching.</content><firstline>Returns true if the suffix string matches the trailing characters in the source string</firstline></Documentation>
+    <Signature name="EndsWith" ret="BOOLEAN" param="(STRING src, STRING suffix)" hlen="16">BOOLEAN EndsWith(STRING src, STRING suffix)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="suffix">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.removesuffix" inherittype="local" line="255" name="RemoveSuffix" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string being searched in.</param><param>suffix The prefix to search for.</param><content>Removes the suffix from the search string, if present, and returns the result. Trailing spaces are stripped from both strings before matching.</content><firstline>Removes the suffix from the search string, if present, and returns the result</firstline></Documentation>
+    <Signature name="RemoveSuffix" ret="STRING" param="(STRING src, STRING suffix)" hlen="19">STRING RemoveSuffix(STRING src, STRING suffix)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="suffix">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.extractmultiple" inherittype="local" line="266" name="ExtractMultiple" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string containing the comma separated list.</param><param>mask A bitmask of which elements should be included. Bit 0 is item1, bit1 item 2 etc.</param><content>Returns a string containing a list of elements from a comma separated string.</content><firstline>Returns a string containing a list of elements from a comma separated string</firstline></Documentation>
+    <Signature name="ExtractMultiple" ret="STRING" param="(STRING src, UNSIGNED8 mask)" hlen="22">STRING ExtractMultiple(STRING src, UNSIGNED8 mask)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="mask">
+      <Type type="unsigned8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.countwords" inherittype="local" line="277" name="CountWords" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>src The string being searched in.</param><param>separator The string used to separate words</param><param>allow_blank Indicates if empty/blank string items are included in the results.</param><content>Returns the number of words that the string contains. Words are separated by one or more separator strings. No spaces are stripped from either string before matching.</content><firstline>Returns the number of words that the string contains</firstline></Documentation>
+    <Signature name="CountWords" ret="UNSIGNED4" param="(STRING src, STRING separator, BOOLEAN allow_blank = FALSE)" hlen="20">UNSIGNED4 CountWords(STRING src, STRING separator, BOOLEAN allow_blank = FALSE)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="separator">
+      <Type type="string"/>
+     </Param>
+     <Param name="allow_blank">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.splitwords" inherittype="local" line="288" name="SplitWords" type="function">
+    <Type type="set">
+     <Type type="string"/>
+    </Type>
+    <Documentation>
+     <param>src The string being searched in.</param><param>separator The string used to separate words</param><param>allow_blank Indicates if empty/blank string items are included in the results.</param><content>Returns the list of words extracted from the string. Words are separated by one or more separator strings. No spaces are stripped from either string before matching.</content><firstline>Returns the list of words extracted from the string</firstline></Documentation>
+    <Signature name="SplitWords" ret="SET OF STRING" param="(STRING src, STRING separator, BOOLEAN allow_blank = FALSE)" hlen="24">SET OF STRING SplitWords(STRING src, STRING separator, BOOLEAN allow_blank = FALSE)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="separator">
+      <Type type="string"/>
+     </Param>
+     <Param name="allow_blank">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.combinewords" inherittype="local" line="299" name="CombineWords" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>words The set of strings to be combined.</param><param>separator The string used to separate words.</param><content>Returns the list of words extracted from the string. Words are separated by one or more separator strings. No spaces are stripped from either string before matching.</content><firstline>Returns the list of words extracted from the string</firstline></Documentation>
+    <Signature name="CombineWords" ret="STRING" param="(SET OF STRING words, STRING separator)" hlen="19">STRING CombineWords(SET OF STRING words, STRING separator)</Signature><Params>
+     <Param name="words">
+      <Type type="set">
+       <Type type="string"/>
+      </Type>
+     </Param>
+     <Param name="separator">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.editdistance" inherittype="local" line="311" name="EditDistance" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>_left The first string to be compared.</param><param>_right The second string to be compared.</param><content>Returns the minimum edit distance between the two strings. An insert change or delete counts as a single edit. The two strings are trimmed before comparing.</content><firstline>Returns the minimum edit distance between the two strings</firstline><return>The minimum edit distance between the two strings.</return></Documentation>
+    <Signature name="EditDistance" ret="UNSIGNED4" param="(STRING _left, STRING _right)" hlen="22">UNSIGNED4 EditDistance(STRING _left, STRING _right)</Signature><Params>
+     <Param name="_left">
+      <Type type="string"/>
+     </Param>
+     <Param name="_right">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.editdistancewithinradius" inherittype="local" line="324" name="EditDistanceWithinRadius" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>_left The first string to be compared.</param><param>_right The second string to be compared.</param><param>radius The maximum edit distance that is accepable.</param><content>Returns true if the minimum edit distance between the two strings is with a specific range. The two strings are trimmed before comparing.</content><firstline>Returns true if the minimum edit distance between the two strings is with a specific range</firstline><return>Whether or not the two strings are within the given specified edit distance.</return></Documentation>
+    <Signature name="EditDistanceWithinRadius" ret="BOOLEAN" param="(STRING _left, STRING _right, UNSIGNED4 radius)" hlen="32">BOOLEAN EditDistanceWithinRadius(STRING _left, STRING _right, UNSIGNED4 radius)</Signature><Params>
+     <Param name="_left">
+      <Type type="string"/>
+     </Param>
+     <Param name="_right">
+      <Type type="string"/>
+     </Param>
+     <Param name="radius">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.wordcount" inherittype="local" line="335" name="WordCount" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>text The string to be broken into words.</param><content>Returns the number of words in the string. Words are separated by one or more spaces.</content><firstline>Returns the number of words in the string</firstline><return>The number of words in the string.</return></Documentation>
+    <Signature name="WordCount" ret="UNSIGNED4" param="(STRING text)" hlen="19">UNSIGNED4 WordCount(STRING text)</Signature><Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.getnthword" inherittype="local" line="346" name="GetNthWord" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>text The string to be broken into words.</param><param>n Which word should be returned from the function.</param><content>Returns the n-th word from the string. Words are separated by one or more spaces.</content><firstline>Returns the n-th word from the string</firstline><return>The number of words in the string.</return></Documentation>
+    <Signature name="GetNthWord" ret="STRING" param="(STRING text, UNSIGNED4 n)" hlen="17">STRING GetNthWord(STRING text, UNSIGNED4 n)</Signature><Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.excludefirstword" inherittype="local" line="357" name="ExcludeFirstWord" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>text The string to be broken into words.</param><content>Returns everything except the first word from the string. Words are separated by one or more whitespace characters. Whitespace before and after the first word is also removed.</content><firstline>Returns everything except the first word from the string</firstline><return>The string excluding the first word.</return></Documentation>
+    <Signature name="ExcludeFirstWord" ret="" param="(STRING text)" hlen="16">ExcludeFirstWord(STRING text)</Signature><Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.excludelastword" inherittype="local" line="367" name="ExcludeLastWord" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>text The string to be broken into words.</param><content>Returns everything except the last word from the string. Words are separated by one or more whitespace characters. Whitespace after a word is removed with the word and leading whitespace is removed with the first word.</content><firstline>Returns everything except the last word from the string</firstline><return>The string excluding the last word.</return></Documentation>
+    <Signature name="ExcludeLastWord" ret="" param="(STRING text)" hlen="15">ExcludeLastWord(STRING text)</Signature><Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.excludenthword" inherittype="local" line="378" name="ExcludeNthWord" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>text The string to be broken into words.</param><param>n Which word should be returned from the function.</param><content>Returns everything except the nth word from the string. Words are separated by one or more whitespace characters. Whitespace after a word is removed with the word and leading whitespace is removed with the first word.</content><firstline>Returns everything except the nth word from the string</firstline><return>The string excluding the nth word.</return></Documentation>
+    <Signature name="ExcludeNthWord" ret="" param="(STRING text, UNSIGNED2 n)" hlen="14">ExcludeNthWord(STRING text, UNSIGNED2 n)</Signature><Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned2"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.findword" inherittype="local" line="388" name="FindWord" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>word The word to be searched for.</param><param>ignore_case Whether to ignore differences in case between characters.</param><content>Tests if the search string contains the supplied word as a whole word.</content><firstline>Tests if the search string contains the supplied word as a whole word</firstline></Documentation>
+    <Signature name="FindWord" ret="BOOLEAN" param="(STRING src, STRING word, BOOLEAN ignore_case=FALSE)" hlen="16">BOOLEAN FindWord(STRING src, STRING word, BOOLEAN ignore_case=FALSE)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="word">
+      <Type type="string"/>
+     </Param>
+     <Param name="ignore_case">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.repeat" inherittype="local" line="402" name="Repeat" type="function">
+    <Type type="string"/>
+    <Signature name="Repeat" ret="STRING" param="(STRING text, UNSIGNED4 n)" hlen="13">STRING Repeat(STRING text, UNSIGNED4 n)</Signature><Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.tohexpairs" inherittype="local" line="411" name="ToHexPairs" type="function">
+    <Type type="string"/>
+    <Signature name="ToHexPairs" ret="STRING" param="(DATA value)" hlen="17">STRING ToHexPairs(DATA value)</Signature><Params>
+     <Param name="value">
+      <Type type="data"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.fromhexpairs" inherittype="local" line="424" name="FromHexPairs" type="function">
+    <Type type="data"/>
+    <Signature name="FromHexPairs" ret="DATA" param="(STRING hex_pairs)" hlen="17">DATA FromHexPairs(STRING hex_pairs)</Signature><Params>
+     <Param name="hex_pairs">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.encodebase64" inherittype="local" line="437" name="EncodeBase64" type="function">
+    <Type type="string"/>
+    <Signature name="EncodeBase64" ret="STRING" param="(DATA value)" hlen="19">STRING EncodeBase64(DATA value)</Signature><Params>
+     <Param name="value">
+      <Type type="data"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="str.decodebase64" inherittype="local" line="450" name="DecodeBase64" type="function">
+    <Type type="data"/>
+    <Signature name="DecodeBase64" ret="DATA" param="(STRING value)" hlen="17">DATA DecodeBase64(STRING value)</Signature><Params>
+     <Param name="value">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Signature name="Str" ret="" param="" hlen="3">Str</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

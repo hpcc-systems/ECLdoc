@@ -1,0 +1,82 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+HadamardProduct
+}
+\hypertarget{ecldoc:toc:PBblas.HadamardProduct}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+PBblas.internal |
+PBblas.internal.MatDims |
+PBblas.Types |
+PBblas.internal.Types |
+PBblas.internal.Converted |
+std.blas |
+std.system.Thorlib |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+HadamardProduct}}
+
+\hypertarget{ecldoc:pbblas.hadamardproduct}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{HadamardProduct} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Layout\_Cell) X, DATASET(Layout\_Cell) Y)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Element-wise multiplication of X * Y. Supports the ''myriad'' style interface -- X and Y may contain multiple separate matrixes. Each X will be multiplied by the Y with the same work-item id. Note: This performs element-wise multiplication. For dot-product matrix multiplication, use PBblas.gemm.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{Y}} ||| TABLE ( Layout\_Cell ) --- A matrix (or multiple matrices) in Layout\_Cell form
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{X}} ||| TABLE ( Layout\_Cell ) --- A matrix (or multiple matrices) in Layout\_Cell form
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- A matrix (or multiple matrices) in Layout\_Cell form
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_Cell
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

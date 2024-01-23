@@ -1,0 +1,23 @@
+IMPORTS
+=======
+
+
+std <../std/pkg.toc.txt>
+intest </home/tetrapod/source/ecldoc/doc/test/txt/intest/pkg.toc.txt>
+Example_3 <../example_3.ecl.txt>
+intest.Example_3 <example_3.ecl.txt>
+intest.inintest </home/tetrapod/source/ecldoc/doc/test/txt/intest/inintest/pkg.toc.txt>
+intest.inintest.Example_3 <inintest/example_3.ecl.txt>
+test <../test.ecl.txt>
+Inintest </home/tetrapod/source/ecldoc/doc/test/txt/Inintest/pkg.toc.txt>
+Inintest.Example_3 <../Inintest/Example_3.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : example_11
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+

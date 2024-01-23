@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="root">
+  <folder name="system"/>
+  <file name="BLAS.ecl.xml">BLAS.ecl</file>
+  <file name="File.ecl.xml">File.ecl</file>
+  <file name="math.ecl.xml">math.ecl</file>
+  <file name="str.ecl.xml">str.ecl</file>
+  <file name="Metaphone.ecl.xml">Metaphone.ecl</file>
+  <file name="Date.ecl.xml">Date.ecl</file>
+  <file name="Uni.ecl.xml">Uni.ecl</file>
+  <file name="BundleBase.ecl.xml">BundleBase.ecl</file>
+</folder>

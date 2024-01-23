@@ -1,7 +1,4 @@
 *.pyc
-eclcc.log
-*.py~
-.project
 
 # OS generated files #
 ######################
@@ -12,5 +9,9 @@ eclcc.log
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-
+.vscode
+build/*
+ecldoc.egg-info
+ecldoc-**.tar.gz
+dist/
+textput.log

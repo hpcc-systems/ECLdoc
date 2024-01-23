@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="LogisticRegression">
+  <file name="Distributions.ecl.xml">LogisticRegression/Distributions.ecl</file>
+  <file name="LogitScore.ecl.xml">LogisticRegression/LogitScore.ecl</file>
+  <file name="dimm.ecl.xml">LogisticRegression/dimm.ecl</file>
+  <folder name="IRLS">
+    <file name="GetModel_global.ecl.xml">LogisticRegression/IRLS/GetModel_global.ecl</file>
+    <file name="GetModel_local.ecl.xml">LogisticRegression/IRLS/GetModel_local.ecl</file>
+    <file name="GetModel.ecl.xml">LogisticRegression/IRLS/GetModel.ecl</file>
+  </folder>
+  <folder name="validation">
+    <file name="unit_test_dimm.ecl.xml">LogisticRegression/validation/unit_test_dimm.ecl</file>
+    <file name="IrisDS.ecl.xml">LogisticRegression/validation/IrisDS.ecl</file>
+    <file name="BinomialRegression.ecl.xml">LogisticRegression/validation/BinomialRegression.ecl</file>
+    <file name="discrete_GermanDS.ecl.xml">LogisticRegression/validation/discrete_GermanDS.ecl</file>
+  </folder>
+  <file name="ExtractReport.ecl.xml">LogisticRegression/ExtractReport.ecl</file>
+  <folder name="Tests">
+    <file name="Check_Dist.ecl.xml">LogisticRegression/Tests/Check_Dist.ecl</file>
+  </folder>
+  <folder name="performance">
+    <file name="RunBinomial.ecl.xml">LogisticRegression/performance/RunBinomial.ecl</file>
+  </folder>
+  <file name="DataStats.ecl.xml">LogisticRegression/DataStats.ecl</file>
+  <file name="Confusion.ecl.xml">LogisticRegression/Confusion.ecl</file>
+  <file name="BinomialConfusion.ecl.xml">LogisticRegression/BinomialConfusion.ecl</file>
+  <file name="ExtractBeta_CI.ecl.xml">LogisticRegression/ExtractBeta_CI.ecl</file>
+  <file name="ExtractBeta_pval.ecl.xml">LogisticRegression/ExtractBeta_pval.ecl</file>
+  <file name="Deviance_Detail.ecl.xml">LogisticRegression/Deviance_Detail.ecl</file>
+  <file name="Null_Deviance.ecl.xml">LogisticRegression/Null_Deviance.ecl</file>
+  <file name="LogitPredict.ecl.xml">LogisticRegression/LogitPredict.ecl</file>
+  <file name="Model_Deviance.ecl.xml">LogisticRegression/Model_Deviance.ecl</file>
+  <file name="Types.ecl.xml">LogisticRegression/Types.ecl</file>
+  <file name="ExtractBeta.ecl.xml">LogisticRegression/ExtractBeta.ecl</file>
+  <file name="Constants.ecl.xml">LogisticRegression/Constants.ecl</file>
+  <file name="Deviance_Analysis.ecl.xml">LogisticRegression/Deviance_Analysis.ecl</file>
+  <file name="BinomialLogisticRegression.ecl.xml">LogisticRegression/BinomialLogisticRegression.ecl</file>
+</folder>

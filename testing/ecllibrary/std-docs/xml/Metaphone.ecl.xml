@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_metaphone.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_metaphone.ecllib"/><Source name="Metaphone" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/Metaphone.ecl" target="Metaphone.ecl.xml">
+  <Import name="lib_metaphone" ref="lib_metaphone" remotescope="1" target="lib_metaphone/pkg.toc.xml"/>
+  <Definition exported="1" fullname="Metaphone" inherittype="local" line="6" name="Metaphone" type="module">
+   <Definition exported="1" fullname="metaphone.primary" inherittype="local" line="18" name="primary" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string whose metphone is to be calculated.</param><see>http://en.wikipedia.org/wiki/Metaphone#Double_Metaphone</see><content>Returns the primary metaphone value</content><firstline>Returns the primary metaphone value</firstline></Documentation>
+    <Signature name="primary" ret="String" param="(STRING src)" hlen="14">String primary(STRING src)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="metaphone.secondary" inherittype="local" line="28" name="secondary" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string whose metphone is to be calculated.</param><see>http://en.wikipedia.org/wiki/Metaphone#Double_Metaphone</see><content>Returns the secondary metaphone value</content><firstline>Returns the secondary metaphone value</firstline></Documentation>
+    <Signature name="secondary" ret="String" param="(STRING src)" hlen="16">String secondary(STRING src)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="metaphone.double" inherittype="local" line="38" name="double" type="function">
+    <Type type="string"/>
+    <Documentation>
+     <param>src The string whose metphone is to be calculated.</param><see>http://en.wikipedia.org/wiki/Metaphone#Double_Metaphone</see><content>Returns the double metaphone value (primary and secondary concatenated</content><firstline>Returns the double metaphone value (primary and secondary concatenated</firstline></Documentation>
+    <Signature name="double" ret="String" param="(STRING src)" hlen="13">String double(STRING src)</Signature><Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Signature name="Metaphone" ret="" param="" hlen="9">Metaphone</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

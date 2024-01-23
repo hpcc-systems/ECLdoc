@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <title>LogisticRegression.IRLS.GetModel_local</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar topbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#menu-toggle" id="menu-toggle" class="navbar-brand glyphicon glyphicon-menu-hamburger ham"></a>
+            </div>
+            <div class="navbar-header" style="margin-left: 20px;">
+                <span class="navbar-brand">LogisticRegression.IRLS.GetModel_local</span>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#ecldoc-section-import" class="topbar">Imports</a></li>
+                    <li><a href="#ecldoc-section-desc" class="topbar">Contents</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="pkg.toc.html">
+                        Up
+                    </a>
+                </li>
+                <li>
+                    <a href="GetModel.ecl.html">GetModel.ecl</a>
+                </li>
+                <li>
+                    <a href="GetModel_global.ecl.html">GetModel_global.ecl</a>
+                </li>
+                <li>
+                    <a href="GetModel_local.ecl.html">GetModel_local.ecl</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <section id="ecldoc-section-import">
+                    <h3 class="page-header">IMPORTS</h3>
+                    <ul class="pagination"><li><a href="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/html/ML_Core/pkg.toc.html">
+                                ML_Core
+                            </a></li><li><a href="../../ML_Core/Types.ecl.html">
+                                ML_Core.Types
+                            </a></li><li><a href="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/html/LogisticRegression/pkg.toc.html">
+                                LogisticRegression
+                            </a></li><li><a href="../Constants.ecl.html">
+                                LogisticRegression.Constants
+                            </a></li><li><a href="../Types.ecl.html">
+                                LogisticRegression.Types
+                            </a></li><li><a href="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/html/LogisticRegression/IRLS/pkg.toc.html">
+                                LogisticRegression.IRLS
+                            </a></li><li><a href="../../std/pkg.toc.html">
+                                std
+                            </a></li><li><a href="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl">
+                                std.blas
+                            </a></li></ul>
+                </section>
+                <section id="ecldoc-section-desc">
+                    <h3 class="page-header">CONTENTS</h3>
+                    <div class="panel-group desc-panel-group"><div class="panel panel-info desc-panel" id="dlogisticregression-irls-getmodel_local">
+                            <a href=".desc-logisticregression-irls-getmodel_local" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        GetModel_local
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(Layout_Model)</td>
+                                    <td class="name">GetModel_local</td>
+                                    <td class="param">(DATASET(NumericField) independents, DATASET(DiscreteField) dependents, UNSIGNED2 max_iter=200, REAL8 epsilon=Constants.default_epsilon, REAL8 ridge=Constants.default_ridge)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Internal function to determine values for the model co-efficients and selected stats from building the model
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse in desc-logisticregression-irls-getmodel_local">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Internal function to determine values for the model co-efficients and selected stats from building the model.
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>dependents</b></td>
+				<td><b>TABLE ( logisticregression.irls.discretefield )</b> -- the dependent values.</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>ridge</b></td>
+				<td><b>REAL8</b> -- a value to populate a diagonal matrix that is added to a matrix help assure that the matrix is invertible.</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>epsilon</b></td>
+				<td><b>REAL8</b> -- the minimum change in the Beta value estimate to continue</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>independents</b></td>
+				<td><b>TABLE ( logisticregression.irls.numericfield )</b> -- the independent values</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>max_iter</b></td>
+				<td><b>UNSIGNED2</b> -- maximum number of iterations to try</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value } )</b></td>
+				<td>coefficient matrix plus model building stats</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>

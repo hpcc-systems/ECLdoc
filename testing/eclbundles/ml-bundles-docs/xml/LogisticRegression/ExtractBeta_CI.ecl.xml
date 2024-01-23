@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Constants.ecl" name="LogisticRegression.Constants" target="Constants.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/ExtractBeta.ecl" name="LogisticRegression.ExtractBeta" target="ExtractBeta.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Constants.ecl" name="ML_Core.Constants" target="../ML_Core/Constants.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/DoubleFac.ecl" name="ML_Core.Math.DoubleFac" target="../ML_Core/Math/DoubleFac.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Distributions.ecl" name="LogisticRegression.Distributions" target="Distributions.ecl.xml"/><Source name="LogisticRegression.ExtractBeta_CI" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/ExtractBeta_CI.ecl" target="ExtractBeta_CI.ecl.xml">
+  <Import name="Core_Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.extractbeta_ci" inherittype="local" line="28" name="ExtractBeta_CI" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="ind_col">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="dep_nom">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="w">
+      <Type type="real8"/>
+     </Field>
+     <Field name="SE">
+      <Type type="real8"/>
+     </Field>
+     <Field name="upper">
+      <Type type="real8"/>
+     </Field>
+     <Field name="lower">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Extract the beta values form the model dataset.</content><return>the beta values with confidence intervals term.</return><param>mod_ds the model dataset</param><param>level the significance value for the intervals</param><firstline>Extract the beta values form the model dataset</firstline></Documentation>
+   <Signature name="ExtractBeta_CI" ret="DATASET(Types.Confidence_Model_Coef)" param="(DATASET(Core_Types.Layout_Model) mod_ds, REAL8 level)" hlen="51">DATASET(Types.Confidence_Model_Coef) ExtractBeta_CI(DATASET(Core_Types.Layout_Model) mod_ds, REAL8 level)</Signature><Params>
+    <Param name="mod_ds">
+     <Type type="table">
+      <Type fullname="ml_core.types.layout_model" name="Layout_Model" type="record"/>
+     </Type>
+    </Param>
+    <Param name="level">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Extract the beta values form the model dataset.</content><return>the beta values with confidence intervals term.</return><param>mod_ds the model dataset</param><param>level the significance value for the intervals</param><firstline>Extract the beta values form the model dataset</firstline></Documentation>
+   </Source>
+</Meta>

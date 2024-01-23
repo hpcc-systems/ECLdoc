@@ -1,0 +1,19 @@
+IMPORTS
+=======
+
+
+ML_Core.Math.Distributions <../Math/Distributions.ecl.txt>
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+python <../../python/pkg.toc.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+ATTRIBUTE : Check_Dist
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+Return : 
+

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../../ML_Core/Types.ecl.xml"/><Source name="LogisticRegression.validation.IrisDS" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/validation/IrisDS.ecl" target="IrisDS.ecl.xml">
+  <Import name="ML_Core" ref="ML_Core" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Types" ref="ML_Core.Types" target="../../ML_Core/Types.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.validation.irisds" inherittype="local" line="11" name="irisDS" type="attribute">
+   <Signature name="irisDS" ret="" param="" hlen="6">irisDS</Signature><Type type="table">
+    <Type fullname="logisticregression.validation.dsrecord" name="dsRecord" type="record"/>
+   </Type>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

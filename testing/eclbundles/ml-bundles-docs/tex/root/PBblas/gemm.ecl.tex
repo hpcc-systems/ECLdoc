@@ -1,0 +1,86 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+gemm
+}
+\hypertarget{ecldoc:toc:PBblas.gemm}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+PBblas.Types |
+PBblas.internal |
+PBblas.internal.Types |
+std.blas |
+PBblas.internal.MatDims |
+std.system.Thorlib |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+gemm}}
+
+\hypertarget{ecldoc:pbblas.gemm}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{gemm} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (BOOLEAN transposeA, BOOLEAN transposeB, value\_t alpha, DATASET(Layout\_Cell) A\_in, DATASET(Layout\_Cell) B\_in, DATASET(Layout\_Cell) C\_in=emptyC, value\_t beta=0.0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extended Parallel Block Matrix Multiplication Module Implements: Result = alpha * op(A)op(B) + beta * C. op is No Transpose or Transpose. Multiplies two matrixes A and B, with an optional pre-multiply transpose for each Optionally scales the product by the scalar ''alpha''. Then adds an optional C matrix to the product after scaling C by the scalar ''beta''. A, B, and C are specified as DATASET(Layout\_Cell), as is the Resulting matrix. Layout\_Cell describes a sparse matrix stored as a list of x, y, and value. This interface also provides a ''Myriad'' capability allowing multiple similar operations to be performed on independent sets of matrixes in parallel. This is done by use of the work-item id (wi\_id) in each cell of the matrixes. Cells with the same wi\_id are considered part of the same matrix. In the myriad form, each input matrix A, B, and (optionally) C can contain many independent matrixes. The wi\_ids are matched up such that each operation involves the A, B, and C with the same wi\_id. A and B must therefore contain the same set of wi\_ids, while C is optional for any wi\_id. The same parameters: alpha, beta, transposeA, and transposeB are used for all work-items. The result will contain cells from all provided work-items. Result has same shape as C if provided. Note that matrixes are not explicitly dimensioned. The shape is determined by the highest value of x and y for each work-item.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{alpha}} ||| REAL8 --- Scalar multiplier for alpha * A * B
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{beta}} ||| REAL8 --- A scalar multiplier for beta * C, scales the C matrix before addition. May be omitted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{A\_in}} ||| TABLE ( Layout\_Cell ) --- 'A' matrix (multiplier) in Layout\_Cell format
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{C\_in}} ||| TABLE ( Layout\_Cell ) --- Same as above for the 'C' matrix (addend). May be omitted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{B\_in}} ||| TABLE ( Layout\_Cell ) --- Same as above for the 'B' matrix (multiplicand)
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transposeA}} ||| BOOLEAN --- Boolean indicating whether matrix A should be transposed before multiplying
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transposeB}} ||| BOOLEAN --- Same as above but for matrix B
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- Result matrix in Layout\_Cell format.
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_Cell
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

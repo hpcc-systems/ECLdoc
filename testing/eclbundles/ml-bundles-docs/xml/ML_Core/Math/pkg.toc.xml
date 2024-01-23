@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="Math">
+  <file name="Beta.ecl.xml">ML_Core/Math/Beta.ecl</file>
+  <file name="Distributions.ecl.xml">ML_Core/Math/Distributions.ecl</file>
+  <file name="NCK.ecl.xml">ML_Core/Math/NCK.ecl</file>
+  <file name="Fac.ecl.xml">ML_Core/Math/Fac.ecl</file>
+  <file name="DoubleFac.ecl.xml">ML_Core/Math/DoubleFac.ecl</file>
+  <file name="gamma.ecl.xml">ML_Core/Math/gamma.ecl</file>
+  <file name="StirlingFormula.ecl.xml">ML_Core/Math/StirlingFormula.ecl</file>
+  <file name="lowerGamma.ecl.xml">ML_Core/Math/lowerGamma.ecl</file>
+  <file name="Poly.ecl.xml">ML_Core/Math/Poly.ecl</file>
+  <file name="log_gamma.ecl.xml">ML_Core/Math/log_gamma.ecl</file>
+  <file name="upperGamma.ecl.xml">ML_Core/Math/upperGamma.ecl</file>
+</folder>

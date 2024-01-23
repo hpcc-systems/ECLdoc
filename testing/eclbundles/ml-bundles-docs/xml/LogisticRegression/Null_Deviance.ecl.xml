@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Source name="LogisticRegression.Null_Deviance" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Null_Deviance.ecl" target="Null_Deviance.ecl.xml">
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.null_deviance" inherittype="local" line="14" name="Null_Deviance" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="classifier">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="deviance">
+      <Type type="real8"/>
+     </Field>
+     <Field name="AIC">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Deviance for the null model, that is, a model with only an intercept.</content><return>a data set of the null model deviances for each work item and classifier.</return><param>od Observation Deviance record set.</param><firstline>Deviance for the null model, that is, a model with only an intercept</firstline></Documentation>
+   <Signature name="Null_Deviance" ret="DATASET(Types.Deviance_Record)" param="(DATASET(Types.Observation_Deviance) od)" hlen="44">DATASET(Types.Deviance_Record) Null_Deviance(DATASET(Types.Observation_Deviance) od)</Signature><Params>
+    <Param name="od">
+     <Type type="table">
+      <Type fullname="logisticregression.types.observation_deviance" name="Observation_Deviance" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Deviance for the null model, that is, a model with only an intercept.</content><return>a data set of the null model deviances for each work item and classifier.</return><param>od Observation Deviance record set.</param><firstline>Deviance for the null model, that is, a model with only an intercept</firstline></Documentation>
+   </Source>
+</Meta>

@@ -1,0 +1,202 @@
+<Meta>
+ <Source name="PBblas.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Constants.ecl">
+  <Definition body="291"
+              end="1323"
+              exported="1"
+              fullname="PBblas.Constants"
+              inherittype="local"
+              line="5"
+              name="Constants"
+              start="272"
+              type="module">
+   <Definition body="324"
+               end="332"
+               exported="1"
+               fullname="pbblas.constants.block_minimum"
+               inherittype="local"
+               line="6"
+               name="Block_Minimum"
+               start="301"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="388"
+               end="396"
+               exported="1"
+               fullname="pbblas.constants.block_nosplit"
+               inherittype="local"
+               line="7"
+               name="Block_NoSplit"
+               start="365"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="456"
+               end="466"
+               exported="1"
+               fullname="pbblas.constants.block_maximum"
+               inherittype="local"
+               line="8"
+               name="Block_Maximum"
+               start="433"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="520"
+               end="527"
+               exported="1"
+               fullname="pbblas.constants.block_vec_rows"
+               inherittype="local"
+               line="9"
+               name="Block_Vec_Rows"
+               start="497"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="640"
+               end="647"
+               fullname="pbblas.constants.error_base"
+               inherittype="local"
+               line="12"
+               name="Error_Base"
+               shared="1"
+               start="612"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="678"
+               end="716"
+               exported="1"
+               fullname="pbblas.constants.dimension_incompat"
+               inherittype="local"
+               line="13"
+               name="Dimension_Incompat"
+               start="650"
+               type="attribute">
+    <Type type="string34"/>
+   </Definition>
+   <Definition body="747"
+               end="763"
+               exported="1"
+               fullname="pbblas.constants.dimension_incompatz"
+               inherittype="local"
+               line="14"
+               name="Dimension_IncompatZ"
+               start="719"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="794"
+               end="830"
+               exported="1"
+               fullname="pbblas.constants.distribution_error"
+               inherittype="local"
+               line="15"
+               name="Distribution_Error"
+               start="766"
+               type="attribute">
+    <Type type="string32"/>
+   </Definition>
+   <Definition body="861"
+               end="877"
+               exported="1"
+               fullname="pbblas.constants.distribution_errorz"
+               inherittype="local"
+               line="16"
+               name="Distribution_ErrorZ"
+               start="833"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="908"
+               end="932"
+               exported="1"
+               fullname="pbblas.constants.not_square"
+               inherittype="local"
+               line="17"
+               name="Not_Square"
+               start="880"
+               type="attribute">
+    <Type type="string20"/>
+   </Definition>
+   <Definition body="963"
+               end="979"
+               exported="1"
+               fullname="pbblas.constants.not_squarez"
+               inherittype="local"
+               line="18"
+               name="Not_SquareZ"
+               start="935"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1010"
+               end="1054"
+               exported="1"
+               fullname="pbblas.constants.not_positivedef"
+               inherittype="local"
+               line="19"
+               name="Not_PositiveDef"
+               start="982"
+               type="attribute">
+    <Type type="string40"/>
+   </Definition>
+   <Definition body="1085"
+               end="1101"
+               exported="1"
+               fullname="pbblas.constants.not_positivedefz"
+               inherittype="local"
+               line="20"
+               name="Not_PositiveDefZ"
+               start="1057"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1132"
+               end="1164"
+               exported="1"
+               fullname="pbblas.constants.not_single_block"
+               inherittype="local"
+               line="21"
+               name="Not_Single_Block"
+               start="1104"
+               type="attribute">
+    <Type type="string28"/>
+   </Definition>
+   <Definition body="1195"
+               end="1211"
+               exported="1"
+               fullname="pbblas.constants.not_single_blockz"
+               inherittype="local"
+               line="22"
+               name="Not_Single_BlockZ"
+               start="1167"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1242"
+               end="1271"
+               exported="1"
+               fullname="pbblas.constants.not_block_vector"
+               inherittype="local"
+               line="23"
+               name="Not_Block_Vector"
+               start="1214"
+               type="attribute">
+    <Type type="string25"/>
+   </Definition>
+   <Definition body="1302"
+               end="1318"
+               exported="1"
+               fullname="pbblas.constants.not_block_vectorz"
+               inherittype="local"
+               line="24"
+               name="Not_Block_VectorZ"
+               start="1274"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

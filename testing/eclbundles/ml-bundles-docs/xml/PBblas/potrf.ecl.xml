@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="Types.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl" name="std.BLAS" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Types.ecl" name="PBblas.internal.Types" target="internal/Types.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl" name="std.system.Thorlib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensions.ecl" name="PBblas.internal.BlockDimensions" target="internal/BlockDimensions.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsMultiply.ecl" name="PBblas.internal.BlockDimensionsMultiply" target="internal/BlockDimensionsMultiply.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsSolve.ecl" name="PBblas.internal.BlockDimensionsSolve" target="internal/BlockDimensionsSolve.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MatDims.ecl" name="PBblas.internal.MatDims" target="internal/MatDims.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MakeR8Set.ecl" name="PBblas.internal.MakeR8Set" target="internal/MakeR8Set.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Converted.ecl" name="PBblas.internal.Converted" target="internal/Converted.ecl.xml"/><Source name="PBblas.potrf" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/potrf.ecl" target="potrf.ecl.xml">
+  <Import name="PBblas" ref="PBblas" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/pkg.toc.xml"/>
+  <Import name="Types" ref="PBblas.Types" target="Types.ecl.xml">
+   </Import>
+  <Import name="BLAS" ref="std.blas" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/>
+  <Import name="int" ref="PBblas.internal" remotescope="1" target="internal/pkg.toc.xml"/>
+  <Import name="iTypes" ref="PBblas.internal.Types" target="internal/Types.ecl.xml">
+   </Import>
+  <Import name="MatDims" ref="PBblas.internal.MatDims" target="internal/MatDims.ecl.xml">
+   </Import>
+  <Import name="Converted" ref="PBblas.internal.Converted" target="internal/Converted.ecl.xml"/>
+  <Import name="Thorlib" ref="std.system.Thorlib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/>
+  <Definition exported="1" fullname="pbblas.potrf" inherittype="local" line="55" name="potrf" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi_id">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="x">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="y">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="v">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Implements Cholesky factorization of A = U**T * U if Triangular.Upper requested or A = L * L**T if Triangualr.Lower is requested. The matrix A must be symmetric positive definite. &lt;pre&gt;&lt;br/&gt;  | A11   A12 |      |  L11   0   |    | L11**T     L21**T |&lt;br/&gt;  | A21   A22 |  ==  |  L21   L22 | *  |  0           L22  |&lt;br/&gt;&lt;br/&gt;                     | L11*L11**T          L11*L21**T      |&lt;br/&gt;                 ==  | L21*L11**T  L21*L21**T + L22*L22**T |&lt;br/&gt; &lt;/pre&gt; So, use Cholesky on the first block to get L11. L21 = A21*L11**T**-1 which can be found by dtrsm on each column block A22' is A22 - L21*L21**T &lt;p&gt; Based upon PB-BLAS: A set of parallel block basic linear algebra subprograms by Choi and Dongarra &lt;/p&gt;&lt;p&gt; This module supports the "Myriad" style interface, allowing many independent problems to be worked on at once. The A matrix can contain multiple matrixes to be factored, indicated by different values for work-item id (wi_id).&lt;/p&gt;</content><return>Triangular matrix in Layout_Cell format</return><param>tri Types.Triangle enumeration indicating whether we are looking for the Upper or the Lower factor</param><param>A_in The matrix or matrixes to be factored in Types.Layout_Cell format</param><firstline>Implements Cholesky factorization of A = U**T * U if Triangular.Upper requested or A = L * L**T if Triangualr.Lower is requested</firstline><see>Std.PBblas.Types.Layout_Cell</see><see>Std.PBblas.Types.Triangle</see></Documentation>
+   <Signature name="potrf" ret="DATASET(Layout_Cell)" param="(Triangle tri, DATASET(Layout_Cell) A_in)" hlen="26">DATASET(Layout_Cell) potrf(Triangle tri, DATASET(Layout_Cell) A_in)</Signature><Params>
+    <Param name="tri">
+     <Type type="unsigned1"/>
+    </Param>
+    <Param name="A_in">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Implements Cholesky factorization of A = U**T * U if Triangular.Upper requested or A = L * L**T if Triangualr.Lower is requested. The matrix A must be symmetric positive definite. &lt;pre&gt;&lt;br/&gt;  | A11   A12 |      |  L11   0   |    | L11**T     L21**T |&lt;br/&gt;  | A21   A22 |  ==  |  L21   L22 | *  |  0           L22  |&lt;br/&gt;&lt;br/&gt;                     | L11*L11**T          L11*L21**T      |&lt;br/&gt;                 ==  | L21*L11**T  L21*L21**T + L22*L22**T |&lt;br/&gt; &lt;/pre&gt; So, use Cholesky on the first block to get L11. L21 = A21*L11**T**-1 which can be found by dtrsm on each column block A22' is A22 - L21*L21**T &lt;p&gt; Based upon PB-BLAS: A set of parallel block basic linear algebra subprograms by Choi and Dongarra &lt;/p&gt;&lt;p&gt; This module supports the "Myriad" style interface, allowing many independent problems to be worked on at once. The A matrix can contain multiple matrixes to be factored, indicated by different values for work-item id (wi_id).&lt;/p&gt;</content><return>Triangular matrix in Layout_Cell format</return><param>tri Types.Triangle enumeration indicating whether we are looking for the Upper or the Lower factor</param><param>A_in The matrix or matrixes to be factored in Types.Layout_Cell format</param><firstline>Implements Cholesky factorization of A = U**T * U if Triangular.Upper requested or A = L * L**T if Triangualr.Lower is requested</firstline><see>Std.PBblas.Types.Layout_Cell</see><see>Std.PBblas.Types.Triangle</see></Documentation>
+   </Source>
+</Meta>

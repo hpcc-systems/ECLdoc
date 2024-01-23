@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="ML_Core.AppendID" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/AppendID.ecl" target="AppendID.ecl.xml">
+  <Definition exported="1" fullname="ml_core.appendid" inherittype="local" line="15" name="AppendID" type="macro">
+   <Type type=""/>
+   <Signature name="AppendID" ret="" param="(dIn,idfield,dOut)" hlen="8">AppendID(dIn,idfield,dOut)</Signature><Params>
+    <Param name="dIn">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="idfield">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="dOut">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

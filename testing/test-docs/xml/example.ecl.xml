@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="example" sourcePath="/media/sarthak/Data/ecldoc/testing/test/example.ecl" target="example.ecl.xml">
+  <Definition exported="1" fullname="example" inherittype="local" line="8" name="example" type="module">
+   <Definition exported="1" fullname="example.rec_1" inherittype="local" line="9" name="rec_1" type="record">
+    <Field name="f">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="rec_1" ret="" param="" hlen="5">rec_1</Signature><Field name="g">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="example.rec_2" inherittype="local" line="14" name="rec_2" type="record">
+    <Field name="a">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="b">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="rec_2" ret="" param="" hlen="5">rec_2</Signature><Field name="g">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="example.interface_ex" inherittype="local" line="20" name="interface_ex" type="interface">
+    <Definition exported="1" fullname="example.interface_ex.iface_v3" inherittype="local" line="22" name="iface_v3" type="attribute">
+     <Signature name="iface_v3" ret="STRING25" param="" hlen="17">STRING25 iface_v3</Signature><Type type="string25"/>
+    </Definition>
+    <Signature name="interface_ex" ret="" param="" hlen="12">interface_ex</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="example.func_1" inherittype="local" line="25" name="func_1" type="function">
+    <Type type="real8"/>
+    <Signature name="func_1" ret="" param="(REAL8 x, STRING25 y)" hlen="6">func_1(REAL8 x, STRING25 y)</Signature><Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="y">
+      <Type type="string25"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="example.func_2" inherittype="local" line="35" name="func_2" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="a">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="b">
+       <Type type="real8"/>
+      </Field>
+      <Field name="g">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="func_2" ret="DATASET(rec_2)" param="(DATASET(rec_1) d)" hlen="21">DATASET(rec_2) func_2(DATASET(rec_1) d)</Signature><Params>
+     <Param name="d">
+      <Type type="table">
+       <Type fullname="example.rec_1" name="rec_1" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="example.mod_1" inherittype="local" line="39" name="mod_1" type="module">
+    <Definition exported="1" fullname="example.mod_1.pi_w" inherittype="local" line="40" name="pi_w" type="attribute">
+     <Signature name="pi_w" ret="" param="" hlen="4">pi_w</Signature><Type type="real8"/>
+    </Definition>
+    <Params>
+     <Param name="a">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+    <Signature name="mod_1" ret="" param="(REAL8 a)" hlen="5">mod_1(REAL8 a)</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="example.mod_2" inherittype="local" line="43" name="mod_2" type="module">
+    <Definition exported="1" fullname="example.mod_2.pi_wo" inherittype="local" line="44" name="pi_wo" type="attribute">
+     <Signature name="pi_wo" ret="" param="" hlen="5">pi_wo</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="mod_2" ret="" param="" hlen="5">mod_2</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="example.cpp_1" inherittype="local" line="48" name="cpp_1" type="embed">
+    <Type type="data"/>
+    <Signature name="cpp_1" ret="DATA" param="(REAL8 varcpp)" hlen="10">DATA cpp_1(REAL8 varcpp)</Signature><Params>
+     <Param name="varcpp">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="example.funcmacro_1" inherittype="local" line="52" name="funcmacro_1" type="macro">
+    <Type type="boolean"/>
+    <Signature name="funcmacro_1" ret="" param="(num)" hlen="11">funcmacro_1(num)</Signature><Params>
+     <Param name="num">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="example.macro_1" inherittype="local" line="57" name="macro_1" type="macro">
+    <Type type=""/>
+    <Signature name="macro_1" ret="" param="(num_1, num_2)" hlen="7">macro_1(num_1, num_2)</Signature><Params>
+     <Param name="num_1">
+      <Type type="integer8"/>
+     </Param>
+     <Param name="num_2">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="example.macro_2" inherittype="local" line="61" name="macro_2" type="macro">
+    <Type type=""/>
+    <Signature name="macro_2" ret="" param="" hlen="7">macro_2</Signature><Params/>
+   </Definition>
+   <Documentation>
+    <firstline>Basic Example with :</firstline><content>Basic Example with : records, interface, function, modules, transform, embed, macros and functionmacro</content></Documentation>
+   <Signature name="example" ret="" param="" hlen="7">example</Signature><Parents/>
+  </Definition>
+ <Documentation>
+    <firstline>Basic Example with :</firstline><content>Basic Example with : records, interface, function, modules, transform, embed, macros and functionmacro</content></Documentation>
+   </Source>
+</Meta>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="mod_1" sourcePath="/media/sarthak/Data/ecldoc/testing/import-test/mod_1.ecl" target="mod_1.ecl.xml">
+  <Definition exported="1" fullname="mod_1" inherittype="local" line="1" name="mod_1" type="module">
+   <Definition exported="1" fullname="mod_1.v1" inherittype="local" line="2" name="v1" type="attribute">
+    <Signature name="v1" ret="" param="" hlen="2">v1</Signature><Type type="real8"/>
+   </Definition>
+   <Definition exported="1" fullname="mod_1.m1v4" inherittype="local" line="3" name="m1v4" type="module">
+    <Definition exported="1" fullname="mod_1.m1v4.m1v5" inherittype="local" line="4" name="m1v5" type="attribute">
+     <Signature name="m1v5" ret="" param="" hlen="4">m1v5</Signature><Type type="real8"/>
+    </Definition>
+    <Params>
+     <Param name="a1">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+    <Signature name="m1v4" ret="" param="(REAL8 a1)" hlen="4">m1v4(REAL8 a1)</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="mod_1.m1v6" inherittype="local" line="6" name="m1v6" type="attribute">
+    <Signature name="m1v6" ret="" param="" hlen="4">m1v6</Signature><Type type="real8"/>
+   </Definition>
+   <Signature name="mod_1" ret="" param="" hlen="5">mod_1</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

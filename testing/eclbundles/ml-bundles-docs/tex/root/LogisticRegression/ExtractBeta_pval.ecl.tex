@@ -1,0 +1,66 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+ExtractBeta_pval
+}
+\hypertarget{ecldoc:toc:LogisticRegression.ExtractBeta_pval}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Types |
+LogisticRegression |
+LogisticRegression.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ExtractBeta\_pval}}
+
+\hypertarget{ecldoc:logisticregression.extractbeta_pval}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.pval\_Model\_Coef)} & \textbf{ExtractBeta\_pval} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Core\_Types.Layout\_Model) mod\_ds)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extract the beta values form the model dataset.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{mod\_ds}} ||| TABLE ( Layout\_Model ) --- the model dataset
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 ind\_col , UNSIGNED4 dep\_nom , REAL8 w , REAL8 SE , REAL8 z , REAL8 p\_value \} )} --- the beta values with p-values as Model Coefficient records, zero as the constant term.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

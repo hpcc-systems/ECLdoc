@@ -1,0 +1,557 @@
+IMPORTS
+=======
+
+
+lib_unicodelib <lib_unicodelib/pkg.toc.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : Uni
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode FilterOut(unicode src, unicode filter)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the first string with all characters within the second string
+  | removed.
+  | 
+  | Parameter : src UNICODE --- The string that is being tested.
+  | 
+  | Parameter : filter UNICODE --- The string containing the set of
+  |                    characters to be excluded.
+  | 
+  | Return : UNICODE
+  | 
+  | See : Std.Uni.Filter
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode Filter(unicode src, unicode filter)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the first string with all characters not within the second string
+  | removed.
+  | 
+  | Parameter : src UNICODE --- The string that is being tested.
+  | 
+  | Parameter : filter UNICODE --- The string containing the set of
+  |                    characters to be included.
+  | 
+  | Return : UNICODE
+  | 
+  | See : Std.Uni.FilterOut
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode SubstituteIncluded(unicode src, unicode filter, unicode replace_char)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the source string with the replacement character substituted for
+  | all characters included in the filter string. MORE: Should this be a
+  | general string substitution?
+  | 
+  | Parameter : replace_char UNICODE --- The character to be substituted into
+  |                          the result.
+  | 
+  | Parameter : src UNICODE --- The string that is being tested.
+  | 
+  | Parameter : filter UNICODE --- The string containing the set of
+  |                    characters to be included.
+  | 
+  | Return : UNICODE
+  | 
+  | See : Std.Uni.SubstituteOut
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode SubstituteExcluded(unicode src, unicode filter, unicode replace_char)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the source string with the replacement character substituted for
+  | all characters not included in the filter string. MORE: Should this be a
+  | general string substitution?
+  | 
+  | Parameter : replace_char UNICODE --- The character to be substituted into
+  |                          the result.
+  | 
+  | Parameter : src UNICODE --- The string that is being tested.
+  | 
+  | Parameter : filter UNICODE --- The string containing the set of
+  |                    characters to be included.
+  | 
+  | Return : UNICODE
+  | 
+  | See : Std.Uni.SubstituteIncluded
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED4 Find(unicode src, unicode sought, unsigned4 instance)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the character position of the nth match of the search string with
+  | the first string. If no match is found the attribute returns 0. If an
+  | instance is omitted the position of the first instance is returned.
+  | 
+  | Parameter : instance UNSIGNED4 --- Which match instance are we
+  |                      interested in?
+  | 
+  | Parameter : src UNICODE --- The string that is searched
+  | 
+  | Parameter : sought UNICODE --- The string being sought.
+  | 
+  | Return : UNSIGNED4
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN FindWord(UNICODE src, UNICODE word, BOOLEAN ignore_case=FALSE)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Tests if the search string contains the supplied word as a whole word.
+  | 
+  | Parameter : word UNICODE --- The word to be searched for.
+  | 
+  | Parameter : src UNICODE --- The string that is being tested.
+  | 
+  | Parameter : ignore_case BOOLEAN --- Whether to ignore differences in case
+  |                         between characters.
+  | 
+  | Return : BOOLEAN
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED4 LocaleFind(unicode src, unicode sought, unsigned4 instance, varstring
+  |                                locale_name)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the character position of the nth match of the search string with
+  | the first string. If no match is found the attribute returns 0. If an
+  | instance is omitted the position of the first instance is returned.
+  | 
+  | Parameter : instance UNSIGNED4 --- Which match instance are we
+  |                      interested in?
+  | 
+  | Parameter : src UNICODE --- The string that is searched
+  | 
+  | Parameter : sought UNICODE --- The string being sought.
+  | 
+  | Parameter : locale_name VARSTRING --- The locale to use for the comparison
+  | 
+  | Return : UNSIGNED4
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED4 LocaleFindAtStrength(unicode src, unicode tofind, unsigned4 instance, varstring
+  |                                          locale_name, integer1 strength)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the character position of the nth match of the search string with
+  | the first string. If no match is found the attribute returns 0. If an
+  | instance is omitted the position of the first instance is returned.
+  | 
+  | Parameter : instance UNSIGNED4 --- Which match instance are we
+  |                      interested in?
+  | 
+  | Parameter : strength INTEGER1 --- The strength of the comparison 1
+  |                      ignores accents and case, differentiating only
+  |                      between letters 2 ignores case but differentiates
+  |                      between accents. 3 differentiates between accents
+  |                      and case but ignores e.g. differences between
+  |                      Hiragana and Katakana 4 differentiates between
+  |                      accents and case and e.g. Hiragana/Katakana, but
+  |                      ignores e.g. Hebrew cantellation marks 5
+  |                      differentiates between all strings whose
+  |                      canonically decomposed forms (NFDNormalization
+  |                      Form D) are non-identical
+  | 
+  | Parameter : src UNICODE --- The string that is searched
+  | 
+  | Parameter : sought  --- The string being sought.
+  | 
+  | Parameter : locale_name VARSTRING --- The locale to use for the comparison
+  | 
+  | Parameter : tofind UNICODE --- No Doc
+  | 
+  | Return : UNSIGNED4
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode Extract(unicode src, unsigned4 instance)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the nth element from a comma separated string.
+  | 
+  | Parameter : instance UNSIGNED4 --- Which item to select from the list.
+  | 
+  | Parameter : src UNICODE --- The string containing the comma
+  |                 separated list.
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode ToLowerCase(unicode src)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the argument string with all upper case characters converted to
+  | lower case.
+  | 
+  | Parameter : src UNICODE --- The string that is being converted.
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode ToUpperCase(unicode src)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Return the argument string with all lower case characters converted to
+  | upper case.
+  | 
+  | Parameter : src UNICODE --- The string that is being converted.
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode ToTitleCase(unicode src)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the upper case variant of the string using the rules for a
+  | particular locale.
+  | 
+  | Parameter : src UNICODE --- The string that is being converted.
+  | 
+  | Parameter : locale_name  --- The locale to use for the comparison
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode LocaleToLowerCase(unicode src, varstring locale_name)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the lower case variant of the string using the rules for a
+  | particular locale.
+  | 
+  | Parameter : src UNICODE --- The string that is being converted.
+  | 
+  | Parameter : locale_name VARSTRING --- The locale to use for the comparison
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode LocaleToUpperCase(unicode src, varstring locale_name)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the upper case variant of the string using the rules for a
+  | particular locale.
+  | 
+  | Parameter : src UNICODE --- The string that is being converted.
+  | 
+  | Parameter : locale_name VARSTRING --- The locale to use for the comparison
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode LocaleToTitleCase(unicode src, varstring locale_name)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the upper case variant of the string using the rules for a
+  | particular locale.
+  | 
+  | Parameter : src UNICODE --- The string that is being converted.
+  | 
+  | Parameter : locale_name VARSTRING --- The locale to use for the comparison
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : integer4 CompareIgnoreCase(unicode src1, unicode src2)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Compares the two strings case insensitively. Equivalent to comparing at
+  | strength 2.
+  | 
+  | Parameter : src2 UNICODE --- The second string to be compared.
+  | 
+  | Parameter : src1 UNICODE --- The first string to be compared.
+  | 
+  | Return : INTEGER4
+  | 
+  | See : Std.Uni.CompareAtStrength
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : integer4 CompareAtStrength(unicode src1, unicode src2, integer1 strength)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Compares the two strings case insensitively. Equivalent to comparing at
+  | strength 2.
+  | 
+  | Parameter : src2 UNICODE --- The second string to be compared.
+  | 
+  | Parameter : strength INTEGER1 --- The strength of the comparison 1
+  |                      ignores accents and case, differentiating only
+  |                      between letters 2 ignores case but differentiates
+  |                      between accents. 3 differentiates between accents
+  |                      and case but ignores e.g. differences between
+  |                      Hiragana and Katakana 4 differentiates between
+  |                      accents and case and e.g. Hiragana/Katakana, but
+  |                      ignores e.g. Hebrew cantellation marks 5
+  |                      differentiates between all strings whose
+  |                      canonically decomposed forms (NFDNormalization
+  |                      Form D) are non-identical
+  | 
+  | Parameter : src1 UNICODE --- The first string to be compared.
+  | 
+  | Return : INTEGER4
+  | 
+  | See : Std.Uni.CompareAtStrength
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : integer4 LocaleCompareIgnoreCase(unicode src1, unicode src2, varstring locale_name)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Compares the two strings case insensitively. Equivalent to comparing at
+  | strength 2.
+  | 
+  | Parameter : src2 UNICODE --- The second string to be compared.
+  | 
+  | Parameter : src1 UNICODE --- The first string to be compared.
+  | 
+  | Parameter : locale_name VARSTRING --- The locale to use for the comparison
+  | 
+  | Return : INTEGER4
+  | 
+  | See : Std.Uni.CompareAtStrength
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : integer4 LocaleCompareAtStrength(unicode src1, unicode src2, varstring locale_name,
+  |                                            integer1 strength)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Compares the two strings case insensitively. Equivalent to comparing at
+  | strength 2.
+  | 
+  | Parameter : src2 UNICODE --- The second string to be compared.
+  | 
+  | Parameter : strength INTEGER1 --- The strength of the comparison 1
+  |                      ignores accents and case, differentiating only
+  |                      between letters 2 ignores case but differentiates
+  |                      between accents. 3 differentiates between accents
+  |                      and case but ignores e.g. differences between
+  |                      Hiragana and Katakana 4 differentiates between
+  |                      accents and case and e.g. Hiragana/Katakana, but
+  |                      ignores e.g. Hebrew cantellation marks 5
+  |                      differentiates between all strings whose
+  |                      canonically decomposed forms (NFDNormalization
+  |                      Form D) are non-identical
+  | 
+  | Parameter : src1 UNICODE --- The first string to be compared.
+  | 
+  | Parameter : locale_name VARSTRING --- The locale to use for the comparison
+  | 
+  | Return : INTEGER4
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode Reverse(unicode src)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the argument string with all characters in reverse order. Note the
+  | argument is not TRIMMED before it is reversed.
+  | 
+  | Parameter : src UNICODE --- The string that is being reversed.
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode FindReplace(unicode src, unicode sought, unicode replacement)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the source string with the replacement string substituted for all
+  | instances of the search string.
+  | 
+  | Parameter : src UNICODE --- The string that is being transformed.
+  | 
+  | Parameter : replacement UNICODE --- The string to be substituted into the
+  |                         result.
+  | 
+  | Parameter : sought UNICODE --- The string to be replaced.
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode LocaleFindReplace(unicode src, unicode sought, unicode replacement, varstring
+  |                                     locale_name)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the source string with the replacement string substituted for all
+  | instances of the search string.
+  | 
+  | Parameter : src UNICODE --- The string that is being transformed.
+  | 
+  | Parameter : replacement UNICODE --- The string to be substituted into the
+  |                         result.
+  | 
+  | Parameter : sought UNICODE --- The string to be replaced.
+  | 
+  | Parameter : locale_name VARSTRING --- The locale to use for the comparison
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode LocaleFindAtStrengthReplace(unicode src, unicode sought, unicode replacement,
+  |                                               varstring locale_name, integer1 strength)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the source string with the replacement string substituted for all
+  | instances of the search string.
+  | 
+  | Parameter : strength INTEGER1 --- The strength of the comparison
+  | 
+  | Parameter : src UNICODE --- The string that is being transformed.
+  | 
+  | Parameter : replacement UNICODE --- The string to be substituted into the
+  |                         result.
+  | 
+  | Parameter : sought UNICODE --- The string to be replaced.
+  | 
+  | Parameter : locale_name VARSTRING --- The locale to use for the comparison
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode CleanAccents(unicode src)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the source string with all accented characters replaced with
+  | unaccented.
+  | 
+  | Parameter : src UNICODE --- The string that is being transformed.
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode CleanSpaces(unicode src)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the source string with all instances of multiple adjacent space
+  | characters (2 or more spaces together) reduced to a single space character.
+  | Leading and trailing spaces are removed, and tab characters are converted
+  | to spaces.
+  | 
+  | Parameter : src UNICODE --- The string to be cleaned.
+  | 
+  | Return : UNICODE
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : boolean WildMatch(unicode src, unicode _pattern, boolean _noCase)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Tests if the search string matches the pattern. The pattern can contain
+  | wildcards '?' (single character) and '*' (multiple character).
+  | 
+  | Parameter : pattern  --- The pattern to match against.
+  | 
+  | Parameter : src UNICODE --- The string that is being tested.
+  | 
+  | Parameter : ignore_case  --- Whether to ignore differences in case between
+  |                         characters
+  | 
+  | Parameter : _nocase BOOLEAN --- No Doc
+  | 
+  | Parameter : _pattern UNICODE --- No Doc
+  | 
+  | Return : BOOLEAN
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN Contains(unicode src, unicode _pattern, boolean _noCase)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Tests if the search string contains each of the characters in the pattern.
+  | If the pattern contains duplicate characters those characters will match
+  | once for each occurence in the pattern.
+  | 
+  | Parameter : pattern  --- The pattern to match against.
+  | 
+  | Parameter : src UNICODE --- The string that is being tested.
+  | 
+  | Parameter : ignore_case  --- Whether to ignore differences in case between
+  |                         characters
+  | 
+  | Parameter : _nocase BOOLEAN --- No Doc
+  | 
+  | Parameter : _pattern UNICODE --- No Doc
+  | 
+  | Return : BOOLEAN
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED4 EditDistance(unicode _left, unicode _right, varstring localename = '')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the minimum edit distance between the two strings. An insert change
+  | or delete counts as a single edit. The two strings are trimmed before
+  | comparing.
+  | 
+  | Parameter : _left UNICODE --- The first string to be compared.
+  | 
+  | Parameter : localname  --- The locale to use for the comparison.
+  |                       Defaults to ''.
+  | 
+  | Parameter : _right UNICODE --- The second string to be compared.
+  | 
+  | Parameter : localename VARSTRING --- No Doc
+  | 
+  | Return : UNSIGNED4 The minimum edit distance between the
+  |          two strings.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN EditDistanceWithinRadius(unicode _left, unicode _right, unsigned4 radius,
+  |                                            varstring localename = '')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns true if the minimum edit distance between the two strings is with a
+  | specific range. The two strings are trimmed before comparing.
+  | 
+  | Parameter : _left UNICODE --- The first string to be compared.
+  | 
+  | Parameter : localname  --- The locale to use for the comparison.
+  |                       Defaults to ''.
+  | 
+  | Parameter : _right UNICODE --- The second string to be compared.
+  | 
+  | Parameter : radius UNSIGNED4 --- The maximum edit distance that is
+  |                    accepable.
+  | 
+  | Parameter : localename VARSTRING --- No Doc
+  | 
+  | Return : BOOLEAN Whether or not the two strings are within
+  |          the given specified edit distance.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unsigned4 WordCount(unicode text, varstring localename = '')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the number of words in the string. Word boundaries are marked by
+  | the unicode break semantics.
+  | 
+  | Parameter : localname  --- The locale to use for the break semantics.
+  |                       Defaults to ''.
+  | 
+  | Parameter : text UNICODE --- The string to be broken into words.
+  | 
+  | Parameter : localename VARSTRING --- No Doc
+  | 
+  | Return : UNSIGNED4 The number of words in the string.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : unicode GetNthWord(unicode text, unsigned4 n, varstring localename = '')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the n-th word from the string. Word boundaries are marked by the
+  | unicode break semantics.
+  | 
+  | Parameter : localname  --- The locale to use for the break semantics.
+  |                       Defaults to ''.
+  | 
+  | Parameter : n UNSIGNED4 --- Which word should be returned from
+  |               the function.
+  | 
+  | Parameter : text UNICODE --- The string to be broken into words.
+  | 
+  | Parameter : localename VARSTRING --- No Doc
+  | 
+  | Return : UNICODE The number of words in the string.
+  | 

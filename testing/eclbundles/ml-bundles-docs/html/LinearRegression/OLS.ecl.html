@@ -1,0 +1,5243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <title>LinearRegression.OLS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar topbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#menu-toggle" id="menu-toggle" class="navbar-brand glyphicon glyphicon-menu-hamburger ham"></a>
+            </div>
+            <div class="navbar-header" style="margin-left: 20px;">
+                <span class="navbar-brand">LinearRegression.OLS</span>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#ecldoc-section-import" class="topbar">Imports</a></li>
+                    <li><a href="#ecldoc-section-desc" class="topbar">Contents</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="pkg.toc.html">
+                        Up
+                    </a>
+                </li>
+                <li>
+                    <a href="bundle.ecl.html">bundle.ecl</a>
+                </li>
+                <li>
+                    <a href="OLS.ecl.html">OLS.ecl</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <section id="ecldoc-section-import">
+                    <h3 class="page-header">IMPORTS</h3>
+                    <ul class="pagination"><li><a href="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/html/ML_Core/pkg.toc.html">
+                                ML_Core
+                            </a></li><li><a href="../ML_Core/Types.ecl.html">
+                                ML_Core.Types
+                            </a></li><li><a href="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/html/PBblas/pkg.toc.html">
+                                PBblas
+                            </a></li><li><a href="../PBblas/Types.ecl.html">
+                                PBblas.Types
+                            </a></li><li><a href="../PBblas/Converted.ecl.html">
+                                PBblas.Converted
+                            </a></li><li><a href="../PBblas/MatUtils.ecl.html">
+                                PBblas.MatUtils
+                            </a></li><li><a href="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/html/ML_Core/Math/pkg.toc.html">
+                                ML_Core.Math
+                            </a></li></ul>
+                </section>
+                <section id="ecldoc-section-desc">
+                    <h3 class="page-header">CONTENTS</h3>
+                    <div class="panel-group desc-panel-group"><div class="panel panel-info desc-panel" id="dlinearregression-ols">
+                            <a href=".desc-linearregression-ols" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            MODULE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        OLS
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">OLS</td>
+                                    <td class="param">(DATASET(NumericField) X=empty_data, DATASET(NumericField) Y=empty_data)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Ordinary Least Squares (OLS) Linear Regression aka Ordinary Linear Regression Regression learns a function that maps a set of input data (independents) to one or more output variables (dependents)
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse in desc-linearregression-ols">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Ordinary Least Squares (OLS) Linear Regression aka Ordinary Linear Regression Regression learns a function that maps a set of input data (independents) to one or more output variables (dependents). The resulting learned function is known as the model. That model can then be used repetitively to predict (i.e. estimate) the output value(s) based on new input data. Two major use cases are supported: 1) Learn and return a model 2) Use an existing (e.g. persisted) model to predict new values for Y Of course, both can be done in a single run. Alternatively, the model can be persisted and used indefinitely for prediction of Y values, as long as the record format has not changed, and the original training data remains representative of the population. OLS supports any number of independent variables (Multiple Regression) and multiple dependent variables (Multivariate Regression). In this way, multiple variables' values can be predicted from the same input (i.e. independent) data. Training data is presented as parameters to this module. When using a previously persisted model (use case 2 above), these parameters should be omitted. This module provides a rich set of analytics to assess the usefulness of the resulting linear regression model, and to determine the best subset of independent variables to include in the model. These include: For the whole model: - Analysis of Variance (ANOVA) - R-squared - Adjusted R-squared - F-Test - Akaike Information Criterion (AIC) For each coefficient: - Standard Error (SE) - T-statistic - P-value - Confidence Interval
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>Y</b></td>
+				<td><b>TABLE ( linearregression.numericfield )</b> -- The dependent variable training data in DATASET(NumericField) format. Each observation (e.g. record) is identified by 'id', and each feature is identified by field number. Omit this parameter when predicting from a persisted model.</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>X</b></td>
+				<td><b>TABLE ( linearregression.numericfield )</b> -- The independent variable training data in DATASET(NumericField) format. Each observation (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number'). Omit this parameter when predicting from a persisted model.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-1 doc-type">Parents</div>
+<div class="col-md-11" style="padding-left: 0px;">
+<ul class="pagination" style="margin-top: 0px;"><li>
+		<a href="../ML_Core/Interfaces/IRegression.ecl.html">
+			ML_Core.Interfaces.IRegression
+		</a>
+	</li></ul>
+</div>
+</div>
+
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    <div class="panel panel-info desc-panel" id="dlinearregression-ols-getmodel">
+                            <a href=".desc-linearregression-ols-getmodel" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        GetModel
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(Layout_Model)</td>
+                                    <td class="name">GetModel</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        GetModel Returns the learned model that maps X's to Y's
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-getmodel">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	GetModel Returns the learned model that maps X's to Y's. In the case of OLS, the model represents a set of Betas which are the coefficients of the linear model: Beta0 * 1 + Beta1 * Field1 + Beta2 * Field2 ... The ID of each model record specifies to which Y variable the coefficient applies. The Field Number ('number') indicates to which field of X the beta is to be applied. Field number 1 provides the intercept portion of the linear model and is always multiplied by 1. Note that if multiple work-items are provided within X and Y, there will be multiple models returned. The models can be separated by their work item id (i.e. 'wi'). A single model can be extracted from a myriad model by using e.g., model(wi=myWI_id). GetModel should not be called when predicting using a previously persisted model (i.e. when training data was not passed to the module.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value } )</b></td>
+				<td>Model in DATASET(Layout_Model) format</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                            
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">See</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td>ML_core/Types.Layout_Model</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-betas">
+                            <a href=".desc-linearregression-ols-betas" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Betas
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(NumericField)</td>
+                                    <td class="name">Betas</td>
+                                    <td class="param">(DATASET(Layout_Model) model=GetModel)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Return raw Beta values as numeric fields Extracts Beta values from the model
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-betas">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Return raw Beta values as numeric fields Extracts Beta values from the model. Can be used during training and prediction phases. For use during training phase, the 'model' parameter can be omitted. GetModel will be called to retrieve the model based on the training data. For use during prediction phase, a previously persisted model should be provided. The 'number' field of the returned NumericField records specifies to which Y the coefficient applies. The 'id' field of the returned record indicates the position of the Beta value. ID = 1 provides the Beta for the constant term (i.e. the Y intercept) while subsequent values reflect the Beta for each correspondingly numbered X feature. Feature 1 corresponds to Beta with 'id' = 2 and so on. If 'model' contains multiple work-items, Separate sets of Betas will be returned for each of the 'myriad' models (distinguished by 'wi').
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>model</b></td>
+				<td><b>TABLE ( linearregression.layout_model )</b> -- Optional parameter provides a model that was previously retrieved using GetModel. If omitted, GetModel will be used as the model.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value } )</b></td>
+				<td>DATASET(NumericField) containing the Beta values.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-predict">
+                            <a href=".desc-linearregression-ols-predict" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Predict
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(NumericField)</td>
+                                    <td class="name">Predict</td>
+                                    <td class="param">(DATASET(NumericField) newX, DATASET(Layout_Model) model=GetModel)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Predict the dependent variable values (Y) for any set of independent variables (X)
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-predict">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Predict the dependent variable values (Y) for any set of independent variables (X). Returns a predicted Y values for each observation (i.e. record) of X. This supports the 'myriad' style interface in that multiple independent work items may be present in 'newX', and multiple independent models may be provided in 'model'. The resulting predicted values will also be separable by work item (i.e. wi).
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>model</b></td>
+				<td><b>TABLE ( linearregression.layout_model )</b> -- Optional. A model that was previously returned from GetModel (above). Note that a model from a previous run will only be valid if the field numbers in X are the same as when the model was learned. If this parameter is omitted, the current model will be used.</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>newX</b></td>
+				<td><b>TABLE ( linearregression.numericfield )</b> -- The set of observations of independent variables in DATASET(NumericField) format.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value } )</b></td>
+				<td>An estimation of the corresponding Y value for each observation of newX. Returned in DATASET(NumericField) format with field number (i.e. 'number') indicating the dependent variable that is predicted.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-makersq">
+                            <a href=".desc-linearregression-ols-makersq" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            TRANSFORM
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        makeRSQ
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">R2Rec</td>
+                                    <td class="name">makeRSQ</td>
+                                    <td class="param">(CoCoRec coco)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-makersq">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>coco</b></td>
+				<td><b>ROW ( linearregression.ols.cocorec )</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>linearregression.ols.r2rec</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-rsquared">
+                            <a href=".desc-linearregression-ols-rsquared" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        RSquared
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(R2Rec)</td>
+                                    <td class="name">RSquared</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        RSquared Calculate the R-Squared Metric used to assess the fit of the regression line to the training data
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-rsquared">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	RSquared Calculate the R-Squared Metric used to assess the fit of the regression line to the training data. Since the regression has chosen the best (i.e. least squared error) line matching the data, this can be thought of as a measurement of the linearity of the training data. R Squared generally varies between 0 and 1, with 1 indicating an exact linear fit, and 0 indicating that a linear fit will have no predictive power. Negative values are possible under certain conditions, and indicate that the mean(Y) will be more predictive than any linear fit. Moderate values of R squared (e.g. .5) may indicate that the relationship of X -&gt; Y is non-linear, or that the measurement error is high relative to the linear correlation (e.g. many outliers). In the former case, increasing the dimensionality of X, such as by using polynomial variants of the features, may yield a better fit. R squared always increases when additional independent variables are added, so it should not be used to determine the optimal set of X variables to include. For that purpose, use Adjusted R Squared (below) which penalizes larger numbers of variables. Note that the result of this call is only meaningful during training phase (use case 1 above) as it is an analysis based on the training data which is not provided during a prediction-only phase.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8 RSquared } )</b></td>
+				<td>DATASET(R2Rec) with one record per dependent variable, per work-item. The number field indicates the dependent variable and coresponds to the number field of the dependent (Y) variable to which it applies.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-anovarec">
+                            <a href=".desc-linearregression-ols-anovarec" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            RECORD
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        AnovaRec
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">AnovaRec</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-anovarec">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Fields</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>number</b></td>
+				<td><b>UNSIGNED4</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>error_ss</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>total_df</b></td>
+				<td><b>UNSIGNED8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>total_ms</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>error_df</b></td>
+				<td><b>UNSIGNED8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>error_ms</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>model_ms</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>model_ss</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>wi</b></td>
+				<td><b>UNSIGNED2</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>model_f</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>total_ss</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>model_df</b></td>
+				<td><b>UNSIGNED8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-calcanova">
+                            <a href=".desc-linearregression-ols-calcanova" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            TRANSFORM
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        calcAnova
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">AnovaRec</td>
+                                    <td class="name">calcAnova</td>
+                                    <td class="param">(tmpRec le)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-calcanova">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>le</b></td>
+				<td><b>ROW ( linearregression.ols.tmprec )</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>linearregression.ols.anovarec</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-anova">
+                            <a href=".desc-linearregression-ols-anova" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Anova
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Anova</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        ANOVA (Analysis of Variance) report Analyzes the sources of variance
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-anova">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	ANOVA (Analysis of Variance) report Analyzes the sources of variance. Basic ANOVA equality: Model + Error = Total Determines how much of the variance of Y is explained by the regression model, versus how much is due to the error term (i.e. unexplained variance). This attribute is only meaningful during the training phase. Provides one record per work-item. Each record provides the following statistics: - Total_SS -- Total Sum of Squares (SS) variance of the dependent data - Model_SS -- The SS variance represented within the model - Error_SS -- The SS variance not reflected by the model (i.e. Total_SS - Error_SS) - Total_DF -- The total degrees of freedom within the dependent data - Model_DF -- Degrees of freedom of the model - Error_DF -- Degrees of freedom of the error component - Total_MS -- The Mean Square (MS) variance of the dependent data - Model_MS -- The Mean Square (MS) variance represented within the model - Error_MS -- The MS variance not reflected by the model - Model_F -- The F-Test statistic: Model_MS / Error_MS
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8 Total_SS , REAL8 Model_SS , REAL8 Error_SS , UNSIGNED8 Total_DF , UNSIGNED8 Model_DF , UNSIGNED8 Error_DF , REAL8 Total_MS , REAL8 Model_MS , REAL8 Error_MS , REAL8 Model_F } )</b></td>
+				<td>DATASET(AnovaRec), one per work-item per dependent (Y) variable The number field indicates the dependent variable to which the analysis applies.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-se">
+                            <a href=".desc-linearregression-ols-se" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        SE
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(NumericField)</td>
+                                    <td class="name">SE</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Standard Error of the Regression Coefficients Describes the variability of the regression error for each coefficient
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-se">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Standard Error of the Regression Coefficients Describes the variability of the regression error for each coefficient. Only meaningful during the training phase.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value } )</b></td>
+				<td>DATASET(NumericField), one record per Beta coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The 'number' field indicates the dependent variable to which the coefficient applies.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-tstat">
+                            <a href=".desc-linearregression-ols-tstat" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        TStat
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(NumericField)</td>
+                                    <td class="name">TStat</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        T-Statistic The T-statistic identifies the significance of the value of each regression coefficient
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-tstat">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	T-Statistic The T-statistic identifies the significance of the value of each regression coefficient. Its calculation is simply the value of the coefficient divided by the Standard Error of the coefficient. A larger absolute value of the T-statistic indicates that the coefficient is more significant. Only meaningful during the training phase.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value } )</b></td>
+				<td>DATSET(NumericField), one record per Beta coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The number field indicates the dependent variable to which the coefficient applies.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-adjrsquared">
+                            <a href=".desc-linearregression-ols-adjrsquared" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        AdjRSquared
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(R2Rec)</td>
+                                    <td class="name">AdjRSquared</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Adjusted R2 Calculate Adjusted R Squared which is a scaled version of R Squared that does not arbitrarily increase with the number of features
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-adjrsquared">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Adjusted R2 Calculate Adjusted R Squared which is a scaled version of R Squared that does not arbitrarily increase with the number of features. Adjusted R2, rather than R2 should always be used when trying to determine the best set of features to include in a model. When adding features, R2 will always increase, whether or not it improves the predictive power of the model. Adjusted R2, however, will only increase with the predictive power of the model.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8 RSquared } )</b></td>
+				<td>DATASET(R2Rec), one record per dependent variable per work-item. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-aicrec">
+                            <a href=".desc-linearregression-ols-aicrec" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            RECORD
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        AICRec
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">AICRec</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-aicrec">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Fields</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>number</b></td>
+				<td><b>UNSIGNED4</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>aic</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>wi</b></td>
+				<td><b>UNSIGNED2</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-aic">
+                            <a href=".desc-linearregression-ols-aic" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        AIC
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(AICRec)</td>
+                                    <td class="name">AIC</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Akaike Information Criterion (AIC) Information theory based criterion for assessing Goodness of Fit (GOF)
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-aic">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Akaike Information Criterion (AIC) Information theory based criterion for assessing Goodness of Fit (GOF). Lower values mean better fit.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8 AIC } )</b></td>
+				<td>DATASET(AICRec), one record per dependent variable per work-item. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-rangevec">
+                            <a href=".desc-linearregression-ols-rangevec" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            RECORD
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        RangeVec
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">RangeVec</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-rangevec">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Fields</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>p</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>rangenumber</b></td>
+				<td><b>UNSIGNED8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>rangehigh</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>rangelow</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase">
+                            <a href=".desc-linearregression-ols-distributionbase" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            MODULE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        DistributionBase
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">DistributionBase</td>
+                                    <td class="param">(t_Count Nranges = 10000)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>nranges</b></td>
+				<td><b>UNSIGNED8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    <div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-low">
+                            <a href=".desc-linearregression-ols-distributionbase-low" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Low
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Low</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-low">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>INTEGER8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-high">
+                            <a href=".desc-linearregression-ols-distributionbase-high" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        High
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">High</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-high">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>INTEGER8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-density">
+                            <a href=".desc-linearregression-ols-distributionbase-density" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Density
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">Density</td>
+                                    <td class="param">(t_FieldReal t)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-density">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>t</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-rangewidth">
+                            <a href=".desc-linearregression-ols-distributionbase-rangewidth" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        RangeWidth
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">RangeWidth</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-rangewidth">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-densityv">
+                            <a href=".desc-linearregression-ols-distributionbase-densityv" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        DensityV
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(RangeVec)</td>
+                                    <td class="name">DensityV</td>
+                                    <td class="param">()</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-densityv">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P } )</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-cumulativev">
+                            <a href=".desc-linearregression-ols-distributionbase-cumulativev" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        CumulativeV
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">CumulativeV</td>
+                                    <td class="param">()</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-cumulativev">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P } )</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-cumulative">
+                            <a href=".desc-linearregression-ols-distributionbase-cumulative" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Cumulative
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">Cumulative</td>
+                                    <td class="param">(t_FieldReal t)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-cumulative">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>t</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-ntile">
+                            <a href=".desc-linearregression-ols-distributionbase-ntile" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        NTile
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">NTile</td>
+                                    <td class="param">(t_FieldReal Pc)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-ntile">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>pc</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-invdensity">
+                            <a href=".desc-linearregression-ols-distributionbase-invdensity" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        InvDensity
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">InvDensity</td>
+                                    <td class="param">(t_FieldReal delta)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-invdensity">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>delta</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-discrete">
+                            <a href=".desc-linearregression-ols-distributionbase-discrete" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Discrete
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Discrete</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-discrete">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>BOOLEAN</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-tdistribution">
+                            <a href=".desc-linearregression-ols-tdistribution" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            MODULE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        TDistribution
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">TDistribution</td>
+                                    <td class="param">(t_Discrete v_in,t_Count NRanges = 10000)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-tdistribution">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>nranges</b></td>
+				<td><b>UNSIGNED8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>v_in</b></td>
+				<td><b>INTEGER4</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-1 doc-type">Parents</div>
+<div class="col-md-11" style="padding-left: 0px;">
+<ul class="pagination" style="margin-top: 0px;"><li>
+		<a href="OLS.ecl.html">
+			linearregression.ols.distributionbase
+		</a>
+	</li></ul>
+</div>
+</div>
+
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    <div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-densityv">
+                            <a href=".desc-linearregression-ols-distributionbase-densityv" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        DensityV
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(RangeVec)</td>
+                                    <td class="name">DensityV</td>
+                                    <td class="param">()</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-densityv">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P } )</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-ntile">
+                            <a href=".desc-linearregression-ols-distributionbase-ntile" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        NTile
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">NTile</td>
+                                    <td class="param">(t_FieldReal Pc)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-ntile">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>pc</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-discrete">
+                            <a href=".desc-linearregression-ols-distributionbase-discrete" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Discrete
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> INHERITED</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Discrete</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-discrete">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>BOOLEAN</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-tdistribution-invdensity">
+                            <a href=".desc-linearregression-ols-tdistribution-invdensity" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        InvDensity
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">InvDensity</td>
+                                    <td class="param">(t_FieldReal delta)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-tdistribution-invdensity">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>delta</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-tdistribution-high">
+                            <a href=".desc-linearregression-ols-tdistribution-high" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        High
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">High</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-tdistribution-high">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>INTEGER8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-tdistribution-low">
+                            <a href=".desc-linearregression-ols-tdistribution-low" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Low
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> INHERITED</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Low</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-tdistribution-low">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>INTEGER8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-tdistribution-rangewidth">
+                            <a href=".desc-linearregression-ols-tdistribution-rangewidth" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        RangeWidth
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">RangeWidth</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-tdistribution-rangewidth">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-tdistribution-density">
+                            <a href=".desc-linearregression-ols-tdistribution-density" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Density
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">Density</td>
+                                    <td class="param">(t_FieldReal t)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-tdistribution-density">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>t</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-tdistribution-cumulativev">
+                            <a href=".desc-linearregression-ols-tdistribution-cumulativev" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        CumulativeV
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">CumulativeV</td>
+                                    <td class="param">()</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-tdistribution-cumulativev">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P } )</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-tdistribution-cumulative">
+                            <a href=".desc-linearregression-ols-tdistribution-cumulative" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Cumulative
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">Cumulative</td>
+                                    <td class="param">(t_FieldReal t)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-tdistribution-cumulative">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>t</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-fdistribution">
+                            <a href=".desc-linearregression-ols-fdistribution" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            MODULE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        FDistribution
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">FDistribution</td>
+                                    <td class="param">(t_Discrete d1_in, t_Discrete d2_in, t_Count NRanges = 10000)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-fdistribution">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>d1_in</b></td>
+				<td><b>INTEGER4</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>d2_in</b></td>
+				<td><b>INTEGER4</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>nranges</b></td>
+				<td><b>UNSIGNED8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-1 doc-type">Parents</div>
+<div class="col-md-11" style="padding-left: 0px;">
+<ul class="pagination" style="margin-top: 0px;"><li>
+		<a href="OLS.ecl.html">
+			linearregression.ols.distributionbase
+		</a>
+	</li></ul>
+</div>
+</div>
+
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    <div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-densityv">
+                            <a href=".desc-linearregression-ols-distributionbase-densityv" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        DensityV
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(RangeVec)</td>
+                                    <td class="name">DensityV</td>
+                                    <td class="param">()</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-densityv">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P } )</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-cumulativev">
+                            <a href=".desc-linearregression-ols-distributionbase-cumulativev" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        CumulativeV
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">CumulativeV</td>
+                                    <td class="param">()</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-cumulativev">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P } )</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-cumulative">
+                            <a href=".desc-linearregression-ols-distributionbase-cumulative" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Cumulative
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">Cumulative</td>
+                                    <td class="param">(t_FieldReal t)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-cumulative">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>t</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-ntile">
+                            <a href=".desc-linearregression-ols-distributionbase-ntile" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        NTile
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">NTile</td>
+                                    <td class="param">(t_FieldReal Pc)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-ntile">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>pc</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-invdensity">
+                            <a href=".desc-linearregression-ols-distributionbase-invdensity" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        InvDensity
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> INHERITED</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">InvDensity</td>
+                                    <td class="param">(t_FieldReal delta)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-invdensity">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>delta</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-discrete">
+                            <a href=".desc-linearregression-ols-distributionbase-discrete" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Discrete
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> INHERITED</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Discrete</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-discrete">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>BOOLEAN</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-fdistribution-low">
+                            <a href=".desc-linearregression-ols-fdistribution-low" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Low
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> INHERITED</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Low</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-fdistribution-low">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>INTEGER8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-fdistribution-high">
+                            <a href=".desc-linearregression-ols-fdistribution-high" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        High
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">High</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-fdistribution-high">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>INTEGER8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-fdistribution-rangewidth">
+                            <a href=".desc-linearregression-ols-fdistribution-rangewidth" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        RangeWidth
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">RangeWidth</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-fdistribution-rangewidth">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-fdistribution-density">
+                            <a href=".desc-linearregression-ols-fdistribution-density" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Density
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">Density</td>
+                                    <td class="param">(t_FieldReal t)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-fdistribution-density">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>t</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-normaldistribution">
+                            <a href=".desc-linearregression-ols-normaldistribution" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            MODULE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        NormalDistribution
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">NormalDistribution</td>
+                                    <td class="param">(t_Count NRanges)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-normaldistribution">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>nranges</b></td>
+				<td><b>UNSIGNED8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-1 doc-type">Parents</div>
+<div class="col-md-11" style="padding-left: 0px;">
+<ul class="pagination" style="margin-top: 0px;"><li>
+		<a href="OLS.ecl.html">
+			linearregression.ols.distributionbase
+		</a>
+	</li></ul>
+</div>
+</div>
+
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    <div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-low">
+                            <a href=".desc-linearregression-ols-distributionbase-low" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Low
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> INHERITED</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Low</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-low">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>INTEGER8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-high">
+                            <a href=".desc-linearregression-ols-distributionbase-high" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        High
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> INHERITED</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">High</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-high">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>INTEGER8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-rangewidth">
+                            <a href=".desc-linearregression-ols-distributionbase-rangewidth" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        RangeWidth
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">RangeWidth</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-rangewidth">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-densityv">
+                            <a href=".desc-linearregression-ols-distributionbase-densityv" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        DensityV
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(RangeVec)</td>
+                                    <td class="name">DensityV</td>
+                                    <td class="param">()</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-densityv">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P } )</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-cumulativev">
+                            <a href=".desc-linearregression-ols-distributionbase-cumulativev" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        CumulativeV
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">CumulativeV</td>
+                                    <td class="param">()</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-cumulativev">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P } )</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-cumulative">
+                            <a href=".desc-linearregression-ols-distributionbase-cumulative" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Cumulative
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">Cumulative</td>
+                                    <td class="param">(t_FieldReal t)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-cumulative">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>t</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-ntile">
+                            <a href=".desc-linearregression-ols-distributionbase-ntile" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        NTile
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">NTile</td>
+                                    <td class="param">(t_FieldReal Pc)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-ntile">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>pc</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-invdensity">
+                            <a href=".desc-linearregression-ols-distributionbase-invdensity" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        InvDensity
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> INHERITED</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">InvDensity</td>
+                                    <td class="param">(t_FieldReal delta)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-invdensity">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>delta</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-distributionbase-discrete">
+                            <a href=".desc-linearregression-ols-distributionbase-discrete" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Discrete
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> INHERITED</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Discrete</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-distributionbase-discrete">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>BOOLEAN</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-normaldistribution-density">
+                            <a href=".desc-linearregression-ols-normaldistribution-density" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Density
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                        <span class="inherittype"> OVERRIDE</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">t_FieldReal</td>
+                                    <td class="name">Density</td>
+                                    <td class="param">(t_FieldReal t)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-normaldistribution-density">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>t</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-pval">
+                            <a href=".desc-linearregression-ols-pval" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        pVal
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">pVal</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        P-Value Calculate the P-value for each coefficient, which is the probability that the coefficient is insignificant (i.e
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-pval">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	P-Value Calculate the P-value for each coefficient, which is the probability that the coefficient is insignificant (i.e. actually zero). A low P-value (e.g. .05) provides evidence that the coefficient is significant in the model. A high P-value indicates that the coefficient value should, in fact, be zero. P-value is related to the T-Statistic, and can be thought of as a normalized version of the T-Statistic. Only meaningful during the training phase.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value } )</b></td>
+				<td>DATSET(NumericField), one record per Beta coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-confintrec">
+                            <a href=".desc-linearregression-ols-confintrec" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            RECORD
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        ConfintRec
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">ConfintRec</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-confintrec">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Fields</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>number</b></td>
+				<td><b>UNSIGNED4</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>upperint</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>wi</b></td>
+				<td><b>UNSIGNED2</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>lowerint</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>id</b></td>
+				<td><b>UNSIGNED8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-confint">
+                            <a href=".desc-linearregression-ols-confint" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        ConfInt
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">ConfInt</td>
+                                    <td class="param">(Types.t_fieldReal level)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Confidence Interval The Confidence Interval determines the upper and lower bounds of each estimated coefficient given a confidence level (level) that is required
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-confint">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Confidence Interval The Confidence Interval determines the upper and lower bounds of each estimated coefficient given a confidence level (level) that is required. For example, one could say that there is a 95% probability (level) that the coefficient of the first independent variable is between 2.05 and 3.62. This allows error margins to be determined with the desired confidence level. If the confidence interval spans zero, it implies that the coefficient may not be significant at the specified confidence level.
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>level</b></td>
+				<td><b>REAL8</b> -- The level of confidence required, expressed as a percentage from 0.0 to 100.0</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 LowerInt , REAL8 UpperInt } )</b></td>
+				<td>DATASET(ConfintRec) with one record per coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-ftestrec">
+                            <a href=".desc-linearregression-ols-ftestrec" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            RECORD
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        FTestRec
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">FTestRec</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        No Documentation Found
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-ftestrec">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	No Documentation Found
+</div>
+</div>
+
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Fields</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>number</b></td>
+				<td><b>UNSIGNED4</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>wi</b></td>
+				<td><b>UNSIGNED2</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>pvalue</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>model_f</b></td>
+				<td><b>REAL8</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dlinearregression-ols-ftest">
+                            <a href=".desc-linearregression-ols-ftest" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        FTest
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(FTestRec)</td>
+                                    <td class="name">FTest</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        F-Test Calculate the P-value for the full regression, which is the probability that all of the coefficients are insignificant (i.e
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-linearregression-ols-ftest">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	F-Test Calculate the P-value for the full regression, which is the probability that all of the coefficients are insignificant (i.e. actually zero). A low P-value (e.g. .05) provides evidence that at least one coefficient is significant. A high P-value indicates that all the coefficient values should in fact be zero, implying that the regression has no statistically significant predictive power. P-value is related to the ANOVA F-Statistic, and can be thought of as a standardized version of the ANOVA F-Statistic. The F-Test and T-Test are similar, except that the T-test is used to test the significance of each coefficient, while the F-Test is used to test the significance of the entire regression. For simple linear regression (i.e. only one independent variable, the T-Test and F-Test are equivalent.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8 Model_F , REAL8 pValue } )</b></td>
+				<td>DATASET(FTestRec), one record per dependent variable per work-item. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>

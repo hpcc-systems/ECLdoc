@@ -1,0 +1,80 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+asum
+}
+\hypertarget{ecldoc:toc:PBblas.asum}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+PBblas.Types |
+PBblas.internal |
+PBblas.internal.Types |
+PBblas.internal.MatDims |
+PBblas.internal.Converted |
+std.blas |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+asum}}
+
+\hypertarget{ecldoc:pbblas.asum}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Norm)} & \textbf{asum} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Layout\_Cell) X)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Absolute sum -- the ''Entrywise'' 1-norm Compute SUM(ABS(X))
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{X}} ||| TABLE ( Layout\_Cell ) --- Matrix or set of matrices in Layout\_Cell format
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , REAL8 v \} )} --- DATASET(Layout\_Norm) with one record per work item
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_Cell
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="test" sourcePath="/media/sarthak/Data/ecldoc/testing/test/test.ecl" target="test.ecl.xml">
+  <Definition exported="1" fullname="test" inherittype="local" line="5" name="test" type="module">
+   <Documentation>
+    <firstline>test module</firstline><content>test module</content></Documentation>
+   <Signature name="test" ret="" param="" hlen="4">test</Signature><Parents/>
+  </Definition>
+ <Documentation>
+    <firstline>test module</firstline><content>test module</content></Documentation>
+   </Source>
+</Meta>

@@ -1,0 +1,97 @@
+<Meta>
+ <Source name="Inintest.example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/./Inintest/Example_3.ecl">
+  <Definition body="19"
+              end="88"
+              exported="1"
+              fullname="Inintest.Example_3"
+              inherittype="local"
+              line="1"
+              name="Example_3"
+              start="0"
+              type="module">
+   <Definition body="43"
+               end="83"
+               exported="1"
+               fullname="Inintest.Example_3.mod_1"
+               inherittype="local"
+               line="2"
+               name="mod_1"
+               start="28"
+               type="module">
+    <Definition body="72"
+                end="77"
+                exported="1"
+                fullname="inintest.example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="3"
+                name="v2_m1_ex3"
+                start="53"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="example_4" sourcePath="/media/sarthak/Data/ecldoc/testing/test/example_4.ecl">
+  <Definition body="160"
+              end="250"
+              exported="1"
+              fullname="example_4"
+              inherittype="local"
+              line="8"
+              name="example_4"
+              start="141"
+              type="module">
+   <Definition body="184"
+               end="245"
+               exported="1"
+               fullname="example_4.mod_1"
+               inherittype="local"
+               line="9"
+               name="mod_1"
+               start="169"
+               type="module">
+    <Definition body="72"
+                end="77"
+                exported="1"
+                fullname="inintest.example_3.mod_1.v2_m1_ex3"
+                inherittype="inherited"
+                line="3"
+                name="v2_m1_ex3"
+                start="53"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="224"
+                end="239"
+                exported="1"
+                fullname="example_4.mod_1.v2_m1_ex4"
+                inherittype="local"
+                line="10"
+                name="v2_m1_ex4"
+                start="205"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents>
+     <Parent name="mod_1_ex3" ref="Inintest.Example_3.mod_1"/>
+    </Parents>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Example : Inheritance across files
+* mod_1 in Example_4 inherits mod_1 in Example_3&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="7"
+          fullname="Inintest.Example_3.mod_1"
+          inherittype="local"
+          line="1"
+          name="mod_1_ex3"
+          ref="Inintest.Example_3.mod_1"
+          start="7"/>
+ </Source>
+</Meta>

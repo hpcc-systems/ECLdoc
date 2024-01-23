@@ -1,0 +1,64 @@
+<Meta>
+ <Source name="mod_1" sourcePath="/media/sarthak/Data/ecldoc/testing/import-test/mod_1.ecl">
+  <Definition body="15"
+              end="157"
+              exported="1"
+              fullname="mod_1"
+              inherittype="local"
+              line="1"
+              name="mod_1"
+              start="0"
+              type="module">
+   <Definition body="36"
+               end="41"
+               exported="1"
+               fullname="mod_1.v1"
+               inherittype="local"
+               line="2"
+               name="v1"
+               start="24"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="67"
+               end="107"
+               exported="1"
+               fullname="mod_1.m1v4"
+               inherittype="local"
+               line="3"
+               name="m1v4"
+               start="43"
+               type="module">
+    <Definition body="91"
+                end="101"
+                exported="1"
+                fullname="mod_1.m1v4.m1v5"
+                inherittype="local"
+                line="4"
+                name="m1v5"
+                start="77"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Params>
+     <Param name="a1">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+    <Parents/>
+   </Definition>
+   <Definition body="123"
+               end="152"
+               exported="1"
+               fullname="mod_1.m1v6"
+               inherittype="local"
+               line="6"
+               name="m1v6"
+               start="109"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

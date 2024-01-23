@@ -1,0 +1,31 @@
+IMPORTS
+=======
+
+
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+ML_Core.Types <../ML_Core/Types.ecl.txt>
+LogisticRegression </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/LogisticRegression/pkg.toc.txt>
+LogisticRegression.Types <Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Confusion_Detail) Confusion(DATASET(DiscreteField) dependents,
+                                              DATASET(DiscreteField) predicts)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Detail confusion records to compare actual versus predicted response
+variable values.
+
+Parameter : predicts TABLE ( DiscreteField ) --- the predicted
+                     responses
+
+Parameter : dependents TABLE ( DiscreteField ) --- the original response
+                       values
+
+Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 classifier ,
+         INTEGER4 actual_class , INTEGER4 predict_class ,
+         UNSIGNED4 occurs , BOOLEAN correct } ) confusion
+         counts by predicted and actual response values.
+

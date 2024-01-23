@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Generate.ecl" name="ML_Core.Generate" target="../Generate.ecl.xml"/><Source name="ML_Core.Tests.generate" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Tests/generate.ecl" target="generate.ecl.xml">
+  <Import name="ML_Core" ref="ML_Core" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Definition exported="1" fullname="ml_core.tests.generate" inherittype="local" line="6" name="generate" type="attribute">
+   <Signature name="generate" ret="" param="" hlen="8">generate</Signature><Type type=""/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

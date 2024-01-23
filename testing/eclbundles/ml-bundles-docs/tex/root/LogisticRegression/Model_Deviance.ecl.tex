@@ -1,0 +1,66 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+Model_Deviance
+}
+\hypertarget{ecldoc:toc:LogisticRegression.Model_Deviance}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+LogisticRegression |
+LogisticRegression.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Model\_Deviance}}
+
+\hypertarget{ecldoc:logisticregression.model_deviance}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Deviance\_Record)} & \textbf{Model\_Deviance} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.Observation\_Deviance) od, DATASET(Types.Model\_Coef) mod)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Model Deviance.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{od}} ||| TABLE ( Observation\_Deviance ) --- observation deviance record
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{mod}} ||| TABLE ( Model\_Coef ) --- model co-efficients
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 classifier , UNSIGNED8 df , REAL8 deviance , REAL8 AIC \} )} --- model deviance
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

@@ -1,0 +1,1503 @@
+<Meta>
+ <Source name="example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/./example_3.ecl">
+  <Definition body="438"
+              end="979"
+              exported="1"
+              fullname="Example_3"
+              inherittype="local"
+              line="24"
+              name="Example_3"
+              start="419"
+              type="module">
+   <Definition body="465"
+               end="974"
+               exported="1"
+               fullname="Example_3.mod_1"
+               inherittype="local"
+               line="25"
+               name="mod_1"
+               start="450"
+               type="module">
+    <Definition body="614"
+                end="619"
+                exported="1"
+                fullname="example_3.mod_1.v1_m1"
+                inherittype="local"
+                line="32"
+                name="v1_m1"
+                start="599"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#32;Doc test 2. Title end by
+        * period not newline
+    	* &lt;pre&gt;
+    	* ABCD ||||
+    	* CDEF ||||&#10;&#32;&#32;&#32;&#32;&#9;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="707"
+                end="712"
+                exported="1"
+                fullname="example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="36"
+                name="v2_m1_ex3"
+                start="688"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#32;DOC Test 3
+        * No Period title&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="749"
+                end="758"
+                exported="1"
+                fullname="example_3.mod_1.abc"
+                inherittype="local"
+                line="37"
+                name="abc"
+                start="721"
+                type="function">
+     <Type type="real8"/>
+     <Params>
+      <Param name="x">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition body="960"
+                end="965"
+                exported="1"
+                fullname="example_3.mod_1.long_name"
+                inherittype="local"
+                line="38"
+                name="long_name"
+                start="767"
+                type="function">
+     <Type type="real8"/>
+     <Params>
+      <Param name="X">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="IntW">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="Intb">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="BETA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="sparsityParam">
+       <Type type="real8"/>
+      </Param>
+      <Param name="LAMBDA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="ALPHA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="MaxIter">
+       <Type type="unsigned2"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Documentation Testing
+* Multiline Title.
+* link@myspace.com
+* &lt;p&gt;
+* Sentence 1
+* blablalbla                    bbblaaaa
+* &lt;p&gt;
+* Sentence 2
+* &lt;pre&gt;
+* blablalbla                    bbbblaaaaa
+*
+* bblaaaaaaaaaa
+* &lt;/pre&gt;
+*   @param first okay_1
+*   @param second okay_2
+*   @param third okay_3
+*   @field f1 oka_f1
+*   @field f2 oka_f2
+*   @return rec_1
+*   @see example_1.mod_1
+*   @author example_1.sarthakjain&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="intest.example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/./intest/example_3.ecl">
+  <Definition body="113"
+              end="205"
+              exported="1"
+              fullname="intest.Example_3"
+              inherittype="local"
+              line="6"
+              name="Example_3"
+              start="94"
+              type="module">
+   <Definition body="137"
+               end="200"
+               exported="1"
+               fullname="intest.Example_3.mod_1"
+               inherittype="local"
+               line="7"
+               name="mod_1"
+               start="122"
+               type="module">
+    <Definition body="162"
+                end="167"
+                exported="1"
+                fullname="intest.example_3.mod_1.v1_m1"
+                inherittype="local"
+                line="8"
+                name="v1_m1"
+                start="147"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="189"
+                end="194"
+                exported="1"
+                fullname="intest.example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="9"
+                name="v2_m1_ex3"
+                start="170"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Example : Inheritance across files
+* mod_1 in Example_4 inherits mod_1 in Example_3&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source sourcePath="lib_stringlib"/>
+ <Source name="std.str" sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/Str.ecl">
+  <Import body="0"
+          end="731"
+          fullname="lib_stringlib"
+          inherittype="local"
+          line="20"
+          name="lib_stringlib"
+          ref="lib_stringlib"
+          remotescope="1"
+          start="731"/>
+  <Definition body="259"
+              end="502"
+              inherittype="local"
+              line="6"
+              name="externals"
+              start="247"
+              type="module">
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="encodebase64"
+               inherittype="local"
+               line="8"
+               name="EncodeBase64"
+               start="0"
+               type="function">
+    <Type type="string"/>
+    <Params>
+     <Param name="src">
+      <Type type="data"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="decodebase64"
+               inherittype="local"
+               line="9"
+               name="DecodeBase64"
+               start="0"
+               type="function">
+    <Type type="data"/>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Definition body="517"
+              end="17753"
+              exported="1"
+              fullname="std.Str"
+              inherittype="local"
+              line="12"
+              name="Str"
+              start="504"
+              type="module">
+   <Definition body="1180"
+               end="1243"
+               exported="1"
+               fullname="std.str.compareignorecase"
+               inherittype="local"
+               line="31"
+               name="CompareIgnoreCase"
+               start="1118"
+               type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Compares the two strings case insensitively.  Returns a negative integer, zero, or a positive integer according to
+ * whether the first string is less than, equal to, or greater than the second.
+ * 
+ * @param src1          The first string to be compared.
+ * @param src2          The second string to be compared.
+ * @see                 Str.EqualIgnoreCase&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src1">
+      <Type type="string"/>
+     </Param>
+     <Param name="src2">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1556"
+               end="1591"
+               exported="1"
+               fullname="std.str.equalignorecase"
+               inherittype="local"
+               line="42"
+               name="EqualIgnoreCase"
+               start="1497"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests whether the two strings are identical ignoring differences in case.
+ * 
+ * @param src1          The first string to be compared.
+ * @param src2          The second string to be compared.
+ * @see                 Str.CompareIgnoreCase&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src1">
+      <Type type="string"/>
+     </Param>
+     <Param name="src2">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2071"
+               end="2132"
+               exported="1"
+               fullname="std.str.find"
+               inherittype="local"
+               line="54"
+               name="Find"
+               start="1996"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the character position of the nth match of the search string with the first string.
+ * If no match is found the attribute returns 0.
+ * If an instance is omitted the position of the first instance is returned.
+ * 
+ * @param src           The string that is searched
+ * @param sought        The string being sought.
+ * @param instance      Which match instance are we interested in?&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="sought">
+      <Type type="string"/>
+     </Param>
+     <Param name="instance">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2387"
+               end="2441"
+               exported="1"
+               fullname="std.str.findcount"
+               inherittype="local"
+               line="64"
+               name="FindCount"
+               start="2331"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the number of occurences of the second string within the first string.
+ * 
+ * @param src           The string that is searched
+ * @param sought        The string being sought.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="sought">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2867"
+               end="2943"
+               exported="1"
+               fullname="std.str.wildmatch"
+               inherittype="local"
+               line="75"
+               name="WildMatch"
+               start="2790"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests if the search string matches the pattern.
+ * The pattern can contain wildcards &apos;?&apos; (single character) and &apos;*&apos; (multiple character).
+ * 
+ * @param src           The string that is being tested.
+ * @param pattern       The pattern to match against.
+ * @param ignore_case   Whether to ignore differences in case between characters&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="_pattern">
+      <Type type="string"/>
+     </Param>
+     <Param name="ignore_case">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3421"
+               end="3491"
+               exported="1"
+               fullname="std.str.contains"
+               inherittype="local"
+               line="87"
+               name="Contains"
+               start="3345"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests if the search string contains each of the characters in the pattern.
+ * If the pattern contains duplicate characters those characters will match once for each occurence in the pattern.
+ * 
+ * @param src           The string that is being tested.
+ * @param pattern       The pattern to match against.
+ * @param ignore_case   Whether to ignore differences in case between characters&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="_pattern">
+      <Type type="string"/>
+     </Param>
+     <Param name="ignore_case">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3818"
+               end="3872"
+               exported="1"
+               fullname="std.str.filterout"
+               inherittype="local"
+               line="98"
+               name="FilterOut"
+               start="3765"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the first string with all characters within the second string removed.
+ * 
+ * @param src           The string that is being tested.
+ * @param filter        The string containing the set of characters to be excluded.
+ * @see                 Str.Filter&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="filter">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="4203"
+               end="4254"
+               exported="1"
+               fullname="std.str.filter"
+               inherittype="local"
+               line="108"
+               name="Filter"
+               start="4153"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the first string with all characters not within the second string removed.
+ * 
+ * @param src           The string that is being tested.
+ * @param filter        The string containing the set of characters to be included.
+ * @see                 Str.FilterOut&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="filter">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="4817"
+               end="4891"
+               exported="1"
+               fullname="std.str.substituteincluded"
+               inherittype="local"
+               line="121"
+               name="SubstituteIncluded"
+               start="4733"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the source string with the replacement character substituted for all characters included in the
+ * filter string.
+ * MORE: Should this be a general string substitution?
+ * 
+ * @param src           The string that is being tested.
+ * @param filter        The string containing the set of characters to be included.
+ * @param replace_char  The character to be substituted into the result.
+ * @see                 Std.Str.Translate, Std.Str.SubstituteExcluded&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="Filter">
+      <Type type="string"/>
+     </Param>
+     <Param name="replace_char">
+      <Type type="string1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="5439"
+               end="5510"
+               exported="1"
+               fullname="std.str.substituteexcluded"
+               inherittype="local"
+               line="135"
+               name="SubstituteExcluded"
+               start="5355"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the source string with the replacement character substituted for all characters not included in the
+ * filter string.
+ * MORE: Should this be a general string substitution?
+ * 
+ * @param src           The string that is being tested.
+ * @param filter        The string containing the set of characters to be included.
+ * @param replace_char  The character to be substituted into the result.
+ * @see                 Std.Str.SubstituteIncluded&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="Filter">
+      <Type type="string"/>
+     </Param>
+     <Param name="replace_char">
+      <Type type="string1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6161"
+               end="6230"
+               exported="1"
+               fullname="std.str.translate"
+               inherittype="local"
+               line="149"
+               name="Translate"
+               start="6088"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the source string with the all characters that match characters in the search string replaced
+ * with the character at the corresponding position in the replacement string.
+ *
+ * @param src           The string that is being tested.
+ * @param search        The string containing the set of characters to be included.
+ * @param replacement   The string containing the characters to act as replacements.
+ * @see                 Std.Str.SubstituteIncluded&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="search">
+      <Type type="string"/>
+     </Param>
+     <Param name="replacement">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6432"
+               end="6480"
+               exported="1"
+               fullname="std.str.tolowercase"
+               inherittype="local"
+               line="158"
+               name="ToLowerCase"
+               start="6392"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the argument string with all upper case characters converted to lower case.
+ * 
+ * @param src           The string that is being converted.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6681"
+               end="6729"
+               exported="1"
+               fullname="std.str.touppercase"
+               inherittype="local"
+               line="166"
+               name="ToUpperCase"
+               start="6641"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Return the argument string with all lower case characters converted to upper case.
+ * 
+ * @param src           The string that is being converted.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="7037"
+               end="7087"
+               exported="1"
+               fullname="std.str.tocapitalcase"
+               inherittype="local"
+               line="176"
+               name="ToCapitalCase"
+               start="6995"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the argument string with the first letter of each word in upper case and all other
+ * letters left as-is.
+ * A contiguous sequence of alphanumeric characters is treated as a word.
+ * 
+ * @param src           The string that is being converted.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="7392"
+               end="7440"
+               exported="1"
+               fullname="std.str.totitlecase"
+               inherittype="local"
+               line="186"
+               name="ToTitleCase"
+               start="7352"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the argument string with the first letter of each word in upper case and all other
+ * letters lower case.
+ * A contiguous sequence of alphanumeric characters is treated as a word.
+ *
+ * @param src           The string that is being converted.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="7678"
+               end="7722"
+               exported="1"
+               fullname="std.str.reverse"
+               inherittype="local"
+               line="195"
+               name="Reverse"
+               start="7642"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the argument string with all characters in reverse order.
+ * Note the argument is not TRIMMED before it is reversed.
+ * 
+ * @param src           The string that is being reversed.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="8104"
+               end="8175"
+               exported="1"
+               fullname="std.str.findreplace"
+               inherittype="local"
+               line="205"
+               name="FindReplace"
+               start="8029"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the source string with the replacement string substituted for all instances of the search string.
+ * 
+ * @param src           The string that is being transformed.
+ * @param sought        The string to be replaced.
+ * @param replacement   The string to be substituted into the result.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="sought">
+      <Type type="string"/>
+     </Param>
+     <Param name="replacement">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="8436"
+               end="8490"
+               exported="1"
+               fullname="std.str.extract"
+               inherittype="local"
+               line="215"
+               name="Extract"
+               start="8380"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the nth element from a comma separated string.
+ * 
+ * @param src           The string containing the comma separated list.
+ * @param instance      Which item to select from the list.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="instance">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="8838"
+               end="8886"
+               exported="1"
+               fullname="std.str.cleanspaces"
+               inherittype="local"
+               line="225"
+               name="CleanSpaces"
+               start="8798"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the source string with all instances of multiple adjacent space characters (2 or more spaces together)
+ * reduced to a single space character.  Leading and trailing spaces are removed, and tab characters are converted
+ * to spaces.
+ * 
+ * @param src           The string to be cleaned.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="9296"
+               end="9333"
+               exported="1"
+               fullname="std.str.startswith"
+               inherittype="local"
+               line="236"
+               name="StartsWith"
+               start="9241"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns true if the prefix string matches the leading characters in the source string.  Trailing spaces are 
+ * stripped from the prefix before matching.
+ * // x.myString.StartsWith(&apos;x&apos;) as an alternative syntax would be even better
+ * 
+ * @param src           The string being searched in.
+ * @param prefix        The prefix to search for.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="prefix">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="9664"
+               end="9720"
+               exported="1"
+               fullname="std.str.endswith"
+               inherittype="local"
+               line="245"
+               name="EndsWith"
+               start="9611"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns true if the suffix string matches the trailing characters in the source string.  Trailing spaces are 
+ * stripped from both strings before matching.
+ * 
+ * @param src           The string being searched in.
+ * @param suffix        The prefix to search for.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="suffix">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="10046"
+               end="10138"
+               exported="1"
+               fullname="std.str.removesuffix"
+               inherittype="local"
+               line="255"
+               name="RemoveSuffix"
+               start="9990"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Removes the suffix from the search string, if present, and returns the result.  Trailing spaces are 
+ * stripped from both strings before matching.
+ * 
+ * @param src           The string being searched in.
+ * @param suffix        The prefix to search for.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="suffix">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="10472"
+               end="10530"
+               exported="1"
+               fullname="std.str.extractmultiple"
+               inherittype="local"
+               line="266"
+               name="ExtractMultiple"
+               start="10412"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns a string containing a list of elements from a comma separated string.
+ *
+ * @param src           The string containing the comma separated list.
+ * @param mask          A bitmask of which elements should be included.  Bit 0 is item1, bit1 item 2 etc.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="mask">
+      <Type type="unsigned8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="11012"
+               end="11077"
+               exported="1"
+               fullname="std.str.countwords"
+               inherittype="local"
+               line="277"
+               name="CountWords"
+               start="10923"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the number of words that the string contains.  Words are separated by one or more separator strings. No 
+ * spaces are stripped from either string before matching.
+ * 
+ * @param src           The string being searched in.
+ * @param separator     The string used to separate words
+ * @param allow_blank   Indicates if empty/blank string items are included in the results.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="separator">
+      <Type type="string"/>
+     </Param>
+     <Param name="allow_blank">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="11563"
+               end="11628"
+               exported="1"
+               fullname="std.str.splitwords"
+               inherittype="local"
+               line="288"
+               name="SplitWords"
+               start="11470"
+               type="function">
+    <Type type="set">
+     <Type type="string"/>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;* Returns the list of words extracted from the string.  Words are separated by one or more separator strings. No 
+ * spaces are stripped from either string before matching.
+ * 
+ * @param src           The string being searched in.
+ * @param separator     The string used to separate words
+ * @param allow_blank   Indicates if empty/blank string items are included in the results.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="separator">
+      <Type type="string"/>
+     </Param>
+     <Param name="allow_blank">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="12002"
+               end="12058"
+               exported="1"
+               fullname="std.str.combinewords"
+               inherittype="local"
+               line="299"
+               name="CombineWords"
+               start="11934"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the list of words extracted from the string.  Words are separated by one or more separator strings. No
+ * spaces are stripped from either string before matching.
+ *
+ * @param words         The set of strings to be combined.
+ * @param separator     The string used to separate words.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="words">
+      <Type type="set">
+       <Type type="string"/>
+      </Type>
+     </Param>
+     <Param name="separator">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="12489"
+               end="12548"
+               exported="1"
+               fullname="std.str.editdistance"
+               inherittype="local"
+               line="311"
+               name="EditDistance"
+               start="12428"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the minimum edit distance between the two strings.  An insert change or delete counts as a single edit.
+ * The two strings are trimmed before comparing.
+ * 
+ * @param _left         The first string to be compared.
+ * @param _right        The second string to be compared.
+ * @return              The minimum edit distance between the two strings.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="_left">
+      <Type type="string"/>
+     </Param>
+     <Param name="_right">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="13081"
+               end="13160"
+               exported="1"
+               fullname="std.str.editdistancewithinradius"
+               inherittype="local"
+               line="324"
+               name="EditDistanceWithinRadius"
+               start="12992"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns true if the minimum edit distance between the two strings is with a specific range.
+ * The two strings are trimmed before comparing.
+ * 
+ * @param _left         The first string to be compared.
+ * @param _right        The second string to be compared.
+ * @param radius        The maximum edit distance that is accepable.
+ * @return              Whether or not the two strings are within the given specified edit distance.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="_left">
+      <Type type="string"/>
+     </Param>
+     <Param name="_right">
+      <Type type="string"/>
+     </Param>
+     <Param name="radius">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="13427"
+               end="13478"
+               exported="1"
+               fullname="std.str.wordcount"
+               inherittype="local"
+               line="335"
+               name="WordCount"
+               start="13385"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the number of words in the string.  Words are separated by one or more spaces.
+ * 
+ * @param text          The string to be broken into words.
+ * @return              The number of words in the string.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="13824"
+               end="13879"
+               exported="1"
+               fullname="std.str.getnthword"
+               inherittype="local"
+               line="346"
+               name="GetNthWord"
+               start="13771"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the n-th word from the string.  Words are separated by one or more spaces.
+ * 
+ * @param text          The string to be broken into words.
+ * @param n             Which word should be returned from the function.
+ * @return              The number of words in the string.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="14236"
+               end="14291"
+               exported="1"
+               fullname="std.str.excludefirstword"
+               inherittype="local"
+               line="357"
+               name="ExcludeFirstWord"
+               start="14197"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns everything except the first word from the string.  Words are separated by one or more whitespace characters.
+ * Whitespace before and after the first word is also removed.
+ *
+ * @param text          The string to be broken into words.
+ * @return              The string excluding the first word.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="14689"
+               end="14742"
+               exported="1"
+               fullname="std.str.excludelastword"
+               inherittype="local"
+               line="367"
+               name="ExcludeLastWord"
+               start="14651"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns everything except the last word from the string.  Words are separated by one or more whitespace characters.
+ * Whitespace after a word is removed with the word and leading whitespace is removed with the first word.
+ *
+ * @param text          The string to be broken into words.
+ * @return              The string excluding the last word.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="15223"
+               end="15278"
+               exported="1"
+               fullname="std.str.excludenthword"
+               inherittype="local"
+               line="378"
+               name="ExcludeNthWord"
+               start="15173"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns everything except the nth word from the string.  Words are separated by one or more whitespace characters.
+ * Whitespace after a word is removed with the word and leading whitespace is removed with the first word.
+ *
+ * @param text          The string to be broken into words.
+ * @param n             Which word should be returned from the function.
+ * @return              The string excluding the nth word.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned2"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="15636"
+               end="15782"
+               exported="1"
+               fullname="std.str.findword"
+               inherittype="local"
+               line="388"
+               name="FindWord"
+               start="15558"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests if the search string contains the supplied word as a whole word.
+ *
+ * @param src           The string that is being tested.
+ * @param word          The word to be searched for.
+ * @param ignore_case   Whether to ignore differences in case between characters.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+     <Param name="word">
+      <Type type="string"/>
+     </Param>
+     <Param name="ignore_case">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="16077"
+               end="16124"
+               exported="1"
+               fullname="std.str.repeat"
+               inherittype="local"
+               line="402"
+               name="Repeat"
+               start="16028"
+               type="function">
+    <Type type="string"/>
+    <Params>
+     <Param name="text">
+      <Type type="string"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="16391"
+               end="16435"
+               exported="1"
+               fullname="std.str.tohexpairs"
+               inherittype="local"
+               line="411"
+               name="ToHexPairs"
+               start="16352"
+               type="function">
+    <Type type="string"/>
+    <Params>
+     <Param name="value">
+      <Type type="data"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="16864"
+               end="16912"
+               exported="1"
+               fullname="std.str.fromhexpairs"
+               inherittype="local"
+               line="424"
+               name="FromHexPairs"
+               start="16819"
+               type="function">
+    <Type type="data"/>
+    <Params>
+     <Param name="hex_pairs">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="17282"
+               end="17313"
+               exported="1"
+               fullname="std.str.encodebase64"
+               inherittype="local"
+               line="437"
+               name="EncodeBase64"
+               start="17241"
+               type="function">
+    <Type type="string"/>
+    <Params>
+     <Param name="value">
+      <Type type="data"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="17716"
+               end="17747"
+               exported="1"
+               fullname="std.str.decodebase64"
+               inherittype="local"
+               line="450"
+               name="DecodeBase64"
+               start="17675"
+               type="function">
+    <Type type="data"/>
+    <Params>
+     <Param name="value">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="intest.inintest.example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/./intest/inintest/example_3.ecl">
+  <Definition body="130"
+              end="222"
+              exported="1"
+              fullname="intest.inintest.Example_3"
+              inherittype="local"
+              line="8"
+              name="Example_3"
+              start="111"
+              type="module">
+   <Definition body="154"
+               end="217"
+               exported="1"
+               fullname="intest.inintest.Example_3.mod_1"
+               inherittype="local"
+               line="9"
+               name="mod_1"
+               start="139"
+               type="module">
+    <Definition body="179"
+                end="184"
+                exported="1"
+                fullname="intest.inintest.example_3.mod_1.v1_m1"
+                inherittype="local"
+                line="10"
+                name="v1_m1"
+                start="164"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="206"
+                end="211"
+                exported="1"
+                fullname="intest.inintest.example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="11"
+                name="v2_m1_ex3"
+                start="187"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Example : Inheritance across files
+* mod_1 in Example_4 inherits mod_1 in Example_3&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="101"
+          fullname="std.Str"
+          inherittype="local"
+          line="6"
+          name="Str"
+          ref="std.Str"
+          start="101"/>
+ </Source>
+ <Source name="Inintest.example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/./Inintest/Example_3.ecl">
+  <Definition body="19"
+              end="88"
+              exported="1"
+              fullname="Inintest.Example_3"
+              inherittype="local"
+              line="1"
+              name="Example_3"
+              start="0"
+              type="module">
+   <Definition body="43"
+               end="83"
+               exported="1"
+               fullname="Inintest.Example_3.mod_1"
+               inherittype="local"
+               line="2"
+               name="mod_1"
+               start="28"
+               type="module">
+    <Definition body="72"
+                end="77"
+                exported="1"
+                fullname="inintest.example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="3"
+                name="v2_m1_ex3"
+                start="53"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="example_11" sourcePath="/media/sarthak/Data/ecldoc/testing/test/example_11.ecl">
+  <Import body="0"
+          end="7"
+          fullname="Inintest"
+          inherittype="local"
+          line="1"
+          name="Inintest"
+          ref="Inintest"
+          remotescope="1"
+          start="7"/>
+  <Import body="0"
+          end="24"
+          fullname="Example_3"
+          inherittype="local"
+          line="2"
+          name="ex_3"
+          ref="Example_3"
+          start="24">
+   <Documentation>
+    <content>&#10;* Documentation Testing
+* Multiline Title.
+* link@myspace.com
+* &lt;p&gt;
+* Sentence 1
+* blablalbla                    bbblaaaa
+* &lt;p&gt;
+* Sentence 2
+* &lt;pre&gt;
+* blablalbla                    bbbblaaaaa
+*
+* bblaaaaaaaaaa
+* &lt;/pre&gt;
+*   @param first okay_1
+*   @param second okay_2
+*   @param third okay_3
+*   @field f1 oka_f1
+*   @field f2 oka_f2
+*   @return rec_1
+*   @see example_1.mod_1
+*   @author example_1.sarthakjain&#10;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="50"
+          fullname="intest.Example_3"
+          inherittype="local"
+          line="3"
+          name="ex_33"
+          ref="intest.Example_3"
+          start="50">
+   <Documentation>
+    <content>&#10;* Example : Inheritance across files
+* mod_1 in Example_4 inherits mod_1 in Example_3&#10;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="111"
+          fullname="intest.inintest.Example_3"
+          inherittype="local"
+          line="5"
+          name="ex_333"
+          ref="intest.inintest.Example_3"
+          start="111">
+   <Documentation>
+    <content>&#10;* Example : Inheritance across files
+* mod_1 in Example_4 inherits mod_1 in Example_3&#10;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="155"
+          fullname="Inintest.Example_3"
+          inherittype="local"
+          line="6"
+          name="ex_3333"
+          ref="Inintest.Example_3"
+          start="155"/>
+  <Definition body="197"
+              end="217"
+              fullname="Inintest.Example_3"
+              inherittype="local"
+              line="8"
+              name="in2test"
+              start="187"
+              type="module">
+   <Definition body="43"
+               end="83"
+               exported="1"
+               fullname="Inintest.Example_3.mod_1"
+               inherittype="local"
+               line="2"
+               name="mod_1"
+               start="28"
+               type="module">
+    <Definition body="72"
+                end="77"
+                exported="1"
+                fullname="inintest.example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="3"
+                name="v2_m1_ex3"
+                start="53"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Definition body="239"
+              end="262"
+              exported="1"
+              fullname="example_11"
+              inherittype="local"
+              line="10"
+              name="example_11"
+              start="219"
+              type="module">
+   <Definition body="19"
+               end="88"
+               exported="1"
+               fullname="Inintest.Example_3"
+               inherittype="inherited"
+               line="1"
+               name="Example_3"
+               start="0"
+               type="module">
+    <Definition body="43"
+                end="83"
+                exported="1"
+                fullname="Inintest.Example_3.mod_1"
+                inherittype="local"
+                line="2"
+                name="mod_1"
+                start="28"
+                type="module">
+     <Definition body="72"
+                 end="77"
+                 exported="1"
+                 fullname="inintest.example_3.mod_1.v2_m1_ex3"
+                 inherittype="local"
+                 line="3"
+                 name="v2_m1_ex3"
+                 start="53"
+                 type="attribute">
+      <Type type="real8"/>
+     </Definition>
+     <Parents/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Parents>
+    <Parent name="Inintest" ref="Inintest"/>
+   </Parents>
+  </Definition>
+ </Source>
+</Meta>

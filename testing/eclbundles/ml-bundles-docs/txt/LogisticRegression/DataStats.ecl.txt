@@ -1,0 +1,43 @@
+IMPORTS
+=======
+
+
+ML_Core.Types <../ML_Core/Types.ecl.txt>
+LogisticRegression </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/LogisticRegression/pkg.toc.txt>
+LogisticRegression.Types <Types.ecl.txt>
+LogisticRegression.Constants <Constants.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Types.Data_Info) DataStats(DATASET(Core_Types.NumericField) indep,
+                                             DATASET(Core_Types.DiscreteField) dep, BOOLEAN field_details=FALSE)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Information about the datasets. Without details the range for the x and y
+(independent and dependent) columns. Note that a column of all zero values
+cannot be distinguished from a missing column. When details are requested,
+the cardinality, minimum, and maximum values are returned. A zero
+cardinality is returned when the field cardinality exceeds the
+Constants.limit_card value.
+
+Parameter : field_details BOOLEAN --- Boolean directive to provide field
+                          level info
+
+Parameter : dep TABLE ( DiscreteField ) --- data set of dependent
+                variables
+
+Parameter : indep TABLE ( NumericField ) --- data set of independent
+                  variables
+
+Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4
+         dependent_fields , UNSIGNED4 dependent_records ,
+         UNSIGNED4 independent_fields , UNSIGNED4
+         independent_records , UNSIGNED4 dependent_count ,
+         UNSIGNED4 independent_count , TABLE ( Field_Desc )
+         dependent_stats , TABLE ( Field_Desc )
+         independent_stats } )
+
+returns : a data set of information on each work item
+

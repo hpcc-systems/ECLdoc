@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="PBblas.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Constants.ecl" target="Constants.ecl.xml">
+  <Definition exported="1" fullname="PBblas.Constants" inherittype="local" line="5" name="Constants" type="module">
+   <Definition exported="1" fullname="pbblas.constants.block_minimum" inherittype="local" line="6" name="Block_Minimum" type="attribute">
+    <Signature name="Block_Minimum" ret="" param="" hlen="13">Block_Minimum</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.block_nosplit" inherittype="local" line="7" name="Block_NoSplit" type="attribute">
+    <Signature name="Block_NoSplit" ret="" param="" hlen="13">Block_NoSplit</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.block_maximum" inherittype="local" line="8" name="Block_Maximum" type="attribute">
+    <Signature name="Block_Maximum" ret="" param="" hlen="13">Block_Maximum</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.block_vec_rows" inherittype="local" line="9" name="Block_Vec_Rows" type="attribute">
+    <Signature name="Block_Vec_Rows" ret="" param="" hlen="14">Block_Vec_Rows</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.dimension_incompat" inherittype="local" line="13" name="Dimension_Incompat" type="attribute">
+    <Signature name="Dimension_Incompat" ret="" param="" hlen="18">Dimension_Incompat</Signature><Type type="string34"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.dimension_incompatz" inherittype="local" line="14" name="Dimension_IncompatZ" type="attribute">
+    <Signature name="Dimension_IncompatZ" ret="" param="" hlen="19">Dimension_IncompatZ</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.distribution_error" inherittype="local" line="15" name="Distribution_Error" type="attribute">
+    <Signature name="Distribution_Error" ret="" param="" hlen="18">Distribution_Error</Signature><Type type="string32"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.distribution_errorz" inherittype="local" line="16" name="Distribution_ErrorZ" type="attribute">
+    <Signature name="Distribution_ErrorZ" ret="" param="" hlen="19">Distribution_ErrorZ</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.not_square" inherittype="local" line="17" name="Not_Square" type="attribute">
+    <Signature name="Not_Square" ret="" param="" hlen="10">Not_Square</Signature><Type type="string20"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.not_squarez" inherittype="local" line="18" name="Not_SquareZ" type="attribute">
+    <Signature name="Not_SquareZ" ret="" param="" hlen="11">Not_SquareZ</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.not_positivedef" inherittype="local" line="19" name="Not_PositiveDef" type="attribute">
+    <Signature name="Not_PositiveDef" ret="" param="" hlen="15">Not_PositiveDef</Signature><Type type="string40"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.not_positivedefz" inherittype="local" line="20" name="Not_PositiveDefZ" type="attribute">
+    <Signature name="Not_PositiveDefZ" ret="" param="" hlen="16">Not_PositiveDefZ</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.not_single_block" inherittype="local" line="21" name="Not_Single_Block" type="attribute">
+    <Signature name="Not_Single_Block" ret="" param="" hlen="16">Not_Single_Block</Signature><Type type="string28"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.not_single_blockz" inherittype="local" line="22" name="Not_Single_BlockZ" type="attribute">
+    <Signature name="Not_Single_BlockZ" ret="" param="" hlen="17">Not_Single_BlockZ</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.not_block_vector" inherittype="local" line="23" name="Not_Block_Vector" type="attribute">
+    <Signature name="Not_Block_Vector" ret="" param="" hlen="16">Not_Block_Vector</Signature><Type type="string25"/>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.constants.not_block_vectorz" inherittype="local" line="24" name="Not_Block_VectorZ" type="attribute">
+    <Signature name="Not_Block_VectorZ" ret="" param="" hlen="17">Not_Block_VectorZ</Signature><Type type="integer8"/>
+   </Definition>
+   <Signature name="Constants" ret="" param="" hlen="9">Constants</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

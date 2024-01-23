@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Fac.ecl" name="ML_Core.Math.Fac" target="Fac.ecl.xml"/><Source name="ML_Core.Math.NCK" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/NCK.ecl" target="NCK.ecl.xml">
+  <Import name="Utils" ref="ML_Core.Math" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Math/pkg.toc.xml"/>
+  <Definition exported="1" fullname="ml_core.math.nck" inherittype="local" line="12" name="NCK" type="function">
+   <Type type="real8"/>
+   <Signature name="NCK" ret="REAL8" param="(INTEGER2 N, INTEGER2 K)" hlen="9">REAL8 NCK(INTEGER2 N, INTEGER2 K)</Signature><Params>
+    <Param name="N">
+     <Type type="integer2"/>
+    </Param>
+    <Param name="K">
+     <Type type="integer2"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

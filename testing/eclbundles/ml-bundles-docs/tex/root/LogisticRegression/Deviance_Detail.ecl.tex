@@ -1,0 +1,68 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+Deviance_Detail
+}
+\hypertarget{ecldoc:toc:LogisticRegression.Deviance_Detail}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core |
+ML\_Core.Types |
+LogisticRegression |
+LogisticRegression.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Deviance\_Detail}}
+
+\hypertarget{ecldoc:logisticregression.deviance_detail}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Observation\_Deviance)} & \textbf{Deviance\_Detail} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Core\_Types.DiscreteField) dependents, DATASET(Types.Raw\_Prediction) predicts)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Detail deviance for each observation.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{predicts}} ||| TABLE ( Raw\_Prediction ) --- the predicted values of the response variable
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{dependents}} ||| TABLE ( DiscreteField ) --- original dependent records for the model
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 classifier , INTEGER4 actual , INTEGER4 predicted , REAL8 mod\_ll , REAL8 mod\_dev\_component , REAL8 mod\_dev\_residual , REAL8 nil\_ll , REAL8 nil\_dev\_component , REAL8 nil\_dev\_residual \} )} --- the deviance information by observation and the log likelihood of the predicted result.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

@@ -1,0 +1,20 @@
+IMPORTS
+=======
+
+
+ML_Core.Math </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/Math/pkg.toc.txt>
+ML_Core.Constants <../Constants.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : StirlingFormula(REAL x)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Stirling's formula
+
+Parameter : x REAL8 --- the point of evaluation
+
+Return : REAL8 evaluation result
+

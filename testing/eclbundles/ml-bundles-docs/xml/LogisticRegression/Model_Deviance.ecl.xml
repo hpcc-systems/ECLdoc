@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Source name="LogisticRegression.Model_Deviance" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Model_Deviance.ecl" target="Model_Deviance.ecl.xml">
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.model_deviance" inherittype="local" line="14" name="Model_Deviance" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="classifier">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="deviance">
+      <Type type="real8"/>
+     </Field>
+     <Field name="AIC">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Model Deviance.</content><return>model deviance</return><param>od observation deviance record</param><param>mod model co-efficients</param><firstline>Model Deviance</firstline></Documentation>
+   <Signature name="Model_Deviance" ret="DATASET(Types.Deviance_Record)" param="(DATASET(Types.Observation_Deviance) od, DATASET(Types.Model_Coef) mod)" hlen="45">DATASET(Types.Deviance_Record) Model_Deviance(DATASET(Types.Observation_Deviance) od, DATASET(Types.Model_Coef) mod)</Signature><Params>
+    <Param name="od">
+     <Type type="table">
+      <Type fullname="logisticregression.types.observation_deviance" name="Observation_Deviance" type="record"/>
+     </Type>
+    </Param>
+    <Param name="mod">
+     <Type type="table">
+      <Type fullname="logisticregression.types.model_coef" name="Model_Coef" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Model Deviance.</content><return>model deviance</return><param>od observation deviance record</param><param>mod model co-efficients</param><firstline>Model Deviance</firstline></Documentation>
+   </Source>
+</Meta>

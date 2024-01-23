@@ -1,0 +1,301 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+Converted
+}
+\hypertarget{ecldoc:toc:PBblas.Converted}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+PBblas.Types |
+ML\_Core.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+Converted}}
+
+\hypertarget{ecldoc:PBblas.Converted}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Converted} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Module to convert between ML\_Core/Types Field layouts (i.e. NumericField and DiscreteField) and PBblas matrix layout (i.e. Layout\_Cell)
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:pbblas.converted.nftomatrix}{NFToMatrix}
+: Convert NumericField dataset to Matrix
+\item \hyperlink{ecldoc:pbblas.converted.dftomatrix}{DFToMatrix}
+: Convert DiscreteField dataset to Matrix
+\item \hyperlink{ecldoc:pbblas.converted.matrixtonf}{MatrixToNF}
+: Convert Matrix to NumericField dataset
+\item \hyperlink{ecldoc:pbblas.converted.matrixtodf}{MatrixToDF}
+: Convert Matrix to DiscreteField dataset
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+NFToMatrix}}
+
+\hypertarget{ecldoc:pbblas.converted.nftomatrix}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Converted}{Converted} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{NFToMatrix} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(NumericField) recs)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Convert NumericField dataset to Matrix
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recs}} ||| TABLE ( NumericField ) --- Record Dataset in DATASET(NumericField) format
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- Matrix in DATASET(Layout\_Cell) format
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_Cell
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] ML\_Core/Types.NumericField
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DFToMatrix}}
+
+\hypertarget{ecldoc:pbblas.converted.dftomatrix}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Converted}{Converted} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{DFToMatrix} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(DiscreteField) recs)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Convert DiscreteField dataset to Matrix
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recs}} ||| TABLE ( DiscreteField ) --- Record Dataset in DATASET(DiscreteField) format
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- Matrix in DATASET(Layout\_Cell) format
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_Cell
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] ML\_Core/Types.DiscreteField
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+MatrixToNF}}
+
+\hypertarget{ecldoc:pbblas.converted.matrixtonf}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Converted}{Converted} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(NumericField)} & \textbf{MatrixToNF} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Layout\_Cell) mat)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Convert Matrix to NumericField dataset
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{mat}} ||| TABLE ( Layout\_Cell ) --- Matrix in DATASET(Layout\_Cell) format
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- NumericField Dataset
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_Cell
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] ML\_Core/Types.NumericField
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+MatrixToDF}}
+
+\hypertarget{ecldoc:pbblas.converted.matrixtodf}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Converted}{Converted} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(DiscreteField)} & \textbf{MatrixToDF} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Layout\_Cell) mat)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Convert Matrix to DiscreteField dataset
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{mat}} ||| TABLE ( Layout\_Cell ) --- Matrix in DATASET(Layout\_Cell) format
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , INTEGER4 value \} )} --- DiscreteField Dataset
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_Cell
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] ML\_Core/Types.DiscreteField
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

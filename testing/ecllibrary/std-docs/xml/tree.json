@@ -1,0 +1,43 @@
+{
+    "include_path": "/media/sarthak/Data/ecldoc/testing/ecllibrary/std",
+    "input_root": "/media/sarthak/Data/ecldoc/testing/ecllibrary/std",
+    "output_root": "/media/sarthak/Data/ecldoc/testing/ecllibrary/std-docs",
+    "tree": {
+        "blas": {
+            "key": "BLAS.ecl",
+            "tree": "BLAS.ecl"
+        },
+        "bundlebase": {
+            "key": "BundleBase.ecl",
+            "tree": "BundleBase.ecl"
+        },
+        "date": {
+            "key": "Date.ecl",
+            "tree": "Date.ecl"
+        },
+        "file": {
+            "key": "File.ecl",
+            "tree": "File.ecl"
+        },
+        "math": {
+            "key": "math.ecl",
+            "tree": "math.ecl"
+        },
+        "metaphone": {
+            "key": "Metaphone.ecl",
+            "tree": "Metaphone.ecl"
+        },
+        "str": {
+            "key": "str.ecl",
+            "tree": "str.ecl"
+        },
+        "system": {
+            "key": "system",
+            "tree": {}
+        },
+        "uni": {
+            "key": "Uni.ecl",
+            "tree": "Uni.ecl"
+        }
+    }
+}

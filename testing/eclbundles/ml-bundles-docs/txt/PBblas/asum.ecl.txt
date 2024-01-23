@@ -1,0 +1,29 @@
+IMPORTS
+=======
+
+
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <Types.ecl.txt>
+PBblas.internal <internal/pkg.toc.txt>
+PBblas.internal.Types <internal/Types.ecl.txt>
+PBblas.internal.MatDims <internal/MatDims.ecl.txt>
+PBblas.internal.Converted <internal/Converted.ecl.txt>
+std.blas </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Layout_Norm) asum(DATASET(Layout_Cell) X)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Absolute sum -- the "Entrywise" 1-norm Compute SUM(ABS(X))
+
+Parameter : X TABLE ( Layout_Cell ) --- Matrix or set of
+              matrices in Layout_Cell format
+
+Return : TABLE ( { UNSIGNED2 wi_id , REAL8 v } )
+         DATASET(Layout_Norm) with one record per work item
+
+See : PBblas/Types.Layout_Cell
+

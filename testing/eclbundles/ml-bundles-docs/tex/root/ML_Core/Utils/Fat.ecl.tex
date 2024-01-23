@@ -1,0 +1,66 @@
+\chapter*{\color{headfile}
+{\large ML\_Core\slash\hspace{0pt}}
+{\large Utils\slash\hspace{0pt}}
+ \\
+Fat
+}
+\hypertarget{ecldoc:toc:ML_Core.Utils.Fat}{}
+\hyperlink{ecldoc:toc:root/ML_Core/Utils}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Fat}}
+
+\hypertarget{ecldoc:ml_core.utils.fat}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.NumericField)} & \textbf{Fat} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.NumericField) d0, Types.t\_FieldReal v=0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Will take a potentially sparse file d and fill in the missing with value v for Numeric Field datasets
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{v}} ||| REAL8 --- The value to assign missing records
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{d0}} ||| TABLE ( NumericField ) --- They myriad format Numeric Field dataset to be filled
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- A full Numeric Field dataset with every field populated
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

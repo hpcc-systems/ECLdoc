@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="validation">
+  <file name="unit_test_dimm.ecl.xml">LogisticRegression/validation/unit_test_dimm.ecl</file>
+  <file name="IrisDS.ecl.xml">LogisticRegression/validation/IrisDS.ecl</file>
+  <file name="BinomialRegression.ecl.xml">LogisticRegression/validation/BinomialRegression.ecl</file>
+  <file name="discrete_GermanDS.ecl.xml">LogisticRegression/validation/discrete_GermanDS.ecl</file>
+</folder>

@@ -1,0 +1,51 @@
+\BLOCK{ macro threetag(name, tuples) }
+\BLOCK{ if tuples|length > 0 }
+\par
+\begin{description}
+\BLOCK{ for t in tuples }
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{\VAR{name.upper()}}}}] \textbf{\underline{\VAR{t[0]|escape_tex}}} ||| \VAR{t[1]|escape_tex} --- \VAR{t[2]|escape_tex}
+\BLOCK{ endfor }
+\end{description}
+\BLOCK{ endif }
+\BLOCK{ endmacro }
+
+\BLOCK{ macro twotag(name, tuples) }
+\BLOCK{ if tuples|length > 0 }
+\par
+\begin{description}
+\BLOCK{ for t in tuples }
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{\VAR{name.upper()}}}}] \textbf{\VAR{t[0]|escape_tex}} --- \VAR{t[1]|escape_tex}
+\BLOCK{ endfor }
+\end{description}
+\BLOCK{ endif }
+\BLOCK{ endmacro }
+
+\BLOCK{ macro onetag(name, tuples) }
+\BLOCK{ if tuples|length > 0 }
+\par
+\begin{description}
+\BLOCK{ for t in tuples }
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{\VAR{name.upper()}}}}] \VAR{t[0]|escape_tex}
+\BLOCK{ endfor }
+\end{description}
+\BLOCK{ endif }
+\BLOCK{ endmacro }
+
+\BLOCK{ macro linktag(name, tuples) }
+\BLOCK{ if tuples|length > 0 }
+\par
+\begin{description}
+\BLOCK{ for t in tuples }
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{\VAR{name.upper()}}}}] \textbf{\VAR{t[0]|escape_tex}} <\VAR{t[1]|escape_tex}>
+\BLOCK{ endfor }
+\end{description}
+\BLOCK{ endif }
+\BLOCK{ endmacro }
+
+\BLOCK{ macro contenttag(lines) }
+\BLOCK{ for line in lines }
+\VAR{ line }
+\BLOCK{ endfor }
+\BLOCK{ endmacro }
+
+\VAR{ render_name|macro(*args) }

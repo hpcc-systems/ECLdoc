@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../Types.ecl.xml"/><Source name="ML_Core.Interfaces.IRegression" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Interfaces/IRegression.ecl" target="IRegression.ecl.xml">
+  <Import name="Core" ref="ML_Core" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Types" ref="ML_Core.Types" target="../Types.ecl.xml"/>
+  <Definition exported="1" fullname="ml_core.interfaces.iregression" inherittype="local" line="37" name="IRegression" type="module" virtual="1">
+   <Params>
+    <Param name="X">
+     <Type type="table">
+      <Type fullname="ml_core.interfaces.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+    <Param name="Y">
+     <Type type="table">
+      <Type fullname="ml_core.interfaces.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+   <Parents/>
+   <Definition exported="1" fullname="ml_core.interfaces.iregression.getmodel" inherittype="local" line="47" name="GetModel" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="GetModel" ret="DATASET(Layout_Model)" param="" hlen="30">DATASET(Layout_Model) GetModel</Signature><Documentation>
+     <content>Calculate and return the 'learned' model The model may be persisted and later used to make predictions using 'Predict' below.</content><return>DATASET(LayoutModel) describing the learned model parameters</return><firstline>Calculate and return the 'learned' model The model may be persisted and later used to make predictions using 'Predict' below</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.interfaces.iregression.predict" inherittype="local" line="56" name="Predict" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Predict the output variable(s) based on a previously learned model</content><return>DATASET(NumericField) containing one entry per observation (i.e. id) in newX. This represents the predicted values for Y.</return><param>newX DATASET(NumericField) containing the X values to b predicted.</param><firstline>Predict the output variable(s) based on a previously learned model</firstline></Documentation>
+    <Signature name="Predict" ret="DATASET(NumericField)" param="(DATASET(NumericField) newX, DATASET(Layout_Model) model)" hlen="29">DATASET(NumericField) Predict(DATASET(NumericField) newX, DATASET(Layout_Model) model)</Signature><Params>
+     <Param name="newX">
+      <Type type="table">
+       <Type fullname="ml_core.interfaces.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="model">
+      <Type type="table">
+       <Type fullname="ml_core.interfaces.layout_model" name="Layout_Model" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Signature name="IRegression" ret="" param="(DATASET(NumericField) X=empty_data, DATASET(NumericField) Y=empty_data)" hlen="11">IRegression(DATASET(NumericField) X=empty_data, DATASET(NumericField) Y=empty_data)</Signature><Documentation>
+    <content>Interface Definition for Regression Modules Regression learns a function that maps a set of input data to one or more output variables. The resulting learned function is known as the model. That model can then be used repetitively to predict (i.e. estimate) the output value(s) based on new input data.</content><param>X The independent data in DATASET(NumericField) format. Each statistical unit (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number').</param><param>Y The dependent variable(s) in DATASET(NumericField) format. Each statistical unit (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number').</param><firstline>Interface Definition for Regression Modules Regression learns a function that maps a set of input data to one or more output variables</firstline></Documentation>
+  </Definition>
+ <Documentation>
+    <content>Interface Definition for Regression Modules Regression learns a function that maps a set of input data to one or more output variables. The resulting learned function is known as the model. That model can then be used repetitively to predict (i.e. estimate) the output value(s) based on new input data.</content><param>X The independent data in DATASET(NumericField) format. Each statistical unit (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number').</param><param>Y The dependent variable(s) in DATASET(NumericField) format. Each statistical unit (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number').</param><firstline>Interface Definition for Regression Modules Regression learns a function that maps a set of input data to one or more output variables</firstline></Documentation>
+  </Source>
+</Meta>

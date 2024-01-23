@@ -1,0 +1,12 @@
+00000000 2017-07-12 15:25:57  7952  7952 Plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/libdmetaphone.so exports getECLPluginDefinition but does not export ECL - not loading
+00000001 2017-07-12 15:25:57  7952  7952 Loading plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/libfileservices.so[lib_fileservices] version = FILESERVICES 2.1.3
+00000002 2017-07-12 15:25:57  7952  7952 Loading plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/libtimelib.so[lib_timelib] version = TIMELIB 1.0.0
+00000003 2017-07-12 15:25:57  7952  7952 Loading plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/liblogging.so[lib_logging] version = LOGGING 1.0.1
+00000004 2017-07-12 15:25:57  7952  7952 Loading plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/libstringlib.so[lib_stringlib] version = STRINGLIB 1.1.14
+00000005 2017-07-12 15:25:57  7952  7952 Loading plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/libworkunitservices.so[lib_WORKUNITSERVICES] version = WORKUNITSERVICES 1.0.2
+00000006 2017-07-12 15:25:57  7952  7952 Loading plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/libdebugservices.so[lib_debugservices] version = DEBUGSERVICES 1.0.1
+00000007 2017-07-12 15:25:57  7952  7952 Loading plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/libparselib.so[lib_parselib] version = PARSELIB 1.0.1
+00000008 2017-07-12 15:25:57  7952  7952 Loading plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/libunicodelib.so[lib_unicodelib] version = UNICODELIB 1.1.06
+00000009 2017-07-12 15:25:57  7952  7952 Loading plugin /home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/libauditlib.so[lib_auditlib] version = AUDITLIB 1.0.1
+0000000A 2017-07-12 15:25:57  7952  7952 Folder: Replace DATASET with []
+0000000B 2017-07-12 15:25:57  7952  7952 Folder: Replace DICTIONARY with []

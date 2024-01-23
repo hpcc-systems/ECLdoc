@@ -1,0 +1,1159 @@
+\chapter*{\color{headfile}
+BLAS
+}
+\hypertarget{ecldoc:toc:BLAS}{}
+\hyperlink{ecldoc:toc:root}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+lib\_eclblas |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+BLAS}}
+
+\hypertarget{ecldoc:blas}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{BLAS} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:BLAS.Types}{Types}
+: No Documentation Found
+\item \hyperlink{ecldoc:blas.icellfunc}{ICellFunc}
+: Function prototype for Apply2Cell
+\item \hyperlink{ecldoc:blas.apply2cells}{Apply2Cells}
+: Iterate matrix and apply function to each cell
+\item \hyperlink{ecldoc:blas.dasum}{dasum}
+: Absolute sum, the 1 norm of a vector
+\item \hyperlink{ecldoc:blas.daxpy}{daxpy}
+: alpha*X + Y
+\item \hyperlink{ecldoc:blas.dgemm}{dgemm}
+: alpha*op(A) op(B) + beta*C where op() is transpose
+\item \hyperlink{ecldoc:blas.dgetf2}{dgetf2}
+: Compute LU Factorization of matrix A
+\item \hyperlink{ecldoc:blas.dpotf2}{dpotf2}
+: DPOTF2 computes the Cholesky factorization of a real symmetric positive definite matrix A
+\item \hyperlink{ecldoc:blas.dscal}{dscal}
+: Scale a vector alpha
+\item \hyperlink{ecldoc:blas.dsyrk}{dsyrk}
+: Implements symmetric rank update C 
+\item \hyperlink{ecldoc:blas.dtrsm}{dtrsm}
+: Triangular matrix solver
+\item \hyperlink{ecldoc:blas.extract_diag}{extract\_diag}
+: Extract the diagonal of he matrix
+\item \hyperlink{ecldoc:blas.extract_tri}{extract\_tri}
+: Extract the upper or lower triangle
+\item \hyperlink{ecldoc:blas.make_diag}{make\_diag}
+: Generate a diagonal matrix
+\item \hyperlink{ecldoc:blas.make_vector}{make\_vector}
+: Make a vector of dimension m
+\item \hyperlink{ecldoc:blas.trace}{trace}
+: The trace of the input matrix
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+Types}}
+
+\hypertarget{ecldoc:BLAS.Types}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Types} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:blas.types.value_t}{value\_t}
+: No Documentation Found
+\item \hyperlink{ecldoc:blas.types.dimension_t}{dimension\_t}
+: No Documentation Found
+\item \hyperlink{ecldoc:blas.types.matrix_t}{matrix\_t}
+: No Documentation Found
+\item \hyperlink{ecldoc:ecldoc-Triangle}{Triangle}
+: No Documentation Found
+\item \hyperlink{ecldoc:ecldoc-Diagonal}{Diagonal}
+: No Documentation Found
+\item \hyperlink{ecldoc:ecldoc-Side}{Side}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+value\_t}}
+
+\hypertarget{ecldoc:blas.types.value_t}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:BLAS.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{value\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+dimension\_t}}
+
+\hypertarget{ecldoc:blas.types.dimension_t}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:BLAS.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{dimension\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+matrix\_t}}
+
+\hypertarget{ecldoc:blas.types.matrix_t}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:BLAS.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{matrix\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Triangle}}
+
+\hypertarget{ecldoc:ecldoc-Triangle}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:BLAS.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Triangle} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Diagonal}}
+
+\hypertarget{ecldoc:ecldoc-Diagonal}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:BLAS.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Diagonal} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Side}}
+
+\hypertarget{ecldoc:ecldoc-Side}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:BLAS.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Side} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ICellFunc}}
+
+\hypertarget{ecldoc:blas.icellfunc}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.value\_t} & \textbf{ICellFunc} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.value\_t v, Types.dimension\_t r, Types.dimension\_t c)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Function prototype for Apply2Cell.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{r}} ||| UNSIGNED4 --- the row ordinal
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{v}} ||| REAL8 --- the value
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{c}} ||| UNSIGNED4 --- the column ordinal
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- the updated value
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Apply2Cells}}
+
+\hypertarget{ecldoc:blas.apply2cells}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{Apply2Cells} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t m, Types.dimension\_t n, Types.matrix\_t x, ICellFunc f)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Iterate matrix and apply function to each cell
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{f}} ||| FUNCTION [ REAL8 , UNSIGNED4 , UNSIGNED4 ] ( REAL8 ) --- function to apply
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{m}} ||| UNSIGNED4 --- number of rows
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| SET ( REAL8 ) --- matrix
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| UNSIGNED4 --- number of columns
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- updated matrix
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+dasum}}
+
+\hypertarget{ecldoc:blas.dasum}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.value\_t} & \textbf{dasum} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t m, Types.matrix\_t x, Types.dimension\_t incx, Types.dimension\_t skipped=0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Absolute sum, the 1 norm of a vector.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{m}} ||| UNSIGNED4 --- the number of entries
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| SET ( REAL8 ) --- the column major matrix holding the vector
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{incx}} ||| UNSIGNED4 --- the increment for x, 1 in the case of an actual vector
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{skipped}} ||| UNSIGNED4 --- default is zero, the number of entries stepped over to get to the first entry
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- the sum of the absolute values
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+daxpy}}
+
+\hypertarget{ecldoc:blas.daxpy}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{daxpy} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t N, Types.value\_t alpha, Types.matrix\_t X, Types.dimension\_t incX, Types.matrix\_t Y, Types.dimension\_t incY, Types.dimension\_t x\_skipped=0, Types.dimension\_t y\_skipped=0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+alpha*X + Y
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{y\_skipped}} ||| UNSIGNED4 --- number of entries skipped to get to the first Y
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{Y}} ||| SET ( REAL8 ) --- the column major matrix holding the vector Y
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{N}} ||| UNSIGNED4 --- number of elements in vector
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x\_skipped}} ||| UNSIGNED4 --- number of entries skipped to get to the first X
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{X}} ||| SET ( REAL8 ) --- the column major matrix holding the vector X
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{alpha}} ||| REAL8 --- the scalar multiplier
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{incX}} ||| UNSIGNED4 --- the increment or stride for the vector
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{incY}} ||| UNSIGNED4 --- the increment or stride of Y
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- the updated matrix
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+dgemm}}
+
+\hypertarget{ecldoc:blas.dgemm}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{dgemm} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (BOOLEAN transposeA, BOOLEAN transposeB, Types.dimension\_t M, Types.dimension\_t N, Types.dimension\_t K, Types.value\_t alpha, Types.matrix\_t A, Types.matrix\_t B, Types.value\_t beta=0.0, Types.matrix\_t C=[])}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+alpha*op(A) op(B) + beta*C where op() is transpose
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{beta}} ||| REAL8 --- scalar for matrix C
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transposeA}} ||| BOOLEAN --- true when transpose of A is used
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{N}} ||| UNSIGNED4 --- number of columns in product
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{K}} ||| UNSIGNED4 --- number of columns/rows for the multiplier/multiplicand
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{B}} ||| SET ( REAL8 ) --- matrix B
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{A}} ||| SET ( REAL8 ) --- matrix A
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transposeB}} ||| BOOLEAN --- true when transpose of B is used
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{C}} ||| SET ( REAL8 ) --- matrix C or empty
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{M}} ||| UNSIGNED4 --- number of rows in product
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{alpha}} ||| REAL8 --- scalar used on A
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+dgetf2}}
+
+\hypertarget{ecldoc:blas.dgetf2}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{dgetf2} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t m, Types.dimension\_t n, Types.matrix\_t a)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Compute LU Factorization of matrix A.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{m}} ||| UNSIGNED4 --- number of rows of A
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| UNSIGNED4 --- number of columns of A
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{a}} ||| SET ( REAL8 ) --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- composite matrix of factors, lower triangle has an implied diagonal of ones. Upper triangle has the diagonal of the composite.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+dpotf2}}
+
+\hypertarget{ecldoc:blas.dpotf2}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{dpotf2} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.Triangle tri, Types.dimension\_t r, Types.matrix\_t A, BOOLEAN clear=TRUE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+DPOTF2 computes the Cholesky factorization of a real symmetric positive definite matrix A. The factorization has the form A = U**T * U , if UPLO = 'U', or A = L * L**T, if UPLO = 'L', where U is an upper triangular matrix and L is lower triangular. This is the unblocked version of the algorithm, calling Level 2 BLAS.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{tri}} ||| UNSIGNED1 --- indicate whether upper or lower triangle is used
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{r}} ||| UNSIGNED4 --- number of rows/columns in the square matrix
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{clear}} ||| BOOLEAN --- clears the unused triangle
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{A}} ||| SET ( REAL8 ) --- the square matrix
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- the triangular matrix requested.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+dscal}}
+
+\hypertarget{ecldoc:blas.dscal}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{dscal} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t N, Types.value\_t alpha, Types.matrix\_t X, Types.dimension\_t incX, Types.dimension\_t skipped=0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Scale a vector alpha
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{X}} ||| SET ( REAL8 ) --- the column major matrix holding the vector
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{incX}} ||| UNSIGNED4 --- the stride to get to the next element in the vector
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{N}} ||| UNSIGNED4 --- number of elements in the vector
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{alpha}} ||| REAL8 --- the scaling factor
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{skipped}} ||| UNSIGNED4 --- the number of elements skipped to get to the first element
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- the updated matrix
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+dsyrk}}
+
+\hypertarget{ecldoc:blas.dsyrk}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{dsyrk} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.Triangle tri, BOOLEAN transposeA, Types.dimension\_t N, Types.dimension\_t K, Types.value\_t alpha, Types.matrix\_t A, Types.value\_t beta, Types.matrix\_t C, BOOLEAN clear=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Implements symmetric rank update C 
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{A}} ||| SET ( REAL8 ) --- the update matrix, either NxK or KxN
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transposeA}} ||| BOOLEAN --- Transpose the A matrix to be NxK
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{N}} ||| UNSIGNED4 --- number of rows
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{K}} ||| UNSIGNED4 --- number of columns in the update matrix or transpose
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{beta}} ||| REAL8 --- the beta scalar
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{tri}} ||| UNSIGNED1 --- update upper or lower triangle
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{C}} ||| SET ( REAL8 ) --- the matrix to update
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{alpha}} ||| REAL8 --- the alpha scalar
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{clear}} ||| BOOLEAN --- clear the triangle that is not updated. BLAS assumes that symmetric matrices have only one of the triangles and this option lets you make that true.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+dtrsm}}
+
+\hypertarget{ecldoc:blas.dtrsm}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{dtrsm} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.Side side, Types.Triangle tri, BOOLEAN transposeA, Types.Diagonal diag, Types.dimension\_t M, Types.dimension\_t N, Types.dimension\_t lda, Types.value\_t alpha, Types.matrix\_t A, Types.matrix\_t B)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Triangular matrix solver. op(A) X = alpha B or X op(A) = alpha B where op is Transpose, X and B is MxN
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lda}} ||| UNSIGNED4 --- the leading dimension of the A matrix, either M or N
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transposeA}} ||| BOOLEAN --- is op(A) the transpose of A
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{diag}} ||| UNSIGNED1 --- is the diagonal an implied unit diagonal or supplied
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{side}} ||| UNSIGNED1 --- side for A, Side.Ax is op(A) X = alpha B
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{tri}} ||| UNSIGNED1 --- Says whether A is Upper or Lower triangle
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{alpha}} ||| REAL8 --- the scalar multiplier for B
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{B}} ||| SET ( REAL8 ) --- the matrix of values for the solve
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{M}} ||| UNSIGNED4 --- number of rows
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{N}} ||| UNSIGNED4 --- number of columns
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{A}} ||| SET ( REAL8 ) --- a triangular matrix
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- the matrix of coefficients to get B.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+extract\_diag}}
+
+\hypertarget{ecldoc:blas.extract_diag}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{extract\_diag} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t m, Types.dimension\_t n, Types.matrix\_t x)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extract the diagonal of he matrix
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{m}} ||| UNSIGNED4 --- number of rows
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| SET ( REAL8 ) --- matrix from which to extract the diagonal
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| UNSIGNED4 --- number of columns
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- diagonal matrix
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+extract\_tri}}
+
+\hypertarget{ecldoc:blas.extract_tri}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{extract\_tri} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t m, Types.dimension\_t n, Types.Triangle tri, Types.Diagonal dt, Types.matrix\_t a)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extract the upper or lower triangle. Diagonal can be actual or implied unit diagonal.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{tri}} ||| UNSIGNED1 --- Upper or Lower specifier, Triangle.Lower or Triangle.Upper
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{m}} ||| UNSIGNED4 --- number of rows
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| UNSIGNED4 --- number of columns
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{a}} ||| SET ( REAL8 ) --- Matrix, usually a composite from factoring
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{dt}} ||| UNSIGNED1 --- Use Diagonal.NotUnitTri or Diagonal.UnitTri
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- the triangle
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+make\_diag}}
+
+\hypertarget{ecldoc:blas.make_diag}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{make\_diag} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t m, Types.value\_t v=1.0, Types.matrix\_t X=[])}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Generate a diagonal matrix.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{X}} ||| SET ( REAL8 ) --- optional input of diagonal values, multiplied by v.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{m}} ||| UNSIGNED4 --- number of diagonal entries
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{v}} ||| REAL8 --- option value, defaults to 1
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- a diagonal matrix
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+make\_vector}}
+
+\hypertarget{ecldoc:blas.make_vector}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.matrix\_t} & \textbf{make\_vector} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t m, Types.value\_t v=1.0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Make a vector of dimension m
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{m}} ||| UNSIGNED4 --- number of elements
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{v}} ||| REAL8 --- the values, defaults to 1
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( REAL8 )} --- the vector
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+trace}}
+
+\hypertarget{ecldoc:blas.trace}{}
+\hspace{0pt} \hyperlink{ecldoc:blas}{BLAS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Types.value\_t} & \textbf{trace} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.dimension\_t m, Types.dimension\_t n, Types.matrix\_t x)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+The trace of the input matrix
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{m}} ||| UNSIGNED4 --- number of rows
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| SET ( REAL8 ) --- the matrix
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| UNSIGNED4 --- number of columns
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- the trace (sum of the diagonal entries)
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

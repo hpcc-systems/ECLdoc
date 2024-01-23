@@ -1,0 +1,76 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+{\large IRLS\slash\hspace{0pt}}
+ \\
+GetModel_local
+}
+\hypertarget{ecldoc:toc:LogisticRegression.IRLS.GetModel_local}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression/IRLS}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core |
+ML\_Core.Types |
+LogisticRegression |
+LogisticRegression.Constants |
+LogisticRegression.Types |
+LogisticRegression.IRLS |
+std |
+std.blas |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetModel\_local}}
+
+\hypertarget{ecldoc:logisticregression.irls.getmodel_local}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Model)} & \textbf{GetModel\_local} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(NumericField) independents, DATASET(DiscreteField) dependents, UNSIGNED2 max\_iter=200, REAL8 epsilon=Constants.default\_epsilon, REAL8 ridge=Constants.default\_ridge)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Internal function to determine values for the model co-efficients and selected stats from building the model.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{dependents}} ||| TABLE ( DiscreteField ) --- the dependent values.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ridge}} ||| REAL8 --- a value to populate a diagonal matrix that is added to a matrix help assure that the matrix is invertible.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{epsilon}} ||| REAL8 --- the minimum change in the Beta value estimate to continue
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{independents}} ||| TABLE ( NumericField ) --- the independent values
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{max\_iter}} ||| UNSIGNED2 --- maximum number of iterations to try
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- coefficient matrix plus model building stats
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

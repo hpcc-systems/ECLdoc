@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="Types.ecl.xml"/><Source name="PBblas.scal" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/scal.ecl" target="scal.ecl.xml">
+  <Import name="PBblas" ref="PBblas" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/pkg.toc.xml"/>
+  <Import name="Types" ref="PBblas.Types" target="Types.ecl.xml">
+   </Import>
+  <Definition exported="1" fullname="pbblas.scal" inherittype="local" line="23" name="scal" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi_id">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="x">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="y">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="v">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Scale a matrix by a constant Result is alpha * X This supports a "myriad" style interface in that X may be a set of independent matrices separated by different work-item ids.</content><return>Matrix in Layout_Cell form, of the same shape as X</return><param>alpha A scalar multiplier</param><param>X The matrix(es) to be scaled in Layout_Cell format</param><firstline>Scale a matrix by a constant Result is alpha * X This supports a "myriad" style interface in that X may be a set of independent matrices separated by different work-item ids</firstline><see>PBblas/Types.Layout_Cell</see></Documentation>
+   <Signature name="scal" ret="DATASET(Layout_Cell)" param="(value_t alpha, DATASET(Layout_Cell) X)" hlen="25">DATASET(Layout_Cell) scal(value_t alpha, DATASET(Layout_Cell) X)</Signature><Params>
+    <Param name="alpha">
+     <Type type="real8"/>
+    </Param>
+    <Param name="X">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Scale a matrix by a constant Result is alpha * X This supports a "myriad" style interface in that X may be a set of independent matrices separated by different work-item ids.</content><return>Matrix in Layout_Cell form, of the same shape as X</return><param>alpha A scalar multiplier</param><param>X The matrix(es) to be scaled in Layout_Cell format</param><firstline>Scale a matrix by a constant Result is alpha * X This supports a "myriad" style interface in that X may be a set of independent matrices separated by different work-item ids</firstline><see>PBblas/Types.Layout_Cell</see></Documentation>
+   </Source>
+</Meta>

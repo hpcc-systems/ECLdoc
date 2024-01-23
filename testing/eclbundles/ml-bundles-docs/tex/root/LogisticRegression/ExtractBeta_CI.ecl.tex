@@ -1,0 +1,67 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+ExtractBeta_CI
+}
+\hypertarget{ecldoc:toc:LogisticRegression.ExtractBeta_CI}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Types |
+LogisticRegression |
+LogisticRegression.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ExtractBeta\_CI}}
+
+\hypertarget{ecldoc:logisticregression.extractbeta_ci}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Confidence\_Model\_Coef)} & \textbf{ExtractBeta\_CI} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Core\_Types.Layout\_Model) mod\_ds, REAL8 level)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extract the beta values form the model dataset.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{level}} ||| REAL8 --- the significance value for the intervals
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{mod\_ds}} ||| TABLE ( Layout\_Model ) --- the model dataset
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 ind\_col , UNSIGNED4 dep\_nom , REAL8 w , REAL8 SE , REAL8 upper , REAL8 lower \} )} --- the beta values with confidence intervals term.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

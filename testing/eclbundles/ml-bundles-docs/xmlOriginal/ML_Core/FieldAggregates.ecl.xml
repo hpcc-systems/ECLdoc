@@ -1,0 +1,950 @@
+<Meta>
+ <Source name="ML_Core.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Types.ecl">
+  <Definition body="37"
+              end="3074"
+              exported="1"
+              fullname="ML_Core.Types"
+              inherittype="local"
+              line="2"
+              name="Types"
+              start="22"
+              type="module">
+   <Definition body="944"
+               end="955"
+               exported="1"
+               fullname="ml_core.types.t_recordid"
+               inherittype="local"
+               line="22"
+               name="t_RecordID"
+               start="924"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="981"
+               end="992"
+               exported="1"
+               fullname="ml_core.types.t_fieldnumber"
+               inherittype="local"
+               line="23"
+               name="t_FieldNumber"
+               start="958"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="1016"
+               end="1023"
+               exported="1"
+               fullname="ml_core.types.t_fieldreal"
+               inherittype="local"
+               line="24"
+               name="t_FieldReal"
+               start="995"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="1047"
+               end="1057"
+               exported="1"
+               fullname="ml_core.types.t_fieldsign"
+               inherittype="local"
+               line="25"
+               name="t_FieldSign"
+               start="1026"
+               type="attribute">
+    <Type type="integer1"/>
+   </Definition>
+   <Definition body="1080"
+               end="1090"
+               exported="1"
+               fullname="ml_core.types.t_discrete"
+               inherittype="local"
+               line="26"
+               name="t_Discrete"
+               start="1060"
+               type="attribute">
+    <Type type="integer4"/>
+   </Definition>
+   <Definition body="1109"
+               end="1120"
+               exported="1"
+               fullname="ml_core.types.t_item"
+               inherittype="local"
+               line="27"
+               name="t_Item"
+               start="1093"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="1188"
+               end="1200"
+               exported="1"
+               fullname="ml_core.types.t_count"
+               inherittype="local"
+               line="28"
+               name="t_Count"
+               start="1171"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="1258"
+               end="1269"
+               exported="1"
+               fullname="ml_core.types.t_work_item"
+               inherittype="local"
+               line="29"
+               name="t_Work_Item"
+               start="1237"
+               type="attribute">
+    <Type type="unsigned2"/>
+   </Definition>
+   <Definition body="1391"
+               end="1600"
+               exported="1"
+               fullname="ml_core.types.anyfield"
+               inherittype="local"
+               line="32"
+               name="AnyField"
+               start="1369"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+   </Definition>
+   <Definition body="1673"
+               end="1720"
+               exported="1"
+               fullname="ml_core.types.numericfield"
+               inherittype="local"
+               line="39"
+               name="NumericField"
+               start="1651"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="1797"
+               end="1843"
+               exported="1"
+               fullname="ml_core.types.discretefield"
+               inherittype="local"
+               line="44"
+               name="DiscreteField"
+               start="1774"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+   </Definition>
+   <Definition body="1953"
+               end="2200"
+               exported="1"
+               fullname="ml_core.types.layout_model"
+               inherittype="local"
+               line="49"
+               name="Layout_Model"
+               start="1931"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2261"
+               end="2336"
+               exported="1"
+               fullname="ml_core.types.classify_result"
+               inherittype="local"
+               line="57"
+               name="Classify_Result"
+               start="2236"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2357"
+               end="2410"
+               exported="1"
+               fullname="ml_core.types.l_result"
+               inherittype="local"
+               line="60"
+               name="l_result"
+               start="2339"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2440"
+               end="2639"
+               exported="1"
+               fullname="ml_core.types.confusion_detail"
+               inherittype="local"
+               line="62"
+               name="Confusion_Detail"
+               start="2414"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="classifier">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="actual_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="predict_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="occurs">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="correct">
+     <Type type="boolean"/>
+    </Field>
+   </Definition>
+   <Definition body="2711"
+               end="2782"
+               exported="1"
+               fullname="ml_core.types.itemelement"
+               inherittype="local"
+               line="72"
+               name="ItemElement"
+               start="2690"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="value">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+   </Definition>
+   <Definition body="2848"
+               end="2858"
+               exported="1"
+               fullname="ml_core.types.t_node"
+               inherittype="local"
+               line="79"
+               name="t_node"
+               start="2831"
+               type="attribute">
+    <Type type="integer4"/>
+   </Definition>
+   <Definition body="2942"
+               end="2953"
+               exported="1"
+               fullname="ml_core.types.t_level"
+               inherittype="local"
+               line="80"
+               name="t_level"
+               start="2925"
+               type="attribute">
+    <Type type="unsigned2"/>
+   </Definition>
+   <Definition body="2995"
+               end="3069"
+               exported="1"
+               fullname="ml_core.types.nodeid"
+               inherittype="local"
+               line="81"
+               name="NodeID"
+               start="2978"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="node_id">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="level">
+     <Type type="unsigned2"/>
+    </Field>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="std.system.ThorLib" sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl">
+  <Definition body="464"
+              end="1191"
+              inherittype="local"
+              line="11"
+              name="externals"
+              start="452"
+              type="module">
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="node"
+               inherittype="local"
+               line="13"
+               name="node"
+               start="0"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="nodes"
+               inherittype="local"
+               line="14"
+               name="nodes"
+               start="0"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="l2p"
+               inherittype="local"
+               line="15"
+               name="l2p"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="create">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="getfileoffset"
+               inherittype="local"
+               line="16"
+               name="getFileOffset"
+               start="0"
+               type="function">
+    <Type type="unsigned8"/>
+    <Params>
+     <Param name="lfname">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="daliserver"
+               inherittype="local"
+               line="17"
+               name="daliServer"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="cluster"
+               inherittype="local"
+               line="18"
+               name="cluster"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="getexpandlogicalname"
+               inherittype="local"
+               line="19"
+               name="getExpandLogicalName"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="group"
+               inherittype="local"
+               line="20"
+               name="group"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="platform"
+               inherittype="local"
+               line="21"
+               name="platform"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Utils.SequenceInField" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Utils/SequenceInField.ecl">
+  <Definition body="770"
+              end="2150"
+              exported="1"
+              fullname="ml_core.utils.sequenceinfield"
+              inherittype="local"
+              line="16"
+              name="SequenceInField"
+              start="712"
+              type="macro">
+   <Type type="boolean"/>
+   <Documentation>
+    <content>&#10;&#32;* Given a file which is sorted by the work item identifier and
+ * INFIELD (and possibly other values), add sequence numbers within
+ * the range of each infield.
+ * Slighly elaborate code is to avoid having to partition the data
+ * to one value of infield per node and to work with very large
+ * numbers of records where a global count project would be
+ * inappropriate.
+ * This is useful for assigning rank positions with the groupings.
+ *@param infile the input file, any type
+ *@param infield field name of grouping field
+ *@param seq name of the field to receive the sequence number
+ *@param wi_name work item field name, default is wi
+ *@return a file of the same type with sequence numbers applied&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="infile">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="infield">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="seq">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="wi_name">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.FieldAggregates" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/FieldAggregates.ecl">
+  <Definition body="167"
+              end="5644"
+              exported="1"
+              fullname="ml_core.fieldaggregates"
+              inherittype="local"
+              line="6"
+              name="FieldAggregates"
+              start="111"
+              type="module">
+   <Definition body="644"
+               end="681"
+               exported="1"
+               fullname="ml_core.fieldaggregates.simple"
+               inherittype="local"
+               line="19"
+               name="Simple"
+               start="629"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="minval">
+       <Type type="real8"/>
+      </Field>
+      <Field name="maxval">
+       <Type type="real8"/>
+      </Field>
+      <Field name="sumval">
+       <Type type="real8"/>
+      </Field>
+      <Field name="countval">
+       <Type type="real8"/>
+      </Field>
+      <Field name="mean">
+       <Type type="real8"/>
+      </Field>
+      <Field name="var">
+       <Type type="real8"/>
+      </Field>
+      <Field name="sd">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="915"
+               end="918"
+               exported="1"
+               fullname="ml_core.fieldaggregates.simpleranked"
+               inherittype="local"
+               line="28"
+               name="SimpleRanked"
+               start="893"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Pos">
+       <Type type="unsigned8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="1516"
+               end="1790"
+               exported="1"
+               fullname="ml_core.fieldaggregates.medians"
+               inherittype="local"
+               line="42"
+               name="Medians"
+               start="1500"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="median">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="2557"
+               end="2693"
+               exported="1"
+               fullname="ml_core.fieldaggregates.minmednext"
+               inherittype="local"
+               line="63"
+               name="MinMedNext"
+               start="2538"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="median">
+       <Type type="real8"/>
+      </Field>
+      <Field name="nextval">
+       <Type type="real8"/>
+      </Field>
+      <Field name="minval">
+       <Type type="real8"/>
+      </Field>
+      <Field name="maxval">
+       <Type type="real8"/>
+      </Field>
+      <Field name="sumval">
+       <Type type="real8"/>
+      </Field>
+      <Field name="countval">
+       <Type type="real8"/>
+      </Field>
+      <Field name="mean">
+       <Type type="real8"/>
+      </Field>
+      <Field name="var">
+       <Type type="real8"/>
+      </Field>
+      <Field name="sd">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="3021"
+               end="3154"
+               exported="1"
+               fullname="ml_core.fieldaggregates.buckets"
+               inherittype="local"
+               line="74"
+               name="Buckets"
+               start="2976"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Pos">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="bucket">
+       <Type type="integer4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Params>
+     <Param name="n">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3207"
+               end="3460"
+               exported="1"
+               fullname="ml_core.fieldaggregates.bucketranges"
+               inherittype="local"
+               line="78"
+               name="BucketRanges"
+               start="3157"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="bucket">
+       <Type type="integer4"/>
+      </Field>
+      <Field name="Min">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Max">
+       <Type type="real8"/>
+      </Field>
+      <Field name="cnt">
+       <Type type="unsigned8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Params>
+     <Param name="n">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3672"
+               end="3716"
+               fullname="ml_core.fieldaggregates.t"
+               inherittype="local"
+               line="93"
+               name="T"
+               shared="1"
+               start="3661"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Pos">
+       <Type type="real8"/>
+      </Field>
+      <Field name="valcount">
+       <Type type="unsigned8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="3841"
+               end="4298"
+               exported="1"
+               fullname="ml_core.fieldaggregates.modes"
+               inherittype="local"
+               line="96"
+               name="Modes"
+               start="3827"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="mode">
+       <Type type="real8"/>
+      </Field>
+      <Field name="cnt">
+       <Type type="unsigned8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="4338"
+               end="4432"
+               exported="1"
+               fullname="ml_core.fieldaggregates.cardinality"
+               inherittype="local"
+               line="106"
+               name="Cardinality"
+               start="4318"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="cardinality">
+       <Type type="unsigned8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="4619"
+               end="4802"
+               exported="1"
+               fullname="ml_core.fieldaggregates.rankedinput"
+               inherittype="local"
+               line="117"
+               name="RankedInput"
+               start="4598"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Pos">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="5093"
+               end="5291"
+               exported="1"
+               fullname="ml_core.fieldaggregates.ntiles"
+               inherittype="local"
+               line="128"
+               name="NTiles"
+               start="5058"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Pos">
+       <Type type="real8"/>
+      </Field>
+      <Field name="ntile">
+       <Type type="integer4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Params>
+     <Param name="n">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="5334"
+               end="5613"
+               exported="1"
+               fullname="ml_core.fieldaggregates.ntileranges"
+               inherittype="local"
+               line="132"
+               name="NTileRanges"
+               start="5294"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="ntile">
+       <Type type="integer4"/>
+      </Field>
+      <Field name="Min">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Max">
+       <Type type="real8"/>
+      </Field>
+      <Field name="cnt">
+       <Type type="unsigned8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Params>
+     <Param name="n">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Params>
+    <Param name="d">
+     <Type type="table">
+      <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="7"
+          fullname="ML_Core"
+          inherittype="local"
+          line="1"
+          name="ML_Core"
+          ref="ML_Core"
+          start="7"/>
+  <Import body="0"
+          end="28"
+          fullname="ML_Core.Types"
+          inherittype="local"
+          line="2"
+          name="Types"
+          ref="ML_Core.Types"
+          start="28"/>
+  <Import body="0"
+          end="59"
+          fullname="ML_Core.Utils"
+          inherittype="local"
+          line="3"
+          name="Utils"
+          ref="ML_Core.Utils"
+          remotescope="1"
+          start="59"/>
+  <Import body="0"
+          end="90"
+          fullname="std.system.ThorLib"
+          inherittype="local"
+          line="4"
+          name="ThorLib"
+          ref="std.system.ThorLib"
+          start="90"/>
+ </Source>
+</Meta>

@@ -1,0 +1,291 @@
+<Meta>
+ <Source name="math" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/math.ecl">
+  <Definition body="251"
+              end="962"
+              inherittype="local"
+              line="6"
+              name="rtl"
+              start="245"
+              type="module">
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="infinity"
+               inherittype="local"
+               line="8"
+               name="Infinity"
+               start="0"
+               type="function">
+    <Type type="real8"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="nan"
+               inherittype="local"
+               line="9"
+               name="Nan"
+               start="0"
+               type="function">
+    <Type type="real8"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="isinfinite"
+               inherittype="local"
+               line="10"
+               name="IsInfinite"
+               start="0"
+               type="function">
+    <Type type="boolean"/>
+    <Params>
+     <Param name="value">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="isnan"
+               inherittype="local"
+               line="11"
+               name="IsNaN"
+               start="0"
+               type="function">
+    <Type type="boolean"/>
+    <Params>
+     <Param name="value">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="isfinite"
+               inherittype="local"
+               line="12"
+               name="IsFinite"
+               start="0"
+               type="function">
+    <Type type="boolean"/>
+    <Params>
+     <Param name="value">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="fmod"
+               inherittype="local"
+               line="13"
+               name="fmod"
+               start="0"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="numer">
+      <Type type="real8"/>
+     </Param>
+     <Param name="denom">
+      <Type type="real8"/>
+     </Param>
+     <Param name="dbz">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="fmatch"
+               inherittype="local"
+               line="14"
+               name="fmatch"
+               start="0"
+               type="function">
+    <Type type="boolean"/>
+    <Params>
+     <Param name="a">
+      <Type type="real8"/>
+     </Param>
+     <Param name="b">
+      <Type type="real8"/>
+     </Param>
+     <Param name="epsilon">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Definition body="978"
+              end="2550"
+              exported="1"
+              fullname="Math"
+              inherittype="local"
+              line="17"
+              name="Math"
+              start="964"
+              type="module">
+   <Definition body="1058"
+               end="1074"
+               exported="1"
+               fullname="math.infinity"
+               inherittype="local"
+               line="24"
+               name="Infinity"
+               start="1034"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;* Return a real &quot;infinity&quot; value.
+ *&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1159"
+               end="1170"
+               exported="1"
+               fullname="math.nan"
+               inherittype="local"
+               line="31"
+               name="NaN"
+               start="1140"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;* Return a non-signalling NaN (Not a Number)value.
+ *&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1333"
+               end="1354"
+               exported="1"
+               fullname="math.isinfinite"
+               inherittype="local"
+               line="39"
+               name="isInfinite"
+               start="1294"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Return whether a real value is infinite (positive or negative).
+ *
+ * @param val           The value to test.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="val">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1507"
+               end="1523"
+               exported="1"
+               fullname="math.isnan"
+               inherittype="local"
+               line="47"
+               name="isNaN"
+               start="1473"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Return whether a real value is a NaN (not a number) value.
+ *
+ * @param val           The value to test.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="val">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1693"
+               end="1712"
+               exported="1"
+               fullname="math.isfinite"
+               inherittype="local"
+               line="55"
+               name="isFinite"
+               start="1656"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Return whether a real value is a valid value (neither infinite not NaN).
+ *
+ * @param val           The value to test.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="val">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2114"
+               end="2219"
+               exported="1"
+               fullname="math.fmod"
+               inherittype="local"
+               line="68"
+               name="FMod"
+               start="2068"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the floating-point remainder of numer/denom (rounded towards zero).
+ * If denom is zero, the result depends on the -fdivideByZero flag:
+ *   &apos;zero&apos; or unset: return zero.
+ *   &apos;nan&apos;: return a non-signalling NaN value
+ *   &apos;fail&apos;: throw an exception
+ *
+ * @param numer           The numerator.
+ * @param denom           The numerator.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="numer">
+      <Type type="real8"/>
+     </Param>
+     <Param name="denom">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2517"
+               end="2544"
+               exported="1"
+               fullname="math.fmatch"
+               inherittype="local"
+               line="83"
+               name="FMatch"
+               start="2456"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns whether two floating point values are the same, within margin of error epsilon.
+ *
+ * @param a           The first value.
+ * @param b           The second value.
+ * @param epsilon     The allowable margin of error.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="a">
+      <Type type="real8"/>
+     </Param>
+     <Param name="b">
+      <Type type="real8"/>
+     </Param>
+     <Param name="epsilon">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

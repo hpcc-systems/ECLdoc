@@ -1,0 +1,30 @@
+<Meta>
+ <Source name="ML_Core.Math.lowerGamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/lowerGamma.ecl">
+  <Definition body="258"
+              end="780"
+              exported="1"
+              fullname="ml_core.math.lowergamma"
+              inherittype="local"
+              line="8"
+              name="lowerGamma"
+              start="214"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the lower incomplete gamma value of two real numbers,
+ *  x and y
+ *@param x  the value of the first number
+ *@param y  the value of the second number
+ *@return   the lower incomplete gamma value&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="y">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

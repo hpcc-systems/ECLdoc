@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="ML_Core.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" target="Types.ecl.xml">
+  <Definition exported="1" fullname="ML_Core.Types" inherittype="local" line="2" name="Types" type="module">
+   <Definition exported="1" fullname="ml_core.types.t_recordid" inherittype="local" line="22" name="t_RecordID" type="attribute">
+    <Signature name="t_RecordID" ret="" param="" hlen="10">t_RecordID</Signature><Type type="unsigned8"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.t_fieldnumber" inherittype="local" line="23" name="t_FieldNumber" type="attribute">
+    <Signature name="t_FieldNumber" ret="" param="" hlen="13">t_FieldNumber</Signature><Type type="unsigned4"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.t_fieldreal" inherittype="local" line="24" name="t_FieldReal" type="attribute">
+    <Signature name="t_FieldReal" ret="" param="" hlen="11">t_FieldReal</Signature><Type type="real8"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.t_fieldsign" inherittype="local" line="25" name="t_FieldSign" type="attribute">
+    <Signature name="t_FieldSign" ret="" param="" hlen="11">t_FieldSign</Signature><Type type="integer1"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.t_discrete" inherittype="local" line="26" name="t_Discrete" type="attribute">
+    <Signature name="t_Discrete" ret="" param="" hlen="10">t_Discrete</Signature><Type type="integer4"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.t_item" inherittype="local" line="27" name="t_Item" type="attribute">
+    <Signature name="t_Item" ret="" param="" hlen="6">t_Item</Signature><Type type="unsigned4"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.t_count" inherittype="local" line="28" name="t_Count" type="attribute">
+    <Signature name="t_Count" ret="" param="" hlen="7">t_Count</Signature><Type type="unsigned8"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.t_work_item" inherittype="local" line="29" name="t_Work_Item" type="attribute">
+    <Signature name="t_Work_Item" ret="" param="" hlen="11">t_Work_Item</Signature><Type type="unsigned2"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.anyfield" inherittype="local" line="32" name="AnyField" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Signature name="AnyField" ret="" param="" hlen="8">AnyField</Signature><Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.numericfield" inherittype="local" line="39" name="NumericField" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="NumericField" ret="" param="" hlen="12">NumericField</Signature><Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.discretefield" inherittype="local" line="44" name="DiscreteField" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="DiscreteField" ret="" param="" hlen="13">DiscreteField</Signature><Field name="value">
+     <Type type="integer4"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.layout_model" inherittype="local" line="49" name="Layout_Model" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="Layout_Model" ret="" param="" hlen="12">Layout_Model</Signature><Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.classify_result" inherittype="local" line="57" name="Classify_Result" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Signature name="Classify_Result" ret="" param="" hlen="15">Classify_Result</Signature><Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.l_result" inherittype="local" line="60" name="l_result" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Signature name="l_result" ret="" param="" hlen="8">l_result</Signature><Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.confusion_detail" inherittype="local" line="62" name="Confusion_Detail" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="classifier">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="actual_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="predict_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="occurs">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="Confusion_Detail" ret="" param="" hlen="16">Confusion_Detail</Signature><Field name="correct">
+     <Type type="boolean"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.itemelement" inherittype="local" line="72" name="ItemElement" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="value">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="ItemElement" ret="" param="" hlen="11">ItemElement</Signature><Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.t_node" inherittype="local" line="79" name="t_node" type="attribute">
+    <Signature name="t_node" ret="" param="" hlen="6">t_node</Signature><Type type="integer4"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.t_level" inherittype="local" line="80" name="t_level" type="attribute">
+    <Signature name="t_level" ret="" param="" hlen="7">t_level</Signature><Type type="unsigned2"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.types.nodeid" inherittype="local" line="81" name="NodeID" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="node_id">
+     <Type type="integer4"/>
+    </Field>
+    <Signature name="NodeID" ret="" param="" hlen="6">NodeID</Signature><Field name="level">
+     <Type type="unsigned2"/>
+    </Field>
+   </Definition>
+   <Signature name="Types" ret="" param="" hlen="5">Types</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

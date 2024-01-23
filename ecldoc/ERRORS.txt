@@ -1,0 +1,12 @@
+signature evaluation not working correctly if :
+
+*. File have BOM
+*. File contains \r char
+*. Files with trailing whitespaces
+*. Files with Unicode chars
+
+Include Paths in eclcc are not working correctly for some tests
+*. Related to https://github.com/hpcc-systems/HPCC-Platform/pull/10208
+*. For example : If code contains IMPORT A.B; and IMPORT B; where A resides in some external directory.
+*. Then we need to specify both <path to parent of A> and <path to A> in eclcc to work correctly.
+

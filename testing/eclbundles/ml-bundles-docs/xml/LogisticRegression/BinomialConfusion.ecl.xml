@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Source name="LogisticRegression.BinomialConfusion" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/BinomialConfusion.ecl" target="BinomialConfusion.ecl.xml">
+  <Import name="Core_Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.binomialconfusion" inherittype="local" line="17" name="BinomialConfusion" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="classifier">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="true_positive">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="true_negative">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="false_positive">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="false_negative">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="cond_pos">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="pred_pos">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="cond_neg">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="pred_neg">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="prevalence">
+      <Type type="real8"/>
+     </Field>
+     <Field name="accuracy">
+      <Type type="real8"/>
+     </Field>
+     <Field name="true_pos_rate">
+      <Type type="real8"/>
+     </Field>
+     <Field name="false_neg_rate">
+      <Type type="real8"/>
+     </Field>
+     <Field name="false_pos_rate">
+      <Type type="real8"/>
+     </Field>
+     <Field name="true_neg_rate">
+      <Type type="real8"/>
+     </Field>
+     <Field name="pos_pred_val">
+      <Type type="real8"/>
+     </Field>
+     <Field name="false_disc_rate">
+      <Type type="real8"/>
+     </Field>
+     <Field name="false_omit_rate">
+      <Type type="real8"/>
+     </Field>
+     <Field name="neg_pred_val">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Binomial confusion matrix. Work items with multinomial responses are ignored by this function. The higher value lexically is considered to be the positive indication.</content><return>confusion matrix for a binomial classifier</return><param>d confusion detail for the work item and classifier</param><firstline>Binomial confusion matrix</firstline></Documentation>
+   <Signature name="BinomialConfusion" ret="DATASET(Types.Binomial_Confusion_Summary)" param="(DATASET(Core_Types.Confusion_Detail) d)" hlen="59">DATASET(Types.Binomial_Confusion_Summary) BinomialConfusion(DATASET(Core_Types.Confusion_Detail) d)</Signature><Params>
+    <Param name="d">
+     <Type type="table">
+      <Type fullname="ml_core.types.confusion_detail" name="Confusion_Detail" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Binomial confusion matrix. Work items with multinomial responses are ignored by this function. The higher value lexically is considered to be the positive indication.</content><return>confusion matrix for a binomial classifier</return><param>d confusion detail for the work item and classifier</param><firstline>Binomial confusion matrix</firstline></Documentation>
+   </Source>
+</Meta>

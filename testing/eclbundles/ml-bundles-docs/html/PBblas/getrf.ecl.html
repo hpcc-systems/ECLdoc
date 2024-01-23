@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <title>PBblas.getrf</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar topbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#menu-toggle" id="menu-toggle" class="navbar-brand glyphicon glyphicon-menu-hamburger ham"></a>
+            </div>
+            <div class="navbar-header" style="margin-left: 20px;">
+                <span class="navbar-brand">PBblas.getrf</span>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#ecldoc-section-import" class="topbar">Imports</a></li>
+                    <li><a href="#ecldoc-section-desc" class="topbar">Contents</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="pkg.toc.html">
+                        Up
+                    </a>
+                </li>
+                <li>
+                    <a href="Apply2Elements.ecl.html">Apply2Elements.ecl</a>
+                </li>
+                <li>
+                    <a href="asum.ecl.html">asum.ecl</a>
+                </li>
+                <li>
+                    <a href="axpy.ecl.html">axpy.ecl</a>
+                </li>
+                <li>
+                    <a href="bundle.ecl.html">bundle.ecl</a>
+                </li>
+                <li>
+                    <a href="Constants.ecl.html">Constants.ecl</a>
+                </li>
+                <li>
+                    <a href="Converted.ecl.html">Converted.ecl</a>
+                </li>
+                <li>
+                    <a href="ExtractTri.ecl.html">ExtractTri.ecl</a>
+                </li>
+                <li>
+                    <a href="gemm.ecl.html">gemm.ecl</a>
+                </li>
+                <li>
+                    <a href="getrf.ecl.html">getrf.ecl</a>
+                </li>
+                <li>
+                    <a href="HadamardProduct.ecl.html">HadamardProduct.ecl</a>
+                </li>
+                <li>
+                    <a href="IElementFunc.ecl.html">IElementFunc.ecl</a>
+                </li>
+                <li>
+                    <a href="MatUtils.ecl.html">MatUtils.ecl</a>
+                </li>
+                <li>
+                    <a href="potrf.ecl.html">potrf.ecl</a>
+                </li>
+                <li>
+                    <a href="scal.ecl.html">scal.ecl</a>
+                </li>
+                <li>
+                    <a href="tran.ecl.html">tran.ecl</a>
+                </li>
+                <li>
+                    <a href="trsm.ecl.html">trsm.ecl</a>
+                </li>
+                <li>
+                    <a href="Types.ecl.html">Types.ecl</a>
+                </li>
+                <li>
+                    <a href="Vector2Diag.ecl.html">Vector2Diag.ecl</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <section id="ecldoc-section-import">
+                    <h3 class="page-header">IMPORTS</h3>
+                    <ul class="pagination"><li><a href="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/html/PBblas/pkg.toc.html">
+                                PBblas
+                            </a></li><li><a href="Types.ecl.html">
+                                PBblas.Types
+                            </a></li><li><a href="internal/pkg.toc.html">
+                                PBblas.internal
+                            </a></li><li><a href="internal/Types.ecl.html">
+                                PBblas.internal.Types
+                            </a></li><li><a href="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl">
+                                std.blas
+                            </a></li><li><a href="internal/MatDims.ecl.html">
+                                PBblas.internal.MatDims
+                            </a></li><li><a href="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl">
+                                std.system.Thorlib
+                            </a></li></ul>
+                </section>
+                <section id="ecldoc-section-desc">
+                    <h3 class="page-header">CONTENTS</h3>
+                    <div class="panel-group desc-panel-group"><div class="panel panel-info desc-panel" id="dpbblas-getrf">
+                            <a href=".desc-pbblas-getrf" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        getrf
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(Layout_Cell)</td>
+                                    <td class="name">getrf</td>
+                                    <td class="param">(DATASET(Layout_Cell) A)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        LU Factorization Splits a matrix into Lower and Upper triangular factors Produces composite LU matrix for the diagonal blocks
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse in desc-pbblas-getrf">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	LU Factorization Splits a matrix into Lower and Upper triangular factors Produces composite LU matrix for the diagonal blocks. Iterates through the matrix a row of blocks and column of blocks at a time. Partition A into M block rows and N block columns. The A11 cell is a single block. A12 is a single row of blocks with N-1 columns. A21 is a single column of blocks with M-1 rows. A22 is a sub-matrix of M-1 x N-1 blocks. | A11 A12 | | L11 0 | | U11 U12 | | A21 A22 | == | L21 L22 | * | 0 U22 | | L11*U11 L11*U12 | == | L21*U11 L21*U12 + L22*U22 | Based upon PB-BLAS: A set of parallel block basic linear algebra subprograms by Choi and Dongarra This module supports the "Myriad" style interface, allowing many independent problems to be worked on at once. The A matrix can contain multiple matrixes to be factored, indicated by different values for work-item id (wi_id). Note: The returned matrix includes both the upper and lower factors. This matrix can be used directly by trsm which will only use the part indicated by trsm's 'triangle' parameter (i.e. upper or lower). To extract the upper or lower triangle explicitly for other purposes, use the ExtractTri function. When passing the Lower matrix to the triangle solver (trsm), set the "Diagonal" parameter to "UnitTri". This is necessary because both triangular matrixes returned from this function are packed into a square matrix with only one diagonal. By convention, The Lower triangle is assumed to be a Unit Triangle (diagonal all ones), so the diagonal contained in the returned matrix is for the Upper factor and must be ignored (i.e. assumed to be all ones) when referencing the Lower triangle.
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>A</b></td>
+				<td><b>TABLE ( pbblas.layout_cell )</b> -- The input matrix in Types.Layout_Cell format</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v } )</b></td>
+				<td>Resulting factored matrix in Layout_Cell format</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                            
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">See</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td>Types.Layout_Cell</td>
+			</tr>
+			<tr>
+				<td>ExtractTri</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>

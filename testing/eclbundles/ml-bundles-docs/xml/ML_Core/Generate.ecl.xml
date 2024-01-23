@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="Types.ecl.xml"/><Source name="ML_Core.Generate" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Generate.ecl" target="Generate.ecl.xml">
+  <Definition exported="1" fullname="ML_Core.Generate" inherittype="local" line="7" name="Generate" type="module">
+   <Definition exported="1" inherittype="local" line="9" name="tp_Method" type="attribute" fullname="ecldoc-tp_Method">
+    <Signature name="tp_Method" ret="" param="" hlen="9">tp_Method</Signature><Type type="unsigned1"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.generate.methodname" inherittype="local" line="10" name="MethodName" type="function">
+    <Type type="string7"/>
+    <Signature name="MethodName" ret="" param="(tp_Method x)" hlen="10">MethodName(tp_Method x)</Signature><Params>
+     <Param name="x">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.generate.topoly" inherittype="local" line="20" name="ToPoly" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="ToPoly" ret="" param="(DATASET(Types.NumericField) seedCol, UNSIGNED maxN=6)" hlen="6">ToPoly(DATASET(Types.NumericField) seedCol, UNSIGNED maxN=6)</Signature><Params>
+     <Param name="seedCol">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="maxN">
+      <Type type="unsigned8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Signature name="Generate" ret="" param="" hlen="8">Generate</Signature><Parents/>
+  </Definition>
+  <Import name="ML_Core" ref="ML_Core" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Types" ref="ML_Core.Types" target="Types.ecl.xml"/>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

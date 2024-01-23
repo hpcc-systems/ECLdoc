@@ -1,0 +1,1760 @@
+\chapter*{\color{headfile}
+Uni
+}
+\hypertarget{ecldoc:toc:Uni}{}
+\hyperlink{ecldoc:toc:root}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+lib\_unicodelib |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+Uni}}
+
+\hypertarget{ecldoc:Uni}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Uni} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:uni.filterout}{FilterOut}
+: Returns the first string with all characters within the second string removed
+\item \hyperlink{ecldoc:uni.filter}{Filter}
+: Returns the first string with all characters not within the second string removed
+\item \hyperlink{ecldoc:uni.substituteincluded}{SubstituteIncluded}
+: Returns the source string with the replacement character substituted for all characters included in the filter string
+\item \hyperlink{ecldoc:uni.substituteexcluded}{SubstituteExcluded}
+: Returns the source string with the replacement character substituted for all characters not included in the filter string
+\item \hyperlink{ecldoc:uni.find}{Find}
+: Returns the character position of the nth match of the search string with the first string
+\item \hyperlink{ecldoc:uni.findword}{FindWord}
+: Tests if the search string contains the supplied word as a whole word
+\item \hyperlink{ecldoc:uni.localefind}{LocaleFind}
+: Returns the character position of the nth match of the search string with the first string
+\item \hyperlink{ecldoc:uni.localefindatstrength}{LocaleFindAtStrength}
+: Returns the character position of the nth match of the search string with the first string
+\item \hyperlink{ecldoc:uni.extract}{Extract}
+: Returns the nth element from a comma separated string
+\item \hyperlink{ecldoc:uni.tolowercase}{ToLowerCase}
+: Returns the argument string with all upper case characters converted to lower case
+\item \hyperlink{ecldoc:uni.touppercase}{ToUpperCase}
+: Return the argument string with all lower case characters converted to upper case
+\item \hyperlink{ecldoc:uni.totitlecase}{ToTitleCase}
+: Returns the upper case variant of the string using the rules for a particular locale
+\item \hyperlink{ecldoc:uni.localetolowercase}{LocaleToLowerCase}
+: Returns the lower case variant of the string using the rules for a particular locale
+\item \hyperlink{ecldoc:uni.localetouppercase}{LocaleToUpperCase}
+: Returns the upper case variant of the string using the rules for a particular locale
+\item \hyperlink{ecldoc:uni.localetotitlecase}{LocaleToTitleCase}
+: Returns the upper case variant of the string using the rules for a particular locale
+\item \hyperlink{ecldoc:uni.compareignorecase}{CompareIgnoreCase}
+: Compares the two strings case insensitively
+\item \hyperlink{ecldoc:uni.compareatstrength}{CompareAtStrength}
+: Compares the two strings case insensitively
+\item \hyperlink{ecldoc:uni.localecompareignorecase}{LocaleCompareIgnoreCase}
+: Compares the two strings case insensitively
+\item \hyperlink{ecldoc:uni.localecompareatstrength}{LocaleCompareAtStrength}
+: Compares the two strings case insensitively
+\item \hyperlink{ecldoc:uni.reverse}{Reverse}
+: Returns the argument string with all characters in reverse order
+\item \hyperlink{ecldoc:uni.findreplace}{FindReplace}
+: Returns the source string with the replacement string substituted for all instances of the search string
+\item \hyperlink{ecldoc:uni.localefindreplace}{LocaleFindReplace}
+: Returns the source string with the replacement string substituted for all instances of the search string
+\item \hyperlink{ecldoc:uni.localefindatstrengthreplace}{LocaleFindAtStrengthReplace}
+: Returns the source string with the replacement string substituted for all instances of the search string
+\item \hyperlink{ecldoc:uni.cleanaccents}{CleanAccents}
+: Returns the source string with all accented characters replaced with unaccented
+\item \hyperlink{ecldoc:uni.cleanspaces}{CleanSpaces}
+: Returns the source string with all instances of multiple adjacent space characters (2 or more spaces together) reduced to a single space character
+\item \hyperlink{ecldoc:uni.wildmatch}{WildMatch}
+: Tests if the search string matches the pattern
+\item \hyperlink{ecldoc:uni.contains}{Contains}
+: Tests if the search string contains each of the characters in the pattern
+\item \hyperlink{ecldoc:uni.editdistance}{EditDistance}
+: Returns the minimum edit distance between the two strings
+\item \hyperlink{ecldoc:uni.editdistancewithinradius}{EditDistanceWithinRadius}
+: Returns true if the minimum edit distance between the two strings is with a specific range
+\item \hyperlink{ecldoc:uni.wordcount}{WordCount}
+: Returns the number of words in the string
+\item \hyperlink{ecldoc:uni.getnthword}{GetNthWord}
+: Returns the n-th word from the string
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FilterOut}}
+
+\hypertarget{ecldoc:uni.filterout}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{FilterOut} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode filter)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the first string with all characters within the second string removed.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filter}} ||| UNICODE --- The string containing the set of characters to be excluded.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Uni.Filter
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Filter}}
+
+\hypertarget{ecldoc:uni.filter}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{Filter} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode filter)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the first string with all characters not within the second string removed.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filter}} ||| UNICODE --- The string containing the set of characters to be included.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Uni.FilterOut
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SubstituteIncluded}}
+
+\hypertarget{ecldoc:uni.substituteincluded}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{SubstituteIncluded} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode filter, unicode replace\_char)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with the replacement character substituted for all characters included in the filter string. MORE: Should this be a general string substitution?
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replace\_char}} ||| UNICODE --- The character to be substituted into the result.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filter}} ||| UNICODE --- The string containing the set of characters to be included.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Uni.SubstituteOut
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SubstituteExcluded}}
+
+\hypertarget{ecldoc:uni.substituteexcluded}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{SubstituteExcluded} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode filter, unicode replace\_char)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with the replacement character substituted for all characters not included in the filter string. MORE: Should this be a general string substitution?
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replace\_char}} ||| UNICODE --- The character to be substituted into the result.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filter}} ||| UNICODE --- The string containing the set of characters to be included.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Uni.SubstituteIncluded
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Find}}
+
+\hypertarget{ecldoc:uni.find}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED4} & \textbf{Find} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode sought, unsigned4 instance)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the character position of the nth match of the search string with the first string. If no match is found the attribute returns 0. If an instance is omitted the position of the first instance is returned.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{instance}} ||| UNSIGNED4 --- Which match instance are we interested in?
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is searched
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sought}} ||| UNICODE --- The string being sought.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FindWord}}
+
+\hypertarget{ecldoc:uni.findword}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{FindWord} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (UNICODE src, UNICODE word, BOOLEAN ignore\_case=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests if the search string contains the supplied word as a whole word.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{word}} ||| UNICODE --- The word to be searched for.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ignore\_case}} ||| BOOLEAN --- Whether to ignore differences in case between characters.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocaleFind}}
+
+\hypertarget{ecldoc:uni.localefind}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED4} & \textbf{LocaleFind} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode sought, unsigned4 instance, varstring locale\_name)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the character position of the nth match of the search string with the first string. If no match is found the attribute returns 0. If an instance is omitted the position of the first instance is returned.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{instance}} ||| UNSIGNED4 --- Which match instance are we interested in?
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is searched
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sought}} ||| UNICODE --- The string being sought.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} ||| VARSTRING --- The locale to use for the comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocaleFindAtStrength}}
+
+\hypertarget{ecldoc:uni.localefindatstrength}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED4} & \textbf{LocaleFindAtStrength} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode tofind, unsigned4 instance, varstring locale\_name, integer1 strength)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the character position of the nth match of the search string with the first string. If no match is found the attribute returns 0. If an instance is omitted the position of the first instance is returned.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{instance}} ||| UNSIGNED4 --- Which match instance are we interested in?
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{strength}} ||| INTEGER1 --- The strength of the comparison 1 ignores accents and case, differentiating only between letters 2 ignores case but differentiates between accents. 3 differentiates between accents and case but ignores e.g. differences between Hiragana and Katakana 4 differentiates between accents and case and e.g. Hiragana/Katakana, but ignores e.g. Hebrew cantellation marks 5 differentiates between all strings whose canonically decomposed forms (NFDNormalization Form D) are non-identical
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is searched
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sought}} |||  --- The string being sought.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} ||| VARSTRING --- The locale to use for the comparison
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{tofind}} ||| UNICODE --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Extract}}
+
+\hypertarget{ecldoc:uni.extract}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{Extract} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unsigned4 instance)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the nth element from a comma separated string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{instance}} ||| UNSIGNED4 --- Which item to select from the list.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string containing the comma separated list.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToLowerCase}}
+
+\hypertarget{ecldoc:uni.tolowercase}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{ToLowerCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the argument string with all upper case characters converted to lower case.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being converted.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToUpperCase}}
+
+\hypertarget{ecldoc:uni.touppercase}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{ToUpperCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Return the argument string with all lower case characters converted to upper case.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being converted.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToTitleCase}}
+
+\hypertarget{ecldoc:uni.totitlecase}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{ToTitleCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the upper case variant of the string using the rules for a particular locale.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} |||  --- The locale to use for the comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocaleToLowerCase}}
+
+\hypertarget{ecldoc:uni.localetolowercase}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{LocaleToLowerCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, varstring locale\_name)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the lower case variant of the string using the rules for a particular locale.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} ||| VARSTRING --- The locale to use for the comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocaleToUpperCase}}
+
+\hypertarget{ecldoc:uni.localetouppercase}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{LocaleToUpperCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, varstring locale\_name)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the upper case variant of the string using the rules for a particular locale.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} ||| VARSTRING --- The locale to use for the comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocaleToTitleCase}}
+
+\hypertarget{ecldoc:uni.localetotitlecase}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{LocaleToTitleCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, varstring locale\_name)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the upper case variant of the string using the rules for a particular locale.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} ||| VARSTRING --- The locale to use for the comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CompareIgnoreCase}}
+
+\hypertarget{ecldoc:uni.compareignorecase}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} integer4} & \textbf{CompareIgnoreCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src1, unicode src2)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Compares the two strings case insensitively. Equivalent to comparing at strength 2.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src2}} ||| UNICODE --- The second string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src1}} ||| UNICODE --- The first string to be compared.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Uni.CompareAtStrength
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CompareAtStrength}}
+
+\hypertarget{ecldoc:uni.compareatstrength}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} integer4} & \textbf{CompareAtStrength} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src1, unicode src2, integer1 strength)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Compares the two strings case insensitively. Equivalent to comparing at strength 2.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src2}} ||| UNICODE --- The second string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{strength}} ||| INTEGER1 --- The strength of the comparison 1 ignores accents and case, differentiating only between letters 2 ignores case but differentiates between accents. 3 differentiates between accents and case but ignores e.g. differences between Hiragana and Katakana 4 differentiates between accents and case and e.g. Hiragana/Katakana, but ignores e.g. Hebrew cantellation marks 5 differentiates between all strings whose canonically decomposed forms (NFDNormalization Form D) are non-identical
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src1}} ||| UNICODE --- The first string to be compared.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Uni.CompareAtStrength
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocaleCompareIgnoreCase}}
+
+\hypertarget{ecldoc:uni.localecompareignorecase}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} integer4} & \textbf{LocaleCompareIgnoreCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src1, unicode src2, varstring locale\_name)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Compares the two strings case insensitively. Equivalent to comparing at strength 2.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src2}} ||| UNICODE --- The second string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src1}} ||| UNICODE --- The first string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} ||| VARSTRING --- The locale to use for the comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Uni.CompareAtStrength
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocaleCompareAtStrength}}
+
+\hypertarget{ecldoc:uni.localecompareatstrength}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} integer4} & \textbf{LocaleCompareAtStrength} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src1, unicode src2, varstring locale\_name, integer1 strength)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Compares the two strings case insensitively. Equivalent to comparing at strength 2.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src2}} ||| UNICODE --- The second string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{strength}} ||| INTEGER1 --- The strength of the comparison 1 ignores accents and case, differentiating only between letters 2 ignores case but differentiates between accents. 3 differentiates between accents and case but ignores e.g. differences between Hiragana and Katakana 4 differentiates between accents and case and e.g. Hiragana/Katakana, but ignores e.g. Hebrew cantellation marks 5 differentiates between all strings whose canonically decomposed forms (NFDNormalization Form D) are non-identical
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src1}} ||| UNICODE --- The first string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} ||| VARSTRING --- The locale to use for the comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Reverse}}
+
+\hypertarget{ecldoc:uni.reverse}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{Reverse} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the argument string with all characters in reverse order. Note the argument is not TRIMMED before it is reversed.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being reversed.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FindReplace}}
+
+\hypertarget{ecldoc:uni.findreplace}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{FindReplace} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode sought, unicode replacement)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with the replacement string substituted for all instances of the search string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being transformed.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replacement}} ||| UNICODE --- The string to be substituted into the result.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sought}} ||| UNICODE --- The string to be replaced.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocaleFindReplace}}
+
+\hypertarget{ecldoc:uni.localefindreplace}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{LocaleFindReplace} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode sought, unicode replacement, varstring locale\_name)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with the replacement string substituted for all instances of the search string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being transformed.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replacement}} ||| UNICODE --- The string to be substituted into the result.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sought}} ||| UNICODE --- The string to be replaced.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} ||| VARSTRING --- The locale to use for the comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocaleFindAtStrengthReplace}}
+
+\hypertarget{ecldoc:uni.localefindatstrengthreplace}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{LocaleFindAtStrengthReplace} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode sought, unicode replacement, varstring locale\_name, integer1 strength)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with the replacement string substituted for all instances of the search string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{strength}} ||| INTEGER1 --- The strength of the comparison
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being transformed.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replacement}} ||| UNICODE --- The string to be substituted into the result.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sought}} ||| UNICODE --- The string to be replaced.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{locale\_name}} ||| VARSTRING --- The locale to use for the comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CleanAccents}}
+
+\hypertarget{ecldoc:uni.cleanaccents}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{CleanAccents} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with all accented characters replaced with unaccented.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being transformed.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CleanSpaces}}
+
+\hypertarget{ecldoc:uni.cleanspaces}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{CleanSpaces} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with all instances of multiple adjacent space characters (2 or more spaces together) reduced to a single space character. Leading and trailing spaces are removed, and tab characters are converted to spaces.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string to be cleaned.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+WildMatch}}
+
+\hypertarget{ecldoc:uni.wildmatch}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} boolean} & \textbf{WildMatch} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode \_pattern, boolean \_noCase)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests if the search string matches the pattern. The pattern can contain wildcards '?' (single character) and '*' (multiple character).
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{pattern}} |||  --- The pattern to match against.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ignore\_case}} |||  --- Whether to ignore differences in case between characters
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_nocase}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_pattern}} ||| UNICODE --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Contains}}
+
+\hypertarget{ecldoc:uni.contains}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{Contains} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode src, unicode \_pattern, boolean \_noCase)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests if the search string contains each of the characters in the pattern. If the pattern contains duplicate characters those characters will match once for each occurence in the pattern.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{pattern}} |||  --- The pattern to match against.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| UNICODE --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ignore\_case}} |||  --- Whether to ignore differences in case between characters
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_nocase}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_pattern}} ||| UNICODE --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+EditDistance}}
+
+\hypertarget{ecldoc:uni.editdistance}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED4} & \textbf{EditDistance} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode \_left, unicode \_right, varstring localename = '')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the minimum edit distance between the two strings. An insert change or delete counts as a single edit. The two strings are trimmed before comparing.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_left}} ||| UNICODE --- The first string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{localname}} |||  --- The locale to use for the comparison. Defaults to ''.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_right}} ||| UNICODE --- The second string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{localename}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The minimum edit distance between the two strings.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+EditDistanceWithinRadius}}
+
+\hypertarget{ecldoc:uni.editdistancewithinradius}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{EditDistanceWithinRadius} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode \_left, unicode \_right, unsigned4 radius, varstring localename = '')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns true if the minimum edit distance between the two strings is with a specific range. The two strings are trimmed before comparing.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_left}} ||| UNICODE --- The first string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{localname}} |||  --- The locale to use for the comparison. Defaults to ''.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_right}} ||| UNICODE --- The second string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{radius}} ||| UNSIGNED4 --- The maximum edit distance that is accepable.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{localename}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- Whether or not the two strings are within the given specified edit distance.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+WordCount}}
+
+\hypertarget{ecldoc:uni.wordcount}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unsigned4} & \textbf{WordCount} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode text, varstring localename = '')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the number of words in the string. Word boundaries are marked by the unicode break semantics.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{localname}} |||  --- The locale to use for the break semantics. Defaults to ''.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{text}} ||| UNICODE --- The string to be broken into words.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{localename}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The number of words in the string.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetNthWord}}
+
+\hypertarget{ecldoc:uni.getnthword}{}
+\hspace{0pt} \hyperlink{ecldoc:Uni}{Uni} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unicode} & \textbf{GetNthWord} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (unicode text, unsigned4 n, varstring localename = '')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the n-th word from the string. Word boundaries are marked by the unicode break semantics.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{localname}} |||  --- The locale to use for the break semantics. Defaults to ''.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| UNSIGNED4 --- Which word should be returned from the function.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{text}} ||| UNICODE --- The string to be broken into words.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{localename}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNICODE} --- The number of words in the string.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

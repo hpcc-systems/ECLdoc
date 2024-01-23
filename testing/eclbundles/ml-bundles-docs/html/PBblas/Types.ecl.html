@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <title>PBblas.Types</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar topbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#menu-toggle" id="menu-toggle" class="navbar-brand glyphicon glyphicon-menu-hamburger ham"></a>
+            </div>
+            <div class="navbar-header" style="margin-left: 20px;">
+                <span class="navbar-brand">PBblas.Types</span>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#ecldoc-section-import" class="topbar">Imports</a></li>
+                    <li><a href="#ecldoc-section-desc" class="topbar">Contents</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="pkg.toc.html">
+                        Up
+                    </a>
+                </li>
+                <li>
+                    <a href="Apply2Elements.ecl.html">Apply2Elements.ecl</a>
+                </li>
+                <li>
+                    <a href="asum.ecl.html">asum.ecl</a>
+                </li>
+                <li>
+                    <a href="axpy.ecl.html">axpy.ecl</a>
+                </li>
+                <li>
+                    <a href="bundle.ecl.html">bundle.ecl</a>
+                </li>
+                <li>
+                    <a href="Constants.ecl.html">Constants.ecl</a>
+                </li>
+                <li>
+                    <a href="Converted.ecl.html">Converted.ecl</a>
+                </li>
+                <li>
+                    <a href="ExtractTri.ecl.html">ExtractTri.ecl</a>
+                </li>
+                <li>
+                    <a href="gemm.ecl.html">gemm.ecl</a>
+                </li>
+                <li>
+                    <a href="getrf.ecl.html">getrf.ecl</a>
+                </li>
+                <li>
+                    <a href="HadamardProduct.ecl.html">HadamardProduct.ecl</a>
+                </li>
+                <li>
+                    <a href="IElementFunc.ecl.html">IElementFunc.ecl</a>
+                </li>
+                <li>
+                    <a href="MatUtils.ecl.html">MatUtils.ecl</a>
+                </li>
+                <li>
+                    <a href="potrf.ecl.html">potrf.ecl</a>
+                </li>
+                <li>
+                    <a href="scal.ecl.html">scal.ecl</a>
+                </li>
+                <li>
+                    <a href="tran.ecl.html">tran.ecl</a>
+                </li>
+                <li>
+                    <a href="trsm.ecl.html">trsm.ecl</a>
+                </li>
+                <li>
+                    <a href="Types.ecl.html">Types.ecl</a>
+                </li>
+                <li>
+                    <a href="Vector2Diag.ecl.html">Vector2Diag.ecl</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <section id="ecldoc-section-import">
+                    <h3 class="page-header">IMPORTS</h3>
+                    <ul class="pagination"><li><a href="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/html/ML_Core/pkg.toc.html">
+                                ML_Core
+                            </a></li><li><a href="../ML_Core/Types.ecl.html">
+                                ML_Core.Types
+                            </a></li></ul>
+                </section>
+                <section id="ecldoc-section-desc">
+                    <h3 class="page-header">CONTENTS</h3>
+                    <div class="panel-group desc-panel-group"><div class="panel panel-info desc-panel" id="dPBblas-Types">
+                            <a href=".desc-PBblas-Types" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            MODULE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Types
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Types</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Types for the Parallel Block Basic Linear Algebra Sub-programs support WARNING: attributes marked with WARNING can not be changed without making corresponding changes to the C++ attributes
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse in desc-PBblas-Types">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Types for the Parallel Block Basic Linear Algebra Sub-programs support WARNING: attributes marked with WARNING can not be changed without making corresponding changes to the C++ attributes.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    <div class="panel panel-info desc-panel" id="dpbblas-types-dimension_t">
+                            <a href=".desc-pbblas-types-dimension_t" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        dimension_t
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">dimension_t</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Type for matrix dimensions
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-pbblas-types-dimension_t">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Type for matrix dimensions. Uses UNSIGNED four as matrixes are not designed to support more than 4 B rows or columns.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>UNSIGNED4</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dpbblas-types-partition_t">
+                            <a href=".desc-pbblas-types-partition_t" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        partition_t
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">partition_t</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Type for partition id -- only supports up to 64K partitions
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-pbblas-types-partition_t">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Type for partition id -- only supports up to 64K partitions
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>UNSIGNED2</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dpbblas-types-work_item_t">
+                            <a href=".desc-pbblas-types-work_item_t" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        work_item_t
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">work_item_t</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Type for work-item id -- only supports up to 64K work items
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-pbblas-types-work_item_t">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Type for work-item id -- only supports up to 64K work items
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>UNSIGNED2</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dpbblas-types-value_t">
+                            <a href=".desc-pbblas-types-value_t" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        value_t
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">value_t</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Type for matrix cell values
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-pbblas-types-value_t">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Type for matrix cell values WARNING: type used in C++ attribute
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>REAL8</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dpbblas-types-m_label_t">
+                            <a href=".desc-pbblas-types-m_label_t" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        m_label_t
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">m_label_t</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Type for matrix label
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-pbblas-types-m_label_t">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Type for matrix label. Used for Matrix dimensions (see Layout_Dims) and for partitions (see Layout_Part)
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>STRING3</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="decldoc-Triangle">
+                            <a href=".desc-ecldoc-Triangle" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Triangle
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Triangle</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Enumeration for Triangle type
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-ecldoc-Triangle">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Enumeration for Triangle type WARNING: type used in C++ attribute
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>UNSIGNED1</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="decldoc-Diagonal">
+                            <a href=".desc-ecldoc-Diagonal" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Diagonal
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Diagonal</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Enumeration for Diagonal type
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-ecldoc-Diagonal">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Enumeration for Diagonal type WARNING: type used in C++ attribute
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>UNSIGNED1</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="decldoc-Side">
+                            <a href=".desc-ecldoc-Side" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Side
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Side</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Enumeration for Side type
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-ecldoc-Side">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Enumeration for Side type WARNING: type used in C++ attribute
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>UNSIGNED1</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dpbblas-types-t_mu_no">
+                            <a href=".desc-pbblas-types-t_mu_no" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        t_mu_no
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">t_mu_no</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Type for matrix universe number
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-pbblas-types-t_mu_no">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Type for matrix universe number Allow up to 64k matrices in one universe
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>UNSIGNED2</b></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dpbblas-types-layout_cell">
+                            <a href=".desc-pbblas-types-layout_cell" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            RECORD
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Layout_Cell
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Layout_Cell</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Layout for Matrix Cell Main representation of Matrix cell at interface to all PBBlas functions
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-pbblas-types-layout_cell">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Layout for Matrix Cell Main representation of Matrix cell at interface to all PBBlas functions. Matrixes are represented as DATASET(Layout_Cell), where each cell describes the row and column position of the cell as well as its value. Only the non-zero cells need to be contained in the dataset in order to describe the matrix since all unspecified cells are considered to have a value of zero. The cell also contains a work-item number that allows multiple separate matrixes to be carried in the same dataset. This supports the "myriad" style interface that allows the same operations to be performed on many different sets of data at once. Note that these matrixes do not have an explicit size. They are sized implicitly, based on the maximum row and column presented in the data. A matrix can be converted to an explicit dense form (see matrix_t) by using the utility module MakeR8Set. This module should only be used for known small matrixes (&lt; 1M cells) or for partitions of a larger matrix. The Converted module provides utility functions to convert to and from a set of partitions (See Layout_parts).
+</div>
+</div>
+
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Fields</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>wi_id</b></td>
+				<td><b>UNSIGNED2</b> -- Work Item Number -- An identifier from 1 to 64K-1 that separates and identifies individual matrixes</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>y</b></td>
+				<td><b>UNSIGNED4</b> -- 1-based column position within the matrix</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>x</b></td>
+				<td><b>UNSIGNED4</b> -- 1-based row position within the matrix</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>v</b></td>
+				<td><b>REAL8</b> -- Real value for the cell</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                            
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">See</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td>matrix_t</td>
+			</tr>
+			<tr>
+				<td>Std/PBblas/MakeR8Set.ecl</td>
+			</tr>
+			<tr>
+				<td>Std/PBblas/Converted.ecl WARNING: Used as C++ attribute. Do not change without corresponding changes to MakeR8Set.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dpbblas-types-layout_norm">
+                            <a href=".desc-pbblas-types-layout_norm" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            RECORD
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Layout_Norm
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">Layout_Norm</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Layout for Norm results
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-pbblas-types-layout_norm">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Layout for Norm results.
+</div>
+</div>
+
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Fields</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>wi_id</b></td>
+				<td><b>UNSIGNED2</b> -- Work Item Number -- An identifier from 1 to 64K-1 that separates and identifies individual matrixes</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>v</b></td>
+				<td><b>REAL8</b> -- Real value for the norm</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>

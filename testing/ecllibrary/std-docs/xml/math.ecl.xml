@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="math" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/math.ecl" target="math.ecl.xml">
+  <Definition exported="1" fullname="Math" inherittype="local" line="17" name="Math" type="module">
+   <Definition exported="1" fullname="math.infinity" inherittype="local" line="24" name="Infinity" type="attribute">
+    <Type type="real8"/>
+    <Signature name="Infinity" ret="REAL8" param="" hlen="14">REAL8 Infinity</Signature><Documentation>
+     <content>Return a real "infinity" value.</content><firstline>Return a real "infinity" value</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="math.nan" inherittype="local" line="31" name="NaN" type="attribute">
+    <Type type="real8"/>
+    <Signature name="NaN" ret="REAL8" param="" hlen="9">REAL8 NaN</Signature><Documentation>
+     <content>Return a non-signalling NaN (Not a Number)value.</content><firstline>Return a non-signalling NaN (Not a Number)value</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="math.isinfinite" inherittype="local" line="39" name="isInfinite" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>val The value to test.</param><content>Return whether a real value is infinite (positive or negative).</content><firstline>Return whether a real value is infinite (positive or negative)</firstline></Documentation>
+    <Signature name="isInfinite" ret="BOOLEAN" param="(REAL8 val)" hlen="18">BOOLEAN isInfinite(REAL8 val)</Signature><Params>
+     <Param name="val">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="math.isnan" inherittype="local" line="47" name="isNaN" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>val The value to test.</param><content>Return whether a real value is a NaN (not a number) value.</content><firstline>Return whether a real value is a NaN (not a number) value</firstline></Documentation>
+    <Signature name="isNaN" ret="BOOLEAN" param="(REAL8 val)" hlen="13">BOOLEAN isNaN(REAL8 val)</Signature><Params>
+     <Param name="val">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="math.isfinite" inherittype="local" line="55" name="isFinite" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>val The value to test.</param><content>Return whether a real value is a valid value (neither infinite not NaN).</content><firstline>Return whether a real value is a valid value (neither infinite not NaN)</firstline></Documentation>
+    <Signature name="isFinite" ret="BOOLEAN" param="(REAL8 val)" hlen="16">BOOLEAN isFinite(REAL8 val)</Signature><Params>
+     <Param name="val">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="math.fmod" inherittype="local" line="68" name="FMod" type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <param>numer The numerator.</param><param>denom The numerator.</param><content>Returns the floating-point remainder of numer/denom (rounded towards zero). If denom is zero, the result depends on the -fdivideByZero flag: 'zero' or unset: return zero. 'nan': return a non-signalling NaN value 'fail': throw an exception</content><firstline>Returns the floating-point remainder of numer/denom (rounded towards zero)</firstline></Documentation>
+    <Signature name="FMod" ret="REAL8" param="(REAL8 numer, REAL8 denom)" hlen="10">REAL8 FMod(REAL8 numer, REAL8 denom)</Signature><Params>
+     <Param name="numer">
+      <Type type="real8"/>
+     </Param>
+     <Param name="denom">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="math.fmatch" inherittype="local" line="83" name="FMatch" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>a The first value.</param><param>b The second value.</param><param>epsilon The allowable margin of error.</param><content>Returns whether two floating point values are the same, within margin of error epsilon.</content><firstline>Returns whether two floating point values are the same, within margin of error epsilon</firstline></Documentation>
+    <Signature name="FMatch" ret="BOOLEAN" param="(REAL8 a, REAL8 b, REAL8 epsilon=0.0)" hlen="14">BOOLEAN FMatch(REAL8 a, REAL8 b, REAL8 epsilon=0.0)</Signature><Params>
+     <Param name="a">
+      <Type type="real8"/>
+     </Param>
+     <Param name="b">
+      <Type type="real8"/>
+     </Param>
+     <Param name="epsilon">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Signature name="Math" ret="" param="" hlen="4">Math</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

@@ -1,0 +1,84 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+tran
+}
+\hypertarget{ecldoc:toc:PBblas.tran}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+PBblas.Types |
+PBblas.internal |
+PBblas.internal.Types |
+PBblas.internal.MatDims |
+PBblas.internal.Converted |
+std.blas |
+std.system.Thorlib |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+tran}}
+
+\hypertarget{ecldoc:pbblas.tran}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{tran} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (value\_t alpha, DATASET(Layout\_Cell) A, value\_t beta=0, DATASET(Layout\_Cell) C=empty\_c)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Transpose a matrix and sum into base matrix result <== alpha * A**t + beta * C, A is n by m, C is m by n A**T (A Transpose) and C must have same shape
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{C}} ||| TABLE ( Layout\_Cell ) --- C matrix in DATASET(Layout\_Call) form
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{alpha}} ||| REAL8 --- Scalar multiplier for the A**T matrix
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{A}} ||| TABLE ( Layout\_Cell ) --- A matrix in DATASET(Layout\_Cell) form
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{beta}} ||| REAL8 --- Scalar multiplier for the C matrix
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- Matrix in DATASET(Layout\_Cell) form alpha * A**T + beta * C
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.layout\_cell
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

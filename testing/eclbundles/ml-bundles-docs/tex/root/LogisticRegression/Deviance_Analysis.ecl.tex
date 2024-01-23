@@ -1,0 +1,66 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+Deviance_Analysis
+}
+\hypertarget{ecldoc:toc:LogisticRegression.Deviance_Analysis}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+LogisticRegression |
+LogisticRegression.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Deviance\_Analysis}}
+
+\hypertarget{ecldoc:logisticregression.deviance_analysis}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.AOD\_Record)} & \textbf{Deviance\_Analysis} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.Deviance\_Record) proposed, DATASET(Types.Deviance\_Record) base)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Compare deviance information for an analysis of deviance.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{proposed}} ||| TABLE ( Deviance\_Record ) --- the proposed model
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{base}} ||| TABLE ( Deviance\_Record ) --- the base model for comparison
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 classifier , UNSIGNED8 residual\_df , UNSIGNED8 df , REAL8 residual\_dev , REAL8 deviance , REAL8 p\_value \} )} --- the comparison of the deviance between the models
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

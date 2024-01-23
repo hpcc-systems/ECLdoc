@@ -1,0 +1,33 @@
+IMPORTS
+=======
+
+
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+ML_Core.Types <../ML_Core/Types.ecl.txt>
+LogisticRegression </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/LogisticRegression/pkg.toc.txt>
+LogisticRegression.Types <Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Types.Observation_Deviance) Deviance_Detail(DATASET(Core_Types.DiscreteField)
+                                                              dependents, DATASET(Types.Raw_Prediction) predicts)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Detail deviance for each observation.
+
+Parameter : predicts TABLE ( Raw_Prediction ) --- the predicted values
+                     of the response variable
+
+Parameter : dependents TABLE ( DiscreteField ) --- original dependent
+                       records for the model
+
+Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+         classifier , INTEGER4 actual , INTEGER4 predicted
+         , REAL8 mod_ll , REAL8 mod_dev_component , REAL8
+         mod_dev_residual , REAL8 nil_ll , REAL8
+         nil_dev_component , REAL8 nil_dev_residual } ) the
+         deviance information by observation and the log
+         likelihood of the predicted result.
+

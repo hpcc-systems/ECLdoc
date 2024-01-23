@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../Types.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl" name="std.system.ThorLib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Utils/SequenceInField.ecl" name="ML_Core.Utils.SequenceInField" target="../Utils/SequenceInField.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/FieldAggregates.ecl" name="ML_Core.FieldAggregates" target="../FieldAggregates.ecl.xml"/><Source name="ML_Core.Tests.field_aggregates" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Tests/field_aggregates.ecl" target="field_aggregates.ecl.xml">
+  <Import name="ML_Core" ref="ML_Core" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Types" ref="ML_Core.Types" target="../Types.ecl.xml"/>
+  <Definition exported="1" fullname="ml_core.tests.field_aggregates" inherittype="local" line="19" name="field_aggregates" type="attribute">
+   <Signature name="field_aggregates" ret="" param="" hlen="16">field_aggregates</Signature><Type type=""/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

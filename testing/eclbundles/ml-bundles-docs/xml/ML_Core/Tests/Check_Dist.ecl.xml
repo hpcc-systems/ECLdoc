@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Constants.ecl" name="ML_Core.Constants" target="../Constants.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/DoubleFac.ecl" name="ML_Core.Math.DoubleFac" target="../Math/DoubleFac.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Distributions.ecl" name="ML_Core.Math.Distributions" target="../Math/Distributions.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/python.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/python.ecllib"/><Source name="ML_Core.Tests.Check_Dist" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Tests/Check_Dist.ecl" target="Check_Dist.ecl.xml">
+  <Import name="Distributions" ref="ML_Core.Math.Distributions" target="../Math/Distributions.ecl.xml"/>
+  <Import name="ML_Core" ref="ML_Core" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="python" ref="python" remotescope="1" target="../../python/pkg.toc.xml"/>
+  <Definition exported="1" fullname="ml_core.tests.check_dist" inherittype="local" line="122" name="Check_Dist" type="attribute">
+   <Signature name="Check_Dist" ret="" param="" hlen="10">Check_Dist</Signature><Type type=""/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

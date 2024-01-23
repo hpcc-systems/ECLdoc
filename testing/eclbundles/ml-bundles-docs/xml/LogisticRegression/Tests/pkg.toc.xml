@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="Tests">
+  <file name="Check_Dist.ecl.xml">LogisticRegression/Tests/Check_Dist.ecl</file>
+</folder>

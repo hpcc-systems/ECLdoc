@@ -1,0 +1,17 @@
+++++++++
+  root
+++++++++
+
+
+
+CONTENTS
+========
+
+file : import_test.ecl <import_test.ecl.txt>    This module exists to turn a dataset of numberfields into a dataset of DiscreteFields
+
+file : import_test_2.ecl <import_test_2.ecl.txt>    
+
+file : mod_1.ecl <mod_1.ecl.txt>    
+
+file : mod_2.ecl <mod_2.ecl.txt>    
+

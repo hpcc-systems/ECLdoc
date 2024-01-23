@@ -1,0 +1,514 @@
+\chapter*{\color{headfile}
+import_test
+}
+\hypertarget{ecldoc:toc:import_test}{}
+\hyperlink{ecldoc:toc:root}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Generate |
+ML\_Core.Constants |
+std.Str |
+ML\_Core |
+ML\_Core.Discretize |
+PBblas.MatUtils |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+import\_test}}
+
+\hypertarget{ecldoc:ML_Core.Discretize}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{import\_test} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+This module exists to turn a dataset of numberfields into a dataset of DiscreteFields. This is not quite as trivial as it seems as there are a number of different ways to make the underlying data discrete; and even within one method there may be different parameters. Further - it is quite probable that different methods are going to be desired for each field.
+
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INTERNAL}}}] True
+\end{description}
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:ecldoc-c_Method}{c\_Method}
+: No Documentation Found
+\item \hyperlink{ecldoc:ml_core.discretize.r_method}{r\_Method}
+: No Documentation Found
+\item \hyperlink{ecldoc:ml_core.discretize.i_byrounding}{i\_ByRounding}
+: No Documentation Found
+\item \hyperlink{ecldoc:ml_core.discretize.byrounding}{ByRounding}
+: No Documentation Found
+\item \hyperlink{ecldoc:ml_core.discretize.i_bybucketing}{i\_ByBucketing}
+: No Documentation Found
+\item \hyperlink{ecldoc:ml_core.discretize.bybucketing}{ByBucketing}
+: No Documentation Found
+\item \hyperlink{ecldoc:ml_core.discretize.i_bytiling}{i\_ByTiling}
+: No Documentation Found
+\item \hyperlink{ecldoc:ml_core.discretize.bytiling}{ByTiling}
+: No Documentation Found
+\item \hyperlink{ecldoc:ml_core.discretize.do}{Do}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+c\_Method}}
+
+\hypertarget{ecldoc:ecldoc-c_Method}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Discretize}{import_test} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{c\_Method} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+r\_Method}}
+
+\hypertarget{ecldoc:ml_core.discretize.r_method}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Discretize}{import_test} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{r\_Method} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{rparam2}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{rparam1}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{fields}} ||| SET ( UNSIGNED4 ) --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{method}} ||| UNSIGNED4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{iparam1}} ||| INTEGER8 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+i\_ByRounding}}
+
+\hypertarget{ecldoc:ml_core.discretize.i_byrounding}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Discretize}{import_test} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{i\_ByRounding} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (SET OF Types.t\_FieldNumber f, REAL Scale=1.0,REAL Delta=0.0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{delta}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{f}} ||| SET ( UNSIGNED4 ) --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{scale}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( r\_Method )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ByRounding}}
+
+\hypertarget{ecldoc:ml_core.discretize.byrounding}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Discretize}{import_test} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ByRounding} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.NumericField) d,REAL Scale=1.0, REAL Delta=0.0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{delta}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{d}} ||| TABLE ( NumericField ) --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{scale}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , INTEGER4 value \} )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+i\_ByBucketing}}
+
+\hypertarget{ecldoc:ml_core.discretize.i_bybucketing}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Discretize}{import_test} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{i\_ByBucketing} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (SET OF Types.t\_FieldNumber f, Types.t\_Discrete N=ML\_Core.Config.Discrete)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{f}} ||| SET ( UNSIGNED4 ) --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| INTEGER4 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( r\_Method )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ByBucketing}}
+
+\hypertarget{ecldoc:ml_core.discretize.bybucketing}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Discretize}{import_test} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ByBucketing} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.NumericField) d, Types.t\_Discrete N=ML\_Core.Config.Discrete)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{d}} ||| TABLE ( NumericField ) --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| INTEGER4 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , INTEGER4 value \} )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+i\_ByTiling}}
+
+\hypertarget{ecldoc:ml_core.discretize.i_bytiling}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Discretize}{import_test} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{i\_ByTiling} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (SET OF Types.t\_FieldNumber f, Types.t\_Discrete N=ML\_Core.Config.Discrete)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{f}} ||| SET ( UNSIGNED4 ) --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| INTEGER4 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( r\_Method )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ByTiling}}
+
+\hypertarget{ecldoc:ml_core.discretize.bytiling}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Discretize}{import_test} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ByTiling} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.NumericField) d, Types.t\_Discrete N=ML\_Core.Config.Discrete)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{d}} ||| TABLE ( NumericField ) --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| INTEGER4 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , INTEGER4 value \} )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Do}}
+
+\hypertarget{ecldoc:ml_core.discretize.do}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Discretize}{import_test} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Do} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.NumericField) d, DATASET(r\_Method) to\_do)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{d}} ||| TABLE ( NumericField ) --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to\_do}} ||| TABLE ( r\_Method ) --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( DiscreteField )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

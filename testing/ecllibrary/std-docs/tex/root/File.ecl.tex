@@ -1,0 +1,4331 @@
+\chapter*{\color{headfile}
+File
+}
+\hypertarget{ecldoc:toc:File}{}
+\hyperlink{ecldoc:toc:root}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+lib\_fileservices |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+File}}
+
+\hypertarget{ecldoc:File}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{File} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:file.fsfilenamerecord}{FsFilenameRecord}
+: A record containing information about filename
+\item \hyperlink{ecldoc:file.fslogicalfilename}{FsLogicalFileName}
+: An alias for a logical filename that is stored in a row
+\item \hyperlink{ecldoc:file.fslogicalfilenamerecord}{FsLogicalFileNameRecord}
+: A record containing a logical filename
+\item \hyperlink{ecldoc:file.fslogicalfileinforecord}{FsLogicalFileInfoRecord}
+: A record containing information about a logical file
+\item \hyperlink{ecldoc:file.fslogicalsupersubrecord}{FsLogicalSuperSubRecord}
+: A record containing information about a superfile and its contents
+\item \hyperlink{ecldoc:file.fsfilerelationshiprecord}{FsFileRelationshipRecord}
+: A record containing information about the relationship between two files
+\item \hyperlink{ecldoc:file.recfmv_recsize}{RECFMV\_RECSIZE}
+: Constant that indicates IBM RECFM V format file
+\item \hyperlink{ecldoc:file.recfmvb_recsize}{RECFMVB\_RECSIZE}
+: Constant that indicates IBM RECFM VB format file
+\item \hyperlink{ecldoc:file.prefix_variable_recsize}{PREFIX\_VARIABLE\_RECSIZE}
+: Constant that indicates a variable little endian 4 byte length prefixed file
+\item \hyperlink{ecldoc:file.prefix_variable_bigendian_recsize}{PREFIX\_VARIABLE\_BIGENDIAN\_RECSIZE}
+: Constant that indicates a variable big endian 4 byte length prefixed file
+\item \hyperlink{ecldoc:file.fileexists}{FileExists}
+: Returns whether the file exists
+\item \hyperlink{ecldoc:file.deletelogicalfile}{DeleteLogicalFile}
+: Removes the logical file from the system, and deletes from the disk
+\item \hyperlink{ecldoc:file.setreadonly}{SetReadOnly}
+: Changes whether access to a file is read only or not
+\item \hyperlink{ecldoc:file.renamelogicalfile}{RenameLogicalFile}
+: Changes the name of a logical file
+\item \hyperlink{ecldoc:file.foreignlogicalfilename}{ForeignLogicalFileName}
+: Returns a logical filename that can be used to refer to a logical file in a local or remote dali
+\item \hyperlink{ecldoc:file.externallogicalfilename}{ExternalLogicalFileName}
+: Returns an encoded logical filename that can be used to refer to a external file
+\item \hyperlink{ecldoc:file.getfiledescription}{GetFileDescription}
+: Returns a string containing the description information associated with the specified filename
+\item \hyperlink{ecldoc:file.setfiledescription}{SetFileDescription}
+: Sets the description associated with the specified filename
+\item \hyperlink{ecldoc:file.remotedirectory}{RemoteDirectory}
+: Returns a dataset containing a list of files from the specified machineIP and directory
+\item \hyperlink{ecldoc:file.logicalfilelist}{LogicalFileList}
+: Returns a dataset of information about the logical files known to the system
+\item \hyperlink{ecldoc:file.comparefiles}{CompareFiles}
+: Compares two files, and returns a result indicating how well they match
+\item \hyperlink{ecldoc:file.verifyfile}{VerifyFile}
+: Checks the system datastore (Dali) information for the file against the physical parts on disk
+\item \hyperlink{ecldoc:file.addfilerelationship}{AddFileRelationship}
+: Defines the relationship between two files
+\item \hyperlink{ecldoc:file.filerelationshiplist}{FileRelationshipList}
+: Returns a dataset of relationships
+\item \hyperlink{ecldoc:file.removefilerelationship}{RemoveFileRelationship}
+: Removes a relationship between two files
+\item \hyperlink{ecldoc:file.getcolumnmapping}{GetColumnMapping}
+: Returns the field mappings for the file, in the same format specified for the SetColumnMapping function
+\item \hyperlink{ecldoc:file.setcolumnmapping}{SetColumnMapping}
+: Defines how the data in the fields of the file mist be transformed between the actual data storage format and the input format used to query that data
+\item \hyperlink{ecldoc:file.encoderfsquery}{EncodeRfsQuery}
+: Returns a string that can be used in a DATASET declaration to read data from an RFS (Remote File Server) instance (e.g
+\item \hyperlink{ecldoc:file.rfsaction}{RfsAction}
+: Sends the query to the rfs server
+\item \hyperlink{ecldoc:file.moveexternalfile}{MoveExternalFile}
+: Moves the single physical file between two locations on the same remote machine
+\item \hyperlink{ecldoc:file.deleteexternalfile}{DeleteExternalFile}
+: Removes a single physical file from a remote machine
+\item \hyperlink{ecldoc:file.createexternaldirectory}{CreateExternalDirectory}
+: Creates the path on the location (if it does not already exist)
+\item \hyperlink{ecldoc:file.getlogicalfileattribute}{GetLogicalFileAttribute}
+: Returns the value of the given attribute for the specified logicalfilename
+\item \hyperlink{ecldoc:file.protectlogicalfile}{ProtectLogicalFile}
+: Toggles protection on and off for the specified logicalfilename
+\item \hyperlink{ecldoc:file.dfuplusexec}{DfuPlusExec}
+: The DfuPlusExec action executes the specified command line just as the DfuPLus.exe program would do
+\item \hyperlink{ecldoc:file.fsprayfixed}{fSprayFixed}
+: Sprays a file of fixed length records from a single machine and distributes it across the nodes of the destination group
+\item \hyperlink{ecldoc:file.sprayfixed}{SprayFixed}
+: Same as fSprayFixed, but does not return the DFU Workunit ID
+\item \hyperlink{ecldoc:file.fsprayvariable}{fSprayVariable}
+: No Documentation Found
+\item \hyperlink{ecldoc:file.sprayvariable}{SprayVariable}
+: No Documentation Found
+\item \hyperlink{ecldoc:file.fspraydelimited}{fSprayDelimited}
+: Sprays a file of fixed delimited records from a single machine and distributes it across the nodes of the destination group
+\item \hyperlink{ecldoc:file.spraydelimited}{SprayDelimited}
+: Same as fSprayDelimited, but does not return the DFU Workunit ID
+\item \hyperlink{ecldoc:file.fsprayxml}{fSprayXml}
+: Sprays an xml file from a single machine and distributes it across the nodes of the destination group
+\item \hyperlink{ecldoc:file.sprayxml}{SprayXml}
+: Same as fSprayXml, but does not return the DFU Workunit ID
+\item \hyperlink{ecldoc:file.fdespray}{fDespray}
+: Copies a distributed file from multiple machines, and desprays it to a single file on a single machine
+\item \hyperlink{ecldoc:file.despray}{Despray}
+: Same as fDespray, but does not return the DFU Workunit ID
+\item \hyperlink{ecldoc:file.fcopy}{fCopy}
+: Copies a distributed file to another distributed file
+\item \hyperlink{ecldoc:file.copy}{Copy}
+: Same as fCopy, but does not return the DFU Workunit ID
+\item \hyperlink{ecldoc:file.freplicate}{fReplicate}
+: Ensures the specified file is replicated to its mirror copies
+\item \hyperlink{ecldoc:file.replicate}{Replicate}
+: Same as fReplicated, but does not return the DFU Workunit ID
+\item \hyperlink{ecldoc:file.fremotepull}{fRemotePull}
+: Copies a distributed file to a distributed file on remote system
+\item \hyperlink{ecldoc:file.remotepull}{RemotePull}
+: Same as fRemotePull, but does not return the DFU Workunit ID
+\item \hyperlink{ecldoc:file.fmonitorlogicalfilename}{fMonitorLogicalFileName}
+: Creates a file monitor job in the DFU Server
+\item \hyperlink{ecldoc:file.monitorlogicalfilename}{MonitorLogicalFileName}
+: Same as fMonitorLogicalFileName, but does not return the DFU Workunit ID
+\item \hyperlink{ecldoc:file.fmonitorfile}{fMonitorFile}
+: Creates a file monitor job in the DFU Server
+\item \hyperlink{ecldoc:file.monitorfile}{MonitorFile}
+: Same as fMonitorFile, but does not return the DFU Workunit ID
+\item \hyperlink{ecldoc:file.waitdfuworkunit}{WaitDfuWorkunit}
+: Waits for the specified DFU workunit to finish
+\item \hyperlink{ecldoc:file.abortdfuworkunit}{AbortDfuWorkunit}
+: Aborts the specified DFU workunit
+\item \hyperlink{ecldoc:file.createsuperfile}{CreateSuperFile}
+: Creates an empty superfile
+\item \hyperlink{ecldoc:file.superfileexists}{SuperFileExists}
+: Checks if the specified filename is present in the Distributed File Utility (DFU) and is a SuperFile
+\item \hyperlink{ecldoc:file.deletesuperfile}{DeleteSuperFile}
+: Deletes the superfile
+\item \hyperlink{ecldoc:file.getsuperfilesubcount}{GetSuperFileSubCount}
+: Returns the number of sub-files contained within a superfile
+\item \hyperlink{ecldoc:file.getsuperfilesubname}{GetSuperFileSubName}
+: Returns the name of the Nth sub-file within a superfile
+\item \hyperlink{ecldoc:file.findsuperfilesubname}{FindSuperFileSubName}
+: Returns the position of a file within a superfile
+\item \hyperlink{ecldoc:file.startsuperfiletransaction}{StartSuperFileTransaction}
+: Starts a superfile transaction
+\item \hyperlink{ecldoc:file.addsuperfile}{AddSuperFile}
+: Adds a file to a superfile
+\item \hyperlink{ecldoc:file.removesuperfile}{RemoveSuperFile}
+: Removes a sub-file from a superfile
+\item \hyperlink{ecldoc:file.clearsuperfile}{ClearSuperFile}
+: Removes all sub-files from a superfile
+\item \hyperlink{ecldoc:file.removeownedsubfiles}{RemoveOwnedSubFiles}
+: Removes all soley-owned sub-files from a superfile
+\item \hyperlink{ecldoc:file.deleteownedsubfiles}{DeleteOwnedSubFiles}
+: Legacy version of RemoveOwnedSubFiles which was incorrectly named in a previous version
+\item \hyperlink{ecldoc:file.swapsuperfile}{SwapSuperFile}
+: Swap the contents of two superfiles
+\item \hyperlink{ecldoc:file.replacesuperfile}{ReplaceSuperFile}
+: Removes a sub-file from a superfile and replaces it with another
+\item \hyperlink{ecldoc:file.finishsuperfiletransaction}{FinishSuperFileTransaction}
+: Finishes a superfile transaction
+\item \hyperlink{ecldoc:file.superfilecontents}{SuperFileContents}
+: Returns the list of sub-files contained within a superfile
+\item \hyperlink{ecldoc:file.logicalfilesuperowners}{LogicalFileSuperOwners}
+: Returns the list of superfiles that a logical file is contained within
+\item \hyperlink{ecldoc:file.logicalfilesupersublist}{LogicalFileSuperSubList}
+: Returns the list of all the superfiles in the system and their component sub-files
+\item \hyperlink{ecldoc:file.fpromotesuperfilelist}{fPromoteSuperFileList}
+: Moves the sub-files from the first entry in the list of superfiles to the next in the list, repeating the process through the list of superfiles
+\item \hyperlink{ecldoc:file.promotesuperfilelist}{PromoteSuperFileList}
+: Same as fPromoteSuperFileList, but does not return the DFU Workunit ID
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+FsFilenameRecord}}
+
+\hypertarget{ecldoc:file.fsfilenamerecord}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{FsFilenameRecord} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A record containing information about filename. Includes name, size and when last modified. export FsFilenameRecord := RECORD string name; integer8 size; string19 modified; END;
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{name}} ||| STRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{size}} ||| INTEGER8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{modified}} ||| STRING19 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+FsLogicalFileName}}
+
+\hypertarget{ecldoc:file.fslogicalfilename}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{FsLogicalFileName} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+An alias for a logical filename that is stored in a row.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+FsLogicalFileNameRecord}}
+
+\hypertarget{ecldoc:file.fslogicalfilenamerecord}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{FsLogicalFileNameRecord} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A record containing a logical filename. It contains the following fields:
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{name}} ||| STRING --- The logical name of the file;
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+FsLogicalFileInfoRecord}}
+
+\hypertarget{ecldoc:file.fslogicalfileinforecord}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{FsLogicalFileInfoRecord} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A record containing information about a logical file.
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{rowcount}} ||| INTEGER8 --- Number of rows in the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{size}} ||| INTEGER8 --- Number of bytes in the file (before compression)
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{superfile}} ||| BOOLEAN --- Is this a superfile?
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{cluster}} ||| STRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{owner}} ||| STRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{name}} ||| STRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{modified}} ||| STRING19 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OWNER}}}] The username of the owner who ran the job to create this file.
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{CLUSTER}}}] The cluster that this file was created on.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{MODIFIED}}}] Timestamp when the file was last modified;
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITS}}}] Contains all the fields in FsLogicalFileNameRecord)
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+FsLogicalSuperSubRecord}}
+
+\hypertarget{ecldoc:file.fslogicalsupersubrecord}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{FsLogicalSuperSubRecord} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A record containing information about a superfile and its contents.
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{supername}} ||| STRING --- The name of the superfile
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{subname}} ||| STRING --- The name of the sub-file
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+FsFileRelationshipRecord}}
+
+\hypertarget{ecldoc:file.fsfilerelationshiprecord}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{FsFileRelationshipRecord} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A record containing information about the relationship between two files.
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{secondaryflds}} ||| STRING --- The name of the foreign key field relating to the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{secondaryfile}} ||| STRING --- The logical filename of the secondary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{primaryfile}} ||| STRING --- The logical filename of the primary file
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{primaryflds}} ||| STRING --- The name of the primary key field for the primary file. The value ''\_\_fileposition\_\_'' indicates the secondary is an INDEX that must use FETCH to access non-keyed fields.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{description}} ||| STRING --- The description of the relationship.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{kind}} ||| STRING --- The type of relationship between the primary and secondary files. Containing either 'link' or 'view'.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{cardinality}} ||| STRING --- The cardinality of the relationship. The format is <primary>:<secondary>. Valid values are ''1'' or ''M''.</secondary></primary>
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{payload}} ||| BOOLEAN --- Indicates whether the primary or secondary are payload INDEXes.
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+RECFMV\_RECSIZE}}
+
+\hypertarget{ecldoc:file.recfmv_recsize}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RECFMV\_RECSIZE} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Constant that indicates IBM RECFM V format file. Can be passed to SprayFixed for the record size.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+RECFMVB\_RECSIZE}}
+
+\hypertarget{ecldoc:file.recfmvb_recsize}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RECFMVB\_RECSIZE} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Constant that indicates IBM RECFM VB format file. Can be passed to SprayFixed for the record size.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+PREFIX\_VARIABLE\_RECSIZE}}
+
+\hypertarget{ecldoc:file.prefix_variable_recsize}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER4} & \textbf{PREFIX\_VARIABLE\_RECSIZE} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Constant that indicates a variable little endian 4 byte length prefixed file. Can be passed to SprayFixed for the record size.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+PREFIX\_VARIABLE\_BIGENDIAN\_RECSIZE}}
+
+\hypertarget{ecldoc:file.prefix_variable_bigendian_recsize}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER4} & \textbf{PREFIX\_VARIABLE\_BIGENDIAN\_RECSIZE} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Constant that indicates a variable big endian 4 byte length prefixed file. Can be passed to SprayFixed for the record size.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FileExists}}
+
+\hypertarget{ecldoc:file.fileexists}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} boolean} & \textbf{FileExists} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn, boolean physical=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns whether the file exists.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The logical name of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{physical}} ||| BOOLEAN --- Whether to also check for the physical existence on disk. Defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- Whether the file exists.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DeleteLogicalFile}}
+
+\hypertarget{ecldoc:file.deletelogicalfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{DeleteLogicalFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn, boolean allowMissing=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Removes the logical file from the system, and deletes from the disk.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The logical name of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowMissing}} ||| BOOLEAN --- Whether to suppress an error if the filename does not exist. Defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SetReadOnly}}
+
+\hypertarget{ecldoc:file.setreadonly}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SetReadOnly} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn, boolean ro=TRUE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Changes whether access to a file is read only or not.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The logical name of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ro}} ||| BOOLEAN --- Whether updates to the file are disallowed. Defaults to TRUE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+RenameLogicalFile}}
+
+\hypertarget{ecldoc:file.renamelogicalfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RenameLogicalFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring oldname, varstring newname)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Changes the name of a logical file.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{oldname}} ||| VARSTRING --- The current name of the file to be renamed.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{newname}} ||| VARSTRING --- The new logical name of the file.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ForeignLogicalFileName}}
+
+\hypertarget{ecldoc:file.foreignlogicalfilename}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{ForeignLogicalFileName} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring name, varstring foreigndali='', boolean abspath=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a logical filename that can be used to refer to a logical file in a local or remote dali.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{name}} ||| VARSTRING --- The logical name of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{abspath}} ||| BOOLEAN --- Should a tilde (\~{}) be prepended to the resulting logical file name. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{foreigndali}} ||| VARSTRING --- The IP address of the foreign dali used to resolve the file. If blank then the file is resolved locally. Defaults to blank.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ExternalLogicalFileName}}
+
+\hypertarget{ecldoc:file.externallogicalfilename}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{ExternalLogicalFileName} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring location, varstring path, boolean abspath=TRUE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns an encoded logical filename that can be used to refer to a external file. Examples include directly reading from a landing zone. Upper case characters and other details are escaped.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{location}} ||| VARSTRING --- The IP address of the remote machine. '.' can be used for the local machine.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{abspath}} ||| BOOLEAN --- Should a tilde (\~{}) be prepended to the resulting logical file name. Defaults to TRUE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{path}} ||| VARSTRING --- The path/name of the file on the remote machine.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The encoded logical filename.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetFileDescription}}
+
+\hypertarget{ecldoc:file.getfiledescription}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{GetFileDescription} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a string containing the description information associated with the specified filename. This description is set either through ECL watch or by using the FileServices.SetFileDescription function.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The logical name of the file.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SetFileDescription}}
+
+\hypertarget{ecldoc:file.setfiledescription}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SetFileDescription} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn, varstring val)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Sets the description associated with the specified filename.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The logical name of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{val}} ||| VARSTRING --- The description to be associated with the file.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+RemoteDirectory}}
+
+\hypertarget{ecldoc:file.remotedirectory}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} dataset(FsFilenameRecord)} & \textbf{RemoteDirectory} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring machineIP, varstring dir, varstring mask='*', boolean recurse=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a dataset containing a list of files from the specified machineIP and directory.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{machineIP}} ||| VARSTRING --- The IP address of the remote machine.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{mask}} ||| VARSTRING --- The filemask specifying which files to include in the result. Defaults to '*' (all files).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recurse}} ||| BOOLEAN --- Whether to include files from subdirectories under the directory. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{directory}} |||  --- The path to the directory to read. This must be in the appropriate format for the operating system running on the remote machine.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{dir}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( FsFilenameRecord )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LogicalFileList}}
+
+\hypertarget{ecldoc:file.logicalfilelist}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} dataset(FsLogicalFileInfoRecord)} & \textbf{LogicalFileList} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring namepattern='*', boolean includenormal=TRUE, boolean includesuper=FALSE, boolean unknownszero=FALSE, varstring foreigndali='')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a dataset of information about the logical files known to the system.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{includesuper}} ||| BOOLEAN --- Whether to include SuperFiles. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{unknownszero}} ||| BOOLEAN --- Whether to set file sizes that are unknown to zero(0) instead of minus-one (-1). Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{namepattern}} ||| VARSTRING --- The mask of the files to list. Defaults to '*' (all files).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{includenormal}} ||| BOOLEAN --- Whether to include 'normal' files. Defaults to TRUE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{foreigndali}} ||| VARSTRING --- The IP address of the foreign dali used to resolve the file. If blank then the file is resolved locally. Defaults to blank.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( FsLogicalFileInfoRecord )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CompareFiles}}
+
+\hypertarget{ecldoc:file.comparefiles}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER4} & \textbf{CompareFiles} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn1, varstring lfn2, boolean logical\_only=TRUE, boolean use\_crcs=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Compares two files, and returns a result indicating how well they match.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{use\_crcs}} ||| BOOLEAN --- Whether to compare physical CRCs of all the parts on disk. This may be slow on large files. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{file1}} |||  --- The logical name of the first file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{file2}} |||  --- The logical name of the second file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{logical\_only}} ||| BOOLEAN --- Whether to only compare logical information in the system datastore (Dali), and ignore physical information on disk. [Default TRUE]
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn1}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn2}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 0 if file1 and file2 match exactly 1 if file1 and file2 contents match, but file1 is newer than file2 -1 if file1 and file2 contents match, but file2 is newer than file1 2 if file1 and file2 contents do not match and file1 is newer than file2 -2 if file1 and file2 contents do not match and file2 is newer than file1
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+VerifyFile}}
+
+\hypertarget{ecldoc:file.verifyfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{VerifyFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn, boolean usecrcs)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Checks the system datastore (Dali) information for the file against the physical parts on disk.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The name of the file to check.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{use\_crcs}} |||  --- Whether to compare physical CRCs of all the parts on disk. This may be slow on large files.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{usecrcs}} ||| BOOLEAN --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- 'OK' - The file parts match the datastore information 'Could not find file: <filename>' - The logical filename was not found 'Could not find part file: <partname>' - The partname was not found 'Modified time differs for: <partname>' - The partname has a different timestamp 'File size differs for: <partname>' - The partname has a file size 'File CRC differs for: <partname>' - The partname has a different CRC</partname></partname></partname></partname></filename>
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+AddFileRelationship}}
+
+\hypertarget{ecldoc:file.addfilerelationship}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{AddFileRelationship} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring primary, varstring secondary, varstring primaryflds, varstring secondaryflds, varstring kind='link', varstring cardinality, boolean payload, varstring description='')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Defines the relationship between two files. These may be DATASETs or INDEXes. Each record in the primary file should be uniquely defined by the primaryfields (ideally), preferably efficiently. This information is used by the roxie browser to link files together.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{relationship}} |||  --- The type of relationship between the primary and secondary files. Containing either 'link' or 'view'. Default is ''link''.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{primary}} ||| VARSTRING --- The logical filename of the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{secondaryfields}} |||  --- The name of the foreign key field relating to the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{secondary}} ||| VARSTRING --- The logical filename of the secondary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{primaryfields}} |||  --- The name of the primary key field for the primary file. The value ''\_\_fileposition\_\_'' indicates the secondary is an INDEX that must use FETCH to access non-keyed fields.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{description}} ||| VARSTRING --- The description of the relationship.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{cardinality}} ||| VARSTRING --- The cardinality of the relationship. The format is <primary>:<secondary>. Valid values are ''1'' or ''M''.</secondary></primary>
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{payload}} ||| BOOLEAN --- Indicates whether the primary or secondary are payload INDEXes.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{secondaryflds}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{primaryflds}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{kind}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FileRelationshipList}}
+
+\hypertarget{ecldoc:file.filerelationshiplist}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} dataset(FsFileRelationshipRecord)} & \textbf{FileRelationshipList} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring primary, varstring secondary, varstring primflds='', varstring secondaryflds='', varstring kind='link')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a dataset of relationships. The return records are structured in the FsFileRelationshipRecord format.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{primaryfields}} |||  --- The name of the primary key field for the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{relationship}} |||  --- The type of relationship between the primary and secondary files. Containing either 'link' or 'view'. Default is ''link''.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{primary}} ||| VARSTRING --- The logical filename of the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{secondaryfields}} |||  --- The name of the foreign key field relating to the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{secondary}} ||| VARSTRING --- The logical filename of the secondary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{secondaryflds}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{kind}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{primflds}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( FsFileRelationshipRecord )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+RemoveFileRelationship}}
+
+\hypertarget{ecldoc:file.removefilerelationship}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RemoveFileRelationship} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring primary, varstring secondary, varstring primaryflds='', varstring secondaryflds='', varstring kind='link')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Removes a relationship between two files.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{primaryfields}} |||  --- The name of the primary key field for the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{relationship}} |||  --- The type of relationship between the primary and secondary files. Containing either 'link' or 'view'. Default is ''link''.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{primary}} ||| VARSTRING --- The logical filename of the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{secondaryfields}} |||  --- The name of the foreign key field relating to the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{secondary}} ||| VARSTRING --- The logical filename of the secondary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{secondaryflds}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{kind}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{primaryflds}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetColumnMapping}}
+
+\hypertarget{ecldoc:file.getcolumnmapping}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{GetColumnMapping} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the field mappings for the file, in the same format specified for the SetColumnMapping function.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The logical filename of the primary file.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SetColumnMapping}}
+
+\hypertarget{ecldoc:file.setcolumnmapping}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SetColumnMapping} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn, varstring mapping)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Defines how the data in the fields of the file mist be transformed between the actual data storage format and the input format used to query that data. This is used by the user interface of the roxie browser.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The logical filename of the primary file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{mapping}} ||| VARSTRING --- A string containing a comma separated list of field mappings.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+EncodeRfsQuery}}
+
+\hypertarget{ecldoc:file.encoderfsquery}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{EncodeRfsQuery} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring server, varstring query)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a string that can be used in a DATASET declaration to read data from an RFS (Remote File Server) instance (e.g. rfsmysql) on another node.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{server}} ||| VARSTRING --- A string containing the ip:port address for the remote file server.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{query}} ||| VARSTRING --- The text of the query to send to the server
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+RfsAction}}
+
+\hypertarget{ecldoc:file.rfsaction}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RfsAction} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring server, varstring query)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Sends the query to the rfs server.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{server}} ||| VARSTRING --- A string containing the ip:port address for the remote file server.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{query}} ||| VARSTRING --- The text of the query to send to the server
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+MoveExternalFile}}
+
+\hypertarget{ecldoc:file.moveexternalfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{MoveExternalFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring location, varstring frompath, varstring topath)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Moves the single physical file between two locations on the same remote machine. The dafileserv utility program must be running on the location machine.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{frompath}} ||| VARSTRING --- The path/name of the file to move.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{topath}} ||| VARSTRING --- The path/name of the target file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{location}} ||| VARSTRING --- The IP address of the remote machine.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DeleteExternalFile}}
+
+\hypertarget{ecldoc:file.deleteexternalfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{DeleteExternalFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring location, varstring path)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Removes a single physical file from a remote machine. The dafileserv utility program must be running on the location machine.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{location}} ||| VARSTRING --- The IP address of the remote machine.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{path}} ||| VARSTRING --- The path/name of the file to remove.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CreateExternalDirectory}}
+
+\hypertarget{ecldoc:file.createexternaldirectory}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{CreateExternalDirectory} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring location, varstring path)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Creates the path on the location (if it does not already exist). The dafileserv utility program must be running on the location machine.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{location}} ||| VARSTRING --- The IP address of the remote machine.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{path}} ||| VARSTRING --- The path/name of the file to remove.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetLogicalFileAttribute}}
+
+\hypertarget{ecldoc:file.getlogicalfileattribute}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{GetLogicalFileAttribute} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn, varstring attrname)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the value of the given attribute for the specified logicalfilename.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The name of the logical file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{attrname}} ||| VARSTRING --- The name of the file attribute to return.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ProtectLogicalFile}}
+
+\hypertarget{ecldoc:file.protectlogicalfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ProtectLogicalFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring lfn, boolean value=TRUE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Toggles protection on and off for the specified logicalfilename.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{lfn}} ||| VARSTRING --- The name of the logical file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{value}} ||| BOOLEAN --- TRUE to enable protection, FALSE to disable.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DfuPlusExec}}
+
+\hypertarget{ecldoc:file.dfuplusexec}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{DfuPlusExec} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring cmdline)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+The DfuPlusExec action executes the specified command line just as the DfuPLus.exe program would do. This allows you to have all the functionality of the DfuPLus.exe program available within your ECL code. param cmdline The DFUPlus.exe command line to execute. The valid arguments are documented in the Client Tools manual, in the section describing the DfuPlus.exe program.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{cmdline}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fSprayFixed}}
+
+\hypertarget{ecldoc:file.fsprayfixed}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fSprayFixed} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceIP, varstring sourcePath, integer4 recordSize, varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean compress=FALSE, boolean failIfNoSourceFile=FALSE, integer4 expireDays=-1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Sprays a file of fixed length records from a single machine and distributes it across the nodes of the destination group.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationGroup}} ||| VARSTRING --- The name of the group to distribute the file across.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeOut}} ||| INTEGER4 --- The time in ms to wait for the operation to complete. A value of 0 causes the call to return immediately. Defaults to no timeout (-1).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxConnections}} ||| INTEGER4 --- The maximum number of target nodes to write to concurrently. Defaults to 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{expireDays}} ||| INTEGER4 --- Number of days to auto-remove file. Default is -1, not expire.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{failIfNoSourceFile}} ||| BOOLEAN --- If TRUE it causes a missing source file to trigger a failure. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcePath}} ||| VARSTRING --- The path and name of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- Whether to compress the new file. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceIP}} ||| VARSTRING --- The IP address of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationLogicalName}} ||| VARSTRING --- The logical name of the file to create.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowOverwrite}} ||| BOOLEAN --- Is it valid to overwrite an existing file of the same name? Defaults to FALSE
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recordsize}} ||| INTEGER4 --- The size (in bytes) of the records in the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- Whether to replicate the new file. Defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The DFU workunit id for the job.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SprayFixed}}
+
+\hypertarget{ecldoc:file.sprayfixed}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SprayFixed} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceIP, varstring sourcePath, integer4 recordSize, varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean compress=FALSE, boolean failIfNoSourceFile=FALSE, integer4 expireDays=-1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fSprayFixed, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{failifnosourcefile}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxconnections}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationlogicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeout}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcepath}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationgroup}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceip}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{expiredays}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowoverwrite}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recordsize}} ||| INTEGER4 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fSprayFixed
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fSprayVariable}}
+
+\hypertarget{ecldoc:file.fsprayvariable}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fSprayVariable} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceIP, varstring sourcePath, integer4 sourceMaxRecordSize=8192, varstring sourceCsvSeparate='\textbackslash \textbackslash ,', varstring sourceCsvTerminate='\textbackslash \textbackslash n,\textbackslash \textbackslash r\textbackslash \textbackslash n', varstring sourceCsvQuote='\textbackslash ''', varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean compress=FALSE, varstring sourceCsvEscape='', boolean failIfNoSourceFile=FALSE, boolean recordStructurePresent=FALSE, boolean quotedTerminator=TRUE, varstring encoding='ascii', integer4 expireDays=-1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{failifnosourcefile}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{expiredays}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxconnections}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recordstructurepresent}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcepath}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeout}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvterminate}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationlogicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationgroup}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcemaxrecordsize}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceip}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{quotedterminator}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvseparate}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvquote}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvescape}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowoverwrite}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{encoding}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SprayVariable}}
+
+\hypertarget{ecldoc:file.sprayvariable}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SprayVariable} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceIP, varstring sourcePath, integer4 sourceMaxRecordSize=8192, varstring sourceCsvSeparate='\textbackslash \textbackslash ,', varstring sourceCsvTerminate='\textbackslash \textbackslash n,\textbackslash \textbackslash r\textbackslash \textbackslash n', varstring sourceCsvQuote='\textbackslash ''', varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean compress=FALSE, varstring sourceCsvEscape='', boolean failIfNoSourceFile=FALSE, boolean recordStructurePresent=FALSE, boolean quotedTerminator=TRUE, varstring encoding='ascii', integer4 expireDays=-1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{failifnosourcefile}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{expiredays}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxconnections}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recordstructurepresent}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcepath}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeout}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvterminate}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationlogicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationgroup}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcemaxrecordsize}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceip}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{quotedterminator}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvseparate}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvquote}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvescape}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowoverwrite}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{encoding}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fSprayDelimited}}
+
+\hypertarget{ecldoc:file.fspraydelimited}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fSprayDelimited} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceIP, varstring sourcePath, integer4 sourceMaxRecordSize=8192, varstring sourceCsvSeparate='\textbackslash \textbackslash ,', varstring sourceCsvTerminate='\textbackslash \textbackslash n,\textbackslash \textbackslash r\textbackslash \textbackslash n', varstring sourceCsvQuote='\textbackslash ''', varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean compress=FALSE, varstring sourceCsvEscape='', boolean failIfNoSourceFile=FALSE, boolean recordStructurePresent=FALSE, boolean quotedTerminator=TRUE, varstring encoding='ascii', integer4 expireDays=-1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Sprays a file of fixed delimited records from a single machine and distributes it across the nodes of the destination group.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationGroup}} ||| VARSTRING --- The name of the group to distribute the file across.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeOut}} ||| INTEGER4 --- The time in ms to wait for the operation to complete. A value of 0 causes the call to return immediately. Defaults to no timeout (-1).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceCsvTerminate}} ||| VARSTRING --- The character sequence which separates records in the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{expireDays}} ||| INTEGER4 --- Number of days to auto-remove file. Default is -1, not expire.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{failIfNoSourceFile}} ||| BOOLEAN --- If TRUE it causes a missing source file to trigger a failure. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{quotedTerminator}} ||| BOOLEAN --- Can the terminator character be included in a quoted field. Defaults to TRUE. If FALSE it allows quicker partitioning of the file (avoiding a complete file scan).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcePath}} ||| VARSTRING --- The path and name of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- Whether to compress the new file. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceCsvEscape}} ||| VARSTRING --- A character that is used to escape quote characters. Defaults to none.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceIP}} ||| VARSTRING --- The IP address of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recordStructurePresent}} ||| BOOLEAN --- If TRUE derives the record structure from the header of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationLogicalName}} ||| VARSTRING --- The logical name of the file to create.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceCsvSeparate}} ||| VARSTRING --- The character sequence which separates fields in the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowOverwrite}} ||| BOOLEAN --- Is it valid to overwrite an existing file of the same name? Defaults to FALSE
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxConnections}} ||| INTEGER4 --- The maximum number of target nodes to write to concurrently. Defaults to 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceMaxRecordSize}} ||| INTEGER4 --- The maximum size (in bytes) of the records in the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceCsvQuote}} ||| VARSTRING --- A string which can be used to delimit fields in the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- Whether to replicate the new file. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{encoding}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The DFU workunit id for the job.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SprayDelimited}}
+
+\hypertarget{ecldoc:file.spraydelimited}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SprayDelimited} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceIP, varstring sourcePath, integer4 sourceMaxRecordSize=8192, varstring sourceCsvSeparate='\textbackslash \textbackslash ,', varstring sourceCsvTerminate='\textbackslash \textbackslash n,\textbackslash \textbackslash r\textbackslash \textbackslash n', varstring sourceCsvQuote='\textbackslash ''', varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean compress=FALSE, varstring sourceCsvEscape='', boolean failIfNoSourceFile=FALSE, boolean recordStructurePresent=FALSE, boolean quotedTerminator=TRUE, const varstring encoding='ascii', integer4 expireDays=-1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fSprayDelimited, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{failifnosourcefile}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{expiredays}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxconnections}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recordstructurepresent}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcepath}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeout}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvterminate}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationlogicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationgroup}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcemaxrecordsize}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceip}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{quotedterminator}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvseparate}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvquote}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcecsvescape}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowoverwrite}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{encoding}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fSprayDelimited
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fSprayXml}}
+
+\hypertarget{ecldoc:file.fsprayxml}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fSprayXml} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceIP, varstring sourcePath, integer4 sourceMaxRecordSize=8192, varstring sourceRowTag, varstring sourceEncoding='utf8', varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean compress=FALSE, boolean failIfNoSourceFile=FALSE, integer4 expireDays=-1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Sprays an xml file from a single machine and distributes it across the nodes of the destination group.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationGroup}} ||| VARSTRING --- The name of the group to distribute the file across.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeOut}} ||| INTEGER4 --- The time in ms to wait for the operation to complete. A value of 0 causes the call to return immediately. Defaults to no timeout (-1).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxConnections}} ||| INTEGER4 --- The maximum number of target nodes to write to concurrently. Defaults to 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{expireDays}} ||| INTEGER4 --- Number of days to auto-remove file. Default is -1, not expire.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcePath}} ||| VARSTRING --- The path and name of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- Whether to compress the new file. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceEncoding}} ||| VARSTRING --- The unicode encoding of the file. (utf8,utf8n,utf16be,utf16le,utf32be,utf32le)
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{failIfNoSourceFile}} ||| BOOLEAN --- If TRUE it causes a missing source file to trigger a failure. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceIP}} ||| VARSTRING --- The IP address of the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationLogicalName}} ||| VARSTRING --- The logical name of the file to create.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowOverwrite}} ||| BOOLEAN --- Is it valid to overwrite an existing file of the same name? Defaults to FALSE
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceMaxRecordSize}} ||| INTEGER4 --- The maximum size (in bytes) of the records in the file.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceRowTag}} ||| VARSTRING --- The xml tag that is used to delimit records in the source file. (This tag cannot recursivly nest.)
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- Whether to replicate the new file. Defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The DFU workunit id for the job.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SprayXml}}
+
+\hypertarget{ecldoc:file.sprayxml}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SprayXml} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceIP, varstring sourcePath, integer4 sourceMaxRecordSize=8192, varstring sourceRowTag, varstring sourceEncoding='utf8', varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean compress=FALSE, boolean failIfNoSourceFile=FALSE, integer4 expireDays=-1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fSprayXml, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{failifnosourcefile}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxconnections}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcerowtag}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationlogicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeout}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcepath}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationgroup}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcemaxrecordsize}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceip}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{expiredays}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceencoding}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowoverwrite}} ||| BOOLEAN --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fSprayXml
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fDespray}}
+
+\hypertarget{ecldoc:file.fdespray}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fDespray} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring logicalName, varstring destinationIP, varstring destinationPath, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Copies a distributed file from multiple machines, and desprays it to a single file on a single machine.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeOut}} ||| INTEGER4 --- The time in ms to wait for the operation to complete. A value of 0 causes the call to return immediately. Defaults to no timeout (-1).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxConnections}} ||| INTEGER4 --- The maximum number of target nodes to write to concurrently. Defaults to 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowOverwrite}} ||| BOOLEAN --- Is it valid to overwrite an existing file of the same name? Defaults to FALSE
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationIP}} ||| VARSTRING --- The IP of the target machine.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationPath}} ||| VARSTRING --- The path of the file to create on the destination machine.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{logicalName}} ||| VARSTRING --- The name of the file to despray.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The DFU workunit id for the job.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Despray}}
+
+\hypertarget{ecldoc:file.despray}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Despray} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring logicalName, varstring destinationIP, varstring destinationPath, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fDespray, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationpath}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxconnections}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeout}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{logicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowoverwrite}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationip}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fDespray
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fCopy}}
+
+\hypertarget{ecldoc:file.fcopy}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fCopy} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceLogicalName, varstring destinationGroup, varstring destinationLogicalName, varstring sourceDali='', integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean asSuperfile=FALSE, boolean compress=FALSE, boolean forcePush=FALSE, integer4 transferBufferSize=0, boolean preserveCompression=TRUE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Copies a distributed file to another distributed file.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationGroup}} ||| VARSTRING --- The name of the group to distribute the file across.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- Whether to compress the new file. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxConnections}} ||| INTEGER4 --- The maximum number of target nodes to write to concurrently. Defaults to 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowOverwrite}} ||| BOOLEAN --- Is it valid to overwrite an existing file of the same name? Defaults to FALSE
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeOut}} ||| INTEGER4 --- The time in ms to wait for the operation to complete. A value of 0 causes the call to return immediately. Defaults to no timeout (-1).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{forcePush}} ||| BOOLEAN --- Should the copy process be executed on the source nodes (push) or on the destination nodes (pull)? Default is to pull.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationLogicalName}} ||| VARSTRING --- The logical name of the file to create.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{asSuperfile}} ||| BOOLEAN --- Should the file be copied as a superfile? If TRUE and source is a superfile, then the operation creates a superfile on the target, creating sub-files as needed and only overwriting existing sub-files whose content has changed. If FALSE, a single file is created. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- Should the copied file also be replicated on the destination? Defaults to FALSE
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceLogicalName}} ||| VARSTRING --- The name of the file to despray.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transferBufferSize}} ||| INTEGER4 --- Overrides the size (in bytes) of the internal buffer used to copy the file. Default is 64k.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceDali}} ||| VARSTRING --- The dali that contains the source file (blank implies same dali). Defaults to same dali.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{preservecompression}} ||| BOOLEAN --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The DFU workunit id for the job.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Copy}}
+
+\hypertarget{ecldoc:file.copy}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Copy} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring sourceLogicalName, varstring destinationGroup, varstring destinationLogicalName, varstring sourceDali='', integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'), integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean asSuperfile=FALSE, boolean compress=FALSE, boolean forcePush=FALSE, integer4 transferBufferSize=0, boolean preserveCompression=TRUE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fCopy, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{assuperfile}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxconnections}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcelogicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationlogicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeout}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{preservecompression}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcedali}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationgroup}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transferbuffersize}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowoverwrite}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{forcepush}} ||| BOOLEAN --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fCopy
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fReplicate}}
+
+\hypertarget{ecldoc:file.freplicate}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fReplicate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring logicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Ensures the specified file is replicated to its mirror copies.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeOut}} ||| INTEGER4 --- The time in ms to wait for the operation to complete. A value of 0 causes the call to return immediately. Defaults to no timeout (-1).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{logicalName}} ||| VARSTRING --- The name of the file to replicate.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The DFU workunit id for the job.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Replicate}}
+
+\hypertarget{ecldoc:file.replicate}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Replicate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring logicalName, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fReplicated, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeout}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{logicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fReplicate
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fRemotePull}}
+
+\hypertarget{ecldoc:file.fremotepull}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fRemotePull} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring remoteEspFsURL, varstring sourceLogicalName, varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean asSuperfile=FALSE, boolean forcePush=FALSE, integer4 transferBufferSize=0, boolean wrap=FALSE, boolean compress=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Copies a distributed file to a distributed file on remote system. Similar to fCopy, except the copy executes remotely. Since the DFU workunit executes on the remote DFU server, the user name authentication must be the same on both systems, and the user must have rights to copy files on both systems.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationGroup}} ||| VARSTRING --- The name of the group to distribute the file across.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- Whether to compress the new file. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxConnections}} ||| INTEGER4 --- The maximum number of target nodes to write to concurrently. Defaults to 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{remoteEspFsURL}} ||| VARSTRING --- The url of the remote ESP file copying service.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeOut}} ||| INTEGER4 --- The time in ms to wait for the operation to complete. A value of 0 causes the call to return immediately. Defaults to no timeout (-1).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationLogicalName}} ||| VARSTRING --- The logical name of the file to create.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{asSuperfile}} ||| BOOLEAN --- Should the file be copied as a superfile? If TRUE and source is a superfile, then the operation creates a superfile on the target, creating sub-files as needed and only overwriting existing sub-files whose content has changed. If FALSE a single file is created. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{wrap}} ||| BOOLEAN --- Should the fileparts be wrapped when copying to a smaller sized cluster? The default is FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- Should the copied file also be replicated on the destination? Defaults to FALSE
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourceLogicalName}} ||| VARSTRING --- The name of the file to despray.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transferBufferSize}} ||| INTEGER4 --- Overrides the size (in bytes) of the internal buffer used to copy the file. Default is 64k.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{forcePush}} ||| BOOLEAN --- Should the copy process should be executed on the source nodes (push) or on the destination nodes (pull)? Default is to pull.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowOverwrite}} ||| BOOLEAN --- Is it valid to overwrite an existing file of the same name? Defaults to FALSE
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The DFU workunit id for the job.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+RemotePull}}
+
+\hypertarget{ecldoc:file.remotepull}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RemotePull} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring remoteEspFsURL, varstring sourceLogicalName, varstring destinationGroup, varstring destinationLogicalName, integer4 timeOut=-1, integer4 maxConnections=-1, boolean allowOverwrite=FALSE, boolean replicate=FALSE, boolean asSuperfile=FALSE, boolean forcePush=FALSE, integer4 transferBufferSize=0, boolean wrap=FALSE, boolean compress=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fRemotePull, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{assuperfile}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{compress}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{maxconnections}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sourcelogicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationlogicalname}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeout}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{destinationgroup}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{transferbuffersize}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{wrap}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replicate}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowoverwrite}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{remoteespfsurl}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{forcepush}} ||| BOOLEAN --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fRemotePull
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fMonitorLogicalFileName}}
+
+\hypertarget{ecldoc:file.fmonitorlogicalfilename}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fMonitorLogicalFileName} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring eventToFire, varstring name, integer4 shotCount=1, varstring espServerIpPort=GETENV('ws\_fs\_server'))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Creates a file monitor job in the DFU Server. If an appropriately named file arrives in this interval it will fire the event with the name of the triggering object as the event subtype (see the EVENT function).
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{name}} ||| VARSTRING --- The name of the logical file to monitor. This may contain wildcard characters ( * and ?)
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{shotCount}} ||| INTEGER4 --- The number of times to generate the event before the monitoring job completes. A value of -1 indicates the monitoring job continues until manually aborted. The default is 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{eventToFire}} ||| VARSTRING --- The user-defined name of the event to fire when the filename appears. This value is used as the first parameter to the EVENT function.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The DFU workunit id for the job.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+MonitorLogicalFileName}}
+
+\hypertarget{ecldoc:file.monitorlogicalfilename}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{MonitorLogicalFileName} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring eventToFire, varstring name, integer4 shotCount=1, varstring espServerIpPort=GETENV('ws\_fs\_server'))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fMonitorLogicalFileName, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{name}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{shotcount}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{eventtofire}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fMonitorLogicalFileName
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fMonitorFile}}
+
+\hypertarget{ecldoc:file.fmonitorfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fMonitorFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring eventToFire, varstring ip, varstring filename, boolean subDirs=FALSE, integer4 shotCount=1, varstring espServerIpPort=GETENV('ws\_fs\_server'))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Creates a file monitor job in the DFU Server. If an appropriately named file arrives in this interval it will fire the event with the name of the triggering object as the event subtype (see the EVENT function).
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{subDirs}} ||| BOOLEAN --- Whether to include files in sub-directories (when the filename contains wildcards). Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filename}} ||| VARSTRING --- The full path of the file(s) to monitor. This may contain wildcard characters ( * and ?)
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ip}} ||| VARSTRING --- The the IP address for the file to monitor. This may be omitted if the filename parameter contains a complete URL.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{shotCount}} ||| INTEGER4 --- The number of times to generate the event before the monitoring job completes. A value of -1 indicates the monitoring job continues until manually aborted. The default is 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{eventToFire}} ||| VARSTRING --- The user-defined name of the event to fire when the filename appears. This value is used as the first parameter to the EVENT function.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The DFU workunit id for the job.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+MonitorFile}}
+
+\hypertarget{ecldoc:file.monitorfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{MonitorFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring eventToFire, varstring ip, varstring filename, boolean subdirs=FALSE, integer4 shotCount=1, varstring espServerIpPort=GETENV('ws\_fs\_server'))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fMonitorFile, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filename}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{subdirs}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{eventtofire}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ip}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{shotcount}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espserveripport}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fMonitorFile
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+WaitDfuWorkunit}}
+
+\hypertarget{ecldoc:file.waitdfuworkunit}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{WaitDfuWorkunit} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring wuid, integer4 timeOut=-1, varstring espServerIpPort=GETENV('ws\_fs\_server'))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Waits for the specified DFU workunit to finish.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timeOut}} ||| INTEGER4 --- The time in ms to wait for the operation to complete. A value of 0 causes the call to return immediately. Defaults to no timeout (-1).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{wuid}} ||| VARSTRING --- The dfu wfid to wait for.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- A string containing the final status string of the DFU workunit.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+AbortDfuWorkunit}}
+
+\hypertarget{ecldoc:file.abortdfuworkunit}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{AbortDfuWorkunit} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring wuid, varstring espServerIpPort=GETENV('ws\_fs\_server'))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Aborts the specified DFU workunit.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{wuid}} ||| VARSTRING --- The dfu wfid to abort.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{espServerIpPort}} ||| VARSTRING --- The url of the ESP file copying service. Defaults to the value of ws\_fs\_server in the environment.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CreateSuperFile}}
+
+\hypertarget{ecldoc:file.createsuperfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{CreateSuperFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, boolean sequentialParts=FALSE, boolean allowExist=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Creates an empty superfile. This function is not included in a superfile transaction.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sequentialParts}} ||| BOOLEAN --- Whether the sub-files must be sequentially ordered. Default to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allowExist}} ||| BOOLEAN --- Indicating whether to post an error if the superfile already exists. If TRUE, no error is posted. Defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SuperFileExists}}
+
+\hypertarget{ecldoc:file.superfileexists}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} boolean} & \textbf{SuperFileExists} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Checks if the specified filename is present in the Distributed File Utility (DFU) and is a SuperFile.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- Whether the file exists.
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] FileExists
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DeleteSuperFile}}
+
+\hypertarget{ecldoc:file.deletesuperfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{DeleteSuperFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, boolean deletesub=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Deletes the superfile.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{deletesub}} ||| BOOLEAN --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] FileExists
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetSuperFileSubCount}}
+
+\hypertarget{ecldoc:file.getsuperfilesubcount}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unsigned4} & \textbf{GetSuperFileSubCount} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the number of sub-files contained within a superfile.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The number of sub-files within the superfile.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetSuperFileSubName}}
+
+\hypertarget{ecldoc:file.getsuperfilesubname}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{GetSuperFileSubName} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, unsigned4 fileNum, boolean absPath=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the name of the Nth sub-file within a superfile.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{absPath}} ||| BOOLEAN --- Whether to prepend '\~{}' to the name of the resulting logical file name.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{fileNum}} ||| UNSIGNED4 --- The 1-based position of the sub-file to return the name of.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- The logical name of the selected sub-file.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FindSuperFileSubName}}
+
+\hypertarget{ecldoc:file.findsuperfilesubname}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} unsigned4} & \textbf{FindSuperFileSubName} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, varstring subName)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the position of a file within a superfile.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{subName}} ||| VARSTRING --- The logical name of the sub-file.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The 1-based position of the sub-file within the superfile.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+StartSuperFileTransaction}}
+
+\hypertarget{ecldoc:file.startsuperfiletransaction}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{StartSuperFileTransaction} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Starts a superfile transaction. All superfile operations within the transaction will either be executed atomically or rolled back when the transaction is finished.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+AddSuperFile}}
+
+\hypertarget{ecldoc:file.addsuperfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{AddSuperFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, varstring subName, unsigned4 atPos=0, boolean addContents=FALSE, boolean strict=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Adds a file to a superfile.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{strict}} ||| BOOLEAN --- Check addContents only if subName is a superfile, and ensure superfiles exist.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{subName}} ||| VARSTRING --- The name of the logical file to add.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{addContents}} ||| BOOLEAN --- Controls whether adding a superfile adds the superfile, or its contents. Defaults to FALSE (do not expand).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{atPos}} ||| UNSIGNED4 --- The position to add the sub-file, or 0 to append. Defaults to 0.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+RemoveSuperFile}}
+
+\hypertarget{ecldoc:file.removesuperfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RemoveSuperFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, varstring subName, boolean del=FALSE, boolean removeContents=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Removes a sub-file from a superfile.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{removeContents}} ||| BOOLEAN --- Controls whether the contents of a sub-file which is a superfile should be recursively removed. Defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{subName}} ||| VARSTRING --- The name of the sub-file to remove.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{del}} ||| BOOLEAN --- Indicates whether the sub-file should also be removed from the disk. Defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ClearSuperFile}}
+
+\hypertarget{ecldoc:file.clearsuperfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ClearSuperFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, boolean del=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Removes all sub-files from a superfile.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{del}} ||| BOOLEAN --- Indicates whether the sub-files should also be removed from the disk. Defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+RemoveOwnedSubFiles}}
+
+\hypertarget{ecldoc:file.removeownedsubfiles}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RemoveOwnedSubFiles} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, boolean del=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Removes all soley-owned sub-files from a superfile. If a sub-file is also contained within another superfile then it is retained.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{del}} ||| BOOLEAN --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DeleteOwnedSubFiles}}
+
+\hypertarget{ecldoc:file.deleteownedsubfiles}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{DeleteOwnedSubFiles} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Legacy version of RemoveOwnedSubFiles which was incorrectly named in a previous version.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{supername}} ||| VARSTRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] RemoveOwnedSubFIles
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SwapSuperFile}}
+
+\hypertarget{ecldoc:file.swapsuperfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SwapSuperFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName1, varstring superName2)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Swap the contents of two superfiles.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName1}} ||| VARSTRING --- The logical name of the first superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName2}} ||| VARSTRING --- The logical name of the second superfile.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ReplaceSuperFile}}
+
+\hypertarget{ecldoc:file.replacesuperfile}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ReplaceSuperFile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, varstring oldSubFile, varstring newSubFile)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Removes a sub-file from a superfile and replaces it with another.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{newSubFile}} ||| VARSTRING --- The logical name of the sub-file to replace within the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{oldSubFile}} ||| VARSTRING --- The logical name of the sub-file to remove.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FinishSuperFileTransaction}}
+
+\hypertarget{ecldoc:file.finishsuperfiletransaction}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{FinishSuperFileTransaction} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (boolean rollback=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Finishes a superfile transaction. This executes all the operations since the matching StartSuperFileTransaction(). If there are any errors, then all of the operations are rolled back.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{rollback}} ||| BOOLEAN --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SuperFileContents}}
+
+\hypertarget{ecldoc:file.superfilecontents}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} dataset(FsLogicalFileNameRecord)} & \textbf{SuperFileContents} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring superName, boolean recurse=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the list of sub-files contained within a superfile.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superName}} ||| VARSTRING --- The logical name of the superfile.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{recurse}} ||| BOOLEAN --- Should the contents of child-superfiles be expanded. Default is FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( FsLogicalFileNameRecord )} --- A dataset containing the names of the sub-files.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LogicalFileSuperOwners}}
+
+\hypertarget{ecldoc:file.logicalfilesuperowners}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} dataset(FsLogicalFileNameRecord)} & \textbf{LogicalFileSuperOwners} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (varstring name)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the list of superfiles that a logical file is contained within.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{name}} ||| VARSTRING --- The name of the logical file.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( FsLogicalFileNameRecord )} --- A dataset containing the names of the superfiles.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LogicalFileSuperSubList}}
+
+\hypertarget{ecldoc:file.logicalfilesupersublist}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} dataset(FsLogicalSuperSubRecord)} & \textbf{LogicalFileSuperSubList} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the list of all the superfiles in the system and their component sub-files.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( FsLogicalSuperSubRecord )} --- A dataset containing pairs of superName,subName for each component file.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+fPromoteSuperFileList}}
+
+\hypertarget{ecldoc:file.fpromotesuperfilelist}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} varstring} & \textbf{fPromoteSuperFileList} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (set of varstring superNames, varstring addHead='', boolean delTail=FALSE, boolean createOnlyOne=FALSE, boolean reverse=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Moves the sub-files from the first entry in the list of superfiles to the next in the list, repeating the process through the list of superfiles.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{delTail}} ||| BOOLEAN --- Indicates whether to physically delete the contents moved out of the last superfile. The default is FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{superNames}} ||| SET ( VARSTRING ) --- A set of the names of the superfiles to act on. Any that do not exist will be created. The contents of each superfile will be moved to the next in the list.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{addHead}} ||| VARSTRING --- A string containing a comma-delimited list of logical file names to add to the first superfile after the promotion process is complete. Defaults to ''.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{reverse}} ||| BOOLEAN --- Reverse the order of processing the superfiles list, effectively 'demoting' instead of 'promoting' the sub-files. The default is FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{createOnlyOne}} ||| BOOLEAN --- Specifies whether to only create a single superfile (truncate the list at the first non-existent superfile). The default is FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{VARSTRING} --- A string containing a comma separated list of the previous sub-file contents of the emptied superfile.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+PromoteSuperFileList}}
+
+\hypertarget{ecldoc:file.promotesuperfilelist}{}
+\hspace{0pt} \hyperlink{ecldoc:File}{File} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{PromoteSuperFileList} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (set of varstring superNames, varstring addHead='', boolean delTail=FALSE, boolean createOnlyOne=FALSE, boolean reverse=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Same as fPromoteSuperFileList, but does not return the DFU Workunit ID.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{createonlyone}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{addhead}} ||| VARSTRING --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{reverse}} ||| BOOLEAN --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{supernames}} ||| SET ( VARSTRING ) --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{deltail}} ||| BOOLEAN --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] fPromoteSuperFileList
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

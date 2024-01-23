@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Source name="PBblas.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" target="Types.ecl.xml">
+  <Definition exported="1" fullname="PBblas.Types" inherittype="local" line="11" name="Types" type="module">
+   <Definition exported="1" fullname="pbblas.types.dimension_t" inherittype="local" line="16" name="dimension_t" type="attribute">
+    <Type type="unsigned4"/>
+    <Signature name="dimension_t" ret="" param="" hlen="11">dimension_t</Signature><Documentation>
+     <content>Type for matrix dimensions. Uses UNSIGNED four as matrixes are not designed to support more than 4 B rows or columns.</content><firstline>Type for matrix dimensions</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.types.partition_t" inherittype="local" line="20" name="partition_t" type="attribute">
+    <Type type="unsigned2"/>
+    <Signature name="partition_t" ret="" param="" hlen="11">partition_t</Signature><Documentation>
+     <content>Type for partition id -- only supports up to 64K partitions</content><firstline>Type for partition id -- only supports up to 64K partitions</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.types.work_item_t" inherittype="local" line="24" name="work_item_t" type="attribute">
+    <Type type="unsigned2"/>
+    <Signature name="work_item_t" ret="" param="" hlen="11">work_item_t</Signature><Documentation>
+     <content>Type for work-item id -- only supports up to 64K work items</content><firstline>Type for work-item id -- only supports up to 64K work items</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.types.value_t" inherittype="local" line="30" name="value_t" type="attribute">
+    <Type type="real8"/>
+    <Signature name="value_t" ret="" param="" hlen="7">value_t</Signature><Documentation>
+     <content>Type for matrix cell values WARNING: type used in C++ attribute</content><firstline>Type for matrix cell values</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.types.m_label_t" inherittype="local" line="35" name="m_label_t" type="attribute">
+    <Type type="string3"/>
+    <Signature name="m_label_t" ret="" param="" hlen="9">m_label_t</Signature><Documentation>
+     <content>Type for matrix label. Used for Matrix dimensions (see Layout_Dims) and for partitions (see Layout_Part)</content><firstline>Type for matrix label</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" inherittype="local" line="41" name="Triangle" type="attribute" fullname="ecldoc-Triangle">
+    <Type type="unsigned1"/>
+    <Signature name="Triangle" ret="" param="" hlen="8">Triangle</Signature><Documentation>
+     <content>Enumeration for Triangle type WARNING: type used in C++ attribute</content><firstline>Enumeration for Triangle type</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" inherittype="local" line="47" name="Diagonal" type="attribute" fullname="ecldoc-Diagonal">
+    <Type type="unsigned1"/>
+    <Signature name="Diagonal" ret="" param="" hlen="8">Diagonal</Signature><Documentation>
+     <content>Enumeration for Diagonal type WARNING: type used in C++ attribute</content><firstline>Enumeration for Diagonal type</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" inherittype="local" line="53" name="Side" type="attribute" fullname="ecldoc-Side">
+    <Type type="unsigned1"/>
+    <Signature name="Side" ret="" param="" hlen="4">Side</Signature><Documentation>
+     <content>Enumeration for Side type WARNING: type used in C++ attribute</content><firstline>Enumeration for Side type</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.types.t_mu_no" inherittype="local" line="60" name="t_mu_no" type="attribute">
+    <Type type="unsigned2"/>
+    <Signature name="t_mu_no" ret="" param="" hlen="7">t_mu_no</Signature><Documentation>
+     <content>Type for matrix universe number Allow up to 64k matrices in one universe</content><firstline>Type for matrix universe number</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.types.layout_cell" inherittype="local" line="94" name="Layout_Cell" type="record">
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="x">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="y">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="v">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="Layout_Cell" ret="" param="" hlen="11">Layout_Cell</Signature><Documentation>
+     <field>wi_id Work Item Number -- An identifier from 1 to 64K-1 that separates and identifies individual matrixes</field><field>x 1-based row position within the matrix</field><field>y 1-based column position within the matrix</field><field>v Real value for the cell</field><content>Layout for Matrix Cell Main representation of Matrix cell at interface to all PBBlas functions. Matrixes are represented as DATASET(Layout_Cell), where each cell describes the row and column position of the cell as well as its value. Only the non-zero cells need to be contained in the dataset in order to describe the matrix since all unspecified cells are considered to have a value of zero. The cell also contains a work-item number that allows multiple separate matrixes to be carried in the same dataset. This supports the "myriad" style interface that allows the same operations to be performed on many different sets of data at once. Note that these matrixes do not have an explicit size. They are sized implicitly, based on the maximum row and column presented in the data. A matrix can be converted to an explicit dense form (see matrix_t) by using the utility module MakeR8Set. This module should only be used for known small matrixes (&amp;lt; 1M cells) or for partitions of a larger matrix. The Converted module provides utility functions to convert to and from a set of partitions (See Layout_parts).</content><firstline>Layout for Matrix Cell Main representation of Matrix cell at interface to all PBBlas functions</firstline><see>matrix_t</see><see>Std/PBblas/MakeR8Set.ecl</see><see>Std/PBblas/Converted.ecl WARNING: Used as C++ attribute. Do not change without corresponding changes to MakeR8Set.</see></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.types.layout_norm" inherittype="local" line="108" name="Layout_Norm" type="record">
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="v">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="Layout_Norm" ret="" param="" hlen="11">Layout_Norm</Signature><Documentation>
+     <field>wi_id Work Item Number -- An identifier from 1 to 64K-1 that separates and identifies individual matrixes</field><field>v Real value for the norm</field><content>Layout for Norm results.</content><firstline>Layout for Norm results</firstline></Documentation>
+   </Definition>
+   <Documentation>
+    <content>Types for the Parallel Block Basic Linear Algebra Sub-programs support WARNING: attributes marked with WARNING can not be changed without making corresponding changes to the C++ attributes.</content><firstline>Types for the Parallel Block Basic Linear Algebra Sub-programs support WARNING: attributes marked with WARNING can not be changed without making corresponding changes to the C++ attributes</firstline></Documentation>
+   <Signature name="Types" ret="" param="" hlen="5">Types</Signature><Parents/>
+  </Definition>
+  <Import name="ML_Core" ref="ML_Core" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="MlTypes" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+ <Documentation>
+    <content>Types for the Parallel Block Basic Linear Algebra Sub-programs support WARNING: attributes marked with WARNING can not be changed without making corresponding changes to the C++ attributes.</content><firstline>Types for the Parallel Block Basic Linear Algebra Sub-programs support WARNING: attributes marked with WARNING can not be changed without making corresponding changes to the C++ attributes</firstline></Documentation>
+   </Source>
+</Meta>

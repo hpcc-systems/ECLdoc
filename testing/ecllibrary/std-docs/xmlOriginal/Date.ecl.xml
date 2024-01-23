@@ -1,0 +1,2489 @@
+<Meta>
+ <Source sourcePath="lib_stringlib"/>
+ <Source sourcePath="lib_timelib"/>
+ <Source name="Date" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/Date.ecl">
+  <Definition body="402"
+              end="44807"
+              exported="1"
+              fullname="Date"
+              inherittype="local"
+              line="10"
+              name="Date"
+              start="388"
+              type="module">
+   <Definition body="500"
+               end="578"
+               exported="1"
+               fullname="date.date_rec"
+               inherittype="local"
+               line="14"
+               name="Date_rec"
+               start="482"
+               type="record">
+    <Field name="year">
+     <Type type="integer2"/>
+    </Field>
+    <Field name="month">
+     <Type type="unsigned1"/>
+    </Field>
+    <Field name="day">
+     <Type type="unsigned1"/>
+    </Field>
+   </Definition>
+   <Definition body="711"
+               end="722"
+               exported="1"
+               fullname="date.date_t"
+               inherittype="local"
+               line="23"
+               name="Date_t"
+               start="695"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="810"
+               end="820"
+               exported="1"
+               fullname="date.days_t"
+               inherittype="local"
+               line="27"
+               name="Days_t"
+               start="794"
+               type="attribute">
+    <Type type="integer4"/>
+   </Definition>
+   <Definition body="911"
+               end="993"
+               exported="1"
+               fullname="date.time_rec"
+               inherittype="local"
+               line="31"
+               name="Time_rec"
+               start="893"
+               type="record">
+    <Field name="hour">
+     <Type type="unsigned1"/>
+    </Field>
+    <Field name="minute">
+     <Type type="unsigned1"/>
+    </Field>
+    <Field name="second">
+     <Type type="unsigned1"/>
+    </Field>
+   </Definition>
+   <Definition body="1084"
+               end="1095"
+               exported="1"
+               fullname="date.time_t"
+               inherittype="local"
+               line="39"
+               name="Time_t"
+               start="1068"
+               type="attribute">
+    <Type type="unsigned3"/>
+   </Definition>
+   <Definition body="1264"
+               end="1274"
+               exported="1"
+               fullname="date.seconds_t"
+               inherittype="local"
+               line="44"
+               name="Seconds_t"
+               start="1245"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1378"
+               end="1418"
+               exported="1"
+               fullname="date.datetime_rec"
+               inherittype="local"
+               line="48"
+               name="DateTime_rec"
+               start="1356"
+               type="record">
+    <Field name="year">
+     <Type type="integer2"/>
+    </Field>
+    <Field name="month">
+     <Type type="unsigned1"/>
+    </Field>
+    <Field name="day">
+     <Type type="unsigned1"/>
+    </Field>
+    <Field name="hour">
+     <Type type="unsigned1"/>
+    </Field>
+    <Field name="minute">
+     <Type type="unsigned1"/>
+    </Field>
+    <Field name="second">
+     <Type type="unsigned1"/>
+    </Field>
+   </Definition>
+   <Definition body="1599"
+               end="1609"
+               exported="1"
+               fullname="date.timestamp_t"
+               inherittype="local"
+               line="56"
+               name="Timestamp_t"
+               start="1578"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1791"
+               end="1807"
+               exported="1"
+               fullname="date.year"
+               inherittype="local"
+               line="66"
+               name="Year"
+               start="1755"
+               type="function">
+    <Type type="integer2"/>
+    <Documentation>
+     <content>&#10;&#32;* Extracts the year from a date type.
+ *
+ * @param date          The date.
+ * @return              An integer representing the year.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1992"
+               end="2014"
+               exported="1"
+               fullname="date.month"
+               inherittype="local"
+               line="76"
+               name="Month"
+               start="1954"
+               type="function">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;* Extracts the month from a date type.
+ *
+ * @param date          The date.
+ * @return              An integer representing the year.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2208"
+               end="2220"
+               exported="1"
+               fullname="date.day"
+               inherittype="local"
+               line="86"
+               name="Day"
+               start="2172"
+               type="function">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;* Extracts the day of the month from a date type.
+ *
+ * @param date          The date.
+ * @return              An integer representing the year.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2403"
+               end="2419"
+               exported="1"
+               fullname="date.hour"
+               inherittype="local"
+               line="96"
+               name="Hour"
+               start="2366"
+               type="function">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;* Extracts the hour from a time type.
+ *
+ * @param time          The time.
+ * @return              An integer representing the hour.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time">
+      <Type type="unsigned3"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2610"
+               end="2632"
+               exported="1"
+               fullname="date.minute"
+               inherittype="local"
+               line="106"
+               name="Minute"
+               start="2571"
+               type="function">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;* Extracts the minutes from a time type.
+ *
+ * @param time          The time.
+ * @return              An integer representing the minutes.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time">
+      <Type type="unsigned3"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2823"
+               end="2835"
+               exported="1"
+               fullname="date.second"
+               inherittype="local"
+               line="116"
+               name="Second"
+               start="2784"
+               type="function">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;* Extracts the seconds from a time type.
+ *
+ * @param time          The time.
+ * @return              An integer representing the seconds.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time">
+      <Type type="unsigned3"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3177"
+               end="3211"
+               exported="1"
+               fullname="date.datefromparts"
+               inherittype="local"
+               line="128"
+               name="DateFromParts"
+               start="3100"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines year, month day to create a date type.
+ *
+ * @param year          The year (0-9999).
+ * @param month         The month (1-12).
+ * @param day           The day (1..daysInMonth).
+ * @return              A date created by combining the fields.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Year">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="Month">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Day">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3554"
+               end="3592"
+               exported="1"
+               fullname="date.timefromparts"
+               inherittype="local"
+               line="140"
+               name="TimeFromParts"
+               start="3472"
+               type="function">
+    <Type type="unsigned3"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines hour, minute second to create a time type.
+ *
+ * @param hour          The hour (0-23).
+ * @param minute        The minute (0-59).
+ * @param second        The second (0-59).
+ * @return              A time created by combining the fields.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Hour">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Minute">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Second">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="4802"
+               end="4887"
+               exported="1"
+               fullname="date.secondsfromparts"
+               inherittype="local"
+               line="160"
+               name="SecondsFromParts"
+               start="4432"
+               type="function">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines date and time components to create a seconds type.  The date must
+ * be represented within the Gregorian calendar after the year 1600.
+ *
+ * @param year                  The year (1601-30827).
+ * @param month                 The month (1-12).
+ * @param day                   The day (1..daysInMonth).
+ * @param hour                  The hour (0-23).
+ * @param minute                The minute (0-59).
+ * @param second                The second (0-59).
+ * @param is_local_time         TRUE if the datetime components are expressed
+ *                              in local time rather than UTC, FALSE if the
+ *                              components are expressed in UTC.  Optional,
+ *                              defaults to FALSE.
+ * @return                      A Seconds_t value created by combining the fields.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Year">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="Month">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Day">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Hour">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Minute">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Second">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="is_local_time">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="5396"
+               end="5975"
+               exported="1"
+               fullname="date.secondstoparts"
+               inherittype="local"
+               line="181"
+               name="SecondsToParts"
+               start="5353"
+               type="module">
+    <Params>
+     <Param name="seconds">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+    <Parents/>
+    <Definition body="5510"
+                end="5529"
+                exported="1"
+                fullname="date.secondstoparts.result.year"
+                inherittype="local"
+                line="185"
+                name="Year"
+                start="5487"
+                type="attribute">
+     <Type type="integer2"/>
+    </Definition>
+    <Definition body="5563"
+                end="5578"
+                exported="1"
+                fullname="date.secondstoparts.result.month"
+                inherittype="local"
+                line="186"
+                name="Month"
+                start="5538"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="5610"
+                end="5622"
+                exported="1"
+                fullname="date.secondstoparts.result.day"
+                inherittype="local"
+                line="187"
+                name="Day"
+                start="5587"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="5655"
+                end="5667"
+                exported="1"
+                fullname="date.secondstoparts.result.hour"
+                inherittype="local"
+                line="188"
+                name="Hour"
+                start="5631"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="5702"
+                end="5713"
+                exported="1"
+                fullname="date.secondstoparts.result.minute"
+                inherittype="local"
+                line="189"
+                name="Minute"
+                start="5676"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="5748"
+                end="5759"
+                exported="1"
+                fullname="date.secondstoparts.result.second"
+                inherittype="local"
+                line="190"
+                name="Second"
+                start="5722"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="5799"
+                end="5815"
+                exported="1"
+                fullname="date.secondstoparts.result.day_of_week"
+                inherittype="local"
+                line="191"
+                name="day_of_week"
+                start="5768"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="5845"
+                end="5876"
+                exported="1"
+                fullname="date.secondstoparts.result.date"
+                inherittype="local"
+                line="192"
+                name="date"
+                start="5824"
+                type="attribute">
+     <Type type="unsigned4"/>
+     <Documentation>
+      <content>&#10;&#32;* Combines year, month day to create a date type.
+ *
+ * @param year          The year (0-9999).
+ * @param month         The month (1-12).
+ * @param day           The day (1..daysInMonth).
+ * @return              A date created by combining the fields.&#10;&#32;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="5906"
+                end="5941"
+                exported="1"
+                fullname="date.secondstoparts.result.time"
+                inherittype="local"
+                line="193"
+                name="time"
+                start="5885"
+                type="attribute">
+     <Type type="unsigned3"/>
+     <Documentation>
+      <content>&#10;&#32;* Combines hour, minute second to create a time type.
+ *
+ * @param hour          The hour (0-23).
+ * @param minute        The minute (0-59).
+ * @param second        The second (0-59).
+ * @return              A time created by combining the fields.&#10;&#32;</content>
+     </Documentation>
+    </Definition>
+    <Documentation>
+     <content>&#10;&#32;* Converts the number of seconds since epoch to a structure containing
+ * date and time parts.  The result must be representable within the
+ * Gregorian calendar after the year 1600.
+ *
+ * @param seconds               The number of seconds since epoch.
+ * @return                      Module with exported attributes for year, month,
+ *                              day, hour, minute, second, day_of_week, date
+ *                              and time.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="6282"
+               end="6305"
+               exported="1"
+               fullname="date.timestamptoseconds"
+               inherittype="local"
+               line="208"
+               name="TimestampToSeconds"
+               start="6221"
+               type="function">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts the number of microseconds since epoch to the number of seconds
+ * since epoch.
+ *
+ * @param timestamp             The number of microseconds since epoch.
+ * @return                      The number of seconds since epoch.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="timestamp">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6530"
+               end="6590"
+               exported="1"
+               fullname="date.isleapyear"
+               inherittype="local"
+               line="217"
+               name="IsLeapYear"
+               start="6487"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests whether the year is a leap year in the Gregorian calendar.
+ *
+ * @param year          The year (0-9999).
+ * @return              True if the year is a leap year.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Year">
+      <Type type="integer2"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6807"
+               end="6831"
+               exported="1"
+               fullname="date.isdateleapyear"
+               inherittype="local"
+               line="227"
+               name="IsDateLeapYear"
+               start="6762"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests whether a date is a leap year in the Gregorian calendar.
+ *
+ * @param date          The date.
+ * @return              True if the year is a leap year.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6852"
+               end="6859"
+               fullname="date.yeardelta"
+               inherittype="local"
+               line="229"
+               name="YearDelta"
+               shared="1"
+               start="6833"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="6945"
+               end="6955"
+               fullname="date.gregoriandateorigin"
+               inherittype="local"
+               line="231"
+               name="GregorianDateOrigin"
+               shared="1"
+               start="6916"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="7464"
+               end="7868"
+               exported="1"
+               fullname="date.fromgregorianymd"
+               inherittype="local"
+               line="244"
+               name="FromGregorianYMD"
+               start="7384"
+               type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines year, month, day in the Gregorian calendar to create the number
+ * days since 31st December 1BC.
+ *
+ * @param year          The year (-4713..9999).
+ * @param month         The month (1-12).  A missing value (0) is treated as 1.
+ * @param day           The day (1..daysInMonth).  A missing value (0) is treated as 1.
+ * @return              The number of elapsed days (1 Jan 1AD = 1)&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Year">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="Month">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Day">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="8161"
+               end="9361"
+               exported="1"
+               fullname="date.togregorianymd"
+               inherittype="local"
+               line="264"
+               name="ToGregorianYMD"
+               start="8124"
+               type="module">
+    <Params>
+     <Param name="days">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+    <Parents/>
+    <Definition body="9222"
+                end="9256"
+                exported="1"
+                fullname="date.togregorianymd.result.year"
+                inherittype="local"
+                line="291"
+                name="year"
+                start="9208"
+                type="attribute">
+     <Type type="integer8"/>
+    </Definition>
+    <Definition body="9280"
+                end="9298"
+                exported="1"
+                fullname="date.togregorianymd.result.month"
+                inherittype="local"
+                line="292"
+                name="month"
+                start="9265"
+                type="attribute">
+     <Type type="integer8"/>
+    </Definition>
+    <Definition body="9320"
+                end="9327"
+                exported="1"
+                fullname="date.togregorianymd.result.day"
+                inherittype="local"
+                line="293"
+                name="day"
+                start="9307"
+                type="attribute">
+     <Type type="integer8"/>
+    </Definition>
+    <Documentation>
+     <content>&#10;&#32;* Converts the number days since 31st December 1BC to a date in the Gregorian calendar.
+ *
+ * @param days          The number of elapsed days (1 Jan 1AD = 1)
+ * @return              Module containing Year, Month, Day in the Gregorian calendar&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="9643"
+               end="9708"
+               exported="1"
+               fullname="date.fromgregoriandate"
+               inherittype="local"
+               line="307"
+               name="FromGregorianDate"
+               start="9596"
+               type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a date in the Gregorian calendar to the number days since 31st December 1BC.
+ *
+ * @param date          The date (using the Gregorian calendar)
+ * @return              The number of elapsed days (1 Jan 1AD = 1)&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="9983"
+               end="10098"
+               exported="1"
+               fullname="date.togregoriandate"
+               inherittype="local"
+               line="318"
+               name="ToGregorianDate"
+               start="9938"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts the number days since 31st December 1BC to a date in the Gregorian calendar.
+ *
+ * @param days          The number of elapsed days (1 Jan 1AD = 1)
+ * @return              A Date_t in the Gregorian calendar&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="days">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="10474"
+               end="10657"
+               exported="1"
+               fullname="date.dayofyear"
+               inherittype="local"
+               line="334"
+               name="DayOfYear"
+               start="10432"
+               type="function">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns a number representing the day of the year indicated by the given date.
+ * The date must be in the Gregorian calendar after the year 1600.
+ *
+ * @param date          A Date_t value.
+ * @return              A number (1-366) representing the number of days since
+ *                      the beginning of the year.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="10992"
+               end="11177"
+               exported="1"
+               fullname="date.dayofweek"
+               inherittype="local"
+               line="353"
+               name="DayOfWeek"
+               start="10950"
+               type="function">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns a number representing the day of the week indicated by the given date.
+ * The date must be in the Gregorian calendar after the year 1600.
+ *
+ * @param date          A Date_t value.
+ * @return              A number 1-7 representing the day of the week, where 1 = Sunday.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="11406"
+               end="11422"
+               exported="1"
+               fullname="date.isjulianleapyear"
+               inherittype="local"
+               line="371"
+               name="IsJulianLeapYear"
+               start="11357"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests whether the year is a leap year in the Julian calendar.
+ *
+ * @param year          The year (0-9999).
+ * @return              True if the year is a leap year.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Year">
+      <Type type="integer2"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="11451"
+               end="11461"
+               fullname="date.juliandateorigin"
+               inherittype="local"
+               line="374"
+               name="JulianDateOrigin"
+               shared="1"
+               start="11425"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="11898"
+               end="12169"
+               exported="1"
+               fullname="date.fromjulianymd"
+               inherittype="local"
+               line="387"
+               name="FromJulianYMD"
+               start="11821"
+               type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines year, month, day in the Julian calendar to create the number
+ * days since 31st December 1BC.
+ *
+ * @param year          The year (-4800..9999).
+ * @param month         The month (1-12).
+ * @param day           The day (1..daysInMonth).
+ * @return              The number of elapsed days (1 Jan 1AD = 1)&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Year">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="Month">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Day">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="12453"
+               end="12947"
+               exported="1"
+               fullname="date.tojulianymd"
+               inherittype="local"
+               line="405"
+               name="ToJulianYMD"
+               start="12419"
+               type="module">
+    <Params>
+     <Param name="days">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+    <Parents/>
+    <Definition body="12763"
+                end="12794"
+                exported="1"
+                fullname="date.tojulianymd.result.day"
+                inherittype="local"
+                line="413"
+                name="Day"
+                start="12740"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="12828"
+                end="12853"
+                exported="1"
+                fullname="date.tojulianymd.result.month"
+                inherittype="local"
+                line="414"
+                name="Month"
+                start="12803"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="12885"
+                end="12913"
+                exported="1"
+                fullname="date.tojulianymd.result.year"
+                inherittype="local"
+                line="415"
+                name="Year"
+                start="12862"
+                type="attribute">
+     <Type type="integer2"/>
+    </Definition>
+    <Documentation>
+     <content>&#10;&#32;* Converts the number days since 31st December 1BC to a date in the Julian calendar.
+ *
+ * @param days          The number of elapsed days (1 Jan 1AD = 1)
+ * @return              Module containing Year, Month, Day in the Julian calendar&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="13220"
+               end="13278"
+               exported="1"
+               fullname="date.fromjuliandate"
+               inherittype="local"
+               line="429"
+               name="FromJulianDate"
+               start="13176"
+               type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a date in the Julian calendar to the number days since 31st December 1BC.
+ *
+ * @param date          The date (using the Julian calendar)
+ * @return              The number of elapsed days (1 Jan 1AD = 1)&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="13544"
+               end="13656"
+               exported="1"
+               fullname="date.tojuliandate"
+               inherittype="local"
+               line="439"
+               name="ToJulianDate"
+               start="13502"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts the number days since 31st December 1BC to a date in the Julian calendar.
+ *
+ * @param days          The number of elapsed days (1 Jan 1AD = 1)
+ * @return              A Date_t in the Julian calendar&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="days">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="13681"
+               end="13689"
+               fullname="date.date1900delta"
+               inherittype="local"
+               line="445"
+               name="Date1900Delta"
+               shared="1"
+               start="13658"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="14178"
+               end="14234"
+               exported="1"
+               fullname="date.dayssince1900"
+               inherittype="local"
+               line="457"
+               name="DaysSince1900"
+               start="14101"
+               type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the number of days since 1st January 1900 (using the Gregorian Calendar)
+ *
+ * @param year          The year (-4713..9999).
+ * @param month         The month (1-12).  A missing value (0) is treated as 1.
+ * @param day           The day (1..daysInMonth).  A missing value (0) is treated as 1.
+ * @return              The number of elapsed days since 1st January 1900&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Year">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="Month">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Day">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="14485"
+               end="14534"
+               exported="1"
+               fullname="date.todayssince1900"
+               inherittype="local"
+               line="468"
+               name="ToDaysSince1900"
+               start="14440"
+               type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the number of days since 1st January 1900 (using the Gregorian Calendar)
+ *
+ * @param date          The date
+ * @return              The number of elapsed days since 1st January 1900&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="14807"
+               end="14846"
+               exported="1"
+               fullname="date.fromdayssince1900"
+               inherittype="local"
+               line="478"
+               name="FromDaysSince1900"
+               start="14760"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts the number days since 1st January 1900 to a date in the Julian calendar.
+ *
+ * @param days          The number of elapsed days since 1st Jan 1900
+ * @return              A Date_t in the Julian calendar&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="days">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="15109"
+               end="15418"
+               exported="1"
+               fullname="date.yearsbetween"
+               inherittype="local"
+               line="489"
+               name="YearsBetween"
+               start="15054"
+               type="function">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;* Calculate the number of whole years between two dates.
+ *
+ * @param from          The first date
+ * @param to            The last date
+ * @return              The number of years between them.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="from">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="to">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="15683"
+               end="16004"
+               exported="1"
+               fullname="date.monthsbetween"
+               inherittype="local"
+               line="507"
+               name="MonthsBetween"
+               start="15628"
+               type="function">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;* Calculate the number of whole months between two dates.
+ *
+ * @param from          The first date
+ * @param to            The last date
+ * @return              The number of months between them.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="from">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="to">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="16257"
+               end="16382"
+               exported="1"
+               fullname="date.daysbetween"
+               inherittype="local"
+               line="527"
+               name="DaysBetween"
+               start="16204"
+               type="function">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;* Calculate the number of days between two dates.
+ *
+ * @param from          The first date
+ * @param to            The last date
+ * @return              The number of days between them.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="from">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="to">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="16622"
+               end="16671"
+               exported="1"
+               fullname="date.datefromdaterec"
+               inherittype="local"
+               line="542"
+               name="DateFromDateRec"
+               start="16575"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines the fields from a Date_rec to create a Date_t
+ *
+ * @param date          The row containing the date.
+ * @return              A Date_t representing the combined values.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="row">
+       <Type fullname="date.date_rec" name="Date_rec" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="16907"
+               end="16987"
+               exported="1"
+               fullname="date.datefromrec"
+               inherittype="local"
+               line="552"
+               name="DateFromRec"
+               start="16864"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines the fields from a Date_rec to create a Date_t
+ *
+ * @param date          The row containing the date.
+ * @return              A Date_t representing the combined values.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="row">
+       <Type fullname="date.date_rec" name="Date_rec" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="17227"
+               end="17280"
+               exported="1"
+               fullname="date.timefromtimerec"
+               inherittype="local"
+               line="562"
+               name="TimeFromTimeRec"
+               start="17180"
+               type="function">
+    <Type type="unsigned3"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines the fields from a Time_rec to create a Time_t
+ *
+ * @param time          The row containing the time.
+ * @return              A Time_t representing the combined values.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time">
+      <Type type="row">
+       <Type fullname="date.time_rec" name="Time_rec" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="17545"
+               end="17606"
+               exported="1"
+               fullname="date.datefromdatetimerec"
+               inherittype="local"
+               line="572"
+               name="DateFromDateTimeRec"
+               start="17486"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines the date fields from a DateTime_rec to create a Date_t
+ *
+ * @param datetime      The row containing the datetime.
+ * @return              A Date_t representing the combined values.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="datetime">
+      <Type type="row">
+       <Type fullname="date.datetime_rec" name="DateTime_rec" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="17871"
+               end="17936"
+               exported="1"
+               fullname="date.timefromdatetimerec"
+               inherittype="local"
+               line="582"
+               name="TimeFromDateTimeRec"
+               start="17812"
+               type="function">
+    <Type type="unsigned3"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines the time fields from a DateTime_rec to create a Time_t
+ *
+ * @param datetime      The row containing the datetime.
+ * @return              A Time_t representing the combined values.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="datetime">
+      <Type type="row">
+       <Type fullname="date.datetime_rec" name="DateTime_rec" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="18478"
+               end="18609"
+               exported="1"
+               fullname="date.secondsfromdatetimerec"
+               inherittype="local"
+               line="595"
+               name="SecondsFromDateTimeRec"
+               start="18382"
+               type="function">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;* Combines the date and time fields from a DateTime_rec to create a Seconds_t
+ *
+ * @param datetime      The row containing the datetime.
+ * @param is_local_time TRUE if the datetime components are expressed in local
+ *                      time rather than UTC, FALSE if the components are
+ *                      expressed in UTC.  Optional, defaults to FALSE.
+ * @return              A Seconds_t representing the combined values.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="datetime">
+      <Type type="row">
+       <Type fullname="date.datetime_rec" name="DateTime_rec" type="record"/>
+      </Type>
+     </Param>
+     <Param name="is_local_time">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="19841"
+               end="19888"
+               exported="1"
+               fullname="date.fromstringtodate"
+               inherittype="local"
+               line="628"
+               name="FromStringToDate"
+               start="19772"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a string to a Date_t using the relevant string format.  The resulting
+ * date must be representable within the Gregorian calendar after the year 1600.
+ *
+ * @param date_text     The string to be converted.
+ * @param format        The format of the input string.
+ *                      (See documentation for strftime)
+ * @return              The date that was matched in the string.  Returns 0 if failed to match
+ *                      or if the date components match but the result is an invalid date.
+ *
+ * Supported characters:
+    %B          Full month name
+    %b or %h    Abbreviated month name
+    %d          Day of month (two digits)
+    %e          Day of month (two digits, or a space followed by a single digit)
+    %m          Month (two digits)
+    %t          Whitespace
+    %y          year within century (00-99)
+    %Y          Full year (yyyy)
+    %j          Julian day (1-366)
+
+Common date formats
+    American    &apos;%m/%d/%Y&apos;  mm/dd/yyyy
+    Euro        &apos;%d/%m/%Y&apos;  dd/mm/yyyy
+    Iso format  &apos;%Y-%m-%d&apos;  yyyy-mm-dd
+    Iso basic   &apos;Y%m%d&apos;     yyyymmdd
+                &apos;%d-%b-%Y&apos;  dd-mon-yyyy    e.g., &apos;21-Mar-1954&apos;&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="20315"
+               end="20414"
+               exported="1"
+               fullname="date.fromstring"
+               inherittype="local"
+               line="642"
+               name="FromString"
+               start="20252"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a string to a date using the relevant string format.
+ *
+ * @param date_text     The string to be converted.
+ * @param format        The format of the input string.
+ *                      (See documentation for strftime)
+ * @return              The date that was matched in the string.
+ *                      Returns 0 if failed to match.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="21055"
+               end="21107"
+               exported="1"
+               fullname="date.fromstringtotime"
+               inherittype="local"
+               line="662"
+               name="FromStringToTime"
+               start="20986"
+               type="function">
+    <Type type="unsigned3"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a string to a Time_t using the relevant string format.
+ *
+ * @param date_text     The string to be converted.
+ * @param format        The format of the input string.
+ *                      (See documentation for strftime)
+ * @return              The time that was matched in the string.  Returns 0 if failed to match.
+ *
+ * Supported characters:
+    %H          Hour (two digits)
+    %k          (two digits, or a space followed by a single digit)
+    %M          Minute (two digits)
+    %S          Second (two digits)
+    %t          Whitespace&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="21649"
+               end="21694"
+               exported="1"
+               fullname="date.matchdatestring"
+               inherittype="local"
+               line="677"
+               name="MatchDateString"
+               start="21573"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Matches a string against a set of date string formats and returns a valid
+ * Date_t object from the first format that successfully parses the string.
+ *
+ * @param date_text     The string to be converted.
+ * @param formats       A set of formats to check against the string.
+ *                      (See documentation for strftime)
+ * @return              The date that was matched in the string.
+ *                      Returns 0 if failed to match.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="formats">
+      <Type type="set">
+       <Type type="varstring"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="22236"
+               end="22286"
+               exported="1"
+               fullname="date.matchtimestring"
+               inherittype="local"
+               line="692"
+               name="MatchTimeString"
+               start="22160"
+               type="function">
+    <Type type="unsigned3"/>
+    <Documentation>
+     <content>&#10;&#32;* Matches a string against a set of time string formats and returns a valid
+ * Time_t object from the first format that successfully parses the string.
+ *
+ * @param time_text     The string to be converted.
+ * @param formats       A set of formats to check against the string.
+ *                      (See documentation for strftime)
+ * @return              The time that was matched in the string.
+ *                      Returns 0 if failed to match.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="formats">
+      <Type type="set">
+       <Type type="varstring"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="22874"
+               end="22914"
+               exported="1"
+               fullname="date.datetostring"
+               inherittype="local"
+               line="708"
+               name="DateToString"
+               start="22801"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Formats a date as a string.
+ *
+ * @param date          The date to be converted.
+ * @param format        The format template to use for the conversion;
+ *                      see strftime() for appropriate values.  The maximum
+ *                      length of the resulting string is 255 characters.
+ *                      Optional; defaults to &apos;%Y-%m-%d&apos; which is YYYY-MM-DD.
+ * @return              Blank if date cannot be formatted, or the date in the
+ *                      requested format.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="23504"
+               end="23544"
+               exported="1"
+               fullname="date.timetostring"
+               inherittype="local"
+               line="724"
+               name="TimeToString"
+               start="23431"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Formats a time as a string.
+ *
+ * @param time          The time to be converted.
+ * @param format        The format template to use for the conversion;
+ *                      see strftime() for appropriate values.  The maximum
+ *                      length of the resulting string is 255 characters.
+ *                      Optional; defaults to &apos;%H:%M:%S&apos; which is HH:MM:SS.
+ * @return              Blank if the time cannot be formatted, or the time
+ *                      in the requested format.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time">
+      <Type type="unsigned3"/>
+     </Param>
+     <Param name="format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="24159"
+               end="24205"
+               exported="1"
+               fullname="date.secondstostring"
+               inherittype="local"
+               line="739"
+               name="SecondsToString"
+               start="24068"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a Seconds_t value into a human-readable string using a format template.
+ *
+ * @param seconds       The seconds since epoch.
+ * @param format        The format template to use for the conversion; see
+ *                      strftime() for appropriate values.  The maximum length
+ *                      of the resulting string is 255 characters.
+ *                      Optional; defaults to &apos;%Y-%m-%dT%H:%M:%S&apos; which is YYYY-MM-DDTHH:MM:SS.
+ * @return              The converted seconds as a string.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="seconds">
+      <Type type="integer8"/>
+     </Param>
+     <Param name="format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="24592"
+               end="24674"
+               exported="1"
+               fullname="date.tostring"
+               inherittype="local"
+               line="753"
+               name="ToString"
+               start="24536"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Formats a date as a string.
+ *
+ * @param date          The date to be converted.
+ * @param format        The format the date is output in.
+ *                      (See documentation for strftime)
+ * @return              Blank if date cannot be formatted, or the date in the
+ *                      requested format.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="25148"
+               end="25219"
+               exported="1"
+               fullname="date.convertdateformat"
+               inherittype="local"
+               line="765"
+               name="ConvertDateFormat"
+               start="25032"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a date from one format to another
+ *
+ * @param date_text     The string containing the date to be converted.
+ * @param from_format   The format the date is to be converted from.
+ * @param to_format     The format the date is to be converted to.
+ * @return              The converted string, or blank if it failed to match the format.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="from_format">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="to_format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="25689"
+               end="25806"
+               exported="1"
+               fullname="date.convertformat"
+               inherittype="local"
+               line="778"
+               name="ConvertFormat"
+               start="25577"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a date from one format to another
+ *
+ * @param date_text     The string containing the date to be converted.
+ * @param from_format   The format the date is to be converted from.
+ * @param to_format     The format the date is to be converted to.
+ * @return              The converted string, or blank if it failed to match the format.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="from_format">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="to_format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="26280"
+               end="26351"
+               exported="1"
+               fullname="date.converttimeformat"
+               inherittype="local"
+               line="791"
+               name="ConvertTimeFormat"
+               start="26164"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a time from one format to another
+ *
+ * @param time_text     The string containing the time to be converted.
+ * @param from_format   The format the time is to be converted from.
+ * @param to_format     The format the time is to be converted to.
+ * @return              The converted string, or blank if it failed to match the format.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="from_format">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="to_format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="26861"
+               end="27058"
+               exported="1"
+               fullname="date.convertdateformatmultiple"
+               inherittype="local"
+               line="804"
+               name="ConvertDateFormatMultiple"
+               start="26740"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a date that matches one of a set of formats to another.
+ *
+ * @param date_text     The string containing the date to be converted.
+ * @param from_formats  The list of formats the date is to be converted from.
+ * @param to_format     The format the date is to be converted to.
+ * @return              The converted string, or blank if it failed to match the format.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="from_formats">
+      <Type type="set">
+       <Type type="varstring"/>
+      </Type>
+     </Param>
+     <Param name="to_format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="27564"
+               end="27698"
+               exported="1"
+               fullname="date.convertformatmultiple"
+               inherittype="local"
+               line="822"
+               name="ConvertFormatMultiple"
+               start="27447"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a date that matches one of a set of formats to another.
+ *
+ * @param date_text     The string containing the date to be converted.
+ * @param from_formats  The list of formats the date is to be converted from.
+ * @param to_format     The format the date is to be converted to.
+ * @return              The converted string, or blank if it failed to match the format.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="from_formats">
+      <Type type="set">
+       <Type type="varstring"/>
+      </Type>
+     </Param>
+     <Param name="to_format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="28210"
+               end="28281"
+               exported="1"
+               fullname="date.converttimeformatmultiple"
+               inherittype="local"
+               line="835"
+               name="ConvertTimeFormatMultiple"
+               start="28087"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Converts a time that matches one of a set of formats to another.
+ *
+ * @param time_text     The string containing the time to be converted.
+ * @param from_formats  The list of formats the time is to be converted from.
+ * @param to_format     The format the time is to be converted to.
+ * @return              The converted string, or blank if it failed to match the format.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time_text">
+      <Type type="string"/>
+     </Param>
+     <Param name="from_formats">
+      <Type type="set">
+       <Type type="varstring"/>
+      </Type>
+     </Param>
+     <Param name="to_format">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="29227"
+               end="29293"
+               exported="1"
+               fullname="date.adjustdate"
+               inherittype="local"
+               line="855"
+               name="AdjustDate"
+               start="29037"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Adjusts a date by incrementing or decrementing year, month and/or day values.
+ * The date must be in the Gregorian calendar after the year 1600.
+ * If the new calculated date is invalid then it will be normalized according
+ * to mktime() rules.  Example: 20140130 + 1 month = 20140302.
+ *
+ * @param date          The date to adjust.
+ * @param year_delta    The requested change to the year value;
+ *                      optional, defaults to zero.
+ * @param month_delta   The requested change to the month value;
+ *                      optional, defaults to zero.
+ * @param day_delta     The requested change to the day of month value;
+ *                      optional, defaults to zero.
+ * @return              The adjusted Date_t value.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="year_delta">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="month_delta">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="day_delta">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="29814"
+               end="29868"
+               exported="1"
+               fullname="date.adjustdatebyseconds"
+               inherittype="local"
+               line="873"
+               name="AdjustDateBySeconds"
+               start="29741"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Adjusts a date by adding or subtracting seconds.  The date must be in the
+ * Gregorian calendar after the year 1600.  If the new calculated
+ * date is invalid then it will be normalized according to mktime() rules.
+ * Example: 20140130 + 172800 seconds = 20140201.
+ *
+ * @param date          The date to adjust.
+ * @param seconds_delta The requested change to the date, in seconds.
+ * @return              The adjusted Date_t value.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="seconds_delta">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="30719"
+               end="30789"
+               exported="1"
+               fullname="date.adjusttime"
+               inherittype="local"
+               line="892"
+               name="AdjustTime"
+               start="30525"
+               type="function">
+    <Type type="unsigned3"/>
+    <Documentation>
+     <content>&#10;&#32;* Adjusts a time by incrementing or decrementing hour, minute and/or second
+ * values.  If the new calculated time is invalid then it will be normalized
+ * according to mktime() rules.
+ *
+ * @param time          The time to adjust.
+ * @param hour_delta    The requested change to the hour value;
+ *                      optional, defaults to zero.
+ * @param minute_delta  The requested change to the minute value;
+ *                      optional, defaults to zero.
+ * @param second_delta  The requested change to the second of month value;
+ *                      optional, defaults to zero.
+ * @return              The adjusted Time_t value.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time">
+      <Type type="unsigned3"/>
+     </Param>
+     <Param name="hour_delta">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="minute_delta">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="second_delta">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="31192"
+               end="31246"
+               exported="1"
+               fullname="date.adjusttimebyseconds"
+               inherittype="local"
+               line="908"
+               name="AdjustTimeBySeconds"
+               start="31119"
+               type="function">
+    <Type type="unsigned3"/>
+    <Documentation>
+     <content>&#10;&#32;* Adjusts a time by adding or subtracting seconds.  If the new calculated
+ * time is invalid then it will be normalized according to mktime() rules.
+ *
+ * @param time          The time to adjust.
+ * @param seconds_delta The requested change to the time, in seconds.
+ * @return              The adjusted Time_t value.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time">
+      <Type type="unsigned3"/>
+     </Param>
+     <Param name="seconds_delta">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="33124"
+               end="33236"
+               exported="1"
+               fullname="date.adjustseconds"
+               inherittype="local"
+               line="939"
+               name="AdjustSeconds"
+               start="32732"
+               type="function">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;* Adjusts a Seconds_t value by adding or subtracting years, months, days,
+ * hours, minutes and/or seconds.  This is performed by first converting the
+ * seconds into a full date/time structure, applying any delta values to
+ * individual date/time components, then converting the structure back to the
+ * number of seconds.  This interim date must lie within Gregorian calendar
+ * after the year 1600.  If the interim structure is found to have an invalid
+ * date/time then it will be normalized according to mktime() rules.  Therefore,
+ * some delta values (such as &quot;1 month&quot;) are actually relative to the value of
+ * the seconds argument.
+ *
+ * @param seconds       The number of seconds to adjust.
+ * @param year_delta    The requested change to the year value;
+ *                      optional, defaults to zero.
+ * @param month_delta   The requested change to the month value;
+ *                      optional, defaults to zero.
+ * @param day_delta     The requested change to the day of month value;
+ *                      optional, defaults to zero.
+ * @param hour_delta    The requested change to the hour value;
+ *                      optional, defaults to zero.
+ * @param minute_delta  The requested change to the minute value;
+ *                      optional, defaults to zero.
+ * @param second_delta  The requested change to the second of month value;
+ *                      optional, defaults to zero.
+ * @return              The adjusted Seconds_t value.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="seconds">
+      <Type type="integer8"/>
+     </Param>
+     <Param name="year_delta">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="month_delta">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="day_delta">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="hour_delta">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="minute_delta">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="second_delta">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="34807"
+               end="34877"
+               exported="1"
+               fullname="date.adjustcalendar"
+               inherittype="local"
+               line="973"
+               name="AdjustCalendar"
+               start="34601"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Adjusts a date by incrementing or decrementing months and/or years.  This
+ * routine uses the rule outlined in McGinn v. State, 46 Neb. 427, 65 N.W. 46 (1895):
+ * &quot;The term calendar month, whether employed in statutes or contracts, and
+ * not appearing to have been used in a different sense, denotes a period
+ * terminating with the day of the succeeding month numerically corresponding
+ * to the day of its beginning, less one. If there be no corresponding day of
+ * the succeeding month, it terminates with the last day thereof.&quot;  The
+ * internet suggests similar legal positions exist in the Commonwealth
+ * and Germany.  Note that day adjustments are performed after year and month
+ * adjustments using the preceding rules.  As an example, Jan. 31, 2014 + 1 month
+ * will result in Feb. 28, 2014; Jan. 31, 2014 + 1 month + 1 day will result
+ * in Mar. 1, 2014.
+ *
+ * @param date          The date to adjust, in the Gregorian calendar after 1600.
+ * @param year_delta    The requested change to the year value;
+ *                      optional, defaults to zero.
+ * @param month_delta   The requested change to the month value;
+ *                      optional, defaults to zero.
+ * @param day_delta     The requested change to the day value;
+ *                      optional, defaults to zero.
+ * @return              The adjusted Date_t value.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="year_delta">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="month_delta">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="day_delta">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="35126"
+               end="35172"
+               exported="1"
+               fullname="date.islocaldaylightsavingsineffect"
+               inherittype="local"
+               line="987"
+               name="IsLocalDaylightSavingsInEffect"
+               start="35076"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns a boolean indicating whether daylight savings time is currently
+ * in effect locally.
+ *
+ * @return      TRUE if daylight savings time is currently in effect, FALSE otherwise.&#10;&#32;</content>
+    </Documentation>
+    <Params/>
+   </Definition>
+   <Definition body="35562"
+               end="35597"
+               exported="1"
+               fullname="date.localtimezoneoffset"
+               inherittype="local"
+               line="1000"
+               name="LocalTimeZoneOffset"
+               start="35522"
+               type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the offset (in seconds) of the time represented from UTC, with
+ * positive values indicating locations east of the Prime Meridian.  Given a
+ * UTC time in seconds since epoch, you can find the local time by adding the
+ * result of this function to the seconds.
+ *
+ * @return              The number of seconds offset from UTC.&#10;&#32;</content>
+    </Documentation>
+    <Params/>
+   </Definition>
+   <Definition body="35974"
+               end="36014"
+               exported="1"
+               fullname="date.currentdate"
+               inherittype="local"
+               line="1013"
+               name="CurrentDate"
+               start="35915"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the current date.
+ *
+ * @param in_local_time     TRUE if the returned value should be local to the
+ *                          cluster computing the date, FALSE for UTC.
+ *                          Optional, defaults to FALSE.
+ * @return                  A Date_t representing the current date.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="in_local_time">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="36169"
+               end="36188"
+               exported="1"
+               fullname="date.today"
+               inherittype="local"
+               line="1023"
+               name="Today"
+               start="36145"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the current date in the local time zone.
+ *
+ * @return              A Date_t representing the current date.&#10;&#32;</content>
+    </Documentation>
+    <Params/>
+   </Definition>
+   <Definition body="36578"
+               end="36618"
+               exported="1"
+               fullname="date.currenttime"
+               inherittype="local"
+               line="1035"
+               name="CurrentTime"
+               start="36519"
+               type="function">
+    <Type type="unsigned3"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the current time of day
+ *
+ * @param in_local_time     TRUE if the returned value should be local to the
+ *                          cluster computing the time, FALSE for UTC.
+ *                          Optional, defaults to FALSE.
+ * @return                  A Time_t representing the current time of day.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="in_local_time">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="37126"
+               end="37169"
+               exported="1"
+               fullname="date.currentseconds"
+               inherittype="local"
+               line="1049"
+               name="CurrentSeconds"
+               start="37061"
+               type="function">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the current date and time as the number of seconds since epoch.
+ *
+ * @param in_local_time     TRUE if the returned value should be local to the
+ *                          cluster computing the time, FALSE for UTC.
+ *                          Optional, defaults to FALSE.
+ * @return                  A Seconds_t representing the current time in
+ *                          UTC or local time, depending on the argument.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="in_local_time">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="37732"
+               end="37777"
+               exported="1"
+               fullname="date.currenttimestamp"
+               inherittype="local"
+               line="1064"
+               name="CurrentTimestamp"
+               start="37663"
+               type="function">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the current date and time as the number of microseconds since epoch.
+ *
+ * @param in_local_time     TRUE if the returned value should be local to the
+ *                          cluster computing the time, FALSE for UTC.
+ *                          Optional, defaults to FALSE.
+ * @return                  A Timestamp_t representing the current time in
+ *                          microseconds in UTC or local time, depending on
+ *                          the argument.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="in_local_time">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="38283"
+               end="38534"
+               exported="1"
+               fullname="date.datesformonth"
+               inherittype="local"
+               line="1078"
+               name="DatesForMonth"
+               start="38220"
+               type="module">
+    <Params>
+     <Param name="as_of_date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+    <Parents/>
+    <Definition body="38448"
+                end="38458"
+                exported="1"
+                fullname="date.datesformonth.result.startdate"
+                inherittype="local"
+                line="1083"
+                name="startDate"
+                start="38422"
+                type="attribute">
+     <Type type="unsigned4"/>
+    </Definition>
+    <Definition body="38491"
+                end="38500"
+                exported="1"
+                fullname="date.datesformonth.result.enddate"
+                inherittype="local"
+                line="1084"
+                name="endDate"
+                start="38467"
+                type="attribute">
+     <Type type="unsigned4"/>
+    </Definition>
+    <Documentation>
+     <content>&#10;&#32;* Returns the beginning and ending dates for the month surrounding the given date.
+ *
+ * @param as_of_date    The reference date from which the month will be
+ *                      calculated.  This date must be a date within the
+ *                      Gregorian calendar.  Optional, defaults to the
+ *                      current date in UTC.
+ * @return              Module with exported attributes for startDate and endDate.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="39079"
+               end="39320"
+               exported="1"
+               fullname="date.datesforweek"
+               inherittype="local"
+               line="1102"
+               name="DatesForWeek"
+               start="39017"
+               type="module">
+    <Params>
+     <Param name="as_of_date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+    <Parents/>
+    <Definition body="39205"
+                end="39230"
+                exported="1"
+                fullname="date.datesforweek.result.startdate"
+                inherittype="local"
+                line="1106"
+                name="startDate"
+                start="39179"
+                type="attribute">
+     <Type type="unsigned4"/>
+    </Definition>
+    <Definition body="39263"
+                end="39286"
+                exported="1"
+                fullname="date.datesforweek.result.enddate"
+                inherittype="local"
+                line="1107"
+                name="endDate"
+                start="39239"
+                type="attribute">
+     <Type type="unsigned4"/>
+    </Definition>
+    <Documentation>
+     <content>&#10;&#32;* Returns the beginning and ending dates for the week surrounding the given date
+ * (Sunday marks the beginning of a week).
+ *
+ * @param as_of_date    The reference date from which the week will be
+ *                      calculated.  This date must be a date within the
+ *                      Gregorian calendar.  Optional, defaults to the
+ *                      current date in UTC.
+ * @return              Module with exported attributes for startDate and endDate.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="39971"
+               end="40342"
+               exported="1"
+               fullname="date.isvaliddate"
+               inherittype="local"
+               line="1126"
+               name="IsValidDate"
+               start="39811"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests whether a date is valid, both by range-checking the year and by
+ * validating each of the other individual components.
+ *
+ * @param date              The date to validate.
+ * @param yearLowerBound    The minimum acceptable year.
+ *                          Optional; defaults to 1800.
+ * @param yearUpperBound    The maximum acceptable year.
+ *                          Optional; defaults to 2100.
+ * @return                  TRUE if the date is valid, FALSE otherwise.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="yearLowerBound">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="yearUpperBound">
+      <Type type="integer2"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="40637"
+               end="40864"
+               exported="1"
+               fullname="date.isvalidgregoriandate"
+               inherittype="local"
+               line="1146"
+               name="IsValidGregorianDate"
+               start="40586"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests whether a date is valid in the Gregorian calendar.  The year
+ * must be between 1601 and 30827.
+ *
+ * @param date              The Date_t to validate.
+ * @return                  TRUE if the date is valid, FALSE otherwise.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="date">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="41077"
+               end="41316"
+               exported="1"
+               fullname="date.isvalidtime"
+               inherittype="local"
+               line="1161"
+               name="IsValidTime"
+               start="41035"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Tests whether a time is valid.
+ *
+ * @param time              The time to validate.
+ * @return                  TRUE if the time is valid, FALSE otherwise.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="time">
+      <Type type="unsigned3"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="41854"
+               end="41938"
+               exported="1"
+               fullname="date.createdate"
+               inherittype="local"
+               line="1182"
+               name="CreateDate"
+               start="41778"
+               type="transform">
+    <Type fullname="date.date_rec" name="Date_rec" type="record"/>
+    <Documentation>
+     <content>&#10;&#32;* A transform to create a Date_rec from the individual elements
+ *
+ * @param year          The year
+ * @param month         The month (1-12).
+ * @param day           The day (1..daysInMonth).
+ * @return              A transform that creates a Date_rec containing the date.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Year">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="Month">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Day">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="42209"
+               end="42366"
+               exported="1"
+               fullname="date.createdatefromseconds"
+               inherittype="local"
+               line="1196"
+               name="CreateDateFromSeconds"
+               start="42150"
+               type="transform">
+    <Type fullname="date.date_rec" name="Date_rec" type="record"/>
+    <Documentation>
+     <content>&#10;&#32;* A transform to create a Date_rec from a Seconds_t value.
+ *
+ * @param seconds       The number seconds since epoch.
+ * @return              A transform that creates a Date_rec containing the date.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="seconds">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="42742"
+               end="42834"
+               exported="1"
+               fullname="date.createtime"
+               inherittype="local"
+               line="1214"
+               name="CreateTime"
+               start="42661"
+               type="transform">
+    <Type fullname="date.time_rec" name="Time_rec" type="record"/>
+    <Documentation>
+     <content>&#10;&#32;* A transform to create a Time_rec from the individual elements
+ *
+ * @param hour          The hour (0-23).
+ * @param minute        The minute (0-59).
+ * @param second        The second (0-59).
+ * @return              A transform that creates a Time_rec containing the time of day.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Hour">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Minute">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Second">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="43112"
+               end="43277"
+               exported="1"
+               fullname="date.createtimefromseconds"
+               inherittype="local"
+               line="1228"
+               name="CreateTimeFromSeconds"
+               start="43053"
+               type="transform">
+    <Type fullname="date.time_rec" name="Time_rec" type="record"/>
+    <Documentation>
+     <content>&#10;&#32;* A transform to create a Time_rec from a Seconds_t value.
+ *
+ * @param seconds       The number seconds since epoch.
+ * @return              A transform that creates a Time_rec containing the time of day.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="seconds">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="44049"
+               end="44210"
+               exported="1"
+               fullname="date.createdatetime"
+               inherittype="local"
+               line="1250"
+               name="CreateDateTime"
+               start="43738"
+               type="transform">
+    <Type fullname="date.datetime_rec" name="DateTime_rec" type="record"/>
+    <Documentation>
+     <content>&#10;&#32;* A transform to create a DateTime_rec from the individual elements
+ *
+ * @param year          The year
+ * @param month         The month (1-12).
+ * @param day           The day (1..daysInMonth).
+ * @param hour          The hour (0-23).
+ * @param minute        The minute (0-59).
+ * @param second        The second (0-59).
+ * @return              A transform that creates a DateTime_rec containing date
+ *                      and time components.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="Year">
+      <Type type="integer2"/>
+     </Param>
+     <Param name="Month">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Day">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Hour">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Minute">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="Second">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="44537"
+               end="44801"
+               exported="1"
+               fullname="date.createdatetimefromseconds"
+               inherittype="local"
+               line="1273"
+               name="CreateDateTimeFromSeconds"
+               start="44470"
+               type="transform">
+    <Type fullname="date.datetime_rec" name="DateTime_rec" type="record"/>
+    <Documentation>
+     <content>&#10;&#32;* A transform to create a DateTime_rec from a Seconds_t value.
+ *
+ * @param seconds       The number seconds since epoch.
+ * @return              A transform that creates a DateTime_rec containing
+ *                      date and time components.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="seconds">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="334"
+          inherittype="local"
+          line="7"
+          name="StringLib"
+          start="334"/>
+  <Import body="0"
+          end="366"
+          inherittype="local"
+          line="8"
+          name="TimeLib"
+          start="366"/>
+ </Source>
+</Meta>

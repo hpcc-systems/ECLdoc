@@ -1,0 +1,155 @@
+{
+    "include_path": "/media/sarthak/Data/ecldoc/testing/test",
+    "input_root": "/media/sarthak/Data/ecldoc/testing/test",
+    "output_root": "/media/sarthak/Data/ecldoc/testing/test-docs",
+    "tree": {
+        "example": {
+            "key": "example.ecl",
+            "tree": "example.ecl"
+        },
+        "example_10": {
+            "key": "example_10.ecl",
+            "tree": "example_10.ecl"
+        },
+        "example_11": {
+            "key": "example_11.ecl",
+            "tree": "example_11.ecl"
+        },
+        "example_2": {
+            "key": "example_2.ecl",
+            "tree": "example_2.ecl"
+        },
+        "example_3": {
+            "key": "example_3.ecl",
+            "tree": "example_3.ecl"
+        },
+        "example_4": {
+            "key": "example_4.ecl",
+            "tree": "example_4.ecl"
+        },
+        "example_6": {
+            "key": "example_6.ecl",
+            "tree": "example_6.ecl"
+        },
+        "example_7": {
+            "key": "example_7.ecl",
+            "tree": "example_7.ecl"
+        },
+        "example_8": {
+            "key": "example_8.ecl",
+            "tree": "example_8.ecl"
+        },
+        "inintest": {
+            "key": "Inintest",
+            "tree": {
+                "example_3": {
+                    "key": "Example_3.ecl",
+                    "tree": "Inintest/Example_3.ecl"
+                }
+            }
+        },
+        "intest": {
+            "key": "intest",
+            "tree": {
+                "example_11": {
+                    "key": "example_11.ecl",
+                    "tree": "intest/example_11.ecl"
+                },
+                "example_2": {
+                    "key": "example_2.ecl",
+                    "tree": "intest/example_2.ecl"
+                },
+                "example_3": {
+                    "key": "example_3.ecl",
+                    "tree": "intest/example_3.ecl"
+                },
+                "example_4": {
+                    "key": "example_4.ecl",
+                    "tree": "intest/example_4.ecl"
+                },
+                "example_6": {
+                    "key": "example_6.ecl",
+                    "tree": "intest/example_6.ecl"
+                },
+                "example_7": {
+                    "key": "example_7.ecl",
+                    "tree": "intest/example_7.ecl"
+                },
+                "example_8": {
+                    "key": "example_8.ecl",
+                    "tree": "intest/example_8.ecl"
+                },
+                "in1intest": {
+                    "key": "in1intest",
+                    "tree": {
+                        "example_2": {
+                            "key": "example_2.ecl",
+                            "tree": "intest/in1intest/example_2.ecl"
+                        },
+                        "example_3": {
+                            "key": "example_3.ecl",
+                            "tree": "intest/in1intest/example_3.ecl"
+                        },
+                        "example_4": {
+                            "key": "example_4.ecl",
+                            "tree": "intest/in1intest/example_4.ecl"
+                        },
+                        "example_6": {
+                            "key": "example_6.ecl",
+                            "tree": "intest/in1intest/example_6.ecl"
+                        },
+                        "example_7": {
+                            "key": "example_7.ecl",
+                            "tree": "intest/in1intest/example_7.ecl"
+                        },
+                        "example_8": {
+                            "key": "example_8.ecl",
+                            "tree": "intest/in1intest/example_8.ecl"
+                        }
+                    }
+                },
+                "inintest": {
+                    "key": "inintest",
+                    "tree": {
+                        "example_2": {
+                            "key": "example_2.ecl",
+                            "tree": "intest/inintest/example_2.ecl"
+                        },
+                        "example_3": {
+                            "key": "example_3.ecl",
+                            "tree": "intest/inintest/example_3.ecl"
+                        },
+                        "example_4": {
+                            "key": "example_4.ecl",
+                            "tree": "intest/inintest/example_4.ecl"
+                        },
+                        "example_6": {
+                            "key": "example_6.ecl",
+                            "tree": "intest/inintest/example_6.ecl"
+                        },
+                        "example_7": {
+                            "key": "example_7.ecl",
+                            "tree": "intest/inintest/example_7.ecl"
+                        },
+                        "example_8": {
+                            "key": "example_8.ecl",
+                            "tree": "intest/inintest/example_8.ecl"
+                        }
+                    }
+                }
+            }
+        },
+        "math": {
+            "key": "Math.ecl",
+            "tree": "Math.ecl"
+        },
+        "test": {
+            "key": "test.ecl",
+            "tree": "test.ecl"
+        },
+        "types": {
+            "key": "types.ecl",
+            "tree": "types.ecl"
+        }
+    }
+}

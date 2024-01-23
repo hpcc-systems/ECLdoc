@@ -1,0 +1,841 @@
+<Meta>
+ <Source name="ML_Core.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Constants.ecl">
+  <Definition body="47"
+              end="224"
+              exported="1"
+              fullname="ML_Core.Constants"
+              inherittype="local"
+              line="4"
+              name="Constants"
+              start="28"
+              type="module">
+   <Definition body="98"
+               end="127"
+               exported="1"
+               fullname="ml_core.constants.pi"
+               inherittype="local"
+               line="8"
+               name="Pi"
+               start="86"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant PI&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="189"
+               end="218"
+               exported="1"
+               fullname="ml_core.constants.root_2"
+               inherittype="local"
+               line="12"
+               name="Root_2"
+               start="173"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant square root of 2&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.DoubleFac" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/DoubleFac.ecl">
+  <Definition body="474"
+              end="642"
+              exported="1"
+              fullname="ml_core.math.doublefac"
+              inherittype="local"
+              line="11"
+              name="DoubleFac"
+              start="437"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* The &apos;double&apos; factorial is defined for ODD n and is the product of
+ * all the odd numbers up to and including that number.
+ * We are extending the meaning to even numbers to mean the product
+ * of the even numbers up to and including that number.
+ * Thus DoubleFac(8) = 8*6*4*2
+ * We also defend against i &lt; 2 (returning 1.0)
+ *@param i the value used in the calculation
+ *@return the factorial of the sequence, declining by 2&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="i">
+     <Type type="integer2"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="LogisticRegression.Distributions" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./LogisticRegression/Distributions.ecl">
+  <Definition body="151"
+              end="13981"
+              exported="1"
+              fullname="LogisticRegression.Distributions"
+              inherittype="local"
+              line="5"
+              name="Distributions"
+              start="128"
+              type="module">
+   <Definition body="597"
+               end="1071"
+               exported="1"
+               fullname="logisticregression.distributions.normal_cdf"
+               inherittype="local"
+               line="15"
+               name="Normal_CDF"
+               start="562"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Cumulative Distribution of the standard normal distribution, the
+   *probability that a normal random variable will be smaller than x
+   * standard deviations above or below the mean.
+   * Taken from C/C++ Mathematical Algorithms for Scientists and
+   *Engineers, n. Shammas, McGraw-Hill, 1995
+   * @param x the number of standard deviations
+   * @returns probability of exceeding x.&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1374"
+               end="2008"
+               exported="1"
+               fullname="logisticregression.distributions.normal_ppf"
+               inherittype="local"
+               line="40"
+               name="Normal_PPF"
+               start="1339"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Normal Distribution Percentage Point Function.
+   * Translated from C/C++ Mathematical Algorithms for Scientists and
+   * Engineers, N. Shammas, McGraw-Hill, 1995
+   * @param x probability
+   * @returns number of standard deviations from the mean&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2801"
+               end="4681"
+               exported="1"
+               fullname="logisticregression.distributions.t_cdf"
+               inherittype="local"
+               line="83"
+               name="T_CDF"
+               start="2761"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Students t distribution integral evaluated between negative
+   * infinity and x.
+   * Translated from NIST SEL DATAPAC Fortran TCDF.f source
+   * @param x value of the evaluation
+   * @param df degrees of freedom
+   * @returns the probability that a value will be less than the
+   * specified value&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6884"
+               end="8701"
+               exported="1"
+               fullname="logisticregression.distributions.t_ppf"
+               inherittype="local"
+               line="212"
+               name="T_PPF"
+               start="6844"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Percentage point function for the T distribution.
+   * Translated from NIST SEL DATAPAC Fortran TPPF.f source&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="9470"
+               end="11413"
+               exported="1"
+               fullname="logisticregression.distributions.chi2_cdf"
+               inherittype="local"
+               line="290"
+               name="Chi2_CDF"
+               start="9427"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* The cumulative distribution function for the Chi Square
+   * distribution.
+   * the CDF for the specfied degrees of freedom.
+   * Translated from the NIST SEL DATAPAC Fortran subroutine CHSCDF.&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="13680"
+               end="13976"
+               exported="1"
+               fullname="logisticregression.distributions.chi2_ppf"
+               inherittype="local"
+               line="399"
+               name="Chi2_PPF"
+               start="13637"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* The Chi Squared PPF function.
+   * Translated from the NIST SEL DATAPAC Fortran subroutine CHSPPF.&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="65"
+          fullname="ML_Core.Constants"
+          inherittype="local"
+          line="2"
+          name="Core_Const"
+          ref="ML_Core.Constants"
+          start="65">
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="105"
+          fullname="ML_Core.Math"
+          inherittype="local"
+          line="3"
+          name="Math"
+          ref="ML_Core.Math"
+          remotescope="1"
+          start="105"/>
+ </Source>
+ <Source sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/python.ecllib"/>
+ <Source name="LogisticRegression.Tests.Check_Dist" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Tests/Check_Dist.ecl">
+  <Import body="0"
+          end="7"
+          fullname="LogisticRegression.Distributions"
+          inherittype="local"
+          line="1"
+          name="Distributions"
+          ref="LogisticRegression.Distributions"
+          start="7"/>
+  <Import body="0"
+          end="33"
+          fullname="ML_Core"
+          inherittype="local"
+          line="2"
+          name="ML_Core"
+          ref="ML_Core"
+          remotescope="1"
+          start="33"/>
+  <Import body="0"
+          end="49"
+          fullname="python"
+          inherittype="local"
+          line="3"
+          name="python"
+          ref="python"
+          remotescope="1"
+          start="49"/>
+  <Definition body="113"
+              end="363"
+              fullname="logisticregression.tests.scipy_dist_cdf"
+              inherittype="local"
+              line="4"
+              name="scipy_dist_cdf"
+              start="57"
+              type="embed">
+   <Type type="real8"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="df">
+     <Type type="real8"/>
+    </Param>
+    <Param name="dist">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="420"
+              end="668"
+              fullname="logisticregression.tests.scipy_dist_ppf"
+              inherittype="local"
+              line="15"
+              name="scipy_dist_ppf"
+              start="364"
+              type="embed">
+   <Type type="real8"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="df">
+     <Type type="real8"/>
+    </Param>
+    <Param name="dist">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="706"
+              end="931"
+              fullname="logisticregression.tests.diff_tolerance"
+              inherittype="local"
+              line="26"
+              name="diff_tolerance"
+              start="669"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="test">
+     <Type type="string4"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="947"
+              end="1076"
+              fullname="logisticregression.tests.prob_values"
+              inherittype="local"
+              line="32"
+              name="prob_values"
+              start="933"
+              type="attribute">
+   <Type type="set">
+    <Type type="real8"/>
+   </Type>
+  </Definition>
+  <Definition body="1091"
+              end="1148"
+              fullname="logisticregression.tests.dist_values"
+              inherittype="local"
+              line="34"
+              name="dist_values"
+              start="1077"
+              type="attribute">
+   <Type type="set">
+    <Type type="integer8"/>
+   </Type>
+  </Definition>
+  <Definition body="1161"
+              end="1225"
+              fullname="logisticregression.tests.df_values"
+              inherittype="local"
+              line="35"
+              name="df_values"
+              start="1149"
+              type="attribute">
+   <Type type="set">
+    <Type type="integer8"/>
+   </Type>
+  </Definition>
+  <Definition body="1248"
+              end="1298"
+              fullname="logisticregression.tests.test"
+              inherittype="local"
+              line="36"
+              name="test"
+              start="1226"
+              type="attribute">
+   <Type type="set">
+    <Type type="string4"/>
+   </Type>
+  </Definition>
+  <Definition body="1325"
+              end="1351"
+              fullname="logisticregression.tests.inv_test"
+              inherittype="local"
+              line="37"
+              name="inv_test"
+              start="1299"
+              type="attribute">
+   <Type type="set">
+    <Type type="string4"/>
+   </Type>
+  </Definition>
+  <Definition body="1359"
+              end="1523"
+              fullname="logisticregression.tests.work"
+              inherittype="local"
+              line="38"
+              name="Work"
+              start="1352"
+              type="record">
+   <Field name="df">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="prob">
+    <Type type="real8"/>
+   </Field>
+   <Field name="ecl_ppf">
+    <Type type="real8"/>
+   </Field>
+   <Field name="scipy_ppf">
+    <Type type="real8"/>
+   </Field>
+   <Field name="ppf_diff">
+    <Type type="real8"/>
+   </Field>
+   <Field name="dist">
+    <Type type="real8"/>
+   </Field>
+   <Field name="ecl_cdf">
+    <Type type="real8"/>
+   </Field>
+   <Field name="scipy_cdf">
+    <Type type="real8"/>
+   </Field>
+   <Field name="cdf_diff">
+    <Type type="real8"/>
+   </Field>
+  </Definition>
+  <Definition body="1562"
+              end="1587"
+              fullname="logisticregression.tests.abs_max_abs"
+              inherittype="local"
+              line="49"
+              name="abs_max_abs"
+              start="1524"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1622"
+              end="1662"
+              fullname="logisticregression.tests.fixed"
+              inherittype="local"
+              line="50"
+              name="fixed"
+              start="1588"
+              type="function">
+   <Type type="boolean"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1697"
+              end="1736"
+              fullname="logisticregression.tests.divisor"
+              inherittype="local"
+              line="51"
+              name="divisor"
+              start="1663"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1772"
+              end="1795"
+              fullname="logisticregression.tests.calc_err"
+              inherittype="local"
+              line="52"
+              name="calc_err"
+              start="1737"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1843"
+              end="1860"
+              fullname="logisticregression.tests.check_err"
+              inherittype="local"
+              line="53"
+              name="check_err"
+              start="1796"
+              type="function">
+   <Type type="boolean"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+    <Param name="t">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1895"
+              end="2724"
+              fullname="logisticregression.tests.run"
+              inherittype="local"
+              line="54"
+              name="run"
+              start="1861"
+              type="transform">
+   <Type fullname="logisticregression.tests.work" name="Work" type="record"/>
+   <Params>
+    <Param name="c">
+     <Type type="unsigned8"/>
+    </Param>
+    <Param name="d">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="2734"
+              end="2862"
+              fullname="logisticregression.tests.report"
+              inherittype="local"
+              line="74"
+              name="Report"
+              start="2725"
+              type="record">
+   <Field name="test">
+    <Type type="string4"/>
+   </Field>
+   <Field name="OK">
+    <Type type="boolean"/>
+   </Field>
+   <Field name="df">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="inp_value">
+    <Type type="real8"/>
+   </Field>
+   <Field name="ecl_value">
+    <Type type="real8"/>
+   </Field>
+   <Field name="py_value">
+    <Type type="real8"/>
+   </Field>
+   <Field name="diff">
+    <Type type="real8"/>
+   </Field>
+  </Definition>
+  <Definition body="2903"
+              end="3423"
+              fullname="logisticregression.tests.makereport"
+              inherittype="local"
+              line="83"
+              name="makeReport"
+              start="2863"
+              type="transform">
+   <Type fullname="logisticregression.tests.report" name="Report" type="record"/>
+   <Params>
+    <Param name="w">
+     <Type type="row">
+      <Type fullname="logisticregression.tests.work" name="Work" type="record"/>
+     </Type>
+    </Param>
+    <Param name="c">
+     <Type type="unsigned8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="3430"
+              end="3476"
+              fullname="logisticregression.tests.ts1"
+              inherittype="local"
+              line="95"
+              name="ts1"
+              start="3424"
+              type="attribute">
+   <Type type="table">
+    <Type fullname="logisticregression.tests.work" name="Work" type="record"/>
+   </Type>
+  </Definition>
+  <Definition body="3483"
+              end="3545"
+              fullname="logisticregression.tests.ts2"
+              inherittype="local"
+              line="96"
+              name="ts2"
+              start="3477"
+              type="attribute">
+   <Type type="table">
+    <Type fullname="logisticregression.tests.work" name="Work" type="record"/>
+   </Type>
+  </Definition>
+  <Definition body="3552"
+              end="3614"
+              fullname="logisticregression.tests.ts3"
+              inherittype="local"
+              line="97"
+              name="ts3"
+              start="3546"
+              type="attribute">
+   <Type type="table">
+    <Type fullname="logisticregression.tests.work" name="Work" type="record"/>
+   </Type>
+  </Definition>
+  <Definition body="3620"
+              end="3666"
+              fullname="logisticregression.tests.r1"
+              inherittype="local"
+              line="98"
+              name="r1"
+              start="3615"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="OK">
+      <Type type="boolean"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="inp_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="ecl_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="py_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="diff">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="3672"
+              end="3720"
+              fullname="logisticregression.tests.r2"
+              inherittype="local"
+              line="99"
+              name="r2"
+              start="3667"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="OK">
+      <Type type="boolean"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="inp_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="ecl_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="py_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="diff">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="3726"
+              end="3774"
+              fullname="logisticregression.tests.r3"
+              inherittype="local"
+              line="100"
+              name="r3"
+              start="3721"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="OK">
+      <Type type="boolean"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="inp_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="ecl_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="py_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="diff">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="3798"
+              end="4050"
+              fullname="logisticregression.tests.df_cat"
+              inherittype="local"
+              line="101"
+              name="df_cat"
+              start="3775"
+              type="function">
+   <Type type="string10"/>
+   <Params>
+    <Param name="df">
+     <Type type="unsigned4"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="4057"
+              end="4271"
+              fullname="logisticregression.tests.rpt"
+              inherittype="local"
+              line="106"
+              name="rpt"
+              start="4051"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="cat">
+      <Type type="string10"/>
+     </Field>
+     <Field name="tested">
+      <Type type="integer8"/>
+     </Field>
+     <Field name="Incorrect">
+      <Type type="integer8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="4281"
+              end="4328"
+              fullname="logisticregression.tests.errors"
+              inherittype="local"
+              line="111"
+              name="errors"
+              start="4272"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="OK">
+      <Type type="boolean"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="inp_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="ecl_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="py_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="diff">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="4345"
+              end="4776"
+              fullname="logisticregression.tests.error_actions"
+              inherittype="local"
+              line="112"
+              name="error_actions"
+              start="4329"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+  <Definition body="4786"
+              end="4846"
+              fullname="logisticregression.tests.passed"
+              inherittype="local"
+              line="120"
+              name="passed"
+              start="4777"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+  <Definition body="4868"
+              end="4911"
+              exported="1"
+              fullname="logisticregression.tests.check_dist"
+              inherittype="local"
+              line="122"
+              name="Check_Dist"
+              start="4848"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+ </Source>
+</Meta>

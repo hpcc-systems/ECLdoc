@@ -1,0 +1,26 @@
+<Meta>
+ <Source name="ML_Core.AppendID" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/AppendID.ecl">
+  <Definition body="751"
+              end="1073"
+              exported="1"
+              fullname="ml_core.appendid"
+              inherittype="local"
+              line="15"
+              name="AppendID"
+              start="715"
+              type="macro">
+   <Type type=""/>
+   <Params>
+    <Param name="dIn">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="idfield">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="dOut">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

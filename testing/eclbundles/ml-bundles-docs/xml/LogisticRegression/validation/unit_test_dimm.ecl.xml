@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl" name="std.BLAS" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/dimm.ecl" name="LogisticRegression.dimm" target="../dimm.ecl.xml"/><Source name="LogisticRegression.validation.unit_test_dimm" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/validation/unit_test_dimm.ecl" target="unit_test_dimm.ecl.xml">
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="std.BLAS.Types" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/>
+  <Definition exported="1" fullname="logisticregression.validation.unit_test_dimm" inherittype="local" line="76" name="unit_test_dimm" type="attribute">
+   <Signature name="unit_test_dimm" ret="" param="" hlen="14">unit_test_dimm</Signature><Type type=""/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

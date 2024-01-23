@@ -1,0 +1,2147 @@
+\chapter*{\color{headfile}
+str
+}
+\hypertarget{ecldoc:toc:str}{}
+\hyperlink{ecldoc:toc:root}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+lib\_stringlib |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+Str}}
+
+\hypertarget{ecldoc:Str}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Str} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:str.compareignorecase}{CompareIgnoreCase}
+: Compares the two strings case insensitively
+\item \hyperlink{ecldoc:str.equalignorecase}{EqualIgnoreCase}
+: Tests whether the two strings are identical ignoring differences in case
+\item \hyperlink{ecldoc:str.find}{Find}
+: Returns the character position of the nth match of the search string with the first string
+\item \hyperlink{ecldoc:str.findcount}{FindCount}
+: Returns the number of occurences of the second string within the first string
+\item \hyperlink{ecldoc:str.wildmatch}{WildMatch}
+: Tests if the search string matches the pattern
+\item \hyperlink{ecldoc:str.contains}{Contains}
+: Tests if the search string contains each of the characters in the pattern
+\item \hyperlink{ecldoc:str.filterout}{FilterOut}
+: Returns the first string with all characters within the second string removed
+\item \hyperlink{ecldoc:str.filter}{Filter}
+: Returns the first string with all characters not within the second string removed
+\item \hyperlink{ecldoc:str.substituteincluded}{SubstituteIncluded}
+: Returns the source string with the replacement character substituted for all characters included in the filter string
+\item \hyperlink{ecldoc:str.substituteexcluded}{SubstituteExcluded}
+: Returns the source string with the replacement character substituted for all characters not included in the filter string
+\item \hyperlink{ecldoc:str.translate}{Translate}
+: Returns the source string with the all characters that match characters in the search string replaced with the character at the corresponding position in the replacement string
+\item \hyperlink{ecldoc:str.tolowercase}{ToLowerCase}
+: Returns the argument string with all upper case characters converted to lower case
+\item \hyperlink{ecldoc:str.touppercase}{ToUpperCase}
+: Return the argument string with all lower case characters converted to upper case
+\item \hyperlink{ecldoc:str.tocapitalcase}{ToCapitalCase}
+: Returns the argument string with the first letter of each word in upper case and all other letters left as-is
+\item \hyperlink{ecldoc:str.totitlecase}{ToTitleCase}
+: Returns the argument string with the first letter of each word in upper case and all other letters lower case
+\item \hyperlink{ecldoc:str.reverse}{Reverse}
+: Returns the argument string with all characters in reverse order
+\item \hyperlink{ecldoc:str.findreplace}{FindReplace}
+: Returns the source string with the replacement string substituted for all instances of the search string
+\item \hyperlink{ecldoc:str.extract}{Extract}
+: Returns the nth element from a comma separated string
+\item \hyperlink{ecldoc:str.cleanspaces}{CleanSpaces}
+: Returns the source string with all instances of multiple adjacent space characters (2 or more spaces together) reduced to a single space character
+\item \hyperlink{ecldoc:str.startswith}{StartsWith}
+: Returns true if the prefix string matches the leading characters in the source string
+\item \hyperlink{ecldoc:str.endswith}{EndsWith}
+: Returns true if the suffix string matches the trailing characters in the source string
+\item \hyperlink{ecldoc:str.removesuffix}{RemoveSuffix}
+: Removes the suffix from the search string, if present, and returns the result
+\item \hyperlink{ecldoc:str.extractmultiple}{ExtractMultiple}
+: Returns a string containing a list of elements from a comma separated string
+\item \hyperlink{ecldoc:str.countwords}{CountWords}
+: Returns the number of words that the string contains
+\item \hyperlink{ecldoc:str.splitwords}{SplitWords}
+: Returns the list of words extracted from the string
+\item \hyperlink{ecldoc:str.combinewords}{CombineWords}
+: Returns the list of words extracted from the string
+\item \hyperlink{ecldoc:str.editdistance}{EditDistance}
+: Returns the minimum edit distance between the two strings
+\item \hyperlink{ecldoc:str.editdistancewithinradius}{EditDistanceWithinRadius}
+: Returns true if the minimum edit distance between the two strings is with a specific range
+\item \hyperlink{ecldoc:str.wordcount}{WordCount}
+: Returns the number of words in the string
+\item \hyperlink{ecldoc:str.getnthword}{GetNthWord}
+: Returns the n-th word from the string
+\item \hyperlink{ecldoc:str.excludefirstword}{ExcludeFirstWord}
+: Returns everything except the first word from the string
+\item \hyperlink{ecldoc:str.excludelastword}{ExcludeLastWord}
+: Returns everything except the last word from the string
+\item \hyperlink{ecldoc:str.excludenthword}{ExcludeNthWord}
+: Returns everything except the nth word from the string
+\item \hyperlink{ecldoc:str.findword}{FindWord}
+: Tests if the search string contains the supplied word as a whole word
+\item \hyperlink{ecldoc:str.repeat}{Repeat}
+: No Documentation Found
+\item \hyperlink{ecldoc:str.tohexpairs}{ToHexPairs}
+: No Documentation Found
+\item \hyperlink{ecldoc:str.fromhexpairs}{FromHexPairs}
+: No Documentation Found
+\item \hyperlink{ecldoc:str.encodebase64}{EncodeBase64}
+: No Documentation Found
+\item \hyperlink{ecldoc:str.decodebase64}{DecodeBase64}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CompareIgnoreCase}}
+
+\hypertarget{ecldoc:str.compareignorecase}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER4} & \textbf{CompareIgnoreCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src1, STRING src2)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Compares the two strings case insensitively. Returns a negative integer, zero, or a positive integer according to whether the first string is less than, equal to, or greater than the second.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src2}} ||| STRING --- The second string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src1}} ||| STRING --- The first string to be compared.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Str.EqualIgnoreCase
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+EqualIgnoreCase}}
+
+\hypertarget{ecldoc:str.equalignorecase}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{EqualIgnoreCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src1, STRING src2)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests whether the two strings are identical ignoring differences in case.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src2}} ||| STRING --- The second string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src1}} ||| STRING --- The first string to be compared.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Str.CompareIgnoreCase
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Find}}
+
+\hypertarget{ecldoc:str.find}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED4} & \textbf{Find} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING sought, UNSIGNED4 instance = 1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the character position of the nth match of the search string with the first string. If no match is found the attribute returns 0. If an instance is omitted the position of the first instance is returned.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{instance}} ||| UNSIGNED4 --- Which match instance are we interested in?
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is searched
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sought}} ||| STRING --- The string being sought.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FindCount}}
+
+\hypertarget{ecldoc:str.findcount}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED4} & \textbf{FindCount} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING sought)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the number of occurences of the second string within the first string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is searched
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sought}} ||| STRING --- The string being sought.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+WildMatch}}
+
+\hypertarget{ecldoc:str.wildmatch}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{WildMatch} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING \_pattern, BOOLEAN ignore\_case)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests if the search string matches the pattern. The pattern can contain wildcards '?' (single character) and '*' (multiple character).
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{pattern}} |||  --- The pattern to match against.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ignore\_case}} ||| BOOLEAN --- Whether to ignore differences in case between characters
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_pattern}} ||| STRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Contains}}
+
+\hypertarget{ecldoc:str.contains}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{Contains} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING \_pattern, BOOLEAN ignore\_case)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests if the search string contains each of the characters in the pattern. If the pattern contains duplicate characters those characters will match once for each occurence in the pattern.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{pattern}} |||  --- The pattern to match against.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ignore\_case}} ||| BOOLEAN --- Whether to ignore differences in case between characters
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_pattern}} ||| STRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FilterOut}}
+
+\hypertarget{ecldoc:str.filterout}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{FilterOut} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING filter)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the first string with all characters within the second string removed.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filter}} ||| STRING --- The string containing the set of characters to be excluded.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Str.Filter
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Filter}}
+
+\hypertarget{ecldoc:str.filter}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{Filter} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING filter)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the first string with all characters not within the second string removed.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filter}} ||| STRING --- The string containing the set of characters to be included.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Str.FilterOut
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SubstituteIncluded}}
+
+\hypertarget{ecldoc:str.substituteincluded}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{SubstituteIncluded} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING filter, STRING1 replace\_char)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with the replacement character substituted for all characters included in the filter string. MORE: Should this be a general string substitution?
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replace\_char}} ||| STRING1 --- The character to be substituted into the result.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filter}} ||| STRING --- The string containing the set of characters to be included.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Str.Translate, Std.Str.SubstituteExcluded
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SubstituteExcluded}}
+
+\hypertarget{ecldoc:str.substituteexcluded}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{SubstituteExcluded} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING filter, STRING1 replace\_char)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with the replacement character substituted for all characters not included in the filter string. MORE: Should this be a general string substitution?
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replace\_char}} ||| STRING1 --- The character to be substituted into the result.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{filter}} ||| STRING --- The string containing the set of characters to be included.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Str.SubstituteIncluded
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Translate}}
+
+\hypertarget{ecldoc:str.translate}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{Translate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING search, STRING replacement)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with the all characters that match characters in the search string replaced with the character at the corresponding position in the replacement string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replacement}} ||| STRING --- The string containing the characters to act as replacements.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{search}} ||| STRING --- The string containing the set of characters to be included.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.Str.SubstituteIncluded
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToLowerCase}}
+
+\hypertarget{ecldoc:str.tolowercase}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ToLowerCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the argument string with all upper case characters converted to lower case.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being converted.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToUpperCase}}
+
+\hypertarget{ecldoc:str.touppercase}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ToUpperCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Return the argument string with all lower case characters converted to upper case.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being converted.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToCapitalCase}}
+
+\hypertarget{ecldoc:str.tocapitalcase}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ToCapitalCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the argument string with the first letter of each word in upper case and all other letters left as-is. A contiguous sequence of alphanumeric characters is treated as a word.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being converted.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToTitleCase}}
+
+\hypertarget{ecldoc:str.totitlecase}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ToTitleCase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the argument string with the first letter of each word in upper case and all other letters lower case. A contiguous sequence of alphanumeric characters is treated as a word.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being converted.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Reverse}}
+
+\hypertarget{ecldoc:str.reverse}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{Reverse} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the argument string with all characters in reverse order. Note the argument is not TRIMMED before it is reversed.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being reversed.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FindReplace}}
+
+\hypertarget{ecldoc:str.findreplace}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{FindReplace} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING sought, STRING replacement)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with the replacement string substituted for all instances of the search string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being transformed.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{replacement}} ||| STRING --- The string to be substituted into the result.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{sought}} ||| STRING --- The string to be replaced.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Extract}}
+
+\hypertarget{ecldoc:str.extract}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{Extract} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, UNSIGNED4 instance)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the nth element from a comma separated string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{instance}} ||| UNSIGNED4 --- Which item to select from the list.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string containing the comma separated list.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CleanSpaces}}
+
+\hypertarget{ecldoc:str.cleanspaces}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{CleanSpaces} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the source string with all instances of multiple adjacent space characters (2 or more spaces together) reduced to a single space character. Leading and trailing spaces are removed, and tab characters are converted to spaces.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string to be cleaned.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+StartsWith}}
+
+\hypertarget{ecldoc:str.startswith}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{StartsWith} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING prefix)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns true if the prefix string matches the leading characters in the source string. Trailing spaces are stripped from the prefix before matching. // x.myString.StartsWith('x') as an alternative syntax would be even better
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string being searched in.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{prefix}} ||| STRING --- The prefix to search for.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+EndsWith}}
+
+\hypertarget{ecldoc:str.endswith}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{EndsWith} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING suffix)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns true if the suffix string matches the trailing characters in the source string. Trailing spaces are stripped from both strings before matching.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string being searched in.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{suffix}} ||| STRING --- The prefix to search for.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+RemoveSuffix}}
+
+\hypertarget{ecldoc:str.removesuffix}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{RemoveSuffix} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING suffix)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Removes the suffix from the search string, if present, and returns the result. Trailing spaces are stripped from both strings before matching.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string being searched in.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{suffix}} ||| STRING --- The prefix to search for.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ExtractMultiple}}
+
+\hypertarget{ecldoc:str.extractmultiple}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ExtractMultiple} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, UNSIGNED8 mask)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a string containing a list of elements from a comma separated string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string containing the comma separated list.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{mask}} ||| UNSIGNED8 --- A bitmask of which elements should be included. Bit 0 is item1, bit1 item 2 etc.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CountWords}}
+
+\hypertarget{ecldoc:str.countwords}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED4} & \textbf{CountWords} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING separator, BOOLEAN allow\_blank = FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the number of words that the string contains. Words are separated by one or more separator strings. No spaces are stripped from either string before matching.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allow\_blank}} ||| BOOLEAN --- Indicates if empty/blank string items are included in the results.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string being searched in.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{separator}} ||| STRING --- The string used to separate words
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SplitWords}}
+
+\hypertarget{ecldoc:str.splitwords}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} SET OF STRING} & \textbf{SplitWords} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING separator, BOOLEAN allow\_blank = FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the list of words extracted from the string. Words are separated by one or more separator strings. No spaces are stripped from either string before matching.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{allow\_blank}} ||| BOOLEAN --- Indicates if empty/blank string items are included in the results.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string being searched in.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{separator}} ||| STRING --- The string used to separate words
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{SET ( STRING )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CombineWords}}
+
+\hypertarget{ecldoc:str.combinewords}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{CombineWords} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (SET OF STRING words, STRING separator)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the list of words extracted from the string. Words are separated by one or more separator strings. No spaces are stripped from either string before matching.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{words}} ||| SET ( STRING ) --- The set of strings to be combined.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{separator}} ||| STRING --- The string used to separate words.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+EditDistance}}
+
+\hypertarget{ecldoc:str.editdistance}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED4} & \textbf{EditDistance} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING \_left, STRING \_right)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the minimum edit distance between the two strings. An insert change or delete counts as a single edit. The two strings are trimmed before comparing.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_left}} ||| STRING --- The first string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_right}} ||| STRING --- The second string to be compared.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The minimum edit distance between the two strings.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+EditDistanceWithinRadius}}
+
+\hypertarget{ecldoc:str.editdistancewithinradius}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{EditDistanceWithinRadius} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING \_left, STRING \_right, UNSIGNED4 radius)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns true if the minimum edit distance between the two strings is with a specific range. The two strings are trimmed before comparing.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_left}} ||| STRING --- The first string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{\_right}} ||| STRING --- The second string to be compared.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{radius}} ||| UNSIGNED4 --- The maximum edit distance that is accepable.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- Whether or not the two strings are within the given specified edit distance.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+WordCount}}
+
+\hypertarget{ecldoc:str.wordcount}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED4} & \textbf{WordCount} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING text)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the number of words in the string. Words are separated by one or more spaces.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{text}} ||| STRING --- The string to be broken into words.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The number of words in the string.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetNthWord}}
+
+\hypertarget{ecldoc:str.getnthword}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{GetNthWord} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING text, UNSIGNED4 n)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the n-th word from the string. Words are separated by one or more spaces.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| UNSIGNED4 --- Which word should be returned from the function.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{text}} ||| STRING --- The string to be broken into words.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The number of words in the string.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ExcludeFirstWord}}
+
+\hypertarget{ecldoc:str.excludefirstword}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ExcludeFirstWord} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING text)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns everything except the first word from the string. Words are separated by one or more whitespace characters. Whitespace before and after the first word is also removed.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{text}} ||| STRING --- The string to be broken into words.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The string excluding the first word.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ExcludeLastWord}}
+
+\hypertarget{ecldoc:str.excludelastword}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ExcludeLastWord} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING text)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns everything except the last word from the string. Words are separated by one or more whitespace characters. Whitespace after a word is removed with the word and leading whitespace is removed with the first word.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{text}} ||| STRING --- The string to be broken into words.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The string excluding the last word.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ExcludeNthWord}}
+
+\hypertarget{ecldoc:str.excludenthword}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ExcludeNthWord} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING text, UNSIGNED2 n)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns everything except the nth word from the string. Words are separated by one or more whitespace characters. Whitespace after a word is removed with the word and leading whitespace is removed with the first word.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| UNSIGNED2 --- Which word should be returned from the function.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{text}} ||| STRING --- The string to be broken into words.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The string excluding the nth word.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FindWord}}
+
+\hypertarget{ecldoc:str.findword}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{FindWord} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING src, STRING word, BOOLEAN ignore\_case=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests if the search string contains the supplied word as a whole word.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{word}} ||| STRING --- The word to be searched for.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{src}} ||| STRING --- The string that is being tested.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{ignore\_case}} ||| BOOLEAN --- Whether to ignore differences in case between characters.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Repeat}}
+
+\hypertarget{ecldoc:str.repeat}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{Repeat} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING text, UNSIGNED4 n)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{n}} ||| UNSIGNED4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{text}} ||| STRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToHexPairs}}
+
+\hypertarget{ecldoc:str.tohexpairs}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ToHexPairs} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATA value)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{value}} ||| DATA --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FromHexPairs}}
+
+\hypertarget{ecldoc:str.fromhexpairs}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATA} & \textbf{FromHexPairs} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING hex\_pairs)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{hex\_pairs}} ||| STRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{DATA} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+EncodeBase64}}
+
+\hypertarget{ecldoc:str.encodebase64}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{EncodeBase64} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATA value)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{value}} ||| DATA --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DecodeBase64}}
+
+\hypertarget{ecldoc:str.decodebase64}{}
+\hspace{0pt} \hyperlink{ecldoc:Str}{Str} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATA} & \textbf{DecodeBase64} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING value)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{value}} ||| STRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{DATA} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

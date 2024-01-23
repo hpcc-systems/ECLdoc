@@ -1,0 +1,24 @@
+IMPORTS
+=======
+
+
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MACRO : FromField(dIn,lOut,dOut,dMap='')
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+Parameter : dmap INTEGER8 --- No Doc
+
+Parameter : din INTEGER8 --- No Doc
+
+Parameter : dout INTEGER8 --- No Doc
+
+Parameter : lout INTEGER8 --- No Doc
+
+Return : 
+
