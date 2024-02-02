@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/ToField.ecl" name="ML_Core.ToField" target="../ToField.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/FromField.ecl" name="ML_Core.FromField" target="../FromField.ecl.xml"/><Source name="ML_Core.Tests.to_from" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Tests/to_from.ecl" target="to_from.ecl.xml">
+  <Import name="ML_Core" ref="ML_Core" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Types" ref="ML_Core.Types" target="../Types.ecl.xml"/>
+  <Definition exported="1" fullname="ml_core.tests.to_from" inherittype="local" line="72" name="to_from" type="attribute">
+   <Signature name="to_from" ret="" param="" hlen="7">to_from</Signature><Type type=""/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

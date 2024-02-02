@@ -1,0 +1,5081 @@
+\chapter*{\color{headfile}
+Date
+}
+\hypertarget{ecldoc:toc:Date}{}
+\hyperlink{ecldoc:toc:root}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+Date}}
+
+\hypertarget{ecldoc:Date}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Date} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:date.date_rec}{Date\_rec}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.date_t}{Date\_t}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.days_t}{Days\_t}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.time_rec}{Time\_rec}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.time_t}{Time\_t}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.seconds_t}{Seconds\_t}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.datetime_rec}{DateTime\_rec}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.timestamp_t}{Timestamp\_t}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.year}{Year}
+: Extracts the year from a date type
+\item \hyperlink{ecldoc:date.month}{Month}
+: Extracts the month from a date type
+\item \hyperlink{ecldoc:date.day}{Day}
+: Extracts the day of the month from a date type
+\item \hyperlink{ecldoc:date.hour}{Hour}
+: Extracts the hour from a time type
+\item \hyperlink{ecldoc:date.minute}{Minute}
+: Extracts the minutes from a time type
+\item \hyperlink{ecldoc:date.second}{Second}
+: Extracts the seconds from a time type
+\item \hyperlink{ecldoc:date.datefromparts}{DateFromParts}
+: Combines year, month day to create a date type
+\item \hyperlink{ecldoc:date.timefromparts}{TimeFromParts}
+: Combines hour, minute second to create a time type
+\item \hyperlink{ecldoc:date.secondsfromparts}{SecondsFromParts}
+: Combines date and time components to create a seconds type
+\item \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts}
+: Converts the number of seconds since epoch to a structure containing date and time parts
+\item \hyperlink{ecldoc:date.timestamptoseconds}{TimestampToSeconds}
+: Converts the number of microseconds since epoch to the number of seconds since epoch
+\item \hyperlink{ecldoc:date.isleapyear}{IsLeapYear}
+: Tests whether the year is a leap year in the Gregorian calendar
+\item \hyperlink{ecldoc:date.isdateleapyear}{IsDateLeapYear}
+: Tests whether a date is a leap year in the Gregorian calendar
+\item \hyperlink{ecldoc:date.fromgregorianymd}{FromGregorianYMD}
+: Combines year, month, day in the Gregorian calendar to create the number days since 31st December 1BC
+\item \hyperlink{ecldoc:date.togregorianymd}{ToGregorianYMD}
+: Converts the number days since 31st December 1BC to a date in the Gregorian calendar
+\item \hyperlink{ecldoc:date.fromgregoriandate}{FromGregorianDate}
+: Converts a date in the Gregorian calendar to the number days since 31st December 1BC
+\item \hyperlink{ecldoc:date.togregoriandate}{ToGregorianDate}
+: Converts the number days since 31st December 1BC to a date in the Gregorian calendar
+\item \hyperlink{ecldoc:date.dayofyear}{DayOfYear}
+: Returns a number representing the day of the year indicated by the given date
+\item \hyperlink{ecldoc:date.dayofweek}{DayOfWeek}
+: Returns a number representing the day of the week indicated by the given date
+\item \hyperlink{ecldoc:date.isjulianleapyear}{IsJulianLeapYear}
+: Tests whether the year is a leap year in the Julian calendar
+\item \hyperlink{ecldoc:date.fromjulianymd}{FromJulianYMD}
+: Combines year, month, day in the Julian calendar to create the number days since 31st December 1BC
+\item \hyperlink{ecldoc:date.tojulianymd}{ToJulianYMD}
+: Converts the number days since 31st December 1BC to a date in the Julian calendar
+\item \hyperlink{ecldoc:date.fromjuliandate}{FromJulianDate}
+: Converts a date in the Julian calendar to the number days since 31st December 1BC
+\item \hyperlink{ecldoc:date.tojuliandate}{ToJulianDate}
+: Converts the number days since 31st December 1BC to a date in the Julian calendar
+\item \hyperlink{ecldoc:date.dayssince1900}{DaysSince1900}
+: Returns the number of days since 1st January 1900 (using the Gregorian Calendar)
+\item \hyperlink{ecldoc:date.todayssince1900}{ToDaysSince1900}
+: Returns the number of days since 1st January 1900 (using the Gregorian Calendar)
+\item \hyperlink{ecldoc:date.fromdayssince1900}{FromDaysSince1900}
+: Converts the number days since 1st January 1900 to a date in the Julian calendar
+\item \hyperlink{ecldoc:date.yearsbetween}{YearsBetween}
+: Calculate the number of whole years between two dates
+\item \hyperlink{ecldoc:date.monthsbetween}{MonthsBetween}
+: Calculate the number of whole months between two dates
+\item \hyperlink{ecldoc:date.daysbetween}{DaysBetween}
+: Calculate the number of days between two dates
+\item \hyperlink{ecldoc:date.datefromdaterec}{DateFromDateRec}
+: Combines the fields from a Date\_rec to create a Date\_t
+\item \hyperlink{ecldoc:date.datefromrec}{DateFromRec}
+: Combines the fields from a Date\_rec to create a Date\_t
+\item \hyperlink{ecldoc:date.timefromtimerec}{TimeFromTimeRec}
+: Combines the fields from a Time\_rec to create a Time\_t
+\item \hyperlink{ecldoc:date.datefromdatetimerec}{DateFromDateTimeRec}
+: Combines the date fields from a DateTime\_rec to create a Date\_t
+\item \hyperlink{ecldoc:date.timefromdatetimerec}{TimeFromDateTimeRec}
+: Combines the time fields from a DateTime\_rec to create a Time\_t
+\item \hyperlink{ecldoc:date.secondsfromdatetimerec}{SecondsFromDateTimeRec}
+: Combines the date and time fields from a DateTime\_rec to create a Seconds\_t
+\item \hyperlink{ecldoc:date.fromstringtodate}{FromStringToDate}
+: Converts a string to a Date\_t using the relevant string format
+\item \hyperlink{ecldoc:date.fromstring}{FromString}
+: Converts a string to a date using the relevant string format
+\item \hyperlink{ecldoc:date.fromstringtotime}{FromStringToTime}
+: Converts a string to a Time\_t using the relevant string format
+\item \hyperlink{ecldoc:date.matchdatestring}{MatchDateString}
+: Matches a string against a set of date string formats and returns a valid Date\_t object from the first format that successfully parses the string
+\item \hyperlink{ecldoc:date.matchtimestring}{MatchTimeString}
+: Matches a string against a set of time string formats and returns a valid Time\_t object from the first format that successfully parses the string
+\item \hyperlink{ecldoc:date.datetostring}{DateToString}
+: Formats a date as a string
+\item \hyperlink{ecldoc:date.timetostring}{TimeToString}
+: Formats a time as a string
+\item \hyperlink{ecldoc:date.secondstostring}{SecondsToString}
+: Converts a Seconds\_t value into a human-readable string using a format template
+\item \hyperlink{ecldoc:date.tostring}{ToString}
+: Formats a date as a string
+\item \hyperlink{ecldoc:date.convertdateformat}{ConvertDateFormat}
+: Converts a date from one format to another
+\item \hyperlink{ecldoc:date.convertformat}{ConvertFormat}
+: Converts a date from one format to another
+\item \hyperlink{ecldoc:date.converttimeformat}{ConvertTimeFormat}
+: Converts a time from one format to another
+\item \hyperlink{ecldoc:date.convertdateformatmultiple}{ConvertDateFormatMultiple}
+: Converts a date that matches one of a set of formats to another
+\item \hyperlink{ecldoc:date.convertformatmultiple}{ConvertFormatMultiple}
+: Converts a date that matches one of a set of formats to another
+\item \hyperlink{ecldoc:date.converttimeformatmultiple}{ConvertTimeFormatMultiple}
+: Converts a time that matches one of a set of formats to another
+\item \hyperlink{ecldoc:date.adjustdate}{AdjustDate}
+: Adjusts a date by incrementing or decrementing year, month and/or day values
+\item \hyperlink{ecldoc:date.adjustdatebyseconds}{AdjustDateBySeconds}
+: Adjusts a date by adding or subtracting seconds
+\item \hyperlink{ecldoc:date.adjusttime}{AdjustTime}
+: Adjusts a time by incrementing or decrementing hour, minute and/or second values
+\item \hyperlink{ecldoc:date.adjusttimebyseconds}{AdjustTimeBySeconds}
+: Adjusts a time by adding or subtracting seconds
+\item \hyperlink{ecldoc:date.adjustseconds}{AdjustSeconds}
+: Adjusts a Seconds\_t value by adding or subtracting years, months, days, hours, minutes and/or seconds
+\item \hyperlink{ecldoc:date.adjustcalendar}{AdjustCalendar}
+: Adjusts a date by incrementing or decrementing months and/or years
+\item \hyperlink{ecldoc:date.islocaldaylightsavingsineffect}{IsLocalDaylightSavingsInEffect}
+: Returns a boolean indicating whether daylight savings time is currently in effect locally
+\item \hyperlink{ecldoc:date.localtimezoneoffset}{LocalTimeZoneOffset}
+: Returns the offset (in seconds) of the time represented from UTC, with positive values indicating locations east of the Prime Meridian
+\item \hyperlink{ecldoc:date.currentdate}{CurrentDate}
+: Returns the current date
+\item \hyperlink{ecldoc:date.today}{Today}
+: Returns the current date in the local time zone
+\item \hyperlink{ecldoc:date.currenttime}{CurrentTime}
+: Returns the current time of day
+\item \hyperlink{ecldoc:date.currentseconds}{CurrentSeconds}
+: Returns the current date and time as the number of seconds since epoch
+\item \hyperlink{ecldoc:date.currenttimestamp}{CurrentTimestamp}
+: Returns the current date and time as the number of microseconds since epoch
+\item \hyperlink{ecldoc:date.datesformonth}{DatesForMonth}
+: Returns the beginning and ending dates for the month surrounding the given date
+\item \hyperlink{ecldoc:date.datesforweek}{DatesForWeek}
+: Returns the beginning and ending dates for the week surrounding the given date (Sunday marks the beginning of a week)
+\item \hyperlink{ecldoc:date.isvaliddate}{IsValidDate}
+: Tests whether a date is valid, both by range-checking the year and by validating each of the other individual components
+\item \hyperlink{ecldoc:date.isvalidgregoriandate}{IsValidGregorianDate}
+: Tests whether a date is valid in the Gregorian calendar
+\item \hyperlink{ecldoc:date.isvalidtime}{IsValidTime}
+: Tests whether a time is valid
+\item \hyperlink{ecldoc:date.createdate}{CreateDate}
+: A transform to create a Date\_rec from the individual elements
+\item \hyperlink{ecldoc:date.createdatefromseconds}{CreateDateFromSeconds}
+: A transform to create a Date\_rec from a Seconds\_t value
+\item \hyperlink{ecldoc:date.createtime}{CreateTime}
+: A transform to create a Time\_rec from the individual elements
+\item \hyperlink{ecldoc:date.createtimefromseconds}{CreateTimeFromSeconds}
+: A transform to create a Time\_rec from a Seconds\_t value
+\item \hyperlink{ecldoc:date.createdatetime}{CreateDateTime}
+: A transform to create a DateTime\_rec from the individual elements
+\item \hyperlink{ecldoc:date.createdatetimefromseconds}{CreateDateTimeFromSeconds}
+: A transform to create a DateTime\_rec from a Seconds\_t value
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+Date\_rec}}
+
+\hypertarget{ecldoc:date.date_rec}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Date\_rec} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{day}} ||| UNSIGNED1 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{month}} ||| UNSIGNED1 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{year}} ||| INTEGER2 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Date\_t}}
+
+\hypertarget{ecldoc:date.date_t}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Date\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Days\_t}}
+
+\hypertarget{ecldoc:date.days_t}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Days\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+Time\_rec}}
+
+\hypertarget{ecldoc:date.time_rec}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Time\_rec} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{second}} ||| UNSIGNED1 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{minute}} ||| UNSIGNED1 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{hour}} ||| UNSIGNED1 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Time\_t}}
+
+\hypertarget{ecldoc:date.time_t}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Time\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Seconds\_t}}
+
+\hypertarget{ecldoc:date.seconds_t}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Seconds\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+DateTime\_rec}}
+
+\hypertarget{ecldoc:date.datetime_rec}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{DateTime\_rec} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{day}} ||| UNSIGNED1 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{second}} ||| UNSIGNED1 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{minute}} ||| UNSIGNED1 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{month}} ||| UNSIGNED1 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{year}} ||| INTEGER2 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{hour}} ||| UNSIGNED1 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Timestamp\_t}}
+
+\hypertarget{ecldoc:date.timestamp_t}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Timestamp\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Year}}
+
+\hypertarget{ecldoc:date.year}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER2} & \textbf{Year} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extracts the year from a date type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER2} --- An integer representing the year.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Month}}
+
+\hypertarget{ecldoc:date.month}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Month} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extracts the month from a date type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- An integer representing the year.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Day}}
+
+\hypertarget{ecldoc:date.day}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Day} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extracts the day of the month from a date type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- An integer representing the year.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Hour}}
+
+\hypertarget{ecldoc:date.hour}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Hour} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Time\_t time)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extracts the hour from a time type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time}} ||| UNSIGNED3 --- The time.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- An integer representing the hour.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Minute}}
+
+\hypertarget{ecldoc:date.minute}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Minute} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Time\_t time)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extracts the minutes from a time type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time}} ||| UNSIGNED3 --- The time.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- An integer representing the minutes.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Second}}
+
+\hypertarget{ecldoc:date.second}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Second} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Time\_t time)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extracts the seconds from a time type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time}} ||| UNSIGNED3 --- The time.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- An integer representing the seconds.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DateFromParts}}
+
+\hypertarget{ecldoc:date.datefromparts}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{DateFromParts} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines year, month day to create a date type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day}} ||| UNSIGNED1 --- The day (1..daysInMonth).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month}} ||| UNSIGNED1 --- The month (1-12).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} ||| INTEGER2 --- The year (0-9999).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A date created by combining the fields.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+TimeFromParts}}
+
+\hypertarget{ecldoc:date.timefromparts}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_t} & \textbf{TimeFromParts} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (UNSIGNED1 hour, UNSIGNED1 minute, UNSIGNED1 second)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines hour, minute second to create a time type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{second}} ||| UNSIGNED1 --- The second (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{minute}} ||| UNSIGNED1 --- The minute (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{hour}} ||| UNSIGNED1 --- The hour (0-23).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- A time created by combining the fields.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SecondsFromParts}}
+
+\hypertarget{ecldoc:date.secondsfromparts}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Seconds\_t} & \textbf{SecondsFromParts} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day, UNSIGNED1 hour, UNSIGNED1 minute, UNSIGNED1 second, BOOLEAN is\_local\_time = FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines date and time components to create a seconds type. The date must be represented within the Gregorian calendar after the year 1600.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day}} ||| UNSIGNED1 --- The day (1..daysInMonth).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{second}} ||| UNSIGNED1 --- The second (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{is\_local\_time}} ||| BOOLEAN --- TRUE if the datetime components are expressed in local time rather than UTC, FALSE if the components are expressed in UTC. Optional, defaults to FALSE.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{minute}} ||| UNSIGNED1 --- The minute (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month}} ||| UNSIGNED1 --- The month (1-12).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} ||| INTEGER2 --- The year (1601-30827).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{hour}} ||| UNSIGNED1 --- The hour (0-23).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- A Seconds\_t value created by combining the fields.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+SecondsToParts}}
+
+\hypertarget{ecldoc:date.secondstoparts}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SecondsToParts} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Seconds\_t seconds)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts the number of seconds since epoch to a structure containing date and time parts. The result must be representable within the Gregorian calendar after the year 1600.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{seconds}} ||| INTEGER8 --- The number of seconds since epoch.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- Module with exported attributes for year, month, day, hour, minute, second, day\_of\_week, date and time.
+\end{description}
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:date.secondstoparts.result.year}{Year}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.secondstoparts.result.month}{Month}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.secondstoparts.result.day}{Day}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.secondstoparts.result.hour}{Hour}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.secondstoparts.result.minute}{Minute}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.secondstoparts.result.second}{Second}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.secondstoparts.result.day_of_week}{day\_of\_week}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.secondstoparts.result.date}{date}
+: Combines year, month day to create a date type
+\item \hyperlink{ecldoc:date.secondstoparts.result.time}{time}
+: Combines hour, minute second to create a time type
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Year}}
+
+\hypertarget{ecldoc:date.secondstoparts.result.year}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER2} & \textbf{Year} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER2} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Month}}
+
+\hypertarget{ecldoc:date.secondstoparts.result.month}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Month} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Day}}
+
+\hypertarget{ecldoc:date.secondstoparts.result.day}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Day} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Hour}}
+
+\hypertarget{ecldoc:date.secondstoparts.result.hour}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Hour} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Minute}}
+
+\hypertarget{ecldoc:date.secondstoparts.result.minute}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Minute} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Second}}
+
+\hypertarget{ecldoc:date.secondstoparts.result.second}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Second} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+day\_of\_week}}
+
+\hypertarget{ecldoc:date.secondstoparts.result.day_of_week}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{day\_of\_week} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+date}}
+
+\hypertarget{ecldoc:date.secondstoparts.result.date}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{date} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines year, month day to create a date type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day}} |||  --- The day (1..daysInMonth).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month}} |||  --- The month (1-12).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} |||  --- The year (0-9999).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A date created by combining the fields.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+time}}
+
+\hypertarget{ecldoc:date.secondstoparts.result.time}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.secondstoparts}{SecondsToParts} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_t} & \textbf{time} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines hour, minute second to create a time type.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{second}} |||  --- The second (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{minute}} |||  --- The minute (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{hour}} |||  --- The hour (0-23).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- A time created by combining the fields.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+TimestampToSeconds}}
+
+\hypertarget{ecldoc:date.timestamptoseconds}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Seconds\_t} & \textbf{TimestampToSeconds} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Timestamp\_t timestamp)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts the number of microseconds since epoch to the number of seconds since epoch.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{timestamp}} ||| INTEGER8 --- The number of microseconds since epoch.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- The number of seconds since epoch.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+IsLeapYear}}
+
+\hypertarget{ecldoc:date.isleapyear}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{IsLeapYear} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (INTEGER2 year)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests whether the year is a leap year in the Gregorian calendar.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} ||| INTEGER2 --- The year (0-9999).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- True if the year is a leap year.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+IsDateLeapYear}}
+
+\hypertarget{ecldoc:date.isdateleapyear}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{IsDateLeapYear} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests whether a date is a leap year in the Gregorian calendar.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- True if the year is a leap year.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FromGregorianYMD}}
+
+\hypertarget{ecldoc:date.fromgregorianymd}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Days\_t} & \textbf{FromGregorianYMD} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines year, month, day in the Gregorian calendar to create the number days since 31st December 1BC.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day}} ||| UNSIGNED1 --- The day (1..daysInMonth). A missing value (0) is treated as 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month}} ||| UNSIGNED1 --- The month (1-12). A missing value (0) is treated as 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} ||| INTEGER2 --- The year (-4713..9999).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- The number of elapsed days (1 Jan 1AD = 1)
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+ToGregorianYMD}}
+
+\hypertarget{ecldoc:date.togregorianymd}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ToGregorianYMD} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Days\_t days)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts the number days since 31st December 1BC to a date in the Gregorian calendar.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{days}} ||| INTEGER4 --- The number of elapsed days (1 Jan 1AD = 1)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- Module containing Year, Month, Day in the Gregorian calendar
+\end{description}
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:date.togregorianymd.result.year}{year}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.togregorianymd.result.month}{month}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.togregorianymd.result.day}{day}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+year}}
+
+\hypertarget{ecldoc:date.togregorianymd.result.year}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.togregorianymd}{ToGregorianYMD} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{year} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+month}}
+
+\hypertarget{ecldoc:date.togregorianymd.result.month}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.togregorianymd}{ToGregorianYMD} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{month} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+day}}
+
+\hypertarget{ecldoc:date.togregorianymd.result.day}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.togregorianymd}{ToGregorianYMD} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{day} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FromGregorianDate}}
+
+\hypertarget{ecldoc:date.fromgregoriandate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Days\_t} & \textbf{FromGregorianDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a date in the Gregorian calendar to the number days since 31st December 1BC.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date (using the Gregorian calendar)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- The number of elapsed days (1 Jan 1AD = 1)
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToGregorianDate}}
+
+\hypertarget{ecldoc:date.togregoriandate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{ToGregorianDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Days\_t days)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts the number days since 31st December 1BC to a date in the Gregorian calendar.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{days}} ||| INTEGER4 --- The number of elapsed days (1 Jan 1AD = 1)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A Date\_t in the Gregorian calendar
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DayOfYear}}
+
+\hypertarget{ecldoc:date.dayofyear}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED2} & \textbf{DayOfYear} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a number representing the day of the year indicated by the given date. The date must be in the Gregorian calendar after the year 1600.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- A Date\_t value.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED2} --- A number (1-366) representing the number of days since the beginning of the year.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DayOfWeek}}
+
+\hypertarget{ecldoc:date.dayofweek}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{DayOfWeek} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a number representing the day of the week indicated by the given date. The date must be in the Gregorian calendar after the year 1600.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- A Date\_t value.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- A number 1-7 representing the day of the week, where 1 = Sunday.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+IsJulianLeapYear}}
+
+\hypertarget{ecldoc:date.isjulianleapyear}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{IsJulianLeapYear} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (INTEGER2 year)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests whether the year is a leap year in the Julian calendar.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} ||| INTEGER2 --- The year (0-9999).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- True if the year is a leap year.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FromJulianYMD}}
+
+\hypertarget{ecldoc:date.fromjulianymd}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Days\_t} & \textbf{FromJulianYMD} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines year, month, day in the Julian calendar to create the number days since 31st December 1BC.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day}} ||| UNSIGNED1 --- The day (1..daysInMonth).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month}} ||| UNSIGNED1 --- The month (1-12).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} ||| INTEGER2 --- The year (-4800..9999).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- The number of elapsed days (1 Jan 1AD = 1)
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+ToJulianYMD}}
+
+\hypertarget{ecldoc:date.tojulianymd}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ToJulianYMD} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Days\_t days)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts the number days since 31st December 1BC to a date in the Julian calendar.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{days}} ||| INTEGER4 --- The number of elapsed days (1 Jan 1AD = 1)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- Module containing Year, Month, Day in the Julian calendar
+\end{description}
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:date.tojulianymd.result.day}{Day}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.tojulianymd.result.month}{Month}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.tojulianymd.result.year}{Year}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Day}}
+
+\hypertarget{ecldoc:date.tojulianymd.result.day}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.tojulianymd}{ToJulianYMD} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Day} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Month}}
+
+\hypertarget{ecldoc:date.tojulianymd.result.month}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.tojulianymd}{ToJulianYMD} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} UNSIGNED1} & \textbf{Month} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Year}}
+
+\hypertarget{ecldoc:date.tojulianymd.result.year}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.tojulianymd}{ToJulianYMD} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER2} & \textbf{Year} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER2} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FromJulianDate}}
+
+\hypertarget{ecldoc:date.fromjuliandate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Days\_t} & \textbf{FromJulianDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a date in the Julian calendar to the number days since 31st December 1BC.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date (using the Julian calendar)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- The number of elapsed days (1 Jan 1AD = 1)
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToJulianDate}}
+
+\hypertarget{ecldoc:date.tojuliandate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{ToJulianDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Days\_t days)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts the number days since 31st December 1BC to a date in the Julian calendar.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{days}} ||| INTEGER4 --- The number of elapsed days (1 Jan 1AD = 1)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A Date\_t in the Julian calendar
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DaysSince1900}}
+
+\hypertarget{ecldoc:date.dayssince1900}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Days\_t} & \textbf{DaysSince1900} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the number of days since 1st January 1900 (using the Gregorian Calendar)
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day}} ||| UNSIGNED1 --- The day (1..daysInMonth). A missing value (0) is treated as 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month}} ||| UNSIGNED1 --- The month (1-12). A missing value (0) is treated as 1.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} ||| INTEGER2 --- The year (-4713..9999).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- The number of elapsed days since 1st January 1900
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToDaysSince1900}}
+
+\hypertarget{ecldoc:date.todayssince1900}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Days\_t} & \textbf{ToDaysSince1900} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the number of days since 1st January 1900 (using the Gregorian Calendar)
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- The number of elapsed days since 1st January 1900
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FromDaysSince1900}}
+
+\hypertarget{ecldoc:date.fromdayssince1900}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{FromDaysSince1900} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Days\_t days)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts the number days since 1st January 1900 to a date in the Julian calendar.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{days}} ||| INTEGER4 --- The number of elapsed days since 1st Jan 1900
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A Date\_t in the Julian calendar
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+YearsBetween}}
+
+\hypertarget{ecldoc:date.yearsbetween}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER} & \textbf{YearsBetween} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t from, Date\_t to)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Calculate the number of whole years between two dates.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{from}} ||| UNSIGNED4 --- The first date
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to}} ||| UNSIGNED4 --- The last date
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- The number of years between them.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+MonthsBetween}}
+
+\hypertarget{ecldoc:date.monthsbetween}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER} & \textbf{MonthsBetween} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t from, Date\_t to)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Calculate the number of whole months between two dates.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{from}} ||| UNSIGNED4 --- The first date
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to}} ||| UNSIGNED4 --- The last date
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- The number of months between them.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DaysBetween}}
+
+\hypertarget{ecldoc:date.daysbetween}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER} & \textbf{DaysBetween} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t from, Date\_t to)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Calculate the number of days between two dates.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{from}} ||| UNSIGNED4 --- The first date
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to}} ||| UNSIGNED4 --- The last date
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- The number of days between them.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DateFromDateRec}}
+
+\hypertarget{ecldoc:date.datefromdaterec}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{DateFromDateRec} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_rec date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines the fields from a Date\_rec to create a Date\_t
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| ROW ( Date\_rec ) --- The row containing the date.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A Date\_t representing the combined values.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DateFromRec}}
+
+\hypertarget{ecldoc:date.datefromrec}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{DateFromRec} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_rec date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines the fields from a Date\_rec to create a Date\_t
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| ROW ( Date\_rec ) --- The row containing the date.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A Date\_t representing the combined values.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+TimeFromTimeRec}}
+
+\hypertarget{ecldoc:date.timefromtimerec}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_t} & \textbf{TimeFromTimeRec} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Time\_rec time)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines the fields from a Time\_rec to create a Time\_t
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time}} ||| ROW ( Time\_rec ) --- The row containing the time.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- A Time\_t representing the combined values.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DateFromDateTimeRec}}
+
+\hypertarget{ecldoc:date.datefromdatetimerec}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{DateFromDateTimeRec} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DateTime\_rec datetime)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines the date fields from a DateTime\_rec to create a Date\_t
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{datetime}} ||| ROW ( DateTime\_rec ) --- The row containing the datetime.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A Date\_t representing the combined values.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+TimeFromDateTimeRec}}
+
+\hypertarget{ecldoc:date.timefromdatetimerec}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_t} & \textbf{TimeFromDateTimeRec} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DateTime\_rec datetime)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines the time fields from a DateTime\_rec to create a Time\_t
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{datetime}} ||| ROW ( DateTime\_rec ) --- The row containing the datetime.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- A Time\_t representing the combined values.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SecondsFromDateTimeRec}}
+
+\hypertarget{ecldoc:date.secondsfromdatetimerec}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Seconds\_t} & \textbf{SecondsFromDateTimeRec} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DateTime\_rec datetime, BOOLEAN is\_local\_time = FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Combines the date and time fields from a DateTime\_rec to create a Seconds\_t
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{datetime}} ||| ROW ( DateTime\_rec ) --- The row containing the datetime.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{is\_local\_time}} ||| BOOLEAN --- TRUE if the datetime components are expressed in local time rather than UTC, FALSE if the components are expressed in UTC. Optional, defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- A Seconds\_t representing the combined values.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FromStringToDate}}
+
+\hypertarget{ecldoc:date.fromstringtodate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{FromStringToDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING date\_text, VARSTRING format)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a string to a Date\_t using the relevant string format. The resulting date must be representable within the Gregorian calendar after the year 1600.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date\_text}} ||| STRING --- The string to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{format}} ||| VARSTRING --- The format of the input string. (See documentation for strftime)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The date that was matched in the string. Returns 0 if failed to match or if the date components match but the result is an invalid date. Supported characters: \%B Full month name \%b or \%h Abbreviated month name \%d Day of month (two digits) \%e Day of month (two digits, or a space followed by a single digit) \%m Month (two digits) \%t Whitespace \%y year within century (00-99) \%Y Full year (yyyy) \%j Julian day (1-366) Common date formats American '\%m/\%d/\%Y' mm/dd/yyyy Euro '\%d/\%m/\%Y' dd/mm/yyyy Iso format '\%Y-\%m-\%d' yyyy-mm-dd Iso basic 'Y\%m\%d' yyyymmdd '\%d-\%b-\%Y' dd-mon-yyyy e.g., '21-Mar-1954'
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FromString}}
+
+\hypertarget{ecldoc:date.fromstring}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{FromString} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING date\_text, VARSTRING format)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a string to a date using the relevant string format.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date\_text}} ||| STRING --- The string to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{format}} ||| VARSTRING --- The format of the input string. (See documentation for strftime)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The date that was matched in the string. Returns 0 if failed to match.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FromStringToTime}}
+
+\hypertarget{ecldoc:date.fromstringtotime}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_t} & \textbf{FromStringToTime} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING time\_text, VARSTRING format)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a string to a Time\_t using the relevant string format.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date\_text}} |||  --- The string to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{format}} ||| VARSTRING --- The format of the input string. (See documentation for strftime)
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time\_text}} ||| STRING --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- The time that was matched in the string. Returns 0 if failed to match. Supported characters: \%H Hour (two digits) \%k (two digits, or a space followed by a single digit) \%M Minute (two digits) \%S Second (two digits) \%t Whitespace
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+MatchDateString}}
+
+\hypertarget{ecldoc:date.matchdatestring}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{MatchDateString} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING date\_text, SET OF VARSTRING formats)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Matches a string against a set of date string formats and returns a valid Date\_t object from the first format that successfully parses the string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date\_text}} ||| STRING --- The string to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{formats}} ||| SET ( VARSTRING ) --- A set of formats to check against the string. (See documentation for strftime)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The date that was matched in the string. Returns 0 if failed to match.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+MatchTimeString}}
+
+\hypertarget{ecldoc:date.matchtimestring}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_t} & \textbf{MatchTimeString} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING time\_text, SET OF VARSTRING formats)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Matches a string against a set of time string formats and returns a valid Time\_t object from the first format that successfully parses the string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time\_text}} ||| STRING --- The string to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{formats}} ||| SET ( VARSTRING ) --- A set of formats to check against the string. (See documentation for strftime)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- The time that was matched in the string. Returns 0 if failed to match.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DateToString}}
+
+\hypertarget{ecldoc:date.datetostring}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{DateToString} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date, VARSTRING format = '\%Y-\%m-\%d')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Formats a date as a string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{format}} ||| VARSTRING --- The format template to use for the conversion; see strftime() for appropriate values. The maximum length of the resulting string is 255 characters. Optional; defaults to '\%Y-\%m-\%d' which is YYYY-MM-DD.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- Blank if date cannot be formatted, or the date in the requested format.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+TimeToString}}
+
+\hypertarget{ecldoc:date.timetostring}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{TimeToString} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Time\_t time, VARSTRING format = '\%H:\%M:\%S')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Formats a time as a string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time}} ||| UNSIGNED3 --- The time to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{format}} ||| VARSTRING --- The format template to use for the conversion; see strftime() for appropriate values. The maximum length of the resulting string is 255 characters. Optional; defaults to '\%H:\%M:\%S' which is HH:MM:SS.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- Blank if the time cannot be formatted, or the time in the requested format.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+SecondsToString}}
+
+\hypertarget{ecldoc:date.secondstostring}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{SecondsToString} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Seconds\_t seconds, VARSTRING format = '\%Y-\%m-\%dT\%H:\%M:\%S')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a Seconds\_t value into a human-readable string using a format template.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{seconds}} ||| INTEGER8 --- The seconds since epoch.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{format}} ||| VARSTRING --- The format template to use for the conversion; see strftime() for appropriate values. The maximum length of the resulting string is 255 characters. Optional; defaults to '\%Y-\%m-\%dT\%H:\%M:\%S' which is YYYY-MM-DDTHH:MM:SS.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The converted seconds as a string.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ToString}}
+
+\hypertarget{ecldoc:date.tostring}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ToString} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date, VARSTRING format)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Formats a date as a string.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{format}} ||| VARSTRING --- The format the date is output in. (See documentation for strftime)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- Blank if date cannot be formatted, or the date in the requested format.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ConvertDateFormat}}
+
+\hypertarget{ecldoc:date.convertdateformat}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ConvertDateFormat} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING date\_text, VARSTRING from\_format='\%m/\%d/\%Y', VARSTRING to\_format='\%Y\%m\%d')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a date from one format to another
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{from\_format}} ||| VARSTRING --- The format the date is to be converted from.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date\_text}} ||| STRING --- The string containing the date to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to\_format}} ||| VARSTRING --- The format the date is to be converted to.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The converted string, or blank if it failed to match the format.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ConvertFormat}}
+
+\hypertarget{ecldoc:date.convertformat}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ConvertFormat} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING date\_text, VARSTRING from\_format='\%m/\%d/\%Y', VARSTRING to\_format='\%Y\%m\%d')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a date from one format to another
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{from\_format}} ||| VARSTRING --- The format the date is to be converted from.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date\_text}} ||| STRING --- The string containing the date to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to\_format}} ||| VARSTRING --- The format the date is to be converted to.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The converted string, or blank if it failed to match the format.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ConvertTimeFormat}}
+
+\hypertarget{ecldoc:date.converttimeformat}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ConvertTimeFormat} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING time\_text, VARSTRING from\_format='\%H\%M\%S', VARSTRING to\_format='\%H:\%M:\%S')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a time from one format to another
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time\_text}} ||| STRING --- The string containing the time to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{from\_format}} ||| VARSTRING --- The format the time is to be converted from.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to\_format}} ||| VARSTRING --- The format the time is to be converted to.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The converted string, or blank if it failed to match the format.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ConvertDateFormatMultiple}}
+
+\hypertarget{ecldoc:date.convertdateformatmultiple}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ConvertDateFormatMultiple} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING date\_text, SET OF VARSTRING from\_formats, VARSTRING to\_format='\%Y\%m\%d')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a date that matches one of a set of formats to another.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to\_format}} ||| VARSTRING --- The format the date is to be converted to.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date\_text}} ||| STRING --- The string containing the date to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{from\_formats}} ||| SET ( VARSTRING ) --- The list of formats the date is to be converted from.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The converted string, or blank if it failed to match the format.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ConvertFormatMultiple}}
+
+\hypertarget{ecldoc:date.convertformatmultiple}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ConvertFormatMultiple} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING date\_text, SET OF VARSTRING from\_formats, VARSTRING to\_format='\%Y\%m\%d')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a date that matches one of a set of formats to another.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to\_format}} ||| VARSTRING --- The format the date is to be converted to.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date\_text}} ||| STRING --- The string containing the date to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{from\_formats}} ||| SET ( VARSTRING ) --- The list of formats the date is to be converted from.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The converted string, or blank if it failed to match the format.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ConvertTimeFormatMultiple}}
+
+\hypertarget{ecldoc:date.converttimeformatmultiple}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} STRING} & \textbf{ConvertTimeFormatMultiple} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (STRING time\_text, SET OF VARSTRING from\_formats, VARSTRING to\_format='\%H:\%m:\%s')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Converts a time that matches one of a set of formats to another.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time\_text}} ||| STRING --- The string containing the time to be converted.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{to\_format}} ||| VARSTRING --- The format the time is to be converted to.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{from\_formats}} ||| SET ( VARSTRING ) --- The list of formats the time is to be converted from.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING} --- The converted string, or blank if it failed to match the format.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+AdjustDate}}
+
+\hypertarget{ecldoc:date.adjustdate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{AdjustDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date, INTEGER2 year\_delta = 0, INTEGER4 month\_delta = 0, INTEGER4 day\_delta = 0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Adjusts a date by incrementing or decrementing year, month and/or day values. The date must be in the Gregorian calendar after the year 1600. If the new calculated date is invalid then it will be normalized according to mktime() rules. Example: 20140130 + 1 month = 20140302.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date to adjust.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year\_delta}} ||| INTEGER2 --- The requested change to the year value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month\_delta}} ||| INTEGER4 --- The requested change to the month value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day\_delta}} ||| INTEGER4 --- The requested change to the day of month value; optional, defaults to zero.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The adjusted Date\_t value.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+AdjustDateBySeconds}}
+
+\hypertarget{ecldoc:date.adjustdatebyseconds}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{AdjustDateBySeconds} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date, INTEGER4 seconds\_delta)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Adjusts a date by adding or subtracting seconds. The date must be in the Gregorian calendar after the year 1600. If the new calculated date is invalid then it will be normalized according to mktime() rules. Example: 20140130 + 172800 seconds = 20140201.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date to adjust.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{seconds\_delta}} ||| INTEGER4 --- The requested change to the date, in seconds.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The adjusted Date\_t value.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+AdjustTime}}
+
+\hypertarget{ecldoc:date.adjusttime}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_t} & \textbf{AdjustTime} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Time\_t time, INTEGER2 hour\_delta = 0, INTEGER4 minute\_delta = 0, INTEGER4 second\_delta = 0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Adjusts a time by incrementing or decrementing hour, minute and/or second values. If the new calculated time is invalid then it will be normalized according to mktime() rules.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{second\_delta}} ||| INTEGER4 --- The requested change to the second of month value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time}} ||| UNSIGNED3 --- The time to adjust.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{minute\_delta}} ||| INTEGER4 --- The requested change to the minute value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{hour\_delta}} ||| INTEGER2 --- The requested change to the hour value; optional, defaults to zero.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- The adjusted Time\_t value.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+AdjustTimeBySeconds}}
+
+\hypertarget{ecldoc:date.adjusttimebyseconds}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_t} & \textbf{AdjustTimeBySeconds} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Time\_t time, INTEGER4 seconds\_delta)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Adjusts a time by adding or subtracting seconds. If the new calculated time is invalid then it will be normalized according to mktime() rules.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time}} ||| UNSIGNED3 --- The time to adjust.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{seconds\_delta}} ||| INTEGER4 --- The requested change to the time, in seconds.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- The adjusted Time\_t value.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+AdjustSeconds}}
+
+\hypertarget{ecldoc:date.adjustseconds}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Seconds\_t} & \textbf{AdjustSeconds} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Seconds\_t seconds, INTEGER2 year\_delta = 0, INTEGER4 month\_delta = 0, INTEGER4 day\_delta = 0, INTEGER4 hour\_delta = 0, INTEGER4 minute\_delta = 0, INTEGER4 second\_delta = 0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Adjusts a Seconds\_t value by adding or subtracting years, months, days, hours, minutes and/or seconds. This is performed by first converting the seconds into a full date/time structure, applying any delta values to individual date/time components, then converting the structure back to the number of seconds. This interim date must lie within Gregorian calendar after the year 1600. If the interim structure is found to have an invalid date/time then it will be normalized according to mktime() rules. Therefore, some delta values (such as ''1 month'') are actually relative to the value of the seconds argument.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{hour\_delta}} ||| INTEGER4 --- The requested change to the hour value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{seconds}} ||| INTEGER8 --- The number of seconds to adjust.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year\_delta}} ||| INTEGER2 --- The requested change to the year value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{second\_delta}} ||| INTEGER4 --- The requested change to the second of month value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{minute\_delta}} ||| INTEGER4 --- The requested change to the minute value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month\_delta}} ||| INTEGER4 --- The requested change to the month value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day\_delta}} ||| INTEGER4 --- The requested change to the day of month value; optional, defaults to zero.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- The adjusted Seconds\_t value.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+AdjustCalendar}}
+
+\hypertarget{ecldoc:date.adjustcalendar}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{AdjustCalendar} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date, INTEGER2 year\_delta = 0, INTEGER4 month\_delta = 0, INTEGER4 day\_delta = 0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Adjusts a date by incrementing or decrementing months and/or years. This routine uses the rule outlined in McGinn v. State, 46 Neb. 427, 65 N.W. 46 (1895): ''The term calendar month, whether employed in statutes or contracts, and not appearing to have been used in a different sense, denotes a period terminating with the day of the succeeding month numerically corresponding to the day of its beginning, less one. If there be no corresponding day of the succeeding month, it terminates with the last day thereof.'' The internet suggests similar legal positions exist in the Commonwealth and Germany. Note that day adjustments are performed after year and month adjustments using the preceding rules. As an example, Jan. 31, 2014 + 1 month will result in Feb. 28, 2014; Jan. 31, 2014 + 1 month + 1 day will result in Mar. 1, 2014.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date to adjust, in the Gregorian calendar after 1600.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year\_delta}} ||| INTEGER2 --- The requested change to the year value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month\_delta}} ||| INTEGER4 --- The requested change to the month value; optional, defaults to zero.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day\_delta}} ||| INTEGER4 --- The requested change to the day value; optional, defaults to zero.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- The adjusted Date\_t value.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+IsLocalDaylightSavingsInEffect}}
+
+\hypertarget{ecldoc:date.islocaldaylightsavingsineffect}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{IsLocalDaylightSavingsInEffect} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns a boolean indicating whether daylight savings time is currently in effect locally.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- TRUE if daylight savings time is currently in effect, FALSE otherwise.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LocalTimeZoneOffset}}
+
+\hypertarget{ecldoc:date.localtimezoneoffset}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} INTEGER4} & \textbf{LocalTimeZoneOffset} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the offset (in seconds) of the time represented from UTC, with positive values indicating locations east of the Prime Meridian. Given a UTC time in seconds since epoch, you can find the local time by adding the result of this function to the seconds.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER4} --- The number of seconds offset from UTC.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CurrentDate}}
+
+\hypertarget{ecldoc:date.currentdate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{CurrentDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (BOOLEAN in\_local\_time = FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the current date.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{in\_local\_time}} ||| BOOLEAN --- TRUE if the returned value should be local to the cluster computing the date, FALSE for UTC. Optional, defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A Date\_t representing the current date.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Today}}
+
+\hypertarget{ecldoc:date.today}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{Today} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the current date in the local time zone.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- A Date\_t representing the current date.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CurrentTime}}
+
+\hypertarget{ecldoc:date.currenttime}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_t} & \textbf{CurrentTime} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (BOOLEAN in\_local\_time = FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the current time of day
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{in\_local\_time}} ||| BOOLEAN --- TRUE if the returned value should be local to the cluster computing the time, FALSE for UTC. Optional, defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED3} --- A Time\_t representing the current time of day.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CurrentSeconds}}
+
+\hypertarget{ecldoc:date.currentseconds}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Seconds\_t} & \textbf{CurrentSeconds} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (BOOLEAN in\_local\_time = FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the current date and time as the number of seconds since epoch.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{in\_local\_time}} ||| BOOLEAN --- TRUE if the returned value should be local to the cluster computing the time, FALSE for UTC. Optional, defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- A Seconds\_t representing the current time in UTC or local time, depending on the argument.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CurrentTimestamp}}
+
+\hypertarget{ecldoc:date.currenttimestamp}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Timestamp\_t} & \textbf{CurrentTimestamp} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (BOOLEAN in\_local\_time = FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the current date and time as the number of microseconds since epoch.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{in\_local\_time}} ||| BOOLEAN --- TRUE if the returned value should be local to the cluster computing the time, FALSE for UTC. Optional, defaults to FALSE.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- A Timestamp\_t representing the current time in microseconds in UTC or local time, depending on the argument.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+DatesForMonth}}
+
+\hypertarget{ecldoc:date.datesformonth}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{DatesForMonth} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t as\_of\_date = CurrentDate(FALSE))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the beginning and ending dates for the month surrounding the given date.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{as\_of\_date}} ||| UNSIGNED4 --- The reference date from which the month will be calculated. This date must be a date within the Gregorian calendar. Optional, defaults to the current date in UTC.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- Module with exported attributes for startDate and endDate.
+\end{description}
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:date.datesformonth.result.startdate}{startDate}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.datesformonth.result.enddate}{endDate}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+startDate}}
+
+\hypertarget{ecldoc:date.datesformonth.result.startdate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.datesformonth}{DatesForMonth} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{startDate} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+endDate}}
+
+\hypertarget{ecldoc:date.datesformonth.result.enddate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.datesformonth}{DatesForMonth} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{endDate} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+DatesForWeek}}
+
+\hypertarget{ecldoc:date.datesforweek}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{DatesForWeek} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t as\_of\_date = CurrentDate(FALSE))}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Returns the beginning and ending dates for the week surrounding the given date (Sunday marks the beginning of a week).
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{as\_of\_date}} ||| UNSIGNED4 --- The reference date from which the week will be calculated. This date must be a date within the Gregorian calendar. Optional, defaults to the current date in UTC.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{} --- Module with exported attributes for startDate and endDate.
+\end{description}
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:date.datesforweek.result.startdate}{startDate}
+: No Documentation Found
+\item \hyperlink{ecldoc:date.datesforweek.result.enddate}{endDate}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+startDate}}
+
+\hypertarget{ecldoc:date.datesforweek.result.startdate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.datesforweek}{DatesForWeek} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{startDate} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+endDate}}
+
+\hypertarget{ecldoc:date.datesforweek.result.enddate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:date.datesforweek}{DatesForWeek} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_t} & \textbf{endDate} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+IsValidDate}}
+
+\hypertarget{ecldoc:date.isvaliddate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{IsValidDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date, INTEGER2 yearLowerBound = 1800, INTEGER2 yearUpperBound = 2100)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests whether a date is valid, both by range-checking the year and by validating each of the other individual components.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The date to validate.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{yearLowerBound}} ||| INTEGER2 --- The minimum acceptable year. Optional; defaults to 1800.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{yearUpperBound}} ||| INTEGER2 --- The maximum acceptable year. Optional; defaults to 2100.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- TRUE if the date is valid, FALSE otherwise.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+IsValidGregorianDate}}
+
+\hypertarget{ecldoc:date.isvalidgregoriandate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{IsValidGregorianDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Date\_t date)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests whether a date is valid in the Gregorian calendar. The year must be between 1601 and 30827.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{date}} ||| UNSIGNED4 --- The Date\_t to validate.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- TRUE if the date is valid, FALSE otherwise.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+IsValidTime}}
+
+\hypertarget{ecldoc:date.isvalidtime}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} BOOLEAN} & \textbf{IsValidTime} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Time\_t time)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Tests whether a time is valid.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{time}} ||| UNSIGNED3 --- The time to validate.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- TRUE if the time is valid, FALSE otherwise.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} TRANSFORM}
+CreateDate}}
+
+\hypertarget{ecldoc:date.createdate}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_rec} & \textbf{CreateDate} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A transform to create a Date\_rec from the individual elements
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day}} ||| UNSIGNED1 --- The day (1..daysInMonth).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month}} ||| UNSIGNED1 --- The month (1-12).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} ||| INTEGER2 --- The year
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{Date\_rec} --- A transform that creates a Date\_rec containing the date.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} TRANSFORM}
+CreateDateFromSeconds}}
+
+\hypertarget{ecldoc:date.createdatefromseconds}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Date\_rec} & \textbf{CreateDateFromSeconds} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Seconds\_t seconds)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A transform to create a Date\_rec from a Seconds\_t value.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{seconds}} ||| INTEGER8 --- The number seconds since epoch.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{Date\_rec} --- A transform that creates a Date\_rec containing the date.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} TRANSFORM}
+CreateTime}}
+
+\hypertarget{ecldoc:date.createtime}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_rec} & \textbf{CreateTime} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (UNSIGNED1 hour, UNSIGNED1 minute, UNSIGNED1 second)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A transform to create a Time\_rec from the individual elements
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{second}} ||| UNSIGNED1 --- The second (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{minute}} ||| UNSIGNED1 --- The minute (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{hour}} ||| UNSIGNED1 --- The hour (0-23).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{Time\_rec} --- A transform that creates a Time\_rec containing the time of day.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} TRANSFORM}
+CreateTimeFromSeconds}}
+
+\hypertarget{ecldoc:date.createtimefromseconds}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} Time\_rec} & \textbf{CreateTimeFromSeconds} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Seconds\_t seconds)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A transform to create a Time\_rec from a Seconds\_t value.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{seconds}} ||| INTEGER8 --- The number seconds since epoch.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{Time\_rec} --- A transform that creates a Time\_rec containing the time of day.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} TRANSFORM}
+CreateDateTime}}
+
+\hypertarget{ecldoc:date.createdatetime}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DateTime\_rec} & \textbf{CreateDateTime} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day, UNSIGNED1 hour, UNSIGNED1 minute, UNSIGNED1 second)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A transform to create a DateTime\_rec from the individual elements
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{day}} ||| UNSIGNED1 --- The day (1..daysInMonth).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{second}} ||| UNSIGNED1 --- The second (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{minute}} ||| UNSIGNED1 --- The minute (0-59).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{month}} ||| UNSIGNED1 --- The month (1-12).
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{year}} ||| INTEGER2 --- The year
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{hour}} ||| UNSIGNED1 --- The hour (0-23).
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{DateTime\_rec} --- A transform that creates a DateTime\_rec containing date and time components.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} TRANSFORM}
+CreateDateTimeFromSeconds}}
+
+\hypertarget{ecldoc:date.createdatetimefromseconds}{}
+\hspace{0pt} \hyperlink{ecldoc:Date}{Date} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DateTime\_rec} & \textbf{CreateDateTimeFromSeconds} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Seconds\_t seconds)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+A transform to create a DateTime\_rec from a Seconds\_t value.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{seconds}} ||| INTEGER8 --- The number seconds since epoch.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{DateTime\_rec} --- A transform that creates a DateTime\_rec containing date and time components.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

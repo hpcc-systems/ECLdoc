@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../Types.ecl.xml"/><Source name="ML_Core.Interfaces.IClassify" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Interfaces/IClassify.ecl" target="IClassify.ecl.xml">
+  <Definition exported="1" fullname="ML_Core.Interfaces.IClassify" inherittype="local" line="8" name="IClassify" type="module" virtual="1">
+   <Definition exported="1" fullname="ml_core.interfaces.iclassify.getmodel" inherittype="local" line="17" name="GetModel" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Calculate the model to fit the observation data to the observed classes.</content><return>the encoded model</return><param>observations the observed explanatory values</param><param>classifications the observed classification used to build the model</param><firstline>Calculate the model to fit the observation data to the observed classes</firstline></Documentation>
+    <Signature name="GetModel" ret="DATASET(Types.Layout_Model)" param="(DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)" hlen="36">DATASET(Types.Layout_Model) GetModel(DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)</Signature><Params>
+     <Param name="observations">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="classifications">
+      <Type type="table">
+       <Type fullname="ml_core.types.discretefield" name="DiscreteField" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.interfaces.iclassify.classify" inherittype="local" line="27" name="Classify" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="integer4"/>
+      </Field>
+      <Field name="conf">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Classify the observations using a model.</content><return>Classification with a confidence value</return><param>model The model, which must be produced by a corresponding getModel function.</param><param>new_observations observations to be classified</param><firstline>Classify the observations using a model</firstline></Documentation>
+    <Signature name="Classify" ret="DATASET(Types.Classify_Result)" param="(DATASET(Types.Layout_Model) model, DATASET(Types.NumericField) new_observations)" hlen="39">DATASET(Types.Classify_Result) Classify(DATASET(Types.Layout_Model) model, DATASET(Types.NumericField) new_observations)</Signature><Params>
+     <Param name="model">
+      <Type type="table">
+       <Type fullname="ml_core.types.layout_model" name="Layout_Model" type="record"/>
+      </Type>
+     </Param>
+     <Param name="new_observations">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.interfaces.iclassify.report" inherittype="local" line="39" name="Report" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="classifier">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="actual_class">
+       <Type type="integer4"/>
+      </Field>
+      <Field name="predict_class">
+       <Type type="integer4"/>
+      </Field>
+      <Field name="occurs">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="correct">
+       <Type type="boolean"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Report the confusion matrix for the classifier and training data.</content><return>the confusion matrix showing correct and incorrect results</return><param>model the encoded model</param><param>observations the explanatory values.</param><param>classifications the classifications associated with the observations</param><firstline>Report the confusion matrix for the classifier and training data</firstline></Documentation>
+    <Signature name="Report" ret="DATASET(Types.Confusion_Detail)" param="(DATASET(Types.Layout_Model) model, DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)" hlen="38">DATASET(Types.Confusion_Detail) Report(DATASET(Types.Layout_Model) model, DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)</Signature><Params>
+     <Param name="model">
+      <Type type="table">
+       <Type fullname="ml_core.types.layout_model" name="Layout_Model" type="record"/>
+      </Type>
+     </Param>
+     <Param name="observations">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="classifications">
+      <Type type="table">
+       <Type fullname="ml_core.types.discretefield" name="DiscreteField" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Documentation>
+    <content>Interface definition for Classification. Actual implementation modules will probably take parameters.</content><firstline>Interface definition for Classification</firstline></Documentation>
+   <Signature name="IClassify" ret="" param="" hlen="9">IClassify</Signature><Parents/>
+  </Definition>
+  <Import name="ML_Core" ref="ML_Core" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Types" ref="ML_Core.Types" target="../Types.ecl.xml"/>
+ <Documentation>
+    <content>Interface definition for Classification. Actual implementation modules will probably take parameters.</content><firstline>Interface definition for Classification</firstline></Documentation>
+   </Source>
+</Meta>

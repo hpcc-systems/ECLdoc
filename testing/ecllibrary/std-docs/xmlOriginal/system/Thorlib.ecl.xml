@@ -1,0 +1,136 @@
+<Meta>
+ <Source name="system.Thorlib" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/system/Thorlib.ecl">
+  <Definition body="451"
+              end="1166"
+              inherittype="local"
+              line="11"
+              name="externals"
+              start="439"
+              type="module">
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="node"
+               inherittype="local"
+               line="13"
+               name="node"
+               start="0"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="nodes"
+               inherittype="local"
+               line="14"
+               name="nodes"
+               start="0"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="l2p"
+               inherittype="local"
+               line="15"
+               name="l2p"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="create">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="getfileoffset"
+               inherittype="local"
+               line="16"
+               name="getFileOffset"
+               start="0"
+               type="function">
+    <Type type="unsigned8"/>
+    <Params>
+     <Param name="lfname">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="daliserver"
+               inherittype="local"
+               line="17"
+               name="daliServer"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="cluster"
+               inherittype="local"
+               line="18"
+               name="cluster"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="getexpandlogicalname"
+               inherittype="local"
+               line="19"
+               name="getExpandLogicalName"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="group"
+               inherittype="local"
+               line="20"
+               name="group"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="platform"
+               inherittype="local"
+               line="21"
+               name="platform"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

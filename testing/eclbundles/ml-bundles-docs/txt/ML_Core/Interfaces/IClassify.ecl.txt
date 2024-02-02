@@ -1,0 +1,70 @@
+IMPORTS
+=======
+
+
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+ML_Core.Types <../Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : IClassify
+----------------------------------------------------------------------------------------------------------------------------------
+
+Interface definition for Classification. Actual implementation modules will
+probably take parameters.
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(Types.Layout_Model) GetModel(DATASET(Types.NumericField) observations,
+  |                                                DATASET(Types.DiscreteField) classifications)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Calculate the model to fit the observation data to the observed classes.
+  | 
+  | Parameter : observations TABLE ( NumericField ) --- the observed
+  |                          explanatory values
+  | 
+  | Parameter : classifications TABLE ( DiscreteField ) --- the observed
+  |                             classification used to build the model
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value } ) the encoded model
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(Types.Classify_Result) Classify(DATASET(Types.Layout_Model) model,
+  |                                                   DATASET(Types.NumericField) new_observations)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Classify the observations using a model.
+  | 
+  | Parameter : model TABLE ( Layout_Model ) --- The model, which must
+  |                   be produced by a corresponding getModel function.
+  | 
+  | Parameter : new_observations TABLE ( NumericField ) --- observations to be
+  |                              classified
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , INTEGER4 value , REAL8 conf } )
+  |          Classification with a confidence value
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(Types.Confusion_Detail) Report(DATASET(Types.Layout_Model) model,
+  |                                                  DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Report the confusion matrix for the classifier and training data.
+  | 
+  | Parameter : model TABLE ( Layout_Model ) --- the encoded model
+  | 
+  | Parameter : observations TABLE ( NumericField ) --- the explanatory values.
+  | 
+  | Parameter : classifications TABLE ( DiscreteField ) --- the classifications
+  |                             associated with the observations
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 classifier ,
+  |          INTEGER4 actual_class , INTEGER4 predict_class ,
+  |          UNSIGNED4 occurs , BOOLEAN correct } ) the
+  |          confusion matrix showing correct and incorrect
+  |          results
+  | 

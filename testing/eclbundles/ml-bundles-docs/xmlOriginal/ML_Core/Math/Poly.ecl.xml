@@ -1,0 +1,34 @@
+<Meta>
+ <Source name="ML_Core.Math.Poly" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Poly.ecl">
+  <Definition body="438"
+              end="706"
+              exported="1"
+              fullname="ml_core.math.poly"
+              inherittype="local"
+              line="10"
+              name="Poly"
+              start="388"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Evaluate a polynomial from a set of co-effs. Co-effs 1 is
+ * assumed to be the HIGH order of the equation.
+ * Thus for ax^2+bx+c - the set would need to be Coef := [a,b,c];
+ *@param x the value of x in the polynomial
+ *@param Coeffs a set of coefficients forthe polynomial. The ALL
+ *              set is considered to be all zero values
+ *@return value of the polynomial at x&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="Coeffs">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

@@ -1,0 +1,22 @@
+IMPORTS
+=======
+
+
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+EMBED : REAL8 log_gamma(REAL8 x)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Return the value of the log gamma function of the absolute value of X. A
+wrapper for the standard C lgamma function. Avoids the race condition found
+on some platforms by taking the absolute value of the of the input
+argument.
+
+Parameter : x REAL8 --- the input x
+
+Return : REAL8 the value of the log of the GAMMA evaluated
+         at ABS(x)
+

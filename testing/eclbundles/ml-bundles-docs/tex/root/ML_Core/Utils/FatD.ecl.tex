@@ -1,0 +1,66 @@
+\chapter*{\color{headfile}
+{\large ML\_Core\slash\hspace{0pt}}
+{\large Utils\slash\hspace{0pt}}
+ \\
+FatD
+}
+\hypertarget{ecldoc:toc:ML_Core.Utils.FatD}{}
+\hyperlink{ecldoc:toc:root/ML_Core/Utils}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+FatD}}
+
+\hypertarget{ecldoc:ml_core.utils.fatd}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.DiscreteField)} & \textbf{FatD} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.DiscreteField) d0, Types.t\_Discrete v=0)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Will take a potentially sparse file d and fill in the missing with value v for Discrete Field datasets
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{v}} ||| INTEGER4 --- The value to assign missing records
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{d0}} ||| TABLE ( DiscreteField ) --- They myriad format Discrete Field dataset to be filled
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , INTEGER4 value \} )} --- A full Discrete Field dataset with every field populated
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

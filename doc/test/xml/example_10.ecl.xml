@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/home/tetrapod/source/ecldoc/testing/test/intest/example_3.ecl" name="intest.example_3" target="intest/example_3.ecl.xml"/><Source name="example_10" sourcePath="/home/tetrapod/source/ecldoc/testing/test/example_10.ecl" target="example_10.ecl.xml">
+  <Definition exported="1" fullname="example_10" inherittype="local" line="3" name="example_10" type="module">
+   <Definition exported="1" fullname="intest.Example_3.mod_1" inherittype="inherited" line="7" name="mod_1" type="module" target="intest/example_3.ecl.xml">
+    <Signature name="mod_1" ret="" param="" hlen="5">mod_1</Signature><Parents/>
+   </Definition>
+   <Signature name="example_10" ret="" param="" hlen="10">example_10</Signature><Parents>
+    <Parent name="Example_3" ref="intest.Example_3" target="intest/example_3.ecl.xml"/>
+   </Parents>
+  </Definition>
+  <Import name="intest" ref="intest" remotescope="1" target="/home/tetrapod/source/ecldoc/doc/test/$$_ECLDOC-FORM_$$/intest/pkg.toc.xml"/>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

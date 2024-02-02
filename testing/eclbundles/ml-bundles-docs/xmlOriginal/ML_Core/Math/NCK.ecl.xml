@@ -1,0 +1,74 @@
+<Meta>
+ <Source name="ML_Core.Math.Fac" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/Fac.ecl">
+  <Definition body="136"
+              end="263"
+              exported="1"
+              fullname="ml_core.math.fac"
+              inherittype="local"
+              line="6"
+              name="Fac"
+              start="104"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Factorial function
+ *@param i the value used, (i)(i-1)(i-2)...(2)
+ *@return the factorial i!&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="i">
+     <Type type="unsigned2"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.NCK" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/NCK.ecl">
+  <Import body="0"
+          end="7"
+          fullname="ML_Core.Math"
+          inherittype="local"
+          line="1"
+          name="Utils"
+          ref="ML_Core.Math"
+          start="7"/>
+  <Definition body="25"
+              end="36"
+              fullname="ml_core.math.fac"
+              inherittype="local"
+              line="2"
+              name="Fac"
+              start="19"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Factorial function
+ *@param i the value used, (i)(i-1)(i-2)...(2)
+ *@return the factorial i!&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="i">
+     <Type type="unsigned2"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="428"
+              end="454"
+              exported="1"
+              fullname="ml_core.math.nck"
+              inherittype="local"
+              line="12"
+              name="NCK"
+              start="385"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="N">
+     <Type type="integer2"/>
+    </Param>
+    <Param name="K">
+     <Type type="integer2"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

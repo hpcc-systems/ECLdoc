@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Constants.ecl" name="LogisticRegression.Constants" target="Constants.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Interfaces/IClassify.ecl" name="ML_Core.Interfaces.IClassify" target="../ML_Core/Interfaces/IClassify.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/DataStats.ecl" name="LogisticRegression.DataStats" target="DataStats.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl" name="std.BLAS" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/dimm.ecl" name="LogisticRegression.dimm" target="dimm.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl" name="std.system.thorlib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/IRLS/GetModel_local.ecl" name="LogisticRegression.IRLS.getModel_local" target="IRLS/GetModel_local.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="../PBblas/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Converted.ecl" name="PBblas.Converted" target="../PBblas/Converted.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Types.ecl" name="PBblas.internal.Types" target="../PBblas/internal/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensions.ecl" name="PBblas.internal.BlockDimensions" target="../PBblas/internal/BlockDimensions.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsMultiply.ecl" name="PBblas.internal.BlockDimensionsMultiply" target="../PBblas/internal/BlockDimensionsMultiply.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsSolve.ecl" name="PBblas.internal.BlockDimensionsSolve" target="../PBblas/internal/BlockDimensionsSolve.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MatDims.ecl" name="PBblas.internal.MatDims" target="../PBblas/internal/MatDims.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/MatUtils.ecl" name="PBblas.MatUtils" target="../PBblas/MatUtils.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MakeR8Set.ecl" name="PBblas.internal.MakeR8Set" target="../PBblas/internal/MakeR8Set.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Converted.ecl" name="PBblas.internal.Converted" target="../PBblas/internal/Converted.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/gemm.ecl" name="PBblas.gemm" target="../PBblas/gemm.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/getrf.ecl" name="PBblas.getrf" target="../PBblas/getrf.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/trsm.ecl" name="PBblas.trsm" target="../PBblas/trsm.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Constants.ecl" name="PBblas.Constants" target="../PBblas/Constants.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Vector2Diag.ecl" name="PBblas.Vector2Diag" target="../PBblas/Vector2Diag.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/IElementFunc.ecl" name="PBblas.IElementFunc" target="../PBblas/IElementFunc.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Apply2Elements.ecl" name="PBblas.Apply2Elements" target="../PBblas/Apply2Elements.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/axpy.ecl" name="PBblas.axpy" target="../PBblas/axpy.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/asum.ecl" name="PBblas.asum" target="../PBblas/asum.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/IRLS/GetModel_global.ecl" name="LogisticRegression.IRLS.getModel_global" target="IRLS/GetModel_global.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/IRLS/GetModel.ecl" name="LogisticRegression.IRLS.GetModel" target="IRLS/GetModel.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/LogitScore.ecl" name="LogisticRegression.LogitScore" target="LogitScore.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/LogitPredict.ecl" name="LogisticRegression.LogitPredict" target="LogitPredict.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/ExtractBeta.ecl" name="LogisticRegression.ExtractBeta" target="ExtractBeta.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Confusion.ecl" name="LogisticRegression.Confusion" target="Confusion.ecl.xml"/><Source name="LogisticRegression.BinomialLogisticRegression" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/BinomialLogisticRegression.ecl" target="BinomialLogisticRegression.ecl.xml">
+  <Definition exported="1" fullname="logisticregression.binomiallogisticregression" inherittype="local" line="14" name="BinomialLogisticRegression" type="module">
+   <Params>
+    <Param name="max_iter">
+     <Type type="unsigned8"/>
+    </Param>
+    <Param name="epsilon">
+     <Type type="real8"/>
+    </Param>
+    <Param name="ridge">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+   <Parents>
+    <Parent name="IClassify" ref="ML_Core.Interfaces.IClassify" target="../ML_Core/Interfaces/IClassify.ecl.xml"/>
+   </Parents>
+   <Definition exported="1" fullname="logisticregression.binomiallogisticregression.getmodel" inherittype="override" line="26" name="GetModel" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Calculate the model to fit the observation data to the observed classes.</content><return>the encoded model</return><param>observations the observed explanatory values</param><param>classifications the observed classification used to build the model</param><firstline>Calculate the model to fit the observation data to the observed classes</firstline></Documentation>
+    <Signature name="GetModel" ret="DATASET(Types.Layout_Model)" param="(DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)" hlen="36">DATASET(Types.Layout_Model) GetModel(DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)</Signature><Params>
+     <Param name="observations">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="classifications">
+      <Type type="table">
+       <Type fullname="ml_core.types.discretefield" name="DiscreteField" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.binomiallogisticregression.classify" inherittype="override" line="37" name="Classify" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="integer4"/>
+      </Field>
+      <Field name="conf">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Classify the observations using a model.</content><return>Classification with a confidence value</return><param>model The model, which must be produced by a corresponding getModel function.</param><param>new_observations observations to be classified</param><firstline>Classify the observations using a model</firstline></Documentation>
+    <Signature name="Classify" ret="DATASET(Types.Classify_Result)" param="(DATASET(Types.Layout_Model) model, DATASET(Types.NumericField) new_observations)" hlen="39">DATASET(Types.Classify_Result) Classify(DATASET(Types.Layout_Model) model, DATASET(Types.NumericField) new_observations)</Signature><Params>
+     <Param name="model">
+      <Type type="table">
+       <Type fullname="ml_core.types.layout_model" name="Layout_Model" type="record"/>
+      </Type>
+     </Param>
+     <Param name="new_observations">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.binomiallogisticregression.report" inherittype="override" line="50" name="Report" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="classifier">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="actual_class">
+       <Type type="integer4"/>
+      </Field>
+      <Field name="predict_class">
+       <Type type="integer4"/>
+      </Field>
+      <Field name="occurs">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="correct">
+       <Type type="boolean"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Report the confusion matrix for the classifier and training data.</content><return>the confusion matrix showing correct and incorrect results</return><param>model the encoded model</param><param>observations the explanatory values.</param><param>classifications the classifications associated with the observations</param><firstline>Report the confusion matrix for the classifier and training data</firstline></Documentation>
+    <Signature name="Report" ret="DATASET(Types.Confusion_Detail)" param="(DATASET(Types.Layout_Model) model, DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)" hlen="38">DATASET(Types.Confusion_Detail) Report(DATASET(Types.Layout_Model) model, DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)</Signature><Params>
+     <Param name="model">
+      <Type type="table">
+       <Type fullname="ml_core.types.layout_model" name="Layout_Model" type="record"/>
+      </Type>
+     </Param>
+     <Param name="observations">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="classifications">
+      <Type type="table">
+       <Type fullname="ml_core.types.discretefield" name="DiscreteField" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Signature name="BinomialLogisticRegression" ret="" param="(UNSIGNED max_iter=200, REAL8 epsilon=Constants.default_epsilon, REAL8 ridge=Constants.default_ridge)" hlen="26">BinomialLogisticRegression(UNSIGNED max_iter=200, REAL8 epsilon=Constants.default_epsilon, REAL8 ridge=Constants.default_ridge)</Signature><Documentation>
+    <content>Binomial logistic regression using iteratively re-weighted least squares.</content><param>max_iter maximum number of iterations to try</param><param>epsilon the minimum change in the Beta value estimate to continue</param><param>ridge a value to populate a diagonal matrix that is added to a matrix help assure that the matrix is invertible.</param><firstline>Binomial logistic regression using iteratively re-weighted least squares</firstline></Documentation>
+  </Definition>
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Constants" ref="LogisticRegression.Constants" target="Constants.ecl.xml"/>
+  <Import name="Interfaces" ref="ML_Core.Interfaces" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Interfaces/pkg.toc.xml"/>
+  <Import name="Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+ <Documentation>
+    <content>Binomial logistic regression using iteratively re-weighted least squares.</content><param>max_iter maximum number of iterations to try</param><param>epsilon the minimum change in the Beta value estimate to continue</param><param>ridge a value to populate a diagonal matrix that is added to a matrix help assure that the matrix is invertible.</param><firstline>Binomial logistic regression using iteratively re-weighted least squares</firstline></Documentation>
+  </Source>
+</Meta>

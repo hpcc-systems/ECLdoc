@@ -1,0 +1,8 @@
+Name:        LogisticRegression
+Version:     1.0.0
+Description: Logistic Regression implementation
+License:     http://www.apache.org/licenses/LICENSE-2.0
+Copyright:   Copyright (C) 2017 HPCC Systems
+Authors:     HPCCSystems
+DependsOn:   ML_Core, PBblas
+Platform:    6.2.0

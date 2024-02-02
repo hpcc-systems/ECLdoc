@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Generate.ecl" name="ML_Core.Generate" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Generate.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Constants.ecl" name="ML_Core.Constants" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Constants.ecl.xml"/><Depends sourcePath="lib_stringlib" target="lib_stringlib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/Str.ecl" name="std.Str" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/Str.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Config.ecl" name="ML_Core.Config" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Config.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl" name="std.system.ThorLib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Utils/SequenceInField.ecl" name="ML_Core.Utils.SequenceInField" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Utils/SequenceInField.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/FieldAggregates.ecl" name="ML_Core.FieldAggregates" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/FieldAggregates.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl" name="ML_Core.Discretize" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Types.ecl" name="PBblas.internal.Types" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Types.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensions.ecl" name="PBblas.internal.BlockDimensions" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensions.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsMultiply.ecl" name="PBblas.internal.BlockDimensionsMultiply" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsMultiply.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsSolve.ecl" name="PBblas.internal.BlockDimensionsSolve" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsSolve.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MatDims.ecl" name="PBblas.internal.MatDims" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MatDims.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/MatUtils.ecl" name="PBblas.MatUtils" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/MatUtils.ecl.xml"/><Source name="import_test" sourcePath="/media/sarthak/Data/ecldoc/testing/import-test/import_test.ecl" target="import_test.ecl.xml">
+  <Definition exported="1" fullname="ML_Core.Discretize" inherittype="local" line="8" name="import_test" type="module" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+   <Definition exported="1" inherittype="local" line="18" name="c_Method" type="attribute" fullname="ecldoc-c_Method">
+    <Signature name="c_Method" ret="" param="" hlen="8">c_Method</Signature><Type type="unsigned4"/>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.discretize.r_method" inherittype="local" line="19" name="r_Method" type="record" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+    <Field name="fields">
+     <Type type="set">
+      <Type type="unsigned4"/>
+     </Type>
+    </Field>
+    <Field name="method">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="iParam1">
+     <Type type="integer8"/>
+    </Field>
+    <Field name="rParam1">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="r_Method" ret="" param="" hlen="8">r_Method</Signature><Field name="rParam2">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.discretize.i_byrounding" inherittype="local" line="35" name="i_ByRounding" type="function" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+    <Type type="table">
+     <Type fullname="ml_core.discretize.r_method" name="r_Method" type="record"/>
+    </Type>
+    <Signature name="i_ByRounding" ret="" param="(SET OF Types.t_FieldNumber f, REAL Scale=1.0,REAL Delta=0.0)" hlen="12">i_ByRounding(SET OF Types.t_FieldNumber f, REAL Scale=1.0,REAL Delta=0.0)</Signature><Params>
+     <Param name="f">
+      <Type type="set">
+       <Type type="unsigned4"/>
+      </Type>
+     </Param>
+     <Param name="Scale">
+      <Type type="real8"/>
+     </Param>
+     <Param name="Delta">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.discretize.byrounding" inherittype="local" line="39" name="ByRounding" type="function" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="integer4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="ByRounding" ret="" param="(DATASET(Types.NumericField) d,REAL Scale=1.0, REAL Delta=0.0)" hlen="10">ByRounding(DATASET(Types.NumericField) d,REAL Scale=1.0, REAL Delta=0.0)</Signature><Params>
+     <Param name="d">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="Scale">
+      <Type type="real8"/>
+     </Param>
+     <Param name="Delta">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.discretize.i_bybucketing" inherittype="local" line="52" name="i_ByBucketing" type="function" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+    <Type type="table">
+     <Type fullname="ml_core.discretize.r_method" name="r_Method" type="record"/>
+    </Type>
+    <Signature name="i_ByBucketing" ret="" param="(SET OF Types.t_FieldNumber f, Types.t_Discrete N=ML_Core.Config.Discrete)" hlen="13">i_ByBucketing(SET OF Types.t_FieldNumber f, Types.t_Discrete N=ML_Core.Config.Discrete)</Signature><Params>
+     <Param name="f">
+      <Type type="set">
+       <Type type="unsigned4"/>
+      </Type>
+     </Param>
+     <Param name="N">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.discretize.bybucketing" inherittype="local" line="55" name="ByBucketing" type="function" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="integer4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="ByBucketing" ret="" param="(DATASET(Types.NumericField) d, Types.t_Discrete N=ML_Core.Config.Discrete)" hlen="11">ByBucketing(DATASET(Types.NumericField) d, Types.t_Discrete N=ML_Core.Config.Discrete)</Signature><Params>
+     <Param name="d">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="N">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.discretize.i_bytiling" inherittype="local" line="69" name="i_ByTiling" type="function" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+    <Type type="table">
+     <Type fullname="ml_core.discretize.r_method" name="r_Method" type="record"/>
+    </Type>
+    <Signature name="i_ByTiling" ret="" param="(SET OF Types.t_FieldNumber f, Types.t_Discrete N=ML_Core.Config.Discrete)" hlen="10">i_ByTiling(SET OF Types.t_FieldNumber f, Types.t_Discrete N=ML_Core.Config.Discrete)</Signature><Params>
+     <Param name="f">
+      <Type type="set">
+       <Type type="unsigned4"/>
+      </Type>
+     </Param>
+     <Param name="N">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.discretize.bytiling" inherittype="local" line="72" name="ByTiling" type="function" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="integer4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="ByTiling" ret="" param="(DATASET(Types.NumericField) d, Types.t_Discrete N=ML_Core.Config.Discrete)" hlen="8">ByTiling(DATASET(Types.NumericField) d, Types.t_Discrete N=ML_Core.Config.Discrete)</Signature><Params>
+     <Param name="d">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="N">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="ml_core.discretize.do" inherittype="local" line="87" name="Do" type="function" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+    <Type type="table">
+     <Type fullname="ml_core.types.discretefield" name="DiscreteField" type="record"/>
+    </Type>
+    <Signature name="Do" ret="" param="(DATASET(Types.NumericField) d, DATASET(r_Method) to_do)" hlen="2">Do(DATASET(Types.NumericField) d, DATASET(r_Method) to_do)</Signature><Params>
+     <Param name="d">
+      <Type type="table">
+       <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="to_do">
+      <Type type="table">
+       <Type fullname="ml_core.discretize.r_method" name="r_Method" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Documentation>
+    <firstline>This module exists to turn a dataset of numberfields into a dataset of DiscreteFields</firstline><internal>True</internal><content>This module exists to turn a dataset of numberfields into a dataset of DiscreteFields. This is not quite as trivial as it seems as there are a number of different ways to make the underlying data discrete; and even within one method there may be different parameters. Further - it is quite probable that different methods are going to be desired for each field.</content></Documentation>
+   <Signature name="import_test" ret="" param="" hlen="11">import_test</Signature><Parents/>
+  </Definition>
+  <Import name="Generate" ref="ML_Core.Generate" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Generate.ecl.xml"/>
+  <Import name="Constants" ref="ML_Core.Constants" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Constants.ecl.xml">
+   </Import>
+  <Import name="Str" ref="std.Str" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/Str.ecl"/>
+  <Import name="ML_Core" ref="ML_Core" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Discretize" ref="ML_Core.Discretize" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl">
+   </Import>
+  <Import name="MatUtils" ref="PBblas.MatUtils" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/MatUtils.ecl.xml">
+   </Import>
+ <Documentation>
+    <firstline>This module exists to turn a dataset of numberfields into a dataset of DiscreteFields</firstline><internal>True</internal><content>This module exists to turn a dataset of numberfields into a dataset of DiscreteFields. This is not quite as trivial as it seems as there are a number of different ways to make the underlying data discrete; and even within one method there may be different parameters. Further - it is quite probable that different methods are going to be desired for each field.</content></Documentation>
+   </Source>
+</Meta>

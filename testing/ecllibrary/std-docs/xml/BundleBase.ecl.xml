@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="BundleBase" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/BundleBase.ecl" target="BundleBase.ecl.xml">
+  <Definition exported="1" fullname="BundleBase" inherittype="local" line="5" name="BundleBase" type="module" virtual="1">
+   <Definition exported="1" fullname="bundlebase.propertyrecord" inherittype="local" line="10" name="PropertyRecord" type="record">
+    <Field name="key">
+     <Type type="utf8"/>
+    </Field>
+    <Field name="value">
+     <Type type="utf8"/>
+    </Field>
+    <Signature name="PropertyRecord" ret="" param="" hlen="14">PropertyRecord</Signature><Attr name="$_payload_"/>
+   </Definition>
+   <Definition exported="1" fullname="bundlebase.name" inherittype="local" line="16" name="Name" type="attribute">
+    <Signature name="Name" ret="STRING" param="" hlen="11">STRING Name</Signature><Type type="string"/>
+   </Definition>
+   <Definition exported="1" fullname="bundlebase.description" inherittype="local" line="22" name="Description" type="attribute">
+    <Signature name="Description" ret="UTF8" param="" hlen="16">UTF8 Description</Signature><Type type="utf8"/>
+   </Definition>
+   <Definition exported="1" fullname="bundlebase.authors" inherittype="local" line="32" name="Authors" type="attribute">
+    <Signature name="Authors" ret="SET OF UTF8" param="" hlen="19">SET OF UTF8 Authors</Signature><Type type="set">
+     <Type type="utf8"/>
+    </Type>
+   </Definition>
+   <Definition exported="1" fullname="bundlebase.license" inherittype="local" line="39" name="License" type="attribute">
+    <Signature name="License" ret="UTF8" param="" hlen="12">UTF8 License</Signature><Type type="utf8"/>
+   </Definition>
+   <Definition exported="1" fullname="bundlebase.copyright" inherittype="local" line="45" name="Copyright" type="attribute">
+    <Signature name="Copyright" ret="UTF8" param="" hlen="14">UTF8 Copyright</Signature><Type type="utf8"/>
+   </Definition>
+   <Definition exported="1" fullname="bundlebase.dependson" inherittype="local" line="53" name="DependsOn" type="attribute">
+    <Signature name="DependsOn" ret="SET OF STRING" param="" hlen="23">SET OF STRING DependsOn</Signature><Type type="set">
+     <Type type="string"/>
+    </Type>
+   </Definition>
+   <Definition exported="1" fullname="bundlebase.version" inherittype="local" line="59" name="Version" type="attribute">
+    <Signature name="Version" ret="STRING" param="" hlen="14">STRING Version</Signature><Type type="string"/>
+   </Definition>
+   <Definition exported="1" fullname="bundlebase.properties" inherittype="local" line="65" name="Properties" type="attribute">
+    <Signature name="Properties" ret="" param="" hlen="10">Properties</Signature><Type type="dictionary">
+     <Type fullname="bundlebase.propertyrecord" name="PropertyRecord" type="record"/>
+    </Type>
+   </Definition>
+   <Definition exported="1" fullname="bundlebase.platformversion" inherittype="local" line="72" name="PlatformVersion" type="attribute">
+    <Signature name="PlatformVersion" ret="STRING" param="" hlen="22">STRING PlatformVersion</Signature><Type type="string"/>
+   </Definition>
+   <Signature name="BundleBase" ret="" param="" hlen="10">BundleBase</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

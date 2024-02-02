@@ -1,0 +1,34 @@
+IMPORTS
+=======
+
+
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <Types.ecl.txt>
+std.blas </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Layout_Cell) Apply2Elements(DATASET(Layout_Cell) X, IElementFunc f)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Apply a function to each element of the matrix Use PBblas.IElementFunc as
+the prototype function. Input and ouput may be a single matrix, or myriad
+matrixes with different work item ids.
+
+Parameter : X TABLE ( Layout_Cell ) --- A matrix (or multiple
+              matrices) in Layout_Cell form
+
+Parameter : f FUNCTION [ REAL8 , UNSIGNED4 , UNSIGNED4 ] ( REAL8
+              ) --- A function based on the IElementFunc
+              prototype
+
+Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+         UNSIGNED4 y , REAL8 v } ) A matrix (or multiple
+         matrices) in Layout_Cell form
+
+See : PBblas/IElementFunc
+
+See : PBblas/Types.Layout_Cell
+

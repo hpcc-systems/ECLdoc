@@ -1,0 +1,101 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+potrf
+}
+\hypertarget{ecldoc:toc:PBblas.potrf}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+PBblas.Types |
+std.blas |
+PBblas.internal |
+PBblas.internal.Types |
+PBblas.internal.MatDims |
+PBblas.internal.Converted |
+std.system.Thorlib |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+potrf}}
+
+\hypertarget{ecldoc:pbblas.potrf}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{potrf} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Triangle tri, DATASET(Layout\_Cell) A\_in)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Implements Cholesky factorization of A = U**T * U if Triangular.Upper requested or A = L * L**T if Triangualr.Lower is requested. The matrix A must be symmetric positive definite. 
+\begin{verbatim}
+
+  | A11   A12 |      |  L11   0   |    | L11**T     L21**T |
+  | A21   A22 |  ==  |  L21   L22 | *  |  0           L22  |
+
+                     | L11*L11**T          L11*L21**T      |
+                 ==  | L21*L11**T  L21*L21**T + L22*L22**T |
+ \end{verbatim}
+
+ So, use Cholesky on the first block to get L11. L21 = A21*L11**T**-1 which can be found by dtrsm on each column block A22' is A22 - L21*L21**T 
+\par
+ Based upon PB-BLAS: A set of parallel block basic linear algebra subprograms by Choi and Dongarra 
+
+
+\par
+ This module supports the ''Myriad'' style interface, allowing many independent problems to be worked on at once. The A matrix can contain multiple matrixes to be factored, indicated by different values for work-item id (wi\_id).
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{A\_in}} ||| TABLE ( Layout\_Cell ) --- The matrix or matrixes to be factored in Types.Layout\_Cell format
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{tri}} ||| UNSIGNED1 --- Types.Triangle enumeration indicating whether we are looking for the Upper or the Lower factor
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- Triangular matrix in Layout\_Cell format
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.PBblas.Types.Layout\_Cell
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.PBblas.Types.Triangle
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

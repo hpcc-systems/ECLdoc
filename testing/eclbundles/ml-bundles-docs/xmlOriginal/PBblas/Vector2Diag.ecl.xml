@@ -1,0 +1,2995 @@
+<Meta>
+ <Source name="ML_Core.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Types.ecl">
+  <Definition body="37"
+              end="3074"
+              exported="1"
+              fullname="ML_Core.Types"
+              inherittype="local"
+              line="2"
+              name="Types"
+              start="22"
+              type="module">
+   <Definition body="944"
+               end="955"
+               exported="1"
+               fullname="ml_core.types.t_recordid"
+               inherittype="local"
+               line="22"
+               name="t_RecordID"
+               start="924"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="981"
+               end="992"
+               exported="1"
+               fullname="ml_core.types.t_fieldnumber"
+               inherittype="local"
+               line="23"
+               name="t_FieldNumber"
+               start="958"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="1016"
+               end="1023"
+               exported="1"
+               fullname="ml_core.types.t_fieldreal"
+               inherittype="local"
+               line="24"
+               name="t_FieldReal"
+               start="995"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="1047"
+               end="1057"
+               exported="1"
+               fullname="ml_core.types.t_fieldsign"
+               inherittype="local"
+               line="25"
+               name="t_FieldSign"
+               start="1026"
+               type="attribute">
+    <Type type="integer1"/>
+   </Definition>
+   <Definition body="1080"
+               end="1090"
+               exported="1"
+               fullname="ml_core.types.t_discrete"
+               inherittype="local"
+               line="26"
+               name="t_Discrete"
+               start="1060"
+               type="attribute">
+    <Type type="integer4"/>
+   </Definition>
+   <Definition body="1109"
+               end="1120"
+               exported="1"
+               fullname="ml_core.types.t_item"
+               inherittype="local"
+               line="27"
+               name="t_Item"
+               start="1093"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="1188"
+               end="1200"
+               exported="1"
+               fullname="ml_core.types.t_count"
+               inherittype="local"
+               line="28"
+               name="t_Count"
+               start="1171"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="1258"
+               end="1269"
+               exported="1"
+               fullname="ml_core.types.t_work_item"
+               inherittype="local"
+               line="29"
+               name="t_Work_Item"
+               start="1237"
+               type="attribute">
+    <Type type="unsigned2"/>
+   </Definition>
+   <Definition body="1391"
+               end="1600"
+               exported="1"
+               fullname="ml_core.types.anyfield"
+               inherittype="local"
+               line="32"
+               name="AnyField"
+               start="1369"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+   </Definition>
+   <Definition body="1673"
+               end="1720"
+               exported="1"
+               fullname="ml_core.types.numericfield"
+               inherittype="local"
+               line="39"
+               name="NumericField"
+               start="1651"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="1797"
+               end="1843"
+               exported="1"
+               fullname="ml_core.types.discretefield"
+               inherittype="local"
+               line="44"
+               name="DiscreteField"
+               start="1774"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+   </Definition>
+   <Definition body="1953"
+               end="2200"
+               exported="1"
+               fullname="ml_core.types.layout_model"
+               inherittype="local"
+               line="49"
+               name="Layout_Model"
+               start="1931"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2261"
+               end="2336"
+               exported="1"
+               fullname="ml_core.types.classify_result"
+               inherittype="local"
+               line="57"
+               name="Classify_Result"
+               start="2236"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2357"
+               end="2410"
+               exported="1"
+               fullname="ml_core.types.l_result"
+               inherittype="local"
+               line="60"
+               name="l_result"
+               start="2339"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2440"
+               end="2639"
+               exported="1"
+               fullname="ml_core.types.confusion_detail"
+               inherittype="local"
+               line="62"
+               name="Confusion_Detail"
+               start="2414"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="classifier">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="actual_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="predict_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="occurs">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="correct">
+     <Type type="boolean"/>
+    </Field>
+   </Definition>
+   <Definition body="2711"
+               end="2782"
+               exported="1"
+               fullname="ml_core.types.itemelement"
+               inherittype="local"
+               line="72"
+               name="ItemElement"
+               start="2690"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="value">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+   </Definition>
+   <Definition body="2848"
+               end="2858"
+               exported="1"
+               fullname="ml_core.types.t_node"
+               inherittype="local"
+               line="79"
+               name="t_node"
+               start="2831"
+               type="attribute">
+    <Type type="integer4"/>
+   </Definition>
+   <Definition body="2942"
+               end="2953"
+               exported="1"
+               fullname="ml_core.types.t_level"
+               inherittype="local"
+               line="80"
+               name="t_level"
+               start="2925"
+               type="attribute">
+    <Type type="unsigned2"/>
+   </Definition>
+   <Definition body="2995"
+               end="3069"
+               exported="1"
+               fullname="ml_core.types.nodeid"
+               inherittype="local"
+               line="81"
+               name="NodeID"
+               start="2978"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="node_id">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="level">
+     <Type type="unsigned2"/>
+    </Field>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="PBblas.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./PBblas/Types.ecl">
+  <Definition body="516"
+              end="4363"
+              exported="1"
+              fullname="PBblas.Types"
+              inherittype="local"
+              line="11"
+              name="Types"
+              start="501"
+              type="module">
+   <Definition body="692"
+               end="703"
+               exported="1"
+               fullname="pbblas.types.dimension_t"
+               inherittype="local"
+               line="16"
+               name="dimension_t"
+               start="670"
+               type="attribute">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix dimensions.  Uses UNSIGNED four as matrixes
+    * are not designed to support more than 4 B rows or columns.&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="851"
+               end="862"
+               exported="1"
+               fullname="pbblas.types.partition_t"
+               inherittype="local"
+               line="20"
+               name="partition_t"
+               start="829"
+               type="attribute">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for partition id -- only supports up to 64K partitions&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="967"
+               end="988"
+               exported="1"
+               fullname="pbblas.types.work_item_t"
+               inherittype="local"
+               line="24"
+               name="work_item_t"
+               start="945"
+               type="attribute">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for work-item id -- only supports up to 64K work items&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1109"
+               end="1116"
+               exported="1"
+               fullname="pbblas.types.value_t"
+               inherittype="local"
+               line="30"
+               name="value_t"
+               start="1087"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix cell values
+    * 
+    * WARNING: type used in C++ attribute&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1272"
+               end="1281"
+               exported="1"
+               fullname="pbblas.types.m_label_t"
+               inherittype="local"
+               line="35"
+               name="m_label_t"
+               start="1250"
+               type="attribute">
+    <Type type="string3"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix label.  Used for Matrix dimensions (see Layout_Dims)
+    * and for partitions (see Layout_Part)&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1404"
+               end="1439"
+               exported="1"
+               inherittype="local"
+               line="41"
+               name="Triangle"
+               start="1382"
+               type="attribute">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Enumeration for Triangle type
+    * 
+    * WARNING: type used in C++ attribute&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1564"
+               end="1606"
+               exported="1"
+               inherittype="local"
+               line="47"
+               name="Diagonal"
+               start="1542"
+               type="attribute">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Enumeration for Diagonal type
+    * 
+    * WARNING: type used in C++ attribute&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1729"
+               end="1758"
+               exported="1"
+               inherittype="local"
+               line="53"
+               name="Side"
+               start="1707"
+               type="attribute">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Enumeration for Side type
+    * 
+    * WARNING: type used in C++ attribute&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1893"
+               end="1904"
+               exported="1"
+               fullname="pbblas.types.t_mu_no"
+               inherittype="local"
+               line="60"
+               name="t_mu_no"
+               start="1871"
+               type="attribute">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix universe number
+    *
+    * Allow up to 64k matrices in one universe
+    *&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="3736"
+               end="3974"
+               exported="1"
+               fullname="pbblas.types.layout_cell"
+               inherittype="local"
+               line="94"
+               name="Layout_Cell"
+               start="3714"
+               type="record">
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="x">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="y">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="v">
+     <Type type="real8"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Layout for Matrix Cell
+    *
+    * Main representation of Matrix cell at interface to all PBBlas functions.
+    * Matrixes are represented as DATASET(Layout_Cell), where each cell describes
+    * the row and column position of the cell as well as its value.
+    * Only the non-zero cells need to be contained in the dataset in order
+    * to describe the matrix since all unspecified cells are considered to
+    * have a value of zero.
+    * The cell also contains a work-item number that allows multiple separate
+    * matrixes to be carried in the same dataset.  This supports the &quot;myriad&quot;
+    * style interface that allows the same operations to be performed on many
+    * different sets of data at once.
+    * Note that these matrixes do not have an explicit size.  They are sized
+    * implicitly, based on the maximum row and column presented in the data.
+    * A matrix can be converted to an explicit dense form (see matrix_t) by 
+    * using the utility module MakeR8Set. This module should only be used for known
+    * small matrixes (&lt; 1M cells) or for partitions of a larger matrix.
+    * The Converted module provides utility
+    * functions to convert to and from a set of partitions (See Layout_parts).
+    *
+    * @field wi_id  Work Item Number -- An identifier from 1 to 64K-1 that
+    *                 separates and identifies individual matrixes
+    * @field x	    1-based row position within the matrix
+    * @field y	    1-based column position within the matrix
+    * @field v	    Real value for the cell
+    * @see		    matrix_t
+    * @see		    Std/PBblas/MakeR8Set.ecl
+    * @see		    Std/PBblas/Converted.ecl
+    *
+    * WARNING: Used as C++ attribute.  Do not change without corresponding changes
+    *  to MakeR8Set.&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="4234"
+               end="4358"
+               exported="1"
+               fullname="pbblas.types.layout_norm"
+               inherittype="local"
+               line="108"
+               name="Layout_Norm"
+               start="4213"
+               type="record">
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="v">
+     <Type type="real8"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Layout for Norm results.
+    *
+    * @field wi_id  Work Item Number -- An identifier from 1 to 64K-1 that
+    *                 separates and identifies individual matrixes
+    * @field v	    Real value for the norm&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;&#32;* Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="248"
+          fullname="ML_Core"
+          inherittype="local"
+          line="4"
+          name="ML_Core"
+          ref="ML_Core"
+          remotescope="1"
+          start="248"/>
+  <Import body="0"
+          end="264"
+          fullname="ML_Core.Types"
+          inherittype="local"
+          line="5"
+          name="MlTypes"
+          ref="ML_Core.Types"
+          start="264"/>
+ </Source>
+ <Source name="PBblas.internal.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./PBblas/internal/Types.ecl">
+  <Import body="0"
+          end="249"
+          fullname="PBblas"
+          inherittype="local"
+          line="5"
+          name="PBblas"
+          ref="PBblas"
+          start="249"/>
+  <Import body="0"
+          end="271"
+          fullname="PBblas.Types"
+          inherittype="local"
+          line="6"
+          name="eTypes"
+          ref="PBblas.Types"
+          start="271">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Definition body="309"
+              end="329"
+              fullname="pbblas.internal.dimension_t"
+              inherittype="local"
+              line="7"
+              name="dimension_t"
+              start="295"
+              type="attribute">
+   <Type type="unsigned4"/>
+  </Definition>
+  <Definition body="344"
+              end="364"
+              fullname="pbblas.internal.partition_t"
+              inherittype="local"
+              line="8"
+              name="partition_t"
+              start="330"
+              type="attribute">
+   <Type type="unsigned2"/>
+  </Definition>
+  <Definition body="379"
+              end="399"
+              fullname="pbblas.internal.work_item_t"
+              inherittype="local"
+              line="9"
+              name="work_item_t"
+              start="365"
+              type="attribute">
+   <Type type="unsigned2"/>
+  </Definition>
+  <Definition body="636"
+              end="8878"
+              exported="1"
+              fullname="PBblas.internal.Types"
+              inherittype="local"
+              line="16"
+              name="Types"
+              start="621"
+              type="module">
+   <Definition body="747"
+               end="758"
+               exported="1"
+               fullname="pbblas.internal.types.partition_t"
+               inherittype="local"
+               line="20"
+               name="partition_t"
+               start="725"
+               type="attribute">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for partition id -- only supports up to 64K partitions&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="852"
+               end="863"
+               exported="1"
+               fullname="pbblas.internal.types.node_t"
+               inherittype="local"
+               line="24"
+               name="node_t"
+               start="830"
+               type="attribute">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for node id -- only supports up to 64K nodes&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="984"
+               end="991"
+               exported="1"
+               fullname="pbblas.internal.types.value_t"
+               inherittype="local"
+               line="30"
+               name="value_t"
+               start="962"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix cell values
+    * 
+    * WARNING: type used in C++ attribute&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1147"
+               end="1156"
+               exported="1"
+               fullname="pbblas.internal.types.m_label_t"
+               inherittype="local"
+               line="35"
+               name="m_label_t"
+               start="1125"
+               type="attribute">
+    <Type type="string3"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix label.  Used for Matrix dimensions (see Layout_Dims)
+    * and for partitions (see Layout_Part)&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1893"
+               end="1907"
+               exported="1"
+               fullname="pbblas.internal.types.matrix_t"
+               inherittype="local"
+               line="58"
+               name="matrix_t"
+               start="1871"
+               type="attribute">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for dense matrix storage
+    *
+    * Stored as a set of values in column/row order:
+    * [r1c1, r2c1, ... rMc1,
+    *  r1c2, r2c2, ... rMc2,
+    *  .
+    *  .
+    *  .
+    *  r1cN, r2cN, ... rMcN]
+    * 
+    * WARNING: type used in C++ attribute
+    * Note: This type is not distributed, so should only be used to represent
+    * small matrixes(&lt; 1M cells).  Larger matrixes can be represented
+    * using Layout_Cell or Layout_Part, both of which can be distributed.
+    * A dense matrix can be converted to a scalable sparse form (DATASET(Layout_Cell))
+    * using the utility module FromR8Set
+    *
+    * @see		Layout_Cell
+    * @see		Layout_Part
+    * @see		Std/PBblas/FromR8Set.ecl&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1987"
+               end="2035"
+               exported="1"
+               inherittype="local"
+               line="63"
+               name="PartitionType"
+               start="1964"
+               type="attribute">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Enumeration for Partitioning Type&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="2403"
+               end="2426"
+               exported="1"
+               fullname="pbblas.internal.types.partitiontypestring"
+               inherittype="local"
+               line="73"
+               name="PartitionTypeString"
+               start="2356"
+               type="function">
+    <Type type="string6"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Translation of PartitionType enumeration&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="pt">
+      <Type type="unsigned1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2445"
+               end="2955"
+               exported="1"
+               inherittype="local"
+               line="74"
+               name="OpType"
+               start="2429"
+               type="attribute">
+    <Type type="unsigned1"/>
+   </Definition>
+   <Definition body="3090"
+               end="3101"
+               exported="1"
+               fullname="pbblas.internal.types.t_mu_no"
+               inherittype="local"
+               line="88"
+               name="t_mu_no"
+               start="3068"
+               type="attribute">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix universe number
+    *
+    * Allow up to 64k matrices in one universe
+    *&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="5873"
+               end="6389"
+               exported="1"
+               fullname="pbblas.internal.types.layout_part"
+               inherittype="local"
+               line="133"
+               name="Layout_Part"
+               start="5851"
+               type="record">
+    <Field name="m_label">
+     <Type type="string3"/>
+    </Field>
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="partition_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="node_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="m_rows">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="m_cols">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="row_blocks">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="col_blocks">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="block_row">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="block_col">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="part_rows">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="part_cols">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="first_row">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="first_col">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="mat_part">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Alternate form for storage of large matrixes as a set of partitions
+    * Each partition holds the dense form of a piece of the matrix (see matrix_t)
+    * as well as information about its relationship to the larger matrix.
+    * The full matrix is then carried as DATASET(Layout_Part).
+    * Utility module Converted provides functions for converting a matrix in cell
+    * form (see Layout_cell) to partitions and vice versa.
+    * This form is primarily used internally to PBblas functions, but can also
+    * be used as an intermediate form to avoid repeated conversions from cell
+    * form.
+    * A work-item id field allows multiple matrixes to be carried in the
+    * same dataset.  This supports the &quot;myriad&quot; style interface whereby the
+    * same operation can be performed on multiple sets of matrixes at once.
+    * The m_label field allows for the separation of multiple matrixes with the
+    * same wi_id for operations requiring multiple matrixes.  This allows
+    * multiple work-items with multiple matrixes each to be carried in the same
+    * dataset.
+
+    * @field wi_id          Work Item Number -- An identifier from 1 to 64K-1 that
+    *                         separates and identifies individual matrixes
+    * @field m_label        A user provided label indicating to which matrix the dimensions
+    *                       apply, when used to describe a set of related matrixes (e.g.,
+    *                       &apos;A&apos;, &apos;B&apos;, and &apos;C&apos;) for the same work item used in an operation.    * @field partition_id	A unique ID for this partition within the matrix
+    * @field partition_id   The 1-based id of this partition, unique within a work-item
+    * @field node_id		The node on which this partition is stored
+    * @field m_rows         The number of rows in the full matrix
+    * @field m_cols         The number of columns in the full matrix
+    * @field row_blocks     The number of row partitions in use
+    * @field col_blocks     The number of column partitions in use
+    * @field block_row		The row of this partition within the block partition matrix
+    * @field block_col		The column of this partition &quot;
+    * @field part_rows		The number of rows stored within this partition
+    * @field part_cols		The number of columns stored within this partition
+    * @field first_row		The first row of the original matrix stored within this
+    *						partition
+    * @field first_col		The first column of the original matrix stored within this
+    *						partition
+    * @field mat_part		The dense representation of the cells values within this
+    *						partition (see matrix_t)
+    * @see		matrix_t
+    * @see		Layout_Cell
+    * @see		Std/PBblas/Converted&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="7167"
+               end="7354"
+               exported="1"
+               fullname="pbblas.internal.types.layout_target"
+               inherittype="local"
+               line="164"
+               name="Layout_Target"
+               start="7144"
+               type="record">
+    <Field name="t_part_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="t_node_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="t_block_row">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="t_block_col">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="t_term">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="m_label">
+     <Type type="string3"/>
+    </Field>
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="partition_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="node_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="m_rows">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="m_cols">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="row_blocks">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="col_blocks">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="block_row">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="block_col">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="part_rows">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="part_cols">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="first_row">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="first_col">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="mat_part">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Represents the relationship of a partition to the partition holding the
+    * results of a matrix operation.  This is used internally to PBblas functions
+    * to tie an input partition to its output.  It is not relevant to users of
+    * PBblas.
+    *
+    * @field t_part_id		The output partition to which this partition is related
+    * @field t_node_id		The node on which the output partition is located
+    * @field t_block_row	The row of the output partition within its partition matrix
+    * @field t_block_col	The column of the output partition within its partition matrix
+    * @field t_term			A row/column number used to correlate related input partitions used
+    *						in calculating the results of the output partition&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="8306"
+               end="8658"
+               exported="1"
+               fullname="pbblas.internal.types.layout_dims"
+               inherittype="local"
+               line="186"
+               name="Layout_Dims"
+               start="8285"
+               type="record">
+    <Field name="m_label">
+     <Type type="string3"/>
+    </Field>
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="m_rows">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="m_cols">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="block_rows">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="block_cols">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="row_blocks">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="col_blocks">
+     <Type type="unsigned4"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Record format for matrix and matrix partition dimensions.  Each record describes
+    * A single matrix or matrix partition.  Partitions use all of the fields, while
+    * a non-partitioned matrix only uses the first two (i.e. m_rows and m_cols).
+    * @field m_label A user provided label indicating to which matrix the dimensions
+    *                apply, when used to describe a set of related matrixes (e.g.,
+    *                &apos;A&apos;, &apos;B&apos;, and &apos;C&apos;) for the same work item used in an operation.
+    * @field m_rows The number of rows in the full matrix
+    * @field m_cols The number of colums in the full matrix
+    * @field block_rows The number of rows in each partition of the matrix
+    * @field block_cols The number of columns in each partition
+    * @field row_blocks The number of row partitions in use for the matrix
+    * @field col_blocks The number of column partitions in use for the matrix&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="8837"
+               end="8873"
+               exported="1"
+               fullname="pbblas.internal.types.layout_wi_id"
+               inherittype="local"
+               line="202"
+               name="Layout_WI_ID"
+               start="8815"
+               type="record">
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Documentation>
+     <content>&#32;&#10;&#32;&#32;&#32;&#32;* Record for a list of work-item ids used internally
+    *
+    * @field wi_id  The wi_id, typically from a myriad set of matrixes
+    *&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;&#32;* Internal Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="std.system.Thorlib" sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl">
+  <Definition body="464"
+              end="1191"
+              inherittype="local"
+              line="11"
+              name="externals"
+              start="452"
+              type="module">
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="node"
+               inherittype="local"
+               line="13"
+               name="node"
+               start="0"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="nodes"
+               inherittype="local"
+               line="14"
+               name="nodes"
+               start="0"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="l2p"
+               inherittype="local"
+               line="15"
+               name="l2p"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="create">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="getfileoffset"
+               inherittype="local"
+               line="16"
+               name="getFileOffset"
+               start="0"
+               type="function">
+    <Type type="unsigned8"/>
+    <Params>
+     <Param name="lfname">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="daliserver"
+               inherittype="local"
+               line="17"
+               name="daliServer"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="cluster"
+               inherittype="local"
+               line="18"
+               name="cluster"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="getexpandlogicalname"
+               inherittype="local"
+               line="19"
+               name="getExpandLogicalName"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="group"
+               inherittype="local"
+               line="20"
+               name="group"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="platform"
+               inherittype="local"
+               line="21"
+               name="platform"
+               start="0"
+               type="function">
+    <Type type="varstring"/>
+    <Params/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="PBblas.internal.BlockDimensions" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./PBblas/internal/BlockDimensions.ecl">
+  <Import body="0"
+          end="251"
+          fullname="PBblas"
+          inherittype="local"
+          line="5"
+          name="PBblas"
+          ref="PBblas"
+          start="251"/>
+  <Import body="0"
+          end="289"
+          fullname="PBblas.Types"
+          inherittype="local"
+          line="6"
+          name="Types"
+          ref="PBblas.Types"
+          start="289">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="294"
+          fullname="PBblas.internal"
+          inherittype="local"
+          line="7"
+          name="int"
+          ref="PBblas.internal"
+          remotescope="1"
+          start="294"/>
+  <Import body="0"
+          end="310"
+          fullname="PBblas.internal.Types"
+          inherittype="local"
+          line="7"
+          name="iTypes"
+          ref="PBblas.internal.Types"
+          start="310">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Internal Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="339"
+          fullname="std.system.Thorlib"
+          inherittype="local"
+          line="9"
+          name="Thorlib"
+          ref="std.system.Thorlib"
+          start="339"/>
+  <Definition body="309"
+              end="329"
+              fullname="pbblas.internal.dimension_t"
+              inherittype="local"
+              line="7"
+              name="dimension_t"
+              start="295"
+              type="attribute">
+   <Type type="unsigned4"/>
+  </Definition>
+  <Definition body="404"
+              end="426"
+              inherittype="local"
+              line="12"
+              name="p_types"
+              start="394"
+              type="attribute">
+   <Type type="unsigned1"/>
+   <Documentation>
+    <content>&#10;&#32;&#32;&#32;&#32;* Enumeration for Partitioning Type&#10;&#32;&#32;&#32;&#32;</content>
+   </Documentation>
+  </Definition>
+  <Definition body="1665"
+              end="6225"
+              exported="1"
+              fullname="pbblas.internal.blockdimensions"
+              inherittype="local"
+              line="37"
+              name="BlockDimensions"
+              start="1563"
+              type="module">
+   <Params>
+    <Param name="N">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="M">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="max_partition_size_or">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="nodes_override">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+   <Parents/>
+   <Definition body="1879"
+               end="1972"
+               fullname="pbblas.internal.blockdimensions.max_partition_size"
+               inherittype="local"
+               line="41"
+               name="max_partition_size"
+               shared="1"
+               start="1851"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2126"
+               end="2180"
+               fullname="pbblas.internal.blockdimensions.nodes"
+               inherittype="local"
+               line="45"
+               name="nodes"
+               shared="1"
+               start="2111"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2312"
+               end="2387"
+               fullname="pbblas.internal.blockdimensions.single_partition_size"
+               inherittype="local"
+               line="47"
+               name="single_partition_size"
+               shared="1"
+               start="2281"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="2513"
+               end="2625"
+               fullname="pbblas.internal.blockdimensions.round_up_to_nodes"
+               inherittype="local"
+               line="49"
+               name="round_up_to_nodes"
+               shared="1"
+               start="2459"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params>
+     <Param name="d">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2644"
+               end="2651"
+               fullname="pbblas.internal.blockdimensions.cells"
+               inherittype="local"
+               line="54"
+               name="cells"
+               shared="1"
+               start="2629"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2708"
+               end="2715"
+               fullname="pbblas.internal.blockdimensions.is_square"
+               inherittype="local"
+               line="55"
+               name="is_square"
+               shared="1"
+               start="2689"
+               type="attribute">
+    <Type type="boolean"/>
+   </Definition>
+   <Definition body="2785"
+               end="2798"
+               fullname="pbblas.internal.blockdimensions.min_rc"
+               inherittype="local"
+               line="56"
+               name="min_rc"
+               shared="1"
+               start="2769"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="2853"
+               end="2865"
+               fullname="pbblas.internal.blockdimensions.max_rc"
+               inherittype="local"
+               line="57"
+               name="max_rc"
+               shared="1"
+               start="2837"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="4282"
+               end="4333"
+               fullname="pbblas.internal.blockdimensions.test_d"
+               inherittype="local"
+               line="78"
+               name="test_D"
+               shared="1"
+               start="4254"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="4484"
+               end="4859"
+               fullname="pbblas.internal.blockdimensions.calc_vector_block_size"
+               inherittype="local"
+               line="81"
+               name="calc_vector_block_size"
+               shared="1"
+               start="4420"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params>
+     <Param name="dlimit">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="5188"
+               end="5551"
+               exported="1"
+               fullname="pbblas.internal.blockdimensions.partitioning"
+               inherittype="local"
+               line="94"
+               name="Partitioning"
+               start="5166"
+               type="attribute">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The type of partitioning employed: Types.PartitionType.square, .row, or .column or .single&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="5647"
+               end="5776"
+               exported="1"
+               fullname="pbblas.internal.blockdimensions.pn"
+               inherittype="local"
+               line="102"
+               name="PN"
+               start="5623"
+               type="attribute">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The row dimension of the optimal Partition Matrix&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="5875"
+               end="6004"
+               exported="1"
+               fullname="pbblas.internal.blockdimensions.pm"
+               inherittype="local"
+               line="107"
+               name="PM"
+               start="5851"
+               type="attribute">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The column dimension of the optimal Partition Matrix&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="6096"
+               end="6111"
+               exported="1"
+               fullname="pbblas.internal.blockdimensions.blockrows"
+               inherittype="local"
+               line="112"
+               name="BlockRows"
+               start="6077"
+               type="attribute">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The number of rows in each partition (i.e. block)&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="6205"
+               end="6220"
+               exported="1"
+               fullname="pbblas.internal.blockdimensions.blockcols"
+               inherittype="local"
+               line="116"
+               name="BlockCols"
+               start="6186"
+               type="attribute">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The number of columns in each partition (i.e. block)&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;&#32;* Auto-Partitioning for a Single Matrix
+  *
+  * Given an input of N and M describing the dimensions of a matrix (N rows x M columns),
+  * calculate the optimal square (d x d), row (d x 1), or column (1 x d) partition  
+  * matrix dimensions: PN and BM,  subject to the following constraints:
+  * 1) Cells per partition &lt;= 1,000,000
+  * 2) Partitions should not be empty:  At least one row and column in each partition
+  * 3) The number of partitions should be a multiple of the number of nodes
+  * 4) Partition size as large as possible
+  *
+  * Note: These constraints are in priority order.  (1) should always be met.  Others are best effort.
+  * Note: This module is used internally to PBblas, and should not be needed by users of PBblas
+  *
+  * @param N		The row dimension of the matrix to be partitioned
+  * @param M		The column dimension of the matrix to be partitioned
+  * @param max_partition_size The largest allowed partition size.  For advanced use only.
+  * @param nodes_override For testing only.  Overrides the number of nodes in the cluster.
+  *                          Should never be used in production.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Definition>
+ </Source>
+ <Source name="PBblas.internal.BlockDimensionsMultiply" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./PBblas/internal/BlockDimensionsMultiply.ecl">
+  <Import body="0"
+          end="250"
+          fullname="PBblas"
+          inherittype="local"
+          line="4"
+          name="PBblas"
+          ref="PBblas"
+          start="250"/>
+  <Import body="0"
+          end="272"
+          fullname="PBblas.internal"
+          inherittype="local"
+          line="5"
+          name="int"
+          ref="PBblas.internal"
+          remotescope="1"
+          start="272"/>
+  <Import body="0"
+          end="289"
+          fullname="PBblas.Types"
+          inherittype="local"
+          line="6"
+          name="Types"
+          ref="PBblas.Types"
+          start="289">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="310"
+          fullname="PBblas.internal.Types"
+          inherittype="local"
+          line="7"
+          name="iTypes"
+          ref="PBblas.internal.Types"
+          start="310">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Internal Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Definition body="309"
+              end="329"
+              fullname="pbblas.internal.dimension_t"
+              inherittype="local"
+              line="7"
+              name="dimension_t"
+              start="295"
+              type="attribute">
+   <Type type="unsigned4"/>
+  </Definition>
+  <Definition body="1973"
+              end="5853"
+              exported="1"
+              fullname="pbblas.internal.blockdimensionsmultiply"
+              inherittype="local"
+              line="36"
+              name="BlockDimensionsMultiply"
+              start="1859"
+              type="module">
+   <Params>
+    <Param name="N">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="M">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="P">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="max_part_size_or">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="nodes_or">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+   <Parents/>
+   <Definition body="2191"
+               end="2257"
+               fullname="pbblas.internal.blockdimensionsmultiply.max_part_size"
+               inherittype="local"
+               line="41"
+               name="max_part_size"
+               shared="1"
+               start="2168"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2277"
+               end="2282"
+               fullname="pbblas.internal.blockdimensionsmultiply.a_cells"
+               inherittype="local"
+               line="42"
+               name="a_cells"
+               shared="1"
+               start="2260"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2302"
+               end="2307"
+               fullname="pbblas.internal.blockdimensionsmultiply.b_cells"
+               inherittype="local"
+               line="43"
+               name="b_cells"
+               shared="1"
+               start="2285"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2327"
+               end="2332"
+               fullname="pbblas.internal.blockdimensionsmultiply.c_cells"
+               inherittype="local"
+               line="44"
+               name="c_cells"
+               shared="1"
+               start="2310"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2354"
+               end="2388"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionsmultiply.min_cells"
+               inherittype="local"
+               line="45"
+               name="min_cells"
+               start="2335"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2410"
+               end="2444"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionsmultiply.max_cells"
+               inherittype="local"
+               line="46"
+               name="max_cells"
+               start="2391"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2484"
+               end="3190"
+               fullname="pbblas.internal.blockdimensionsmultiply.a_first"
+               inherittype="local"
+               line="48"
+               name="A_first"
+               shared="1"
+               start="2448"
+               type="attribute">
+    <Type type="set">
+     <Type type="unsigned4"/>
+    </Type>
+   </Definition>
+   <Definition body="3229"
+               end="3940"
+               fullname="pbblas.internal.blockdimensionsmultiply.b_first"
+               inherittype="local"
+               line="63"
+               name="B_first"
+               shared="1"
+               start="3193"
+               type="attribute">
+    <Type type="set">
+     <Type type="unsigned4"/>
+    </Type>
+   </Definition>
+   <Definition body="3979"
+               end="4654"
+               fullname="pbblas.internal.blockdimensionsmultiply.c_first"
+               inherittype="local"
+               line="78"
+               name="C_first"
+               shared="1"
+               start="3943"
+               type="attribute">
+    <Type type="set">
+     <Type type="unsigned4"/>
+    </Type>
+   </Definition>
+   <Definition body="4731"
+               end="4813"
+               fullname="pbblas.internal.blockdimensionsmultiply.solution"
+               inherittype="local"
+               line="94"
+               name="solution"
+               shared="1"
+               start="4713"
+               type="attribute">
+    <Type type="set">
+     <Type type="unsigned4"/>
+    </Type>
+   </Definition>
+   <Definition body="4932"
+               end="4945"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionsmultiply.pn"
+               inherittype="local"
+               line="99"
+               name="PN"
+               start="4920"
+               type="attribute">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The row dimension of A&apos;s partition matrix and of the C and result partition matrixes&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="5070"
+               end="5083"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionsmultiply.pm"
+               inherittype="local"
+               line="103"
+               name="PM"
+               start="5058"
+               type="attribute">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The column dimension of A&apos;s partition matrix and the row dimension of B&apos;s partition matrix&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="5205"
+               end="5218"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionsmultiply.pp"
+               inherittype="local"
+               line="107"
+               name="PP"
+               start="5193"
+               type="attribute">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The column dimension of B&apos;s partition matrix and of the C and result partition matrixes&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="5325"
+               end="5340"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionsmultiply.ablockrows"
+               inherittype="local"
+               line="111"
+               name="AblockRows"
+               start="5305"
+               type="attribute">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The number of rows in each partition of A, C and result matrixes&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="5481"
+               end="5496"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionsmultiply.ablockcols"
+               inherittype="local"
+               line="115"
+               name="AblockCols"
+               start="5461"
+               type="attribute">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The number of columns in each partition of A, and the number of rows in each partition of B matrix&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="5607"
+               end="5622"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionsmultiply.bblockcols"
+               inherittype="local"
+               line="119"
+               name="BblockCols"
+               start="5587"
+               type="attribute">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The number of columns in each partition of B, C, and result matrixes&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="5780"
+               end="5848"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionsmultiply.partitioning"
+               inherittype="local"
+               line="125"
+               name="Partitioning"
+               start="5737"
+               type="attribute">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The type of partitioning used. See Types.PartitionType
+    *
+    * @see Std/PBblas/Types.ecl&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Auto-Partitioning for Multiply operations
+*
+* Given an input of N, M, and P, describing the dimensions of A (N x M), B (M x P), and C (N x P) 
+* matrixes, calculate the optimal square (d x d), row (d x 1), or column (1 x d) partition  
+* matrix dimensions: PN, PM, and PP, representing the dimensions of the three partition
+* matrixes for A, B, and C respectively (P(A): PN x PM, P(B): PM x PP, P(C): PN x PP). 
+* Each of the partition matrixes is subject to the following constraints:
+* 1) Cells per partition &lt;= 1,000,000
+* 2) Partitions should not be empty:  At least one row and column in each partition
+* 3) The number of partitions should be a multiple of the number of nodes
+* 4) Partition size as large as possible
+*
+* Note: These constraints are in priority order.  (1) should always be met.  Others are best effort.
+* Note: This module is used internally to PBblas, and should not be needed by users of PBblas
+*
+* @param N		The Row dimension of the A matrix (multiplier) and the C (addend) and Result matrixes
+* @param M		The Column dimension of the A matrix and the Row dimension of the B matrix (multiplicand)
+* @param P		The Column dimension of the B matrix and of the C and Result matrixes
+* @param max_part_size_or Overrides the largest allowed partition size.  For advanced use only.
+* @param nodes_or For testing only.  Overrides the number of nodes in the cluster.
+*                          Should never be used in production.
+* @see			Std/PBblas/BlockDimensions&#10;</content>
+   </Documentation>
+  </Definition>
+ </Source>
+ <Source name="PBblas.internal.BlockDimensionsSolve" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./PBblas/internal/BlockDimensionsSolve.ecl">
+  <Import body="0"
+          end="250"
+          fullname="PBblas"
+          inherittype="local"
+          line="4"
+          name="PBblas"
+          ref="PBblas"
+          start="250"/>
+  <Import body="0"
+          end="272"
+          fullname="PBblas.internal"
+          inherittype="local"
+          line="5"
+          name="int"
+          ref="PBblas.internal"
+          remotescope="1"
+          start="272"/>
+  <Import body="0"
+          end="289"
+          fullname="PBblas.Types"
+          inherittype="local"
+          line="6"
+          name="Types"
+          ref="PBblas.Types"
+          start="289">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Definition body="309"
+              end="329"
+              fullname="pbblas.internal.dimension_t"
+              inherittype="local"
+              line="7"
+              name="dimension_t"
+              start="295"
+              type="attribute">
+   <Type type="unsigned4"/>
+  </Definition>
+  <Definition body="2007"
+              end="3584"
+              exported="1"
+              fullname="pbblas.internal.blockdimensionssolve"
+              inherittype="local"
+              line="39"
+              name="BlockDimensionsSolve"
+              start="1911"
+              type="module">
+   <Params>
+    <Param name="N">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="M">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="max_part_size_or">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="nodes_or">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+   <Parents/>
+   <Definition body="2224"
+               end="2290"
+               fullname="pbblas.internal.blockdimensionssolve.max_part_size"
+               inherittype="local"
+               line="44"
+               name="max_part_size"
+               shared="1"
+               start="2201"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2310"
+               end="2315"
+               fullname="pbblas.internal.blockdimensionssolve.a_cells"
+               inherittype="local"
+               line="45"
+               name="a_cells"
+               shared="1"
+               start="2293"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2335"
+               end="2340"
+               fullname="pbblas.internal.blockdimensionssolve.b_cells"
+               inherittype="local"
+               line="46"
+               name="b_cells"
+               shared="1"
+               start="2318"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2362"
+               end="2385"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionssolve.min_cells"
+               inherittype="local"
+               line="47"
+               name="min_cells"
+               start="2343"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2407"
+               end="2430"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionssolve.max_cells"
+               inherittype="local"
+               line="48"
+               name="max_cells"
+               start="2388"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="2654"
+               end="2667"
+               fullname="pbblas.internal.blockdimensionssolve.pn0"
+               inherittype="local"
+               line="53"
+               name="PN0"
+               shared="1"
+               start="2641"
+               type="attribute">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The row dimension of the optimal Partition Matrix&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="2887"
+               end="2937"
+               fullname="pbblas.internal.blockdimensionssolve.pm0"
+               inherittype="local"
+               line="57"
+               name="PM0"
+               shared="1"
+               start="2874"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="3057"
+               end="3062"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionssolve.pn"
+               inherittype="local"
+               line="62"
+               name="PN"
+               start="3045"
+               type="attribute">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The row and column dimension of A&apos;s partition matrix and either row or column of B&apos;s&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="3215"
+               end="3220"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionssolve.pm"
+               inherittype="local"
+               line="67"
+               name="PM"
+               start="3203"
+               type="attribute">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The row or column dimension of B and X(result) matrixes depending on the type
+    * of solve (see module description).&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="3377"
+               end="3392"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionssolve.ablockdim"
+               inherittype="local"
+               line="72"
+               name="AblockDim"
+               start="3358"
+               type="attribute">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The number of rows and columns in each partition of A
+    * @return  The side dimension of &apos;A&apos; matrix (a is square)&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="3564"
+               end="3579"
+               exported="1"
+               fullname="pbblas.internal.blockdimensionssolve.bblockdim"
+               inherittype="local"
+               line="77"
+               name="BblockDim"
+               start="3545"
+               type="attribute">
+    <Type type="integer8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* The number of rows or columns in each partition of B and X (result) depending
+    * on the type of solve (see module description).&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Auto-Partitioning for Solve operations
+*
+* Given an input of N and M, describing the dimensions of A (N x N), B (N x M) or (M x N)
+* matrixes, calculate the optimal square (d x d) partitioning for A and rectangular
+* partitioning for B.  Calculate the partition matrix dimensions: PN and PM representing the
+* dimensions of the partition
+* matrixes for A and B respectively (P(A): PN x PN, P(B): PM x PN or PN x PM.
+* Note that for solving Ax=B, B will be N x M, and for solving xA = B, B will be M x N.
+* Each of the partition matrixes is subject to the following constraints:
+* 1) Cells per partition &lt;= 1,000,000
+* 2) Partitions should not be empty:  At least one row and column in each partition
+* 3) The number of partitions should be a multiple of the number of nodes
+* 4) Partition size as large as possible
+*
+* Note: These constraints are in priority order.  (1) should always be met.  Others are best effort.
+* Note: This module is used internally to PBblas, and should not be needed by users of PBblas
+*
+* @param N    The Row and Column dimension of the A matrix and either the Row or Column
+*                dimension of B (depending on the type of solve).
+* @param M    The Column or Row dimension of B (depending on the type of
+*                solve)
+* @param max_part_size_or Overrides the largest allowed partition size.
+*                For advanced use only.
+* @param nodes_or For testing only.  Overrides the number of nodes in the cluster.
+*                          Should never be used in production.
+* @see      Std/PBblas/BlockDimensions&#10;</content>
+   </Documentation>
+  </Definition>
+ </Source>
+ <Source name="PBblas.internal.MatDims" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./PBblas/internal/MatDims.ecl">
+  <Import body="0"
+          end="250"
+          fullname="PBblas"
+          inherittype="local"
+          line="4"
+          name="PBblas"
+          ref="PBblas"
+          start="250"/>
+  <Import body="0"
+          end="272"
+          fullname="PBblas.internal"
+          inherittype="local"
+          line="5"
+          name="int"
+          ref="PBblas.internal"
+          remotescope="1"
+          start="272"/>
+  <Import body="0"
+          end="289"
+          fullname="PBblas.Types"
+          inherittype="local"
+          line="6"
+          name="Types"
+          ref="PBblas.Types"
+          start="289">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="310"
+          fullname="PBblas.internal.Types"
+          inherittype="local"
+          line="7"
+          name="iTypes"
+          ref="PBblas.internal.Types"
+          start="310">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Internal Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Definition body="309"
+              end="329"
+              fullname="pbblas.internal.dimension_t"
+              inherittype="local"
+              line="7"
+              name="dimension_t"
+              start="295"
+              type="attribute">
+   <Type type="unsigned4"/>
+  </Definition>
+  <Definition body="379"
+              end="399"
+              fullname="pbblas.internal.work_item_t"
+              inherittype="local"
+              line="9"
+              name="work_item_t"
+              start="365"
+              type="attribute">
+   <Type type="unsigned2"/>
+  </Definition>
+  <Definition body="413"
+              end="432"
+              fullname="pbblas.internal.layout_cell"
+              inherittype="local"
+              line="10"
+              name="Layout_Cell"
+              start="399"
+              type="record">
+   <Field name="wi_id">
+    <Type type="unsigned2"/>
+   </Field>
+   <Field name="x">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="y">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="v">
+    <Type type="real8"/>
+   </Field>
+   <Documentation>
+    <content>&#10;&#32;&#32;&#32;&#32;* Layout for Matrix Cell
+    *
+    * Main representation of Matrix cell at interface to all PBBlas functions.
+    * Matrixes are represented as DATASET(Layout_Cell), where each cell describes
+    * the row and column position of the cell as well as its value.
+    * Only the non-zero cells need to be contained in the dataset in order
+    * to describe the matrix since all unspecified cells are considered to
+    * have a value of zero.
+    * The cell also contains a work-item number that allows multiple separate
+    * matrixes to be carried in the same dataset.  This supports the &quot;myriad&quot;
+    * style interface that allows the same operations to be performed on many
+    * different sets of data at once.
+    * Note that these matrixes do not have an explicit size.  They are sized
+    * implicitly, based on the maximum row and column presented in the data.
+    * A matrix can be converted to an explicit dense form (see matrix_t) by 
+    * using the utility module MakeR8Set. This module should only be used for known
+    * small matrixes (&lt; 1M cells) or for partitions of a larger matrix.
+    * The Converted module provides utility
+    * functions to convert to and from a set of partitions (See Layout_parts).
+    *
+    * @field wi_id  Work Item Number -- An identifier from 1 to 64K-1 that
+    *                 separates and identifies individual matrixes
+    * @field x	    1-based row position within the matrix
+    * @field y	    1-based column position within the matrix
+    * @field v	    Real value for the cell
+    * @see		    matrix_t
+    * @see		    Std/PBblas/MakeR8Set.ecl
+    * @see		    Std/PBblas/Converted.ecl
+    *
+    * WARNING: Used as C++ attribute.  Do not change without corresponding changes
+    *  to MakeR8Set.&#10;&#32;&#32;&#32;&#32;</content>
+   </Documentation>
+  </Definition>
+  <Definition body="447"
+              end="467"
+              fullname="pbblas.internal.layout_dims"
+              inherittype="local"
+              line="11"
+              name="Layout_Dims"
+              start="433"
+              type="record">
+   <Field name="m_label">
+    <Type type="string3"/>
+   </Field>
+   <Field name="wi_id">
+    <Type type="unsigned2"/>
+   </Field>
+   <Field name="m_rows">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="m_cols">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="block_rows">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="block_cols">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="row_blocks">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="col_blocks">
+    <Type type="unsigned4"/>
+   </Field>
+   <Documentation>
+    <content>&#10;&#32;&#32;&#32;&#32;* Record format for matrix and matrix partition dimensions.  Each record describes
+    * A single matrix or matrix partition.  Partitions use all of the fields, while
+    * a non-partitioned matrix only uses the first two (i.e. m_rows and m_cols).
+    * @field m_label A user provided label indicating to which matrix the dimensions
+    *                apply, when used to describe a set of related matrixes (e.g.,
+    *                &apos;A&apos;, &apos;B&apos;, and &apos;C&apos;) for the same work item used in an operation.
+    * @field m_rows The number of rows in the full matrix
+    * @field m_cols The number of colums in the full matrix
+    * @field block_rows The number of rows in each partition of the matrix
+    * @field block_cols The number of columns in each partition
+    * @field row_blocks The number of row partitions in use for the matrix
+    * @field col_blocks The number of column partitions in use for the matrix&#10;&#32;&#32;&#32;&#32;</content>
+   </Documentation>
+  </Definition>
+  <Definition body="482"
+              end="497"
+              inherittype="local"
+              line="12"
+              name="OpType"
+              start="468"
+              type="attribute">
+   <Type type="unsigned1"/>
+  </Definition>
+  <Definition body="512"
+              end="530"
+              fullname="pbblas.internal.m_label_t"
+              inherittype="local"
+              line="13"
+              name="m_label_t"
+              start="498"
+              type="attribute">
+   <Type type="string3"/>
+  </Definition>
+  <Definition body="658"
+              end="14974"
+              exported="1"
+              fullname="PBblas.internal.MatDims"
+              inherittype="local"
+              line="19"
+              name="MatDims"
+              start="641"
+              type="module">
+   <Definition body="1478"
+               end="1840"
+               exported="1"
+               fullname="pbblas.internal.matdims.fromcells"
+               inherittype="local"
+               line="33"
+               name="FromCells"
+               start="1409"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="m_label">
+       <Type type="string3"/>
+      </Field>
+      <Field name="wi_id">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="m_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="m_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="row_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="col_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Get basic matrix dimensions (m_rows, m_cols) from a dataset of cells (Layout_Cell).
+    * Multiple matrices can be included in the dataset separated by wi_id.  One record of 
+    * Layout_Dims will be produced for each matrix in the input set. 
+    * 
+    * @param cells   dataset of Layout_Cell containing the matrixes to be dimensioned
+    * @param m_label a single text label to be attached to the dimensions so that
+    *                this set of dimensions can be distinguished from another set
+    *                used by the same operation (e.g. &apos;A&apos;, &apos;B&apos;, or &apos;C&apos;)
+    * @return        DATASET(Layout_Dims), one record per work item
+    * @see Std/PBblas/Types.Layout_Cell
+    * @see Std/PBblas/Types.Layout_Dims&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="cells">
+      <Type type="table">
+       <Type fullname="pbblas.internal.layout_cell" name="Layout_Cell" type="record"/>
+      </Type>
+     </Param>
+     <Param name="m_label">
+      <Type type="string3"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2238"
+               end="2621"
+               exported="1"
+               fullname="pbblas.internal.matdims.partitionedfromdims"
+               inherittype="local"
+               line="52"
+               name="PartitionedFromDims"
+               start="2182"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="m_label">
+       <Type type="string3"/>
+      </Field>
+      <Field name="wi_id">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="m_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="m_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="row_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="col_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Determine optimal partitioning scheme for one or more matrixes based on the dimensions
+    * provided.
+    * 
+    * @param dims            DATASET(Layout_Dims), typically output from FromCells above
+    * @return                DATASET(Layout_Dims), with partition info filled in
+    * @see Std/PBblas/Types.Layout_Dims&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="dims">
+      <Type type="table">
+       <Type fullname="pbblas.internal.layout_dims" name="Layout_Dims" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3389"
+               end="3525"
+               exported="1"
+               fullname="pbblas.internal.matdims.partitionedfromcells"
+               inherittype="local"
+               line="78"
+               name="PartitionedFromCells"
+               start="3309"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="m_label">
+       <Type type="string3"/>
+      </Field>
+      <Field name="wi_id">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="m_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="m_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="row_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="col_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Generate a partitioning scheme from a set of matrices in cell form.
+    * Essentially a shortcut for FromCells followed by PartitionedFromDims
+    * 
+    * @param cells   DATASET(Layout_Cell) representing one or more matrixes
+    * @param m_label a single text label to be attached to the dimensions so that
+    *                this set of dimensions can be distinguished from another set
+    *                used by the same operation (e.g. &apos;A&apos;, &apos;B&apos;, or &apos;C&apos;)
+    * @return        DATASET(Layout_Dims) with partition info filled in
+    * @see Std/PBblas/Types.Layout_Dims
+    * @see Std/PBblas/Types.Layout_Cell
+    * @see FromCells
+    * @see PartitionedFromDims&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="cells">
+      <Type type="table">
+       <Type fullname="pbblas.internal.layout_cell" name="Layout_Cell" type="record"/>
+      </Type>
+     </Param>
+     <Param name="m_label">
+      <Type type="string3"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="4788"
+               end="14044"
+               exported="1"
+               fullname="pbblas.internal.matdims.partitionedfromdimsforop"
+               inherittype="local"
+               line="104"
+               name="PartitionedFromDimsForOp"
+               start="4716"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="m_label">
+       <Type type="string3"/>
+      </Field>
+      <Field name="wi_id">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="m_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="m_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="row_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="col_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Determines an optimal partitioning scheme for a set of matrixes involved in
+    * a given operation.  This handles interlocking dimensions such as those involved
+    * in a multiplication operation.  Note that calling this function with OpType.single
+    * is equivalent to calling PartitionedFromDims above.
+    * The input dimensions include dimensions from different work-items (separated by
+    * wi_id) as well as dimensions from separate matrixes (e.g. A, B, and C/result)
+    * within a work-item (separated by m_label).
+    * Each operation-type may have a different expected set of m_labels and will perform
+    * its interlock calculations accordingly.
+    * 
+    * @param op              The operation requiring partitioning.  See Types.OpType
+    * @param dims            DATASET(Layout_Dims) typically returned by FromCells above
+    * @return                DATASET(Layout_Dims) with patition info filled in.
+    *                        This will contain one entry per work item, per
+    *                        matrix label.
+    * @see Std/PBblas/Types.Layout_Dims
+    * @see Std/PBblas/Types.OpType
+    * @see FromCells
+    * @see PartitionedFromDims&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="op">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="dims">
+      <Type type="table">
+       <Type fullname="pbblas.internal.layout_dims" name="Layout_Dims" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="14514"
+               end="14969"
+               exported="1"
+               fullname="pbblas.internal.matdims.transposedims"
+               inherittype="local"
+               line="315"
+               name="TransposeDims"
+               start="14461"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="m_label">
+       <Type type="string3"/>
+      </Field>
+      <Field name="wi_id">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="m_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="m_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_rows">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="block_cols">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="row_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="col_blocks">
+       <Type type="unsigned4"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Transpose rows and columns for a set of matrix dimensions.
+    * Can be used for single matrix dimensions or partitioned matrixes.
+    * Returns one record for each input record.  Many matrixes can
+    * be included in one call.
+    *
+    * @param dims_in   The dimensions to be transposed in Layout_Dims format
+    * @return          DATASET(Layout_Dims), the input dimensions transposed
+    *&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="dims_in">
+      <Type type="table">
+       <Type fullname="pbblas.internal.layout_dims" name="Layout_Dims" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;&#32;* Module to calculate matrix dimensions and matrix partition dimensions from
+  * matrix cells.
+  *&#10;&#32;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="PBblas.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./PBblas/Constants.ecl">
+  <Definition body="291"
+              end="1323"
+              exported="1"
+              fullname="PBblas.Constants"
+              inherittype="local"
+              line="5"
+              name="Constants"
+              start="272"
+              type="module">
+   <Definition body="324"
+               end="332"
+               exported="1"
+               fullname="pbblas.constants.block_minimum"
+               inherittype="local"
+               line="6"
+               name="Block_Minimum"
+               start="301"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="388"
+               end="396"
+               exported="1"
+               fullname="pbblas.constants.block_nosplit"
+               inherittype="local"
+               line="7"
+               name="Block_NoSplit"
+               start="365"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="456"
+               end="466"
+               exported="1"
+               fullname="pbblas.constants.block_maximum"
+               inherittype="local"
+               line="8"
+               name="Block_Maximum"
+               start="433"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="520"
+               end="527"
+               exported="1"
+               fullname="pbblas.constants.block_vec_rows"
+               inherittype="local"
+               line="9"
+               name="Block_Vec_Rows"
+               start="497"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="640"
+               end="647"
+               fullname="pbblas.constants.error_base"
+               inherittype="local"
+               line="12"
+               name="Error_Base"
+               shared="1"
+               start="612"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="678"
+               end="716"
+               exported="1"
+               fullname="pbblas.constants.dimension_incompat"
+               inherittype="local"
+               line="13"
+               name="Dimension_Incompat"
+               start="650"
+               type="attribute">
+    <Type type="string34"/>
+   </Definition>
+   <Definition body="747"
+               end="763"
+               exported="1"
+               fullname="pbblas.constants.dimension_incompatz"
+               inherittype="local"
+               line="14"
+               name="Dimension_IncompatZ"
+               start="719"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="794"
+               end="830"
+               exported="1"
+               fullname="pbblas.constants.distribution_error"
+               inherittype="local"
+               line="15"
+               name="Distribution_Error"
+               start="766"
+               type="attribute">
+    <Type type="string32"/>
+   </Definition>
+   <Definition body="861"
+               end="877"
+               exported="1"
+               fullname="pbblas.constants.distribution_errorz"
+               inherittype="local"
+               line="16"
+               name="Distribution_ErrorZ"
+               start="833"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="908"
+               end="932"
+               exported="1"
+               fullname="pbblas.constants.not_square"
+               inherittype="local"
+               line="17"
+               name="Not_Square"
+               start="880"
+               type="attribute">
+    <Type type="string20"/>
+   </Definition>
+   <Definition body="963"
+               end="979"
+               exported="1"
+               fullname="pbblas.constants.not_squarez"
+               inherittype="local"
+               line="18"
+               name="Not_SquareZ"
+               start="935"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1010"
+               end="1054"
+               exported="1"
+               fullname="pbblas.constants.not_positivedef"
+               inherittype="local"
+               line="19"
+               name="Not_PositiveDef"
+               start="982"
+               type="attribute">
+    <Type type="string40"/>
+   </Definition>
+   <Definition body="1085"
+               end="1101"
+               exported="1"
+               fullname="pbblas.constants.not_positivedefz"
+               inherittype="local"
+               line="20"
+               name="Not_PositiveDefZ"
+               start="1057"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1132"
+               end="1164"
+               exported="1"
+               fullname="pbblas.constants.not_single_block"
+               inherittype="local"
+               line="21"
+               name="Not_Single_Block"
+               start="1104"
+               type="attribute">
+    <Type type="string28"/>
+   </Definition>
+   <Definition body="1195"
+               end="1211"
+               exported="1"
+               fullname="pbblas.constants.not_single_blockz"
+               inherittype="local"
+               line="22"
+               name="Not_Single_BlockZ"
+               start="1167"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1242"
+               end="1271"
+               exported="1"
+               fullname="pbblas.constants.not_block_vector"
+               inherittype="local"
+               line="23"
+               name="Not_Block_Vector"
+               start="1214"
+               type="attribute">
+    <Type type="string25"/>
+   </Definition>
+   <Definition body="1302"
+               end="1318"
+               exported="1"
+               fullname="pbblas.constants.not_block_vectorz"
+               inherittype="local"
+               line="24"
+               name="Not_Block_VectorZ"
+               start="1274"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="PBblas.Vector2Diag" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Vector2Diag.ecl">
+  <Import body="0"
+          end="251"
+          fullname="PBblas"
+          inherittype="local"
+          line="5"
+          name="PBblas"
+          ref="PBblas"
+          start="251"/>
+  <Import body="0"
+          end="271"
+          fullname="PBblas.internal"
+          inherittype="local"
+          line="6"
+          name="int"
+          ref="PBblas.internal"
+          remotescope="1"
+          start="271"/>
+  <Import body="0"
+          end="302"
+          fullname="PBblas.internal.MatDims"
+          inherittype="local"
+          line="7"
+          name="MatDims"
+          ref="PBblas.internal.MatDims"
+          start="302">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Module to calculate matrix dimensions and matrix partition dimensions from
+  * matrix cells.
+  *&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="322"
+          fullname="PBblas.Types"
+          inherittype="local"
+          line="8"
+          name="Types"
+          ref="PBblas.Types"
+          start="322">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="343"
+          fullname="PBblas.internal.Types"
+          inherittype="local"
+          line="9"
+          name="iTypes"
+          ref="PBblas.internal.Types"
+          start="343">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Internal Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="371"
+          fullname="PBblas.Constants"
+          inherittype="local"
+          line="10"
+          name="Constants"
+          ref="PBblas.Constants"
+          start="371"/>
+  <Definition body="436"
+              end="455"
+              fullname="pbblas.layout_cell"
+              inherittype="local"
+              line="13"
+              name="Layout_Cell"
+              start="422"
+              type="record">
+   <Field name="wi_id">
+    <Type type="unsigned2"/>
+   </Field>
+   <Field name="x">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="y">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="v">
+    <Type type="real8"/>
+   </Field>
+   <Documentation>
+    <content>&#10;&#32;&#32;&#32;&#32;* Layout for Matrix Cell
+    *
+    * Main representation of Matrix cell at interface to all PBBlas functions.
+    * Matrixes are represented as DATASET(Layout_Cell), where each cell describes
+    * the row and column position of the cell as well as its value.
+    * Only the non-zero cells need to be contained in the dataset in order
+    * to describe the matrix since all unspecified cells are considered to
+    * have a value of zero.
+    * The cell also contains a work-item number that allows multiple separate
+    * matrixes to be carried in the same dataset.  This supports the &quot;myriad&quot;
+    * style interface that allows the same operations to be performed on many
+    * different sets of data at once.
+    * Note that these matrixes do not have an explicit size.  They are sized
+    * implicitly, based on the maximum row and column presented in the data.
+    * A matrix can be converted to an explicit dense form (see matrix_t) by 
+    * using the utility module MakeR8Set. This module should only be used for known
+    * small matrixes (&lt; 1M cells) or for partitions of a larger matrix.
+    * The Converted module provides utility
+    * functions to convert to and from a set of partitions (See Layout_parts).
+    *
+    * @field wi_id  Work Item Number -- An identifier from 1 to 64K-1 that
+    *                 separates and identifies individual matrixes
+    * @field x	    1-based row position within the matrix
+    * @field y	    1-based column position within the matrix
+    * @field v	    Real value for the cell
+    * @see		    matrix_t
+    * @see		    Std/PBblas/MakeR8Set.ecl
+    * @see		    Std/PBblas/Converted.ecl
+    *
+    * WARNING: Used as C++ attribute.  Do not change without corresponding changes
+    *  to MakeR8Set.&#10;&#32;&#32;&#32;&#32;</content>
+   </Documentation>
+  </Definition>
+  <Definition body="470"
+              end="490"
+              fullname="pbblas.layout_dims"
+              inherittype="local"
+              line="14"
+              name="Layout_Dims"
+              start="456"
+              type="record">
+   <Field name="m_label">
+    <Type type="string3"/>
+   </Field>
+   <Field name="wi_id">
+    <Type type="unsigned2"/>
+   </Field>
+   <Field name="m_rows">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="m_cols">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="block_rows">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="block_cols">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="row_blocks">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="col_blocks">
+    <Type type="unsigned4"/>
+   </Field>
+   <Documentation>
+    <content>&#10;&#32;&#32;&#32;&#32;* Record format for matrix and matrix partition dimensions.  Each record describes
+    * A single matrix or matrix partition.  Partitions use all of the fields, while
+    * a non-partitioned matrix only uses the first two (i.e. m_rows and m_cols).
+    * @field m_label A user provided label indicating to which matrix the dimensions
+    *                apply, when used to describe a set of related matrixes (e.g.,
+    *                &apos;A&apos;, &apos;B&apos;, and &apos;C&apos;) for the same work item used in an operation.
+    * @field m_rows The number of rows in the full matrix
+    * @field m_cols The number of colums in the full matrix
+    * @field block_rows The number of rows in each partition of the matrix
+    * @field block_cols The number of columns in each partition
+    * @field row_blocks The number of row partitions in use for the matrix
+    * @field col_blocks The number of column partitions in use for the matrix&#10;&#32;&#32;&#32;&#32;</content>
+   </Documentation>
+  </Definition>
+  <Definition body="501"
+              end="516"
+              fullname="pbblas.value_t"
+              inherittype="local"
+              line="15"
+              name="value_t"
+              start="491"
+              type="attribute">
+   <Type type="real8"/>
+  </Definition>
+  <Definition body="531"
+              end="557"
+              fullname="pbblas.dimension_t"
+              inherittype="local"
+              line="16"
+              name="dimension_t"
+              start="517"
+              type="attribute">
+   <Type type="unsigned4"/>
+  </Definition>
+  <Definition body="1075"
+              end="1532"
+              exported="1"
+              fullname="pbblas.vector2diag"
+              inherittype="local"
+              line="28"
+              name="Vector2Diag"
+              start="1003"
+              type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi_id">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="x">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="y">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="v">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>&#10;&#32;&#32;* Convert a vector into a diagonal matrix.  
+  * The typical notation is D = diag(V).
+  * The input X must be a 1 x N column vector or an N x 1 row vector.
+  * The resulting matrix, in either case will be N x N, with zero everywhere
+  * except the diagonal.
+  *
+  * @param X  A row or column vector (i.e. N x 1 or 1 x N) in Layout_Cell format
+  * @return   An N x N matrix in Layout_Cell format
+  * @see      PBblas/Types.Layout_cell&#10;&#32;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="X">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

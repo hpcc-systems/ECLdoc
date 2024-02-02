@@ -1,0 +1,60 @@
+\chapter*{\color{headfile}
+{\large ML\_Core\slash\hspace{0pt}}
+{\large Math\slash\hspace{0pt}}
+ \\
+Poly
+}
+\hypertarget{ecldoc:toc:ML_Core.Math.Poly}{}
+\hyperlink{ecldoc:toc:root/ML_Core/Math}{Go Up}
+
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} EMBED}
+Poly}}
+
+\hypertarget{ecldoc:ml_core.math.poly}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} REAL8} & \textbf{Poly} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (REAL8 x, SET OF REAL8 Coeffs)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Evaluate a polynomial from a set of co-effs. Co-effs 1 is assumed to be the HIGH order of the equation. Thus for ax\^{}2+bx+c - the set would need to be Coef := [a,b,c];
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{Coeffs}} ||| SET ( REAL8 ) --- a set of coefficients forthe polynomial. The ALL set is considered to be all zero values
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{x}} ||| REAL8 --- the value of x in the polynomial
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- value of the polynomial at x
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

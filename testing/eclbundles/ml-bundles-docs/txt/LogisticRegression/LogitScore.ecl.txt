@@ -1,0 +1,27 @@
+IMPORTS
+=======
+
+
+ML_Core.Types <../ML_Core/Types.ecl.txt>
+LogisticRegression </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/LogisticRegression/pkg.toc.txt>
+LogisticRegression.Types <Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Raw_Prediction) LogitScore(DATASET(Model_Coef) coef, DATASET(NumericField)
+                                             independents)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Calculate the score using the logit function and the the supplied beta
+coefficients.
+
+Parameter : coef TABLE ( Model_Coef ) --- the model beta
+                 coefficients
+
+Parameter : independents TABLE ( NumericField ) --- the observations
+
+Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+         number , REAL8 raw } ) the raw prediction value
+

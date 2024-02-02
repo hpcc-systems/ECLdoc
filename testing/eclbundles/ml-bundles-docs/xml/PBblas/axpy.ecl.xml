@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="Types.ecl.xml"/><Source name="PBblas.axpy" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/axpy.ecl" target="axpy.ecl.xml">
+  <Import name="PBBlas" ref="PBblas" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/pkg.toc.xml"/>
+  <Import name="Types" ref="PBblas.Types" target="Types.ecl.xml">
+   </Import>
+  <Definition exported="1" fullname="pbblas.axpy" inherittype="local" line="19" name="axpy" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi_id">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="x">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="y">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="v">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Implements alpha*X + Y X and Y must have same shape</content><return>Matrix in DATASET(Layout_Cell) form</return><param>alpha Scalar multiplier for the X matrix</param><param>X X matrix in DATASET(Layout_Cell) form</param><param>Y Y matrix in DATASET(Layout_Call) form</param><firstline>Implements alpha*X + Y</firstline><see>PBblas/Types.layout_cell</see></Documentation>
+   <Signature name="axpy" ret="DATASET(Layout_Cell)" param="(value_t alpha, DATASET(Layout_Cell) X, DATASET(Layout_Cell) Y)" hlen="25">DATASET(Layout_Cell) axpy(value_t alpha, DATASET(Layout_Cell) X, DATASET(Layout_Cell) Y)</Signature><Params>
+    <Param name="alpha">
+     <Type type="real8"/>
+    </Param>
+    <Param name="X">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+    <Param name="Y">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Implements alpha*X + Y X and Y must have same shape</content><return>Matrix in DATASET(Layout_Cell) form</return><param>alpha Scalar multiplier for the X matrix</param><param>X X matrix in DATASET(Layout_Cell) form</param><param>Y Y matrix in DATASET(Layout_Call) form</param><firstline>Implements alpha*X + Y</firstline><see>PBblas/Types.layout_cell</see></Documentation>
+   </Source>
+</Meta>

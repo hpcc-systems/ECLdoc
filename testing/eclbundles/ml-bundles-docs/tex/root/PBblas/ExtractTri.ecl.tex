@@ -1,0 +1,82 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+ExtractTri
+}
+\hypertarget{ecldoc:toc:PBblas.ExtractTri}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+std.blas |
+PBblas.Types |
+PBblas.internal |
+PBblas.internal.Types |
+PBblas.internal.MatDims |
+PBblas.internal.Converted |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ExtractTri}}
+
+\hypertarget{ecldoc:pbblas.extracttri}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{ExtractTri} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Triangle tri, Diagonal dt, DATASET(Layout\_Cell) A)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extract the upper or lower triangle from the composite output from getrf (LU Factorization).
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{tri}} ||| UNSIGNED1 --- Triangle type: Upper or Lower (see Types.Triangle)
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{A}} ||| TABLE ( Layout\_Cell ) --- Matrix of cells. See Types.Layout\_Cell
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{dt}} ||| UNSIGNED1 --- Diagonal type: Unit or non unit (see Types.Diagonal)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- Matrix of cells in Layout\_Cell format representing a triangular matrix (upper or lower)
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std.PBblas.Types
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

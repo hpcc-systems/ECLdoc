@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/example_3.ecl" target="example_3.ecl.xml">
+  <Definition exported="1" fullname="Example_3" inherittype="local" line="24" name="Example_3" type="module">
+   <Definition exported="1" fullname="Example_3.mod_1" inherittype="local" line="25" name="mod_1" type="module">
+    <Definition exported="1" fullname="example_3.mod_1.v1_m1" inherittype="local" line="32" name="v1_m1" type="attribute">
+     <Type type="real8"/>
+     <Signature name="v1_m1" ret="" param="" hlen="5">v1_m1</Signature><Documentation>
+      <firstline>Doc test 2</firstline><content>Doc test 2. Title end by period not newline &lt;pre&gt;&lt;br/&gt; ABCD ||||&lt;br/&gt; CDEF ||||&lt;/pre&gt;</content></Documentation>
+    </Definition>
+    <Definition exported="1" fullname="example_3.mod_1.v2_m1_ex3" inherittype="local" line="36" name="v2_m1_ex3" type="attribute">
+     <Type type="real8"/>
+     <Signature name="v2_m1_ex3" ret="" param="" hlen="9">v2_m1_ex3</Signature><Documentation>
+      <firstline>DOC Test 3</firstline><content>DOC Test 3 No Period title</content></Documentation>
+    </Definition>
+    <Definition exported="1" fullname="example_3.mod_1.abc" inherittype="local" line="37" name="abc" type="function">
+     <Type type="real8"/>
+     <Signature name="abc" ret="REAL8" param="(REAL8 x)" hlen="9">REAL8 abc(REAL8 x)</Signature><Params>
+      <Param name="x">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="example_3.mod_1.long_name" inherittype="local" line="38" name="long_name" type="function">
+     <Type type="real8"/>
+     <Signature name="long_name" ret="" param="(DATASET({REAL8 u}) X, DATASET({REAL8 u}) IntW, DATASET({REAL8 u}) Intb, REAL8 BETA=0.1, REAL8 sparsityParam=0.1 , REAL8 LAMBDA=0.001, REAL8 ALPHA=0.1, UNSIGNED2 MaxIter=100)" hlen="9">long_name(DATASET({REAL8 u}) X, DATASET({REAL8 u}) IntW, DATASET({REAL8 u}) Intb, REAL8 BETA=0.1, REAL8 sparsityParam=0.1 , REAL8 LAMBDA=0.001, REAL8 ALPHA=0.1, UNSIGNED2 MaxIter=100)</Signature><Params>
+      <Param name="X">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="IntW">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="Intb">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="BETA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="sparsityParam">
+       <Type type="real8"/>
+      </Param>
+      <Param name="LAMBDA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="ALPHA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="MaxIter">
+       <Type type="unsigned2"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Signature name="mod_1" ret="" param="" hlen="5">mod_1</Signature><Parents/>
+   </Definition>
+   <Documentation>
+    <return>rec_1</return><firstline>Documentation Testing Multiline Title</firstline><field>f1 oka_f1</field><field>f2 oka_f2</field><content>Documentation Testing Multiline Title. link@myspace.com &lt;p&gt; Sentence 1 blablalbla bbblaaaa &lt;/p&gt;&lt;p&gt; Sentence 2 &lt;/p&gt;&lt;pre&gt;&lt;br/&gt; blablalbla                    bbbblaaaaa&lt;br/&gt;&lt;br/&gt; bblaaaaaaaaaa&lt;br/&gt; &lt;/pre&gt;</content><see>example_1.mod_1</see><author>example_1.sarthakjain</author><param>first okay_1</param><param>second okay_2</param><param>third okay_3</param></Documentation>
+   <Signature name="Example_3" ret="" param="" hlen="9">Example_3</Signature><Parents/>
+  </Definition>
+ <Documentation>
+    <return>rec_1</return><firstline>Documentation Testing Multiline Title</firstline><field>f1 oka_f1</field><field>f2 oka_f2</field><content>Documentation Testing Multiline Title. link@myspace.com &lt;p&gt; Sentence 1 blablalbla bbblaaaa &lt;/p&gt;&lt;p&gt; Sentence 2 &lt;/p&gt;&lt;pre&gt;&lt;br/&gt; blablalbla                    bbbblaaaaa&lt;br/&gt;&lt;br/&gt; bblaaaaaaaaaa&lt;br/&gt; &lt;/pre&gt;</content><see>example_1.mod_1</see><author>example_1.sarthakjain</author><param>first okay_1</param><param>second okay_2</param><param>third okay_3</param></Documentation>
+   </Source>
+</Meta>

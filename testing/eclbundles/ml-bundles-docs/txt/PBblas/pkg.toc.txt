@@ -1,0 +1,59 @@
+++++++++++
+  PBblas
+++++++++++
+
+
+Name : PBblas
+
+Version : 3.0.1
+
+Description : Parallel Block Basic Linear Algebra Subsystem
+
+License : http://www.apache.org/licenses/LICENSE-2.0
+
+Copyright : Copyright (C) 2016, 2017 HPCC Systems
+
+Authors : HPCCSystems
+
+DependsOn : ML_Core
+
+Platform : 6.2.0
+
+
+CONTENTS
+========
+
+file : Apply2Elements.ecl <Apply2Elements.ecl.txt>    Apply a function to each element of the matrix Use PBblas.IElementFunc as the prototype function
+
+file : asum.ecl <asum.ecl.txt>    Absolute sum -- the "Entrywise" 1-norm
+
+file : axpy.ecl <axpy.ecl.txt>    Implements alpha*X + Y
+
+file : Constants.ecl <Constants.ecl.txt>    
+
+file : Converted.ecl <Converted.ecl.txt>    Module to convert between ML_Core/Types Field layouts (i.e
+
+file : ExtractTri.ecl <ExtractTri.ecl.txt>    Extract the upper or lower triangle from the composite output from getrf (LU Factorization)
+
+file : gemm.ecl <gemm.ecl.txt>    Extended Parallel Block Matrix Multiplication Module Implements: Result = alpha * op(A)op(B) + beta * C
+
+file : getrf.ecl <getrf.ecl.txt>    LU Factorization Splits a matrix into Lower and Upper triangular factors Produces composite LU matrix for the diagonal blocks
+
+file : HadamardProduct.ecl <HadamardProduct.ecl.txt>    Element-wise multiplication of X * Y
+
+file : IElementFunc.ecl <IElementFunc.ecl.txt>    Function prototype for a function to apply to each element of the
+
+file : MatUtils.ecl <MatUtils.ecl.txt>    Provides various utility attributes for manipulating cell-based matrixes
+
+file : potrf.ecl <potrf.ecl.txt>    Implements Cholesky factorization of A = U**T * U if Triangular.Upper requested or A = L * L**T if Triangualr.Lower is requested
+
+file : scal.ecl <scal.ecl.txt>    Scale a matrix by a constant Result is alpha * X This supports a "myriad" style interface in that X may be a set of independent matrices separated by different work-item ids
+
+file : tran.ecl <tran.ecl.txt>    Transpose a matrix and sum into base matrix
+
+file : trsm.ecl <trsm.ecl.txt>    Partitioned block parallel triangular matrix solver
+
+file : Types.ecl <Types.ecl.txt>    Types for the Parallel Block Basic Linear Algebra Sub-programs support WARNING: attributes marked with WARNING can not be changed without making corresponding changes to the C++ attributes
+
+file : Vector2Diag.ecl <Vector2Diag.ecl.txt>    Convert a vector into a diagonal matrix
+

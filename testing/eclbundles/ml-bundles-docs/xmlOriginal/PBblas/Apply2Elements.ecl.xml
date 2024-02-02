@@ -1,0 +1,1570 @@
+<Meta>
+ <Source name="ML_Core.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Types.ecl">
+  <Definition body="37"
+              end="3074"
+              exported="1"
+              fullname="ML_Core.Types"
+              inherittype="local"
+              line="2"
+              name="Types"
+              start="22"
+              type="module">
+   <Definition body="944"
+               end="955"
+               exported="1"
+               fullname="ml_core.types.t_recordid"
+               inherittype="local"
+               line="22"
+               name="t_RecordID"
+               start="924"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="981"
+               end="992"
+               exported="1"
+               fullname="ml_core.types.t_fieldnumber"
+               inherittype="local"
+               line="23"
+               name="t_FieldNumber"
+               start="958"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="1016"
+               end="1023"
+               exported="1"
+               fullname="ml_core.types.t_fieldreal"
+               inherittype="local"
+               line="24"
+               name="t_FieldReal"
+               start="995"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="1047"
+               end="1057"
+               exported="1"
+               fullname="ml_core.types.t_fieldsign"
+               inherittype="local"
+               line="25"
+               name="t_FieldSign"
+               start="1026"
+               type="attribute">
+    <Type type="integer1"/>
+   </Definition>
+   <Definition body="1080"
+               end="1090"
+               exported="1"
+               fullname="ml_core.types.t_discrete"
+               inherittype="local"
+               line="26"
+               name="t_Discrete"
+               start="1060"
+               type="attribute">
+    <Type type="integer4"/>
+   </Definition>
+   <Definition body="1109"
+               end="1120"
+               exported="1"
+               fullname="ml_core.types.t_item"
+               inherittype="local"
+               line="27"
+               name="t_Item"
+               start="1093"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="1188"
+               end="1200"
+               exported="1"
+               fullname="ml_core.types.t_count"
+               inherittype="local"
+               line="28"
+               name="t_Count"
+               start="1171"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="1258"
+               end="1269"
+               exported="1"
+               fullname="ml_core.types.t_work_item"
+               inherittype="local"
+               line="29"
+               name="t_Work_Item"
+               start="1237"
+               type="attribute">
+    <Type type="unsigned2"/>
+   </Definition>
+   <Definition body="1391"
+               end="1600"
+               exported="1"
+               fullname="ml_core.types.anyfield"
+               inherittype="local"
+               line="32"
+               name="AnyField"
+               start="1369"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+   </Definition>
+   <Definition body="1673"
+               end="1720"
+               exported="1"
+               fullname="ml_core.types.numericfield"
+               inherittype="local"
+               line="39"
+               name="NumericField"
+               start="1651"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="1797"
+               end="1843"
+               exported="1"
+               fullname="ml_core.types.discretefield"
+               inherittype="local"
+               line="44"
+               name="DiscreteField"
+               start="1774"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+   </Definition>
+   <Definition body="1953"
+               end="2200"
+               exported="1"
+               fullname="ml_core.types.layout_model"
+               inherittype="local"
+               line="49"
+               name="Layout_Model"
+               start="1931"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2261"
+               end="2336"
+               exported="1"
+               fullname="ml_core.types.classify_result"
+               inherittype="local"
+               line="57"
+               name="Classify_Result"
+               start="2236"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2357"
+               end="2410"
+               exported="1"
+               fullname="ml_core.types.l_result"
+               inherittype="local"
+               line="60"
+               name="l_result"
+               start="2339"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2440"
+               end="2639"
+               exported="1"
+               fullname="ml_core.types.confusion_detail"
+               inherittype="local"
+               line="62"
+               name="Confusion_Detail"
+               start="2414"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="classifier">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="actual_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="predict_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="occurs">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="correct">
+     <Type type="boolean"/>
+    </Field>
+   </Definition>
+   <Definition body="2711"
+               end="2782"
+               exported="1"
+               fullname="ml_core.types.itemelement"
+               inherittype="local"
+               line="72"
+               name="ItemElement"
+               start="2690"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="value">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+   </Definition>
+   <Definition body="2848"
+               end="2858"
+               exported="1"
+               fullname="ml_core.types.t_node"
+               inherittype="local"
+               line="79"
+               name="t_node"
+               start="2831"
+               type="attribute">
+    <Type type="integer4"/>
+   </Definition>
+   <Definition body="2942"
+               end="2953"
+               exported="1"
+               fullname="ml_core.types.t_level"
+               inherittype="local"
+               line="80"
+               name="t_level"
+               start="2925"
+               type="attribute">
+    <Type type="unsigned2"/>
+   </Definition>
+   <Definition body="2995"
+               end="3069"
+               exported="1"
+               fullname="ml_core.types.nodeid"
+               inherittype="local"
+               line="81"
+               name="NodeID"
+               start="2978"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="node_id">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="level">
+     <Type type="unsigned2"/>
+    </Field>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="PBblas.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./PBblas/Types.ecl">
+  <Definition body="516"
+              end="4363"
+              exported="1"
+              fullname="PBblas.Types"
+              inherittype="local"
+              line="11"
+              name="Types"
+              start="501"
+              type="module">
+   <Definition body="692"
+               end="703"
+               exported="1"
+               fullname="pbblas.types.dimension_t"
+               inherittype="local"
+               line="16"
+               name="dimension_t"
+               start="670"
+               type="attribute">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix dimensions.  Uses UNSIGNED four as matrixes
+    * are not designed to support more than 4 B rows or columns.&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="851"
+               end="862"
+               exported="1"
+               fullname="pbblas.types.partition_t"
+               inherittype="local"
+               line="20"
+               name="partition_t"
+               start="829"
+               type="attribute">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for partition id -- only supports up to 64K partitions&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="967"
+               end="988"
+               exported="1"
+               fullname="pbblas.types.work_item_t"
+               inherittype="local"
+               line="24"
+               name="work_item_t"
+               start="945"
+               type="attribute">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for work-item id -- only supports up to 64K work items&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1109"
+               end="1116"
+               exported="1"
+               fullname="pbblas.types.value_t"
+               inherittype="local"
+               line="30"
+               name="value_t"
+               start="1087"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix cell values
+    * 
+    * WARNING: type used in C++ attribute&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1272"
+               end="1281"
+               exported="1"
+               fullname="pbblas.types.m_label_t"
+               inherittype="local"
+               line="35"
+               name="m_label_t"
+               start="1250"
+               type="attribute">
+    <Type type="string3"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix label.  Used for Matrix dimensions (see Layout_Dims)
+    * and for partitions (see Layout_Part)&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1404"
+               end="1439"
+               exported="1"
+               inherittype="local"
+               line="41"
+               name="Triangle"
+               start="1382"
+               type="attribute">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Enumeration for Triangle type
+    * 
+    * WARNING: type used in C++ attribute&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1564"
+               end="1606"
+               exported="1"
+               inherittype="local"
+               line="47"
+               name="Diagonal"
+               start="1542"
+               type="attribute">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Enumeration for Diagonal type
+    * 
+    * WARNING: type used in C++ attribute&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1729"
+               end="1758"
+               exported="1"
+               inherittype="local"
+               line="53"
+               name="Side"
+               start="1707"
+               type="attribute">
+    <Type type="unsigned1"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Enumeration for Side type
+    * 
+    * WARNING: type used in C++ attribute&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1893"
+               end="1904"
+               exported="1"
+               fullname="pbblas.types.t_mu_no"
+               inherittype="local"
+               line="60"
+               name="t_mu_no"
+               start="1871"
+               type="attribute">
+    <Type type="unsigned2"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Type for matrix universe number
+    *
+    * Allow up to 64k matrices in one universe
+    *&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="3736"
+               end="3974"
+               exported="1"
+               fullname="pbblas.types.layout_cell"
+               inherittype="local"
+               line="94"
+               name="Layout_Cell"
+               start="3714"
+               type="record">
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="x">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="y">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="v">
+     <Type type="real8"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Layout for Matrix Cell
+    *
+    * Main representation of Matrix cell at interface to all PBBlas functions.
+    * Matrixes are represented as DATASET(Layout_Cell), where each cell describes
+    * the row and column position of the cell as well as its value.
+    * Only the non-zero cells need to be contained in the dataset in order
+    * to describe the matrix since all unspecified cells are considered to
+    * have a value of zero.
+    * The cell also contains a work-item number that allows multiple separate
+    * matrixes to be carried in the same dataset.  This supports the &quot;myriad&quot;
+    * style interface that allows the same operations to be performed on many
+    * different sets of data at once.
+    * Note that these matrixes do not have an explicit size.  They are sized
+    * implicitly, based on the maximum row and column presented in the data.
+    * A matrix can be converted to an explicit dense form (see matrix_t) by 
+    * using the utility module MakeR8Set. This module should only be used for known
+    * small matrixes (&lt; 1M cells) or for partitions of a larger matrix.
+    * The Converted module provides utility
+    * functions to convert to and from a set of partitions (See Layout_parts).
+    *
+    * @field wi_id  Work Item Number -- An identifier from 1 to 64K-1 that
+    *                 separates and identifies individual matrixes
+    * @field x	    1-based row position within the matrix
+    * @field y	    1-based column position within the matrix
+    * @field v	    Real value for the cell
+    * @see		    matrix_t
+    * @see		    Std/PBblas/MakeR8Set.ecl
+    * @see		    Std/PBblas/Converted.ecl
+    *
+    * WARNING: Used as C++ attribute.  Do not change without corresponding changes
+    *  to MakeR8Set.&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="4234"
+               end="4358"
+               exported="1"
+               fullname="pbblas.types.layout_norm"
+               inherittype="local"
+               line="108"
+               name="Layout_Norm"
+               start="4213"
+               type="record">
+    <Field name="wi_id">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="v">
+     <Type type="real8"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* Layout for Norm results.
+    *
+    * @field wi_id  Work Item Number -- An identifier from 1 to 64K-1 that
+    *                 separates and identifies individual matrixes
+    * @field v	    Real value for the norm&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;&#32;* Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="248"
+          fullname="ML_Core"
+          inherittype="local"
+          line="4"
+          name="ML_Core"
+          ref="ML_Core"
+          remotescope="1"
+          start="248"/>
+  <Import body="0"
+          end="264"
+          fullname="ML_Core.Types"
+          inherittype="local"
+          line="5"
+          name="MlTypes"
+          ref="ML_Core.Types"
+          start="264"/>
+ </Source>
+ <Source sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/>
+ <Source name="std.BLAS" sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl">
+  <Definition body="853"
+              end="11458"
+              exported="1"
+              fullname="std.blas"
+              inherittype="local"
+              line="19"
+              name="BLAS"
+              start="839"
+              type="module">
+   <Definition body="947"
+               end="1456"
+               exported="1"
+               fullname="std.BLAS.Types"
+               inherittype="local"
+               line="21"
+               name="Types"
+               start="932"
+               type="module">
+    <Definition body="982"
+                end="1008"
+                exported="1"
+                fullname="std.blas.types.value_t"
+                inherittype="local"
+                line="22"
+                name="value_t"
+                start="960"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="1049"
+                end="1079"
+                exported="1"
+                fullname="std.blas.types.dimension_t"
+                inherittype="local"
+                line="23"
+                name="dimension_t"
+                start="1027"
+                type="attribute">
+     <Type type="unsigned4"/>
+    </Definition>
+    <Definition body="1120"
+                end="1147"
+                exported="1"
+                fullname="std.blas.types.matrix_t"
+                inherittype="local"
+                line="24"
+                name="matrix_t"
+                start="1098"
+                type="attribute">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Definition>
+    <Definition body="1193"
+                end="1220"
+                exported="1"
+                inherittype="local"
+                line="25"
+                name="Triangle"
+                start="1171"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="1287"
+                end="1314"
+                exported="1"
+                inherittype="local"
+                line="26"
+                name="Diagonal"
+                start="1265"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="1388"
+                end="1411"
+                exported="1"
+                inherittype="local"
+                line="27"
+                name="Side"
+                start="1366"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Definition body="1799"
+               end="1802"
+               exported="1"
+               fullname="std.blas.icellfunc"
+               inherittype="local"
+               line="37"
+               name="ICellFunc"
+               start="1639"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Function prototype for Apply2Cell.
+   * @param v the value
+   * @param r the row ordinal
+   * @param c the column ordinal
+   * @return the updated value&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="v">
+      <Type type="real8"/>
+     </Param>
+     <Param name="r">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="c">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2237"
+               end="2557"
+               exported="1"
+               fullname="std.blas.apply2cells"
+               inherittype="local"
+               line="49"
+               name="Apply2Cells"
+               start="2017"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Iterate matrix and apply function to each cell
+   *@param m number of rows
+   *@param n number of columns
+   *@param x matrix
+   *@param f function to apply
+   *@return updated matrix&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="f">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+        <Type type="unsigned4"/>
+        <Type type="unsigned4"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3082"
+               end="3130"
+               exported="1"
+               fullname="std.blas.dasum"
+               inherittype="local"
+               line="73"
+               name="dasum"
+               start="2934"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Absolute sum, the 1 norm of a vector.
+   *@param m the number of entries
+   *@param x the column major matrix holding the vector
+   *@param incx the increment for x, 1 in the case of an actual vector
+   *@param skipped default is zero, the number of entries stepped over
+   * to get to the first entry
+   *@return the sum of the absolute values&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="incx">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="skipped">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3887"
+               end="3964"
+               exported="1"
+               fullname="std.blas.daxpy"
+               inherittype="local"
+               line="90"
+               name="daxpy"
+               start="3626"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;* alpha*X + Y
+ * @param N number of elements in vector
+ * @param alpha the scalar multiplier
+ * @param X the column major matrix holding the vector X
+ * @param incX the increment or stride for the vector
+ * @param Y the column major matrix holding the vector Y
+ * @param incY the increment or stride of Y
+ * @param x_skipped number of entries skipped to get to the first X
+ * @param y_skipped number of entries skipped to get to the first Y
+ * @return the updated matrix&#13;&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="X">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="incX">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="Y">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="incY">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x_skipped">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="y_skipped">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="4764"
+               end="4846"
+               exported="1"
+               fullname="std.blas.dgemm"
+               inherittype="local"
+               line="109"
+               name="dgemm"
+               start="4465"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* alpha*op(A) op(B) + beta*C where op() is transpose
+   * @param transposeA true when transpose of A is used
+   * @param transposeB true when transpose of B is used
+   * @param M number of rows in product
+   * @param N number of columns in product
+   * @param K number of columns/rows for the multiplier/multiplicand
+   * @param alpha scalar used on A
+   * @param A matrix A
+   * @param B matrix B
+   * @param beta scalar for matrix C
+   * @param C matrix C or empty&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="transposeA">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="transposeB">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="M">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="K">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="A">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="B">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="beta">
+      <Type type="real8"/>
+     </Param>
+     <Param name="C">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="5261"
+               end="5298"
+               exported="1"
+               fullname="std.blas.dgetf2"
+               inherittype="local"
+               line="124"
+               name="dgetf2"
+               start="5153"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Compute LU Factorization of matrix A.
+   * @param m number of rows of A
+   * @param n number of columns of A
+   * @return composite matrix of factors, lower triangle has an
+   *         implied diagonal of ones.  Upper triangle has the diagonal of the
+   *         composite.&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="a">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6087"
+               end="6133"
+               exported="1"
+               fullname="std.blas.dpotf2"
+               inherittype="local"
+               line="143"
+               name="dpotf2"
+               start="5934"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* DPOTF2 computes the Cholesky factorization of a real symmetric
+   * positive definite matrix A.
+   *The factorization has the form
+   * A = U**T * U ,  if UPLO = &apos;U&apos;, or
+   * A = L  * L**T,  if UPLO = &apos;L&apos;,
+   * where U is an upper triangular matrix and L is lower triangular.
+   * This is the unblocked version of the algorithm, calling Level 2 BLAS.
+   * @param tri indicate whether upper or lower triangle is used
+   * @param r number of rows/columns in the square matrix
+   * @param A the square matrix
+   * @param clear clears the unused triangle
+   * @return the triangular matrix requested.&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="tri">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="r">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="A">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="clear">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6683"
+               end="6738"
+               exported="1"
+               fullname="std.blas.dscal"
+               inherittype="local"
+               line="157"
+               name="dscal"
+               start="6507"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Scale a vector alpha
+   * @param N number of elements in the vector
+   * @param alpha the scaling factor
+   * @param X the column major matrix holding the vector
+   * @param incX the stride to get to the next element in the vector
+   * @param skipped the number of elements skipped to get to the first element
+   * @return the updated matrix&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="X">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="incX">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="skipped">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="7689"
+               end="7765"
+               exported="1"
+               fullname="std.blas.dsyrk"
+               inherittype="local"
+               line="177"
+               name="dsyrk"
+               start="7415"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Implements symmetric rank update C &lt;- alpha A**T A + beta C or
+   * c &lt;- alpha A A**T + beta C.  C is N x N.
+   * @param tri update upper or lower triangle
+   * @param transposeA Transpose the A matrix to be NxK
+   * @param N number of rows
+   * @param K number of columns in the update matrix or transpose
+   * @param alpha the alpha scalar
+   * @param A the update matrix, either NxK or KxN
+   * @param beta the beta scalar
+   * @param C the matrix to update
+   * @param clear clear the triangle that is not updated.  BLAS assumes
+   * that symmetric matrices have only one of the triangles and this
+   * option lets you make that true.&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="tri">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="transposeA">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="K">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="A">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="beta">
+      <Type type="real8"/>
+     </Param>
+     <Param name="C">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="clear">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="8753"
+               end="8833"
+               exported="1"
+               fullname="std.blas.dtrsm"
+               inherittype="local"
+               line="199"
+               name="dtrsm"
+               start="8458"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Triangular matrix solver.  op(A) X = alpha B or X op(A) = alpha B
+   * where op is Transpose, X and B is MxN
+   * @param side side for A, Side.Ax is op(A) X = alpha B
+   * @param tri Says whether A is Upper or Lower triangle
+   * @param transposeA is op(A) the transpose of A
+   * @param diag is the diagonal an implied unit diagonal or supplied
+   * @param M number of rows
+   * @param N number of columns
+   * @param lda the leading dimension of the A matrix, either M or N
+   * @param alpha the scalar multiplier for B
+   * @param A a triangular matrix
+   * @param B the matrix of values for the solve
+   * @return the matrix of coefficients to get B.&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="side">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="tri">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="transposeA">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="diag">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="M">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="lda">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="A">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="B">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="9216"
+               end="9529"
+               exported="1"
+               fullname="std.blas.extract_diag"
+               inherittype="local"
+               line="213"
+               name="extract_diag"
+               start="9043"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Extract the diagonal of he matrix
+   * @param m number of rows
+   * @param n number of columns
+   * @param x matrix from which to extract the diagonal
+   * @return diagonal matrix&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="10129"
+               end="10180"
+               exported="1"
+               fullname="std.blas.extract_tri"
+               inherittype="local"
+               line="236"
+               name="extract_tri"
+               start="9932"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Extract the upper or lower triangle.  Diagonal can be actual or implied
+   * unit diagonal.
+   * @param m number of rows
+   * @param n number of columns
+   * @param tri Upper or Lower specifier, Triangle.Lower or Triangle.Upper
+   * @param dt Use Diagonal.NotUnitTri or Diagonal.UnitTri
+   * @param a Matrix, usually a composite from factoring
+   * @return the triangle&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="tri">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="dt">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="a">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="10545"
+               end="10585"
+               exported="1"
+               fullname="std.blas.make_diag"
+               inherittype="local"
+               line="249"
+               name="make_diag"
+               start="10418"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Generate a diagonal matrix.
+   * @param m number of diagonal entries
+   * @param v option value, defaults to 1
+   * @param X optional input of diagonal values, multiplied by v.
+   * @return a diagonal matrix&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="v">
+      <Type type="real8"/>
+     </Param>
+     <Param name="X">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="11071"
+               end="11098"
+               exported="1"
+               fullname="std.blas.make_vector"
+               inherittype="local"
+               line="268"
+               name="make_vector"
+               start="10967"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Make a vector of dimension m
+   * @param m number of elements
+   * @param v the values, defaults to 1
+   * @return the vector&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="v">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="11426"
+               end="11452"
+               exported="1"
+               fullname="std.blas.trace"
+               inherittype="local"
+               line="279"
+               name="trace"
+               start="11297"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* The trace of the input matrix
+   * @param m number of rows
+   * @param n number of columns
+   * @param x the matrix
+   * @return the trace (sum of the diagonal entries)&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="808"
+          fullname="lib_eclblas"
+          inherittype="local"
+          line="17"
+          name="LIB_ECLBLAS"
+          ref="lib_eclblas"
+          remotescope="1"
+          start="808"/>
+ </Source>
+ <Source name="PBblas.IElementFunc" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./PBblas/IElementFunc.ecl">
+  <Import body="0"
+          end="251"
+          fullname="PBblas"
+          inherittype="local"
+          line="5"
+          name="PBBlas"
+          ref="PBblas"
+          start="251"/>
+  <Definition body="311"
+              end="337"
+              fullname="pbblas.dimension_t"
+              inherittype="local"
+              line="7"
+              name="dimension_t"
+              start="297"
+              type="attribute">
+   <Type type="unsigned4"/>
+  </Definition>
+  <Definition body="378"
+              end="393"
+              fullname="pbblas.value_t"
+              inherittype="local"
+              line="10"
+              name="value_t"
+              start="368"
+              type="attribute">
+   <Type type="real8"/>
+  </Definition>
+  <Definition body="731"
+              end="734"
+              exported="1"
+              fullname="pbblas.ielementfunc"
+              inherittype="local"
+              line="21"
+              name="IElementFunc"
+              start="660"
+              type="function">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;&#32;* Function prototype for a function to apply to each element of the 
+  * distributed matrix
+  *
+  * Base your function on this prototype:
+  * 
+  * @param v   Input value
+  * @param r   Row number (1 based)
+  * @param c   Column number (1 based)
+  * @return    Output value
+  * @see       PBblas/Apply2Elements&#10;&#32;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="v">
+     <Type type="real8"/>
+    </Param>
+    <Param name="r">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="c">
+     <Type type="unsigned4"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="PBblas.Apply2Elements" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Apply2Elements.ecl">
+  <Import body="0"
+          end="251"
+          fullname="PBblas"
+          inherittype="local"
+          line="5"
+          name="PBblas"
+          ref="PBblas"
+          start="251"/>
+  <Import body="0"
+          end="271"
+          fullname="PBblas.Types"
+          inherittype="local"
+          line="6"
+          name="Types"
+          ref="PBblas.Types"
+          start="271">
+   <Documentation>
+    <content>&#10;&#32;&#32;* Types for the Parallel Block Basic Linear Algebra Sub-programs support
+  * WARNING: attributes marked with WARNING can not be changed without making
+  * corresponding changes to the C++ attributes.&#10;&#32;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="292"
+          fullname="pbblas.blas"
+          inherittype="local"
+          line="7"
+          name="BLAS"
+          ref="std.blas"
+          start="292"/>
+  <Definition body="348"
+              end="367"
+              fullname="pbblas.layout_cell"
+              inherittype="local"
+              line="9"
+              name="Layout_Cell"
+              start="334"
+              type="record">
+   <Field name="wi_id">
+    <Type type="unsigned2"/>
+   </Field>
+   <Field name="x">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="y">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="v">
+    <Type type="real8"/>
+   </Field>
+   <Documentation>
+    <content>&#10;&#32;&#32;&#32;&#32;* Layout for Matrix Cell
+    *
+    * Main representation of Matrix cell at interface to all PBBlas functions.
+    * Matrixes are represented as DATASET(Layout_Cell), where each cell describes
+    * the row and column position of the cell as well as its value.
+    * Only the non-zero cells need to be contained in the dataset in order
+    * to describe the matrix since all unspecified cells are considered to
+    * have a value of zero.
+    * The cell also contains a work-item number that allows multiple separate
+    * matrixes to be carried in the same dataset.  This supports the &quot;myriad&quot;
+    * style interface that allows the same operations to be performed on many
+    * different sets of data at once.
+    * Note that these matrixes do not have an explicit size.  They are sized
+    * implicitly, based on the maximum row and column presented in the data.
+    * A matrix can be converted to an explicit dense form (see matrix_t) by 
+    * using the utility module MakeR8Set. This module should only be used for known
+    * small matrixes (&lt; 1M cells) or for partitions of a larger matrix.
+    * The Converted module provides utility
+    * functions to convert to and from a set of partitions (See Layout_parts).
+    *
+    * @field wi_id  Work Item Number -- An identifier from 1 to 64K-1 that
+    *                 separates and identifies individual matrixes
+    * @field x	    1-based row position within the matrix
+    * @field y	    1-based column position within the matrix
+    * @field v	    Real value for the cell
+    * @see		    matrix_t
+    * @see		    Std/PBblas/MakeR8Set.ecl
+    * @see		    Std/PBblas/Converted.ecl
+    *
+    * WARNING: Used as C++ attribute.  Do not change without corresponding changes
+    *  to MakeR8Set.&#10;&#32;&#32;&#32;&#32;</content>
+   </Documentation>
+  </Definition>
+  <Definition body="378"
+              end="393"
+              fullname="pbblas.value_t"
+              inherittype="local"
+              line="10"
+              name="value_t"
+              start="368"
+              type="attribute">
+   <Type type="real8"/>
+  </Definition>
+  <Definition body="409"
+              end="430"
+              fullname="pbblas.ielementfunc"
+              inherittype="local"
+              line="11"
+              name="IElementFunc"
+              start="394"
+              type="function">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;&#32;* Function prototype for a function to apply to each element of the 
+  * distributed matrix
+  *
+  * Base your function on this prototype:
+  * 
+  * @param v   Input value
+  * @param r   Row number (1 based)
+  * @param c   Column number (1 based)
+  * @return    Output value
+  * @see       PBblas/Apply2Elements&#10;&#32;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="v">
+     <Type type="real8"/>
+    </Param>
+    <Param name="r">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="c">
+     <Type type="unsigned4"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="439"
+              end="465"
+              fullname="pbblas.dim_t"
+              inherittype="local"
+              line="12"
+              name="dim_t"
+              start="431"
+              type="attribute">
+   <Type type="unsigned4"/>
+  </Definition>
+  <Definition body="1108"
+              end="1332"
+              exported="1"
+              fullname="pbblas.apply2elements"
+              inherittype="local"
+              line="27"
+              name="Apply2Elements"
+              start="979"
+              type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi_id">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="x">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="y">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="v">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>&#10;&#32;&#32;* Apply a function to each element of the matrix
+  *
+  * Use PBblas.IElementFunc as the prototype function.
+  * Input and ouput may be a single matrix, or myriad matrixes with
+  * different work item ids.
+  * 
+  * @param X       A matrix (or multiple matrices) in Layout_Cell form
+  * @param f       A function based on the IElementFunc prototype
+  * @return        A matrix (or multiple matrices) in Layout_Cell form
+  * @see           PBblas/IElementFunc
+  * @see           PBblas/Types.Layout_Cell&#10;&#32;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="X">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+    <Param name="f">
+     <Type type="function">
+      <Type type="real8"/>
+      <Params>
+       <Type type="real8"/>
+       <Type type="unsigned4"/>
+       <Type type="unsigned4"/>
+      </Params>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

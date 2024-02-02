@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <title>ML_Core.Interfaces.IRegression</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar topbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#menu-toggle" id="menu-toggle" class="navbar-brand glyphicon glyphicon-menu-hamburger ham"></a>
+            </div>
+            <div class="navbar-header" style="margin-left: 20px;">
+                <span class="navbar-brand">ML_Core.Interfaces.IRegression</span>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#ecldoc-section-import" class="topbar">Imports</a></li>
+                    <li><a href="#ecldoc-section-desc" class="topbar">Contents</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="pkg.toc.html">
+                        Up
+                    </a>
+                </li>
+                <li>
+                    <a href="IClassify.ecl.html">IClassify.ecl</a>
+                </li>
+                <li>
+                    <a href="IRegression.ecl.html">IRegression.ecl</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <section id="ecldoc-section-import">
+                    <h3 class="page-header">IMPORTS</h3>
+                    <ul class="pagination"><li><a href="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/html/ML_Core/pkg.toc.html">
+                                ML_Core
+                            </a></li><li><a href="../Types.ecl.html">
+                                ML_Core.Types
+                            </a></li></ul>
+                </section>
+                <section id="ecldoc-section-desc">
+                    <h3 class="page-header">CONTENTS</h3>
+                    <div class="panel-group desc-panel-group"><div class="panel panel-info desc-panel" id="dml_core-interfaces-iregression">
+                            <a href=".desc-ml_core-interfaces-iregression" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            MODULE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        IRegression
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret"></td>
+                                    <td class="name">IRegression</td>
+                                    <td class="param">(DATASET(NumericField) X=empty_data, DATASET(NumericField) Y=empty_data)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Interface Definition for Regression Modules Regression learns a function that maps a set of input data to one or more output variables
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse in desc-ml_core-interfaces-iregression">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Interface Definition for Regression Modules Regression learns a function that maps a set of input data to one or more output variables. The resulting learned function is known as the model. That model can then be used repetitively to predict (i.e. estimate) the output value(s) based on new input data.
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>Y</b></td>
+				<td><b>TABLE ( ml_core.interfaces.numericfield )</b> -- The dependent variable(s) in DATASET(NumericField) format. Each statistical unit (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number').</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>X</b></td>
+				<td><b>TABLE ( ml_core.interfaces.numericfield )</b> -- The independent data in DATASET(NumericField) format. Each statistical unit (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number').</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    <div class="panel panel-info desc-panel" id="dml_core-interfaces-iregression-getmodel">
+                            <a href=".desc-ml_core-interfaces-iregression-getmodel" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            ATTRIBUTE
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        GetModel
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(Layout_Model)</td>
+                                    <td class="name">GetModel</td>
+                                    <td class="param"></td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Calculate and return the 'learned' model The model may be persisted and later used to make predictions using 'Predict' below
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-ml_core-interfaces-iregression-getmodel">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Calculate and return the 'learned' model The model may be persisted and later used to make predictions using 'Predict' below.
+</div>
+</div>
+
+                                    
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value } )</b></td>
+				<td>DATASET(LayoutModel) describing the learned model parameters</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="panel panel-info desc-panel" id="dml_core-interfaces-iregression-predict">
+                            <a href=".desc-ml_core-interfaces-iregression-predict" data-toggle="collapse">
+                                <div class="panel-heading clearfix desc-panel-heading">
+                                    <div class="panel-title desc-type">
+                                            FUNCTION
+                                    </div>
+                                    <div class="panel-title desc-sign">
+                                        Predict
+                                    </div>
+                                    <div class="pull-right desc-btns">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <table class="table sign-list">
+                                <tr>
+                                    <td class="ret">DATASET(NumericField)</td>
+                                    <td class="name">Predict</td>
+                                    <td class="param">(DATASET(NumericField) newX, DATASET(Layout_Model) model)</td>
+                                </tr>
+
+                                <tr style="background: #f2f7ff;">
+                                    <td colspan="3">
+                                        Predict the output variable(s) based on a previously learned model
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="panel-collapse collapse desc-ml_core-interfaces-iregression-predict">
+                                <div class="panel-body desc-panel-body">
+                                    
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	Predict the output variable(s) based on a previously learned model
+</div>
+</div>
+
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Parameters</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>newX</b></td>
+				<td><b>TABLE ( ml_core.interfaces.numericfield )</b> -- DATASET(NumericField) containing the X values to b predicted.</td>
+			</tr>
+			<tr>
+				<td width="20%"><b>model</b></td>
+				<td><b>TABLE ( ml_core.interfaces.layout_model )</b> -- No Doc</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                    
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-1 doc-type">Returns</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			
+			<tr>
+				<td width="20%"><b>TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value } )</b></td>
+				<td>DATASET(NumericField) containing one entry per observation (i.e. id) in newX. This represents the predicted values for Y.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+                                    
+                                </div>
+                                <div class="panel-footer desc-panel-footer">
+                                    <div class="panel-group desc-panel-group">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>

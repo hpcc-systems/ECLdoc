@@ -1,0 +1,91 @@
+<Meta>
+ <Source sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_metaphone.ecllib"/>
+ <Source name="Metaphone" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/Metaphone.ecl">
+  <Import body="0"
+          end="281"
+          fullname="lib_metaphone"
+          inherittype="local"
+          line="9"
+          name="lib_metaphone"
+          ref="lib_metaphone"
+          remotescope="1"
+          start="281"/>
+  <Definition body="264"
+              end="1203"
+              exported="1"
+              fullname="Metaphone"
+              inherittype="local"
+              line="6"
+              name="Metaphone"
+              start="245"
+              type="module">
+   <Definition body="535"
+               end="582"
+               exported="1"
+               fullname="metaphone.primary"
+               inherittype="local"
+               line="18"
+               name="primary"
+               start="499"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the primary metaphone value
+ *
+ * @param src           The string whose metphone is to be calculated.
+ * @see                 http://en.wikipedia.org/wiki/Metaphone#Double_Metaphone&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="826"
+               end="873"
+               exported="1"
+               fullname="metaphone.secondary"
+               inherittype="local"
+               line="28"
+               name="secondary"
+               start="788"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the secondary metaphone value
+ *
+ * @param src           The string whose metphone is to be calculated.
+ * @see                 http://en.wikipedia.org/wiki/Metaphone#Double_Metaphone&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1147"
+               end="1197"
+               exported="1"
+               fullname="metaphone.double"
+               inherittype="local"
+               line="38"
+               name="double"
+               start="1112"
+               type="function">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the double metaphone value (primary and secondary concatenated
+ *
+ * @param src           The string whose metphone is to be calculated.
+ * @see                 http://en.wikipedia.org/wiki/Metaphone#Double_Metaphone&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="src">
+      <Type type="string"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

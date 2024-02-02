@@ -1,0 +1,469 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="lib_unicodelib" target="lib_unicodelib"/><Source name="Uni" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/Uni.ecl" target="Uni.ecl.xml">
+  <Definition exported="1" fullname="Uni" inherittype="local" line="7" name="Uni" type="module">
+   <Definition exported="1" fullname="uni.filterout" inherittype="local" line="17" name="FilterOut" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>filter The string containing the set of characters to be excluded.</param><see>Std.Uni.Filter</see><content>Returns the first string with all characters within the second string removed.</content><firstline>Returns the first string with all characters within the second string removed</firstline></Documentation>
+    <Signature name="FilterOut" ret="unicode" param="(unicode src, unicode filter)" hlen="17">unicode FilterOut(unicode src, unicode filter)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="filter">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.filter" inherittype="local" line="28" name="Filter" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>filter The string containing the set of characters to be included.</param><see>Std.Uni.FilterOut</see><content>Returns the first string with all characters not within the second string removed.</content><firstline>Returns the first string with all characters not within the second string removed</firstline></Documentation>
+    <Signature name="Filter" ret="unicode" param="(unicode src, unicode filter)" hlen="14">unicode Filter(unicode src, unicode filter)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="filter">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.substituteincluded" inherittype="local" line="42" name="SubstituteIncluded" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>filter The string containing the set of characters to be included.</param><param>replace_char The character to be substituted into the result.</param><see>Std.Uni.SubstituteOut</see><content>Returns the source string with the replacement character substituted for all characters included in the filter string. MORE: Should this be a general string substitution?</content><firstline>Returns the source string with the replacement character substituted for all characters included in the filter string</firstline></Documentation>
+    <Signature name="SubstituteIncluded" ret="unicode" param="(unicode src, unicode filter, unicode replace_char)" hlen="26">unicode SubstituteIncluded(unicode src, unicode filter, unicode replace_char)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="Filter">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="replace_char">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.substituteexcluded" inherittype="local" line="56" name="SubstituteExcluded" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>filter The string containing the set of characters to be included.</param><param>replace_char The character to be substituted into the result.</param><see>Std.Uni.SubstituteIncluded</see><content>Returns the source string with the replacement character substituted for all characters not included in the filter string. MORE: Should this be a general string substitution?</content><firstline>Returns the source string with the replacement character substituted for all characters not included in the filter string</firstline></Documentation>
+    <Signature name="SubstituteExcluded" ret="unicode" param="(unicode src, unicode filter, unicode replace_char)" hlen="26">unicode SubstituteExcluded(unicode src, unicode filter, unicode replace_char)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="Filter">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="replace_char">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.find" inherittype="local" line="69" name="Find" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>src The string that is searched</param><param>sought The string being sought.</param><param>instance Which match instance are we interested in?</param><content>Returns the character position of the nth match of the search string with the first string. If no match is found the attribute returns 0. If an instance is omitted the position of the first instance is returned.</content><firstline>Returns the character position of the nth match of the search string with the first string</firstline></Documentation>
+    <Signature name="Find" ret="UNSIGNED4" param="(unicode src, unicode sought, unsigned4 instance)" hlen="14">UNSIGNED4 Find(unicode src, unicode sought, unsigned4 instance)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="sought">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="instance">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.findword" inherittype="local" line="80" name="FindWord" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>word The word to be searched for.</param><param>ignore_case Whether to ignore differences in case between characters.</param><content>Tests if the search string contains the supplied word as a whole word.</content><firstline>Tests if the search string contains the supplied word as a whole word</firstline></Documentation>
+    <Signature name="FindWord" ret="BOOLEAN" param="(UNICODE src, UNICODE word, BOOLEAN ignore_case=FALSE)" hlen="16">BOOLEAN FindWord(UNICODE src, UNICODE word, BOOLEAN ignore_case=FALSE)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="word">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="ignore_case">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.localefind" inherittype="local" line="97" name="LocaleFind" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>src The string that is searched</param><param>sought The string being sought.</param><param>instance Which match instance are we interested in?</param><param>locale_name The locale to use for the comparison</param><content>Returns the character position of the nth match of the search string with the first string. If no match is found the attribute returns 0. If an instance is omitted the position of the first instance is returned.</content><firstline>Returns the character position of the nth match of the search string with the first string</firstline></Documentation>
+    <Signature name="LocaleFind" ret="UNSIGNED4" param="(unicode src, unicode sought, unsigned4 instance, varstring locale_name)" hlen="20">UNSIGNED4 LocaleFind(unicode src, unicode sought, unsigned4 instance, varstring locale_name)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="sought">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="instance">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="locale_name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.localefindatstrength" inherittype="local" line="117" name="LocaleFindAtStrength" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>src The string that is searched</param><param>sought The string being sought.</param><param>instance Which match instance are we interested in?</param><param>locale_name The locale to use for the comparison</param><param>strength The strength of the comparison 1 ignores accents and case, differentiating only between letters 2 ignores case but differentiates between accents. 3 differentiates between accents and case but ignores e.g. differences between Hiragana and Katakana 4 differentiates between accents and case and e.g. Hiragana/Katakana, but ignores e.g. Hebrew cantellation marks 5 differentiates between all strings whose canonically decomposed forms (NFDNormalization Form D) are non-identical</param><content>Returns the character position of the nth match of the search string with the first string. If no match is found the attribute returns 0. If an instance is omitted the position of the first instance is returned.</content><firstline>Returns the character position of the nth match of the search string with the first string</firstline></Documentation>
+    <Signature name="LocaleFindAtStrength" ret="UNSIGNED4" param="(unicode src, unicode tofind, unsigned4 instance, varstring locale_name, integer1 strength)" hlen="30">UNSIGNED4 LocaleFindAtStrength(unicode src, unicode tofind, unsigned4 instance, varstring locale_name, integer1 strength)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="tofind">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="instance">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="locale_name">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="strength">
+      <Type type="integer1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.extract" inherittype="local" line="127" name="Extract" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string containing the comma separated list.</param><param>instance Which item to select from the list.</param><content>Returns the nth element from a comma separated string.</content><firstline>Returns the nth element from a comma separated string</firstline></Documentation>
+    <Signature name="Extract" ret="unicode" param="(unicode src, unsigned4 instance)" hlen="15">unicode Extract(unicode src, unsigned4 instance)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="instance">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.tolowercase" inherittype="local" line="136" name="ToLowerCase" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><content>Returns the argument string with all upper case characters converted to lower case.</content><firstline>Returns the argument string with all upper case characters converted to lower case</firstline></Documentation>
+    <Signature name="ToLowerCase" ret="unicode" param="(unicode src)" hlen="19">unicode ToLowerCase(unicode src)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.touppercase" inherittype="local" line="145" name="ToUpperCase" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><content>Return the argument string with all lower case characters converted to upper case.</content><firstline>Return the argument string with all lower case characters converted to upper case</firstline></Documentation>
+    <Signature name="ToUpperCase" ret="unicode" param="(unicode src)" hlen="19">unicode ToUpperCase(unicode src)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.totitlecase" inherittype="local" line="155" name="ToTitleCase" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><param>locale_name The locale to use for the comparison</param><content>Returns the upper case variant of the string using the rules for a particular locale.</content><firstline>Returns the upper case variant of the string using the rules for a particular locale</firstline></Documentation>
+    <Signature name="ToTitleCase" ret="unicode" param="(unicode src)" hlen="19">unicode ToTitleCase(unicode src)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.localetolowercase" inherittype="local" line="165" name="LocaleToLowerCase" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><param>locale_name The locale to use for the comparison</param><content>Returns the lower case variant of the string using the rules for a particular locale.</content><firstline>Returns the lower case variant of the string using the rules for a particular locale</firstline></Documentation>
+    <Signature name="LocaleToLowerCase" ret="unicode" param="(unicode src, varstring locale_name)" hlen="25">unicode LocaleToLowerCase(unicode src, varstring locale_name)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="locale_name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.localetouppercase" inherittype="local" line="175" name="LocaleToUpperCase" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><param>locale_name The locale to use for the comparison</param><content>Returns the upper case variant of the string using the rules for a particular locale.</content><firstline>Returns the upper case variant of the string using the rules for a particular locale</firstline></Documentation>
+    <Signature name="LocaleToUpperCase" ret="unicode" param="(unicode src, varstring locale_name)" hlen="25">unicode LocaleToUpperCase(unicode src, varstring locale_name)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="locale_name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.localetotitlecase" inherittype="local" line="185" name="LocaleToTitleCase" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being converted.</param><param>locale_name The locale to use for the comparison</param><content>Returns the upper case variant of the string using the rules for a particular locale.</content><firstline>Returns the upper case variant of the string using the rules for a particular locale</firstline></Documentation>
+    <Signature name="LocaleToTitleCase" ret="unicode" param="(unicode src, varstring locale_name)" hlen="25">unicode LocaleToTitleCase(unicode src, varstring locale_name)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="locale_name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.compareignorecase" inherittype="local" line="196" name="CompareIgnoreCase" type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <param>src1 The first string to be compared.</param><param>src2 The second string to be compared.</param><see>Std.Uni.CompareAtStrength</see><content>Compares the two strings case insensitively. Equivalent to comparing at strength 2.</content><firstline>Compares the two strings case insensitively</firstline></Documentation>
+    <Signature name="CompareIgnoreCase" ret="integer4" param="(unicode src1, unicode src2)" hlen="26">integer4 CompareIgnoreCase(unicode src1, unicode src2)</Signature><Params>
+     <Param name="src1">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="src2">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.compareatstrength" inherittype="local" line="213" name="CompareAtStrength" type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <param>src1 The first string to be compared.</param><param>src2 The second string to be compared.</param><param>strength The strength of the comparison 1 ignores accents and case, differentiating only between letters 2 ignores case but differentiates between accents. 3 differentiates between accents and case but ignores e.g. differences between Hiragana and Katakana 4 differentiates between accents and case and e.g. Hiragana/Katakana, but ignores e.g. Hebrew cantellation marks 5 differentiates between all strings whose canonically decomposed forms (NFDNormalization Form D) are non-identical</param><see>Std.Uni.CompareAtStrength</see><content>Compares the two strings case insensitively. Equivalent to comparing at strength 2.</content><firstline>Compares the two strings case insensitively</firstline></Documentation>
+    <Signature name="CompareAtStrength" ret="integer4" param="(unicode src1, unicode src2, integer1 strength)" hlen="26">integer4 CompareAtStrength(unicode src1, unicode src2, integer1 strength)</Signature><Params>
+     <Param name="src1">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="src2">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="strength">
+      <Type type="integer1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.localecompareignorecase" inherittype="local" line="225" name="LocaleCompareIgnoreCase" type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <param>src1 The first string to be compared.</param><param>src2 The second string to be compared.</param><param>locale_name The locale to use for the comparison</param><see>Std.Uni.CompareAtStrength</see><content>Compares the two strings case insensitively. Equivalent to comparing at strength 2.</content><firstline>Compares the two strings case insensitively</firstline></Documentation>
+    <Signature name="LocaleCompareIgnoreCase" ret="integer4" param="(unicode src1, unicode src2, varstring locale_name)" hlen="32">integer4 LocaleCompareIgnoreCase(unicode src1, unicode src2, varstring locale_name)</Signature><Params>
+     <Param name="src1">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="src2">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="locale_name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.localecompareatstrength" inherittype="local" line="242" name="LocaleCompareAtStrength" type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <param>src1 The first string to be compared.</param><param>src2 The second string to be compared.</param><param>locale_name The locale to use for the comparison</param><param>strength The strength of the comparison 1 ignores accents and case, differentiating only between letters 2 ignores case but differentiates between accents. 3 differentiates between accents and case but ignores e.g. differences between Hiragana and Katakana 4 differentiates between accents and case and e.g. Hiragana/Katakana, but ignores e.g. Hebrew cantellation marks 5 differentiates between all strings whose canonically decomposed forms (NFDNormalization Form D) are non-identical</param><content>Compares the two strings case insensitively. Equivalent to comparing at strength 2.</content><firstline>Compares the two strings case insensitively</firstline></Documentation>
+    <Signature name="LocaleCompareAtStrength" ret="integer4" param="(unicode src1, unicode src2, varstring locale_name, integer1 strength)" hlen="32">integer4 LocaleCompareAtStrength(unicode src1, unicode src2, varstring locale_name, integer1 strength)</Signature><Params>
+     <Param name="src1">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="src2">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="locale_name">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="strength">
+      <Type type="integer1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.reverse" inherittype="local" line="252" name="Reverse" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being reversed.</param><content>Returns the argument string with all characters in reverse order. Note the argument is not TRIMMED before it is reversed.</content><firstline>Returns the argument string with all characters in reverse order</firstline></Documentation>
+    <Signature name="Reverse" ret="unicode" param="(unicode src)" hlen="15">unicode Reverse(unicode src)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.findreplace" inherittype="local" line="263" name="FindReplace" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being transformed.</param><param>sought The string to be replaced.</param><param>replacement The string to be substituted into the result.</param><content>Returns the source string with the replacement string substituted for all instances of the search string.</content><firstline>Returns the source string with the replacement string substituted for all instances of the search string</firstline></Documentation>
+    <Signature name="FindReplace" ret="unicode" param="(unicode src, unicode sought, unicode replacement)" hlen="19">unicode FindReplace(unicode src, unicode sought, unicode replacement)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="sought">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="replacement">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.localefindreplace" inherittype="local" line="275" name="LocaleFindReplace" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being transformed.</param><param>sought The string to be replaced.</param><param>replacement The string to be substituted into the result.</param><param>locale_name The locale to use for the comparison</param><content>Returns the source string with the replacement string substituted for all instances of the search string.</content><firstline>Returns the source string with the replacement string substituted for all instances of the search string</firstline></Documentation>
+    <Signature name="LocaleFindReplace" ret="unicode" param="(unicode src, unicode sought, unicode replacement, varstring locale_name)" hlen="25">unicode LocaleFindReplace(unicode src, unicode sought, unicode replacement, varstring locale_name)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="sought">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="replacement">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="locale_name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.localefindatstrengthreplace" inherittype="local" line="288" name="LocaleFindAtStrengthReplace" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being transformed.</param><param>sought The string to be replaced.</param><param>replacement The string to be substituted into the result.</param><param>locale_name The locale to use for the comparison</param><param>strength The strength of the comparison</param><content>Returns the source string with the replacement string substituted for all instances of the search string.</content><firstline>Returns the source string with the replacement string substituted for all instances of the search string</firstline></Documentation>
+    <Signature name="LocaleFindAtStrengthReplace" ret="unicode" param="(unicode src, unicode sought, unicode replacement, varstring locale_name, integer1 strength)" hlen="35">unicode LocaleFindAtStrengthReplace(unicode src, unicode sought, unicode replacement, varstring locale_name, integer1 strength)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="sought">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="replacement">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="locale_name">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="strength">
+      <Type type="integer1"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.cleanaccents" inherittype="local" line="297" name="CleanAccents" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string that is being transformed.</param><content>Returns the source string with all accented characters replaced with unaccented.</content><firstline>Returns the source string with all accented characters replaced with unaccented</firstline></Documentation>
+    <Signature name="CleanAccents" ret="unicode" param="(unicode src)" hlen="20">unicode CleanAccents(unicode src)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.cleanspaces" inherittype="local" line="308" name="CleanSpaces" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>src The string to be cleaned.</param><content>Returns the source string with all instances of multiple adjacent space characters (2 or more spaces together) reduced to a single space character. Leading and trailing spaces are removed, and tab characters are converted to spaces.</content><firstline>Returns the source string with all instances of multiple adjacent space characters (2 or more spaces together) reduced to a single space character</firstline></Documentation>
+    <Signature name="CleanSpaces" ret="unicode" param="(unicode src)" hlen="19">unicode CleanSpaces(unicode src)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.wildmatch" inherittype="local" line="320" name="WildMatch" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>pattern The pattern to match against.</param><param>ignore_case Whether to ignore differences in case between characters</param><content>Tests if the search string matches the pattern. The pattern can contain wildcards '?' (single character) and '*' (multiple character).</content><firstline>Tests if the search string matches the pattern</firstline></Documentation>
+    <Signature name="WildMatch" ret="boolean" param="(unicode src, unicode _pattern, boolean _noCase)" hlen="17">boolean WildMatch(unicode src, unicode _pattern, boolean _noCase)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="_pattern">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="_noCase">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.contains" inherittype="local" line="332" name="Contains" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>src The string that is being tested.</param><param>pattern The pattern to match against.</param><param>ignore_case Whether to ignore differences in case between characters</param><content>Tests if the search string contains each of the characters in the pattern. If the pattern contains duplicate characters those characters will match once for each occurence in the pattern.</content><firstline>Tests if the search string contains each of the characters in the pattern</firstline></Documentation>
+    <Signature name="Contains" ret="BOOLEAN" param="(unicode src, unicode _pattern, boolean _noCase)" hlen="16">BOOLEAN Contains(unicode src, unicode _pattern, boolean _noCase)</Signature><Params>
+     <Param name="src">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="_pattern">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="_noCase">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.editdistance" inherittype="local" line="345" name="EditDistance" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>_left The first string to be compared.</param><param>_right The second string to be compared.</param><param>localname The locale to use for the comparison. Defaults to ''.</param><content>Returns the minimum edit distance between the two strings. An insert change or delete counts as a single edit. The two strings are trimmed before comparing.</content><firstline>Returns the minimum edit distance between the two strings</firstline><return>The minimum edit distance between the two strings.</return></Documentation>
+    <Signature name="EditDistance" ret="UNSIGNED4" param="(unicode _left, unicode _right, varstring localename = '')" hlen="22">UNSIGNED4 EditDistance(unicode _left, unicode _right, varstring localename = '')</Signature><Params>
+     <Param name="_left">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="_right">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="localename">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.editdistancewithinradius" inherittype="local" line="359" name="EditDistanceWithinRadius" type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <param>_left The first string to be compared.</param><param>_right The second string to be compared.</param><param>radius The maximum edit distance that is accepable.</param><param>localname The locale to use for the comparison. Defaults to ''.</param><content>Returns true if the minimum edit distance between the two strings is with a specific range. The two strings are trimmed before comparing.</content><firstline>Returns true if the minimum edit distance between the two strings is with a specific range</firstline><return>Whether or not the two strings are within the given specified edit distance.</return></Documentation>
+    <Signature name="EditDistanceWithinRadius" ret="BOOLEAN" param="(unicode _left, unicode _right, unsigned4 radius, varstring localename = '')" hlen="32">BOOLEAN EditDistanceWithinRadius(unicode _left, unicode _right, unsigned4 radius, varstring localename = '')</Signature><Params>
+     <Param name="_left">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="_right">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="radius">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="localename">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.wordcount" inherittype="local" line="370" name="WordCount" type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <param>text The string to be broken into words.</param><param>localname The locale to use for the break semantics. Defaults to ''.</param><content>Returns the number of words in the string. Word boundaries are marked by the unicode break semantics.</content><firstline>Returns the number of words in the string</firstline><return>The number of words in the string.</return></Documentation>
+    <Signature name="WordCount" ret="unsigned4" param="(unicode text, varstring localename = '')" hlen="19">unsigned4 WordCount(unicode text, varstring localename = '')</Signature><Params>
+     <Param name="text">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="localename">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="uni.getnthword" inherittype="local" line="382" name="GetNthWord" type="function">
+    <Type type="unicode"/>
+    <Documentation>
+     <param>text The string to be broken into words.</param><param>n Which word should be returned from the function.</param><param>localname The locale to use for the break semantics. Defaults to ''.</param><content>Returns the n-th word from the string. Word boundaries are marked by the unicode break semantics.</content><firstline>Returns the n-th word from the string</firstline><return>The number of words in the string.</return></Documentation>
+    <Signature name="GetNthWord" ret="unicode" param="(unicode text, unsigned4 n, varstring localename = '')" hlen="18">unicode GetNthWord(unicode text, unsigned4 n, varstring localename = '')</Signature><Params>
+     <Param name="text">
+      <Type type="unicode"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="localename">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Signature name="Uni" ret="" param="" hlen="3">Uni</Signature><Parents/>
+  </Definition>
+  <Import name="lib_unicodelib" ref="lib_unicodelib" remotescope="1" target="lib_unicodelib/pkg.toc.xml"/>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

@@ -1,0 +1,19 @@
+IMPORTS
+=======
+
+
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+EMBED : REAL8 gamma(REAL8 x)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Return the value of gamma function of real number x A wrapper for the
+standard C tgamma function.
+
+Parameter : x REAL8 --- the input x
+
+Return : REAL8 the value of GAMMA evaluated at x
+

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Source name="LogisticRegression.Confusion" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Confusion.ecl" target="Confusion.ecl.xml">
+  <Import name="ML_Core" ref="ML_Core" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Core_Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.confusion" inherittype="local" line="26" name="Confusion" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="classifier">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="actual_class">
+      <Type type="integer4"/>
+     </Field>
+     <Field name="predict_class">
+      <Type type="integer4"/>
+     </Field>
+     <Field name="occurs">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="correct">
+      <Type type="boolean"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Detail confusion records to compare actual versus predicted response variable values.</content><return>confusion counts by predicted and actual response values.</return><param>dependents the original response values</param><param>predicts the predicted responses</param><firstline>Detail confusion records to compare actual versus predicted response variable values</firstline></Documentation>
+   <Signature name="Confusion" ret="DATASET(Confusion_Detail)" param="(DATASET(DiscreteField) dependents, DATASET(DiscreteField) predicts)" hlen="35">DATASET(Confusion_Detail) Confusion(DATASET(DiscreteField) dependents, DATASET(DiscreteField) predicts)</Signature><Params>
+    <Param name="dependents">
+     <Type type="table">
+      <Type fullname="logisticregression.discretefield" name="DiscreteField" type="record"/>
+     </Type>
+    </Param>
+    <Param name="predicts">
+     <Type type="table">
+      <Type fullname="logisticregression.discretefield" name="DiscreteField" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Detail confusion records to compare actual versus predicted response variable values.</content><return>confusion counts by predicted and actual response values.</return><param>dependents the original response values</param><param>predicts the predicted responses</param><firstline>Detail confusion records to compare actual versus predicted response variable values</firstline></Documentation>
+   </Source>
+</Meta>

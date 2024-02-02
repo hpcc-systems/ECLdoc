@@ -1,0 +1,853 @@
+IMPORTS
+=======
+
+
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+ML_Core.Types <../ML_Core/Types.ecl.txt>
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <../PBblas/Types.ecl.txt>
+PBblas.Converted <../PBblas/Converted.ecl.txt>
+PBblas.MatUtils <../PBblas/MatUtils.ecl.txt>
+ML_Core.Math </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/Math/pkg.toc.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : OLS(DATASET(NumericField) X=empty_data, DATASET(NumericField) Y=empty_data)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Ordinary Least Squares (OLS) Linear Regression aka Ordinary Linear
+Regression Regression learns a function that maps a set of input data
+(independents) to one or more output variables (dependents). The resulting
+learned function is known as the model. That model can then be used
+repetitively to predict (i.e. estimate) the output value(s) based on new
+input data. Two major use cases are supported: 1) Learn and return a model
+2) Use an existing (e.g. persisted) model to predict new values for Y Of
+course, both can be done in a single run. Alternatively, the model can be
+persisted and used indefinitely for prediction of Y values, as long as the
+record format has not changed, and the original training data remains
+representative of the population. OLS supports any number of independent
+variables (Multiple Regression) and multiple dependent variables
+(Multivariate Regression). In this way, multiple variables' values can be
+predicted from the same input (i.e. independent) data. Training data is
+presented as parameters to this module. When using a previously persisted
+model (use case 2 above), these parameters should be omitted. This module
+provides a rich set of analytics to assess the usefulness of the resulting
+linear regression model, and to determine the best subset of independent
+variables to include in the model. These include: For the whole model: -
+Analysis of Variance (ANOVA) - R-squared - Adjusted R-squared - F-Test -
+Akaike Information Criterion (AIC) For each coefficient: - Standard Error
+(SE) - T-statistic - P-value - Confidence Interval
+
+Parameter : Y TABLE ( NumericField ) --- The dependent variable
+              training data in DATASET(NumericField) format.
+              Each observation (e.g. record) is identified by
+              'id', and each feature is identified by field
+              number. Omit this parameter when predicting from a
+              persisted model.
+
+Parameter : X TABLE ( NumericField ) --- The independent
+              variable training data in DATASET(NumericField)
+              format. Each observation (e.g. record) is
+              identified by 'id', and each feature is identified
+              by field number (i.e. 'number'). Omit this
+              parameter when predicting from a persisted model.
+
+Parent : ML_Core.Interfaces.IRegression
+         <../ML_Core/Interfaces/IRegression.ecl.txt>
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : DATASET(Layout_Model) GetModel ||| OVERRIDE
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | GetModel Returns the learned model that maps X's to Y's. In the case of
+  | OLS, the model represents a set of Betas which are the coefficients of the
+  | linear model: Beta0 * 1 + Beta1 * Field1 + Beta2 * Field2 ... The ID of
+  | each model record specifies to which Y variable the coefficient applies.
+  | The Field Number ('number') indicates to which field of X the beta is to be
+  | applied. Field number 1 provides the intercept portion of the linear model
+  | and is always multiplied by 1. Note that if multiple work-items are
+  | provided within X and Y, there will be multiple models returned. The models
+  | can be separated by their work item id (i.e. 'wi'). A single model can be
+  | extracted from a myriad model by using e.g., model(wi=myWI_id). GetModel
+  | should not be called when predicting using a previously persisted model
+  | (i.e. when training data was not passed to the module.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value } ) Model in
+  |          DATASET(Layout_Model) format
+  | 
+  | See : ML_core/Types.Layout_Model
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(NumericField) Betas(DATASET(Layout_Model) model=GetModel)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Return raw Beta values as numeric fields Extracts Beta values from the
+  | model. Can be used during training and prediction phases. For use during
+  | training phase, the 'model' parameter can be omitted. GetModel will be
+  | called to retrieve the model based on the training data. For use during
+  | prediction phase, a previously persisted model should be provided. The
+  | 'number' field of the returned NumericField records specifies to which Y
+  | the coefficient applies. The 'id' field of the returned record indicates
+  | the position of the Beta value. ID = 1 provides the Beta for the constant
+  | term (i.e. the Y intercept) while subsequent values reflect the Beta for
+  | each correspondingly numbered X feature. Feature 1 corresponds to Beta with
+  | 'id' = 2 and so on. If 'model' contains multiple work-items, Separate sets
+  | of Betas will be returned for each of the 'myriad' models (distinguished by
+  | 'wi').
+  | 
+  | Parameter : model TABLE ( Layout_Model ) --- Optional parameter
+  |                   provides a model that was previously retrieved
+  |                   using GetModel. If omitted, GetModel will be used
+  |                   as the model.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value } ) DATASET(NumericField)
+  |          containing the Beta values.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(NumericField) Predict(DATASET(NumericField) newX, DATASET(Layout_Model)
+  |                                         model=GetModel) ||| OVERRIDE
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Predict the dependent variable values (Y) for any set of independent
+  | variables (X). Returns a predicted Y values for each observation (i.e.
+  | record) of X. This supports the 'myriad' style interface in that multiple
+  | independent work items may be present in 'newX', and multiple independent
+  | models may be provided in 'model'. The resulting predicted values will also
+  | be separable by work item (i.e. wi).
+  | 
+  | Parameter : model TABLE ( Layout_Model ) --- Optional. A model that
+  |                   was previously returned from GetModel (above).
+  |                   Note that a model from a previous run will only be
+  |                   valid if the field numbers in X are the same as
+  |                   when the model was learned. If this parameter is
+  |                   omitted, the current model will be used.
+  | 
+  | Parameter : newX TABLE ( NumericField ) --- The set of observations
+  |                  of independent variables in DATASET(NumericField)
+  |                  format.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value } ) An estimation of the
+  |          corresponding Y value for each observation of
+  |          newX. Returned in DATASET(NumericField) format
+  |          with field number (i.e. 'number') indicating the
+  |          dependent variable that is predicted.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | TRANSFORM : R2Rec makeRSQ(CoCoRec coco)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : coco ROW ( CoCoRec ) --- No Doc
+  | 
+  | Return : R2Rec
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : DATASET(R2Rec) RSquared
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | RSquared Calculate the R-Squared Metric used to assess the fit of the
+  | regression line to the training data. Since the regression has chosen the
+  | best (i.e. least squared error) line matching the data, this can be thought
+  | of as a measurement of the linearity of the training data. R Squared
+  | generally varies between 0 and 1, with 1 indicating an exact linear fit,
+  | and 0 indicating that a linear fit will have no predictive power. Negative
+  | values are possible under certain conditions, and indicate that the mean(Y)
+  | will be more predictive than any linear fit. Moderate values of R squared
+  | (e.g. .5) may indicate that the relationship of X -> Y is non-linear, or
+  | that the measurement error is high relative to the linear correlation (e.g.
+  | many outliers). In the former case, increasing the dimensionality of X,
+  | such as by using polynomial variants of the features, may yield a better
+  | fit. R squared always increases when additional independent variables are
+  | added, so it should not be used to determine the optimal set of X variables
+  | to include. For that purpose, use Adjusted R Squared (below) which
+  | penalizes larger numbers of variables. Note that the result of this call is
+  | only meaningful during training phase (use case 1 above) as it is an
+  | analysis based on the training data which is not provided during a
+  | prediction-only phase.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8
+  |          RSquared } ) DATASET(R2Rec) with one record per
+  |          dependent variable, per work-item. The number
+  |          field indicates the dependent variable and
+  |          coresponds to the number field of the dependent
+  |          (Y) variable to which it applies.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | RECORD : AnovaRec
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Field : number UNSIGNED4 --- No Doc
+  | 
+  | Field : error_ss REAL8 --- No Doc
+  | 
+  | Field : total_df UNSIGNED8 --- No Doc
+  | 
+  | Field : total_ms REAL8 --- No Doc
+  | 
+  | Field : error_df UNSIGNED8 --- No Doc
+  | 
+  | Field : error_ms REAL8 --- No Doc
+  | 
+  | Field : model_ms REAL8 --- No Doc
+  | 
+  | Field : model_ss REAL8 --- No Doc
+  | 
+  | Field : wi UNSIGNED2 --- No Doc
+  | 
+  | Field : model_f REAL8 --- No Doc
+  | 
+  | Field : total_ss REAL8 --- No Doc
+  | 
+  | Field : model_df UNSIGNED8 --- No Doc
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | TRANSFORM : AnovaRec calcAnova(tmpRec le)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : le ROW ( tmpRec ) --- No Doc
+  | 
+  | Return : AnovaRec
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Anova
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | ANOVA (Analysis of Variance) report Analyzes the sources of variance. Basic
+  | ANOVA equality: Model + Error = Total Determines how much of the variance
+  | of Y is explained by the regression model, versus how much is due to the
+  | error term (i.e. unexplained variance). This attribute is only meaningful
+  | during the training phase. Provides one record per work-item. Each record
+  | provides the following statistics: - Total_SS -- Total Sum of Squares (SS)
+  | variance of the dependent data - Model_SS -- The SS variance represented
+  | within the model - Error_SS -- The SS variance not reflected by the model
+  | (i.e. Total_SS - Error_SS) - Total_DF -- The total degrees of freedom
+  | within the dependent data - Model_DF -- Degrees of freedom of the model -
+  | Error_DF -- Degrees of freedom of the error component - Total_MS -- The
+  | Mean Square (MS) variance of the dependent data - Model_MS -- The Mean
+  | Square (MS) variance represented within the model - Error_MS -- The MS
+  | variance not reflected by the model - Model_F -- The F-Test statistic:
+  | Model_MS / Error_MS
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8
+  |          Total_SS , REAL8 Model_SS , REAL8 Error_SS ,
+  |          UNSIGNED8 Total_DF , UNSIGNED8 Model_DF ,
+  |          UNSIGNED8 Error_DF , REAL8 Total_MS , REAL8
+  |          Model_MS , REAL8 Error_MS , REAL8 Model_F } )
+  |          DATASET(AnovaRec), one per work-item per dependent
+  |          (Y) variable The number field indicates the
+  |          dependent variable to which the analysis applies.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : DATASET(NumericField) SE
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Standard Error of the Regression Coefficients Describes the variability of
+  | the regression error for each coefficient. Only meaningful during the
+  | training phase.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value } ) DATASET(NumericField),
+  |          one record per Beta coefficient per dependent
+  |          variable per work-item. The 'id' field is the
+  |          coefficient number, with 1 being the Y intercept,
+  |          2 being the coefficient for the first feature,
+  |          etc. The 'number' field indicates the dependent
+  |          variable to which the coefficient applies.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : DATASET(NumericField) TStat
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | T-Statistic The T-statistic identifies the significance of the value of
+  | each regression coefficient. Its calculation is simply the value of the
+  | coefficient divided by the Standard Error of the coefficient. A larger
+  | absolute value of the T-statistic indicates that the coefficient is more
+  | significant. Only meaningful during the training phase.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value } ) DATSET(NumericField), one
+  |          record per Beta coefficient per dependent variable
+  |          per work-item. The 'id' field is the coefficient
+  |          number, with 1 being the Y intercept, 2 being the
+  |          coefficient for the first feature, etc. The number
+  |          field indicates the dependent variable to which
+  |          the coefficient applies.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : DATASET(R2Rec) AdjRSquared
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Adjusted R2 Calculate Adjusted R Squared which is a scaled version of R
+  | Squared that does not arbitrarily increase with the number of features.
+  | Adjusted R2, rather than R2 should always be used when trying to determine
+  | the best set of features to include in a model. When adding features, R2
+  | will always increase, whether or not it improves the predictive power of
+  | the model. Adjusted R2, however, will only increase with the predictive
+  | power of the model.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8
+  |          RSquared } ) DATASET(R2Rec), one record per
+  |          dependent variable per work-item. The number field
+  |          indicates the dependent variable and corresponds
+  |          to the number field of the dependent (Y) variable
+  |          to which it applies.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | RECORD : AICRec
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Field : number UNSIGNED4 --- No Doc
+  | 
+  | Field : aic REAL8 --- No Doc
+  | 
+  | Field : wi UNSIGNED2 --- No Doc
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : DATASET(AICRec) AIC
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Akaike Information Criterion (AIC) Information theory based criterion for
+  | assessing Goodness of Fit (GOF). Lower values mean better fit.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8
+  |          AIC } ) DATASET(AICRec), one record per dependent
+  |          variable per work-item. The number field indicates
+  |          the dependent variable and corresponds to the
+  |          number field of the dependent (Y) variable to
+  |          which it applies.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | RECORD : RangeVec
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Field : p REAL8 --- No Doc
+  | 
+  | Field : rangenumber UNSIGNED8 --- No Doc
+  | 
+  | Field : rangehigh REAL8 --- No Doc
+  | 
+  | Field : rangelow REAL8 --- No Doc
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | MODULE : DistributionBase(t_Count Nranges = 10000)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : nranges UNSIGNED8 --- No Doc
+  | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Low
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : High
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal Density(t_FieldReal t)
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : t REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : RangeWidth
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : DATASET(RangeVec) DensityV()
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow ,
+  |   |          REAL8 RangeHigh , REAL8 P } )
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : CumulativeV()
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow ,
+  |   |          REAL8 RangeHigh , REAL8 P } )
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal Cumulative(t_FieldReal t)
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : t REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal NTile(t_FieldReal Pc)
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : pc REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : InvDensity(t_FieldReal delta)
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : delta REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Discrete
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : BOOLEAN
+  |   | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | MODULE : TDistribution(t_Discrete v_in,t_Count NRanges = 10000)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : nranges UNSIGNED8 --- No Doc
+  | 
+  | Parameter : v_in INTEGER4 --- No Doc
+  | 
+  | Parent : linearregression.ols.distributionbase
+  |          <OLS.ecl.txt>
+  | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : DATASET(RangeVec) DensityV() ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow ,
+  |   |          REAL8 RangeHigh , REAL8 P } )
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal NTile(t_FieldReal Pc) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : pc REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Discrete ||| INHERITED
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : BOOLEAN
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : InvDensity(t_FieldReal delta) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : delta REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : High ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Low ||| INHERITED
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : RangeWidth ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal Density(t_FieldReal t) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : t REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : CumulativeV() ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow ,
+  |   |          REAL8 RangeHigh , REAL8 P } )
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal Cumulative(t_FieldReal t) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : t REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | MODULE : FDistribution(t_Discrete d1_in, t_Discrete d2_in, t_Count NRanges = 10000)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : d1_in INTEGER4 --- No Doc
+  | 
+  | Parameter : d2_in INTEGER4 --- No Doc
+  | 
+  | Parameter : nranges UNSIGNED8 --- No Doc
+  | 
+  | Parent : linearregression.ols.distributionbase
+  |          <OLS.ecl.txt>
+  | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : DATASET(RangeVec) DensityV() ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow ,
+  |   |          REAL8 RangeHigh , REAL8 P } )
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : CumulativeV() ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow ,
+  |   |          REAL8 RangeHigh , REAL8 P } )
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal Cumulative(t_FieldReal t) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : t REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal NTile(t_FieldReal Pc) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : pc REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : InvDensity(t_FieldReal delta) ||| INHERITED
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : delta REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Discrete ||| INHERITED
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : BOOLEAN
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Low ||| INHERITED
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : High ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : RangeWidth ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal Density(t_FieldReal t) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : t REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | MODULE : NormalDistribution(t_Count NRanges)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : nranges UNSIGNED8 --- No Doc
+  | 
+  | Parent : linearregression.ols.distributionbase
+  |          <OLS.ecl.txt>
+  | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Low ||| INHERITED
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : High ||| INHERITED
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : RangeWidth ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : DATASET(RangeVec) DensityV() ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow ,
+  |   |          REAL8 RangeHigh , REAL8 P } )
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : CumulativeV() ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : TABLE ( { UNSIGNED8 RangeNumber , REAL8 RangeLow ,
+  |   |          REAL8 RangeHigh , REAL8 P } )
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal Cumulative(t_FieldReal t) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : t REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal NTile(t_FieldReal Pc) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : pc REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : InvDensity(t_FieldReal delta) ||| INHERITED
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : delta REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Discrete ||| INHERITED
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : BOOLEAN
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | FUNCTION : t_FieldReal Density(t_FieldReal t) ||| OVERRIDE
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Parameter : t REAL8 --- No Doc
+  |   | 
+  |   | Return : REAL8
+  |   | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : pVal
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | P-Value Calculate the P-value for each coefficient, which is the
+  | probability that the coefficient is insignificant (i.e. actually zero). A
+  | low P-value (e.g. .05) provides evidence that the coefficient is
+  | significant in the model. A high P-value indicates that the coefficient
+  | value should, in fact, be zero. P-value is related to the T-Statistic, and
+  | can be thought of as a normalized version of the T-Statistic. Only
+  | meaningful during the training phase.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value } ) DATSET(NumericField), one
+  |          record per Beta coefficient per dependent variable
+  |          per work-item. The 'id' field is the coefficient
+  |          number, with 1 being the Y intercept, 2 being the
+  |          coefficient for the first feature, etc. The number
+  |          field indicates the dependent variable and
+  |          corresponds to the number field of the dependent
+  |          (Y) variable to which it applies.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | RECORD : ConfintRec
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Field : number UNSIGNED4 --- No Doc
+  | 
+  | Field : upperint REAL8 --- No Doc
+  | 
+  | Field : wi UNSIGNED2 --- No Doc
+  | 
+  | Field : lowerint REAL8 --- No Doc
+  | 
+  | Field : id UNSIGNED8 --- No Doc
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : ConfInt(Types.t_fieldReal level)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Confidence Interval The Confidence Interval determines the upper and lower
+  | bounds of each estimated coefficient given a confidence level (level) that
+  | is required. For example, one could say that there is a 95% probability
+  | (level) that the coefficient of the first independent variable is between
+  | 2.05 and 3.62. This allows error margins to be determined with the desired
+  | confidence level. If the confidence interval spans zero, it implies that
+  | the coefficient may not be significant at the specified confidence level.
+  | 
+  | Parameter : level REAL8 --- The level of confidence required,
+  |                   expressed as a percentage from 0.0 to 100.0
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 LowerInt , REAL8 UpperInt } )
+  |          DATASET(ConfintRec) with one record per
+  |          coefficient per dependent variable per work-item.
+  |          The 'id' field is the coefficient number, with 1
+  |          being the Y intercept, 2 being the coefficient for
+  |          the first feature, etc. The number field indicates
+  |          the dependent variable and corresponds to the
+  |          number field of the dependent (Y) variable to
+  |          which it applies.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | RECORD : FTestRec
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Field : number UNSIGNED4 --- No Doc
+  | 
+  | Field : wi UNSIGNED2 --- No Doc
+  | 
+  | Field : pvalue REAL8 --- No Doc
+  | 
+  | Field : model_f REAL8 --- No Doc
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : DATASET(FTestRec) FTest
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | F-Test Calculate the P-value for the full regression, which is the
+  | probability that all of the coefficients are insignificant (i.e. actually
+  | zero). A low P-value (e.g. .05) provides evidence that at least one
+  | coefficient is significant. A high P-value indicates that all the
+  | coefficient values should in fact be zero, implying that the regression has
+  | no statistically significant predictive power. P-value is related to the
+  | ANOVA F-Statistic, and can be thought of as a standardized version of the
+  | ANOVA F-Statistic. The F-Test and T-Test are similar, except that the
+  | T-test is used to test the significance of each coefficient, while the
+  | F-Test is used to test the significance of the entire regression. For
+  | simple linear regression (i.e. only one independent variable, the T-Test
+  | and F-Test are equivalent.
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8
+  |          Model_F , REAL8 pValue } ) DATASET(FTestRec), one
+  |          record per dependent variable per work-item. The
+  |          number field indicates the dependent variable and
+  |          corresponds to the number field of the dependent
+  |          (Y) variable to which it applies.
+  | 

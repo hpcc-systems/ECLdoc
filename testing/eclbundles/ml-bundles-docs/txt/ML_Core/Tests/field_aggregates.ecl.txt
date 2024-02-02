@@ -1,0 +1,18 @@
+IMPORTS
+=======
+
+
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+ML_Core.Types <../Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+ATTRIBUTE : field_aggregates
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+Return : 
+

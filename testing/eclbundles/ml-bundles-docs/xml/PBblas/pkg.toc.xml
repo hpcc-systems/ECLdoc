@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="PBblas">
+  <file name="trsm.ecl.xml">PBblas/trsm.ecl</file>
+  <file name="Vector2Diag.ecl.xml">PBblas/Vector2Diag.ecl</file>
+  <file name="potrf.ecl.xml">PBblas/potrf.ecl</file>
+  <file name="scal.ecl.xml">PBblas/scal.ecl</file>
+  <file name="HadamardProduct.ecl.xml">PBblas/HadamardProduct.ecl</file>
+  <file name="Apply2Elements.ecl.xml">PBblas/Apply2Elements.ecl</file>
+  <file name="asum.ecl.xml">PBblas/asum.ecl</file>
+  <file name="ExtractTri.ecl.xml">PBblas/ExtractTri.ecl</file>
+  <file name="Constants.ecl.xml">PBblas/Constants.ecl</file>
+  <file name="tran.ecl.xml">PBblas/tran.ecl</file>
+  <file name="getrf.ecl.xml">PBblas/getrf.ecl</file>
+  <file name="Types.ecl.xml">PBblas/Types.ecl</file>
+  <file name="Converted.ecl.xml">PBblas/Converted.ecl</file>
+  <file name="gemm.ecl.xml">PBblas/gemm.ecl</file>
+  <file name="axpy.ecl.xml">PBblas/axpy.ecl</file>
+  <file name="MatUtils.ecl.xml">PBblas/MatUtils.ecl</file>
+  <file name="IElementFunc.ecl.xml">PBblas/IElementFunc.ecl</file>
+</folder>

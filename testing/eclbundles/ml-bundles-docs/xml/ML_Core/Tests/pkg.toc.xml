@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="Tests">
+  <file name="Validate_Gammas.ecl.xml">ML_Core/Tests/Validate_Gammas.ecl</file>
+  <file name="to_from.ecl.xml">ML_Core/Tests/to_from.ecl</file>
+  <file name="Validate_Betas.ecl.xml">ML_Core/Tests/Validate_Betas.ecl</file>
+  <file name="field_aggregates.ecl.xml">ML_Core/Tests/field_aggregates.ecl</file>
+  <file name="test_discrete.ecl.xml">ML_Core/Tests/test_discrete.ecl</file>
+  <file name="Check_Dist.ecl.xml">ML_Core/Tests/Check_Dist.ecl</file>
+  <file name="generate.ecl.xml">ML_Core/Tests/generate.ecl</file>
+  <file name="test_appends.ecl.xml">ML_Core/Tests/test_appends.ecl</file>
+</folder>

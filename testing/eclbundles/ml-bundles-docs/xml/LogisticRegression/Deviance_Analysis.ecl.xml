@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Constants.ecl" name="ML_Core.Constants" target="../ML_Core/Constants.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/DoubleFac.ecl" name="ML_Core.Math.DoubleFac" target="../ML_Core/Math/DoubleFac.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Distributions.ecl" name="LogisticRegression.Distributions" target="Distributions.ecl.xml"/><Source name="LogisticRegression.Deviance_Analysis" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Deviance_Analysis.ecl" target="Deviance_Analysis.ecl.xml">
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.deviance_analysis" inherittype="local" line="14" name="Deviance_Analysis" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="classifier">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="residual_df">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="residual_dev">
+      <Type type="real8"/>
+     </Field>
+     <Field name="deviance">
+      <Type type="real8"/>
+     </Field>
+     <Field name="p_value">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Compare deviance information for an analysis of deviance.</content><return>the comparison of the deviance between the models</return><param>proposed the proposed model</param><param>base the base model for comparison</param><firstline>Compare deviance information for an analysis of deviance</firstline></Documentation>
+   <Signature name="Deviance_Analysis" ret="DATASET(Types.AOD_Record)" param="(DATASET(Types.Deviance_Record) proposed, DATASET(Types.Deviance_Record) base)" hlen="43">DATASET(Types.AOD_Record) Deviance_Analysis(DATASET(Types.Deviance_Record) proposed, DATASET(Types.Deviance_Record) base)</Signature><Params>
+    <Param name="proposed">
+     <Type type="table">
+      <Type fullname="logisticregression.types.deviance_record" name="Deviance_Record" type="record"/>
+     </Type>
+    </Param>
+    <Param name="base">
+     <Type type="table">
+      <Type fullname="logisticregression.types.deviance_record" name="Deviance_Record" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Compare deviance information for an analysis of deviance.</content><return>the comparison of the deviance between the models</return><param>proposed the proposed model</param><param>base the base model for comparison</param><firstline>Compare deviance information for an analysis of deviance</firstline></Documentation>
+   </Source>
+</Meta>

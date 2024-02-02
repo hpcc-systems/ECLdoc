@@ -1,0 +1,69 @@
+++++++++++++++++++++++
+  LogisticRegression
+++++++++++++++++++++++
+
+
+Name : LogisticRegression
+
+Version : 1.0.0
+
+Description : Logistic Regression implementation
+
+License : http://www.apache.org/licenses/LICENSE-2.0
+
+Copyright : Copyright (C) 2017 HPCC Systems
+
+Authors : HPCCSystems
+
+DependsOn : ML_Core, PBblas
+
+Platform : 6.2.0
+
+
+CONTENTS
+========
+
+dir : IRLS <IRLS/pkg.toc.txt>    
+
+dir : performance <performance/pkg.toc.txt>    
+
+dir : Tests <Tests/pkg.toc.txt>    
+
+dir : validation <validation/pkg.toc.txt>    
+
+file : BinomialConfusion.ecl <BinomialConfusion.ecl.txt>    Binomial confusion matrix
+
+file : BinomialLogisticRegression.ecl <BinomialLogisticRegression.ecl.txt>    Binomial logistic regression using iteratively re-weighted least squares
+
+file : Confusion.ecl <Confusion.ecl.txt>    Detail confusion records to compare actual versus predicted response variable values
+
+file : Constants.ecl <Constants.ecl.txt>    
+
+file : DataStats.ecl <DataStats.ecl.txt>    Information about the datasets
+
+file : Deviance_Analysis.ecl <Deviance_Analysis.ecl.txt>    Compare deviance information for an analysis of deviance
+
+file : Deviance_Detail.ecl <Deviance_Detail.ecl.txt>    Detail deviance for each observation
+
+file : dimm.ecl <dimm.ecl.txt>    Matrix multiply when either A or B is a diagonal and is passed as a vector
+
+file : Distributions.ecl <Distributions.ecl.txt>    
+
+file : ExtractBeta.ecl <ExtractBeta.ecl.txt>    Extract the beta values form the model dataset
+
+file : ExtractBeta_CI.ecl <ExtractBeta_CI.ecl.txt>    Extract the beta values form the model dataset
+
+file : ExtractBeta_pval.ecl <ExtractBeta_pval.ecl.txt>    Extract the beta values form the model dataset
+
+file : ExtractReport.ecl <ExtractReport.ecl.txt>    Extract Report records from model
+
+file : LogitPredict.ecl <LogitPredict.ecl.txt>    Predict the category values with the logit function and the the supplied beta coefficients
+
+file : LogitScore.ecl <LogitScore.ecl.txt>    Calculate the score using the logit function and the the supplied beta coefficients
+
+file : Model_Deviance.ecl <Model_Deviance.ecl.txt>    Model Deviance
+
+file : Null_Deviance.ecl <Null_Deviance.ecl.txt>    Deviance for the null model, that is, a model with only an intercept
+
+file : Types.ecl <Types.ecl.txt>    
+

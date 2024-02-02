@@ -1,0 +1,76 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+IElementFunc
+}
+\hypertarget{ecldoc:toc:PBblas.IElementFunc}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+IElementFunc}}
+
+\hypertarget{ecldoc:pbblas.ielementfunc}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} value\_t} & \textbf{IElementFunc} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (value\_t v, dimension\_t r, dimension\_t c)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Function prototype for a function to apply to each element of the distributed matrix Base your function on this prototype:
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{v}} ||| REAL8 --- Input value
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{c}} ||| UNSIGNED4 --- Column number (1 based)
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{r}} ||| UNSIGNED4 --- Row number (1 based)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- Output value
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Apply2Elements
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/python.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/python.ecllib"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/gamma.ecl" name="ML_Core.Math.gamma" target="../Math/gamma.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/log_gamma.ecl" name="ML_Core.Math.log_gamma" target="../Math/log_gamma.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Beta.ecl" name="ML_Core.Math.Beta" target="../Math/Beta.ecl.xml"/><Source name="ML_Core.Tests.Validate_Betas" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Tests/Validate_Betas.ecl" target="Validate_Betas.ecl.xml">
+  <Import name="ML_Core" ref="ML_Core" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Math" ref="ML_Core.Math" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Math/pkg.toc.xml"/>
+  <Import name="python" ref="python" remotescope="1" target="../../python/pkg.toc.xml"/>
+  <Definition exported="1" fullname="ml_core.tests.validate_betas" inherittype="local" line="71" name="Validate_Betas" type="attribute">
+   <Signature name="Validate_Betas" ret="" param="" hlen="14">Validate_Betas</Signature><Type type=""/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

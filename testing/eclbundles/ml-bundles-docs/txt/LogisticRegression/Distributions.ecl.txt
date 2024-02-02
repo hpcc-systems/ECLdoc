@@ -1,0 +1,101 @@
+IMPORTS
+=======
+
+
+ML_Core.Constants <../ML_Core/Constants.ecl.txt>
+ML_Core.Math </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/Math/pkg.toc.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : Distributions
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : REAL8 Normal_CDF(REAL8 x)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Cumulative Distribution of the standard normal distribution, the
+  | probability that a normal random variable will be smaller than x standard
+  | deviations above or below the mean. Taken from C/C++ Mathematical
+  | Algorithms for Scientists and Engineers, n. Shammas, McGraw-Hill, 1995
+  | 
+  | Parameter : x REAL8 --- the number of standard deviations
+  | 
+  | Return : REAL8
+  | 
+  | returns : probability of exceeding x.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : REAL8 Normal_PPF(REAL8 x)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Normal Distribution Percentage Point Function. Translated from C/C++
+  | Mathematical Algorithms for Scientists and Engineers, N. Shammas, McGraw-
+  | Hill, 1995
+  | 
+  | Parameter : x REAL8 --- probability
+  | 
+  | Return : REAL8
+  | 
+  | returns : number of standard deviations from the mean
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : REAL8 T_CDF(REAL8 x, REAL8 df)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Students t distribution integral evaluated between negative infinity and x.
+  | Translated from NIST SEL DATAPAC Fortran TCDF.f source
+  | 
+  | Parameter : df REAL8 --- degrees of freedom
+  | 
+  | Parameter : x REAL8 --- value of the evaluation
+  | 
+  | Return : REAL8
+  | 
+  | returns : the probability that a value will be less than the
+  |           specified value
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : REAL8 T_PPF(REAL8 x, REAL8 df)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Percentage point function for the T distribution. Translated from NIST SEL
+  | DATAPAC Fortran TPPF.f source
+  | 
+  | Parameter : df REAL8 --- No Doc
+  | 
+  | Parameter : x REAL8 --- No Doc
+  | 
+  | Return : REAL8
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : REAL8 Chi2_CDF(REAL8 x, REAL8 df)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | The cumulative distribution function for the Chi Square distribution. the
+  | CDF for the specfied degrees of freedom. Translated from the NIST SEL
+  | DATAPAC Fortran subroutine CHSCDF.
+  | 
+  | Parameter : df REAL8 --- No Doc
+  | 
+  | Parameter : x REAL8 --- No Doc
+  | 
+  | Return : REAL8
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : REAL8 Chi2_PPF(REAL8 x, REAL8 df)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | The Chi Squared PPF function. Translated from the NIST SEL DATAPAC Fortran
+  | subroutine CHSPPF.
+  | 
+  | Parameter : df REAL8 --- No Doc
+  | 
+  | Parameter : x REAL8 --- No Doc
+  | 
+  | Return : REAL8
+  | 

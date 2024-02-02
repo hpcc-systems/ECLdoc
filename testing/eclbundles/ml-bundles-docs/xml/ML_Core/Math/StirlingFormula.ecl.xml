@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Constants.ecl" name="ML_Core.Constants" target="../Constants.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Poly.ecl" name="ML_Core.Math.Poly" target="Poly.ecl.xml"/><Source name="ML_Core.Math.StirlingFormula" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/StirlingFormula.ecl" target="StirlingFormula.ecl.xml">
+  <Import name="Utils" ref="ML_Core.Math" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Math/pkg.toc.xml"/>
+  <Import name="Constants" ref="ML_Core.Constants" target="../Constants.ecl.xml">
+   </Import>
+  <Definition exported="1" fullname="ml_core.math.stirlingformula" inherittype="local" line="10" name="StirlingFormula" type="function">
+   <Type type="real8"/>
+   <Documentation>
+    <content>Stirling's formula</content><return>evaluation result</return><param>x the point of evaluation</param><firstline>Stirling's formula</firstline></Documentation>
+   <Signature name="StirlingFormula" ret="" param="(REAL x)" hlen="15">StirlingFormula(REAL x)</Signature><Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Stirling's formula</content><return>evaluation result</return><param>x the point of evaluation</param><firstline>Stirling's formula</firstline></Documentation>
+   </Source>
+</Meta>

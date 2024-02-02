@@ -1,0 +1,23 @@
+{
+    "include_path": "/media/sarthak/Data/ecldoc/testing/import-test",
+    "input_root": "/media/sarthak/Data/ecldoc/testing/import-test",
+    "output_root": "/media/sarthak/Data/ecldoc/testing/imp-docs",
+    "tree": {
+        "import_test": {
+            "key": "import_test.ecl",
+            "tree": "import_test.ecl"
+        },
+        "import_test_2": {
+            "key": "import_test_2.ecl",
+            "tree": "import_test_2.ecl"
+        },
+        "mod_1": {
+            "key": "mod_1.ecl",
+            "tree": "mod_1.ecl"
+        },
+        "mod_2": {
+            "key": "mod_2.ecl",
+            "tree": "mod_2.ecl"
+        }
+    }
+}

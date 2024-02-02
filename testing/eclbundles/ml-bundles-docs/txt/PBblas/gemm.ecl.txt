@@ -1,0 +1,67 @@
+IMPORTS
+=======
+
+
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <Types.ecl.txt>
+PBblas.internal <internal/pkg.toc.txt>
+PBblas.internal.Types <internal/Types.ecl.txt>
+std.blas </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl>
+PBblas.internal.MatDims <internal/MatDims.ecl.txt>
+std.system.Thorlib </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Layout_Cell) gemm(BOOLEAN transposeA, BOOLEAN transposeB, value_t alpha,
+                                    DATASET(Layout_Cell) A_in, DATASET(Layout_Cell) B_in, DATASET(Layout_Cell) C_in=emptyC,
+                                    value_t beta=0.0)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Extended Parallel Block Matrix Multiplication Module Implements: Result =
+alpha * op(A)op(B) + beta * C. op is No Transpose or Transpose. Multiplies
+two matrixes A and B, with an optional pre-multiply transpose for each
+Optionally scales the product by the scalar "alpha". Then adds an optional
+C matrix to the product after scaling C by the scalar "beta". A, B, and C
+are specified as DATASET(Layout_Cell), as is the Resulting matrix.
+Layout_Cell describes a sparse matrix stored as a list of x, y, and value.
+This interface also provides a "Myriad" capability allowing multiple
+similar operations to be performed on independent sets of matrixes in
+parallel. This is done by use of the work-item id (wi_id) in each cell of
+the matrixes. Cells with the same wi_id are considered part of the same
+matrix. In the myriad form, each input matrix A, B, and (optionally) C can
+contain many independent matrixes. The wi_ids are matched up such that each
+operation involves the A, B, and C with the same wi_id. A and B must
+therefore contain the same set of wi_ids, while C is optional for any
+wi_id. The same parameters: alpha, beta, transposeA, and transposeB are
+used for all work-items. The result will contain cells from all provided
+work-items. Result has same shape as C if provided. Note that matrixes are
+not explicitly dimensioned. The shape is determined by the highest value of
+x and y for each work-item.
+
+Parameter : alpha REAL8 --- Scalar multiplier for alpha * A * B
+
+Parameter : beta REAL8 --- A scalar multiplier for beta * C, scales
+                 the C matrix before addition. May be omitted.
+
+Parameter : A_in TABLE ( Layout_Cell ) --- 'A' matrix (multiplier)
+                 in Layout_Cell format
+
+Parameter : C_in TABLE ( Layout_Cell ) --- Same as above for the
+                 'C' matrix (addend). May be omitted.
+
+Parameter : B_in TABLE ( Layout_Cell ) --- Same as above for the
+                 'B' matrix (multiplicand)
+
+Parameter : transposeA BOOLEAN --- Boolean indicating whether matrix A
+                       should be transposed before multiplying
+
+Parameter : transposeB BOOLEAN --- Same as above but for matrix B
+
+Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+         UNSIGNED4 y , REAL8 v } ) Result matrix in
+         Layout_Cell format.
+
+See : PBblas/Types.Layout_Cell
+

@@ -1,0 +1,90 @@
+IMPORTS
+=======
+
+
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : Math
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : REAL8 Infinity
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Return a real "infinity" value.
+  | 
+  | Return : REAL8
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : REAL8 NaN
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Return a non-signalling NaN (Not a Number)value.
+  | 
+  | Return : REAL8
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN isInfinite(REAL8 val)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Return whether a real value is infinite (positive or negative).
+  | 
+  | Parameter : val REAL8 --- The value to test.
+  | 
+  | Return : BOOLEAN
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN isNaN(REAL8 val)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Return whether a real value is a NaN (not a number) value.
+  | 
+  | Parameter : val REAL8 --- The value to test.
+  | 
+  | Return : BOOLEAN
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN isFinite(REAL8 val)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Return whether a real value is a valid value (neither infinite not NaN).
+  | 
+  | Parameter : val REAL8 --- The value to test.
+  | 
+  | Return : BOOLEAN
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : REAL8 FMod(REAL8 numer, REAL8 denom)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the floating-point remainder of numer/denom (rounded towards zero).
+  | If denom is zero, the result depends on the -fdivideByZero flag: 'zero' or
+  | unset: return zero. 'nan': return a non-signalling NaN value 'fail': throw
+  | an exception
+  | 
+  | Parameter : denom REAL8 --- The numerator.
+  | 
+  | Parameter : numer REAL8 --- The numerator.
+  | 
+  | Return : REAL8
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN FMatch(REAL8 a, REAL8 b, REAL8 epsilon=0.0)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns whether two floating point values are the same, within margin of
+  | error epsilon.
+  | 
+  | Parameter : a REAL8 --- The first value.
+  | 
+  | Parameter : b REAL8 --- The second value.
+  | 
+  | Parameter : epsilon REAL8 --- The allowable margin of error.
+  | 
+  | Return : BOOLEAN
+  | 

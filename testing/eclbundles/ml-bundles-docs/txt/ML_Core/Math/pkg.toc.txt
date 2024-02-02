@@ -1,0 +1,31 @@
+++++++++
+  Math
+++++++++
+
+
+
+CONTENTS
+========
+
+file : Beta.ecl <Beta.ecl.txt>    Return the beta value of two positive real numbers, x and y
+
+file : Distributions.ecl <Distributions.ecl.txt>    
+
+file : DoubleFac.ecl <DoubleFac.ecl.txt>    The 'double' factorial is defined for ODD n and is the product of all the odd numbers up to and including that number
+
+file : Fac.ecl <Fac.ecl.txt>    Factorial function
+
+file : gamma.ecl <gamma.ecl.txt>    Return the value of gamma function of real number x A wrapper for the standard C tgamma function
+
+file : log_gamma.ecl <log_gamma.ecl.txt>    Return the value of the log gamma function of the absolute value of X
+
+file : lowerGamma.ecl <lowerGamma.ecl.txt>    Return the lower incomplete gamma value of two real numbers,
+
+file : NCK.ecl <NCK.ecl.txt>    
+
+file : Poly.ecl <Poly.ecl.txt>    Evaluate a polynomial from a set of co-effs
+
+file : StirlingFormula.ecl <StirlingFormula.ecl.txt>    Stirling's formula
+
+file : upperGamma.ecl <upperGamma.ecl.txt>    Return the upper incomplete gamma value of two real numbers, x and y
+

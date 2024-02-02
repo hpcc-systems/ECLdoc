@@ -1,0 +1,86 @@
+<Meta>
+ <Source name="intest.example_7" sourcePath="/home/tetrapod/source/ecldoc/testing/test/intest/example_7.ecl">
+  <Definition body="92"
+              end="771"
+              exported="1"
+              fullname="intest.example_7"
+              inherittype="local"
+              line="6"
+              name="example_7"
+              start="73"
+              type="module">
+   <Definition body="136"
+               end="163"
+               fullname="intest.example_7.rev"
+               inherittype="local"
+               line="7"
+               name="Rev"
+               shared="1"
+               start="104"
+               type="function">
+    <Type type="string4"/>
+    <Params>
+     <Param name="S">
+      <Type type="string4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="192"
+               end="307"
+               inherittype="local"
+               line="8"
+               name="ReverseString4"
+               shared="1"
+               start="168"
+               type="type"/>
+   <Definition body="340"
+               end="521"
+               fullname="intest.example_7.needc"
+               inherittype="local"
+               line="12"
+               name="NeedC"
+               shared="1"
+               start="312"
+               type="type">
+    <Type type="needc"/>
+    <Params>
+     <Param name="len">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="544"
+               end="665"
+               inherittype="local"
+               line="17"
+               name="ScaleInt"
+               shared="1"
+               start="526"
+               type="type"/>
+   <Definition body="681"
+               end="766"
+               exported="1"
+               fullname="intest.example_7.r"
+               inherittype="local"
+               line="21"
+               name="R"
+               start="670"
+               type="record">
+    <Field name="F1">
+     <Type type="reversestring4"/>
+    </Field>
+    <Field name="F2">
+     <Type type="needc"/>
+    </Field>
+    <Field name="F3">
+     <Type type="scaleint"/>
+    </Field>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Basic Type Example
+* Source Code copied from ECL Documentation&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

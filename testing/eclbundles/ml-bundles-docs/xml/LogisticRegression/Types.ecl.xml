@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Source name="LogisticRegression.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" target="Types.ecl.xml">
+  <Import name="Core_Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+  <Definition exported="1" fullname="LogisticRegression.Types" inherittype="local" line="13" name="Types" type="module">
+   <Definition exported="1" fullname="logisticregression.types.t_universe" inherittype="local" line="14" name="t_Universe" type="attribute">
+    <Signature name="t_Universe" ret="" param="" hlen="10">t_Universe</Signature><Type type="unsigned1"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.field_desc" inherittype="local" line="15" name="Field_Desc" type="record">
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="cardinality">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="min_value">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="Field_Desc" ret="" param="" hlen="10">Field_Desc</Signature><Field name="max_value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.data_info" inherittype="local" line="21" name="Data_Info" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="dependent_fields">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="dependent_records">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="independent_fields">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="independent_records">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="dependent_count">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="independent_count">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="dependent_stats">
+     <Type type="table">
+      <Type fullname="logisticregression.types.field_desc" name="Field_Desc" type="record"/>
+     </Type>
+    </Field>
+    <Signature name="Data_Info" ret="" param="" hlen="9">Data_Info</Signature><Field name="independent_stats">
+     <Type type="table">
+      <Type fullname="logisticregression.types.field_desc" name="Field_Desc" type="record"/>
+     </Type>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.numericfield_u" inherittype="local" line="32" name="NumericField_U" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="NumericField_U" ret="" param="" hlen="14">NumericField_U</Signature><Field name="u">
+     <Type type="unsigned1"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.discretefield_u" inherittype="local" line="35" name="DiscreteField_U" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Signature name="DiscreteField_U" ret="" param="" hlen="15">DiscreteField_U</Signature><Field name="u">
+     <Type type="unsigned1"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.layout_column_map" inherittype="local" line="38" name="Layout_Column_Map" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="orig_number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="Layout_Column_Map" ret="" param="" hlen="17">Layout_Column_Map</Signature><Field name="remap_number">
+     <Type type="unsigned4"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.classifier_stats" inherittype="local" line="43" name="Classifier_Stats" type="record">
+    <Field name="column">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="max_delta">
+     <Type type="real8"/>
+    </Field>
+    <Field name="iterations">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="correct">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="Classifier_Stats" ret="" param="" hlen="16">Classifier_Stats</Signature><Field name="incorrect">
+     <Type type="unsigned4"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.model_report" inherittype="local" line="50" name="Model_Report" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="max_iterations">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="epsilon">
+     <Type type="real8"/>
+    </Field>
+    <Field name="dep_vars">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="ind_vars">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="obs">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="builder">
+     <Type type="unsigned2"/>
+    </Field>
+    <Signature name="Model_Report" ret="" param="" hlen="12">Model_Report</Signature><Field name="stats">
+     <Type type="table">
+      <Type fullname="logisticregression.types.classifier_stats" name="Classifier_Stats" type="record"/>
+     </Type>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.binomial_confusion_summary" inherittype="local" line="60" name="Binomial_Confusion_Summary" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="classifier">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="true_positive">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="true_negative">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="false_positive">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="false_negative">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="cond_pos">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="pred_pos">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="cond_neg">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="pred_neg">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="prevalence">
+     <Type type="real8"/>
+    </Field>
+    <Field name="accuracy">
+     <Type type="real8"/>
+    </Field>
+    <Field name="true_pos_rate">
+     <Type type="real8"/>
+    </Field>
+    <Field name="false_neg_rate">
+     <Type type="real8"/>
+    </Field>
+    <Field name="false_pos_rate">
+     <Type type="real8"/>
+    </Field>
+    <Field name="true_neg_rate">
+     <Type type="real8"/>
+    </Field>
+    <Field name="pos_pred_val">
+     <Type type="real8"/>
+    </Field>
+    <Field name="false_disc_rate">
+     <Type type="real8"/>
+    </Field>
+    <Field name="false_omit_rate">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="Binomial_Confusion_Summary" ret="" param="" hlen="26">Binomial_Confusion_Summary</Signature><Field name="neg_pred_val">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.model_coef" inherittype="local" line="82" name="Model_Coef" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="ind_col">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="dep_nom">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="Model_Coef" ret="" param="" hlen="10">Model_Coef</Signature><Field name="SE">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.confidence_model_coef" inherittype="local" line="89" name="Confidence_Model_Coef" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="ind_col">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="dep_nom">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w">
+     <Type type="real8"/>
+    </Field>
+    <Field name="SE">
+     <Type type="real8"/>
+    </Field>
+    <Field name="upper">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="Confidence_Model_Coef" ret="" param="" hlen="21">Confidence_Model_Coef</Signature><Field name="lower">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.pval_model_coef" inherittype="local" line="93" name="pval_Model_Coef" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="ind_col">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="dep_nom">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w">
+     <Type type="real8"/>
+    </Field>
+    <Field name="SE">
+     <Type type="real8"/>
+    </Field>
+    <Field name="z">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="pval_Model_Coef" ret="" param="" hlen="15">pval_Model_Coef</Signature><Field name="p_value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.raw_prediction" inherittype="local" line="97" name="Raw_Prediction" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="Raw_Prediction" ret="" param="" hlen="14">Raw_Prediction</Signature><Field name="raw">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.observation_deviance" inherittype="local" line="100" name="Observation_Deviance" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="classifier">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="actual">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="predicted">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="mod_ll">
+     <Type type="real8"/>
+    </Field>
+    <Field name="mod_dev_component">
+     <Type type="real8"/>
+    </Field>
+    <Field name="mod_dev_residual">
+     <Type type="real8"/>
+    </Field>
+    <Field name="nil_ll">
+     <Type type="real8"/>
+    </Field>
+    <Field name="nil_dev_component">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="Observation_Deviance" ret="" param="" hlen="20">Observation_Deviance</Signature><Field name="nil_dev_residual">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.deviance_record" inherittype="local" line="113" name="Deviance_Record" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="classifier">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="df">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="deviance">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="Deviance_Record" ret="" param="" hlen="15">Deviance_Record</Signature><Field name="AIC">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.types.aod_record" inherittype="local" line="120" name="AOD_Record" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="classifier">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="residual_df">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="df">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="residual_dev">
+     <Type type="real8"/>
+    </Field>
+    <Field name="deviance">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="AOD_Record" ret="" param="" hlen="10">AOD_Record</Signature><Field name="p_value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Signature name="Types" ret="" param="" hlen="5">Types</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

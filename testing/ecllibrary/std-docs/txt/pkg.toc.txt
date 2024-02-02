@@ -1,0 +1,27 @@
+++++++++
+  root
+++++++++
+
+
+
+CONTENTS
+========
+
+dir : system <system/pkg.toc.txt>    
+
+file : BLAS.ecl <BLAS.ecl.txt>    
+
+file : BundleBase.ecl <BundleBase.ecl.txt>    
+
+file : Date.ecl <Date.ecl.txt>    
+
+file : File.ecl <File.ecl.txt>    
+
+file : math.ecl <math.ecl.txt>    
+
+file : Metaphone.ecl <Metaphone.ecl.txt>    
+
+file : str.ecl <str.ecl.txt>    
+
+file : Uni.ecl <Uni.ecl.txt>    
+

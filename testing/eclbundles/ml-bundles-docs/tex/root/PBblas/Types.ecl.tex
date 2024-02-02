@@ -1,0 +1,508 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+Types
+}
+\hypertarget{ecldoc:toc:PBblas.Types}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core |
+ML\_Core.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+Types}}
+
+\hypertarget{ecldoc:PBblas.Types}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Types} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Types for the Parallel Block Basic Linear Algebra Sub-programs support WARNING: attributes marked with WARNING can not be changed without making corresponding changes to the C++ attributes.
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:pbblas.types.dimension_t}{dimension\_t}
+: Type for matrix dimensions
+\item \hyperlink{ecldoc:pbblas.types.partition_t}{partition\_t}
+: Type for partition id -- only supports up to 64K partitions
+\item \hyperlink{ecldoc:pbblas.types.work_item_t}{work\_item\_t}
+: Type for work-item id -- only supports up to 64K work items
+\item \hyperlink{ecldoc:pbblas.types.value_t}{value\_t}
+: Type for matrix cell values
+\item \hyperlink{ecldoc:pbblas.types.m_label_t}{m\_label\_t}
+: Type for matrix label
+\item \hyperlink{ecldoc:ecldoc-Triangle}{Triangle}
+: Enumeration for Triangle type
+\item \hyperlink{ecldoc:ecldoc-Diagonal}{Diagonal}
+: Enumeration for Diagonal type
+\item \hyperlink{ecldoc:ecldoc-Side}{Side}
+: Enumeration for Side type
+\item \hyperlink{ecldoc:pbblas.types.t_mu_no}{t\_mu\_no}
+: Type for matrix universe number
+\item \hyperlink{ecldoc:pbblas.types.layout_cell}{Layout\_Cell}
+: Layout for Matrix Cell Main representation of Matrix cell at interface to all PBBlas functions
+\item \hyperlink{ecldoc:pbblas.types.layout_norm}{Layout\_Norm}
+: Layout for Norm results
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+dimension\_t}}
+
+\hypertarget{ecldoc:pbblas.types.dimension_t}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{dimension\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Type for matrix dimensions. Uses UNSIGNED four as matrixes are not designed to support more than 4 B rows or columns.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED4} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+partition\_t}}
+
+\hypertarget{ecldoc:pbblas.types.partition_t}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{partition\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Type for partition id -- only supports up to 64K partitions
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED2} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+work\_item\_t}}
+
+\hypertarget{ecldoc:pbblas.types.work_item_t}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{work\_item\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Type for work-item id -- only supports up to 64K work items
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED2} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+value\_t}}
+
+\hypertarget{ecldoc:pbblas.types.value_t}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{value\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Type for matrix cell values WARNING: type used in C++ attribute
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+m\_label\_t}}
+
+\hypertarget{ecldoc:pbblas.types.m_label_t}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{m\_label\_t} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Type for matrix label. Used for Matrix dimensions (see Layout\_Dims) and for partitions (see Layout\_Part)
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{STRING3} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Triangle}}
+
+\hypertarget{ecldoc:ecldoc-Triangle}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Triangle} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Enumeration for Triangle type WARNING: type used in C++ attribute
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Diagonal}}
+
+\hypertarget{ecldoc:ecldoc-Diagonal}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Diagonal} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Enumeration for Diagonal type WARNING: type used in C++ attribute
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Side}}
+
+\hypertarget{ecldoc:ecldoc-Side}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Side} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Enumeration for Side type WARNING: type used in C++ attribute
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED1} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+t\_mu\_no}}
+
+\hypertarget{ecldoc:pbblas.types.t_mu_no}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{t\_mu\_no} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Type for matrix universe number Allow up to 64k matrices in one universe
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{UNSIGNED2} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+Layout\_Cell}}
+
+\hypertarget{ecldoc:pbblas.types.layout_cell}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Layout\_Cell} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Layout for Matrix Cell Main representation of Matrix cell at interface to all PBBlas functions. Matrixes are represented as DATASET(Layout\_Cell), where each cell describes the row and column position of the cell as well as its value. Only the non-zero cells need to be contained in the dataset in order to describe the matrix since all unspecified cells are considered to have a value of zero. The cell also contains a work-item number that allows multiple separate matrixes to be carried in the same dataset. This supports the ''myriad'' style interface that allows the same operations to be performed on many different sets of data at once. Note that these matrixes do not have an explicit size. They are sized implicitly, based on the maximum row and column presented in the data. A matrix can be converted to an explicit dense form (see matrix\_t) by using the utility module MakeR8Set. This module should only be used for known small matrixes (< 1M cells) or for partitions of a larger matrix. The Converted module provides utility functions to convert to and from a set of partitions (See Layout\_parts).
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{wi\_id}} ||| UNSIGNED2 --- Work Item Number -- An identifier from 1 to 64K-1 that separates and identifies individual matrixes
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{y}} ||| UNSIGNED4 --- 1-based column position within the matrix
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{x}} ||| UNSIGNED4 --- 1-based row position within the matrix
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{v}} ||| REAL8 --- Real value for the cell
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] matrix\_t
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std/PBblas/MakeR8Set.ecl
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std/PBblas/Converted.ecl WARNING: Used as C++ attribute. Do not change without corresponding changes to MakeR8Set.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+Layout\_Norm}}
+
+\hypertarget{ecldoc:pbblas.types.layout_norm}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.Types}{Types} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Layout\_Norm} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Layout for Norm results.
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{wi\_id}} ||| UNSIGNED2 --- Work Item Number -- An identifier from 1 to 64K-1 that separates and identifies individual matrixes
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{v}} ||| REAL8 --- Real value for the norm
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

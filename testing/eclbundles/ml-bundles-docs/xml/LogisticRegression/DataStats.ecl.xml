@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Constants.ecl" name="LogisticRegression.Constants" target="Constants.ecl.xml"/><Source name="LogisticRegression.DataStats" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/DataStats.ecl" target="DataStats.ecl.xml">
+  <Import name="Core_Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+  <Import name="LogisticRegression" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Import name="Constants" ref="LogisticRegression.Constants" target="Constants.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.datastats" inherittype="local" line="28" name="DataStats" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="dependent_fields">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="dependent_records">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="independent_fields">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="independent_records">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="dependent_count">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="independent_count">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="dependent_stats">
+      <Type type="table">
+       <Type fullname="logisticregression.types.field_desc" name="Field_Desc" type="record"/>
+      </Type>
+     </Field>
+     <Field name="independent_stats">
+      <Type type="table">
+       <Type fullname="logisticregression.types.field_desc" name="Field_Desc" type="record"/>
+      </Type>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Information about the datasets. Without details the range for the x and y (independent and dependent) columns. Note that a column of all zero values cannot be distinguished from a missing column. When details are requested, the cardinality, minimum, and maximum values are returned. A zero cardinality is returned when the field cardinality exceeds the Constants.limit_card value.</content><param>indep data set of independent variables</param><param>dep data set of dependent variables</param><param>field_details Boolean directive to provide field level info</param><firstline>Information about the datasets</firstline><returns>a data set of information on each work item</returns></Documentation>
+   <Signature name="DataStats" ret="DATASET(Types.Data_Info)" param="(DATASET(Core_Types.NumericField) indep, DATASET(Core_Types.DiscreteField) dep, BOOLEAN field_details=FALSE)" hlen="34">DATASET(Types.Data_Info) DataStats(DATASET(Core_Types.NumericField) indep, DATASET(Core_Types.DiscreteField) dep, BOOLEAN field_details=FALSE)</Signature><Params>
+    <Param name="indep">
+     <Type type="table">
+      <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+    <Param name="dep">
+     <Type type="table">
+      <Type fullname="ml_core.types.discretefield" name="DiscreteField" type="record"/>
+     </Type>
+    </Param>
+    <Param name="field_details">
+     <Type type="boolean"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Information about the datasets. Without details the range for the x and y (independent and dependent) columns. Note that a column of all zero values cannot be distinguished from a missing column. When details are requested, the cardinality, minimum, and maximum values are returned. A zero cardinality is returned when the field cardinality exceeds the Constants.limit_card value.</content><param>indep data set of independent variables</param><param>dep data set of dependent variables</param><param>field_details Boolean directive to provide field level info</param><firstline>Information about the datasets</firstline><returns>a data set of information on each work item</returns></Documentation>
+   </Source>
+</Meta>

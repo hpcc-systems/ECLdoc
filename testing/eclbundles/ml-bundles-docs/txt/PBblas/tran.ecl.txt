@@ -1,0 +1,40 @@
+IMPORTS
+=======
+
+
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <Types.ecl.txt>
+PBblas.internal <internal/pkg.toc.txt>
+PBblas.internal.Types <internal/Types.ecl.txt>
+PBblas.internal.MatDims <internal/MatDims.ecl.txt>
+PBblas.internal.Converted <internal/Converted.ecl.txt>
+std.blas </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl>
+std.system.Thorlib </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Layout_Cell) tran(value_t alpha, DATASET(Layout_Cell) A, value_t beta=0,
+                                    DATASET(Layout_Cell) C=empty_c)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Transpose a matrix and sum into base matrix result <== alpha * A**t + beta
+* C, A is n by m, C is m by n A**T (A Transpose) and C must have same shape
+
+Parameter : C TABLE ( Layout_Cell ) --- C matrix in
+              DATASET(Layout_Call) form
+
+Parameter : alpha REAL8 --- Scalar multiplier for the A**T matrix
+
+Parameter : A TABLE ( Layout_Cell ) --- A matrix in
+              DATASET(Layout_Cell) form
+
+Parameter : beta REAL8 --- Scalar multiplier for the C matrix
+
+Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+         UNSIGNED4 y , REAL8 v } ) Matrix in
+         DATASET(Layout_Cell) form alpha * A**T + beta * C
+
+See : PBblas/Types.layout_cell
+

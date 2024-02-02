@@ -1,0 +1,2748 @@
+<Meta>
+ <Source sourcePath="lib_fileservices"/>
+ <Source name="File" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/File.ecl">
+  <Import body="0"
+          end="274"
+          fullname="lib_fileservices"
+          inherittype="local"
+          line="7"
+          name="lib_fileservices"
+          ref="lib_fileservices"
+          remotescope="1"
+          start="274"/>
+  <Definition body="258"
+              end="54648"
+              exported="1"
+              fullname="File"
+              inherittype="local"
+              line="5"
+              name="File"
+              start="244"
+              type="module">
+   <Definition body="655"
+               end="690"
+               exported="1"
+               fullname="file.fsfilenamerecord"
+               inherittype="local"
+               line="19"
+               name="FsFilenameRecord"
+               start="629"
+               type="record">
+    <Field name="name">
+     <Type type="string"/>
+    </Field>
+    <Field name="size">
+     <Type type="integer8"/>
+    </Field>
+    <Field name="modified">
+     <Type type="string19"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;* A record containing information about filename.  Includes name, size and when last modified.
+ * export FsFilenameRecord := RECORD
+ *     string name;
+ *     integer8 size;
+ *     string19 modified;
+ * END;&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="788"
+               end="824"
+               exported="1"
+               fullname="file.fslogicalfilename"
+               inherittype="local"
+               line="25"
+               name="FsLogicalFileName"
+               start="761"
+               type="attribute">
+    <Type type="string"/>
+    <Documentation>
+     <content>&#10;&#32;* An alias for a logical filename that is stored in a row.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1002"
+               end="1044"
+               exported="1"
+               fullname="file.fslogicalfilenamerecord"
+               inherittype="local"
+               line="33"
+               name="FsLogicalFileNameRecord"
+               start="969"
+               type="record">
+    <Field name="name">
+     <Type type="string"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;* A record containing a logical filename. It contains the following fields:
+ *
+ * @field name          The logical name of the file;&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1615"
+               end="1657"
+               exported="1"
+               fullname="file.fslogicalfileinforecord"
+               inherittype="local"
+               line="47"
+               name="FsLogicalFileInfoRecord"
+               start="1582"
+               type="record">
+    <Field name="name">
+     <Type type="string"/>
+    </Field>
+    <Field name="superfile">
+     <Type type="boolean"/>
+    </Field>
+    <Field name="size">
+     <Type type="integer8"/>
+    </Field>
+    <Field name="rowcount">
+     <Type type="integer8"/>
+    </Field>
+    <Field name="modified">
+     <Type type="string19"/>
+    </Field>
+    <Field name="owner">
+     <Type type="string"/>
+    </Field>
+    <Field name="cluster">
+     <Type type="string"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;* A record containing information about a logical file.
+ *
+ * @inherits            Contains all the fields in FsLogicalFileNameRecord)
+ * @field superfile     Is this a superfile?
+ * @field size          Number of bytes in the file (before compression)
+ * @field rowcount      Number of rows in the file.
+ * @modified            Timestamp when the file was last modified;
+ * @owner               The username of the owner who ran the job to create this file.
+ * @cluster             The cluster that this file was created on.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="1874"
+               end="1916"
+               exported="1"
+               fullname="file.fslogicalsupersubrecord"
+               inherittype="local"
+               line="56"
+               name="FsLogicalSuperSubRecord"
+               start="1841"
+               type="record">
+    <Field name="supername">
+     <Type type="string"/>
+    </Field>
+    <Field name="subname">
+     <Type type="string"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;* A record containing information about a superfile and its contents.
+ *
+ * @field supername     The name of the superfile
+ * @field subname       The name of the sub-file&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="2930"
+               end="2973"
+               exported="1"
+               fullname="file.fsfilerelationshiprecord"
+               inherittype="local"
+               line="74"
+               name="FsFileRelationshipRecord"
+               start="2896"
+               type="record">
+    <Field name="primaryfile">
+     <Type type="string"/>
+    </Field>
+    <Field name="secondaryfile">
+     <Type type="string"/>
+    </Field>
+    <Field name="primaryflds">
+     <Type type="string"/>
+    </Field>
+    <Field name="secondaryflds">
+     <Type type="string"/>
+    </Field>
+    <Field name="kind">
+     <Type type="string"/>
+    </Field>
+    <Field name="cardinality">
+     <Type type="string"/>
+    </Field>
+    <Field name="payload">
+     <Type type="boolean"/>
+    </Field>
+    <Field name="description">
+     <Type type="string"/>
+    </Field>
+    <Documentation>
+     <content>&#10;&#32;* A record containing information about the relationship between two files.
+ *
+ * @field primaryfile   The logical filename of the primary file
+ * @field secondaryfile The logical filename of the secondary file.
+ * @field primaryflds   The name of the primary key field for the primary file. The value &quot;__fileposition__&quot;
+ *                      indicates the secondary is an INDEX that must use FETCH to access non-keyed fields.
+ * @field secondaryflds The name of the foreign key field relating to the primary file.
+ * @field kind          The type of relationship between the primary and secondary files.
+ *                      Containing either &apos;link&apos; or &apos;view&apos;.
+ * @field cardinality   The cardinality of the relationship.  The format is &lt;primary&gt;:&lt;secondary&gt;. Valid values are
+ *                      &quot;1&quot; or &quot;M&quot;.
+ * @field payload       Indicates whether the primary or secondary are payload INDEXes.
+ * @field description   The description of the relationship.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="3110"
+               end="3143"
+               exported="1"
+               fullname="file.recfmv_recsize"
+               inherittype="local"
+               line="80"
+               name="RECFMV_RECSIZE"
+               start="3086"
+               type="attribute">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Constant that indicates IBM RECFM V format file.  Can be passed to SprayFixed for the record size.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="3282"
+               end="3316"
+               exported="1"
+               fullname="file.recfmvb_recsize"
+               inherittype="local"
+               line="86"
+               name="RECFMVB_RECSIZE"
+               start="3257"
+               type="attribute">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Constant that indicates IBM RECFM VB format file.  Can be passed to SprayFixed for the record size.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="3500"
+               end="3542"
+               exported="1"
+               fullname="file.prefix_variable_recsize"
+               inherittype="local"
+               line="92"
+               name="PREFIX_VARIABLE_RECSIZE"
+               start="3458"
+               type="attribute">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Constant that indicates a variable little endian 4 byte length prefixed file.  Can be passed to SprayFixed for the record size.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="3733"
+               end="3785"
+               exported="1"
+               fullname="file.prefix_variable_bigendian_recsize"
+               inherittype="local"
+               line="98"
+               name="PREFIX_VARIABLE_BIGENDIAN_RECSIZE"
+               start="3681"
+               type="attribute">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Constant that indicates a variable big endian 4 byte length prefixed file.  Can be passed to SprayFixed for the record size.&#10;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="4226"
+               end="4287"
+               exported="1"
+               fullname="file.fileexists"
+               inherittype="local"
+               line="110"
+               name="FileExists"
+               start="4159"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns whether the file exists.
+ *
+ * @param lfn           The logical name of the file.
+ * @param physical      Whether to also check for the physical existence on disk.  Defaults to FALSE.
+ * @return              Whether the file exists.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="physical">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="4601"
+               end="4673"
+               exported="1"
+               fullname="file.deletelogicalfile"
+               inherittype="local"
+               line="120"
+               name="DeleteLogicalFile"
+               start="4531"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Removes the logical file from the system, and deletes from the disk.
+ *
+ * @param lfn           The logical name of the file.
+ * @param allowMissing  Whether to suppress an error if the filename does not exist. Defaults to FALSE.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="allowMissing">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="4937"
+               end="4993"
+               exported="1"
+               fullname="file.setreadonly"
+               inherittype="local"
+               line="129"
+               name="SetReadOnly"
+               start="4884"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Changes whether access to a file is read only or not.
+ *
+ * @param lfn           The logical name of the file.
+ * @param ro            Whether updates to the file are disallowed.  Defaults to TRUE.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="ro">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="5237"
+               end="5308"
+               exported="1"
+               fullname="file.renamelogicalfile"
+               inherittype="local"
+               line="139"
+               name="RenameLogicalFile"
+               start="5172"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Changes the name of a logical file.
+ *
+ * @param oldname       The current name of the file to be renamed.
+ * @param newname       The new logical name of the file.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="oldname">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="newname">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="5870"
+               end="5956"
+               exported="1"
+               fullname="file.foreignlogicalfilename"
+               inherittype="local"
+               line="151"
+               name="ForeignLogicalFileName"
+               start="5763"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns a logical filename that can be used to refer to a logical file in a local or remote dali.
+ *
+ * @param name          The logical name of the file.
+ * @param foreigndali   The IP address of the foreign dali used to resolve the file.  If blank then the file is resolved
+ *                      locally.  Defaults to blank.
+ * @param abspath       Should a tilde (~) be prepended to the resulting logical file name.  Defaults to FALSE.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="foreigndali">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="abspath">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6608"
+               end="6692"
+               exported="1"
+               fullname="file.externallogicalfilename"
+               inherittype="local"
+               line="164"
+               name="ExternalLogicalFileName"
+               start="6507"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns an encoded logical filename that can be used to refer to a external file.  Examples include directly
+ * reading from a landing zone.  Upper case characters and other details are escaped.
+ *
+ * @param location      The IP address of the remote machine. &apos;.&apos; can be used for the local machine.
+ * @param path          The path/name of the file on the remote machine.
+ * @param abspath       Should a tilde (~) be prepended to the resulting logical file name.  Defaults to TRUE.
+ * @return              The encoded logical filename.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="location">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="path">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="abspath">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="7022"
+               end="7081"
+               exported="1"
+               fullname="file.getfiledescription"
+               inherittype="local"
+               line="174"
+               name="GetFileDescription"
+               start="6969"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns a string containing the description information associated with the specified filename. This description
+ * is set either through ECL watch or by using the FileServices.SetFileDescription function.
+ *
+ * @param lfn           The logical name of the file.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="7343"
+               end="7407"
+               exported="1"
+               fullname="file.setfiledescription"
+               inherittype="local"
+               line="184"
+               name="SetFileDescription"
+               start="7285"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Sets the description associated with the specified filename.
+ *
+ * @param lfn           The logical name of the file.
+ * @param val           The description to be associated with the file.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="val">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="8106"
+               end="8188"
+               exported="1"
+               fullname="file.remotedirectory"
+               inherittype="local"
+               line="196"
+               name="RemoteDirectory"
+               start="7976"
+               type="function">
+    <Type type="table">
+     <Type fullname="lib_fileservices.fsfilenamerecord" name="FsFilenameRecord" type="record"/>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;* Returns a dataset containing a list of files from the specified machineIP and directory.
+ *
+ * @param machineIP     The IP address of the remote machine.
+ * @param directory     The path to the directory to read. This must be in the appropriate format for the operating
+ *                      system running on the remote machine.
+ * @param mask          The filemask specifying which files to include in the result. Defaults to &apos;*&apos; (all files).
+ * @param recurse       Whether to include files from subdirectories under the directory. Defaults to FALSE.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="machineIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="dir">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="mask">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="recurse">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="9010"
+               end="9130"
+               exported="1"
+               fullname="file.logicalfilelist"
+               inherittype="local"
+               line="209"
+               name="LogicalFileList"
+               start="8815"
+               type="function">
+    <Type type="table">
+     <Type fullname="lib_fileservices.fslogicalfileinforecord" name="FsLogicalFileInfoRecord" type="record"/>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;* Returns a dataset of information about the logical files known to the system.
+ *
+ * @param namepattern   The mask of the files to list. Defaults to &apos;*&apos; (all files).
+ * @param includenormal Whether to include &apos;normal&apos; files. Defaults to TRUE.
+ * @param includesuper  Whether to include SuperFiles. Defaults to FALSE.
+ * @param unknownszero  Whether to set file sizes that are unknown to zero(0) instead of minus-one (-1). Defaults to FALSE.
+ * @param foreigndali   The IP address of the foreign dali used to resolve the file.  If blank then the file is resolved
+ *                      locally.  Defaults to blank.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="namepattern">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="includenormal">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="includesuper">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="unknownszero">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="foreigndali">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="10231"
+               end="10315"
+               exported="1"
+               fullname="file.comparefiles"
+               inherittype="local"
+               line="228"
+               name="CompareFiles"
+               start="10117"
+               type="function">
+    <Type type="integer4"/>
+    <Documentation>
+     <content>&#10;&#32;* Compares two files, and returns a result indicating how well they match.
+ *
+ * @param file1         The logical name of the first file.
+ * @param file2         The logical name of the second file.
+ * @param logical_only  Whether to only compare logical information in the system datastore (Dali), and ignore physical
+                        information on disk. [Default TRUE]
+ * @param use_crcs      Whether to compare physical CRCs of all the parts on disk. This may be slow on large files.
+                        Defaults to FALSE.
+ * @return              0 if file1 and file2 match exactly
+ *                      1 if file1 and file2 contents match, but file1 is newer than file2
+ *                      -1 if file1 and file2 contents match, but file2 is newer than file1
+ *                      2 if file1 and file2 contents do not match and file1 is newer than file2
+ *                      -2 if file1 and file2 contents do not match and file2 is newer than file1&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn1">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="lfn2">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="logical_only">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="use_crcs">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="11216"
+               end="11276"
+               exported="1"
+               fullname="file.verifyfile"
+               inherittype="local"
+               line="244"
+               name="VerifyFile"
+               start="11154"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Checks the system datastore (Dali) information for the file against the physical parts on disk.
+ *
+ * @param lfn           The name of the file to check.
+ * @param use_crcs      Whether to compare physical CRCs of all the parts on disk. This may be slow on large files.
+ * @return              &apos;OK&apos; - The file parts match the datastore information
+ *                      &apos;Could not find file: &lt;filename&gt;&apos; - The logical filename was not found
+ *                      &apos;Could not find part file: &lt;partname&gt;&apos; - The partname was not found
+ *                      &apos;Modified time differs for: &lt;partname&gt;&apos; - The partname has a different timestamp
+ *                      &apos;File size differs for: &lt;partname&gt;&apos; - The partname has a file size
+ *                      &apos;File CRC differs for: &lt;partname&gt;&apos; - The partname has a different CRC&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="usecrcs">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="12682"
+               end="12827"
+               exported="1"
+               fullname="file.addfilerelationship"
+               inherittype="local"
+               line="265"
+               name="AddFileRelationship"
+               start="12475"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Defines the relationship between two files. These may be DATASETs or INDEXes. Each record in the primary file
+ * should be uniquely defined by the primaryfields (ideally), preferably efficiently.  This information is used
+ * by the roxie browser to link files together.
+ *
+ * @param primary       The logical filename of the primary file.
+ * @param secondary     The logical filename of the secondary file.
+ * @param primaryfields The name of the primary key field for the primary file. The value &quot;__fileposition__&quot;
+ *                      indicates the secondary is an INDEX that must use FETCH to access non-keyed fields.
+ * @param secondaryfields The name of the foreign key field relating to the primary file.
+ * @param relationship  The type of relationship between the primary and secondary files.
+ *                      Containing either &apos;link&apos; or &apos;view&apos;.  Default is &quot;link&quot;.
+ * @param cardinality   The cardinality of the relationship.  The format is &lt;primary&gt;:&lt;secondary&gt;. Valid values are
+ *                      &quot;1&quot; or &quot;M&quot;.
+ * @param payload       Indicates whether the primary or secondary are payload INDEXes.
+ * @param description   The description of the relationship.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="primary">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="secondary">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="primaryflds">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="secondaryflds">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="kind">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="cardinality">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="payload">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="description">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="13616"
+               end="13723"
+               exported="1"
+               fullname="file.filerelationshiplist"
+               inherittype="local"
+               line="279"
+               name="FileRelationshipList"
+               start="13437"
+               type="function">
+    <Type type="table">
+     <Type fullname="lib_fileservices.fsfilerelationshiprecord" name="FsFileRelationshipRecord" type="record"/>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;* Returns a dataset of relationships.   The return records are structured in the FsFileRelationshipRecord format.
+ *
+ * @param primary       The logical filename of the primary file.
+ * @param secondary     The logical filename of the secondary file.&lt;/para&gt;
+ * @param primaryfields The name of the primary key field for the primary file.
+ * @param secondaryfields The name of the foreign key field relating to the primary file.
+ * @param relationship  The type of relationship between the primary and secondary files.
+ *                      Containing either &apos;link&apos; or &apos;view&apos;.  Default is &quot;link&quot;.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="primary">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="secondary">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="primflds">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="secondaryflds">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="kind">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="14407"
+               end="14521"
+               exported="1"
+               fullname="file.removefilerelationship"
+               inherittype="local"
+               line="293"
+               name="RemoveFileRelationship"
+               start="14256"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Removes a relationship between two files.
+ *
+ * @param primary       The logical filename of the primary file.
+ * @param secondary     The logical filename of the secondary file.
+ * @param primaryfields The name of the primary key field for the primary file.
+ * @param secondaryfields The name of the foreign key field relating to the primary file.
+ * @param relationship  The type of relationship between the primary and secondary files.
+ *                      Containing either &apos;link&apos; or &apos;view&apos;.  Default is &quot;link&quot;.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="primary">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="secondary">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="primaryflds">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="secondaryflds">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="kind">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="14760"
+               end="14817"
+               exported="1"
+               fullname="file.getcolumnmapping"
+               inherittype="local"
+               line="302"
+               name="GetColumnMapping"
+               start="14709"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the field mappings for the file, in the same format specified for the SetColumnMapping function.
+ *
+ * @param lfn           The logical filename of the primary file.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="15259"
+               end="15325"
+               exported="1"
+               fullname="file.setcolumnmapping"
+               inherittype="local"
+               line="313"
+               name="SetColumnMapping"
+               start="15199"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Defines how the data in the fields of the file mist be transformed between the actual data storage format and the
+ * input format used to query that data.  This is used by the user interface of the roxie browser.
+ *
+ * @param lfn           The logical filename of the primary file.
+ * @param mapping       A string containing a comma separated list of field mappings.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="mapping">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="15721"
+               end="15780"
+               exported="1"
+               fullname="file.encoderfsquery"
+               inherittype="local"
+               line="324"
+               name="EncodeRfsQuery"
+               start="15652"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns a string that can be used in a DATASET declaration to read data from an RFS (Remote File Server) instance
+ * (e.g. rfsmysql) on another node.
+ *
+ * @param server        A string containing the ip:port address for the remote file server.
+ * @param query         The text of the query to send to the server&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="server">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="query">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="16046"
+               end="16106"
+               exported="1"
+               fullname="file.rfsaction"
+               inherittype="local"
+               line="334"
+               name="RfsAction"
+               start="15992"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Sends the query to the rfs server.
+ *
+ * @param server        A string containing the ip:port address for the remote file server.
+ * @param query         The text of the query to send to the server&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="server">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="query">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="16541"
+               end="16621"
+               exported="1"
+               fullname="file.moveexternalfile"
+               inherittype="local"
+               line="345"
+               name="MoveExternalFile"
+               start="16457"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Moves the single physical file between two locations on the same remote machine. The
+ * dafileserv utility program must be running on the location machine.
+ *
+ * @param location      The IP address of the remote machine.
+ * @param frompath      The path/name of the file to move.
+ * @param topath        The path/name of the target file.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="location">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="frompath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="topath">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="16953"
+               end="17023"
+               exported="1"
+               fullname="file.deleteexternalfile"
+               inherittype="local"
+               line="355"
+               name="DeleteExternalFile"
+               start="16889"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Removes a single physical file from a remote machine. The
+ * dafileserv utility program must be running on the location machine.
+ *
+ * @param location      The IP address of the remote machine.
+ * @param path          The path/name of the file to remove.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="location">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="path">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="17371"
+               end="17446"
+               exported="1"
+               fullname="file.createexternaldirectory"
+               inherittype="local"
+               line="365"
+               name="CreateExternalDirectory"
+               start="17302"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Creates the path on the location (if it does not already exist). The
+ * dafileserv utility program must be running on the location machine.
+ *
+ * @param location      The IP address of the remote machine.
+ * @param path          The path/name of the file to remove.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="location">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="path">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="17736"
+               end="17810"
+               exported="1"
+               fullname="file.getlogicalfileattribute"
+               inherittype="local"
+               line="374"
+               name="GetLogicalFileAttribute"
+               start="17658"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the value of the given attribute for the specified logicalfilename.
+ *
+ * @param lfn           The name of the logical file.
+ * @param attrname      The name of the file attribute to return.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="attrname">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="18077"
+               end="18143"
+               exported="1"
+               fullname="file.protectlogicalfile"
+               inherittype="local"
+               line="383"
+               name="ProtectLogicalFile"
+               start="18014"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Toggles protection on and off for the specified logicalfilename.
+ *
+ * @param lfn           The name of the logical file.
+ * @param value         TRUE to enable protection, FALSE to disable.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="lfn">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="value">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="18611"
+               end="18667"
+               exported="1"
+               fullname="file.dfuplusexec"
+               inherittype="local"
+               line="393"
+               name="DfuPlusExec"
+               start="18571"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* The DfuPlusExec action executes the specified command line just as the DfuPLus.exe program would do. This
+ * allows you to have all the functionality of the DfuPLus.exe program available within your ECL code.
+ *
+ * param cmdline        The DFUPlus.exe command line to execute. The valid arguments are documented in the Client
+ *                      Tools manual, in the section describing the DfuPlus.exe program.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="cmdline">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="20576"
+               end="20810"
+               exported="1"
+               fullname="file.fsprayfixed"
+               inherittype="local"
+               line="418"
+               name="fSprayFixed"
+               start="20184"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Sprays a file of fixed length records from a single machine and distributes it across the nodes of the
+ * destination group.
+ *
+ * @param sourceIP      The IP address of the file.
+ * @param sourcePath    The path and name of the file.
+ * @param recordsize    The size (in bytes) of the records in the file.
+ * @param destinationGroup The name of the group to distribute the file across.
+ * @param destinationLogicalName The logical name of the file to create.
+ * @param timeOut       The time in ms to wait for the operation to complete.  A value of 0 causes the call to return immediately.
+ *                      Defaults to no timeout (-1).
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.
+ * @param maxConnections The maximum number of target nodes to write to concurrently.  Defaults to 1.
+ * @param allowOverwrite Is it valid to overwrite an existing file of the same name?  Defaults to FALSE
+ * @param replicate     Whether to replicate the new file. Defaults to FALSE.
+ * @param compress      Whether to compress the new file. Defaults to FALSE.
+ * @param failIfNoSourceFile If TRUE it causes a missing source file to trigger a failure.  Defaults to FALSE.
+ * @param expireDays    Number of days to auto-remove file. Default is -1, not expire.
+ * @return              The DFU workunit id for the job.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="sourceIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourcePath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="recordSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="failIfNoSourceFile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="expireDays">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="21290"
+               end="21523"
+               exported="1"
+               fullname="file.sprayfixed"
+               inherittype="local"
+               line="427"
+               name="SprayFixed"
+               start="20909"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fSprayFixed, but does not return the DFU Workunit ID.
+ *
+ * @see fSprayFixed&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="sourceIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourcePath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="recordSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="failIfNoSourceFile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="expireDays">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="22277"
+               end="22647"
+               exported="1"
+               fullname="file.fsprayvariable"
+               inherittype="local"
+               line="431"
+               name="fSprayVariable"
+               start="21632"
+               type="function">
+    <Type type="varstring"/>
+    <Params>
+     <Param name="sourceIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourcePath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceMaxRecordSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="sourceCsvSeparate">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceCsvTerminate">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceCsvQuote">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="sourceCsvEscape">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="failIfNoSourceFile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="recordStructurePresent">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="quotedTerminator">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="encoding">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="expireDays">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="23388"
+               end="23757"
+               exported="1"
+               fullname="file.sprayvariable"
+               inherittype="local"
+               line="435"
+               name="SprayVariable"
+               start="22754"
+               type="function">
+    <Type type=""/>
+    <Params>
+     <Param name="sourceIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourcePath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceMaxRecordSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="sourceCsvSeparate">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceCsvTerminate">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceCsvQuote">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="sourceCsvEscape">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="failIfNoSourceFile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="recordStructurePresent">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="quotedTerminator">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="encoding">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="expireDays">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="26492"
+               end="26862"
+               exported="1"
+               fullname="file.fspraydelimited"
+               inherittype="local"
+               line="465"
+               name="fSprayDelimited"
+               start="25846"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Sprays a file of fixed delimited records from a single machine and distributes it across the nodes of the
+ * destination group.
+ *
+ * @param sourceIP      The IP address of the file.
+ * @param sourcePath    The path and name of the file.
+ * @param sourceCsvSeparate The character sequence which separates fields in the file.
+ * @param sourceCsvTerminate The character sequence which separates records in the file.
+ * @param sourceCsvQuote A string which can be used to delimit fields in the file.
+ * @param sourceMaxRecordSize    The maximum size (in bytes) of the records in the file.
+ * @param destinationGroup The name of the group to distribute the file across.
+ * @param destinationLogicalName The logical name of the file to create.
+ * @param timeOut       The time in ms to wait for the operation to complete.  A value of 0 causes the call to return immediately.
+ *                      Defaults to no timeout (-1).
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.
+ * @param maxConnections The maximum number of target nodes to write to concurrently.  Defaults to 1.
+ * @param allowOverwrite Is it valid to overwrite an existing file of the same name?  Defaults to FALSE
+ * @param replicate     Whether to replicate the new file. Defaults to FALSE.
+ * @param compress      Whether to compress the new file. Defaults to FALSE.
+ * @param sourceCsvEscape A character that is used to escape quote characters.  Defaults to none.
+ * @param failIfNoSourceFile If TRUE it causes a missing source file to trigger a failure.  Defaults to FALSE.
+ * @param recordStructurePresent If TRUE derives the record structure from the header of the file.
+ * @param quotedTerminator Can the terminator character be included in a quoted field.  Defaults to TRUE.
+ *                      If FALSE it allows quicker partitioning of the file (avoiding a complete file scan).
+ * @param expireDays    Number of days to auto-remove file. Default is -1, not expire.
+ * @return              The DFU workunit id for the job.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="sourceIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourcePath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceMaxRecordSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="sourceCsvSeparate">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceCsvTerminate">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceCsvQuote">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="sourceCsvEscape">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="failIfNoSourceFile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="recordStructurePresent">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="quotedTerminator">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="encoding">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="expireDays">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="27610"
+               end="27979"
+               exported="1"
+               fullname="file.spraydelimited"
+               inherittype="local"
+               line="474"
+               name="SprayDelimited"
+               start="26969"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fSprayDelimited, but does not return the DFU Workunit ID.
+ *
+ * @see fSprayDelimited&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="sourceIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourcePath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceMaxRecordSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="sourceCsvSeparate">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceCsvTerminate">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceCsvQuote">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="sourceCsvEscape">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="failIfNoSourceFile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="recordStructurePresent">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="quotedTerminator">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="encoding">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="expireDays">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="30063"
+               end="30334"
+               exported="1"
+               fullname="file.fsprayxml"
+               inherittype="local"
+               line="499"
+               name="fSprayXml"
+               start="29602"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Sprays an xml file from a single machine and distributes it across the nodes of the destination group.
+ *
+ * @param sourceIP      The IP address of the file.
+ * @param sourcePath    The path and name of the file.
+ * @param sourceMaxRecordSize    The maximum size (in bytes) of the records in the file.
+ * @param sourceRowTag  The xml tag that is used to delimit records in the source file.  (This tag cannot recursivly nest.)
+ * @param sourceEncoding The unicode encoding of the file.  (utf8,utf8n,utf16be,utf16le,utf32be,utf32le)
+ * @param destinationGroup The name of the group to distribute the file across.
+ * @param destinationLogicalName The logical name of the file to create.
+ * @param timeOut       The time in ms to wait for the operation to complete.  A value of 0 causes the call to return immediately.
+ *                      Defaults to no timeout (-1).
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.
+ * @param maxConnections The maximum number of target nodes to write to concurrently.  Defaults to 1.
+ * @param allowOverwrite Is it valid to overwrite an existing file of the same name?  Defaults to FALSE
+ * @param replicate     Whether to replicate the new file. Defaults to FALSE.
+ * @param compress      Whether to compress the new file. Defaults to FALSE.
+ * @param failIfNoSourceFile If TRUE it causes a missing source file to trigger a failure.  Defaults to FALSE.
+ * @param expireDays    Number of days to auto-remove file. Default is -1, not expire.
+ * @return              The DFU workunit id for the job.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="sourceIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourcePath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceMaxRecordSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="sourceRowTag">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceEncoding">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="failIfNoSourceFile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="expireDays">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="30879"
+               end="31149"
+               exported="1"
+               fullname="file.sprayxml"
+               inherittype="local"
+               line="508"
+               name="SprayXml"
+               start="30429"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fSprayXml, but does not return the DFU Workunit ID.
+ *
+ * @see fSprayXml&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="sourceIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourcePath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceMaxRecordSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="sourceRowTag">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceEncoding">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="failIfNoSourceFile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="expireDays">
+      <Type type="integer4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="32270"
+               end="32417"
+               exported="1"
+               fullname="file.fdespray"
+               inherittype="local"
+               line="525"
+               name="fDespray"
+               start="32038"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Copies a distributed file from multiple machines, and desprays it to a single file on a single machine.
+ *
+ * @param logicalName   The name of the file to despray.
+ * @param destinationIP The IP of the target machine.
+ * @param destinationPath The path of the file to create on the destination machine.
+ * @param timeOut       The time in ms to wait for the operation to complete.  A value of 0 causes the call to return immediately.
+ *                      Defaults to no timeout (-1).
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.
+ * @param maxConnections The maximum number of target nodes to write to concurrently.  Defaults to 1.
+ * @param allowOverwrite Is it valid to overwrite an existing file of the same name?  Defaults to FALSE
+ * @return              The DFU workunit id for the job.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="logicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationPath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="32731"
+               end="32877"
+               exported="1"
+               fullname="file.despray"
+               inherittype="local"
+               line="534"
+               name="Despray"
+               start="32510"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fDespray, but does not return the DFU Workunit ID.
+ *
+ * @see fDespray&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="logicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationIP">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationPath">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="35112"
+               end="35370"
+               exported="1"
+               fullname="file.fcopy"
+               inherittype="local"
+               line="560"
+               name="fCopy"
+               start="34676"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Copies a distributed file to another distributed file.
+ *
+ * @param sourceLogicalName The name of the file to despray.
+ * @param destinationGroup The name of the group to distribute the file across.
+ * @param destinationLogicalName The logical name of the file to create.
+ * @param sourceDali    The dali that contains the source file (blank implies same dali).  Defaults to same dali.
+ * @param timeOut       The time in ms to wait for the operation to complete.  A value of 0 causes the call to return immediately.
+ *                      Defaults to no timeout (-1).
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.
+ * @param maxConnections The maximum number of target nodes to write to concurrently.  Defaults to 1.
+ * @param allowOverwrite Is it valid to overwrite an existing file of the same name?  Defaults to FALSE
+ * @param replicate     Should the copied file also be replicated on the destination?  Defaults to FALSE
+ * @param asSuperfile   Should the file be copied as a superfile?  If TRUE and source is a superfile, then the
+ *                      operation creates a superfile on the target, creating sub-files as needed and only overwriting
+ *                      existing sub-files whose content has changed. If FALSE, a single file is created.  Defaults to FALSE.
+ * @param compress      Whether to compress the new file. Defaults to FALSE.
+ * @param forcePush     Should the copy process be executed on the source nodes (push) or on the destination nodes (pull)?
+ *                      Default is to pull.
+ * @param transferBufferSize Overrides the size (in bytes) of the internal buffer used to copy the file.  Default is 64k.
+ * @return              The DFU workunit id for the job.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="sourceLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceDali">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="asSuperfile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="forcePush">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="transferBufferSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="preserveCompression">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="35882"
+               end="36139"
+               exported="1"
+               fullname="file.copy"
+               inherittype="local"
+               line="569"
+               name="Copy"
+               start="35457"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fCopy, but does not return the DFU Workunit ID.
+ *
+ * @see fCopy&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="sourceLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceDali">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="asSuperfile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="forcePush">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="transferBufferSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="preserveCompression">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="36768"
+               end="36853"
+               exported="1"
+               fullname="file.freplicate"
+               inherittype="local"
+               line="582"
+               name="fReplicate"
+               start="36644"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Ensures the specified file is replicated to its mirror copies.
+ *
+ * @param logicalName   The name of the file to replicate.
+ * @param timeOut       The time in ms to wait for the operation to complete.  A value of 0 causes the call to return immediately.
+ *                      Defaults to no timeout (-1).
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.
+ * @return              The DFU workunit id for the job.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="logicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="37064"
+               end="37148"
+               exported="1"
+               fullname="file.replicate"
+               inherittype="local"
+               line="591"
+               name="Replicate"
+               start="36951"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fReplicated, but does not return the DFU Workunit ID.
+ *
+ * @see fReplicate&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="logicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="39540"
+               end="39776"
+               exported="1"
+               fullname="file.fremotepull"
+               inherittype="local"
+               line="619"
+               name="fRemotePull"
+               start="39161"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Copies a distributed file to a distributed file on remote system.  Similar to fCopy, except the copy executes
+ * remotely.  Since the DFU workunit executes on the remote DFU server, the user name authentication must be the same
+ * on both systems, and the user must have rights to copy files on both systems.
+ *
+ * @param remoteEspFsURL The url of the remote ESP file copying service.
+ * @param sourceLogicalName The name of the file to despray.
+ * @param destinationGroup The name of the group to distribute the file across.
+ * @param destinationLogicalName The logical name of the file to create.
+ * @param timeOut       The time in ms to wait for the operation to complete.  A value of 0 causes the call to return immediately.
+ *                      Defaults to no timeout (-1).
+ * @param maxConnections The maximum number of target nodes to write to concurrently.  Defaults to 1.
+ * @param allowOverwrite Is it valid to overwrite an existing file of the same name?  Defaults to FALSE
+ * @param replicate     Should the copied file also be replicated on the destination?  Defaults to FALSE
+ * @param asSuperfile   Should the file be copied as a superfile?  If TRUE and source is a superfile, then the
+ *                      operation creates a superfile on the target, creating sub-files as needed and only overwriting
+ *                      existing sub-files whose content has changed. If FALSE a single file is created.  Defaults to FALSE.
+ * @param compress      Whether to compress the new file. Defaults to FALSE.
+ * @param forcePush     Should the copy process should be executed on the source nodes (push) or on the destination nodes (pull)?
+ *                      Default is to pull.
+ * @param transferBufferSize Overrides the size (in bytes) of the internal buffer used to copy the file.  Default is 64k.
+ * @param wrap          Should the fileparts be wrapped when copying to a smaller sized cluster?  The default is FALSE.
+ * @return              The DFU workunit id for the job.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="remoteEspFsURL">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="Replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="asSuperfile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="forcePush">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="transferBufferSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="wrap">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="40243"
+               end="40478"
+               exported="1"
+               fullname="file.remotepull"
+               inherittype="local"
+               line="628"
+               name="RemotePull"
+               start="39875"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fRemotePull, but does not return the DFU Workunit ID.
+ *
+ * @see fRemotePull&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="remoteEspFsURL">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sourceLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationGroup">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="destinationLogicalName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="maxConnections">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="allowOverwrite">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="Replicate">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="asSuperfile">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="forcePush">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="transferBufferSize">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="wrap">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="compress">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="41689"
+               end="41795"
+               exported="1"
+               fullname="file.fmonitorlogicalfilename"
+               inherittype="local"
+               line="646"
+               name="fMonitorLogicalFileName"
+               start="41535"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Creates a file monitor job in the DFU Server. If an appropriately named file arrives in this interval it will fire
+ * the event with the name of the triggering object as the event subtype (see the EVENT function).
+ *
+ * @param eventToFire   The user-defined name of the event to fire when the filename appears. This value is used as
+ *                      the first parameter to the EVENT function.
+ * @param name          The name of the logical file to monitor.  This may contain wildcard characters ( * and ?)
+ * @param shotCount     The number of times to generate the event before the monitoring job completes. A value
+ *                      of -1 indicates the monitoring job continues until manually aborted. The default is 1.
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.
+ * @return              The DFU workunit id for the job.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="eventToFire">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="shotCount">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="42061"
+               end="42166"
+               exported="1"
+               fullname="file.monitorlogicalfilename"
+               inherittype="local"
+               line="655"
+               name="MonitorLogicalFileName"
+               start="41918"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fMonitorLogicalFileName, but does not return the DFU Workunit ID.
+ *
+ * @see fMonitorLogicalFileName&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="eventToFire">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="shotCount">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="43573"
+               end="43685"
+               exported="1"
+               fullname="file.fmonitorfile"
+               inherittype="local"
+               line="674"
+               name="fMonitorFile"
+               start="43389"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Creates a file monitor job in the DFU Server. If an appropriately named file arrives in this interval it will fire
+ * the event with the name of the triggering object as the event subtype (see the EVENT function).
+ *
+ * @param eventToFire   The user-defined name of the event to fire when the filename appears. This value is used as
+ *                      the first parameter to the EVENT function.
+ * @param ip            The the IP address for the file to monitor. This may be omitted if the filename parameter
+ *                      contains a complete URL.
+ * @param filename      The full path of the file(s) to monitor.  This may contain wildcard characters ( * and ?)
+ * @param subDirs       Whether to include files in sub-directories (when the filename contains wildcards).  Defaults to FALSE.
+ * @param shotCount     The number of times to generate the event before the monitoring job completes. A value
+ *                      of -1 indicates the monitoring job continues until manually aborted. The default is 1.
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.
+ * @return              The DFU workunit id for the job.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="eventToFire">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="ip">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="filename">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="subDirs">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="shotCount">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="43959"
+               end="44070"
+               exported="1"
+               fullname="file.monitorfile"
+               inherittype="local"
+               line="683"
+               name="MonitorFile"
+               start="43786"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fMonitorFile, but does not return the DFU Workunit ID.
+ *
+ * @see fMonitorFile&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="eventToFire">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="ip">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="filename">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="subdirs">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="shotCount">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="44705"
+               end="44788"
+               exported="1"
+               fullname="file.waitdfuworkunit"
+               inherittype="local"
+               line="696"
+               name="WaitDfuWorkunit"
+               start="44583"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Waits for the specified DFU workunit to finish.
+ *
+ * @param wuid          The dfu wfid to wait for.
+ * @param timeOut       The time in ms to wait for the operation to complete.  A value of 0 causes the call to return immediately.
+ *                      Defaults to no timeout (-1).
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.
+ * @return              A string containing the final status string of the DFU workunit.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="wuid">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="timeOut">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="45104"
+               end="45179"
+               exported="1"
+               fullname="file.abortdfuworkunit"
+               inherittype="local"
+               line="706"
+               name="AbortDfuWorkunit"
+               start="45012"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Aborts the specified DFU workunit.
+ *
+ * @param wuid          The dfu wfid to abort.
+ * @param espServerIpPort The url of the ESP file copying service. Defaults to the value of ws_fs_server in the environment.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="wuid">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="espServerIpPort">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="45824"
+               end="45915"
+               exported="1"
+               fullname="file.createsuperfile"
+               inherittype="local"
+               line="720"
+               name="CreateSuperFile"
+               start="45721"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Creates an empty superfile. This function is not included in a superfile transaction.
+ *
+ * @param superName     The logical name of the superfile.
+ * @param sequentialParts Whether the sub-files must be sequentially ordered. Default to FALSE.
+ * @param allowExist    Indicating whether to post an error if the superfile already exists. If TRUE, no error is
+ *                      posted. Defaults to FALSE.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="sequentialParts">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="allowExist">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="46218"
+               end="46280"
+               exported="1"
+               fullname="file.superfileexists"
+               inherittype="local"
+               line="732"
+               name="SuperFileExists"
+               start="46164"
+               type="function">
+    <Type type="boolean"/>
+    <Documentation>
+     <content>&#10;&#32;* Checks if the specified filename is present in the Distributed File Utility (DFU) and is a SuperFile.
+ *
+ * @param superName     The logical name of the superfile.
+ * @return              Whether the file exists.
+ *
+ * @see FileExists&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="46472"
+               end="46545"
+               exported="1"
+               fullname="file.deletesuperfile"
+               inherittype="local"
+               line="743"
+               name="DeleteSuperFile"
+               start="46401"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Deletes the superfile.
+ *
+ * @param superName     The logical name of the superfile.
+ *
+ * @see FileExists&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="deletesub">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="46814"
+               end="46881"
+               exported="1"
+               fullname="file.getsuperfilesubcount"
+               inherittype="local"
+               line="753"
+               name="GetSuperFileSubCount"
+               start="46753"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the number of sub-files contained within a superfile.
+ *
+ * @param superName     The logical name of the superfile.
+ * @return              The number of sub-files within the superfile.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="47362"
+               end="47446"
+               exported="1"
+               fullname="file.getsuperfilesubname"
+               inherittype="local"
+               line="765"
+               name="GetSuperFileSubName"
+               start="47260"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the name of the Nth sub-file within a superfile.
+ *
+ * @param superName     The logical name of the superfile.
+ * @param fileNum       The 1-based position of the sub-file to return the name of.
+ * @param absPath       Whether to prepend &apos;~&apos; to the name of the resulting logical file name.
+ * @return              The logical name of the selected sub-file.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="fileNum">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="absPath">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="47794"
+               end="47870"
+               exported="1"
+               fullname="file.findsuperfilesubname"
+               inherittype="local"
+               line="776"
+               name="FindSuperFileSubName"
+               start="47714"
+               type="function">
+    <Type type="unsigned4"/>
+    <Documentation>
+     <content>&#10;&#32;* Returns the position of a file within a superfile.
+ *
+ * @param superName     The logical name of the superfile.
+ * @param subName       The logical name of the sub-file.
+ * @return              The 1-based position of the sub-file within the superfile.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="subName">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="48089"
+               end="48152"
+               exported="1"
+               fullname="file.startsuperfiletransaction"
+               inherittype="local"
+               line="784"
+               name="StartSuperFileTransaction"
+               start="48052"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Starts a superfile transaction.  All superfile operations within the transaction will either be
+ * executed atomically or rolled back when the transaction is finished.&#10;&#32;</content>
+    </Documentation>
+    <Params/>
+   </Definition>
+   <Definition body="48773"
+               end="48869"
+               exported="1"
+               fullname="file.addsuperfile"
+               inherittype="local"
+               line="797"
+               name="AddSuperFile"
+               start="48643"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Adds a file to a superfile.
+ *
+ * @param superName     The logical name of the superfile.
+ * @param subName       The name of the logical file to add.
+ * @param atPos         The position to add the sub-file, or 0 to append.  Defaults to 0.
+ * @param addContents   Controls whether adding a superfile adds the superfile, or its contents.  Defaults to FALSE (do not expand).
+ * @param strict        Check addContents only if subName is a superfile, and ensure superfiles exist.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="subName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="atPos">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="addContents">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="strict">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="49410"
+               end="49502"
+               exported="1"
+               fullname="file.removesuperfile"
+               inherittype="local"
+               line="809"
+               name="RemoveSuperFile"
+               start="49296"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Removes a sub-file from a superfile.
+ *
+ * @param superName     The logical name of the superfile.
+ * @param subName       The name of the sub-file to remove.
+ * @param del           Indicates whether the sub-file should also be removed from the disk.  Defaults to FALSE.
+ * @param removeContents Controls whether the contents of a sub-file which is a superfile should be recursively removed.  Defaults to FALSE.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="subName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="del">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="removeContents">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="49796"
+               end="49862"
+               exported="1"
+               fullname="file.clearsuperfile"
+               inherittype="local"
+               line="819"
+               name="ClearSuperFile"
+               start="49732"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Removes all sub-files from a superfile.
+ *
+ * @param superName     The logical name of the superfile.
+ * @param del           Indicates whether the sub-files should also be removed from the disk.  Defaults to FALSE.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="del">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="50141"
+               end="50212"
+               exported="1"
+               fullname="file.removeownedsubfiles"
+               inherittype="local"
+               line="829"
+               name="RemoveOwnedSubFiles"
+               start="50072"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Removes all soley-owned sub-files from a superfile.  If a sub-file is also contained within another superfile
+ * then it is retained.
+ *
+ * @param superName     The logical name of the superfile.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="del">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="50396"
+               end="50500"
+               exported="1"
+               fullname="file.deleteownedsubfiles"
+               inherittype="local"
+               line="838"
+               name="DeleteOwnedSubFiles"
+               start="50346"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Legacy version of RemoveOwnedSubFiles which was incorrectly named in a previous version.
+ *
+ * @see RemoveOwnedSubFIles&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="50752"
+               end="50825"
+               exported="1"
+               fullname="file.swapsuperfile"
+               inherittype="local"
+               line="848"
+               name="SwapSuperFile"
+               start="50685"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Swap the contents of two superfiles.
+ *
+ * @param superName1    The logical name of the first superfile.
+ * @param superName2    The logical name of the second superfile.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName1">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="superName2">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="51216"
+               end="51303"
+               exported="1"
+               fullname="file.replacesuperfile"
+               inherittype="local"
+               line="859"
+               name="ReplaceSuperFile"
+               start="51125"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Removes a sub-file from a superfile and replaces it with another.
+ *
+ * @param superName     The logical name of the superfile.
+ * @param oldSubFile    The logical name of the sub-file to remove.
+ * @param newSubFile    The logical name of the sub-file to replace within the superfile.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="oldSubFile">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="newSubFile">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="51565"
+               end="51637"
+               exported="1"
+               fullname="file.finishsuperfiletransaction"
+               inherittype="local"
+               line="867"
+               name="FinishSuperFileTransaction"
+               start="51505"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Finishes a superfile transaction.  This executes all the operations since the matching StartSuperFileTransaction().
+ * If there are any errors, then all of the operations are rolled back.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="rollback">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="52046"
+               end="52119"
+               exported="1"
+               fullname="file.superfilecontents"
+               inherittype="local"
+               line="878"
+               name="SuperFileContents"
+               start="51942"
+               type="function">
+    <Type type="table">
+     <Type fullname="lib_fileservices.fslogicalfilenamerecord" name="FsLogicalFileNameRecord" type="record"/>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;* Returns the list of sub-files contained within a superfile.
+ *
+ * @param superName     The logical name of the superfile.
+ * @param recurse       Should the contents of child-superfiles be expanded.  Default is FALSE.
+ * @return              A dataset containing the names of the sub-files.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superName">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="recurse">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="52417"
+               end="52481"
+               exported="1"
+               fullname="file.logicalfilesuperowners"
+               inherittype="local"
+               line="888"
+               name="LogicalFileSuperOwners"
+               start="52336"
+               type="function">
+    <Type type="table">
+     <Type fullname="lib_fileservices.fslogicalfilenamerecord" name="FsLogicalFileNameRecord" type="record"/>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;* Returns the list of superfiles that a logical file is contained within.
+ *
+ * @param name          The name of the logical file.
+ * @return              A dataset containing the names of the superfiles.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="name">
+      <Type type="varstring"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="52747"
+               end="52808"
+               exported="1"
+               fullname="file.logicalfilesupersublist"
+               inherittype="local"
+               line="897"
+               name="LogicalFileSuperSubList"
+               start="52679"
+               type="function">
+    <Type type="table">
+     <Type fullname="lib_fileservices.fslogicalsupersubrecord" name="FsLogicalSuperSubRecord" type="record"/>
+    </Type>
+    <Documentation>
+     <content>&#10;&#32;* Returns the list of all the superfiles in the system and their component sub-files.
+ *
+ * @return              A dataset containing pairs of superName,subName for each component file.&#10;&#32;</content>
+    </Documentation>
+    <Params/>
+   </Definition>
+   <Definition body="54146"
+               end="54257"
+               exported="1"
+               fullname="file.fpromotesuperfilelist"
+               inherittype="local"
+               line="915"
+               name="fPromoteSuperFileList"
+               start="53979"
+               type="function">
+    <Type type="varstring"/>
+    <Documentation>
+     <content>&#10;&#32;* Moves the sub-files from the first entry in the list of superfiles to the next in the list, repeating the process
+ * through the list of superfiles.
+ *
+ * @param superNames    A set of the names of the superfiles to act on. Any that do not exist will be created.
+ *                      The contents of each superfile will be moved to the next in the list.
+ * @param addHead       A string containing a comma-delimited list of logical file names to add to the first superfile
+ *                      after the promotion process is complete.  Defaults to &apos;&apos;.
+ * @param delTail       Indicates whether to physically delete the contents moved out of the last superfile. The default is FALSE.
+ * @param createOnlyOne Specifies whether to only create a single superfile (truncate the list at the first
+ *                      non-existent superfile). The default is FALSE.
+ * @param reverse       Reverse the order of processing the superfiles list, effectively &apos;demoting&apos; instead of &apos;promoting&apos; the sub-files. The default is FALSE.
+ *
+ * @return              A string containing a comma separated list of the previous sub-file contents of the emptied superfile.&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superNames">
+      <Type type="set">
+       <Type type="varstring"/>
+      </Type>
+     </Param>
+     <Param name="addHead">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="delTail">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="createOnlyOne">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="reverse">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="54532"
+               end="54642"
+               exported="1"
+               fullname="file.promotesuperfilelist"
+               inherittype="local"
+               line="924"
+               name="PromoteSuperFileList"
+               start="54376"
+               type="function">
+    <Type type=""/>
+    <Documentation>
+     <content>&#10;&#32;* Same as fPromoteSuperFileList, but does not return the DFU Workunit ID.
+ *
+ * @see fPromoteSuperFileList&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="superNames">
+      <Type type="set">
+       <Type type="varstring"/>
+      </Type>
+     </Param>
+     <Param name="addHead">
+      <Type type="varstring"/>
+     </Param>
+     <Param name="delTail">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="createOnlyOne">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="reverse">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

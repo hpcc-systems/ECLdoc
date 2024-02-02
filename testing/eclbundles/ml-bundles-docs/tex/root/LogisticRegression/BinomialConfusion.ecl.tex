@@ -1,0 +1,66 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+BinomialConfusion
+}
+\hypertarget{ecldoc:toc:LogisticRegression.BinomialConfusion}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Types |
+LogisticRegression |
+LogisticRegression.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+BinomialConfusion}}
+
+\hypertarget{ecldoc:logisticregression.binomialconfusion}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Binomial\_Confusion\_Summary)} & \textbf{BinomialConfusion} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Core\_Types.Confusion\_Detail) d)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Binomial confusion matrix. Work items with multinomial responses are ignored by this function. The higher value lexically is considered to be the positive indication.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{d}} ||| TABLE ( Confusion\_Detail ) --- confusion detail for the work item and classifier
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 classifier , UNSIGNED8 true\_positive , UNSIGNED8 true\_negative , UNSIGNED8 false\_positive , UNSIGNED8 false\_negative , UNSIGNED8 cond\_pos , UNSIGNED8 pred\_pos , UNSIGNED8 cond\_neg , UNSIGNED8 pred\_neg , REAL8 prevalence , REAL8 accuracy , REAL8 true\_pos\_rate , REAL8 false\_neg\_rate , REAL8 false\_pos\_rate , REAL8 true\_neg\_rate , REAL8 pos\_pred\_val , REAL8 false\_disc\_rate , REAL8 false\_omit\_rate , REAL8 neg\_pred\_val \} )} --- confusion matrix for a binomial classifier
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

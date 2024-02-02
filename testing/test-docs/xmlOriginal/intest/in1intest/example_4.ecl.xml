@@ -1,0 +1,306 @@
+<Meta>
+ <Source name="example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/./example_3.ecl">
+  <Definition body="438"
+              end="979"
+              exported="1"
+              fullname="Example_3"
+              inherittype="local"
+              line="24"
+              name="Example_3"
+              start="419"
+              type="module">
+   <Definition body="465"
+               end="974"
+               exported="1"
+               fullname="Example_3.mod_1"
+               inherittype="local"
+               line="25"
+               name="mod_1"
+               start="450"
+               type="module">
+    <Definition body="614"
+                end="619"
+                exported="1"
+                fullname="example_3.mod_1.v1_m1"
+                inherittype="local"
+                line="32"
+                name="v1_m1"
+                start="599"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#32;Doc test 2. Title end by
+        * period not newline
+    	* &lt;pre&gt;
+    	* ABCD ||||
+    	* CDEF ||||&#10;&#32;&#32;&#32;&#32;&#9;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="707"
+                end="712"
+                exported="1"
+                fullname="example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="36"
+                name="v2_m1_ex3"
+                start="688"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#32;DOC Test 3
+        * No Period title&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="749"
+                end="758"
+                exported="1"
+                fullname="example_3.mod_1.abc"
+                inherittype="local"
+                line="37"
+                name="abc"
+                start="721"
+                type="function">
+     <Type type="real8"/>
+     <Params>
+      <Param name="x">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition body="960"
+                end="965"
+                exported="1"
+                fullname="example_3.mod_1.long_name"
+                inherittype="local"
+                line="38"
+                name="long_name"
+                start="767"
+                type="function">
+     <Type type="real8"/>
+     <Params>
+      <Param name="X">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="IntW">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="Intb">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="BETA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="sparsityParam">
+       <Type type="real8"/>
+      </Param>
+      <Param name="LAMBDA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="ALPHA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="MaxIter">
+       <Type type="unsigned2"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Documentation Testing
+* Multiline Title.
+* link@myspace.com
+* &lt;p&gt;
+* Sentence 1
+* blablalbla                    bbblaaaa
+* &lt;p&gt;
+* Sentence 2
+* &lt;pre&gt;
+* blablalbla                    bbbblaaaaa
+*
+* bblaaaaaaaaaa
+* &lt;/pre&gt;
+*   @param first okay_1
+*   @param second okay_2
+*   @param third okay_3
+*   @field f1 oka_f1
+*   @field f2 oka_f2
+*   @return rec_1
+*   @see example_1.mod_1
+*   @author example_1.sarthakjain&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="intest.in1intest.example_4" sourcePath="/media/sarthak/Data/ecldoc/testing/test/intest/in1intest/example_4.ecl">
+  <Definition body="151"
+              end="241"
+              exported="1"
+              fullname="intest.in1intest.example_4"
+              inherittype="local"
+              line="8"
+              name="example_4"
+              start="132"
+              type="module">
+   <Definition body="175"
+               end="236"
+               exported="1"
+               fullname="intest.in1intest.example_4.mod_1"
+               inherittype="local"
+               line="9"
+               name="mod_1"
+               start="160"
+               type="module">
+    <Definition body="215"
+                end="230"
+                exported="1"
+                fullname="intest.in1intest.example_4.mod_1.v2_m1_ex4"
+                inherittype="local"
+                line="10"
+                name="v2_m1_ex4"
+                start="196"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="614"
+                end="619"
+                exported="1"
+                fullname="example_3.mod_1.v1_m1"
+                inherittype="inherited"
+                line="32"
+                name="v1_m1"
+                start="599"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#32;Doc test 2. Title end by
+        * period not newline
+    	* &lt;pre&gt;
+    	* ABCD ||||
+    	* CDEF ||||&#10;&#32;&#32;&#32;&#32;&#9;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="707"
+                end="712"
+                exported="1"
+                fullname="example_3.mod_1.v2_m1_ex3"
+                inherittype="inherited"
+                line="36"
+                name="v2_m1_ex3"
+                start="688"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#32;DOC Test 3
+        * No Period title&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="749"
+                end="758"
+                exported="1"
+                fullname="example_3.mod_1.abc"
+                inherittype="inherited"
+                line="37"
+                name="abc"
+                start="721"
+                type="function">
+     <Type type="real8"/>
+     <Params>
+      <Param name="x">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition body="960"
+                end="965"
+                exported="1"
+                fullname="example_3.mod_1.long_name"
+                inherittype="inherited"
+                line="38"
+                name="long_name"
+                start="767"
+                type="function">
+     <Type type="real8"/>
+     <Params>
+      <Param name="X">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="IntW">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="Intb">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="BETA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="sparsityParam">
+       <Type type="real8"/>
+      </Param>
+      <Param name="LAMBDA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="ALPHA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="MaxIter">
+       <Type type="unsigned2"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Parents>
+     <Parent name="mod_1_ex3" ref="Example_3.mod_1"/>
+    </Parents>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Example : Inheritance across files
+* mod_1 in Example_4 inherits mod_1 in Example_3&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="7"
+          fullname="Example_3.mod_1"
+          inherittype="local"
+          line="1"
+          name="mod_1_ex3"
+          ref="Example_3.mod_1"
+          start="7"/>
+ </Source>
+</Meta>

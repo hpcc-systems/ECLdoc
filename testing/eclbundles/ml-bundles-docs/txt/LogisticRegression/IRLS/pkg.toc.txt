@@ -1,0 +1,15 @@
+++++++++
+  IRLS
+++++++++
+
+
+
+CONTENTS
+========
+
+file : GetModel.ecl <GetModel.ecl.txt>    Generate logistic regression model from training data
+
+file : GetModel_global.ecl <GetModel_global.ecl.txt>    Internal function to determine values for the model coefficients and selected statistics from building the model
+
+file : GetModel_local.ecl <GetModel_local.ecl.txt>    Internal function to determine values for the model co-efficients and selected stats from building the model
+

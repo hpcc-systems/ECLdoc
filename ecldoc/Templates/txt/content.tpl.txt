@@ -1,0 +1,46 @@
+{%- macro display_tag(tags) -%}
+{%- if tags|length > 0 -%}
+{%- for tag in tags -%}
+{%- for line in tag -%}
+{{ '\n' }}{{ line }}
+{%- endfor -%}
+{{ '\n' }}
+{%- endfor -%}
+{%- endif -%}
+{%- endmacro -%}
+{%- macro desc(def) -%}
+{{ '-' * 130 }}
+{%- for h in def.headers -%}
+{{ '\n' + h }}
+{%- endfor -%}
+{{ '\n' }}{{ '-' * 130 }}{{ '\n' }}{{ '\n' }}
+{%- for line in def.doc.content -%}
+{{ line }}{{ '\n' }}
+{%- endfor -%}
+{{ display_tag(def.doc.param) -}}
+{{ display_tag(def.doc.field) -}}
+{{ display_tag(def.doc.return) }}
+{%- for tag in def.doc -%}
+{%- if tag not in ['content', 'firstline', 'param', 'return', 'field', 'parent'] -%}
+{{ display_tag(def.doc[tag]) }}
+{%- endif -%}
+{%- endfor -%}
+{{ display_tag(def.doc.parent) -}}
+{{ '\n' }}
+{%- endmacro -%}
+IMPORTS
+=======
+{{ '\n' }}
+{%- for imp in src.findall('./Import') -%}
+{%- if 'ref' in imp.attrib -%}
+{{ '\n' + imp.attrib.ref }} <{{ imp.attrib.target }}>
+{%- endif -%}
+{%- endfor -%}
+{{ '\n' }}
+DESCRIPTIONS
+============
+{{ '\n' }}
+{%- for def in defn_tree recursive -%}
+{{ desc(def)|indent_doc(loop.depth0, 3) }}
+{{ loop(def.defns) }}
+{%- endfor -%}

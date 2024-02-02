@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Source name="LogisticRegression.LogitScore" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/LogitScore.ecl" target="LogitScore.ecl.xml">
+  <Import name="Core_Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.logitscore" inherittype="local" line="17" name="LogitScore" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="id">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="number">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="raw">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Calculate the score using the logit function and the the supplied beta coefficients.</content><return>the raw prediction value</return><param>coef the model beta coefficients</param><param>independents the observations</param><firstline>Calculate the score using the logit function and the the supplied beta coefficients</firstline></Documentation>
+   <Signature name="LogitScore" ret="DATASET(Raw_Prediction)" param="(DATASET(Model_Coef) coef, DATASET(NumericField) independents)" hlen="34">DATASET(Raw_Prediction) LogitScore(DATASET(Model_Coef) coef, DATASET(NumericField) independents)</Signature><Params>
+    <Param name="coef">
+     <Type type="table">
+      <Type fullname="logisticregression.model_coef" name="Model_Coef" type="record"/>
+     </Type>
+    </Param>
+    <Param name="independents">
+     <Type type="table">
+      <Type fullname="logisticregression.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Calculate the score using the logit function and the the supplied beta coefficients.</content><return>the raw prediction value</return><param>coef the model beta coefficients</param><param>independents the observations</param><firstline>Calculate the score using the logit function and the the supplied beta coefficients</firstline></Documentation>
+   </Source>
+</Meta>

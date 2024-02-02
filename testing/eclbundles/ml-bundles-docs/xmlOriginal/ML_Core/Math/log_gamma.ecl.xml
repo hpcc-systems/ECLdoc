@@ -1,0 +1,29 @@
+<Meta>
+ <Source name="ML_Core.Math.log_gamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/log_gamma.ecl">
+  <Definition body="371"
+              end="449"
+              exported="1"
+              fullname="ml_core.math.log_gamma"
+              inherittype="local"
+              line="10"
+              name="log_gamma"
+              start="337"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of the log gamma function of the absolute value
+ * of X.
+ * A wrapper for the standard C lgamma function.  Avoids the race
+ * condition found on some platforms by taking the absolute value of the
+ * of the input argument.
+ *@param x the input x
+ *@return the value of the log of the GAMMA evaluated at ABS(x)&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

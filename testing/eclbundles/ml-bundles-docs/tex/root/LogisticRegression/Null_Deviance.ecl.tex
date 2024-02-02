@@ -1,0 +1,65 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+Null_Deviance
+}
+\hypertarget{ecldoc:toc:LogisticRegression.Null_Deviance}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+LogisticRegression |
+LogisticRegression.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Null\_Deviance}}
+
+\hypertarget{ecldoc:logisticregression.null_deviance}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Deviance\_Record)} & \textbf{Null\_Deviance} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.Observation\_Deviance) od)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Deviance for the null model, that is, a model with only an intercept.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{od}} ||| TABLE ( Observation\_Deviance ) --- Observation Deviance record set.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 classifier , UNSIGNED8 df , REAL8 deviance , REAL8 AIC \} )} --- a data set of the null model deviances for each work item and classifier.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

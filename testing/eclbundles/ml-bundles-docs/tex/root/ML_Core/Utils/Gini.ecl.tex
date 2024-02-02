@@ -1,0 +1,62 @@
+\chapter*{\color{headfile}
+{\large ML\_Core\slash\hspace{0pt}}
+{\large Utils\slash\hspace{0pt}}
+ \\
+Gini
+}
+\hypertarget{ecldoc:toc:ML_Core.Utils.Gini}{}
+\hyperlink{ecldoc:toc:root/ML_Core/Utils}{Go Up}
+
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MACRO}
+Gini}}
+
+\hypertarget{ecldoc:ml_core.utils.gini}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Gini} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (infile, pivot, target, wi\_name='wi')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Creates a file of pivot/target pairs with a Gini impurity value.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{target}} ||| INTEGER8 --- the name of the field used as the target
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{wi\_name}} ||| INTEGER8 --- the name of the work item field, default is ''wi'' return A table by Work Item and Pivot value giving count and Gini impurity value
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{pivot}} ||| INTEGER8 --- the name of the pivot field
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{infile}} ||| INTEGER8 --- the input file, any type with a work item field
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

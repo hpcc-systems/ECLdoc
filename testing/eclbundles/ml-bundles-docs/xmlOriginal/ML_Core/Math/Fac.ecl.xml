@@ -1,0 +1,25 @@
+<Meta>
+ <Source name="ML_Core.Math.Fac" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Fac.ecl">
+  <Definition body="136"
+              end="263"
+              exported="1"
+              fullname="ml_core.math.fac"
+              inherittype="local"
+              line="6"
+              name="Fac"
+              start="104"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Factorial function
+ *@param i the value used, (i)(i-1)(i-2)...(2)
+ *@return the factorial i!&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="i">
+     <Type type="unsigned2"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

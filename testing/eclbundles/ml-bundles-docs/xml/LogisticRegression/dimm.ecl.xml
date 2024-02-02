@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl" name="std.BLAS" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/><Source name="LogisticRegression.dimm" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/dimm.ecl" target="dimm.ecl.xml">
+  <Definition exported="1" fullname="logisticregression.dimm" inherittype="local" line="21" name="dimm" type="embed">
+   <Type type="set">
+    <Type type="real8"/>
+   </Type>
+   <Documentation>
+    <content>Matrix multiply when either A or B is a diagonal and is passed as a vector. alpha*op(A) op(B) + beta*C where op() is transpose</content><param>transposeA true when transpose of A is used</param><param>transposeB true when transpose of B is used</param><param>diagonalA true when A is the diagonal matrix</param><param>diagonalB true when B is the diagonal matrix</param><param>m number of rows in product</param><param>n number of columns in product</param><param>k number of columns/rows for the multiplier/multiplicand</param><param>alpha scalar used on A</param><param>A matrix A</param><param>B matrix B</param><param>beta scalar for matrix C</param><param>C matrix C or empty</param><firstline>Matrix multiply when either A or B is a diagonal and is passed as a vector</firstline></Documentation>
+   <Signature name="dimm" ret="Types.matrix_t" param="(BOOLEAN transposeA, BOOLEAN transposeB, BOOLEAN diagonalA, BOOLEAN diagonalB, Types.dimension_t m, Types.dimension_t n, Types.dimension_t k, Types.value_t alpha, Types.matrix_t A, Types.matrix_t B, Types.value_t beta=0.0, Types.matrix_t C=[])" hlen="19">Types.matrix_t dimm(BOOLEAN transposeA, BOOLEAN transposeB, BOOLEAN diagonalA, BOOLEAN diagonalB, Types.dimension_t m, Types.dimension_t n, Types.dimension_t k, Types.value_t alpha, Types.matrix_t A, Types.matrix_t B, Types.value_t beta=0.0, Types.matrix_t C=[])</Signature><Params>
+    <Param name="transposeA">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="transposeB">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="diagonalA">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="diagonalB">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="m">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="n">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="k">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="alpha">
+     <Type type="real8"/>
+    </Param>
+    <Param name="A">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Param>
+    <Param name="B">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Param>
+    <Param name="beta">
+     <Type type="real8"/>
+    </Param>
+    <Param name="C">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+  <Import name="BLAS" ref="std.blas" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/>
+  <Import name="Types" ref="std.BLAS.Types" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/>
+ <Documentation>
+    <content>Matrix multiply when either A or B is a diagonal and is passed as a vector. alpha*op(A) op(B) + beta*C where op() is transpose</content><param>transposeA true when transpose of A is used</param><param>transposeB true when transpose of B is used</param><param>diagonalA true when A is the diagonal matrix</param><param>diagonalB true when B is the diagonal matrix</param><param>m number of rows in product</param><param>n number of columns in product</param><param>k number of columns/rows for the multiplier/multiplicand</param><param>alpha scalar used on A</param><param>A matrix A</param><param>B matrix B</param><param>beta scalar for matrix C</param><param>C matrix C or empty</param><firstline>Matrix multiply when either A or B is a diagonal and is passed as a vector</firstline></Documentation>
+   </Source>
+</Meta>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="Types.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl" name="std.BLAS" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/IElementFunc.ecl" name="PBblas.IElementFunc" target="IElementFunc.ecl.xml"/><Source name="PBblas.Apply2Elements" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Apply2Elements.ecl" target="Apply2Elements.ecl.xml">
+  <Import name="PBblas" ref="PBblas" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/pkg.toc.xml"/>
+  <Import name="Types" ref="PBblas.Types" target="Types.ecl.xml">
+   </Import>
+  <Import name="BLAS" ref="std.blas" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/>
+  <Definition exported="1" fullname="pbblas.apply2elements" inherittype="local" line="27" name="Apply2Elements" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi_id">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="x">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="y">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="v">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Apply a function to each element of the matrix Use PBblas.IElementFunc as the prototype function. Input and ouput may be a single matrix, or myriad matrixes with different work item ids.</content><return>A matrix (or multiple matrices) in Layout_Cell form</return><param>X A matrix (or multiple matrices) in Layout_Cell form</param><param>f A function based on the IElementFunc prototype</param><firstline>Apply a function to each element of the matrix Use PBblas.IElementFunc as the prototype function</firstline><see>PBblas/IElementFunc</see><see>PBblas/Types.Layout_Cell</see></Documentation>
+   <Signature name="Apply2Elements" ret="DATASET(Layout_Cell)" param="(DATASET(Layout_Cell) X, IElementFunc f)" hlen="35">DATASET(Layout_Cell) Apply2Elements(DATASET(Layout_Cell) X, IElementFunc f)</Signature><Params>
+    <Param name="X">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+    <Param name="f">
+     <Type type="function">
+      <Type type="real8"/>
+      <Params>
+       <Type type="real8"/>
+       <Type type="unsigned4"/>
+       <Type type="unsigned4"/>
+      </Params>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Apply a function to each element of the matrix Use PBblas.IElementFunc as the prototype function. Input and ouput may be a single matrix, or myriad matrixes with different work item ids.</content><return>A matrix (or multiple matrices) in Layout_Cell form</return><param>X A matrix (or multiple matrices) in Layout_Cell form</param><param>f A function based on the IElementFunc prototype</param><firstline>Apply a function to each element of the matrix Use PBblas.IElementFunc as the prototype function</firstline><see>PBblas/IElementFunc</see><see>PBblas/Types.Layout_Cell</see></Documentation>
+   </Source>
+</Meta>

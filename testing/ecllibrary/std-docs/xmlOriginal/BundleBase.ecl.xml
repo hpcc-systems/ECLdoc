@@ -1,0 +1,138 @@
+<Meta>
+ <Source name="BundleBase" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/BundleBase.ecl">
+  <Definition body="264"
+              end="2093"
+              exported="1"
+              fullname="BundleBase"
+              inherittype="local"
+              line="5"
+              name="BundleBase"
+              start="244"
+              type="module"
+              virtual="1">
+   <Definition body="417"
+               end="445"
+               exported="1"
+               fullname="bundlebase.propertyrecord"
+               inherittype="local"
+               line="10"
+               name="PropertyRecord"
+               start="393"
+               type="record">
+    <Field name="key">
+     <Type type="utf8"/>
+    </Field>
+    <Field name="value">
+     <Type type="utf8"/>
+    </Field>
+    <Attr name="$_payload_"/>
+   </Definition>
+   <Definition body="525"
+               end="529"
+               exported="1"
+               fullname="bundlebase.name"
+               inherittype="local"
+               line="16"
+               name="Name"
+               start="504"
+               type="attribute">
+    <Type type="string"/>
+   </Definition>
+   <Definition body="628"
+               end="642"
+               exported="1"
+               fullname="bundlebase.description"
+               inherittype="local"
+               line="22"
+               name="Description"
+               start="602"
+               type="attribute">
+    <Type type="utf8"/>
+   </Definition>
+   <Definition body="845"
+               end="849"
+               exported="1"
+               fullname="bundlebase.authors"
+               inherittype="local"
+               line="32"
+               name="Authors"
+               start="816"
+               type="attribute">
+    <Type type="set">
+     <Type type="utf8"/>
+    </Type>
+   </Definition>
+   <Definition body="1019"
+               end="1065"
+               exported="1"
+               fullname="bundlebase.license"
+               inherittype="local"
+               line="39"
+               name="License"
+               start="997"
+               type="attribute">
+    <Type type="utf8"/>
+   </Definition>
+   <Definition body="1175"
+               end="1179"
+               exported="1"
+               fullname="bundlebase.copyright"
+               inherittype="local"
+               line="45"
+               name="Copyright"
+               start="1151"
+               type="attribute">
+    <Type type="utf8"/>
+   </Definition>
+   <Definition body="1459"
+               end="1463"
+               exported="1"
+               fullname="bundlebase.dependson"
+               inherittype="local"
+               line="53"
+               name="DependsOn"
+               start="1426"
+               type="attribute">
+    <Type type="set">
+     <Type type="string"/>
+    </Type>
+   </Definition>
+   <Definition body="1624"
+               end="1633"
+               exported="1"
+               fullname="bundlebase.version"
+               inherittype="local"
+               line="59"
+               name="Version"
+               start="1600"
+               type="attribute">
+    <Type type="string"/>
+   </Definition>
+   <Definition body="1804"
+               end="1836"
+               exported="1"
+               fullname="bundlebase.properties"
+               inherittype="local"
+               line="65"
+               name="Properties"
+               start="1784"
+               type="attribute">
+    <Type type="dictionary">
+     <Type fullname="bundlebase.propertyrecord" name="PropertyRecord" type="record"/>
+    </Type>
+   </Definition>
+   <Definition body="2083"
+               end="2087"
+               exported="1"
+               fullname="bundlebase.platformversion"
+               inherittype="local"
+               line="72"
+               name="PlatformVersion"
+               start="2051"
+               type="attribute">
+    <Type type="string"/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

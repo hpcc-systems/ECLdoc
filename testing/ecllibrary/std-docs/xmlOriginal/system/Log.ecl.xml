@@ -1,0 +1,14 @@
+<Meta>
+ <Source sourcePath="lib_logging"/>
+ <Source name="system.Log" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/system/Log.ecl">
+  <Import body="0"
+          end="251"
+          fullname="lib_logging"
+          inherittype="local"
+          line="5"
+          name="lib_logging"
+          ref="lib_logging"
+          remotescope="1"
+          start="251"/>
+ </Source>
+</Meta>

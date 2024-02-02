@@ -1,0 +1,23 @@
+IMPORTS
+=======
+
+
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+EMBED : REAL8 DoubleFac(INTEGER2 i)
+----------------------------------------------------------------------------------------------------------------------------------
+
+The 'double' factorial is defined for ODD n and is the product of all the
+odd numbers up to and including that number. We are extending the meaning
+to even numbers to mean the product of the even numbers up to and including
+that number. Thus DoubleFac(8) = 8*6*4*2 We also defend against i < 2
+(returning 1.0)
+
+Parameter : i INTEGER2 --- the value used in the calculation
+
+Return : REAL8 the factorial of the sequence, declining by
+         2
+

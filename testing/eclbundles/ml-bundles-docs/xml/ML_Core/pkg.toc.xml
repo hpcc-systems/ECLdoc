@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="ML_Core">
+  <folder name="Math">
+    <file name="Beta.ecl.xml">ML_Core/Math/Beta.ecl</file>
+    <file name="Distributions.ecl.xml">ML_Core/Math/Distributions.ecl</file>
+    <file name="NCK.ecl.xml">ML_Core/Math/NCK.ecl</file>
+    <file name="Fac.ecl.xml">ML_Core/Math/Fac.ecl</file>
+    <file name="DoubleFac.ecl.xml">ML_Core/Math/DoubleFac.ecl</file>
+    <file name="gamma.ecl.xml">ML_Core/Math/gamma.ecl</file>
+    <file name="StirlingFormula.ecl.xml">ML_Core/Math/StirlingFormula.ecl</file>
+    <file name="lowerGamma.ecl.xml">ML_Core/Math/lowerGamma.ecl</file>
+    <file name="Poly.ecl.xml">ML_Core/Math/Poly.ecl</file>
+    <file name="log_gamma.ecl.xml">ML_Core/Math/log_gamma.ecl</file>
+    <file name="upperGamma.ecl.xml">ML_Core/Math/upperGamma.ecl</file>
+  </folder>
+  <file name="Generate.ecl.xml">ML_Core/Generate.ecl</file>
+  <file name="Types.ecl.xml">ML_Core/Types.ecl</file>
+  <folder name="Interfaces">
+    <file name="IClassify.ecl.xml">ML_Core/Interfaces/IClassify.ecl</file>
+    <file name="IRegression.ecl.xml">ML_Core/Interfaces/IRegression.ecl</file>
+  </folder>
+  <folder name="Utils">
+    <file name="Gini.ecl.xml">ML_Core/Utils/Gini.ecl</file>
+    <file name="Fat.ecl.xml">ML_Core/Utils/Fat.ecl</file>
+    <file name="SequenceInField.ecl.xml">ML_Core/Utils/SequenceInField.ecl</file>
+    <file name="FatD.ecl.xml">ML_Core/Utils/FatD.ecl</file>
+  </folder>
+  <file name="AppendID.ecl.xml">ML_Core/AppendID.ecl</file>
+  <file name="Config.ecl.xml">ML_Core/Config.ecl</file>
+  <folder name="Tests">
+    <file name="Validate_Gammas.ecl.xml">ML_Core/Tests/Validate_Gammas.ecl</file>
+    <file name="to_from.ecl.xml">ML_Core/Tests/to_from.ecl</file>
+    <file name="Validate_Betas.ecl.xml">ML_Core/Tests/Validate_Betas.ecl</file>
+    <file name="field_aggregates.ecl.xml">ML_Core/Tests/field_aggregates.ecl</file>
+    <file name="test_discrete.ecl.xml">ML_Core/Tests/test_discrete.ecl</file>
+    <file name="Check_Dist.ecl.xml">ML_Core/Tests/Check_Dist.ecl</file>
+    <file name="generate.ecl.xml">ML_Core/Tests/generate.ecl</file>
+    <file name="test_appends.ecl.xml">ML_Core/Tests/test_appends.ecl</file>
+  </folder>
+  <file name="Constants.ecl.xml">ML_Core/Constants.ecl</file>
+  <file name="AppendSeqID.ecl.xml">ML_Core/AppendSeqID.ecl</file>
+  <file name="FieldAggregates.ecl.xml">ML_Core/FieldAggregates.ecl</file>
+  <file name="FromField.ecl.xml">ML_Core/FromField.ecl</file>
+  <file name="ToField.ecl.xml">ML_Core/ToField.ecl</file>
+</folder>

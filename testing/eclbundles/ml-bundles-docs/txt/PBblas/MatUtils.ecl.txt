@@ -1,0 +1,74 @@
+IMPORTS
+=======
+
+
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <Types.ecl.txt>
+PBblas.internal <internal/pkg.toc.txt>
+PBblas.internal.Types <internal/Types.ecl.txt>
+PBblas.internal.MatDims <internal/MatDims.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : MatUtils
+----------------------------------------------------------------------------------------------------------------------------------
+
+Provides various utility attributes for manipulating cell-based matrixes
+
+See : Std/PBblas/Types.Layout_Cell
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(Layout_WI_ID) GetWorkItems(DATASET(Layout_Cell) cells)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Get a list of work-item ids from a matrix containing one or more work items
+  | 
+  | Parameter : cells TABLE ( Layout_Cell ) --- A matrix in Layout_Cell
+  |                   format
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi_id } )
+  |          DATASET(Layout_WI_ID), one record per work-item
+  | 
+  | See : PBblas/Types.Layout_Cell
+  | 
+  | See : PBblas/Types.Layout_WI_ID
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(Layout_Cell) InsertCols(DATASET(Layout_Cell) M, UNSIGNED cols_to_insert=1,
+  |                                           value_t insert_val=1)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Insert one or more columns of a fixed value into a matrix. Columns are
+  | inserted before the first original column. This attribute supports the
+  | myriad interface. Multiple independent matrixes can be represented by M.
+  | 
+  | Parameter : M TABLE ( Layout_Cell ) --- the input matrix
+  | 
+  | Parameter : insert_val REAL8 --- the value for each cell of the new
+  |                        column(s), default 0
+  | 
+  | Parameter : cols_to_insert UNSIGNED8 --- the number of columns to insert,
+  |                            default 1
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+  |          UNSIGNED4 y , REAL8 v } ) matrix in Layout_Cell
+  |          format with additional column(s)
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(Layout_Cell) Transpose(DATASET(Layout_Cell) M)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Transpose a matrix This attribute supports the myriad interface. Multiple
+  | independent matrixes can be represented by M.
+  | 
+  | Parameter : M TABLE ( Layout_Cell ) --- A matrix represented as
+  |               DATASET(Layout_Cell)
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+  |          UNSIGNED4 y , REAL8 v } ) Transposed matrix in
+  |          Layout_Cell format
+  | 
+  | See : PBblas/Types.Layout_Cell
+  | 

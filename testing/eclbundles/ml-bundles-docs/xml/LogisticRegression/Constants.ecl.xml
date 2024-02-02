@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="LogisticRegression.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Constants.ecl" target="Constants.ecl.xml">
+  <Definition exported="1" fullname="LogisticRegression.Constants" inherittype="local" line="4" name="Constants" type="module">
+   <Definition exported="1" fullname="logisticregression.constants.limit_card" inherittype="local" line="5" name="limit_card" type="attribute">
+    <Signature name="limit_card" ret="UNSIGNED2" param="" hlen="20">UNSIGNED2 limit_card</Signature><Type type="unsigned2"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.default_epsilon" inherittype="local" line="6" name="default_epsilon" type="attribute">
+    <Signature name="default_epsilon" ret="REAL8" param="" hlen="21">REAL8 default_epsilon</Signature><Type type="real8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.default_ridge" inherittype="local" line="7" name="default_ridge" type="attribute">
+    <Signature name="default_ridge" ret="REAL8" param="" hlen="19">REAL8 default_ridge</Signature><Type type="real8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.local_cap" inherittype="local" line="8" name="local_cap" type="attribute">
+    <Signature name="local_cap" ret="UNSIGNED4" param="" hlen="19">UNSIGNED4 local_cap</Signature><Type type="unsigned4"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.id_base" inherittype="local" line="10" name="id_base" type="attribute">
+    <Signature name="id_base" ret="" param="" hlen="7">id_base</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.id_iters" inherittype="local" line="11" name="id_iters" type="attribute">
+    <Signature name="id_iters" ret="" param="" hlen="8">id_iters</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.id_delta" inherittype="local" line="12" name="id_delta" type="attribute">
+    <Signature name="id_delta" ret="" param="" hlen="8">id_delta</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.id_correct" inherittype="local" line="13" name="id_correct" type="attribute">
+    <Signature name="id_correct" ret="" param="" hlen="10">id_correct</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.id_incorrect" inherittype="local" line="14" name="id_incorrect" type="attribute">
+    <Signature name="id_incorrect" ret="" param="" hlen="12">id_incorrect</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.id_stat_set" inherittype="local" line="15" name="id_stat_set" type="attribute">
+    <Signature name="id_stat_set" ret="" param="" hlen="11">id_stat_set</Signature><Type type="set">
+     <Type type="integer8"/>
+    </Type>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.id_betas" inherittype="local" line="16" name="id_betas" type="attribute">
+    <Signature name="id_betas" ret="" param="" hlen="8">id_betas</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.id_betas_coef" inherittype="local" line="18" name="id_betas_coef" type="attribute">
+    <Signature name="id_betas_coef" ret="" param="" hlen="13">id_betas_coef</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.id_betas_se" inherittype="local" line="19" name="id_betas_SE" type="attribute">
+    <Signature name="id_betas_SE" ret="" param="" hlen="11">id_betas_SE</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.base_builder" inherittype="local" line="21" name="base_builder" type="attribute">
+    <Signature name="base_builder" ret="" param="" hlen="12">base_builder</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.base_max_iter" inherittype="local" line="22" name="base_max_iter" type="attribute">
+    <Signature name="base_max_iter" ret="" param="" hlen="13">base_max_iter</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.base_epsilon" inherittype="local" line="23" name="base_epsilon" type="attribute">
+    <Signature name="base_epsilon" ret="" param="" hlen="12">base_epsilon</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.base_ind_vars" inherittype="local" line="24" name="base_ind_vars" type="attribute">
+    <Signature name="base_ind_vars" ret="" param="" hlen="13">base_ind_vars</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.base_dep_vars" inherittype="local" line="25" name="base_dep_vars" type="attribute">
+    <Signature name="base_dep_vars" ret="" param="" hlen="13">base_dep_vars</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.base_obs" inherittype="local" line="26" name="base_obs" type="attribute">
+    <Signature name="base_obs" ret="" param="" hlen="8">base_obs</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.builder_irls_local" inherittype="local" line="28" name="builder_irls_local" type="attribute">
+    <Signature name="builder_irls_local" ret="" param="" hlen="18">builder_irls_local</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.builder_irls_global" inherittype="local" line="29" name="builder_irls_global" type="attribute">
+    <Signature name="builder_irls_global" ret="" param="" hlen="19">builder_irls_global</Signature><Type type="integer8"/>
+   </Definition>
+   <Definition exported="1" fullname="logisticregression.constants.builder_softmax" inherittype="local" line="30" name="builder_softmax" type="attribute">
+    <Signature name="builder_softmax" ret="" param="" hlen="15">builder_softmax</Signature><Type type="integer8"/>
+   </Definition>
+   <Signature name="Constants" ret="" param="" hlen="9">Constants</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

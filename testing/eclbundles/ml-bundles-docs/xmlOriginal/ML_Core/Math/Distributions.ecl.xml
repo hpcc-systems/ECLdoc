@@ -1,0 +1,254 @@
+<Meta>
+ <Source name="ML_Core.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Constants.ecl">
+  <Definition body="47"
+              end="224"
+              exported="1"
+              fullname="ML_Core.Constants"
+              inherittype="local"
+              line="4"
+              name="Constants"
+              start="28"
+              type="module">
+   <Definition body="98"
+               end="127"
+               exported="1"
+               fullname="ml_core.constants.pi"
+               inherittype="local"
+               line="8"
+               name="Pi"
+               start="86"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant PI&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="189"
+               end="218"
+               exported="1"
+               fullname="ml_core.constants.root_2"
+               inherittype="local"
+               line="12"
+               name="Root_2"
+               start="173"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant square root of 2&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.DoubleFac" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/DoubleFac.ecl">
+  <Definition body="474"
+              end="642"
+              exported="1"
+              fullname="ml_core.math.doublefac"
+              inherittype="local"
+              line="11"
+              name="DoubleFac"
+              start="437"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* The &apos;double&apos; factorial is defined for ODD n and is the product of
+ * all the odd numbers up to and including that number.
+ * We are extending the meaning to even numbers to mean the product
+ * of the even numbers up to and including that number.
+ * Thus DoubleFac(8) = 8*6*4*2
+ * We also defend against i &lt; 2 (returning 1.0)
+ *@param i the value used in the calculation
+ *@return the factorial of the sequence, declining by 2&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="i">
+     <Type type="integer2"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.Distributions" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Distributions.ecl">
+  <Definition body="136"
+              end="13947"
+              exported="1"
+              fullname="ML_Core.Math.Distributions"
+              inherittype="local"
+              line="5"
+              name="Distributions"
+              start="113"
+              type="module">
+   <Definition body="582"
+               end="1056"
+               exported="1"
+               fullname="ml_core.math.distributions.normal_cdf"
+               inherittype="local"
+               line="15"
+               name="Normal_CDF"
+               start="547"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Cumulative Distribution of the standard normal distribution, the
+   *probability that a normal random variable will be smaller than x
+   * standard deviations above or below the mean.
+   * Taken from C/C++ Mathematical Algorithms for Scientists and
+   *Engineers, n. Shammas, McGraw-Hill, 1995
+   * @param x the number of standard deviations
+   * @returns probability of exceeding x.&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1359"
+               end="1993"
+               exported="1"
+               fullname="ml_core.math.distributions.normal_ppf"
+               inherittype="local"
+               line="40"
+               name="Normal_PPF"
+               start="1324"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Normal Distribution Percentage Point Function.
+   * Translated from C/C++ Mathematical Algorithms for Scientists and
+   * Engineers, N. Shammas, McGraw-Hill, 1995
+   * @param x probability
+   * @returns number of standard deviations from the mean&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2786"
+               end="4666"
+               exported="1"
+               fullname="ml_core.math.distributions.t_cdf"
+               inherittype="local"
+               line="83"
+               name="T_CDF"
+               start="2746"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Students t distribution integral evaluated between negative
+   * infinity and x.
+   * Translated from NIST SEL DATAPAC Fortran TCDF.f source
+   * @param x value of the evaluation
+   * @param df degrees of freedom
+   * @returns the probability that a value will be less than the
+   * specified value&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6869"
+               end="8667"
+               exported="1"
+               fullname="ml_core.math.distributions.t_ppf"
+               inherittype="local"
+               line="212"
+               name="T_PPF"
+               start="6829"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Percentage point function for the T distribution.
+   * Translated from NIST SEL DATAPAC Fortran TPPF.f source&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="9436"
+               end="11379"
+               exported="1"
+               fullname="ml_core.math.distributions.chi2_cdf"
+               inherittype="local"
+               line="290"
+               name="Chi2_CDF"
+               start="9393"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* The cumulative distribution function for the Chi Square
+   * distribution.
+   * the CDF for the specfied degrees of freedom.
+   * Translated from the NIST SEL DATAPAC Fortran subroutine CHSCDF.&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="13646"
+               end="13942"
+               exported="1"
+               fullname="ml_core.math.distributions.chi2_ppf"
+               inherittype="local"
+               line="399"
+               name="Chi2_PPF"
+               start="13603"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* The Chi Squared PPF function.
+   * Translated from the NIST SEL DATAPAC Fortran subroutine CHSPPF.&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="65"
+          fullname="ML_Core.Constants"
+          inherittype="local"
+          line="2"
+          name="Core_Const"
+          ref="ML_Core.Constants"
+          start="65">
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="101"
+          fullname="ML_Core.Math"
+          inherittype="local"
+          line="3"
+          name="Math"
+          ref="ML_Core.Math"
+          start="101"/>
+ </Source>
+</Meta>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Bundle>
+  <Name>PBblas</Name>
+  <Version>3.0.1</Version>
+  <Description>Parallel Block Basic Linear Algebra Subsystem</Description>
+  <License>http://www.apache.org/licenses/LICENSE-2.0</License>
+  <Copyright>Copyright (C) 2016, 2017 HPCC Systems</Copyright>
+  <Authors>HPCCSystems</Authors>
+  <DependsOn>ML_Core</DependsOn>
+  <Platform>6.2.0</Platform>
+</Bundle>

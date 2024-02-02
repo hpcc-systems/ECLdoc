@@ -1,0 +1,3 @@
+1) Period to denote first line in Comment
+2) License should be URL
+3) Supported HTML tags in Markdown : p, pre, ol, ul, li, br, hr, a, table, tr, td, a

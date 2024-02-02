@@ -1,0 +1,197 @@
+<Meta>
+ <Source name="ML_Core.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Constants.ecl">
+  <Definition body="47"
+              end="224"
+              exported="1"
+              fullname="ML_Core.Constants"
+              inherittype="local"
+              line="4"
+              name="Constants"
+              start="28"
+              type="module">
+   <Definition body="98"
+               end="127"
+               exported="1"
+               fullname="ml_core.constants.pi"
+               inherittype="local"
+               line="8"
+               name="Pi"
+               start="86"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant PI&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="189"
+               end="218"
+               exported="1"
+               fullname="ml_core.constants.root_2"
+               inherittype="local"
+               line="12"
+               name="Root_2"
+               start="173"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant square root of 2&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/intest/example_3.ecl">
+  <Definition body="113"
+              end="205"
+              exported="1"
+              fullname="Example_3"
+              inherittype="local"
+              line="6"
+              name="Example_3"
+              start="94"
+              type="module">
+   <Definition body="137"
+               end="200"
+               exported="1"
+               fullname="Example_3.mod_1"
+               inherittype="local"
+               line="7"
+               name="mod_1"
+               start="122"
+               type="module">
+    <Definition body="162"
+                end="167"
+                exported="1"
+                fullname="example_3.mod_1.v1_m1"
+                inherittype="local"
+                line="8"
+                name="v1_m1"
+                start="147"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="189"
+                end="194"
+                exported="1"
+                fullname="example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="9"
+                name="v2_m1_ex3"
+                start="170"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Example : Inheritance across files
+* mod_1 in Example_4 inherits mod_1 in Example_3&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="import_test_2" sourcePath="/media/sarthak/Data/ecldoc/testing/import-test/import_test_2.ecl">
+  <Definition body="83"
+              end="148"
+              exported="1"
+              fullname="import_test_2"
+              inherittype="local"
+              line="5"
+              name="import_test_2"
+              start="60"
+              type="module">
+   <Definition body="107"
+               end="118"
+               exported="1"
+               fullname="ML_Core.Constants"
+               inherittype="local"
+               line="6"
+               name="nod_1"
+               start="92"
+               type="module">
+    <Definition body="98"
+                end="127"
+                exported="1"
+                fullname="ml_core.constants.pi"
+                inherittype="local"
+                line="8"
+                name="Pi"
+                start="86"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#10;&#32;&#32;&#32;* Constant PI&#10;&#32;&#32;&#32;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="189"
+                end="218"
+                exported="1"
+                fullname="ml_core.constants.root_2"
+                inherittype="local"
+                line="12"
+                name="Root_2"
+                start="173"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#10;&#32;&#32;&#32;* Constant square root of 2&#10;&#32;&#32;&#32;</content>
+     </Documentation>
+    </Definition>
+    <Documentation>
+     <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+    </Documentation>
+    <Parents/>
+   </Definition>
+   <Definition body="135"
+               end="143"
+               exported="1"
+               fullname="PBblas"
+               global="1"
+               inherittype="local"
+               line="7"
+               name="mod_1"
+               start="120"
+               type="module">
+    <Parents/>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="7"
+          fullname="ML_Core.Constants"
+          inherittype="local"
+          line="1"
+          name="Constants"
+          ref="ML_Core.Constants"
+          start="7">
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="33"
+          fullname="PBblas"
+          inherittype="local"
+          line="2"
+          name="PBblas"
+          ref="PBblas"
+          remotescope="1"
+          start="33"/>
+  <Import body="0"
+          end="48"
+          fullname="Example_3"
+          inherittype="local"
+          line="3"
+          name="Example_3"
+          ref="Example_3"
+          start="48">
+   <Documentation>
+    <content>&#10;* Example : Inheritance across files
+* mod_1 in Example_4 inherits mod_1 in Example_3&#10;</content>
+   </Documentation>
+  </Import>
+ </Source>
+</Meta>

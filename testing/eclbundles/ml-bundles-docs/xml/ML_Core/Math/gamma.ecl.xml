@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="ML_Core.Math.gamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/gamma.ecl" target="gamma.ecl.xml">
+  <Definition exported="1" fullname="ml_core.math.gamma" inherittype="local" line="7" name="gamma" type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>Return the value of gamma function of real number x A wrapper for the standard C tgamma function.</content><return>the value of GAMMA evaluated at x</return><param>x the input x</param><firstline>Return the value of gamma function of real number x A wrapper for the standard C tgamma function</firstline></Documentation>
+   <Signature name="gamma" ret="REAL8" param="(REAL8 x)" hlen="11">REAL8 gamma(REAL8 x)</Signature><Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Return the value of gamma function of real number x A wrapper for the standard C tgamma function.</content><return>the value of GAMMA evaluated at x</return><param>x the input x</param><firstline>Return the value of gamma function of real number x A wrapper for the standard C tgamma function</firstline></Documentation>
+   </Source>
+</Meta>

@@ -1,0 +1,49 @@
++++++++++++
+  ML_Core
++++++++++++
+
+
+Name : ML_Core
+
+Version : 3.1.0
+
+Description : Common definitions for Machine Learning
+
+License : See LICENSE.TXT
+
+Copyright : Copyright (C) 2017 HPCC Systems
+
+Authors : HPCCSystems
+
+Platform : 6.2.0
+
+
+CONTENTS
+========
+
+dir : Interfaces <Interfaces/pkg.toc.txt>    
+
+dir : Math <Math/pkg.toc.txt>    
+
+dir : Tests <Tests/pkg.toc.txt>    
+
+dir : Utils <Utils/pkg.toc.txt>    
+
+file : AppendID.ecl <AppendID.ecl.txt>    
+
+file : AppendSeqID.ecl <AppendSeqID.ecl.txt>    
+
+file : Config.ecl <Config.ecl.txt>    
+
+file : Constants.ecl <Constants.ecl.txt>    Useful constants
+
+file : FieldAggregates.ecl <FieldAggregates.ecl.txt>    
+
+file : FromField.ecl <FromField.ecl.txt>    
+
+file : Generate.ecl <Generate.ecl.txt>    
+
+file : ToField.ecl <ToField.ecl.txt>    
+
+file : Types.ecl <Types.ecl.txt>    
+

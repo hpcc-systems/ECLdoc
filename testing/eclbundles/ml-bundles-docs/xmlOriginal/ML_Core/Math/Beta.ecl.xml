@@ -1,0 +1,153 @@
+<Meta>
+ <Source name="ML_Core.Math.gamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/gamma.ecl">
+  <Definition body="209"
+              end="281"
+              exported="1"
+              fullname="ml_core.math.gamma"
+              inherittype="local"
+              line="7"
+              name="gamma"
+              start="179"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of gamma function of real number x
+ * A wrapper for the standard C tgamma function.
+ *@param x the input x
+ *@return the value of GAMMA evaluated at x&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.log_gamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/log_gamma.ecl">
+  <Definition body="371"
+              end="449"
+              exported="1"
+              fullname="ml_core.math.log_gamma"
+              inherittype="local"
+              line="10"
+              name="log_gamma"
+              start="337"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of the log gamma function of the absolute value
+ * of X.
+ * A wrapper for the standard C lgamma function.  Avoids the race
+ * condition found on some platforms by taking the absolute value of the
+ * of the input argument.
+ *@param x the input x
+ *@return the value of the log of the GAMMA evaluated at ABS(x)&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.Beta" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Beta.ecl">
+  <Import body="0"
+          end="7"
+          fullname="ML_Core.Math"
+          inherittype="local"
+          line="1"
+          name="Math"
+          ref="ML_Core.Math"
+          start="7"/>
+  <Definition body="27"
+              end="39"
+              fullname="ml_core.math.gamma"
+              inherittype="local"
+              line="2"
+              name="gamma"
+              start="19"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of gamma function of real number x
+ * A wrapper for the standard C tgamma function.
+ *@param x the input x
+ *@return the value of GAMMA evaluated at x&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="52"
+              end="68"
+              fullname="ml_core.math.log_gamma"
+              inherittype="local"
+              line="3"
+              name="log_gamma"
+              start="40"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of the log gamma function of the absolute value
+ * of X.
+ * A wrapper for the standard C lgamma function.  Avoids the race
+ * condition found on some platforms by taking the absolute value of the
+ * of the input argument.
+ *@param x the input x
+ *@return the value of the log of the GAMMA evaluated at ABS(x)&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="78"
+              end="83"
+              fullname="ml_core.math.maxgam"
+              inherittype="local"
+              line="4"
+              name="MAXGAM"
+              start="69"
+              type="attribute">
+   <Type type="integer8"/>
+  </Definition>
+  <Definition body="92"
+              end="101"
+              fullname="ml_core.math.asymp"
+              inherittype="local"
+              line="5"
+              name="ASYMP"
+              start="84"
+              type="attribute">
+   <Type type="integer8"/>
+  </Definition>
+  <Definition body="323"
+              end="1698"
+              exported="1"
+              fullname="ml_core.math.beta"
+              inherittype="local"
+              line="12"
+              name="Beta"
+              start="291"
+              type="function">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the beta value of two positive real numbers, x and y
+ *@param x  the value of the first number
+ *@param y  the value of the second number
+ *@return   the beta value&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="y">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

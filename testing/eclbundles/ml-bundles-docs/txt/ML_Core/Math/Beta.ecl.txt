@@ -1,0 +1,21 @@
+IMPORTS
+=======
+
+
+ML_Core.Math </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/Math/pkg.toc.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : Beta(REAL8 x, REAL8 y)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Return the beta value of two positive real numbers, x and y
+
+Parameter : y REAL8 --- the value of the second number
+
+Parameter : x REAL8 --- the value of the first number
+
+Return : REAL8 the beta value
+

@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+from ecldoc import ecldoc
+
+def main() :
+	ecldoc.doMain()
+
+if __name__ == '__main__' :
+	main()
