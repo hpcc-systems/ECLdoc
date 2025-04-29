@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="ML_Core.Math.Fac" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Fac.ecl" target="Fac.ecl.xml">
+  <Definition exported="1" fullname="ml_core.math.fac" inherittype="local" line="6" name="Fac" type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>Factorial function</content><return>the factorial i!</return><param>i the value used, (i)(i-1)(i-2)...(2)</param><firstline>Factorial function</firstline></Documentation>
+   <Signature name="Fac" ret="REAL8" param="(UNSIGNED2 i)" hlen="9">REAL8 Fac(UNSIGNED2 i)</Signature><Params>
+    <Param name="i">
+     <Type type="unsigned2"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Factorial function</content><return>the factorial i!</return><param>i the value used, (i)(i-1)(i-2)...(2)</param><firstline>Factorial function</firstline></Documentation>
+   </Source>
+</Meta>

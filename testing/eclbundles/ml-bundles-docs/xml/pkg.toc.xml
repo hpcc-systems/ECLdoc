@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="root">
+  <folder name="LinearRegression">
+    <file name="OLS.ecl.xml">LinearRegression/OLS.ecl</file>
+  </folder>
+  <folder name="LogisticRegression">
+    <file name="Distributions.ecl.xml">LogisticRegression/Distributions.ecl</file>
+    <file name="LogitScore.ecl.xml">LogisticRegression/LogitScore.ecl</file>
+    <file name="dimm.ecl.xml">LogisticRegression/dimm.ecl</file>
+    <folder name="IRLS">
+      <file name="GetModel_global.ecl.xml">LogisticRegression/IRLS/GetModel_global.ecl</file>
+      <file name="GetModel_local.ecl.xml">LogisticRegression/IRLS/GetModel_local.ecl</file>
+      <file name="GetModel.ecl.xml">LogisticRegression/IRLS/GetModel.ecl</file>
+    </folder>
+    <folder name="validation">
+      <file name="unit_test_dimm.ecl.xml">LogisticRegression/validation/unit_test_dimm.ecl</file>
+      <file name="IrisDS.ecl.xml">LogisticRegression/validation/IrisDS.ecl</file>
+      <file name="BinomialRegression.ecl.xml">LogisticRegression/validation/BinomialRegression.ecl</file>
+      <file name="discrete_GermanDS.ecl.xml">LogisticRegression/validation/discrete_GermanDS.ecl</file>
+    </folder>
+    <file name="ExtractReport.ecl.xml">LogisticRegression/ExtractReport.ecl</file>
+    <folder name="Tests">
+      <file name="Check_Dist.ecl.xml">LogisticRegression/Tests/Check_Dist.ecl</file>
+    </folder>
+    <folder name="performance">
+      <file name="RunBinomial.ecl.xml">LogisticRegression/performance/RunBinomial.ecl</file>
+    </folder>
+    <file name="DataStats.ecl.xml">LogisticRegression/DataStats.ecl</file>
+    <file name="Confusion.ecl.xml">LogisticRegression/Confusion.ecl</file>
+    <file name="BinomialConfusion.ecl.xml">LogisticRegression/BinomialConfusion.ecl</file>
+    <file name="ExtractBeta_CI.ecl.xml">LogisticRegression/ExtractBeta_CI.ecl</file>
+    <file name="ExtractBeta_pval.ecl.xml">LogisticRegression/ExtractBeta_pval.ecl</file>
+    <file name="Deviance_Detail.ecl.xml">LogisticRegression/Deviance_Detail.ecl</file>
+    <file name="Null_Deviance.ecl.xml">LogisticRegression/Null_Deviance.ecl</file>
+    <file name="LogitPredict.ecl.xml">LogisticRegression/LogitPredict.ecl</file>
+    <file name="Model_Deviance.ecl.xml">LogisticRegression/Model_Deviance.ecl</file>
+    <file name="Types.ecl.xml">LogisticRegression/Types.ecl</file>
+    <file name="ExtractBeta.ecl.xml">LogisticRegression/ExtractBeta.ecl</file>
+    <file name="Constants.ecl.xml">LogisticRegression/Constants.ecl</file>
+    <file name="Deviance_Analysis.ecl.xml">LogisticRegression/Deviance_Analysis.ecl</file>
+    <file name="BinomialLogisticRegression.ecl.xml">LogisticRegression/BinomialLogisticRegression.ecl</file>
+  </folder>
+  <folder name="ML_Core">
+    <folder name="Math">
+      <file name="Beta.ecl.xml">ML_Core/Math/Beta.ecl</file>
+      <file name="Distributions.ecl.xml">ML_Core/Math/Distributions.ecl</file>
+      <file name="NCK.ecl.xml">ML_Core/Math/NCK.ecl</file>
+      <file name="Fac.ecl.xml">ML_Core/Math/Fac.ecl</file>
+      <file name="DoubleFac.ecl.xml">ML_Core/Math/DoubleFac.ecl</file>
+      <file name="gamma.ecl.xml">ML_Core/Math/gamma.ecl</file>
+      <file name="StirlingFormula.ecl.xml">ML_Core/Math/StirlingFormula.ecl</file>
+      <file name="lowerGamma.ecl.xml">ML_Core/Math/lowerGamma.ecl</file>
+      <file name="Poly.ecl.xml">ML_Core/Math/Poly.ecl</file>
+      <file name="log_gamma.ecl.xml">ML_Core/Math/log_gamma.ecl</file>
+      <file name="upperGamma.ecl.xml">ML_Core/Math/upperGamma.ecl</file>
+    </folder>
+    <file name="Generate.ecl.xml">ML_Core/Generate.ecl</file>
+    <file name="Types.ecl.xml">ML_Core/Types.ecl</file>
+    <folder name="Interfaces">
+      <file name="IClassify.ecl.xml">ML_Core/Interfaces/IClassify.ecl</file>
+      <file name="IRegression.ecl.xml">ML_Core/Interfaces/IRegression.ecl</file>
+    </folder>
+    <folder name="Utils">
+      <file name="Gini.ecl.xml">ML_Core/Utils/Gini.ecl</file>
+      <file name="Fat.ecl.xml">ML_Core/Utils/Fat.ecl</file>
+      <file name="SequenceInField.ecl.xml">ML_Core/Utils/SequenceInField.ecl</file>
+      <file name="FatD.ecl.xml">ML_Core/Utils/FatD.ecl</file>
+    </folder>
+    <file name="AppendID.ecl.xml">ML_Core/AppendID.ecl</file>
+    <file name="Config.ecl.xml">ML_Core/Config.ecl</file>
+    <folder name="Tests">
+      <file name="Validate_Gammas.ecl.xml">ML_Core/Tests/Validate_Gammas.ecl</file>
+      <file name="to_from.ecl.xml">ML_Core/Tests/to_from.ecl</file>
+      <file name="Validate_Betas.ecl.xml">ML_Core/Tests/Validate_Betas.ecl</file>
+      <file name="field_aggregates.ecl.xml">ML_Core/Tests/field_aggregates.ecl</file>
+      <file name="test_discrete.ecl.xml">ML_Core/Tests/test_discrete.ecl</file>
+      <file name="Check_Dist.ecl.xml">ML_Core/Tests/Check_Dist.ecl</file>
+      <file name="generate.ecl.xml">ML_Core/Tests/generate.ecl</file>
+      <file name="test_appends.ecl.xml">ML_Core/Tests/test_appends.ecl</file>
+    </folder>
+    <file name="Constants.ecl.xml">ML_Core/Constants.ecl</file>
+    <file name="AppendSeqID.ecl.xml">ML_Core/AppendSeqID.ecl</file>
+    <file name="FieldAggregates.ecl.xml">ML_Core/FieldAggregates.ecl</file>
+    <file name="FromField.ecl.xml">ML_Core/FromField.ecl</file>
+    <file name="ToField.ecl.xml">ML_Core/ToField.ecl</file>
+  </folder>
+  <folder name="PBblas">
+    <file name="trsm.ecl.xml">PBblas/trsm.ecl</file>
+    <file name="Vector2Diag.ecl.xml">PBblas/Vector2Diag.ecl</file>
+    <file name="potrf.ecl.xml">PBblas/potrf.ecl</file>
+    <file name="scal.ecl.xml">PBblas/scal.ecl</file>
+    <file name="HadamardProduct.ecl.xml">PBblas/HadamardProduct.ecl</file>
+    <file name="Apply2Elements.ecl.xml">PBblas/Apply2Elements.ecl</file>
+    <file name="asum.ecl.xml">PBblas/asum.ecl</file>
+    <file name="ExtractTri.ecl.xml">PBblas/ExtractTri.ecl</file>
+    <file name="Constants.ecl.xml">PBblas/Constants.ecl</file>
+    <file name="tran.ecl.xml">PBblas/tran.ecl</file>
+    <file name="getrf.ecl.xml">PBblas/getrf.ecl</file>
+    <file name="Types.ecl.xml">PBblas/Types.ecl</file>
+    <file name="Converted.ecl.xml">PBblas/Converted.ecl</file>
+    <file name="gemm.ecl.xml">PBblas/gemm.ecl</file>
+    <file name="axpy.ecl.xml">PBblas/axpy.ecl</file>
+    <file name="MatUtils.ecl.xml">PBblas/MatUtils.ecl</file>
+    <file name="IElementFunc.ecl.xml">PBblas/IElementFunc.ecl</file>
+  </folder>
+</folder>

@@ -1,0 +1,46 @@
+<Meta>
+ <Source name="ML_Core.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Constants.ecl">
+  <Definition body="47"
+              end="224"
+              exported="1"
+              fullname="ML_Core.Constants"
+              inherittype="local"
+              line="4"
+              name="Constants"
+              start="28"
+              type="module">
+   <Definition body="98"
+               end="127"
+               exported="1"
+               fullname="ml_core.constants.pi"
+               inherittype="local"
+               line="8"
+               name="Pi"
+               start="86"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant PI&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="189"
+               end="218"
+               exported="1"
+               fullname="ml_core.constants.root_2"
+               inherittype="local"
+               line="12"
+               name="Root_2"
+               start="173"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant square root of 2&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

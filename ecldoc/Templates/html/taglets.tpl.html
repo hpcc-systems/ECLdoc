@@ -1,0 +1,73 @@
+{%- macro threetag(name, tuples) %}
+<div class="row">
+	<div class="col-md-1 doc-type">{{ name }}</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			{% for t in tuples %}
+			<tr>
+				<td width="20%"><b>{{ t[0] }}</b></td>
+				<td><b>{{ t[1] }}</b> -- {{ t[2] }}</td>
+			</tr>
+			{%- endfor %}
+		</table>
+	</div>
+</div>
+{%- endmacro %}
+
+{%- macro twotag(name, tuples) %}
+<div class="row">
+	<div class="col-md-1 doc-type">{{ name }}</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			{% for t in tuples %}
+			<tr>
+				<td width="20%"><b>{{ t[0] }}</b></td>
+				<td>{{ t[1] }}</td>
+			</tr>
+			{%- endfor %}
+		</table>
+	</div>
+</div>
+{%- endmacro %}
+
+{%- macro onetag(name, tuples) %}
+<div class="row">
+	<div class="col-md-1 doc-type">{{ name }}</div>
+	<div class="col-md-11" style="padding-left: 0px;">
+		<table class="table">
+			{% for t in tuples %}
+			<tr>
+				<td>{{ t[0] }}</td>
+			</tr>
+			{%- endfor %}
+		</table>
+	</div>
+</div>
+{%- endmacro %}
+
+{% macro parenttag(name, tuples) %}
+<div class="row">
+<div class="col-md-1 doc-type">{{ name }}</div>
+<div class="col-md-11" style="padding-left: 0px;">
+<ul class="pagination" style="margin-top: 0px;">
+	{%- for t in tuples -%}
+	<li>
+		<a href="{{ t[1] }}">
+			{{ t[0] }}
+		</a>
+	</li>
+	{%- endfor -%}
+</ul>
+</div>
+</div>
+{% endmacro %}
+
+{% macro contenttag(text) %}
+<div class="row">
+<div class="col-md-12" style="padding-bottom: 10px;">
+	{{ text }}
+</div>
+</div>
+{% endmacro %}
+
+{{ render_name|macro(*args) }}

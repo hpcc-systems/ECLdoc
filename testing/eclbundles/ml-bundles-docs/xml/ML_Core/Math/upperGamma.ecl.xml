@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="ML_Core.Math.upperGamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/upperGamma.ecl" target="upperGamma.ecl.xml">
+  <Definition exported="1" fullname="ml_core.math.uppergamma" inherittype="local" line="8" name="upperGamma" type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>Return the upper incomplete gamma value of two real numbers, x and y.</content><return>the upper incomplete gamma value</return><param>x the value of the first number</param><param>y the value of the second number</param><firstline>Return the upper incomplete gamma value of two real numbers, x and y</firstline></Documentation>
+   <Signature name="upperGamma" ret="REAL8" param="(REAL8 x, REAL8 y)" hlen="16">REAL8 upperGamma(REAL8 x, REAL8 y)</Signature><Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="y">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Return the upper incomplete gamma value of two real numbers, x and y.</content><return>the upper incomplete gamma value</return><param>x the value of the first number</param><param>y the value of the second number</param><firstline>Return the upper incomplete gamma value of two real numbers, x and y</firstline></Documentation>
+   </Source>
+</Meta>

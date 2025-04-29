@@ -1,0 +1,807 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="../PBblas/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Converted.ecl" name="PBblas.Converted" target="../PBblas/Converted.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Types.ecl" name="PBblas.internal.Types" target="../PBblas/internal/Types.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl" name="std.system.Thorlib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensions.ecl" name="PBblas.internal.BlockDimensions" target="../PBblas/internal/BlockDimensions.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsMultiply.ecl" name="PBblas.internal.BlockDimensionsMultiply" target="../PBblas/internal/BlockDimensionsMultiply.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsSolve.ecl" name="PBblas.internal.BlockDimensionsSolve" target="../PBblas/internal/BlockDimensionsSolve.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MatDims.ecl" name="PBblas.internal.MatDims" target="../PBblas/internal/MatDims.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/MatUtils.ecl" name="PBblas.MatUtils" target="../PBblas/MatUtils.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Constants.ecl" name="PBblas.Constants" target="../PBblas/Constants.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Interfaces/IRegression.ecl" name="ML_Core.Interfaces.IRegression" target="../ML_Core/Interfaces/IRegression.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl" name="std.BLAS" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MakeR8Set.ecl" name="PBblas.internal.MakeR8Set" target="../PBblas/internal/MakeR8Set.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Converted.ecl" name="PBblas.internal.Converted" target="../PBblas/internal/Converted.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/gemm.ecl" name="PBblas.gemm" target="../PBblas/gemm.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/potrf.ecl" name="PBblas.potrf" target="../PBblas/potrf.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/trsm.ecl" name="PBblas.trsm" target="../PBblas/trsm.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Utils/SequenceInField.ecl" name="ML_Core.Utils.SequenceInField" target="../ML_Core/Utils/SequenceInField.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/FieldAggregates.ecl" name="ML_Core.FieldAggregates" target="../ML_Core/FieldAggregates.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/gamma.ecl" name="ML_Core.Math.gamma" target="../ML_Core/Math/gamma.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/log_gamma.ecl" name="ML_Core.Math.log_gamma" target="../ML_Core/Math/log_gamma.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Beta.ecl" name="ML_Core.Math.Beta" target="../ML_Core/Math/Beta.ecl.xml"/><Source name="LinearRegression.OLS" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LinearRegression/OLS.ecl" target="OLS.ecl.xml">
+  <Import name="ML_Core" ref="ML_Core" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/pkg.toc.xml"/>
+  <Import name="Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+  <Import name="PBblas" ref="PBblas" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/pkg.toc.xml"/>
+  <Import name="pbbTypes" ref="PBblas.Types" target="../PBblas/Types.ecl.xml">
+   </Import>
+  <Import name="pbbConverted" ref="PBblas.Converted" target="../PBblas/Converted.ecl.xml">
+   </Import>
+  <Import name="MatUtils" ref="PBblas.MatUtils" target="../PBblas/MatUtils.ecl.xml">
+   </Import>
+  <Import name="Math" ref="ML_Core.Math" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Math/pkg.toc.xml"/>
+  <Definition exported="1" fullname="linearregression.ols" inherittype="local" line="82" name="OLS" type="module">
+   <Params>
+    <Param name="X">
+     <Type type="table">
+      <Type fullname="linearregression.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+    <Param name="Y">
+     <Type type="table">
+      <Type fullname="linearregression.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+   <Parents>
+    <Parent name="IRegression" ref="ML_Core.Interfaces.IRegression" target="../ML_Core/Interfaces/IRegression.ecl.xml"/>
+   </Parents>
+   <Definition exported="1" fullname="linearregression.ols.getmodel" inherittype="override" line="139" name="GetModel" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="GetModel" ret="DATASET(Layout_Model)" param="" hlen="30">DATASET(Layout_Model) GetModel</Signature><Documentation>
+     <content>GetModel Returns the learned model that maps X's to Y's. In the case of OLS, the model represents a set of Betas which are the coefficients of the linear model: Beta0 * 1 + Beta1 * Field1 + Beta2 * Field2 ... The ID of each model record specifies to which Y variable the coefficient applies. The Field Number ('number') indicates to which field of X the beta is to be applied. Field number 1 provides the intercept portion of the linear model and is always multiplied by 1. Note that if multiple work-items are provided within X and Y, there will be multiple models returned. The models can be separated by their work item id (i.e. 'wi'). A single model can be extracted from a myriad model by using e.g., model(wi=myWI_id). GetModel should not be called when predicting using a previously persisted model (i.e. when training data was not passed to the module.</content><return>Model in DATASET(Layout_Model) format</return><firstline>GetModel Returns the learned model that maps X's to Y's</firstline><see>ML_core/Types.Layout_Model</see></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.betas" inherittype="local" line="172" name="Betas" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Return raw Beta values as numeric fields Extracts Beta values from the model. Can be used during training and prediction phases. For use during training phase, the 'model' parameter can be omitted. GetModel will be called to retrieve the model based on the training data. For use during prediction phase, a previously persisted model should be provided. The 'number' field of the returned NumericField records specifies to which Y the coefficient applies. The 'id' field of the returned record indicates the position of the Beta value. ID = 1 provides the Beta for the constant term (i.e. the Y intercept) while subsequent values reflect the Beta for each correspondingly numbered X feature. Feature 1 corresponds to Beta with 'id' = 2 and so on. If 'model' contains multiple work-items, Separate sets of Betas will be returned for each of the 'myriad' models (distinguished by 'wi').</content><return>DATASET(NumericField) containing the Beta values.</return><param>model Optional parameter provides a model that was previously retrieved using GetModel. If omitted, GetModel will be used as the model.</param><firstline>Return raw Beta values as numeric fields Extracts Beta values from the model</firstline></Documentation>
+    <Signature name="Betas" ret="DATASET(NumericField)" param="(DATASET(Layout_Model) model=GetModel)" hlen="27">DATASET(NumericField) Betas(DATASET(Layout_Model) model=GetModel)</Signature><Params>
+     <Param name="model">
+      <Type type="table">
+       <Type fullname="linearregression.layout_model" name="Layout_Model" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.predict" inherittype="override" line="199" name="Predict" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Predict the dependent variable values (Y) for any set of independent variables (X). Returns a predicted Y values for each observation (i.e. record) of X. This supports the 'myriad' style interface in that multiple independent work items may be present in 'newX', and multiple independent models may be provided in 'model'. The resulting predicted values will also be separable by work item (i.e. wi).</content><return>An estimation of the corresponding Y value for each observation of newX. Returned in DATASET(NumericField) format with field number (i.e. 'number') indicating the dependent variable that is predicted.</return><param>newX The set of observations of independent variables in DATASET(NumericField) format.</param><param>model Optional. A model that was previously returned from GetModel (above). Note that a model from a previous run will only be valid if the field numbers in X are the same as when the model was learned. If this parameter is omitted, the current model will be used.</param><firstline>Predict the dependent variable values (Y) for any set of independent variables (X)</firstline></Documentation>
+    <Signature name="Predict" ret="DATASET(NumericField)" param="(DATASET(NumericField) newX, DATASET(Layout_Model) model=GetModel)" hlen="29">DATASET(NumericField) Predict(DATASET(NumericField) newX, DATASET(Layout_Model) model=GetModel)</Signature><Params>
+     <Param name="newX">
+      <Type type="table">
+       <Type fullname="linearregression.numericfield" name="NumericField" type="record"/>
+      </Type>
+     </Param>
+     <Param name="model">
+      <Type type="table">
+       <Type fullname="linearregression.layout_model" name="Layout_Model" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.makersq" inherittype="local" line="282" name="makeRSQ" type="transform">
+    <Type fullname="linearregression.ols.r2rec" name="R2Rec" type="record"/>
+    <Signature name="makeRSQ" ret="R2Rec" param="(CoCoRec coco)" hlen="13">R2Rec makeRSQ(CoCoRec coco)</Signature><Params>
+     <Param name="coco">
+      <Type type="row">
+       <Type fullname="linearregression.ols.cocorec" name="CoCoRec" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.rsquared" inherittype="local" line="315" name="RSquared" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="RSquared">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="RSquared" ret="DATASET(R2Rec)" param="" hlen="23">DATASET(R2Rec) RSquared</Signature><Documentation>
+     <content>RSquared Calculate the R-Squared Metric used to assess the fit of the regression line to the training data. Since the regression has chosen the best (i.e. least squared error) line matching the data, this can be thought of as a measurement of the linearity of the training data. R Squared generally varies between 0 and 1, with 1 indicating an exact linear fit, and 0 indicating that a linear fit will have no predictive power. Negative values are possible under certain conditions, and indicate that the mean(Y) will be more predictive than any linear fit. Moderate values of R squared (e.g. .5) may indicate that the relationship of X -&amp;gt; Y is non-linear, or that the measurement error is high relative to the linear correlation (e.g. many outliers). In the former case, increasing the dimensionality of X, such as by using polynomial variants of the features, may yield a better fit. R squared always increases when additional independent variables are added, so it should not be used to determine the optimal set of X variables to include. For that purpose, use Adjusted R Squared (below) which penalizes larger numbers of variables. Note that the result of this call is only meaningful during training phase (use case 1 above) as it is an analysis based on the training data which is not provided during a prediction-only phase.</content><return>DATASET(R2Rec) with one record per dependent variable, per work-item. The number field indicates the dependent variable and coresponds to the number field of the dependent (Y) variable to which it applies.</return><firstline>RSquared Calculate the R-Squared Metric used to assess the fit of the regression line to the training data</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.anovarec" inherittype="local" line="335" name="AnovaRec" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="Total_SS">
+     <Type type="real8"/>
+    </Field>
+    <Field name="Model_SS">
+     <Type type="real8"/>
+    </Field>
+    <Field name="Error_SS">
+     <Type type="real8"/>
+    </Field>
+    <Field name="Total_DF">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="Model_DF">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="Error_DF">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="Total_MS">
+     <Type type="real8"/>
+    </Field>
+    <Field name="Model_MS">
+     <Type type="real8"/>
+    </Field>
+    <Field name="Error_MS">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="AnovaRec" ret="" param="" hlen="8">AnovaRec</Signature><Field name="Model_F">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.calcanova" inherittype="local" line="350" name="calcAnova" type="transform">
+    <Type fullname="linearregression.ols.anovarec" name="AnovaRec" type="record"/>
+    <Signature name="calcAnova" ret="AnovaRec" param="(tmpRec le)" hlen="18">AnovaRec calcAnova(tmpRec le)</Signature><Params>
+     <Param name="le">
+      <Type type="row">
+       <Type fullname="linearregression.ols.tmprec" name="tmpRec" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.anova" inherittype="local" line="402" name="Anova" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="Total_SS">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Model_SS">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Error_SS">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Total_DF">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="Model_DF">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="Error_DF">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="Total_MS">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Model_MS">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Error_MS">
+       <Type type="real8"/>
+      </Field>
+      <Field name="Model_F">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="Anova" ret="" param="" hlen="5">Anova</Signature><Documentation>
+     <content>ANOVA (Analysis of Variance) report Analyzes the sources of variance. Basic ANOVA equality: Model + Error = Total Determines how much of the variance of Y is explained by the regression model, versus how much is due to the error term (i.e. unexplained variance). This attribute is only meaningful during the training phase. Provides one record per work-item. Each record provides the following statistics: - Total_SS -- Total Sum of Squares (SS) variance of the dependent data - Model_SS -- The SS variance represented within the model - Error_SS -- The SS variance not reflected by the model (i.e. Total_SS - Error_SS) - Total_DF -- The total degrees of freedom within the dependent data - Model_DF -- Degrees of freedom of the model - Error_DF -- Degrees of freedom of the error component - Total_MS -- The Mean Square (MS) variance of the dependent data - Model_MS -- The Mean Square (MS) variance represented within the model - Error_MS -- The MS variance not reflected by the model - Model_F -- The F-Test statistic: Model_MS / Error_MS</content><return>DATASET(AnovaRec), one per work-item per dependent (Y) variable The number field indicates the dependent variable to which the analysis applies.</return><firstline>ANOVA (Analysis of Variance) report Analyzes the sources of variance</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.se" inherittype="local" line="507" name="SE" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="SE" ret="DATASET(NumericField)" param="" hlen="24">DATASET(NumericField) SE</Signature><Documentation>
+     <content>Standard Error of the Regression Coefficients Describes the variability of the regression error for each coefficient. Only meaningful during the training phase.</content><return>DATASET(NumericField), one record per Beta coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The 'number' field indicates the dependent variable to which the coefficient applies.</return><firstline>Standard Error of the Regression Coefficients Describes the variability of the regression error for each coefficient</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.tstat" inherittype="local" line="535" name="TStat" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="TStat" ret="DATASET(NumericField)" param="" hlen="27">DATASET(NumericField) TStat</Signature><Documentation>
+     <content>T-Statistic The T-statistic identifies the significance of the value of each regression coefficient. Its calculation is simply the value of the coefficient divided by the Standard Error of the coefficient. A larger absolute value of the T-statistic indicates that the coefficient is more significant. Only meaningful during the training phase.</content><return>DATSET(NumericField), one record per Beta coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The number field indicates the dependent variable to which the coefficient applies.</return><firstline>T-Statistic The T-statistic identifies the significance of the value of each regression coefficient</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.adjrsquared" inherittype="local" line="560" name="AdjRSquared" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="RSquared">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="AdjRSquared" ret="DATASET(R2Rec)" param="" hlen="26">DATASET(R2Rec) AdjRSquared</Signature><Documentation>
+     <content>Adjusted R2 Calculate Adjusted R Squared which is a scaled version of R Squared that does not arbitrarily increase with the number of features. Adjusted R2, rather than R2 should always be used when trying to determine the best set of features to include in a model. When adding features, R2 will always increase, whether or not it improves the predictive power of the model. Adjusted R2, however, will only increase with the predictive power of the model.</content><return>DATASET(R2Rec), one record per dependent variable per work-item. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</return><firstline>Adjusted R2 Calculate Adjusted R Squared which is a scaled version of R Squared that does not arbitrarily increase with the number of features</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.aicrec" inherittype="local" line="567" name="AICRec" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="AICRec" ret="" param="" hlen="6">AICRec</Signature><Field name="AIC">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.aic" inherittype="local" line="601" name="AIC" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="AIC">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="AIC" ret="DATASET(AICRec)" param="" hlen="19">DATASET(AICRec) AIC</Signature><Documentation>
+     <content>Akaike Information Criterion (AIC) Information theory based criterion for assessing Goodness of Fit (GOF). Lower values mean better fit.</content><return>DATASET(AICRec), one record per dependent variable per work-item. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</return><firstline>Akaike Information Criterion (AIC) Information theory based criterion for assessing Goodness of Fit (GOF)</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.rangevec" inherittype="local" line="609" name="RangeVec" type="record">
+    <Field name="RangeNumber">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="RangeLow">
+     <Type type="real8"/>
+    </Field>
+    <Field name="RangeHigh">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="RangeVec" ret="" param="" hlen="8">RangeVec</Signature><Field name="P">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.distributionbase" inherittype="local" line="617" name="DistributionBase" type="module" virtual="1">
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.low" inherittype="local" line="618" name="Low" type="attribute">
+     <Signature name="Low" ret="" param="" hlen="3">Low</Signature><Type type="integer8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.high" inherittype="local" line="619" name="High" type="attribute">
+     <Signature name="High" ret="" param="" hlen="4">High</Signature><Type type="integer8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.density" inherittype="local" line="620" name="Density" type="function">
+     <Type type="real8"/>
+     <Signature name="Density" ret="t_FieldReal" param="(t_FieldReal t)" hlen="19">t_FieldReal Density(t_FieldReal t)</Signature><Params>
+      <Param name="t">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.rangewidth" inherittype="local" line="621" name="RangeWidth" type="attribute">
+     <Signature name="RangeWidth" ret="" param="" hlen="10">RangeWidth</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.densityv" inherittype="local" line="622" name="DensityV" type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="RangeNumber">
+        <Type type="unsigned8"/>
+       </Field>
+       <Field name="RangeLow">
+        <Type type="real8"/>
+       </Field>
+       <Field name="RangeHigh">
+        <Type type="real8"/>
+       </Field>
+       <Field name="P">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Signature name="DensityV" ret="DATASET(RangeVec)" param="()" hlen="26">DATASET(RangeVec) DensityV()</Signature><Params/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.cumulativev" inherittype="local" line="634" name="CumulativeV" type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="RangeNumber">
+        <Type type="unsigned8"/>
+       </Field>
+       <Field name="RangeLow">
+        <Type type="real8"/>
+       </Field>
+       <Field name="RangeHigh">
+        <Type type="real8"/>
+       </Field>
+       <Field name="P">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Signature name="CumulativeV" ret="" param="()" hlen="11">CumulativeV()</Signature><Params/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.cumulative" inherittype="local" line="647" name="Cumulative" type="function">
+     <Type type="real8"/>
+     <Signature name="Cumulative" ret="t_FieldReal" param="(t_FieldReal t)" hlen="22">t_FieldReal Cumulative(t_FieldReal t)</Signature><Params>
+      <Param name="t">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.ntile" inherittype="local" line="655" name="NTile" type="function">
+     <Type type="real8"/>
+     <Signature name="NTile" ret="t_FieldReal" param="(t_FieldReal Pc)" hlen="17">t_FieldReal NTile(t_FieldReal Pc)</Signature><Params>
+      <Param name="Pc">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.invdensity" inherittype="local" line="662" name="InvDensity" type="function">
+     <Type type="real8"/>
+     <Signature name="InvDensity" ret="" param="(t_FieldReal delta)" hlen="10">InvDensity(t_FieldReal delta)</Signature><Params>
+      <Param name="delta">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.discrete" inherittype="local" line="663" name="Discrete" type="attribute">
+     <Signature name="Discrete" ret="" param="" hlen="8">Discrete</Signature><Type type="boolean"/>
+    </Definition>
+    <Params>
+     <Param name="Nranges">
+      <Type type="unsigned8"/>
+     </Param>
+    </Params>
+    <Signature name="DistributionBase" ret="" param="(t_Count Nranges = 10000)" hlen="16">DistributionBase(t_Count Nranges = 10000)</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.tdistribution" inherittype="local" line="670" name="TDistribution" type="module">
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.densityv" inherittype="override" line="622" name="DensityV" type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="RangeNumber">
+        <Type type="unsigned8"/>
+       </Field>
+       <Field name="RangeLow">
+        <Type type="real8"/>
+       </Field>
+       <Field name="RangeHigh">
+        <Type type="real8"/>
+       </Field>
+       <Field name="P">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Signature name="DensityV" ret="DATASET(RangeVec)" param="()" hlen="26">DATASET(RangeVec) DensityV()</Signature><Params/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.ntile" inherittype="override" line="655" name="NTile" type="function">
+     <Type type="real8"/>
+     <Signature name="NTile" ret="t_FieldReal" param="(t_FieldReal Pc)" hlen="17">t_FieldReal NTile(t_FieldReal Pc)</Signature><Params>
+      <Param name="Pc">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.discrete" inherittype="inherited" line="663" name="Discrete" type="attribute">
+     <Signature name="Discrete" ret="" param="" hlen="8">Discrete</Signature><Type type="boolean"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.tdistribution.invdensity" inherittype="override" line="675" name="InvDensity" type="function">
+     <Type type="real8"/>
+     <Signature name="InvDensity" ret="" param="(t_FieldReal delta)" hlen="10">InvDensity(t_FieldReal delta)</Signature><Params>
+      <Param name="delta">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.tdistribution.high" inherittype="override" line="678" name="High" type="attribute">
+     <Signature name="High" ret="" param="" hlen="4">High</Signature><Type type="integer8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.tdistribution.low" inherittype="inherited" line="679" name="Low" type="attribute">
+     <Signature name="Low" ret="" param="" hlen="3">Low</Signature><Type type="integer8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.tdistribution.rangewidth" inherittype="override" line="680" name="RangeWidth" type="attribute">
+     <Signature name="RangeWidth" ret="" param="" hlen="10">RangeWidth</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.tdistribution.density" inherittype="override" line="682" name="Density" type="function">
+     <Type type="real8"/>
+     <Signature name="Density" ret="t_FieldReal" param="(t_FieldReal t)" hlen="19">t_FieldReal Density(t_FieldReal t)</Signature><Params>
+      <Param name="t">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.tdistribution.cumulativev" inherittype="override" line="683" name="CumulativeV" type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="RangeNumber">
+        <Type type="unsigned8"/>
+       </Field>
+       <Field name="RangeLow">
+        <Type type="real8"/>
+       </Field>
+       <Field name="RangeHigh">
+        <Type type="real8"/>
+       </Field>
+       <Field name="P">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Signature name="CumulativeV" ret="" param="()" hlen="11">CumulativeV()</Signature><Params/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.tdistribution.cumulative" inherittype="override" line="696" name="Cumulative" type="function">
+     <Type type="real8"/>
+     <Signature name="Cumulative" ret="t_FieldReal" param="(t_FieldReal t)" hlen="22">t_FieldReal Cumulative(t_FieldReal t)</Signature><Params>
+      <Param name="t">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Params>
+     <Param name="v_in">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="NRanges">
+      <Type type="unsigned8"/>
+     </Param>
+    </Params>
+    <Signature name="TDistribution" ret="" param="(t_Discrete v_in,t_Count NRanges = 10000)" hlen="13">TDistribution(t_Discrete v_in,t_Count NRanges = 10000)</Signature><Parents>
+     <Parent name="DistributionBase" ref="linearregression.ols.distributionbase" target="OLS.ecl.xml"/>
+    </Parents>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.fdistribution" inherittype="local" line="709" name="FDistribution" type="module">
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.densityv" inherittype="override" line="622" name="DensityV" type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="RangeNumber">
+        <Type type="unsigned8"/>
+       </Field>
+       <Field name="RangeLow">
+        <Type type="real8"/>
+       </Field>
+       <Field name="RangeHigh">
+        <Type type="real8"/>
+       </Field>
+       <Field name="P">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Signature name="DensityV" ret="DATASET(RangeVec)" param="()" hlen="26">DATASET(RangeVec) DensityV()</Signature><Params/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.cumulativev" inherittype="override" line="634" name="CumulativeV" type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="RangeNumber">
+        <Type type="unsigned8"/>
+       </Field>
+       <Field name="RangeLow">
+        <Type type="real8"/>
+       </Field>
+       <Field name="RangeHigh">
+        <Type type="real8"/>
+       </Field>
+       <Field name="P">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Signature name="CumulativeV" ret="" param="()" hlen="11">CumulativeV()</Signature><Params/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.cumulative" inherittype="override" line="647" name="Cumulative" type="function">
+     <Type type="real8"/>
+     <Signature name="Cumulative" ret="t_FieldReal" param="(t_FieldReal t)" hlen="22">t_FieldReal Cumulative(t_FieldReal t)</Signature><Params>
+      <Param name="t">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.ntile" inherittype="override" line="655" name="NTile" type="function">
+     <Type type="real8"/>
+     <Signature name="NTile" ret="t_FieldReal" param="(t_FieldReal Pc)" hlen="17">t_FieldReal NTile(t_FieldReal Pc)</Signature><Params>
+      <Param name="Pc">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.invdensity" inherittype="inherited" line="662" name="InvDensity" type="function">
+     <Type type="real8"/>
+     <Signature name="InvDensity" ret="" param="(t_FieldReal delta)" hlen="10">InvDensity(t_FieldReal delta)</Signature><Params>
+      <Param name="delta">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.discrete" inherittype="inherited" line="663" name="Discrete" type="attribute">
+     <Signature name="Discrete" ret="" param="" hlen="8">Discrete</Signature><Type type="boolean"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.fdistribution.low" inherittype="inherited" line="712" name="Low" type="attribute">
+     <Signature name="Low" ret="" param="" hlen="3">Low</Signature><Type type="integer8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.fdistribution.high" inherittype="override" line="713" name="High" type="attribute">
+     <Signature name="High" ret="" param="" hlen="4">High</Signature><Type type="integer8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.fdistribution.rangewidth" inherittype="override" line="714" name="RangeWidth" type="attribute">
+     <Signature name="RangeWidth" ret="" param="" hlen="10">RangeWidth</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.fdistribution.density" inherittype="override" line="717" name="Density" type="function">
+     <Type type="real8"/>
+     <Signature name="Density" ret="t_FieldReal" param="(t_FieldReal t)" hlen="19">t_FieldReal Density(t_FieldReal t)</Signature><Params>
+      <Param name="t">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Params>
+     <Param name="d1_in">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="d2_in">
+      <Type type="integer4"/>
+     </Param>
+     <Param name="NRanges">
+      <Type type="unsigned8"/>
+     </Param>
+    </Params>
+    <Signature name="FDistribution" ret="" param="(t_Discrete d1_in, t_Discrete d2_in, t_Count NRanges = 10000)" hlen="13">FDistribution(t_Discrete d1_in, t_Discrete d2_in, t_Count NRanges = 10000)</Signature><Parents>
+     <Parent name="DistributionBase" ref="linearregression.ols.distributionbase" target="OLS.ecl.xml"/>
+    </Parents>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.normaldistribution" inherittype="local" line="731" name="NormalDistribution" type="module">
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.low" inherittype="inherited" line="618" name="Low" type="attribute">
+     <Signature name="Low" ret="" param="" hlen="3">Low</Signature><Type type="integer8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.high" inherittype="inherited" line="619" name="High" type="attribute">
+     <Signature name="High" ret="" param="" hlen="4">High</Signature><Type type="integer8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.rangewidth" inherittype="override" line="621" name="RangeWidth" type="attribute">
+     <Signature name="RangeWidth" ret="" param="" hlen="10">RangeWidth</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.densityv" inherittype="override" line="622" name="DensityV" type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="RangeNumber">
+        <Type type="unsigned8"/>
+       </Field>
+       <Field name="RangeLow">
+        <Type type="real8"/>
+       </Field>
+       <Field name="RangeHigh">
+        <Type type="real8"/>
+       </Field>
+       <Field name="P">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Signature name="DensityV" ret="DATASET(RangeVec)" param="()" hlen="26">DATASET(RangeVec) DensityV()</Signature><Params/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.cumulativev" inherittype="override" line="634" name="CumulativeV" type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="RangeNumber">
+        <Type type="unsigned8"/>
+       </Field>
+       <Field name="RangeLow">
+        <Type type="real8"/>
+       </Field>
+       <Field name="RangeHigh">
+        <Type type="real8"/>
+       </Field>
+       <Field name="P">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Signature name="CumulativeV" ret="" param="()" hlen="11">CumulativeV()</Signature><Params/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.cumulative" inherittype="override" line="647" name="Cumulative" type="function">
+     <Type type="real8"/>
+     <Signature name="Cumulative" ret="t_FieldReal" param="(t_FieldReal t)" hlen="22">t_FieldReal Cumulative(t_FieldReal t)</Signature><Params>
+      <Param name="t">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.ntile" inherittype="override" line="655" name="NTile" type="function">
+     <Type type="real8"/>
+     <Signature name="NTile" ret="t_FieldReal" param="(t_FieldReal Pc)" hlen="17">t_FieldReal NTile(t_FieldReal Pc)</Signature><Params>
+      <Param name="Pc">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.invdensity" inherittype="inherited" line="662" name="InvDensity" type="function">
+     <Type type="real8"/>
+     <Signature name="InvDensity" ret="" param="(t_FieldReal delta)" hlen="10">InvDensity(t_FieldReal delta)</Signature><Params>
+      <Param name="delta">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.distributionbase.discrete" inherittype="inherited" line="663" name="Discrete" type="attribute">
+     <Signature name="Discrete" ret="" param="" hlen="8">Discrete</Signature><Type type="boolean"/>
+    </Definition>
+    <Definition exported="1" fullname="linearregression.ols.normaldistribution.density" inherittype="override" line="732" name="Density" type="function">
+     <Type type="real8"/>
+     <Signature name="Density" ret="t_FieldReal" param="(t_FieldReal t)" hlen="19">t_FieldReal Density(t_FieldReal t)</Signature><Params>
+      <Param name="t">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Params>
+     <Param name="NRanges">
+      <Type type="unsigned8"/>
+     </Param>
+    </Params>
+    <Signature name="NormalDistribution" ret="" param="(t_Count NRanges)" hlen="18">NormalDistribution(t_Count NRanges)</Signature><Parents>
+     <Parent name="DistributionBase" ref="linearregression.ols.distributionbase" target="OLS.ecl.xml"/>
+    </Parents>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.pval" inherittype="local" line="768" name="pVal" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="value">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="pVal" ret="" param="" hlen="4">pVal</Signature><Documentation>
+     <content>P-Value Calculate the P-value for each coefficient, which is the probability that the coefficient is insignificant (i.e. actually zero). A low P-value (e.g. .05) provides evidence that the coefficient is significant in the model. A high P-value indicates that the coefficient value should, in fact, be zero. P-value is related to the T-Statistic, and can be thought of as a normalized version of the T-Statistic. Only meaningful during the training phase.</content><return>DATSET(NumericField), one record per Beta coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</return><firstline>P-Value Calculate the P-value for each coefficient, which is the probability that the coefficient is insignificant (i.e</firstline></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.confintrec" inherittype="local" line="771" name="ConfintRec" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="LowerInt">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="ConfintRec" ret="" param="" hlen="10">ConfintRec</Signature><Field name="UpperInt">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.confint" inherittype="local" line="816" name="ConfInt" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="id">
+       <Type type="unsigned8"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="LowerInt">
+       <Type type="real8"/>
+      </Field>
+      <Field name="UpperInt">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Confidence Interval The Confidence Interval determines the upper and lower bounds of each estimated coefficient given a confidence level (level) that is required. For example, one could say that there is a 95% probability (level) that the coefficient of the first independent variable is between 2.05 and 3.62. This allows error margins to be determined with the desired confidence level. If the confidence interval spans zero, it implies that the coefficient may not be significant at the specified confidence level.</content><return>DATASET(ConfintRec) with one record per coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</return><param>level The level of confidence required, expressed as a percentage from 0.0 to 100.0</param><firstline>Confidence Interval The Confidence Interval determines the upper and lower bounds of each estimated coefficient given a confidence level (level) that is required</firstline></Documentation>
+    <Signature name="ConfInt" ret="" param="(Types.t_fieldReal level)" hlen="7">ConfInt(Types.t_fieldReal level)</Signature><Params>
+     <Param name="level">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.ftestrec" inherittype="local" line="834" name="FTestRec" type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="Model_F">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="FTestRec" ret="" param="" hlen="8">FTestRec</Signature><Field name="pValue">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="linearregression.ols.ftest" inherittype="local" line="879" name="FTest" type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="number">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="Model_F">
+       <Type type="real8"/>
+      </Field>
+      <Field name="pValue">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="FTest" ret="DATASET(FTestRec)" param="" hlen="23">DATASET(FTestRec) FTest</Signature><Documentation>
+     <content>F-Test Calculate the P-value for the full regression, which is the probability that all of the coefficients are insignificant (i.e. actually zero). A low P-value (e.g. .05) provides evidence that at least one coefficient is significant. A high P-value indicates that all the coefficient values should in fact be zero, implying that the regression has no statistically significant predictive power. P-value is related to the ANOVA F-Statistic, and can be thought of as a standardized version of the ANOVA F-Statistic. The F-Test and T-Test are similar, except that the T-test is used to test the significance of each coefficient, while the F-Test is used to test the significance of the entire regression. For simple linear regression (i.e. only one independent variable, the T-Test and F-Test are equivalent.</content><return>DATASET(FTestRec), one record per dependent variable per work-item. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.</return><firstline>F-Test Calculate the P-value for the full regression, which is the probability that all of the coefficients are insignificant (i.e</firstline></Documentation>
+   </Definition>
+   <Signature name="OLS" ret="" param="(DATASET(NumericField) X=empty_data, DATASET(NumericField) Y=empty_data)" hlen="3">OLS(DATASET(NumericField) X=empty_data, DATASET(NumericField) Y=empty_data)</Signature><Documentation>
+    <content>Ordinary Least Squares (OLS) Linear Regression aka Ordinary Linear Regression Regression learns a function that maps a set of input data (independents) to one or more output variables (dependents). The resulting learned function is known as the model. That model can then be used repetitively to predict (i.e. estimate) the output value(s) based on new input data. Two major use cases are supported: 1) Learn and return a model 2) Use an existing (e.g. persisted) model to predict new values for Y Of course, both can be done in a single run. Alternatively, the model can be persisted and used indefinitely for prediction of Y values, as long as the record format has not changed, and the original training data remains representative of the population. OLS supports any number of independent variables (Multiple Regression) and multiple dependent variables (Multivariate Regression). In this way, multiple variables' values can be predicted from the same input (i.e. independent) data. Training data is presented as parameters to this module. When using a previously persisted model (use case 2 above), these parameters should be omitted. This module provides a rich set of analytics to assess the usefulness of the resulting linear regression model, and to determine the best subset of independent variables to include in the model. These include: For the whole model: - Analysis of Variance (ANOVA) - R-squared - Adjusted R-squared - F-Test - Akaike Information Criterion (AIC) For each coefficient: - Standard Error (SE) - T-statistic - P-value - Confidence Interval</content><param>X The independent variable training data in DATASET(NumericField) format. Each observation (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number'). Omit this parameter when predicting from a persisted model.</param><param>Y The dependent variable training data in DATASET(NumericField) format. Each observation (e.g. record) is identified by 'id', and each feature is identified by field number. Omit this parameter when predicting from a persisted model.</param><firstline>Ordinary Least Squares (OLS) Linear Regression aka Ordinary Linear Regression Regression learns a function that maps a set of input data (independents) to one or more output variables (dependents)</firstline></Documentation>
+  </Definition>
+ <Documentation>
+    <content>Ordinary Least Squares (OLS) Linear Regression aka Ordinary Linear Regression Regression learns a function that maps a set of input data (independents) to one or more output variables (dependents). The resulting learned function is known as the model. That model can then be used repetitively to predict (i.e. estimate) the output value(s) based on new input data. Two major use cases are supported: 1) Learn and return a model 2) Use an existing (e.g. persisted) model to predict new values for Y Of course, both can be done in a single run. Alternatively, the model can be persisted and used indefinitely for prediction of Y values, as long as the record format has not changed, and the original training data remains representative of the population. OLS supports any number of independent variables (Multiple Regression) and multiple dependent variables (Multivariate Regression). In this way, multiple variables' values can be predicted from the same input (i.e. independent) data. Training data is presented as parameters to this module. When using a previously persisted model (use case 2 above), these parameters should be omitted. This module provides a rich set of analytics to assess the usefulness of the resulting linear regression model, and to determine the best subset of independent variables to include in the model. These include: For the whole model: - Analysis of Variance (ANOVA) - R-squared - Adjusted R-squared - F-Test - Akaike Information Criterion (AIC) For each coefficient: - Standard Error (SE) - T-statistic - P-value - Confidence Interval</content><param>X The independent variable training data in DATASET(NumericField) format. Each observation (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number'). Omit this parameter when predicting from a persisted model.</param><param>Y The dependent variable training data in DATASET(NumericField) format. Each observation (e.g. record) is identified by 'id', and each feature is identified by field number. Omit this parameter when predicting from a persisted model.</param><firstline>Ordinary Least Squares (OLS) Linear Regression aka Ordinary Linear Regression Regression learns a function that maps a set of input data (independents) to one or more output variables (dependents)</firstline></Documentation>
+  </Source>
+</Meta>

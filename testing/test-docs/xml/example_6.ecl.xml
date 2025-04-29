@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="example_6" sourcePath="/media/sarthak/Data/ecldoc/testing/test/example_6.ecl" target="example_6.ecl.xml">
+  <Definition exported="1" fullname="example_6" inherittype="local" line="11" name="example_6" type="module">
+   <Definition exported="1" fullname="example_6.mod_1" inherittype="local" line="12" name="mod_1" type="module">
+    <Definition exported="1" fullname="example_6.mod_1.v1_m1" inherittype="local" line="13" name="v1_m1" type="attribute">
+     <Signature name="v1_m1" ret="" param="" hlen="5">v1_m1</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_1.mod_11" inherittype="local" line="14" name="mod_11" type="module">
+     <Definition exported="1" fullname="example_6.mod_1.mod_11.v1_m11" inherittype="local" line="15" name="v1_m11" type="attribute">
+      <Signature name="v1_m11" ret="" param="" hlen="6">v1_m11</Signature><Type type="real8"/>
+     </Definition>
+     <Definition exported="1" fullname="example_6.mod_1.mod_11.mod_111" inherittype="local" line="16" name="mod_111" type="module">
+      <Definition exported="1" fullname="example_6.mod_1.mod_11.mod_111.v1_m111" inherittype="local" line="17" name="v1_m111" type="attribute">
+       <Signature name="v1_m111" ret="" param="" hlen="7">v1_m111</Signature><Type type="real8"/>
+      </Definition>
+      <Params>
+       <Param name="a_111">
+        <Type type="real8"/>
+       </Param>
+      </Params>
+      <Signature name="mod_111" ret="" param="(real8 a_111)" hlen="7">mod_111(real8 a_111)</Signature><Parents/>
+     </Definition>
+     <Params>
+      <Param name="a_11">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Signature name="mod_11" ret="" param="(real8 a_11)" hlen="6">mod_11(real8 a_11)</Signature><Parents/>
+    </Definition>
+    <Signature name="mod_1" ret="" param="" hlen="5">mod_1</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="example_6.mod_2" inherittype="local" line="22" name="mod_2" type="module">
+    <Definition exported="1" fullname="example_6.mod_1.mod_11.v1_m11" inherittype="inherited" line="15" name="v1_m11" type="attribute">
+     <Signature name="v1_m11" ret="" param="" hlen="6">v1_m11</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_1.mod_11.mod_111" inherittype="inherited" line="16" name="mod_111" type="module">
+     <Params>
+      <Param name="a_111">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Signature name="mod_111" ret="" param="(real8 a_111)" hlen="7">mod_111(real8 a_111)</Signature><Parents/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_2.v1_m2" inherittype="local" line="23" name="v1_m2" type="attribute">
+     <Signature name="v1_m2" ret="" param="" hlen="5">v1_m2</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="mod_2" ret="" param="" hlen="5">mod_2</Signature><Parents>
+     <Parent name="mod_11" ref="example_6.mod_1.mod_11" target="example_6.ecl.xml"/>
+    </Parents>
+   </Definition>
+   <Definition exported="1" fullname="example_6.mod_3" inherittype="local" line="26" name="mod_3" type="module">
+    <Definition exported="1" fullname="example_6.mod_3.v1_m3" inherittype="local" line="27" name="v1_m3" type="attribute">
+     <Signature name="v1_m3" ret="" param="" hlen="5">v1_m3</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_3.mod_31" inherittype="local" line="28" name="mod_31" type="module">
+     <Definition exported="1" fullname="example_6.mod_1.mod_11.v1_m11" inherittype="inherited" line="15" name="v1_m11" type="attribute">
+      <Signature name="v1_m11" ret="" param="" hlen="6">v1_m11</Signature><Type type="real8"/>
+     </Definition>
+     <Definition exported="1" fullname="example_6.mod_1.mod_11.mod_111" inherittype="inherited" line="16" name="mod_111" type="module">
+      <Params>
+       <Param name="a_111">
+        <Type type="real8"/>
+       </Param>
+      </Params>
+      <Signature name="mod_111" ret="" param="(real8 a_111)" hlen="7">mod_111(real8 a_111)</Signature><Parents/>
+     </Definition>
+     <Definition exported="1" fullname="example_6.mod_3.mod_31.v1_m31" inherittype="local" line="29" name="v1_m31" type="attribute">
+      <Signature name="v1_m31" ret="" param="" hlen="6">v1_m31</Signature><Type type="real8"/>
+     </Definition>
+     <Signature name="mod_31" ret="" param="" hlen="6">mod_31</Signature><Parents>
+      <Parent name="mod_11" ref="example_6.mod_1.mod_11" target="example_6.ecl.xml"/>
+     </Parents>
+    </Definition>
+    <Signature name="mod_3" ret="" param="" hlen="5">mod_3</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="example_6.mod_4" inherittype="local" line="33" name="mod_4" type="module">
+    <Definition exported="1" fullname="example_6.mod_1.mod_11.v1_m11" inherittype="inherited" line="15" name="v1_m11" type="attribute">
+     <Signature name="v1_m11" ret="" param="" hlen="6">v1_m11</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_1.mod_11.mod_111" inherittype="inherited" line="16" name="mod_111" type="module">
+     <Params>
+      <Param name="a_111">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Signature name="mod_111" ret="" param="(real8 a_111)" hlen="7">mod_111(real8 a_111)</Signature><Parents/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_2.v1_m2" inherittype="inherited" line="23" name="v1_m2" type="attribute">
+     <Signature name="v1_m2" ret="" param="" hlen="5">v1_m2</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_3.mod_31.v1_m31" inherittype="inherited" line="29" name="v1_m31" type="attribute">
+     <Signature name="v1_m31" ret="" param="" hlen="6">v1_m31</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_4.v1_m4" inherittype="local" line="34" name="v1_m4" type="attribute">
+     <Signature name="v1_m4" ret="" param="" hlen="5">v1_m4</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="mod_4" ret="" param="" hlen="5">mod_4</Signature><Parents>
+     <Parent name="mod_31" ref="example_6.mod_3.mod_31" target="example_6.ecl.xml"/>
+     <Parent name="mod_2" ref="example_6.mod_2" target="example_6.ecl.xml"/>
+    </Parents>
+   </Definition>
+   <Definition exported="1" fullname="example_6.mod_5" inherittype="local" line="37" name="mod_5" type="module">
+    <Definition exported="1" fullname="example_6.mod_1.v1_m1" inherittype="inherited" line="13" name="v1_m1" type="attribute">
+     <Signature name="v1_m1" ret="" param="" hlen="5">v1_m1</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_1.mod_11" inherittype="inherited" line="14" name="mod_11" type="module">
+     <Params>
+      <Param name="a_11">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Signature name="mod_11" ret="" param="(real8 a_11)" hlen="6">mod_11(real8 a_11)</Signature><Parents/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_1.mod_11.v1_m11" inherittype="inherited" line="15" name="v1_m11" type="attribute">
+     <Signature name="v1_m11" ret="" param="" hlen="6">v1_m11</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_1.mod_11.mod_111" inherittype="inherited" line="16" name="mod_111" type="module">
+     <Params>
+      <Param name="a_111">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Signature name="mod_111" ret="" param="(real8 a_111)" hlen="7">mod_111(real8 a_111)</Signature><Parents/>
+    </Definition>
+    <Definition exported="1" fullname="example_6.mod_5.v1_m5" inherittype="local" line="38" name="v1_m5" type="attribute">
+     <Signature name="v1_m5" ret="" param="" hlen="5">v1_m5</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="mod_5" ret="" param="" hlen="5">mod_5</Signature><Parents>
+     <Parent name="mod_1" ref="example_6.mod_1" target="example_6.ecl.xml"/>
+     <Parent name="mod_11" ref="example_6.mod_1.mod_11" target="example_6.ecl.xml"/>
+    </Parents>
+   </Definition>
+   <Documentation>
+    <firstline>Module Hierarchy Example : mod_1 -&amp;gt; mod_11 -&amp;gt; mod_111</firstline><content>Module Hierarchy Example : mod_1 -&amp;gt; mod_11 -&amp;gt; mod_111 . Inheritance across Hierarchy : mod_2 inherits mod_1.mod_11 , mod_3.mod_31 inherits mod_1.mod_11 , mod_4 inherits mod_3.mod_31, mod_2 , mod_5 inherits mod_1 and mod_1.mod_11</content></Documentation>
+   <Signature name="example_6" ret="" param="" hlen="9">example_6</Signature><Parents/>
+  </Definition>
+ <Documentation>
+    <firstline>Module Hierarchy Example : mod_1 -&amp;gt; mod_11 -&amp;gt; mod_111</firstline><content>Module Hierarchy Example : mod_1 -&amp;gt; mod_11 -&amp;gt; mod_111 . Inheritance across Hierarchy : mod_2 inherits mod_1.mod_11 , mod_3.mod_31 inherits mod_1.mod_11 , mod_4 inherits mod_3.mod_31, mod_2 , mod_5 inherits mod_1 and mod_1.mod_11</content></Documentation>
+   </Source>
+</Meta>

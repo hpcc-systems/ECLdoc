@@ -1,0 +1,13 @@
+++++++++++++++
+  Interfaces
+++++++++++++++
+
+
+
+CONTENTS
+========
+
+file : IClassify.ecl <IClassify.ecl.txt>    Interface definition for Classification
+
+file : IRegression.ecl <IRegression.ecl.txt>    Interface Definition for Regression Modules Regression learns a function that maps a set of input data to one or more output variables
+

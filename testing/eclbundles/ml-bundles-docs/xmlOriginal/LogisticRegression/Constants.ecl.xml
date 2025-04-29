@@ -1,0 +1,259 @@
+<Meta>
+ <Source name="LogisticRegression.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Constants.ecl">
+  <Definition body="168"
+              end="1315"
+              exported="1"
+              fullname="LogisticRegression.Constants"
+              inherittype="local"
+              line="4"
+              name="Constants"
+              start="149"
+              type="module">
+   <Definition body="208"
+               end="215"
+               exported="1"
+               fullname="logisticregression.constants.limit_card"
+               inherittype="local"
+               line="5"
+               name="limit_card"
+               start="178"
+               type="attribute">
+    <Type type="unsigned2"/>
+   </Definition>
+   <Definition body="275"
+               end="287"
+               exported="1"
+               fullname="logisticregression.constants.default_epsilon"
+               inherittype="local"
+               line="6"
+               name="default_epsilon"
+               start="244"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="319"
+               end="328"
+               exported="1"
+               fullname="logisticregression.constants.default_ridge"
+               inherittype="local"
+               line="7"
+               name="default_ridge"
+               start="290"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="360"
+               end="402"
+               exported="1"
+               fullname="logisticregression.constants.local_cap"
+               inherittype="local"
+               line="8"
+               name="local_cap"
+               start="331"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="452"
+               end="455"
+               exported="1"
+               fullname="logisticregression.constants.id_base"
+               inherittype="local"
+               line="10"
+               name="id_base"
+               start="435"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="476"
+               end="489"
+               exported="1"
+               fullname="logisticregression.constants.id_iters"
+               inherittype="local"
+               line="11"
+               name="id_iters"
+               start="458"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="510"
+               end="524"
+               exported="1"
+               fullname="logisticregression.constants.id_delta"
+               inherittype="local"
+               line="12"
+               name="id_delta"
+               start="492"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="547"
+               end="561"
+               exported="1"
+               fullname="logisticregression.constants.id_correct"
+               inherittype="local"
+               line="13"
+               name="id_correct"
+               start="527"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="586"
+               end="602"
+               exported="1"
+               fullname="logisticregression.constants.id_incorrect"
+               inherittype="local"
+               line="14"
+               name="id_incorrect"
+               start="564"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="626"
+               end="674"
+               exported="1"
+               fullname="logisticregression.constants.id_stat_set"
+               inherittype="local"
+               line="15"
+               name="id_stat_set"
+               start="605"
+               type="attribute">
+    <Type type="set">
+     <Type type="integer8"/>
+    </Type>
+   </Definition>
+   <Definition body="695"
+               end="713"
+               exported="1"
+               fullname="logisticregression.constants.id_betas"
+               inherittype="local"
+               line="16"
+               name="id_betas"
+               start="677"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="800"
+               end="803"
+               exported="1"
+               fullname="logisticregression.constants.id_betas_coef"
+               inherittype="local"
+               line="18"
+               name="id_betas_coef"
+               start="777"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="827"
+               end="830"
+               exported="1"
+               fullname="logisticregression.constants.id_betas_se"
+               inherittype="local"
+               line="19"
+               name="id_betas_SE"
+               start="806"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="880"
+               end="883"
+               exported="1"
+               fullname="logisticregression.constants.base_builder"
+               inherittype="local"
+               line="21"
+               name="base_builder"
+               start="858"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="920"
+               end="938"
+               exported="1"
+               fullname="logisticregression.constants.base_max_iter"
+               inherittype="local"
+               line="22"
+               name="base_max_iter"
+               start="897"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="963"
+               end="982"
+               exported="1"
+               fullname="logisticregression.constants.base_epsilon"
+               inherittype="local"
+               line="23"
+               name="base_epsilon"
+               start="941"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1008"
+               end="1026"
+               exported="1"
+               fullname="logisticregression.constants.base_ind_vars"
+               inherittype="local"
+               line="24"
+               name="base_ind_vars"
+               start="985"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1052"
+               end="1071"
+               exported="1"
+               fullname="logisticregression.constants.base_dep_vars"
+               inherittype="local"
+               line="25"
+               name="base_dep_vars"
+               start="1029"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1092"
+               end="1111"
+               exported="1"
+               fullname="logisticregression.constants.base_obs"
+               inherittype="local"
+               line="26"
+               name="base_obs"
+               start="1074"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1185"
+               end="1188"
+               exported="1"
+               fullname="logisticregression.constants.builder_irls_local"
+               inherittype="local"
+               line="28"
+               name="builder_irls_local"
+               start="1157"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1259"
+               end="1262"
+               exported="1"
+               fullname="logisticregression.constants.builder_irls_global"
+               inherittype="local"
+               line="29"
+               name="builder_irls_global"
+               start="1230"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="1307"
+               end="1310"
+               exported="1"
+               fullname="logisticregression.constants.builder_softmax"
+               inherittype="local"
+               line="30"
+               name="builder_softmax"
+               start="1282"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

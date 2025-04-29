@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/test/example_3.ecl" name="example_3" target="../example_3.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/test/intest/example_3.ecl" name="intest.example_3" target="example_3.ecl.xml"/><Depends sourcePath="lib_stringlib" target="lib_stringlib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/Str.ecl" name="std.str" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/Str.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/test/intest/inintest/example_3.ecl" name="intest.inintest.example_3" target="inintest/example_3.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/test/test.ecl" name="test" target="../test.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/test/Inintest/Example_3.ecl" name="Inintest.example_3" target="../Inintest/Example_3.ecl.xml"/><Source name="intest.example_11" sourcePath="/media/sarthak/Data/ecldoc/testing/test/intest/example_11.ecl" target="example_11.ecl.xml">
+  <Definition exported="1" fullname="intest.example_11" inherittype="local" line="11" name="example_11" type="module">
+   <Signature name="example_11" ret="" param="" hlen="10">example_11</Signature><Parents/>
+  </Definition>
+  <Import name="std" ref="std" remotescope="1" target="../std/pkg.toc.xml"/>
+  <Import name="intest" ref="intest" target="/media/sarthak/Data/ecldoc/testing/test-docs/$$_ECLDOC-FORM_$$/intest/pkg.toc.xml"/>
+  <Import name="ex_33" ref="Example_3" target="../example_3.ecl.xml">
+   </Import>
+  <Import name="ex_333" ref="intest.Example_3" target="example_3.ecl.xml">
+   </Import>
+  <Import name="i1" ref="intest.inintest" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/test-docs/$$_ECLDOC-FORM_$$/intest/inintest/pkg.toc.xml"/>
+  <Import name="ex_3333" ref="intest.inintest.Example_3" target="inintest/example_3.ecl.xml">
+   </Import>
+  <Import name="test" ref="test" target="../test.ecl.xml">
+   </Import>
+  <Import name="Inintest" ref="Inintest" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/test-docs/$$_ECLDOC-FORM_$$/Inintest/pkg.toc.xml"/>
+  <Import name="Example_3" ref="Inintest.Example_3" target="../Inintest/Example_3.ecl.xml"/>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="intest.in1intest.example_2" sourcePath="/home/tetrapod/source/ecldoc/testing/test/intest/in1intest/example_2.ecl" target="example_2.ecl.xml">
+  <Definition exported="1" fullname="intest.in1intest.example_2" inherittype="local" line="12" name="example_2" type="module">
+   <Definition exported="1" fullname="intest.in1intest.example_2.rec_1" inherittype="local" line="14" name="rec_1" type="record">
+    <Signature name="rec_1" ret="" param="" hlen="5">rec_1</Signature><Field name="v1">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="intest.in1intest.example_2.rec_2" inherittype="local" line="18" name="rec_2" type="record">
+    <Field name="v1">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="rec_2" ret="" param="" hlen="5">rec_2</Signature><Field name="v2">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="intest.in1intest.example_2.rec_3" inherittype="local" line="22" name="rec_3" type="record">
+    <Field name="v1">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="rec_3" ret="" param="" hlen="5">rec_3</Signature><Field name="v3">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="intest.in1intest.example_2.mod_1" inherittype="local" line="27" name="mod_1" type="module" virtual="1">
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_1.v1_m1" inherittype="local" line="28" name="v1_m1" type="attribute">
+     <Signature name="v1_m1" ret="real8" param="" hlen="11">real8 v1_m1</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_1.v2_m1" inherittype="local" line="29" name="v2_m1" type="attribute">
+     <Signature name="v2_m1" ret="" param="" hlen="5">v2_m1</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="mod_1" ret="" param="" hlen="5">mod_1</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="intest.in1intest.example_2.mod_2" inherittype="local" line="32" name="mod_2" type="module">
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_2.v1_m1" inherittype="local" line="33" name="v1_m1" type="attribute">
+     <Signature name="v1_m1" ret="" param="" hlen="5">v1_m1</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_2.v2_m2" inherittype="local" line="34" name="v2_m2" type="attribute">
+     <Signature name="v2_m2" ret="" param="" hlen="5">v2_m2</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="mod_2" ret="" param="" hlen="5">mod_2</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="intest.in1intest.example_2.mod_3" inherittype="local" line="37" name="mod_3" type="module">
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_1.v2_m1" inherittype="inherited" line="29" name="v2_m1" type="attribute">
+     <Signature name="v2_m1" ret="" param="" hlen="5">v2_m1</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_2.v2_m2" inherittype="inherited" line="34" name="v2_m2" type="attribute">
+     <Signature name="v2_m2" ret="" param="" hlen="5">v2_m2</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_3.v1_m1" inherittype="override" line="38" name="v1_m1" type="attribute">
+     <Signature name="v1_m1" ret="" param="" hlen="5">v1_m1</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_3.v2_m3" inherittype="local" line="39" name="v2_m3" type="attribute">
+     <Signature name="v2_m3" ret="" param="" hlen="5">v2_m3</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="mod_3" ret="" param="" hlen="5">mod_3</Signature><Parents>
+     <Parent name="mod_1" ref="intest.in1intest.example_2.mod_1" target="example_2.ecl.xml"/>
+     <Parent name="mod_2" ref="intest.in1intest.example_2.mod_2" target="example_2.ecl.xml"/>
+    </Parents>
+   </Definition>
+   <Definition exported="1" fullname="intest.in1intest.example_2.iface_1" inherittype="local" line="42" name="iface_1" type="interface">
+    <Definition exported="1" fullname="intest.in1intest.example_2.iface_1.v1_i1" inherittype="local" line="43" name="v1_i1" type="attribute">
+     <Signature name="v1_i1" ret="real8" param="" hlen="11">real8 v1_i1</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="iface_1" ret="" param="" hlen="7">iface_1</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="intest.in1intest.example_2.mod_4" inherittype="local" line="46" name="mod_4" type="module">
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_4.v1_i1" inherittype="override" line="47" name="v1_i1" type="attribute">
+     <Signature name="v1_i1" ret="" param="" hlen="5">v1_i1</Signature><Type type="real8"/>
+    </Definition>
+    <Definition exported="1" fullname="intest.in1intest.example_2.mod_4.v2_m4" inherittype="local" line="48" name="v2_m4" type="attribute">
+     <Signature name="v2_m4" ret="STRING20" param="" hlen="14">STRING20 v2_m4</Signature><Type type="string20"/>
+    </Definition>
+    <Signature name="mod_4" ret="" param="" hlen="5">mod_4</Signature><Parents>
+     <Parent name="iface_1" ref="intest.in1intest.example_2.iface_1" target="example_2.ecl.xml"/>
+    </Parents>
+   </Definition>
+   <Documentation>
+    <firstline>Basic Inheritance documentation : mod_3 inherits both mod_1 and mod_2</firstline><content>Basic Inheritance documentation : mod_3 inherits both mod_1 and mod_2 . Inherits v2_m1, v2_m2, Overrides v1_m1, new locals v2_m3 . Interface Inheritance : mod_4 inherits interface iface_1, overrides v1_i1</content></Documentation>
+   <Signature name="example_2" ret="" param="" hlen="9">example_2</Signature><Parents/>
+  </Definition>
+ <Documentation>
+    <firstline>Basic Inheritance documentation : mod_3 inherits both mod_1 and mod_2</firstline><content>Basic Inheritance documentation : mod_3 inherits both mod_1 and mod_2 . Inherits v2_m1, v2_m2, Overrides v1_m1, new locals v2_m3 . Interface Inheritance : mod_4 inherits interface iface_1, overrides v1_i1</content></Documentation>
+   </Source>
+</Meta>

@@ -1,0 +1,840 @@
+<Meta>
+ <Source name="ML_Core.Constants" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Constants.ecl">
+  <Definition body="47"
+              end="224"
+              exported="1"
+              fullname="ML_Core.Constants"
+              inherittype="local"
+              line="4"
+              name="Constants"
+              start="28"
+              type="module">
+   <Definition body="98"
+               end="127"
+               exported="1"
+               fullname="ml_core.constants.pi"
+               inherittype="local"
+               line="8"
+               name="Pi"
+               start="86"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant PI&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="189"
+               end="218"
+               exported="1"
+               fullname="ml_core.constants.root_2"
+               inherittype="local"
+               line="12"
+               name="Root_2"
+               start="173"
+               type="attribute">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Constant square root of 2&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.DoubleFac" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/DoubleFac.ecl">
+  <Definition body="474"
+              end="642"
+              exported="1"
+              fullname="ml_core.math.doublefac"
+              inherittype="local"
+              line="11"
+              name="DoubleFac"
+              start="437"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* The &apos;double&apos; factorial is defined for ODD n and is the product of
+ * all the odd numbers up to and including that number.
+ * We are extending the meaning to even numbers to mean the product
+ * of the even numbers up to and including that number.
+ * Thus DoubleFac(8) = 8*6*4*2
+ * We also defend against i &lt; 2 (returning 1.0)
+ *@param i the value used in the calculation
+ *@return the factorial of the sequence, declining by 2&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="i">
+     <Type type="integer2"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.Distributions" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/Distributions.ecl">
+  <Definition body="136"
+              end="13947"
+              exported="1"
+              fullname="ML_Core.Math.Distributions"
+              inherittype="local"
+              line="5"
+              name="Distributions"
+              start="113"
+              type="module">
+   <Definition body="582"
+               end="1056"
+               exported="1"
+               fullname="ml_core.math.distributions.normal_cdf"
+               inherittype="local"
+               line="15"
+               name="Normal_CDF"
+               start="547"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Cumulative Distribution of the standard normal distribution, the
+   *probability that a normal random variable will be smaller than x
+   * standard deviations above or below the mean.
+   * Taken from C/C++ Mathematical Algorithms for Scientists and
+   *Engineers, n. Shammas, McGraw-Hill, 1995
+   * @param x the number of standard deviations
+   * @returns probability of exceeding x.&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1359"
+               end="1993"
+               exported="1"
+               fullname="ml_core.math.distributions.normal_ppf"
+               inherittype="local"
+               line="40"
+               name="Normal_PPF"
+               start="1324"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Normal Distribution Percentage Point Function.
+   * Translated from C/C++ Mathematical Algorithms for Scientists and
+   * Engineers, N. Shammas, McGraw-Hill, 1995
+   * @param x probability
+   * @returns number of standard deviations from the mean&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2786"
+               end="4666"
+               exported="1"
+               fullname="ml_core.math.distributions.t_cdf"
+               inherittype="local"
+               line="83"
+               name="T_CDF"
+               start="2746"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Students t distribution integral evaluated between negative
+   * infinity and x.
+   * Translated from NIST SEL DATAPAC Fortran TCDF.f source
+   * @param x value of the evaluation
+   * @param df degrees of freedom
+   * @returns the probability that a value will be less than the
+   * specified value&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6869"
+               end="8667"
+               exported="1"
+               fullname="ml_core.math.distributions.t_ppf"
+               inherittype="local"
+               line="212"
+               name="T_PPF"
+               start="6829"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* Percentage point function for the T distribution.
+   * Translated from NIST SEL DATAPAC Fortran TPPF.f source&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="9436"
+               end="11379"
+               exported="1"
+               fullname="ml_core.math.distributions.chi2_cdf"
+               inherittype="local"
+               line="290"
+               name="Chi2_CDF"
+               start="9393"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* The cumulative distribution function for the Chi Square
+   * distribution.
+   * the CDF for the specfied degrees of freedom.
+   * Translated from the NIST SEL DATAPAC Fortran subroutine CHSCDF.&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="13646"
+               end="13942"
+               exported="1"
+               fullname="ml_core.math.distributions.chi2_ppf"
+               inherittype="local"
+               line="399"
+               name="Chi2_PPF"
+               start="13603"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;* The Chi Squared PPF function.
+   * Translated from the NIST SEL DATAPAC Fortran subroutine CHSPPF.&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="df">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="65"
+          fullname="ML_Core.Constants"
+          inherittype="local"
+          line="2"
+          name="Core_Const"
+          ref="ML_Core.Constants"
+          start="65">
+   <Documentation>
+    <content>&#10;&#32;* Useful constants&#10;&#32;</content>
+   </Documentation>
+  </Import>
+  <Import body="0"
+          end="101"
+          fullname="ML_Core.Math"
+          inherittype="local"
+          line="3"
+          name="Math"
+          ref="ML_Core.Math"
+          remotescope="1"
+          start="101"/>
+ </Source>
+ <Source sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/python.ecllib"/>
+ <Source name="ML_Core.Tests.Check_Dist" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Tests/Check_Dist.ecl">
+  <Import body="0"
+          end="7"
+          fullname="ML_Core.Math.Distributions"
+          inherittype="local"
+          line="1"
+          name="Distributions"
+          ref="ML_Core.Math.Distributions"
+          start="7"/>
+  <Import body="0"
+          end="55"
+          fullname="ML_Core"
+          inherittype="local"
+          line="2"
+          name="ML_Core"
+          ref="ML_Core"
+          start="55"/>
+  <Import body="0"
+          end="78"
+          fullname="python"
+          inherittype="local"
+          line="3"
+          name="python"
+          ref="python"
+          remotescope="1"
+          start="78"/>
+  <Definition body="142"
+              end="392"
+              fullname="ml_core.tests.scipy_dist_cdf"
+              inherittype="local"
+              line="4"
+              name="scipy_dist_cdf"
+              start="86"
+              type="embed">
+   <Type type="real8"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="df">
+     <Type type="real8"/>
+    </Param>
+    <Param name="dist">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="449"
+              end="697"
+              fullname="ml_core.tests.scipy_dist_ppf"
+              inherittype="local"
+              line="15"
+              name="scipy_dist_ppf"
+              start="393"
+              type="embed">
+   <Type type="real8"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="df">
+     <Type type="real8"/>
+    </Param>
+    <Param name="dist">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="735"
+              end="960"
+              fullname="ml_core.tests.diff_tolerance"
+              inherittype="local"
+              line="26"
+              name="diff_tolerance"
+              start="698"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="test">
+     <Type type="string4"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="976"
+              end="1105"
+              fullname="ml_core.tests.prob_values"
+              inherittype="local"
+              line="32"
+              name="prob_values"
+              start="962"
+              type="attribute">
+   <Type type="set">
+    <Type type="real8"/>
+   </Type>
+  </Definition>
+  <Definition body="1120"
+              end="1177"
+              fullname="ml_core.tests.dist_values"
+              inherittype="local"
+              line="34"
+              name="dist_values"
+              start="1106"
+              type="attribute">
+   <Type type="set">
+    <Type type="integer8"/>
+   </Type>
+  </Definition>
+  <Definition body="1190"
+              end="1254"
+              fullname="ml_core.tests.df_values"
+              inherittype="local"
+              line="35"
+              name="df_values"
+              start="1178"
+              type="attribute">
+   <Type type="set">
+    <Type type="integer8"/>
+   </Type>
+  </Definition>
+  <Definition body="1277"
+              end="1327"
+              fullname="ml_core.tests.test"
+              inherittype="local"
+              line="36"
+              name="test"
+              start="1255"
+              type="attribute">
+   <Type type="set">
+    <Type type="string4"/>
+   </Type>
+  </Definition>
+  <Definition body="1354"
+              end="1380"
+              fullname="ml_core.tests.inv_test"
+              inherittype="local"
+              line="37"
+              name="inv_test"
+              start="1328"
+              type="attribute">
+   <Type type="set">
+    <Type type="string4"/>
+   </Type>
+  </Definition>
+  <Definition body="1388"
+              end="1552"
+              fullname="ml_core.tests.work"
+              inherittype="local"
+              line="38"
+              name="Work"
+              start="1381"
+              type="record">
+   <Field name="df">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="prob">
+    <Type type="real8"/>
+   </Field>
+   <Field name="ecl_ppf">
+    <Type type="real8"/>
+   </Field>
+   <Field name="scipy_ppf">
+    <Type type="real8"/>
+   </Field>
+   <Field name="ppf_diff">
+    <Type type="real8"/>
+   </Field>
+   <Field name="dist">
+    <Type type="real8"/>
+   </Field>
+   <Field name="ecl_cdf">
+    <Type type="real8"/>
+   </Field>
+   <Field name="scipy_cdf">
+    <Type type="real8"/>
+   </Field>
+   <Field name="cdf_diff">
+    <Type type="real8"/>
+   </Field>
+  </Definition>
+  <Definition body="1591"
+              end="1616"
+              fullname="ml_core.tests.abs_max_abs"
+              inherittype="local"
+              line="49"
+              name="abs_max_abs"
+              start="1553"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1651"
+              end="1691"
+              fullname="ml_core.tests.fixed"
+              inherittype="local"
+              line="50"
+              name="fixed"
+              start="1617"
+              type="function">
+   <Type type="boolean"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1726"
+              end="1765"
+              fullname="ml_core.tests.divisor"
+              inherittype="local"
+              line="51"
+              name="divisor"
+              start="1692"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1801"
+              end="1824"
+              fullname="ml_core.tests.calc_err"
+              inherittype="local"
+              line="52"
+              name="calc_err"
+              start="1766"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1872"
+              end="1889"
+              fullname="ml_core.tests.check_err"
+              inherittype="local"
+              line="53"
+              name="check_err"
+              start="1825"
+              type="function">
+   <Type type="boolean"/>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+    <Param name="b">
+     <Type type="real8"/>
+    </Param>
+    <Param name="t">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="1924"
+              end="2753"
+              fullname="ml_core.tests.run"
+              inherittype="local"
+              line="54"
+              name="run"
+              start="1890"
+              type="transform">
+   <Type fullname="ml_core.tests.work" name="Work" type="record"/>
+   <Params>
+    <Param name="c">
+     <Type type="unsigned8"/>
+    </Param>
+    <Param name="d">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="2763"
+              end="2891"
+              fullname="ml_core.tests.report"
+              inherittype="local"
+              line="74"
+              name="Report"
+              start="2754"
+              type="record">
+   <Field name="test">
+    <Type type="string4"/>
+   </Field>
+   <Field name="OK">
+    <Type type="boolean"/>
+   </Field>
+   <Field name="df">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="inp_value">
+    <Type type="real8"/>
+   </Field>
+   <Field name="ecl_value">
+    <Type type="real8"/>
+   </Field>
+   <Field name="py_value">
+    <Type type="real8"/>
+   </Field>
+   <Field name="diff">
+    <Type type="real8"/>
+   </Field>
+  </Definition>
+  <Definition body="2932"
+              end="3452"
+              fullname="ml_core.tests.makereport"
+              inherittype="local"
+              line="83"
+              name="makeReport"
+              start="2892"
+              type="transform">
+   <Type fullname="ml_core.tests.report" name="Report" type="record"/>
+   <Params>
+    <Param name="w">
+     <Type type="row">
+      <Type fullname="ml_core.tests.work" name="Work" type="record"/>
+     </Type>
+    </Param>
+    <Param name="c">
+     <Type type="unsigned8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="3459"
+              end="3505"
+              fullname="ml_core.tests.ts1"
+              inherittype="local"
+              line="95"
+              name="ts1"
+              start="3453"
+              type="attribute">
+   <Type type="table">
+    <Type fullname="ml_core.tests.work" name="Work" type="record"/>
+   </Type>
+  </Definition>
+  <Definition body="3512"
+              end="3574"
+              fullname="ml_core.tests.ts2"
+              inherittype="local"
+              line="96"
+              name="ts2"
+              start="3506"
+              type="attribute">
+   <Type type="table">
+    <Type fullname="ml_core.tests.work" name="Work" type="record"/>
+   </Type>
+  </Definition>
+  <Definition body="3581"
+              end="3643"
+              fullname="ml_core.tests.ts3"
+              inherittype="local"
+              line="97"
+              name="ts3"
+              start="3575"
+              type="attribute">
+   <Type type="table">
+    <Type fullname="ml_core.tests.work" name="Work" type="record"/>
+   </Type>
+  </Definition>
+  <Definition body="3649"
+              end="3695"
+              fullname="ml_core.tests.r1"
+              inherittype="local"
+              line="98"
+              name="r1"
+              start="3644"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="OK">
+      <Type type="boolean"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="inp_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="ecl_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="py_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="diff">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="3701"
+              end="3749"
+              fullname="ml_core.tests.r2"
+              inherittype="local"
+              line="99"
+              name="r2"
+              start="3696"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="OK">
+      <Type type="boolean"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="inp_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="ecl_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="py_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="diff">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="3755"
+              end="3803"
+              fullname="ml_core.tests.r3"
+              inherittype="local"
+              line="100"
+              name="r3"
+              start="3750"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="OK">
+      <Type type="boolean"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="inp_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="ecl_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="py_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="diff">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="3827"
+              end="4079"
+              fullname="ml_core.tests.df_cat"
+              inherittype="local"
+              line="101"
+              name="df_cat"
+              start="3804"
+              type="function">
+   <Type type="string10"/>
+   <Params>
+    <Param name="df">
+     <Type type="unsigned4"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="4086"
+              end="4300"
+              fullname="ml_core.tests.rpt"
+              inherittype="local"
+              line="106"
+              name="rpt"
+              start="4080"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="cat">
+      <Type type="string10"/>
+     </Field>
+     <Field name="tested">
+      <Type type="integer8"/>
+     </Field>
+     <Field name="Incorrect">
+      <Type type="integer8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="4310"
+              end="4357"
+              fullname="ml_core.tests.errors"
+              inherittype="local"
+              line="111"
+              name="errors"
+              start="4301"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="test">
+      <Type type="string4"/>
+     </Field>
+     <Field name="OK">
+      <Type type="boolean"/>
+     </Field>
+     <Field name="df">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="inp_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="ecl_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="py_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="diff">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="4374"
+              end="4805"
+              fullname="ml_core.tests.error_actions"
+              inherittype="local"
+              line="112"
+              name="error_actions"
+              start="4358"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+  <Definition body="4815"
+              end="4875"
+              fullname="ml_core.tests.passed"
+              inherittype="local"
+              line="120"
+              name="passed"
+              start="4806"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+  <Definition body="4897"
+              end="4940"
+              exported="1"
+              fullname="ml_core.tests.check_dist"
+              inherittype="local"
+              line="122"
+              name="Check_Dist"
+              start="4877"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+ </Source>
+</Meta>

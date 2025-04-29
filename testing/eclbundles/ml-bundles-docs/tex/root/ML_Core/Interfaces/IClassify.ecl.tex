@@ -1,0 +1,210 @@
+\chapter*{\color{headfile}
+{\large ML\_Core\slash\hspace{0pt}}
+{\large Interfaces\slash\hspace{0pt}}
+ \\
+IClassify
+}
+\hypertarget{ecldoc:toc:ML_Core.Interfaces.IClassify}{}
+\hyperlink{ecldoc:toc:root/ML_Core/Interfaces}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core |
+ML\_Core.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+IClassify}}
+
+\hypertarget{ecldoc:ML_Core.Interfaces.IClassify}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{IClassify} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Interface definition for Classification. Actual implementation modules will probably take parameters.
+
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:ml_core.interfaces.iclassify.getmodel}{GetModel}
+: Calculate the model to fit the observation data to the observed classes
+\item \hyperlink{ecldoc:ml_core.interfaces.iclassify.classify}{Classify}
+: Classify the observations using a model
+\item \hyperlink{ecldoc:ml_core.interfaces.iclassify.report}{Report}
+: Report the confusion matrix for the classifier and training data
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetModel}}
+
+\hypertarget{ecldoc:ml_core.interfaces.iclassify.getmodel}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Interfaces.IClassify}{IClassify} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Layout\_Model)} & \textbf{GetModel} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Calculate the model to fit the observation data to the observed classes.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{observations}} ||| TABLE ( NumericField ) --- the observed explanatory values
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{classifications}} ||| TABLE ( DiscreteField ) --- the observed classification used to build the model
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- the encoded model
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Classify}}
+
+\hypertarget{ecldoc:ml_core.interfaces.iclassify.classify}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Interfaces.IClassify}{IClassify} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Classify\_Result)} & \textbf{Classify} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.Layout\_Model) model, DATASET(Types.NumericField) new\_observations)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Classify the observations using a model.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{model}} ||| TABLE ( Layout\_Model ) --- The model, which must be produced by a corresponding getModel function.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{new\_observations}} ||| TABLE ( NumericField ) --- observations to be classified
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , INTEGER4 value , REAL8 conf \} )} --- Classification with a confidence value
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Report}}
+
+\hypertarget{ecldoc:ml_core.interfaces.iclassify.report}{}
+\hspace{0pt} \hyperlink{ecldoc:ML_Core.Interfaces.IClassify}{IClassify} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Confusion\_Detail)} & \textbf{Report} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Types.Layout\_Model) model, DATASET(Types.NumericField) observations, DATASET(Types.DiscreteField) classifications)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Report the confusion matrix for the classifier and training data.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{model}} ||| TABLE ( Layout\_Model ) --- the encoded model
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{observations}} ||| TABLE ( NumericField ) --- the explanatory values.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{classifications}} ||| TABLE ( DiscreteField ) --- the classifications associated with the observations
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 classifier , INTEGER4 actual\_class , INTEGER4 predict\_class , UNSIGNED4 occurs , BOOLEAN correct \} )} --- the confusion matrix showing correct and incorrect results
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

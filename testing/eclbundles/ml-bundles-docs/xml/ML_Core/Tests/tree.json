@@ -1,0 +1,39 @@
+{
+    "include_path": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Tests",
+    "input_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles",
+    "output_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs",
+    "tree": {
+        "check_dist": {
+            "key": "Check_Dist.ecl",
+            "tree": "ML_Core/Tests/Check_Dist.ecl"
+        },
+        "field_aggregates": {
+            "key": "field_aggregates.ecl",
+            "tree": "ML_Core/Tests/field_aggregates.ecl"
+        },
+        "generate": {
+            "key": "generate.ecl",
+            "tree": "ML_Core/Tests/generate.ecl"
+        },
+        "test_appends": {
+            "key": "test_appends.ecl",
+            "tree": "ML_Core/Tests/test_appends.ecl"
+        },
+        "test_discrete": {
+            "key": "test_discrete.ecl",
+            "tree": "ML_Core/Tests/test_discrete.ecl"
+        },
+        "to_from": {
+            "key": "to_from.ecl",
+            "tree": "ML_Core/Tests/to_from.ecl"
+        },
+        "validate_betas": {
+            "key": "Validate_Betas.ecl",
+            "tree": "ML_Core/Tests/Validate_Betas.ecl"
+        },
+        "validate_gammas": {
+            "key": "Validate_Gammas.ecl",
+            "tree": "ML_Core/Tests/Validate_Gammas.ecl"
+        }
+    }
+}

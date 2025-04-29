@@ -1,0 +1,37 @@
+<Meta>
+ <Source name="Inintest.Example_3" sourcePath="/home/tetrapod/source/ecldoc/testing/test/Inintest/Example_3.ecl">
+  <Definition body="19"
+              end="88"
+              exported="1"
+              fullname="Inintest.Example_3"
+              inherittype="local"
+              line="1"
+              name="Example_3"
+              start="0"
+              type="module">
+   <Definition body="43"
+               end="83"
+               exported="1"
+               fullname="Inintest.Example_3.mod_1"
+               inherittype="local"
+               line="2"
+               name="mod_1"
+               start="28"
+               type="module">
+    <Definition body="72"
+                end="77"
+                exported="1"
+                fullname="inintest.example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="3"
+                name="v2_m1_ex3"
+                start="53"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

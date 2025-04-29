@@ -1,0 +1,14 @@
+<Meta>
+ <Source sourcePath="lib_fileservices"/>
+ <Source name="system.Email" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/system/Email.ecl">
+  <Import body="0"
+          end="251"
+          fullname="lib_fileservices"
+          inherittype="local"
+          line="5"
+          name="lib_fileservices"
+          ref="lib_fileservices"
+          remotescope="1"
+          start="251"/>
+ </Source>
+</Meta>

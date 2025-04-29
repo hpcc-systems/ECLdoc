@@ -1,0 +1,14 @@
+<Meta>
+ <Source sourcePath="lib_WORKUNITSERVICES"/>
+ <Source name="system.Workunit" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/system/Workunit.ecl">
+  <Import body="0"
+          end="251"
+          fullname="lib_WORKUNITSERVICES"
+          inherittype="local"
+          line="5"
+          name="lib_WORKUNITSERVICES"
+          ref="lib_WORKUNITSERVICES"
+          remotescope="1"
+          start="251"/>
+ </Source>
+</Meta>

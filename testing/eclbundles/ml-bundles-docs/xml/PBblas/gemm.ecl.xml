@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Types.ecl" name="PBblas.internal.Types" target="internal/Types.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl" name="std.BLAS" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl" name="std.system.Thorlib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensions.ecl" name="PBblas.internal.BlockDimensions" target="internal/BlockDimensions.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsMultiply.ecl" name="PBblas.internal.BlockDimensionsMultiply" target="internal/BlockDimensionsMultiply.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsSolve.ecl" name="PBblas.internal.BlockDimensionsSolve" target="internal/BlockDimensionsSolve.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MatDims.ecl" name="PBblas.internal.MatDims" target="internal/MatDims.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MakeR8Set.ecl" name="PBblas.internal.MakeR8Set" target="internal/MakeR8Set.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Converted.ecl" name="PBblas.internal.Converted" target="internal/Converted.ecl.xml"/><Source name="PBblas.gemm" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/gemm.ecl" target="gemm.ecl.xml">
+  <Import name="PBblas" ref="PBblas" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/pkg.toc.xml"/>
+  <Import name="Types" ref="PBblas.Types" target="Types.ecl.xml">
+   </Import>
+  <Import name="int" ref="PBblas.internal" remotescope="1" target="internal/pkg.toc.xml"/>
+  <Import name="iTypes" ref="PBblas.internal.Types" target="internal/Types.ecl.xml">
+   </Import>
+  <Import name="BLAS" ref="std.blas" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl"/>
+  <Import name="MatDims" ref="PBblas.internal.MatDims" target="internal/MatDims.ecl.xml">
+   </Import>
+  <Import name="Thorlib" ref="std.system.Thorlib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/>
+  <Definition exported="1" fullname="pbblas.gemm" inherittype="local" line="65" name="gemm" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi_id">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="x">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="y">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="v">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Extended Parallel Block Matrix Multiplication Module Implements: Result = alpha * op(A)op(B) + beta * C. op is No Transpose or Transpose. Multiplies two matrixes A and B, with an optional pre-multiply transpose for each Optionally scales the product by the scalar "alpha". Then adds an optional C matrix to the product after scaling C by the scalar "beta". A, B, and C are specified as DATASET(Layout_Cell), as is the Resulting matrix. Layout_Cell describes a sparse matrix stored as a list of x, y, and value. This interface also provides a "Myriad" capability allowing multiple similar operations to be performed on independent sets of matrixes in parallel. This is done by use of the work-item id (wi_id) in each cell of the matrixes. Cells with the same wi_id are considered part of the same matrix. In the myriad form, each input matrix A, B, and (optionally) C can contain many independent matrixes. The wi_ids are matched up such that each operation involves the A, B, and C with the same wi_id. A and B must therefore contain the same set of wi_ids, while C is optional for any wi_id. The same parameters: alpha, beta, transposeA, and transposeB are used for all work-items. The result will contain cells from all provided work-items. Result has same shape as C if provided. Note that matrixes are not explicitly dimensioned. The shape is determined by the highest value of x and y for each work-item.</content><return>Result matrix in Layout_Cell format.</return><param>transposeA Boolean indicating whether matrix A should be transposed before multiplying</param><param>transposeB Same as above but for matrix B</param><param>alpha Scalar multiplier for alpha * A * B</param><param>A_in 'A' matrix (multiplier) in Layout_Cell format</param><param>B_in Same as above for the 'B' matrix (multiplicand)</param><param>C_in Same as above for the 'C' matrix (addend). May be omitted.</param><param>beta A scalar multiplier for beta * C, scales the C matrix before addition. May be omitted.</param><firstline>Extended Parallel Block Matrix Multiplication Module Implements: Result = alpha * op(A)op(B) + beta * C</firstline><see>PBblas/Types.Layout_Cell</see></Documentation>
+   <Signature name="gemm" ret="DATASET(Layout_Cell)" param="(BOOLEAN transposeA, BOOLEAN transposeB, value_t alpha, DATASET(Layout_Cell) A_in, DATASET(Layout_Cell) B_in, DATASET(Layout_Cell) C_in=emptyC, value_t beta=0.0)" hlen="25">DATASET(Layout_Cell) gemm(BOOLEAN transposeA, BOOLEAN transposeB, value_t alpha, DATASET(Layout_Cell) A_in, DATASET(Layout_Cell) B_in, DATASET(Layout_Cell) C_in=emptyC, value_t beta=0.0)</Signature><Params>
+    <Param name="transposeA">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="transposeB">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="alpha">
+     <Type type="real8"/>
+    </Param>
+    <Param name="A_in">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+    <Param name="B_in">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+    <Param name="C_in">
+     <Type type="table">
+      <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+     </Type>
+    </Param>
+    <Param name="beta">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Extended Parallel Block Matrix Multiplication Module Implements: Result = alpha * op(A)op(B) + beta * C. op is No Transpose or Transpose. Multiplies two matrixes A and B, with an optional pre-multiply transpose for each Optionally scales the product by the scalar "alpha". Then adds an optional C matrix to the product after scaling C by the scalar "beta". A, B, and C are specified as DATASET(Layout_Cell), as is the Resulting matrix. Layout_Cell describes a sparse matrix stored as a list of x, y, and value. This interface also provides a "Myriad" capability allowing multiple similar operations to be performed on independent sets of matrixes in parallel. This is done by use of the work-item id (wi_id) in each cell of the matrixes. Cells with the same wi_id are considered part of the same matrix. In the myriad form, each input matrix A, B, and (optionally) C can contain many independent matrixes. The wi_ids are matched up such that each operation involves the A, B, and C with the same wi_id. A and B must therefore contain the same set of wi_ids, while C is optional for any wi_id. The same parameters: alpha, beta, transposeA, and transposeB are used for all work-items. The result will contain cells from all provided work-items. Result has same shape as C if provided. Note that matrixes are not explicitly dimensioned. The shape is determined by the highest value of x and y for each work-item.</content><return>Result matrix in Layout_Cell format.</return><param>transposeA Boolean indicating whether matrix A should be transposed before multiplying</param><param>transposeB Same as above but for matrix B</param><param>alpha Scalar multiplier for alpha * A * B</param><param>A_in 'A' matrix (multiplier) in Layout_Cell format</param><param>B_in Same as above for the 'B' matrix (multiplicand)</param><param>C_in Same as above for the 'C' matrix (addend). May be omitted.</param><param>beta A scalar multiplier for beta * C, scales the C matrix before addition. May be omitted.</param><firstline>Extended Parallel Block Matrix Multiplication Module Implements: Result = alpha * op(A)op(B) + beta * C</firstline><see>PBblas/Types.Layout_Cell</see></Documentation>
+   </Source>
+</Meta>

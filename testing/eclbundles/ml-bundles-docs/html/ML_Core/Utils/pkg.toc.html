@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <title>Utils</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar topbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#menu-toggle" id="menu-toggle" class="navbar-brand glyphicon glyphicon-menu-hamburger ham"></a>
+            </div>
+            <div class="navbar-header" style="margin-left : 20px;">
+                <span class="navbar-brand">
+                
+                Utils
+                </span>
+            </div>
+        </div>
+    </nav>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../pkg.toc.html">
+                        Up
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="Fat.ecl.html">Fat.ecl</a>
+                </li>
+                
+                <li>
+                    <a href="FatD.ecl.html">FatD.ecl</a>
+                </li>
+                
+                <li>
+                    <a href="Gini.ecl.html">Gini.ecl</a>
+                </li>
+                
+                <li>
+                    <a href="SequenceInField.ecl.html">SequenceInField.ecl</a>
+                </li>
+                
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            
+                            <tr>
+                                <td>
+                                    
+                                    <span class="glyphicon glyphicon-file"></span>
+                                    
+                                </td>
+                                <td><a href="Fat.ecl.html">Fat.ecl</a></td>
+                                <td>Will take a potentially sparse file d and fill in the missing</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    
+                                    <span class="glyphicon glyphicon-file"></span>
+                                    
+                                </td>
+                                <td><a href="FatD.ecl.html">FatD.ecl</a></td>
+                                <td>Will take a potentially sparse file d and fill in the missing</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    
+                                    <span class="glyphicon glyphicon-file"></span>
+                                    
+                                </td>
+                                <td><a href="Gini.ecl.html">Gini.ecl</a></td>
+                                <td>Creates a file of pivot/target pairs with a Gini impurity value</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    
+                                    <span class="glyphicon glyphicon-file"></span>
+                                    
+                                </td>
+                                <td><a href="SequenceInField.ecl.html">SequenceInField.ecl</a></td>
+                                <td>Given a file which is sorted by the work item identifier and INFIELD (and possibly other values), add sequence numbers within the range of each infield</td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.tree-link').click(function(e) {
+                var loc = $(this).attr('href');
+                $(loc).parents().collapse('show');
+                return true;
+            });
+        });
+    </script>
+</body>
+</html>

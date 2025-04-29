@@ -1,0 +1,48 @@
+<Meta>
+ <Source name="ML_Core.Config" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Config.ecl">
+  <Definition body="115"
+              end="310"
+              exported="1"
+              fullname="ML_Core.Config"
+              inherittype="local"
+              line="3"
+              name="Config"
+              start="99"
+              type="module">
+   <Definition body="144"
+               end="156"
+               exported="1"
+               fullname="ml_core.config.maxlookup"
+               inherittype="local"
+               line="4"
+               name="MaxLookup"
+               start="125"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="207"
+               end="211"
+               exported="1"
+               fullname="ml_core.config.discrete"
+               inherittype="local"
+               line="5"
+               name="Discrete"
+               start="189"
+               type="attribute">
+    <Type type="integer8"/>
+   </Definition>
+   <Definition body="291"
+               end="305"
+               exported="1"
+               fullname="ml_core.config.roundingerror"
+               inherittype="local"
+               line="6"
+               name="RoundingError"
+               start="268"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

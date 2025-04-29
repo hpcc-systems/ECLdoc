@@ -1,0 +1,84 @@
+IMPORTS
+=======
+
+
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <Types.ecl.txt>
+ML_Core.Types <../ML_Core/Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : Converted
+----------------------------------------------------------------------------------------------------------------------------------
+
+Module to convert between ML_Core/Types Field layouts (i.e. NumericField
+and DiscreteField) and PBblas matrix layout (i.e. Layout_Cell)
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(Layout_Cell) NFToMatrix(DATASET(NumericField) recs)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Convert NumericField dataset to Matrix
+  | 
+  | Parameter : recs TABLE ( NumericField ) --- Record Dataset in
+  |                  DATASET(NumericField) format
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+  |          UNSIGNED4 y , REAL8 v } ) Matrix in
+  |          DATASET(Layout_Cell) format
+  | 
+  | See : PBblas/Types.Layout_Cell
+  | 
+  | See : ML_Core/Types.NumericField
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(Layout_Cell) DFToMatrix(DATASET(DiscreteField) recs)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Convert DiscreteField dataset to Matrix
+  | 
+  | Parameter : recs TABLE ( DiscreteField ) --- Record Dataset in
+  |                  DATASET(DiscreteField) format
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+  |          UNSIGNED4 y , REAL8 v } ) Matrix in
+  |          DATASET(Layout_Cell) format
+  | 
+  | See : PBblas/Types.Layout_Cell
+  | 
+  | See : ML_Core/Types.DiscreteField
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(NumericField) MatrixToNF(DATASET(Layout_Cell) mat)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Convert Matrix to NumericField dataset
+  | 
+  | Parameter : mat TABLE ( Layout_Cell ) --- Matrix in
+  |                 DATASET(Layout_Cell) format
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value } ) NumericField Dataset
+  | 
+  | See : PBblas/Types.Layout_Cell
+  | 
+  | See : ML_Core/Types.NumericField
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : DATASET(DiscreteField) MatrixToDF(DATASET(Layout_Cell) mat)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Convert Matrix to DiscreteField dataset
+  | 
+  | Parameter : mat TABLE ( Layout_Cell ) --- Matrix in
+  |                 DATASET(Layout_Cell) format
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , INTEGER4 value } ) DiscreteField Dataset
+  | 
+  | See : PBblas/Types.Layout_Cell
+  | 
+  | See : ML_Core/Types.DiscreteField
+  | 

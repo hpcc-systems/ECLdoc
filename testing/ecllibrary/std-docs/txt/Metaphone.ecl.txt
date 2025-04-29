@@ -1,0 +1,57 @@
+IMPORTS
+=======
+
+
+lib_metaphone <lib_metaphone/pkg.toc.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : Metaphone
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : String primary(STRING src)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the primary metaphone value
+  | 
+  | Parameter : src STRING --- The string whose metphone is to be
+  |                 calculated.
+  | 
+  | Return : STRING
+  | 
+  | See : http://en.wikipedia.org/wiki/Metaphone#Double_Meta
+  |       phone
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : String secondary(STRING src)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the secondary metaphone value
+  | 
+  | Parameter : src STRING --- The string whose metphone is to be
+  |                 calculated.
+  | 
+  | Return : STRING
+  | 
+  | See : http://en.wikipedia.org/wiki/Metaphone#Double_Meta
+  |       phone
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : String double(STRING src)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the double metaphone value (primary and secondary concatenated
+  | 
+  | Parameter : src STRING --- The string whose metphone is to be
+  |                 calculated.
+  | 
+  | Return : STRING
+  | 
+  | See : http://en.wikipedia.org/wiki/Metaphone#Double_Meta
+  |       phone
+  | 

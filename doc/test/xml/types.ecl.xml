@@ -1,0 +1,457 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="types" sourcePath="/home/tetrapod/source/ecldoc/testing/test/types.ecl" target="types.ecl.xml">
+  <Definition exported="1" fullname="types" inherittype="local" line="1" name="types" type="module">
+   <Definition exported="1" fullname="types.v1" inherittype="local" line="2" name="v1" type="record">
+    <Field name="u">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="v1" ret="" param="" hlen="2">v1</Signature><Field name="v">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_1" inherittype="local" line="7" name="mod_1" type="attribute">
+    <Signature name="mod_1" ret="DATASET(v1)" param="" hlen="17">DATASET(v1) mod_1</Signature><Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="u">
+       <Type type="real8"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_1_1" inherittype="local" line="15" name="mod_1_1" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="u">
+       <Type type="real8"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="mod_1_1" ret="" param="(TYPEOF(mod_1) x)" hlen="7">mod_1_1(TYPEOF(mod_1) x)</Signature><Params>
+     <Param name="x">
+      <Type type="table">
+       <Type type="record" unnamed="1">
+        <Field name="u">
+         <Type type="real8"/>
+        </Field>
+        <Field name="v">
+         <Type type="real8"/>
+        </Field>
+       </Type>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_2" inherittype="local" line="17" name="mod_2" type="attribute">
+    <Signature name="mod_2" ret="DATASET({STRING20 a})" param="" hlen="27">DATASET({STRING20 a}) mod_2</Signature><Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="a">
+       <Type type="string20"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition exported="1" inherittype="local" line="19" name="mod_3" type="attribute" fullname="ecldoc-mod_3">
+    <Signature name="mod_3" ret="" param="" hlen="5">mod_3</Signature><Type type="unsigned8"/>
+   </Definition>
+   <Definition exported="1" inherittype="local" line="21" name="mod_4" type="attribute" fullname="ecldoc-mod_4">
+    <Signature name="mod_4" ret="" param="" hlen="5">mod_4</Signature><Type type="unsigned8"/>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_41" inherittype="local" line="23" name="mod_41" type="module">
+    <Definition exported="1" fullname="types.mod_41.v41" inherittype="local" line="24" name="v41" type="attribute">
+     <Signature name="v41" ret="" param="" hlen="3">v41</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="mod_41" ret="" param="" hlen="6">mod_41</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_5" inherittype="local" line="32" name="mod_5" type="module">
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+    <Parents/>
+    <Definition exported="1" fullname="types.mod_5.v6" inherittype="local" line="33" name="v6" type="attribute">
+     <Signature name="v6" ret="" param="" hlen="2">v6</Signature><Type type="real8"/>
+    </Definition>
+    <Signature name="mod_5" ret="" param="(REAL8 x)" hlen="5">mod_5(REAL8 x)</Signature><Documentation>
+     <firstline>mod_5</firstline><return>module</return><param>x abcd</param><content>mod_5</content></Documentation>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_6" inherittype="local" line="36" name="mod_6" type="module">
+    <Definition exported="1" fullname="types.mod_5.v6" inherittype="local" line="33" name="v6" type="attribute">
+     <Signature name="v6" ret="" param="" hlen="2">v6</Signature><Type type="real8"/>
+    </Definition>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+    <Signature name="mod_6" ret="" param="(REAL8 x)" hlen="5">mod_6(REAL8 x)</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_7" inherittype="local" line="38" name="mod_7" type="function">
+    <Type type="real8"/>
+    <Signature name="mod_7" ret="" param="(mod_5 y, REAL8 z)" hlen="5">mod_7(mod_5 y, REAL8 z)</Signature><Params>
+     <Param name="y">
+      <Type type="function">
+       <Type fullname="types.mod_5" name="mod_5" type="module"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+     <Param name="z">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_8" inherittype="local" line="42" name="mod_8" type="function">
+    <Type type="integer8"/>
+    <Signature name="mod_8" ret="" param="(mod_3 a1)" hlen="5">mod_8(mod_3 a1)</Signature><Params>
+     <Param name="a1">
+      <Type type="unsigned8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_9" inherittype="local" line="44" name="mod_9" type="function">
+    <Type type="real8"/>
+    <Signature name="mod_9" ret="" param="(mod_7 x)" hlen="5">mod_9(mod_7 x)</Signature><Params>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="function">
+         <Type fullname="types.mod_5" name="mod_5" type="module"/>
+         <Params>
+          <Type type="real8"/>
+         </Params>
+        </Type>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_90" inherittype="local" line="46" name="mod_90" type="function">
+    <Type type="real8"/>
+    <Signature name="mod_90" ret="" param="(REAL8 z)" hlen="6">mod_90(REAL8 z)</Signature><Params>
+     <Param name="z">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_10" inherittype="local" line="55" name="mod_10" type="record">
+    <Signature name="mod_10" ret="" param="" hlen="6">mod_10</Signature><Field name="u">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_11" inherittype="local" line="59" name="mod_11" type="function">
+    <Type type="table">
+     <Type fullname="types.mod_10" name="mod_10" type="record"/>
+    </Type>
+    <Signature name="mod_11" ret="" param="(DATASET(mod_10) y)" hlen="6">mod_11(DATASET(mod_10) y)</Signature><Params>
+     <Param name="y">
+      <Type type="table">
+       <Type fullname="types.mod_10" name="mod_10" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.d1" inherittype="local" line="61" name="D1" type="attribute">
+    <Signature name="D1" ret="" param="" hlen="2">D1</Signature><Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="F1">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="f2">
+       <Type type="real8"/>
+      </Field>
+      <Field name="f3">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_12" inherittype="local" line="63" name="mod_12" type="record">
+    <Field name="F1">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="mod_12" ret="" param="" hlen="6">mod_12</Signature><Field name="gcount">
+     <Type type="integer8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_13" inherittype="local" line="68" name="mod_13" type="attribute">
+    <Signature name="mod_13" ret="" param="" hlen="6">mod_13</Signature><Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="F1">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="gcount">
+       <Type type="integer8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition exported="1" fullname="types.v2" inherittype="local" line="70" name="v2" type="record">
+    <Field name="w1">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w2">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="v2" ret="" param="" hlen="2">v2</Signature><Field name="w3">
+     <Type type="unsigned4"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="types.v1tov2" inherittype="local" line="76" name="v1tov2" type="transform">
+    <Type fullname="types.v2" name="v2" type="record"/>
+    <Signature name="v1tov2" ret="v2" param="(v1 x)" hlen="9">v2 v1tov2(v1 x)</Signature><Params>
+     <Param name="x">
+      <Type type="row">
+       <Type fullname="types.v1" name="v1" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_14" inherittype="local" line="82" name="mod_14" type="attribute">
+    <Signature name="mod_14" ret="TYPEOF(mod_1)" param="" hlen="20">TYPEOF(mod_1) mod_14</Signature><Type type="table">
+     <Type fullname="types.v1" name="v1" type="record"/>
+    </Type>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_15" inherittype="local" line="87" name="mod_15" type="attribute">
+    <Signature name="mod_15" ret="DATASET(v3)" param="" hlen="18">DATASET(v3) mod_15</Signature><Type type="table">
+     <Type fullname="types.v3" name="v3" type="record"/>
+    </Type>
+   </Definition>
+   <Definition exported="1" fullname="types.v4" inherittype="local" line="89" name="v4" type="record">
+    <Field name="w1">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w2">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w3">
+     <Type type="unsigned4"/>
+    </Field>
+    <Signature name="v4" ret="" param="" hlen="2">v4</Signature><Field name="w4">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="types.v5" inherittype="local" line="93" name="v5" type="record">
+    <Field name="u">
+     <Type type="real8"/>
+    </Field>
+    <Field name="v">
+     <Type type="real8"/>
+    </Field>
+    <Field name="w1">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w2">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w3">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w4">
+     <Type type="real8"/>
+    </Field>
+    <Signature name="v5" ret="" param="" hlen="2">v5</Signature><Field name="w5">
+     <Type type="table">
+      <Type fullname="types.v2" name="v2" type="record"/>
+     </Type>
+    </Field>
+   </Definition>
+   <Definition exported="1" fullname="types.v5_1" inherittype="local" line="99" name="v5_1" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="u">
+       <Type type="real8"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+      <Field name="w1">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="w2">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="w3">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="w4">
+       <Type type="real8"/>
+      </Field>
+      <Field name="w5">
+       <Type type="table">
+        <Type fullname="types.v2" name="v2" type="record"/>
+       </Type>
+      </Field>
+      <Field name="y">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Signature name="v5_1" ret="" param="(DATASET({v5, real8 y}) x)" hlen="4">v5_1(DATASET({v5, real8 y}) x)</Signature><Params>
+     <Param name="x">
+      <Type type="table">
+       <Type type="record" unnamed="1">
+        <Field name="u">
+         <Type type="real8"/>
+        </Field>
+        <Field name="v">
+         <Type type="real8"/>
+        </Field>
+        <Field name="w1">
+         <Type type="unsigned4"/>
+        </Field>
+        <Field name="w2">
+         <Type type="unsigned4"/>
+        </Field>
+        <Field name="w3">
+         <Type type="unsigned4"/>
+        </Field>
+        <Field name="w4">
+         <Type type="real8"/>
+        </Field>
+        <Field name="w5">
+         <Type type="table">
+          <Type fullname="types.v2" name="v2" type="record"/>
+         </Type>
+        </Field>
+        <Field name="y">
+         <Type type="real8"/>
+        </Field>
+       </Type>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_17" inherittype="local" line="101" name="mod_17" type="transform">
+    <Type type="record" unnamed="1">
+     <Field name="a">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+    <Signature name="mod_17" ret="{ REAL8 a }" param="(v1 x)" hlen="18">{ REAL8 a } mod_17(v1 x)</Signature><Params>
+     <Param name="x">
+      <Type type="row">
+       <Type fullname="types.v1" name="v1" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_18" inherittype="local" line="105" name="mod_18" type="function">
+    <Type type="real8"/>
+    <Signature name="mod_18" ret="" param="(REAL8 x(REAL8 z), REAL8 y)" hlen="6">mod_18(REAL8 x(REAL8 z), REAL8 y)</Signature><Params>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+     <Param name="y">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_19" inherittype="local" line="109" name="mod_19" type="function">
+    <Type type="real8"/>
+    <Signature name="mod_19" ret="" param="(REAL8 w)" hlen="6">mod_19(REAL8 w)</Signature><Params>
+     <Param name="w">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_20" inherittype="local" line="111" name="mod_20" type="function">
+    <Type type="real8"/>
+    <Signature name="mod_20" ret="" param="(mod_19 x)" hlen="6">mod_20(mod_19 x)</Signature><Params>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_21" inherittype="local" line="113" name="mod_21" type="attribute">
+    <Signature name="mod_21" ret="" param="" hlen="6">mod_21</Signature><Type type="real8"/>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_22" inherittype="local" line="115" name="mod_22" type="function">
+    <Type type="real8"/>
+    <Signature name="mod_22" ret="" param="(REAL8 w)" hlen="6">mod_22(REAL8 w)</Signature><Params>
+     <Param name="w">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_23" inherittype="local" line="117" name="mod_23" type="attribute">
+    <Signature name="mod_23" ret="" param="" hlen="6">mod_23</Signature><Type type="real8"/>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_24" inherittype="local" line="119" name="mod_24" type="function">
+    <Type type="real8"/>
+    <Signature name="mod_24" ret="" param="(REAL8 y(REAL8 z(REAL8 u)), REAL8 x(REAL8 y))" hlen="6">mod_24(REAL8 y(REAL8 z(REAL8 u)), REAL8 x(REAL8 y))</Signature><Params>
+     <Param name="y">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="function">
+         <Type type="real8"/>
+         <Params>
+          <Type type="real8"/>
+         </Params>
+        </Type>
+       </Params>
+      </Type>
+     </Param>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_25" inherittype="local" line="121" name="mod_25" type="function">
+    <Type type="real8"/>
+    <Signature name="mod_25" ret="REAL8" param="(REAL8 x(REAL8 y))" hlen="12">REAL8 mod_25(REAL8 x(REAL8 y))</Signature><Params>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_26" inherittype="local" line="123" name="mod_26" type="attribute">
+    <Signature name="mod_26" ret="" param="" hlen="6">mod_26</Signature><Type type="real8"/>
+   </Definition>
+   <Definition exported="1" fullname="types.mod_27" inherittype="local" line="125" name="mod_27" type="attribute">
+    <Signature name="mod_27" ret="mod_1" param="" hlen="12">mod_1 mod_27</Signature><Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="u">
+       <Type type="real8"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Signature name="types" ret="" param="" hlen="5">types</Signature><Parents/>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

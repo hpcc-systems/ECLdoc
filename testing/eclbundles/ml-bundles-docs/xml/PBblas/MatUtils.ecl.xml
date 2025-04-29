@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/Types.ecl" name="PBblas.Types" target="Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/Types.ecl" name="PBblas.internal.Types" target="internal/Types.ecl.xml"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl" name="std.system.Thorlib" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensions.ecl" name="PBblas.internal.BlockDimensions" target="internal/BlockDimensions.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsMultiply.ecl" name="PBblas.internal.BlockDimensionsMultiply" target="internal/BlockDimensionsMultiply.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/BlockDimensionsSolve.ecl" name="PBblas.internal.BlockDimensionsSolve" target="internal/BlockDimensionsSolve.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/internal/MatDims.ecl" name="PBblas.internal.MatDims" target="internal/MatDims.ecl.xml"/><Source name="PBblas.MatUtils" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/PBblas/MatUtils.ecl" target="MatUtils.ecl.xml">
+  <Import name="PBblas" ref="PBblas" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/PBblas/pkg.toc.xml"/>
+  <Import name="Types" ref="PBblas.Types" target="Types.ecl.xml">
+   </Import>
+  <Import name="int" ref="PBblas.internal" remotescope="1" target="internal/pkg.toc.xml"/>
+  <Import name="iTypes" ref="PBblas.internal.Types" target="internal/Types.ecl.xml">
+   </Import>
+  <Import name="MatDims" ref="PBblas.internal.MatDims" target="internal/MatDims.ecl.xml">
+   </Import>
+  <Definition exported="1" fullname="PBblas.MatUtils" inherittype="local" line="22" name="MatUtils" type="module">
+   <Definition exported="1" fullname="pbblas.matutils.getworkitems" inherittype="local" line="35" name="GetWorkItems" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi_id">
+       <Type type="unsigned2"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Get a list of work-item ids from a matrix containing one or more work items</content><return>DATASET(Layout_WI_ID), one record per work-item</return><param>cells A matrix in Layout_Cell format</param><firstline>Get a list of work-item ids from a matrix containing one or more work items</firstline><see>PBblas/Types.Layout_Cell</see><see>PBblas/Types.Layout_WI_ID</see></Documentation>
+    <Signature name="GetWorkItems" ret="DATASET(Layout_WI_ID)" param="(DATASET(Layout_Cell) cells)" hlen="34">DATASET(Layout_WI_ID) GetWorkItems(DATASET(Layout_Cell) cells)</Signature><Params>
+     <Param name="cells">
+      <Type type="table">
+       <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.matutils.insertcols" inherittype="local" line="57" name="InsertCols" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi_id">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="x">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="y">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Insert one or more columns of a fixed value into a matrix. Columns are inserted before the first original column. This attribute supports the myriad interface. Multiple independent matrixes can be represented by M.</content><return>matrix in Layout_Cell format with additional column(s)</return><param>M the input matrix</param><param>cols_to_insert the number of columns to insert, default 1</param><param>insert_val the value for each cell of the new column(s), default 0</param><firstline>Insert one or more columns of a fixed value into a matrix</firstline></Documentation>
+    <Signature name="InsertCols" ret="DATASET(Layout_Cell)" param="(DATASET(Layout_Cell) M, UNSIGNED cols_to_insert=1, value_t insert_val=1)" hlen="31">DATASET(Layout_Cell) InsertCols(DATASET(Layout_Cell) M, UNSIGNED cols_to_insert=1, value_t insert_val=1)</Signature><Params>
+     <Param name="M">
+      <Type type="table">
+       <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+      </Type>
+     </Param>
+     <Param name="cols_to_insert">
+      <Type type="unsigned8"/>
+     </Param>
+     <Param name="insert_val">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition exported="1" fullname="pbblas.matutils.transpose" inherittype="local" line="96" name="Transpose" type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="wi_id">
+       <Type type="unsigned2"/>
+      </Field>
+      <Field name="x">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="y">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Documentation>
+     <content>Transpose a matrix This attribute supports the myriad interface. Multiple independent matrixes can be represented by M.</content><return>Transposed matrix in Layout_Cell format</return><param>M A matrix represented as DATASET(Layout_Cell)</param><firstline>Transpose a matrix This attribute supports the myriad interface</firstline><see>PBblas/Types.Layout_Cell</see></Documentation>
+    <Signature name="Transpose" ret="DATASET(Layout_Cell)" param="(DATASET(Layout_Cell) M)" hlen="30">DATASET(Layout_Cell) Transpose(DATASET(Layout_Cell) M)</Signature><Params>
+     <Param name="M">
+      <Type type="table">
+       <Type fullname="pbblas.layout_cell" name="Layout_Cell" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Documentation>
+    <content>Provides various utility attributes for manipulating cell-based matrixes</content><firstline>Provides various utility attributes for manipulating cell-based matrixes</firstline><see>Std/PBblas/Types.Layout_Cell</see></Documentation>
+   <Signature name="MatUtils" ret="" param="" hlen="8">MatUtils</Signature><Parents/>
+  </Definition>
+ <Documentation>
+    <content>Provides various utility attributes for manipulating cell-based matrixes</content><firstline>Provides various utility attributes for manipulating cell-based matrixes</firstline><see>Std/PBblas/Types.Layout_Cell</see></Documentation>
+   </Source>
+</Meta>

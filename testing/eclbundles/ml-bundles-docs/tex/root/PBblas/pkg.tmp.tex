@@ -1,0 +1,114 @@
+\chapter*{\color{headtoc} PBblas}
+\hypertarget{ecldoc:toc:root/PBblas}{}
+\hyperlink{ecldoc:toc:}{Go Up}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+Name &
+PBblas
+ \\
+\hline
+Version &
+3.0.1
+ \\
+\hline
+Description &
+Parallel Block Basic Linear Algebra Subsystem
+ \\
+\hline
+License &
+\url{http://www.apache.org/licenses/LICENSE-2.0}
+ \\
+\hline
+Copyright &
+Copyright (C) 2016, 2017 HPCC Systems
+ \\
+\hline
+Authors &
+HPCCSystems
+ \\
+\hline
+DependsOn &
+ML\_Core
+ \\
+\hline
+Platform &
+6.2.0
+ \\
+\hline
+\end{tabularx}
+
+\section*{Table of Contents}
+{\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{|p{\textwidth}|}
+\hline
+\hyperlink{ecldoc:toc:PBblas.Apply2Elements}{Apply2Elements.ecl} \\
+Apply a function to each element of the matrix Use PBblas.IElementFunc as the prototype function \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.asum}{asum.ecl} \\
+Absolute sum -- the ''Entrywise'' 1-norm \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.axpy}{axpy.ecl} \\
+Implements alpha*X + Y \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.Constants}{Constants.ecl} \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.Converted}{Converted.ecl} \\
+Module to convert between ML\_Core/Types Field layouts (i.e \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.ExtractTri}{ExtractTri.ecl} \\
+Extract the upper or lower triangle from the composite output from getrf (LU Factorization) \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.gemm}{gemm.ecl} \\
+Extended Parallel Block Matrix Multiplication Module Implements: Result = alpha * op(A)op(B) + beta * C \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.getrf}{getrf.ecl} \\
+LU Factorization Splits a matrix into Lower and Upper triangular factors Produces composite LU matrix for the diagonal blocks \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.HadamardProduct}{HadamardProduct.ecl} \\
+Element-wise multiplication of X * Y \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.IElementFunc}{IElementFunc.ecl} \\
+Function prototype for a function to apply to each element of the \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.MatUtils}{MatUtils.ecl} \\
+Provides various utility attributes for manipulating cell-based matrixes \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.potrf}{potrf.ecl} \\
+Implements Cholesky factorization of A = U**T * U if Triangular.Upper requested or A = L * L**T if Triangualr.Lower is requested \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.scal}{scal.ecl} \\
+Scale a matrix by a constant Result is alpha * X This supports a ''myriad'' style interface in that X may be a set of independent matrices separated by different work-item ids \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.tran}{tran.ecl} \\
+Transpose a matrix and sum into base matrix \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.trsm}{trsm.ecl} \\
+Partitioned block parallel triangular matrix solver \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.Types}{Types.ecl} \\
+Types for the Parallel Block Basic Linear Algebra Sub-programs support WARNING: attributes marked with WARNING can not be changed without making corresponding changes to the C++ attributes \\
+\hline
+\hyperlink{ecldoc:toc:PBblas.Vector2Diag}{Vector2Diag.ecl} \\
+Convert a vector into a diagonal matrix \\
+\hline
+\end{longtable}
+}
+
+\input{root/PBblas/Apply2Elements.ecl}
+\input{root/PBblas/asum.ecl}
+\input{root/PBblas/axpy.ecl}
+\input{root/PBblas/Constants.ecl}
+\input{root/PBblas/Converted.ecl}
+\input{root/PBblas/ExtractTri.ecl}
+\input{root/PBblas/gemm.ecl}
+\input{root/PBblas/getrf.ecl}
+\input{root/PBblas/HadamardProduct.ecl}
+\input{root/PBblas/IElementFunc.ecl}
+\input{root/PBblas/MatUtils.ecl}
+\input{root/PBblas/potrf.ecl}
+\input{root/PBblas/scal.ecl}
+\input{root/PBblas/tran.ecl}
+\input{root/PBblas/trsm.ecl}
+\input{root/PBblas/Types.ecl}
+\input{root/PBblas/Vector2Diag.ecl}

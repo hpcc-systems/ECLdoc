@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="root">
+  <file name="mod_1.ecl.xml">mod_1.ecl</file>
+  <file name="import_test.ecl.xml">import_test.ecl</file>
+  <file name="import_test_2.ecl.xml">import_test_2.ecl</file>
+  <file name="mod_2.ecl.xml">mod_2.ecl</file>
+</folder>

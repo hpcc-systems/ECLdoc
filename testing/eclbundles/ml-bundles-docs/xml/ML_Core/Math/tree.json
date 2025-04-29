@@ -1,0 +1,51 @@
+{
+    "include_path": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math",
+    "input_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles",
+    "output_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs",
+    "tree": {
+        "beta": {
+            "key": "Beta.ecl",
+            "tree": "ML_Core/Math/Beta.ecl"
+        },
+        "distributions": {
+            "key": "Distributions.ecl",
+            "tree": "ML_Core/Math/Distributions.ecl"
+        },
+        "doublefac": {
+            "key": "DoubleFac.ecl",
+            "tree": "ML_Core/Math/DoubleFac.ecl"
+        },
+        "fac": {
+            "key": "Fac.ecl",
+            "tree": "ML_Core/Math/Fac.ecl"
+        },
+        "gamma": {
+            "key": "gamma.ecl",
+            "tree": "ML_Core/Math/gamma.ecl"
+        },
+        "log_gamma": {
+            "key": "log_gamma.ecl",
+            "tree": "ML_Core/Math/log_gamma.ecl"
+        },
+        "lowergamma": {
+            "key": "lowerGamma.ecl",
+            "tree": "ML_Core/Math/lowerGamma.ecl"
+        },
+        "nck": {
+            "key": "NCK.ecl",
+            "tree": "ML_Core/Math/NCK.ecl"
+        },
+        "poly": {
+            "key": "Poly.ecl",
+            "tree": "ML_Core/Math/Poly.ecl"
+        },
+        "stirlingformula": {
+            "key": "StirlingFormula.ecl",
+            "tree": "ML_Core/Math/StirlingFormula.ecl"
+        },
+        "uppergamma": {
+            "key": "upperGamma.ecl",
+            "tree": "ML_Core/Math/upperGamma.ecl"
+        }
+    }
+}

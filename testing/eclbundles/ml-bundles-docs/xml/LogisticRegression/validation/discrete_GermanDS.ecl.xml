@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../../ML_Core/Types.ecl.xml"/><Source name="LogisticRegression.validation.discrete_GermanDS" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/validation/discrete_GermanDS.ecl" target="discrete_GermanDS.ecl.xml">
+  <Definition exported="1" fullname="LogisticRegression.validation.discrete_GermanDS" inherittype="local" line="3" name="discrete_GermanDS" type="module">
+   <Definition exported="1" fullname="logisticregression.validation.discrete_germands.content" inherittype="local" line="32" name="content" type="attribute">
+    <Signature name="content" ret="" param="" hlen="7">content</Signature><Type type="table">
+     <Type fullname="logisticregression.validation.discrete_germands.discrete_germanrecord" name="discrete_GermanRECORD" type="record"/>
+    </Type>
+   </Definition>
+   <Signature name="discrete_GermanDS" ret="" param="" hlen="17">discrete_GermanDS</Signature><Parents/>
+  </Definition>
+  <Import name="Types" ref="ML_Core.Types" target="../../ML_Core/Types.ecl.xml"/>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

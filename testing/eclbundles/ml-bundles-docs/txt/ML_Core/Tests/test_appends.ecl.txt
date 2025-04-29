@@ -1,0 +1,18 @@
+IMPORTS
+=======
+
+
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+std.system.thorlib </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+ATTRIBUTE : test_appends
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+Return : 
+

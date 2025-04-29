@@ -1,0 +1,51 @@
+<Meta>
+ <Source sourcePath="lib_parselib"/>
+ <Source name="system.Debug" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/system/Debug.ecl">
+  <Import body="0"
+          end="532"
+          fullname="lib_parselib"
+          inherittype="local"
+          line="12"
+          name="lib_parselib"
+          ref="lib_parselib"
+          remotescope="1"
+          start="532"/>
+  <Definition body="345"
+              end="523"
+              inherittype="local"
+              line="7"
+              name="rtl"
+              start="339"
+              type="module">
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="mstick"
+               inherittype="local"
+               line="8"
+               name="msTick"
+               start="0"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params/>
+   </Definition>
+   <Definition body="0"
+               end="0"
+               exported="1"
+               fullname="sleep"
+               inherittype="local"
+               line="9"
+               name="sleep"
+               start="0"
+               type="function">
+    <Type type="unsigned4"/>
+    <Params>
+     <Param name="_delay">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

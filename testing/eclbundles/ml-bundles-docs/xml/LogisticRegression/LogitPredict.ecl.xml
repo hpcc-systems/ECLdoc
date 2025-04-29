@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/Types.ecl" name="LogisticRegression.Types" target="Types.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/LogitScore.ecl" name="LogisticRegression.LogitScore" target="LogitScore.ecl.xml"/><Source name="LogisticRegression.LogitPredict" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/LogitPredict.ecl" target="LogitPredict.ecl.xml">
+  <Import name="Core_Types" ref="ML_Core.Types" target="../ML_Core/Types.ecl.xml"/>
+  <Import name="LR" ref="LogisticRegression" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/LogisticRegression/pkg.toc.xml"/>
+  <Import name="Types" ref="LogisticRegression.Types" target="Types.ecl.xml"/>
+  <Definition exported="1" fullname="logisticregression.logitpredict" inherittype="local" line="18" name="LogitPredict" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="id">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="number">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="value">
+      <Type type="integer4"/>
+     </Field>
+     <Field name="conf">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Predict the category values with the logit function and the the supplied beta coefficients.</content><return>the predicted category values and a confidence score</return><param>coef the model beta coefficients</param><param>independents the observations</param><firstline>Predict the category values with the logit function and the the supplied beta coefficients</firstline></Documentation>
+   <Signature name="LogitPredict" ret="DATASET(Classify_Result)" param="(DATASET(Model_Coef) coef, DATASET(NumericField) independents)" hlen="37">DATASET(Classify_Result) LogitPredict(DATASET(Model_Coef) coef, DATASET(NumericField) independents)</Signature><Params>
+    <Param name="coef">
+     <Type type="table">
+      <Type fullname="logisticregression.model_coef" name="Model_Coef" type="record"/>
+     </Type>
+    </Param>
+    <Param name="independents">
+     <Type type="table">
+      <Type fullname="logisticregression.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Predict the category values with the logit function and the the supplied beta coefficients.</content><return>the predicted category values and a confidence score</return><param>coef the model beta coefficients</param><param>independents the observations</param><firstline>Predict the category values with the logit function and the the supplied beta coefficients</firstline></Documentation>
+   </Source>
+</Meta>

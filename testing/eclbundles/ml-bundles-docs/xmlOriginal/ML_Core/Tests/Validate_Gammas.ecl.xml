@@ -1,0 +1,378 @@
+<Meta>
+ <Source sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/python.ecllib"/>
+ <Source name="ML_Core.Math.gamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/gamma.ecl">
+  <Definition body="209"
+              end="281"
+              exported="1"
+              fullname="ml_core.math.gamma"
+              inherittype="local"
+              line="7"
+              name="gamma"
+              start="179"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of gamma function of real number x
+ * A wrapper for the standard C tgamma function.
+ *@param x the input x
+ *@return the value of GAMMA evaluated at x&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.lowerGamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/lowerGamma.ecl">
+  <Definition body="258"
+              end="780"
+              exported="1"
+              fullname="ml_core.math.lowergamma"
+              inherittype="local"
+              line="8"
+              name="lowerGamma"
+              start="214"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the lower incomplete gamma value of two real numbers,
+ *  x and y
+ *@param x  the value of the first number
+ *@param y  the value of the second number
+ *@return   the lower incomplete gamma value&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="y">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.upperGamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/upperGamma.ecl">
+  <Definition body="258"
+              end="784"
+              exported="1"
+              fullname="ml_core.math.uppergamma"
+              inherittype="local"
+              line="8"
+              name="upperGamma"
+              start="214"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the upper incomplete gamma value of two real numbers,
+ * x and y.
+ *@param x  the value of the first number
+ *@param y  the value of the second number
+ *@return   the upper incomplete gamma value&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="y">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Tests.Validate_Gammas" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Tests/Validate_Gammas.ecl">
+  <Import body="0"
+          end="135"
+          fullname="ML_Core"
+          inherittype="local"
+          line="3"
+          name="ML_Core"
+          ref="ML_Core"
+          start="135"/>
+  <Import body="0"
+          end="158"
+          fullname="ML_Core.Math"
+          inherittype="local"
+          line="4"
+          name="Math"
+          ref="ML_Core.Math"
+          remotescope="1"
+          start="158"/>
+  <Import body="0"
+          end="179"
+          fullname="python"
+          inherittype="local"
+          line="5"
+          name="python"
+          ref="python"
+          remotescope="1"
+          start="179"/>
+  <Definition body="217"
+              end="314"
+              fullname="ml_core.tests.scipy_gamma"
+              inherittype="local"
+              line="7"
+              name="scipy_gamma"
+              start="188"
+              type="embed">
+   <Type type="real8"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="358"
+              end="486"
+              fullname="ml_core.tests.scipy_lowergamma"
+              inherittype="local"
+              line="12"
+              name="scipy_lowerGamma"
+              start="315"
+              type="embed">
+   <Type type="real8"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="z">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="530"
+              end="659"
+              fullname="ml_core.tests.scipy_uppergamma"
+              inherittype="local"
+              line="17"
+              name="scipy_upperGamma"
+              start="487"
+              type="embed">
+   <Type type="real8"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="z">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="679"
+              end="878"
+              fullname="ml_core.tests.tv"
+              inherittype="local"
+              line="23"
+              name="tv"
+              start="661"
+              type="attribute">
+   <Type type="set">
+    <Type type="real8"/>
+   </Type>
+  </Definition>
+  <Definition body="897"
+              end="944"
+              fullname="ml_core.tests.sv"
+              inherittype="local"
+              line="27"
+              name="sv"
+              start="879"
+              type="attribute">
+   <Type type="set">
+    <Type type="real8"/>
+   </Type>
+  </Definition>
+  <Definition body="961"
+              end="974"
+              fullname="ml_core.tests.epsilon"
+              inherittype="local"
+              line="28"
+              name="epsilon"
+              start="945"
+              type="attribute">
+   <Type type="real8"/>
+  </Definition>
+  <Definition body="983"
+              end="1140"
+              fullname="ml_core.tests.work1"
+              inherittype="local"
+              line="29"
+              name="Work1"
+              start="975"
+              type="record">
+   <Field name="x">
+    <Type type="real8"/>
+   </Field>
+   <Field name="z">
+    <Type type="real8"/>
+   </Field>
+   <Field name="g">
+    <Type type="real8"/>
+   </Field>
+   <Field name="l">
+    <Type type="real8"/>
+   </Field>
+   <Field name="u">
+    <Type type="real8"/>
+   </Field>
+   <Field name="g_diff">
+    <Type type="real8"/>
+   </Field>
+   <Field name="l_diff">
+    <Type type="real8"/>
+   </Field>
+   <Field name="u_diff">
+    <Type type="real8"/>
+   </Field>
+   <Field name="py_g">
+    <Type type="real8"/>
+   </Field>
+   <Field name="py_l">
+    <Type type="real8"/>
+   </Field>
+   <Field name="py_u">
+    <Type type="real8"/>
+   </Field>
+  </Definition>
+  <Definition body="1169"
+              end="2094"
+              fullname="ml_core.tests.maket"
+              inherittype="local"
+              line="43"
+              name="makeT"
+              start="1142"
+              type="transform">
+   <Type fullname="ml_core.tests.work1" name="Work1" type="record"/>
+   <Params>
+    <Param name="ts">
+     <Type type="unsigned8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="2140"
+              end="2440"
+              fullname="ml_core.tests.range_cat"
+              inherittype="local"
+              line="66"
+              name="range_cat"
+              start="2095"
+              type="function">
+   <Type type="string"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="z">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="2472"
+              end="2786"
+              fullname="ml_core.tests.cat"
+              inherittype="local"
+              line="76"
+              name="cat"
+              start="2441"
+              type="function">
+   <Type type="string"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="z">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="2799"
+              end="2845"
+              fullname="ml_core.tests.test_set"
+              inherittype="local"
+              line="85"
+              name="test_set"
+              start="2788"
+              type="attribute">
+   <Type type="table">
+    <Type fullname="ml_core.tests.work1" name="Work1" type="record"/>
+   </Type>
+  </Definition>
+  <Definition body="2859"
+              end="2906"
+              fullname="ml_core.tests.bad_result"
+              inherittype="local"
+              line="86"
+              name="bad_result"
+              start="2846"
+              type="attribute">
+   <Type type="table">
+    <Type fullname="ml_core.tests.work1" name="Work1" type="record"/>
+   </Type>
+  </Definition>
+  <Definition body="2918"
+              end="3363"
+              fullname="ml_core.tests.test_sum"
+              inherittype="local"
+              line="87"
+              name="test_sum"
+              start="2907"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="c">
+      <Type type="string"/>
+     </Field>
+     <Field name="Good_u">
+      <Type type="integer8"/>
+     </Field>
+     <Field name="Bad_u">
+      <Type type="integer8"/>
+     </Field>
+     <Field name="Good_l">
+      <Type type="integer8"/>
+     </Field>
+     <Field name="Bad_l">
+      <Type type="integer8"/>
+     </Field>
+     <Field name="Good_g">
+      <Type type="integer8"/>
+     </Field>
+     <Field name="Bad_g">
+      <Type type="integer8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="3381"
+              end="3427"
+              fullname="ml_core.tests.passed_action"
+              inherittype="local"
+              line="97"
+              name="Passed_Action"
+              start="3365"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+  <Definition body="3444"
+              end="3957"
+              fullname="ml_core.tests.failed_action"
+              inherittype="local"
+              line="98"
+              name="Failed_Action"
+              start="3428"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+  <Definition body="3985"
+              end="4097"
+              exported="1"
+              fullname="ml_core.tests.validate_gammas"
+              inherittype="local"
+              line="110"
+              name="Validate_Gammas"
+              start="3960"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+ </Source>
+</Meta>

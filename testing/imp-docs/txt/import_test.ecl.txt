@@ -1,0 +1,141 @@
+IMPORTS
+=======
+
+
+ML_Core.Generate </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/Generate.ecl.txt>
+ML_Core.Constants </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/Constants.ecl.txt>
+std.Str </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/Str.ecl>
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+ML_Core.Discretize </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Discretize.ecl>
+PBblas.MatUtils </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/MatUtils.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : import_test
+----------------------------------------------------------------------------------------------------------------------------------
+
+This module exists to turn a dataset of numberfields into a dataset of
+DiscreteFields. This is not quite as trivial as it seems as there are a
+number of different ways to make the underlying data discrete; and even
+within one method there may be different parameters. Further - it is quite
+probable that different methods are going to be desired for each field.
+
+internal : True
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : c_Method
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : UNSIGNED4
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | RECORD : r_Method
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Field : rparam2 REAL8 --- No Doc
+  | 
+  | Field : rparam1 REAL8 --- No Doc
+  | 
+  | Field : fields SET ( UNSIGNED4 ) --- No Doc
+  | 
+  | Field : method UNSIGNED4 --- No Doc
+  | 
+  | Field : iparam1 INTEGER8 --- No Doc
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : i_ByRounding(SET OF Types.t_FieldNumber f, REAL Scale=1.0,REAL Delta=0.0)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : delta REAL8 --- No Doc
+  | 
+  | Parameter : f SET ( UNSIGNED4 ) --- No Doc
+  | 
+  | Parameter : scale REAL8 --- No Doc
+  | 
+  | Return : TABLE ( r_Method )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : ByRounding(DATASET(Types.NumericField) d,REAL Scale=1.0, REAL Delta=0.0)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : delta REAL8 --- No Doc
+  | 
+  | Parameter : d TABLE ( NumericField ) --- No Doc
+  | 
+  | Parameter : scale REAL8 --- No Doc
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , INTEGER4 value } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : i_ByBucketing(SET OF Types.t_FieldNumber f, Types.t_Discrete N=ML_Core.Config.Discrete)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : f SET ( UNSIGNED4 ) --- No Doc
+  | 
+  | Parameter : n INTEGER4 --- No Doc
+  | 
+  | Return : TABLE ( r_Method )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : ByBucketing(DATASET(Types.NumericField) d, Types.t_Discrete N=ML_Core.Config.Discrete)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : d TABLE ( NumericField ) --- No Doc
+  | 
+  | Parameter : n INTEGER4 --- No Doc
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , INTEGER4 value } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : i_ByTiling(SET OF Types.t_FieldNumber f, Types.t_Discrete N=ML_Core.Config.Discrete)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : f SET ( UNSIGNED4 ) --- No Doc
+  | 
+  | Parameter : n INTEGER4 --- No Doc
+  | 
+  | Return : TABLE ( r_Method )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : ByTiling(DATASET(Types.NumericField) d, Types.t_Discrete N=ML_Core.Config.Discrete)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : d TABLE ( NumericField ) --- No Doc
+  | 
+  | Parameter : n INTEGER4 --- No Doc
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , INTEGER4 value } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Do(DATASET(Types.NumericField) d, DATASET(r_Method) to_do)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : d TABLE ( NumericField ) --- No Doc
+  | 
+  | Parameter : to_do TABLE ( r_Method ) --- No Doc
+  | 
+  | Return : TABLE ( DiscreteField )
+  | 

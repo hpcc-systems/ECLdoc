@@ -1,0 +1,79 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+Vector2Diag
+}
+\hypertarget{ecldoc:toc:PBblas.Vector2Diag}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+PBblas.internal |
+PBblas.internal.MatDims |
+PBblas.Types |
+PBblas.internal.Types |
+PBblas.Constants |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Vector2Diag}}
+
+\hypertarget{ecldoc:pbblas.vector2diag}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{Vector2Diag} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Layout\_Cell) X)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Convert a vector into a diagonal matrix. The typical notation is D = diag(V). The input X must be a 1 x N column vector or an N x 1 row vector. The resulting matrix, in either case will be N x N, with zero everywhere except the diagonal.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{X}} ||| TABLE ( Layout\_Cell ) --- A row or column vector (i.e. N x 1 or 1 x N) in Layout\_Cell format
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- An N x N matrix in Layout\_Cell format
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_cell
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

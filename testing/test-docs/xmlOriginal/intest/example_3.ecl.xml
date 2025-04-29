@@ -1,0 +1,52 @@
+<Meta>
+ <Source name="intest.example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/intest/example_3.ecl">
+  <Definition body="113"
+              end="205"
+              exported="1"
+              fullname="intest.Example_3"
+              inherittype="local"
+              line="6"
+              name="Example_3"
+              start="94"
+              type="module">
+   <Definition body="137"
+               end="200"
+               exported="1"
+               fullname="intest.Example_3.mod_1"
+               inherittype="local"
+               line="7"
+               name="mod_1"
+               start="122"
+               type="module">
+    <Definition body="162"
+                end="167"
+                exported="1"
+                fullname="intest.example_3.mod_1.v1_m1"
+                inherittype="local"
+                line="8"
+                name="v1_m1"
+                start="147"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="189"
+                end="194"
+                exported="1"
+                fullname="intest.example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="9"
+                name="v2_m1_ex3"
+                start="170"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Example : Inheritance across files
+* mod_1 in Example_4 inherits mod_1 in Example_3&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

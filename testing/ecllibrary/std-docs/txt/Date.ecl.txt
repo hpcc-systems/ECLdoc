@@ -1,0 +1,1372 @@
+IMPORTS
+=======
+
+
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : Date
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | RECORD : Date_rec
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Field : day UNSIGNED1 --- No Doc
+  | 
+  | Field : month UNSIGNED1 --- No Doc
+  | 
+  | Field : year INTEGER2 --- No Doc
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Date_t
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : UNSIGNED4
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Days_t
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : INTEGER4
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | RECORD : Time_rec
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Field : second UNSIGNED1 --- No Doc
+  | 
+  | Field : minute UNSIGNED1 --- No Doc
+  | 
+  | Field : hour UNSIGNED1 --- No Doc
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Time_t
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : UNSIGNED3
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Seconds_t
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : INTEGER8
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | RECORD : DateTime_rec
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Field : day UNSIGNED1 --- No Doc
+  | 
+  | Field : second UNSIGNED1 --- No Doc
+  | 
+  | Field : minute UNSIGNED1 --- No Doc
+  | 
+  | Field : month UNSIGNED1 --- No Doc
+  | 
+  | Field : year INTEGER2 --- No Doc
+  | 
+  | Field : hour UNSIGNED1 --- No Doc
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Timestamp_t
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : INTEGER8
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : INTEGER2 Year(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Extracts the year from a date type.
+  | 
+  | Parameter : date UNSIGNED4 --- The date.
+  | 
+  | Return : INTEGER2 An integer representing the year.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED1 Month(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Extracts the month from a date type.
+  | 
+  | Parameter : date UNSIGNED4 --- The date.
+  | 
+  | Return : UNSIGNED1 An integer representing the year.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED1 Day(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Extracts the day of the month from a date type.
+  | 
+  | Parameter : date UNSIGNED4 --- The date.
+  | 
+  | Return : UNSIGNED1 An integer representing the year.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED1 Hour(Time_t time)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Extracts the hour from a time type.
+  | 
+  | Parameter : time UNSIGNED3 --- The time.
+  | 
+  | Return : UNSIGNED1 An integer representing the hour.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED1 Minute(Time_t time)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Extracts the minutes from a time type.
+  | 
+  | Parameter : time UNSIGNED3 --- The time.
+  | 
+  | Return : UNSIGNED1 An integer representing the minutes.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED1 Second(Time_t time)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Extracts the seconds from a time type.
+  | 
+  | Parameter : time UNSIGNED3 --- The time.
+  | 
+  | Return : UNSIGNED1 An integer representing the seconds.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t DateFromParts(INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines year, month day to create a date type.
+  | 
+  | Parameter : day UNSIGNED1 --- The day (1..daysInMonth).
+  | 
+  | Parameter : month UNSIGNED1 --- The month (1-12).
+  | 
+  | Parameter : year INTEGER2 --- The year (0-9999).
+  | 
+  | Return : UNSIGNED4 A date created by combining the fields.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Time_t TimeFromParts(UNSIGNED1 hour, UNSIGNED1 minute, UNSIGNED1 second)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines hour, minute second to create a time type.
+  | 
+  | Parameter : second UNSIGNED1 --- The second (0-59).
+  | 
+  | Parameter : minute UNSIGNED1 --- The minute (0-59).
+  | 
+  | Parameter : hour UNSIGNED1 --- The hour (0-23).
+  | 
+  | Return : UNSIGNED3 A time created by combining the fields.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Seconds_t SecondsFromParts(INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day, UNSIGNED1 hour,
+  |                                      UNSIGNED1 minute, UNSIGNED1 second, BOOLEAN is_local_time = FALSE)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines date and time components to create a seconds type. The date must
+  | be represented within the Gregorian calendar after the year 1600.
+  | 
+  | Parameter : day UNSIGNED1 --- The day (1..daysInMonth).
+  | 
+  | Parameter : second UNSIGNED1 --- The second (0-59).
+  | 
+  | Parameter : is_local_time BOOLEAN --- TRUE if the datetime components are
+  |                           expressed in local time rather than UTC, FALSE if
+  |                           the components are expressed in UTC. Optional,
+  |                           defaults to FALSE.
+  | 
+  | Parameter : minute UNSIGNED1 --- The minute (0-59).
+  | 
+  | Parameter : month UNSIGNED1 --- The month (1-12).
+  | 
+  | Parameter : year INTEGER2 --- The year (1601-30827).
+  | 
+  | Parameter : hour UNSIGNED1 --- The hour (0-23).
+  | 
+  | Return : INTEGER8 A Seconds_t value created by combining
+  |          the fields.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | MODULE : SecondsToParts(Seconds_t seconds)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts the number of seconds since epoch to a structure containing date
+  | and time parts. The result must be representable within the Gregorian
+  | calendar after the year 1600.
+  | 
+  | Parameter : seconds INTEGER8 --- The number of seconds since epoch.
+  | 
+  | Return :  Module with exported attributes for year, month,
+  |          day, hour, minute, second, day_of_week, date and
+  |          time.
+  | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : INTEGER2 year
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER2
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : UNSIGNED1 month
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED1
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : UNSIGNED1 day
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED1
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : UNSIGNED1 hour
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED1
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : UNSIGNED1 minute
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED1
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : UNSIGNED1 second
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED1
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : UNSIGNED1 day_of_week
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED1
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Date_t date
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | Combines year, month day to create a date type.
+  |   | 
+  |   | Parameter : day  --- The day (1..daysInMonth).
+  |   | 
+  |   | Parameter : month  --- The month (1-12).
+  |   | 
+  |   | Parameter : year  --- The year (0-9999).
+  |   | 
+  |   | Return : UNSIGNED4 A date created by combining the fields.
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Time_t time
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | Combines hour, minute second to create a time type.
+  |   | 
+  |   | Parameter : second  --- The second (0-59).
+  |   | 
+  |   | Parameter : minute  --- The minute (0-59).
+  |   | 
+  |   | Parameter : hour  --- The hour (0-23).
+  |   | 
+  |   | Return : UNSIGNED3 A time created by combining the fields.
+  |   | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Seconds_t TimestampToSeconds(Timestamp_t timestamp)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts the number of microseconds since epoch to the number of seconds
+  | since epoch.
+  | 
+  | Parameter : timestamp INTEGER8 --- The number of microseconds since
+  |                       epoch.
+  | 
+  | Return : INTEGER8 The number of seconds since epoch.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN IsLeapYear(INTEGER2 year)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Tests whether the year is a leap year in the Gregorian calendar.
+  | 
+  | Parameter : year INTEGER2 --- The year (0-9999).
+  | 
+  | Return : BOOLEAN True if the year is a leap year.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN IsDateLeapYear(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Tests whether a date is a leap year in the Gregorian calendar.
+  | 
+  | Parameter : date UNSIGNED4 --- The date.
+  | 
+  | Return : BOOLEAN True if the year is a leap year.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Days_t FromGregorianYMD(INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines year, month, day in the Gregorian calendar to create the number
+  | days since 31st December 1BC.
+  | 
+  | Parameter : day UNSIGNED1 --- The day (1..daysInMonth). A missing
+  |                 value (0) is treated as 1.
+  | 
+  | Parameter : month UNSIGNED1 --- The month (1-12). A missing value
+  |                   (0) is treated as 1.
+  | 
+  | Parameter : year INTEGER2 --- The year (-4713..9999).
+  | 
+  | Return : INTEGER4 The number of elapsed days (1 Jan 1AD =
+  |          1)
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | MODULE : ToGregorianYMD(Days_t days)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts the number days since 31st December 1BC to a date in the Gregorian
+  | calendar.
+  | 
+  | Parameter : days INTEGER4 --- The number of elapsed days (1 Jan 1AD
+  |                  = 1)
+  | 
+  | Return :  Module containing Year, Month, Day in the
+  |          Gregorian calendar
+  | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : year
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : month
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : day
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER8
+  |   | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Days_t FromGregorianDate(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a date in the Gregorian calendar to the number days since 31st
+  | December 1BC.
+  | 
+  | Parameter : date UNSIGNED4 --- The date (using the Gregorian
+  |                  calendar)
+  | 
+  | Return : INTEGER4 The number of elapsed days (1 Jan 1AD =
+  |          1)
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t ToGregorianDate(Days_t days)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts the number days since 31st December 1BC to a date in the Gregorian
+  | calendar.
+  | 
+  | Parameter : days INTEGER4 --- The number of elapsed days (1 Jan 1AD
+  |                  = 1)
+  | 
+  | Return : UNSIGNED4 A Date_t in the Gregorian calendar
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED2 DayOfYear(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns a number representing the day of the year indicated by the given
+  | date. The date must be in the Gregorian calendar after the year 1600.
+  | 
+  | Parameter : date UNSIGNED4 --- A Date_t value.
+  | 
+  | Return : UNSIGNED2 A number (1-366) representing the number
+  |          of days since the beginning of the year.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : UNSIGNED1 DayOfWeek(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns a number representing the day of the week indicated by the given
+  | date. The date must be in the Gregorian calendar after the year 1600.
+  | 
+  | Parameter : date UNSIGNED4 --- A Date_t value.
+  | 
+  | Return : UNSIGNED1 A number 1-7 representing the day of the
+  |          week, where 1 = Sunday.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN IsJulianLeapYear(INTEGER2 year)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Tests whether the year is a leap year in the Julian calendar.
+  | 
+  | Parameter : year INTEGER2 --- The year (0-9999).
+  | 
+  | Return : BOOLEAN True if the year is a leap year.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Days_t FromJulianYMD(INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines year, month, day in the Julian calendar to create the number days
+  | since 31st December 1BC.
+  | 
+  | Parameter : day UNSIGNED1 --- The day (1..daysInMonth).
+  | 
+  | Parameter : month UNSIGNED1 --- The month (1-12).
+  | 
+  | Parameter : year INTEGER2 --- The year (-4800..9999).
+  | 
+  | Return : INTEGER4 The number of elapsed days (1 Jan 1AD =
+  |          1)
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | MODULE : ToJulianYMD(Days_t days)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts the number days since 31st December 1BC to a date in the Julian
+  | calendar.
+  | 
+  | Parameter : days INTEGER4 --- The number of elapsed days (1 Jan 1AD
+  |                  = 1)
+  | 
+  | Return :  Module containing Year, Month, Day in the Julian
+  |          calendar
+  | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : UNSIGNED1 day
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED1
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : UNSIGNED1 month
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED1
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : INTEGER2 year
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : INTEGER2
+  |   | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Days_t FromJulianDate(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a date in the Julian calendar to the number days since 31st
+  | December 1BC.
+  | 
+  | Parameter : date UNSIGNED4 --- The date (using the Julian calendar)
+  | 
+  | Return : INTEGER4 The number of elapsed days (1 Jan 1AD =
+  |          1)
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t ToJulianDate(Days_t days)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts the number days since 31st December 1BC to a date in the Julian
+  | calendar.
+  | 
+  | Parameter : days INTEGER4 --- The number of elapsed days (1 Jan 1AD
+  |                  = 1)
+  | 
+  | Return : UNSIGNED4 A Date_t in the Julian calendar
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Days_t DaysSince1900(INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the number of days since 1st January 1900 (using the Gregorian
+  | Calendar)
+  | 
+  | Parameter : day UNSIGNED1 --- The day (1..daysInMonth). A missing
+  |                 value (0) is treated as 1.
+  | 
+  | Parameter : month UNSIGNED1 --- The month (1-12). A missing value
+  |                   (0) is treated as 1.
+  | 
+  | Parameter : year INTEGER2 --- The year (-4713..9999).
+  | 
+  | Return : INTEGER4 The number of elapsed days since 1st
+  |          January 1900
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Days_t ToDaysSince1900(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the number of days since 1st January 1900 (using the Gregorian
+  | Calendar)
+  | 
+  | Parameter : date UNSIGNED4 --- The date
+  | 
+  | Return : INTEGER4 The number of elapsed days since 1st
+  |          January 1900
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t FromDaysSince1900(Days_t days)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts the number days since 1st January 1900 to a date in the Julian
+  | calendar.
+  | 
+  | Parameter : days INTEGER4 --- The number of elapsed days since 1st
+  |                  Jan 1900
+  | 
+  | Return : UNSIGNED4 A Date_t in the Julian calendar
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : INTEGER YearsBetween (Date_t from, Date_t to)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Calculate the number of whole years between two dates.
+  | 
+  | Parameter : from UNSIGNED4 --- The first date
+  | 
+  | Parameter : to UNSIGNED4 --- The last date
+  | 
+  | Return : INTEGER8 The number of years between them.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : INTEGER MonthsBetween(Date_t from, Date_t to)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Calculate the number of whole months between two dates.
+  | 
+  | Parameter : from UNSIGNED4 --- The first date
+  | 
+  | Parameter : to UNSIGNED4 --- The last date
+  | 
+  | Return : INTEGER8 The number of months between them.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : INTEGER DaysBetween(Date_t from, Date_t to)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Calculate the number of days between two dates.
+  | 
+  | Parameter : from UNSIGNED4 --- The first date
+  | 
+  | Parameter : to UNSIGNED4 --- The last date
+  | 
+  | Return : INTEGER8 The number of days between them.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t DateFromDateRec(Date_rec date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines the fields from a Date_rec to create a Date_t
+  | 
+  | Parameter : date ROW ( Date_rec ) --- The row containing the date.
+  | 
+  | Return : UNSIGNED4 A Date_t representing the combined
+  |          values.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t DateFromRec(Date_rec date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines the fields from a Date_rec to create a Date_t
+  | 
+  | Parameter : date ROW ( Date_rec ) --- The row containing the date.
+  | 
+  | Return : UNSIGNED4 A Date_t representing the combined
+  |          values.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Time_t TimeFromTimeRec(Time_rec time)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines the fields from a Time_rec to create a Time_t
+  | 
+  | Parameter : time ROW ( Time_rec ) --- The row containing the time.
+  | 
+  | Return : UNSIGNED3 A Time_t representing the combined
+  |          values.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t DateFromDateTimeRec(DateTime_rec datetime)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines the date fields from a DateTime_rec to create a Date_t
+  | 
+  | Parameter : datetime ROW ( DateTime_rec ) --- The row containing the
+  |                      datetime.
+  | 
+  | Return : UNSIGNED4 A Date_t representing the combined
+  |          values.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Time_t TimeFromDateTimeRec(DateTime_rec datetime)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines the time fields from a DateTime_rec to create a Time_t
+  | 
+  | Parameter : datetime ROW ( DateTime_rec ) --- The row containing the
+  |                      datetime.
+  | 
+  | Return : UNSIGNED3 A Time_t representing the combined
+  |          values.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Seconds_t SecondsFromDateTimeRec(DateTime_rec datetime, BOOLEAN is_local_time = FALSE)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Combines the date and time fields from a DateTime_rec to create a Seconds_t
+  | 
+  | Parameter : datetime ROW ( DateTime_rec ) --- The row containing the
+  |                      datetime.
+  | 
+  | Parameter : is_local_time BOOLEAN --- TRUE if the datetime components are
+  |                           expressed in local time rather than UTC, FALSE if
+  |                           the components are expressed in UTC. Optional,
+  |                           defaults to FALSE.
+  | 
+  | Return : INTEGER8 A Seconds_t representing the combined
+  |          values.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t FromStringToDate(STRING date_text, VARSTRING format)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a string to a Date_t using the relevant string format. The
+  | resulting date must be representable within the Gregorian calendar after
+  | the year 1600.
+  | 
+  | Parameter : date_text STRING --- The string to be converted.
+  | 
+  | Parameter : format VARSTRING --- The format of the input string. (See
+  |                    documentation for strftime)
+  | 
+  | Return : UNSIGNED4 The date that was matched in the string.
+  |          Returns 0 if failed to match or if the date
+  |          components match but the result is an invalid
+  |          date. Supported characters: %B Full month name %b
+  |          or %h Abbreviated month name %d Day of month (two
+  |          digits) %e Day of month (two digits, or a space
+  |          followed by a single digit) %m Month (two digits)
+  |          %t Whitespace %y year within century (00-99) %Y
+  |          Full year (yyyy) %j Julian day (1-366) Common date
+  |          formats American '%m/%d/%Y' mm/dd/yyyy Euro
+  |          '%d/%m/%Y' dd/mm/yyyy Iso format '%Y-%m-%d' yyyy-
+  |          mm-dd Iso basic 'Y%m%d' yyyymmdd '%d-%b-%Y' dd-
+  |          mon-yyyy e.g., '21-Mar-1954'
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t FromString(STRING date_text, VARSTRING format)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a string to a date using the relevant string format.
+  | 
+  | Parameter : date_text STRING --- The string to be converted.
+  | 
+  | Parameter : format VARSTRING --- The format of the input string. (See
+  |                    documentation for strftime)
+  | 
+  | Return : UNSIGNED4 The date that was matched in the string.
+  |          Returns 0 if failed to match.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Time_t FromStringToTime(STRING time_text, VARSTRING format)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a string to a Time_t using the relevant string format.
+  | 
+  | Parameter : date_text  --- The string to be converted.
+  | 
+  | Parameter : format VARSTRING --- The format of the input string. (See
+  |                    documentation for strftime)
+  | 
+  | Parameter : time_text STRING --- No Doc
+  | 
+  | Return : UNSIGNED3 The time that was matched in the string.
+  |          Returns 0 if failed to match. Supported
+  |          characters: %H Hour (two digits) %k (two digits,
+  |          or a space followed by a single digit) %M Minute
+  |          (two digits) %S Second (two digits) %t Whitespace
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t MatchDateString(STRING date_text, SET OF VARSTRING formats)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Matches a string against a set of date string formats and returns a valid
+  | Date_t object from the first format that successfully parses the string.
+  | 
+  | Parameter : date_text STRING --- The string to be converted.
+  | 
+  | Parameter : formats SET ( VARSTRING ) --- A set of formats to check
+  |                     against the string. (See documentation for
+  |                     strftime)
+  | 
+  | Return : UNSIGNED4 The date that was matched in the string.
+  |          Returns 0 if failed to match.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Time_t MatchTimeString(STRING time_text, SET OF VARSTRING formats)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Matches a string against a set of time string formats and returns a valid
+  | Time_t object from the first format that successfully parses the string.
+  | 
+  | Parameter : time_text STRING --- The string to be converted.
+  | 
+  | Parameter : formats SET ( VARSTRING ) --- A set of formats to check
+  |                     against the string. (See documentation for
+  |                     strftime)
+  | 
+  | Return : UNSIGNED3 The time that was matched in the string.
+  |          Returns 0 if failed to match.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING DateToString(Date_t date, VARSTRING format = '%Y-%m-%d')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Formats a date as a string.
+  | 
+  | Parameter : date UNSIGNED4 --- The date to be converted.
+  | 
+  | Parameter : format VARSTRING --- The format template to use for the
+  |                    conversion; see strftime() for appropriate values.
+  |                    The maximum length of the resulting string is 255
+  |                    characters. Optional; defaults to '%Y-%m-%d' which
+  |                    is YYYY-MM-DD.
+  | 
+  | Return : STRING Blank if date cannot be formatted, or the
+  |          date in the requested format.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING TimeToString(Time_t time, VARSTRING format = '%H:%M:%S')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Formats a time as a string.
+  | 
+  | Parameter : time UNSIGNED3 --- The time to be converted.
+  | 
+  | Parameter : format VARSTRING --- The format template to use for the
+  |                    conversion; see strftime() for appropriate values.
+  |                    The maximum length of the resulting string is 255
+  |                    characters. Optional; defaults to '%H:%M:%S' which
+  |                    is HH:MM:SS.
+  | 
+  | Return : STRING Blank if the time cannot be formatted, or
+  |          the time in the requested format.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING SecondsToString(Seconds_t seconds, VARSTRING format = '%Y-%m-%dT%H:%M:%S')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a Seconds_t value into a human-readable string using a format
+  | template.
+  | 
+  | Parameter : seconds INTEGER8 --- The seconds since epoch.
+  | 
+  | Parameter : format VARSTRING --- The format template to use for the
+  |                    conversion; see strftime() for appropriate values.
+  |                    The maximum length of the resulting string is 255
+  |                    characters. Optional; defaults to
+  |                    '%Y-%m-%dT%H:%M:%S' which is YYYY-MM-DDTHH:MM:SS.
+  | 
+  | Return : STRING The converted seconds as a string.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING ToString(Date_t date, VARSTRING format)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Formats a date as a string.
+  | 
+  | Parameter : date UNSIGNED4 --- The date to be converted.
+  | 
+  | Parameter : format VARSTRING --- The format the date is output in.
+  |                    (See documentation for strftime)
+  | 
+  | Return : STRING Blank if date cannot be formatted, or the
+  |          date in the requested format.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING ConvertDateFormat(STRING date_text, VARSTRING from_format='%m/%d/%Y', VARSTRING
+  |                                    to_format='%Y%m%d')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a date from one format to another
+  | 
+  | Parameter : from_format VARSTRING --- The format the date is to be
+  |                         converted from.
+  | 
+  | Parameter : date_text STRING --- The string containing the date to be
+  |                       converted.
+  | 
+  | Parameter : to_format VARSTRING --- The format the date is to be
+  |                       converted to.
+  | 
+  | Return : STRING The converted string, or blank if it failed
+  |          to match the format.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING ConvertFormat(STRING date_text, VARSTRING from_format='%m/%d/%Y', VARSTRING
+  |                                to_format='%Y%m%d')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a date from one format to another
+  | 
+  | Parameter : from_format VARSTRING --- The format the date is to be
+  |                         converted from.
+  | 
+  | Parameter : date_text STRING --- The string containing the date to be
+  |                       converted.
+  | 
+  | Parameter : to_format VARSTRING --- The format the date is to be
+  |                       converted to.
+  | 
+  | Return : STRING The converted string, or blank if it failed
+  |          to match the format.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING ConvertTimeFormat(STRING time_text, VARSTRING from_format='%H%M%S', VARSTRING
+  |                                    to_format='%H:%M:%S')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a time from one format to another
+  | 
+  | Parameter : time_text STRING --- The string containing the time to be
+  |                       converted.
+  | 
+  | Parameter : from_format VARSTRING --- The format the time is to be
+  |                         converted from.
+  | 
+  | Parameter : to_format VARSTRING --- The format the time is to be
+  |                       converted to.
+  | 
+  | Return : STRING The converted string, or blank if it failed
+  |          to match the format.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING ConvertDateFormatMultiple(STRING date_text, SET OF VARSTRING from_formats,
+  |                                            VARSTRING to_format='%Y%m%d')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a date that matches one of a set of formats to another.
+  | 
+  | Parameter : to_format VARSTRING --- The format the date is to be
+  |                       converted to.
+  | 
+  | Parameter : date_text STRING --- The string containing the date to be
+  |                       converted.
+  | 
+  | Parameter : from_formats SET ( VARSTRING ) --- The list of formats the date
+  |                          is to be converted from.
+  | 
+  | Return : STRING The converted string, or blank if it failed
+  |          to match the format.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING ConvertFormatMultiple(STRING date_text, SET OF VARSTRING from_formats, VARSTRING
+  |                                        to_format='%Y%m%d')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a date that matches one of a set of formats to another.
+  | 
+  | Parameter : to_format VARSTRING --- The format the date is to be
+  |                       converted to.
+  | 
+  | Parameter : date_text STRING --- The string containing the date to be
+  |                       converted.
+  | 
+  | Parameter : from_formats SET ( VARSTRING ) --- The list of formats the date
+  |                          is to be converted from.
+  | 
+  | Return : STRING The converted string, or blank if it failed
+  |          to match the format.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : STRING ConvertTimeFormatMultiple(STRING time_text, SET OF VARSTRING from_formats,
+  |                                            VARSTRING to_format='%H:%m:%s')
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Converts a time that matches one of a set of formats to another.
+  | 
+  | Parameter : time_text STRING --- The string containing the time to be
+  |                       converted.
+  | 
+  | Parameter : to_format VARSTRING --- The format the time is to be
+  |                       converted to.
+  | 
+  | Parameter : from_formats SET ( VARSTRING ) --- The list of formats the time
+  |                          is to be converted from.
+  | 
+  | Return : STRING The converted string, or blank if it failed
+  |          to match the format.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t AdjustDate(Date_t date, INTEGER2 year_delta = 0, INTEGER4 month_delta = 0,
+  |                             INTEGER4 day_delta = 0)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Adjusts a date by incrementing or decrementing year, month and/or day
+  | values. The date must be in the Gregorian calendar after the year 1600. If
+  | the new calculated date is invalid then it will be normalized according to
+  | mktime() rules. Example: 20140130 + 1 month = 20140302.
+  | 
+  | Parameter : date UNSIGNED4 --- The date to adjust.
+  | 
+  | Parameter : year_delta INTEGER2 --- The requested change to the year
+  |                        value; optional, defaults to zero.
+  | 
+  | Parameter : month_delta INTEGER4 --- The requested change to the month
+  |                         value; optional, defaults to zero.
+  | 
+  | Parameter : day_delta INTEGER4 --- The requested change to the day of
+  |                       month value; optional, defaults to zero.
+  | 
+  | Return : UNSIGNED4 The adjusted Date_t value.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t AdjustDateBySeconds(Date_t date, INTEGER4 seconds_delta)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Adjusts a date by adding or subtracting seconds. The date must be in the
+  | Gregorian calendar after the year 1600. If the new calculated date is
+  | invalid then it will be normalized according to mktime() rules. Example:
+  | 20140130 + 172800 seconds = 20140201.
+  | 
+  | Parameter : date UNSIGNED4 --- The date to adjust.
+  | 
+  | Parameter : seconds_delta INTEGER4 --- The requested change to the date, in
+  |                           seconds.
+  | 
+  | Return : UNSIGNED4 The adjusted Date_t value.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Time_t AdjustTime(Time_t time, INTEGER2 hour_delta = 0, INTEGER4 minute_delta = 0,
+  |                             INTEGER4 second_delta = 0)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Adjusts a time by incrementing or decrementing hour, minute and/or second
+  | values. If the new calculated time is invalid then it will be normalized
+  | according to mktime() rules.
+  | 
+  | Parameter : second_delta INTEGER4 --- The requested change to the second of
+  |                          month value; optional, defaults to zero.
+  | 
+  | Parameter : time UNSIGNED3 --- The time to adjust.
+  | 
+  | Parameter : minute_delta INTEGER4 --- The requested change to the minute
+  |                          value; optional, defaults to zero.
+  | 
+  | Parameter : hour_delta INTEGER2 --- The requested change to the hour
+  |                        value; optional, defaults to zero.
+  | 
+  | Return : UNSIGNED3 The adjusted Time_t value.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Time_t AdjustTimeBySeconds(Time_t time, INTEGER4 seconds_delta)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Adjusts a time by adding or subtracting seconds. If the new calculated time
+  | is invalid then it will be normalized according to mktime() rules.
+  | 
+  | Parameter : time UNSIGNED3 --- The time to adjust.
+  | 
+  | Parameter : seconds_delta INTEGER4 --- The requested change to the time, in
+  |                           seconds.
+  | 
+  | Return : UNSIGNED3 The adjusted Time_t value.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Seconds_t AdjustSeconds(Seconds_t seconds, INTEGER2 year_delta = 0, INTEGER4 month_delta
+  |                                   = 0, INTEGER4 day_delta = 0, INTEGER4 hour_delta = 0, INTEGER4 minute_delta = 0, INTEGER4
+  |                                   second_delta = 0)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Adjusts a Seconds_t value by adding or subtracting years, months, days,
+  | hours, minutes and/or seconds. This is performed by first converting the
+  | seconds into a full date/time structure, applying any delta values to
+  | individual date/time components, then converting the structure back to the
+  | number of seconds. This interim date must lie within Gregorian calendar
+  | after the year 1600. If the interim structure is found to have an invalid
+  | date/time then it will be normalized according to mktime() rules.
+  | Therefore, some delta values (such as "1 month") are actually relative to
+  | the value of the seconds argument.
+  | 
+  | Parameter : hour_delta INTEGER4 --- The requested change to the hour
+  |                        value; optional, defaults to zero.
+  | 
+  | Parameter : seconds INTEGER8 --- The number of seconds to adjust.
+  | 
+  | Parameter : year_delta INTEGER2 --- The requested change to the year
+  |                        value; optional, defaults to zero.
+  | 
+  | Parameter : second_delta INTEGER4 --- The requested change to the second of
+  |                          month value; optional, defaults to zero.
+  | 
+  | Parameter : minute_delta INTEGER4 --- The requested change to the minute
+  |                          value; optional, defaults to zero.
+  | 
+  | Parameter : month_delta INTEGER4 --- The requested change to the month
+  |                         value; optional, defaults to zero.
+  | 
+  | Parameter : day_delta INTEGER4 --- The requested change to the day of
+  |                       month value; optional, defaults to zero.
+  | 
+  | Return : INTEGER8 The adjusted Seconds_t value.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t AdjustCalendar(Date_t date, INTEGER2 year_delta = 0, INTEGER4 month_delta = 0,
+  |                                 INTEGER4 day_delta = 0)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Adjusts a date by incrementing or decrementing months and/or years. This
+  | routine uses the rule outlined in McGinn v. State, 46 Neb. 427, 65 N.W. 46
+  | (1895): "The term calendar month, whether employed in statutes or
+  | contracts, and not appearing to have been used in a different sense,
+  | denotes a period terminating with the day of the succeeding month
+  | numerically corresponding to the day of its beginning, less one. If there
+  | be no corresponding day of the succeeding month, it terminates with the
+  | last day thereof." The internet suggests similar legal positions exist in
+  | the Commonwealth and Germany. Note that day adjustments are performed after
+  | year and month adjustments using the preceding rules. As an example, Jan.
+  | 31, 2014 + 1 month will result in Feb. 28, 2014; Jan. 31, 2014 + 1 month +
+  | 1 day will result in Mar. 1, 2014.
+  | 
+  | Parameter : date UNSIGNED4 --- The date to adjust, in the Gregorian
+  |                  calendar after 1600.
+  | 
+  | Parameter : year_delta INTEGER2 --- The requested change to the year
+  |                        value; optional, defaults to zero.
+  | 
+  | Parameter : month_delta INTEGER4 --- The requested change to the month
+  |                         value; optional, defaults to zero.
+  | 
+  | Parameter : day_delta INTEGER4 --- The requested change to the day
+  |                       value; optional, defaults to zero.
+  | 
+  | Return : UNSIGNED4 The adjusted Date_t value.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN IsLocalDaylightSavingsInEffect()
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns a boolean indicating whether daylight savings time is currently in
+  | effect locally.
+  | 
+  | Return : BOOLEAN TRUE if daylight savings time is currently
+  |          in effect, FALSE otherwise.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : INTEGER4 LocalTimeZoneOffset()
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the offset (in seconds) of the time represented from UTC, with
+  | positive values indicating locations east of the Prime Meridian. Given a
+  | UTC time in seconds since epoch, you can find the local time by adding the
+  | result of this function to the seconds.
+  | 
+  | Return : INTEGER4 The number of seconds offset from UTC.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t CurrentDate(BOOLEAN in_local_time = FALSE)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the current date.
+  | 
+  | Parameter : in_local_time BOOLEAN --- TRUE if the returned value should be
+  |                           local to the cluster computing the date, FALSE for
+  |                           UTC. Optional, defaults to FALSE.
+  | 
+  | Return : UNSIGNED4 A Date_t representing the current date.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Date_t Today()
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the current date in the local time zone.
+  | 
+  | Return : UNSIGNED4 A Date_t representing the current date.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Time_t CurrentTime(BOOLEAN in_local_time = FALSE)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the current time of day
+  | 
+  | Parameter : in_local_time BOOLEAN --- TRUE if the returned value should be
+  |                           local to the cluster computing the time, FALSE for
+  |                           UTC. Optional, defaults to FALSE.
+  | 
+  | Return : UNSIGNED3 A Time_t representing the current time
+  |          of day.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Seconds_t CurrentSeconds(BOOLEAN in_local_time = FALSE)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the current date and time as the number of seconds since epoch.
+  | 
+  | Parameter : in_local_time BOOLEAN --- TRUE if the returned value should be
+  |                           local to the cluster computing the time, FALSE for
+  |                           UTC. Optional, defaults to FALSE.
+  | 
+  | Return : INTEGER8 A Seconds_t representing the current time
+  |          in UTC or local time, depending on the argument.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Timestamp_t CurrentTimestamp(BOOLEAN in_local_time = FALSE)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the current date and time as the number of microseconds since
+  | epoch.
+  | 
+  | Parameter : in_local_time BOOLEAN --- TRUE if the returned value should be
+  |                           local to the cluster computing the time, FALSE for
+  |                           UTC. Optional, defaults to FALSE.
+  | 
+  | Return : INTEGER8 A Timestamp_t representing the current
+  |          time in microseconds in UTC or local time,
+  |          depending on the argument.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | MODULE : DatesForMonth(Date_t as_of_date = CurrentDate(FALSE))
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the beginning and ending dates for the month surrounding the given
+  | date.
+  | 
+  | Parameter : as_of_date UNSIGNED4 --- The reference date from which the
+  |                        month will be calculated. This date must be a date
+  |                        within the Gregorian calendar. Optional, defaults
+  |                        to the current date in UTC.
+  | 
+  | Return :  Module with exported attributes for startDate and
+  |          endDate.
+  | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Date_t startDate
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED4
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Date_t endDate
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED4
+  |   | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | MODULE : DatesForWeek(Date_t as_of_date = CurrentDate(FALSE))
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Returns the beginning and ending dates for the week surrounding the given
+  | date (Sunday marks the beginning of a week).
+  | 
+  | Parameter : as_of_date UNSIGNED4 --- The reference date from which the
+  |                        week will be calculated. This date must be a date
+  |                        within the Gregorian calendar. Optional, defaults
+  |                        to the current date in UTC.
+  | 
+  | Return :  Module with exported attributes for startDate and
+  |          endDate.
+  | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Date_t startDate
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED4
+  |   | 
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | ATTRIBUTE : Date_t endDate
+  |   | ----------------------------------------------------------------------------------------------------------------------------------
+  |   | 
+  |   | No Documentation Found
+  |   | 
+  |   | Return : UNSIGNED4
+  |   | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN IsValidDate(Date_t date, INTEGER2 yearLowerBound = 1800, INTEGER2 yearUpperBound
+  |                               = 2100)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Tests whether a date is valid, both by range-checking the year and by
+  | validating each of the other individual components.
+  | 
+  | Parameter : date UNSIGNED4 --- The date to validate.
+  | 
+  | Parameter : yearLowerBound INTEGER2 --- The minimum acceptable year.
+  |                            Optional; defaults to 1800.
+  | 
+  | Parameter : yearUpperBound INTEGER2 --- The maximum acceptable year.
+  |                            Optional; defaults to 2100.
+  | 
+  | Return : BOOLEAN TRUE if the date is valid, FALSE
+  |          otherwise.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN IsValidGregorianDate(Date_t date)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Tests whether a date is valid in the Gregorian calendar. The year must be
+  | between 1601 and 30827.
+  | 
+  | Parameter : date UNSIGNED4 --- The Date_t to validate.
+  | 
+  | Return : BOOLEAN TRUE if the date is valid, FALSE
+  |          otherwise.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BOOLEAN IsValidTime(Time_t time)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | Tests whether a time is valid.
+  | 
+  | Parameter : time UNSIGNED3 --- The time to validate.
+  | 
+  | Return : BOOLEAN TRUE if the time is valid, FALSE
+  |          otherwise.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | TRANSFORM : Date_rec CreateDate(INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | A transform to create a Date_rec from the individual elements
+  | 
+  | Parameter : day UNSIGNED1 --- The day (1..daysInMonth).
+  | 
+  | Parameter : month UNSIGNED1 --- The month (1-12).
+  | 
+  | Parameter : year INTEGER2 --- The year
+  | 
+  | Return : Date_rec A transform that creates a Date_rec
+  |          containing the date.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | TRANSFORM : Date_rec CreateDateFromSeconds(Seconds_t seconds)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | A transform to create a Date_rec from a Seconds_t value.
+  | 
+  | Parameter : seconds INTEGER8 --- The number seconds since epoch.
+  | 
+  | Return : Date_rec A transform that creates a Date_rec
+  |          containing the date.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | TRANSFORM : Time_rec CreateTime(UNSIGNED1 hour, UNSIGNED1 minute, UNSIGNED1 second)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | A transform to create a Time_rec from the individual elements
+  | 
+  | Parameter : second UNSIGNED1 --- The second (0-59).
+  | 
+  | Parameter : minute UNSIGNED1 --- The minute (0-59).
+  | 
+  | Parameter : hour UNSIGNED1 --- The hour (0-23).
+  | 
+  | Return : Time_rec A transform that creates a Time_rec
+  |          containing the time of day.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | TRANSFORM : Time_rec CreateTimeFromSeconds(Seconds_t seconds)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | A transform to create a Time_rec from a Seconds_t value.
+  | 
+  | Parameter : seconds INTEGER8 --- The number seconds since epoch.
+  | 
+  | Return : Time_rec A transform that creates a Time_rec
+  |          containing the time of day.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | TRANSFORM : DateTime_rec CreateDateTime(INTEGER2 year, UNSIGNED1 month, UNSIGNED1 day, UNSIGNED1
+  |                                        hour, UNSIGNED1 minute, UNSIGNED1 second)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | A transform to create a DateTime_rec from the individual elements
+  | 
+  | Parameter : day UNSIGNED1 --- The day (1..daysInMonth).
+  | 
+  | Parameter : second UNSIGNED1 --- The second (0-59).
+  | 
+  | Parameter : minute UNSIGNED1 --- The minute (0-59).
+  | 
+  | Parameter : month UNSIGNED1 --- The month (1-12).
+  | 
+  | Parameter : year INTEGER2 --- The year
+  | 
+  | Parameter : hour UNSIGNED1 --- The hour (0-23).
+  | 
+  | Return : DateTime_rec A transform that creates a
+  |          DateTime_rec containing date and time components.
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | TRANSFORM : DateTime_rec CreateDateTimeFromSeconds(Seconds_t seconds)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | A transform to create a DateTime_rec from a Seconds_t value.
+  | 
+  | Parameter : seconds INTEGER8 --- The number seconds since epoch.
+  | 
+  | Return : DateTime_rec A transform that creates a
+  |          DateTime_rec containing date and time components.
+  | 

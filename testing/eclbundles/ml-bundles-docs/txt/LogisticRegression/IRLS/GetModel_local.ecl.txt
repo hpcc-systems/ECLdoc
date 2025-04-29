@@ -1,0 +1,42 @@
+IMPORTS
+=======
+
+
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+ML_Core.Types <../../ML_Core/Types.ecl.txt>
+LogisticRegression </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/LogisticRegression/pkg.toc.txt>
+LogisticRegression.Constants <../Constants.ecl.txt>
+LogisticRegression.Types <../Types.ecl.txt>
+LogisticRegression.IRLS </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/LogisticRegression/IRLS/pkg.toc.txt>
+std <../../std/pkg.toc.txt>
+std.blas </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Layout_Model) GetModel_local(DATASET(NumericField) independents,
+                                               DATASET(DiscreteField) dependents, UNSIGNED2 max_iter=200, REAL8
+                                               epsilon=Constants.default_epsilon, REAL8 ridge=Constants.default_ridge)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Internal function to determine values for the model co-efficients and
+selected stats from building the model.
+
+Parameter : dependents TABLE ( DiscreteField ) --- the dependent values.
+
+Parameter : ridge REAL8 --- a value to populate a diagonal matrix
+                  that is added to a matrix help assure that the
+                  matrix is invertible.
+
+Parameter : epsilon REAL8 --- the minimum change in the Beta value
+                    estimate to continue
+
+Parameter : independents TABLE ( NumericField ) --- the independent values
+
+Parameter : max_iter UNSIGNED2 --- maximum number of iterations to try
+
+Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+         number , REAL8 value } ) coefficient matrix plus
+         model building stats
+

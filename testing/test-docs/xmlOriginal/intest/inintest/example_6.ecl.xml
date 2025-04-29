@@ -1,0 +1,642 @@
+<Meta>
+ <Source name="example_3" sourcePath="/media/sarthak/Data/ecldoc/testing/test/./example_3.ecl">
+  <Definition body="438"
+              end="979"
+              exported="1"
+              fullname="Example_3"
+              inherittype="local"
+              line="24"
+              name="Example_3"
+              start="419"
+              type="module">
+   <Definition body="465"
+               end="974"
+               exported="1"
+               fullname="Example_3.mod_1"
+               inherittype="local"
+               line="25"
+               name="mod_1"
+               start="450"
+               type="module">
+    <Definition body="614"
+                end="619"
+                exported="1"
+                fullname="example_3.mod_1.v1_m1"
+                inherittype="local"
+                line="32"
+                name="v1_m1"
+                start="599"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#32;Doc test 2. Title end by
+        * period not newline
+    	* &lt;pre&gt;
+    	* ABCD ||||
+    	* CDEF ||||&#10;&#32;&#32;&#32;&#32;&#9;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="707"
+                end="712"
+                exported="1"
+                fullname="example_3.mod_1.v2_m1_ex3"
+                inherittype="local"
+                line="36"
+                name="v2_m1_ex3"
+                start="688"
+                type="attribute">
+     <Type type="real8"/>
+     <Documentation>
+      <content>&#32;DOC Test 3
+        * No Period title&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</content>
+     </Documentation>
+    </Definition>
+    <Definition body="749"
+                end="758"
+                exported="1"
+                fullname="example_3.mod_1.abc"
+                inherittype="local"
+                line="37"
+                name="abc"
+                start="721"
+                type="function">
+     <Type type="real8"/>
+     <Params>
+      <Param name="x">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Definition body="960"
+                end="965"
+                exported="1"
+                fullname="example_3.mod_1.long_name"
+                inherittype="local"
+                line="38"
+                name="long_name"
+                start="767"
+                type="function">
+     <Type type="real8"/>
+     <Params>
+      <Param name="X">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="IntW">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="Intb">
+       <Type type="table">
+        <Type type="record" unnamed="1">
+         <Field name="u">
+          <Type type="real8"/>
+         </Field>
+        </Type>
+       </Type>
+      </Param>
+      <Param name="BETA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="sparsityParam">
+       <Type type="real8"/>
+      </Param>
+      <Param name="LAMBDA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="ALPHA">
+       <Type type="real8"/>
+      </Param>
+      <Param name="MaxIter">
+       <Type type="unsigned2"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Documentation Testing
+* Multiline Title.
+* link@myspace.com
+* &lt;p&gt;
+* Sentence 1
+* blablalbla                    bbblaaaa
+* &lt;p&gt;
+* Sentence 2
+* &lt;pre&gt;
+* blablalbla                    bbbblaaaaa
+*
+* bblaaaaaaaaaa
+* &lt;/pre&gt;
+*   @param first okay_1
+*   @param second okay_2
+*   @param third okay_3
+*   @field f1 oka_f1
+*   @field f2 oka_f2
+*   @return rec_1
+*   @see example_1.mod_1
+*   @author example_1.sarthakjain&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="intest.inintest.example_6" sourcePath="/media/sarthak/Data/ecldoc/testing/test/intest/inintest/example_6.ecl">
+  <Import body="0"
+          end="286"
+          fullname="Example_3"
+          inherittype="local"
+          line="12"
+          name="Example_3"
+          ref="Example_3"
+          start="286">
+   <Documentation>
+    <content>&#10;* Documentation Testing
+* Multiline Title.
+* link@myspace.com
+* &lt;p&gt;
+* Sentence 1
+* blablalbla                    bbblaaaa
+* &lt;p&gt;
+* Sentence 2
+* &lt;pre&gt;
+* blablalbla                    bbbblaaaaa
+*
+* bblaaaaaaaaaa
+* &lt;/pre&gt;
+*   @param first okay_1
+*   @param second okay_2
+*   @param third okay_3
+*   @field f1 oka_f1
+*   @field f2 oka_f2
+*   @return rec_1
+*   @see example_1.mod_1
+*   @author example_1.sarthakjain&#10;</content>
+   </Documentation>
+  </Import>
+  <Definition body="270"
+              end="939"
+              exported="1"
+              fullname="intest.inintest.example_6"
+              inherittype="local"
+              line="11"
+              name="example_6"
+              start="251"
+              type="module">
+   <Definition body="314"
+               end="543"
+               exported="1"
+               fullname="intest.inintest.example_6.mod_1"
+               inherittype="local"
+               line="14"
+               name="mod_1"
+               start="299"
+               type="module">
+    <Definition body="339"
+                end="344"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.v1_m1"
+                inherittype="local"
+                line="15"
+                name="v1_m1"
+                start="324"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="375"
+                end="537"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.mod_11"
+                inherittype="local"
+                line="16"
+                name="mod_11"
+                start="347"
+                type="module">
+     <Definition body="402"
+                 end="422"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_1.mod_11.v1_m11"
+                 inherittype="local"
+                 line="17"
+                 name="v1_m11"
+                 start="386"
+                 type="attribute">
+      <Type type="real8"/>
+     </Definition>
+     <Definition body="456"
+                 end="530"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_1.mod_11.mod_111"
+                 inherittype="local"
+                 line="18"
+                 name="mod_111"
+                 start="426"
+                 type="module">
+      <Definition body="485"
+                  end="522"
+                  exported="1"
+                  fullname="intest.inintest.example_6.mod_1.mod_11.mod_111.v1_m111"
+                  inherittype="local"
+                  line="19"
+                  name="v1_m111"
+                  start="468"
+                  type="attribute">
+       <Type type="real8"/>
+      </Definition>
+      <Params>
+       <Param name="a_111">
+        <Type type="real8"/>
+       </Param>
+      </Params>
+      <Parents/>
+     </Definition>
+     <Params>
+      <Param name="a_11">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Parents/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Definition body="561"
+               end="616"
+               exported="1"
+               fullname="intest.inintest.example_6.mod_2"
+               inherittype="local"
+               line="24"
+               name="mod_2"
+               start="546"
+               type="module">
+    <Definition body="402"
+                end="422"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.mod_11.v1_m11"
+                inherittype="inherited"
+                line="17"
+                name="v1_m11"
+                start="386"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="456"
+                end="530"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.mod_11.mod_111"
+                inherittype="inherited"
+                line="18"
+                name="mod_111"
+                start="426"
+                type="module">
+     <Definition body="485"
+                 end="522"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_1.mod_11.mod_111.v1_m111"
+                 inherittype="local"
+                 line="19"
+                 name="v1_m111"
+                 start="468"
+                 type="attribute">
+      <Type type="real8"/>
+     </Definition>
+     <Params>
+      <Param name="a_111">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Parents/>
+    </Definition>
+    <Definition body="605"
+                end="610"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_2.v1_m2"
+                inherittype="local"
+                line="25"
+                name="v1_m2"
+                start="590"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents>
+     <Parent name="mod_11" ref="intest.inintest.example_6.mod_1.mod_11"/>
+    </Parents>
+   </Definition>
+   <Definition body="634"
+               end="779"
+               exported="1"
+               fullname="intest.inintest.example_6.mod_3"
+               inherittype="local"
+               line="28"
+               name="mod_3"
+               start="619"
+               type="module">
+    <Definition body="659"
+                end="664"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_3.v1_m3"
+                inherittype="local"
+                line="29"
+                name="v1_m3"
+                start="644"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="683"
+                end="773"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_3.mod_31"
+                inherittype="local"
+                line="30"
+                name="mod_31"
+                start="667"
+                type="module">
+     <Definition body="402"
+                 end="422"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_1.mod_11.v1_m11"
+                 inherittype="inherited"
+                 line="17"
+                 name="v1_m11"
+                 start="386"
+                 type="attribute">
+      <Type type="real8"/>
+     </Definition>
+     <Definition body="456"
+                 end="530"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_1.mod_11.mod_111"
+                 inherittype="inherited"
+                 line="18"
+                 name="mod_111"
+                 start="426"
+                 type="module">
+      <Definition body="485"
+                  end="522"
+                  exported="1"
+                  fullname="intest.inintest.example_6.mod_1.mod_11.mod_111.v1_m111"
+                  inherittype="local"
+                  line="19"
+                  name="v1_m111"
+                  start="468"
+                  type="attribute">
+       <Type type="real8"/>
+      </Definition>
+      <Params>
+       <Param name="a_111">
+        <Type type="real8"/>
+       </Param>
+      </Params>
+      <Parents/>
+     </Definition>
+     <Definition body="729"
+                 end="766"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_3.mod_31.v1_m31"
+                 inherittype="local"
+                 line="31"
+                 name="v1_m31"
+                 start="713"
+                 type="attribute">
+      <Type type="real8"/>
+     </Definition>
+     <Parents>
+      <Parent name="mod_11" ref="intest.inintest.example_6.mod_1.mod_11"/>
+     </Parents>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Definition body="797"
+               end="854"
+               exported="1"
+               fullname="intest.inintest.example_6.mod_4"
+               inherittype="local"
+               line="35"
+               name="mod_4"
+               start="782"
+               type="module">
+    <Definition body="402"
+                end="422"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.mod_11.v1_m11"
+                inherittype="inherited"
+                line="17"
+                name="v1_m11"
+                start="386"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="456"
+                end="530"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.mod_11.mod_111"
+                inherittype="inherited"
+                line="18"
+                name="mod_111"
+                start="426"
+                type="module">
+     <Definition body="485"
+                 end="522"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_1.mod_11.mod_111.v1_m111"
+                 inherittype="local"
+                 line="19"
+                 name="v1_m111"
+                 start="468"
+                 type="attribute">
+      <Type type="real8"/>
+     </Definition>
+     <Params>
+      <Param name="a_111">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Parents/>
+    </Definition>
+    <Definition body="605"
+                end="610"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_2.v1_m2"
+                inherittype="inherited"
+                line="25"
+                name="v1_m2"
+                start="590"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="729"
+                end="766"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_3.mod_31.v1_m31"
+                inherittype="inherited"
+                line="31"
+                name="v1_m31"
+                start="713"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="843"
+                end="848"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_4.v1_m4"
+                inherittype="local"
+                line="36"
+                name="v1_m4"
+                start="828"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents>
+     <Parent name="mod_31" ref="intest.inintest.example_6.mod_3.mod_31"/>
+     <Parent name="mod_2" ref="intest.inintest.example_6.mod_2"/>
+    </Parents>
+   </Definition>
+   <Definition body="872"
+               end="934"
+               exported="1"
+               fullname="intest.inintest.example_6.mod_5"
+               inherittype="local"
+               line="39"
+               name="mod_5"
+               start="857"
+               type="module">
+    <Definition body="339"
+                end="344"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.v1_m1"
+                inherittype="inherited"
+                line="15"
+                name="v1_m1"
+                start="324"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="375"
+                end="537"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.mod_11"
+                inherittype="inherited"
+                line="16"
+                name="mod_11"
+                start="347"
+                type="module">
+     <Definition body="402"
+                 end="422"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_1.mod_11.v1_m11"
+                 inherittype="local"
+                 line="17"
+                 name="v1_m11"
+                 start="386"
+                 type="attribute">
+      <Type type="real8"/>
+     </Definition>
+     <Definition body="456"
+                 end="530"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_1.mod_11.mod_111"
+                 inherittype="local"
+                 line="18"
+                 name="mod_111"
+                 start="426"
+                 type="module">
+      <Definition body="485"
+                  end="522"
+                  exported="1"
+                  fullname="intest.inintest.example_6.mod_1.mod_11.mod_111.v1_m111"
+                  inherittype="local"
+                  line="19"
+                  name="v1_m111"
+                  start="468"
+                  type="attribute">
+       <Type type="real8"/>
+      </Definition>
+      <Params>
+       <Param name="a_111">
+        <Type type="real8"/>
+       </Param>
+      </Params>
+      <Parents/>
+     </Definition>
+     <Params>
+      <Param name="a_11">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Parents/>
+    </Definition>
+    <Definition body="402"
+                end="422"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.mod_11.v1_m11"
+                inherittype="inherited"
+                line="17"
+                name="v1_m11"
+                start="386"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="456"
+                end="530"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_1.mod_11.mod_111"
+                inherittype="inherited"
+                line="18"
+                name="mod_111"
+                start="426"
+                type="module">
+     <Definition body="485"
+                 end="522"
+                 exported="1"
+                 fullname="intest.inintest.example_6.mod_1.mod_11.mod_111.v1_m111"
+                 inherittype="local"
+                 line="19"
+                 name="v1_m111"
+                 start="468"
+                 type="attribute">
+      <Type type="real8"/>
+     </Definition>
+     <Params>
+      <Param name="a_111">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+     <Parents/>
+    </Definition>
+    <Definition body="923"
+                end="928"
+                exported="1"
+                fullname="intest.inintest.example_6.mod_5.v1_m5"
+                inherittype="local"
+                line="40"
+                name="v1_m5"
+                start="908"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents>
+     <Parent name="mod_1" ref="intest.inintest.example_6.mod_1"/>
+     <Parent name="mod_11" ref="intest.inintest.example_6.mod_1.mod_11"/>
+    </Parents>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Module Hierarchy Example :
+* mod_1 -&gt; mod_11 -&gt; mod_111 .
+* Inheritance across Hierarchy :
+* mod_2 inherits mod_1.mod_11 ,
+* mod_3.mod_31 inherits mod_1.mod_11 ,
+* mod_4 inherits mod_3.mod_31, mod_2 ,
+* mod_5 inherits mod_1 and mod_1.mod_11&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

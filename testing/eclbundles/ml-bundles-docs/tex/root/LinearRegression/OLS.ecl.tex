@@ -1,0 +1,3273 @@
+\chapter*{\color{headfile}
+{\large LinearRegression\slash\hspace{0pt}}
+ \\
+OLS
+}
+\hypertarget{ecldoc:toc:LinearRegression.OLS}{}
+\hyperlink{ecldoc:toc:root/LinearRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core |
+ML\_Core.Types |
+PBblas |
+PBblas.Types |
+PBblas.Converted |
+PBblas.MatUtils |
+ML\_Core.Math |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+OLS}}
+
+\hypertarget{ecldoc:linearregression.ols}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{OLS} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(NumericField) X=empty\_data, DATASET(NumericField) Y=empty\_data)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Ordinary Least Squares (OLS) Linear Regression aka Ordinary Linear Regression Regression learns a function that maps a set of input data (independents) to one or more output variables (dependents). The resulting learned function is known as the model. That model can then be used repetitively to predict (i.e. estimate) the output value(s) based on new input data. Two major use cases are supported: 1) Learn and return a model 2) Use an existing (e.g. persisted) model to predict new values for Y Of course, both can be done in a single run. Alternatively, the model can be persisted and used indefinitely for prediction of Y values, as long as the record format has not changed, and the original training data remains representative of the population. OLS supports any number of independent variables (Multiple Regression) and multiple dependent variables (Multivariate Regression). In this way, multiple variables' values can be predicted from the same input (i.e. independent) data. Training data is presented as parameters to this module. When using a previously persisted model (use case 2 above), these parameters should be omitted. This module provides a rich set of analytics to assess the usefulness of the resulting linear regression model, and to determine the best subset of independent variables to include in the model. These include: For the whole model: - Analysis of Variance (ANOVA) - R-squared - Adjusted R-squared - F-Test - Akaike Information Criterion (AIC) For each coefficient: - Standard Error (SE) - T-statistic - P-value - Confidence Interval
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{Y}} ||| TABLE ( NumericField ) --- The dependent variable training data in DATASET(NumericField) format. Each observation (e.g. record) is identified by 'id', and each feature is identified by field number. Omit this parameter when predicting from a persisted model.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{X}} ||| TABLE ( NumericField ) --- The independent variable training data in DATASET(NumericField) format. Each observation (e.g. record) is identified by 'id', and each feature is identified by field number (i.e. 'number'). Omit this parameter when predicting from a persisted model.
+\end{description}
+
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARENT}}}] \textbf{ML\_Core.Interfaces.IRegression} <../ML\_Core/Interfaces/IRegression.ecl.tex>
+\end{description}
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:linearregression.ols.getmodel}{GetModel}
+: GetModel Returns the learned model that maps X's to Y's
+\item \hyperlink{ecldoc:linearregression.ols.betas}{Betas}
+: Return raw Beta values as numeric fields Extracts Beta values from the model
+\item \hyperlink{ecldoc:linearregression.ols.predict}{Predict}
+: Predict the dependent variable values (Y) for any set of independent variables (X)
+\item \hyperlink{ecldoc:linearregression.ols.makersq}{makeRSQ}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.rsquared}{RSquared}
+: RSquared Calculate the R-Squared Metric used to assess the fit of the regression line to the training data
+\item \hyperlink{ecldoc:linearregression.ols.anovarec}{AnovaRec}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.calcanova}{calcAnova}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.anova}{Anova}
+: ANOVA (Analysis of Variance) report Analyzes the sources of variance
+\item \hyperlink{ecldoc:linearregression.ols.se}{SE}
+: Standard Error of the Regression Coefficients Describes the variability of the regression error for each coefficient
+\item \hyperlink{ecldoc:linearregression.ols.tstat}{TStat}
+: T-Statistic The T-statistic identifies the significance of the value of each regression coefficient
+\item \hyperlink{ecldoc:linearregression.ols.adjrsquared}{AdjRSquared}
+: Adjusted R2 Calculate Adjusted R Squared which is a scaled version of R Squared that does not arbitrarily increase with the number of features
+\item \hyperlink{ecldoc:linearregression.ols.aicrec}{AICRec}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.aic}{AIC}
+: Akaike Information Criterion (AIC) Information theory based criterion for assessing Goodness of Fit (GOF)
+\item \hyperlink{ecldoc:linearregression.ols.rangevec}{RangeVec}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.pval}{pVal}
+: P-Value Calculate the P-value for each coefficient, which is the probability that the coefficient is insignificant (i.e
+\item \hyperlink{ecldoc:linearregression.ols.confintrec}{ConfintRec}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.confint}{ConfInt}
+: Confidence Interval The Confidence Interval determines the upper and lower bounds of each estimated coefficient given a confidence level (level) that is required
+\item \hyperlink{ecldoc:linearregression.ols.ftestrec}{FTestRec}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.ftest}{FTest}
+: F-Test Calculate the P-value for the full regression, which is the probability that all of the coefficients are insignificant (i.e
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+GetModel}}
+
+\hypertarget{ecldoc:linearregression.ols.getmodel}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Model)} & \textbf{GetModel} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+GetModel Returns the learned model that maps X's to Y's. In the case of OLS, the model represents a set of Betas which are the coefficients of the linear model: Beta0 * 1 + Beta1 * Field1 + Beta2 * Field2 \ldots The ID of each model record specifies to which Y variable the coefficient applies. The Field Number ('number') indicates to which field of X the beta is to be applied. Field number 1 provides the intercept portion of the linear model and is always multiplied by 1. Note that if multiple work-items are provided within X and Y, there will be multiple models returned. The models can be separated by their work item id (i.e. 'wi'). A single model can be extracted from a myriad model by using e.g., model(wi=myWI\_id). GetModel should not be called when predicting using a previously persisted model (i.e. when training data was not passed to the module.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- Model in DATASET(Layout\_Model) format
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] ML\_core/Types.Layout\_Model
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Betas}}
+
+\hypertarget{ecldoc:linearregression.ols.betas}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(NumericField)} & \textbf{Betas} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Layout\_Model) model=GetModel)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Return raw Beta values as numeric fields Extracts Beta values from the model. Can be used during training and prediction phases. For use during training phase, the 'model' parameter can be omitted. GetModel will be called to retrieve the model based on the training data. For use during prediction phase, a previously persisted model should be provided. The 'number' field of the returned NumericField records specifies to which Y the coefficient applies. The 'id' field of the returned record indicates the position of the Beta value. ID = 1 provides the Beta for the constant term (i.e. the Y intercept) while subsequent values reflect the Beta for each correspondingly numbered X feature. Feature 1 corresponds to Beta with 'id' = 2 and so on. If 'model' contains multiple work-items, Separate sets of Betas will be returned for each of the 'myriad' models (distinguished by 'wi').
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{model}} ||| TABLE ( Layout\_Model ) --- Optional parameter provides a model that was previously retrieved using GetModel. If omitted, GetModel will be used as the model.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- DATASET(NumericField) containing the Beta values.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Predict}}
+
+\hypertarget{ecldoc:linearregression.ols.predict}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(NumericField)} & \textbf{Predict} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(NumericField) newX, DATASET(Layout\_Model) model=GetModel)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Predict the dependent variable values (Y) for any set of independent variables (X). Returns a predicted Y values for each observation (i.e. record) of X. This supports the 'myriad' style interface in that multiple independent work items may be present in 'newX', and multiple independent models may be provided in 'model'. The resulting predicted values will also be separable by work item (i.e. wi).
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{model}} ||| TABLE ( Layout\_Model ) --- Optional. A model that was previously returned from GetModel (above). Note that a model from a previous run will only be valid if the field numbers in X are the same as when the model was learned. If this parameter is omitted, the current model will be used.
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{newX}} ||| TABLE ( NumericField ) --- The set of observations of independent variables in DATASET(NumericField) format.
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- An estimation of the corresponding Y value for each observation of newX. Returned in DATASET(NumericField) format with field number (i.e. 'number') indicating the dependent variable that is predicted.
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} TRANSFORM}
+makeRSQ}}
+
+\hypertarget{ecldoc:linearregression.ols.makersq}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} R2Rec} & \textbf{makeRSQ} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (CoCoRec coco)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{coco}} ||| ROW ( CoCoRec ) --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{R2Rec} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+RSquared}}
+
+\hypertarget{ecldoc:linearregression.ols.rsquared}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(R2Rec)} & \textbf{RSquared} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+RSquared Calculate the R-Squared Metric used to assess the fit of the regression line to the training data. Since the regression has chosen the best (i.e. least squared error) line matching the data, this can be thought of as a measurement of the linearity of the training data. R Squared generally varies between 0 and 1, with 1 indicating an exact linear fit, and 0 indicating that a linear fit will have no predictive power. Negative values are possible under certain conditions, and indicate that the mean(Y) will be more predictive than any linear fit. Moderate values of R squared (e.g. .5) may indicate that the relationship of X -> Y is non-linear, or that the measurement error is high relative to the linear correlation (e.g. many outliers). In the former case, increasing the dimensionality of X, such as by using polynomial variants of the features, may yield a better fit. R squared always increases when additional independent variables are added, so it should not be used to determine the optimal set of X variables to include. For that purpose, use Adjusted R Squared (below) which penalizes larger numbers of variables. Note that the result of this call is only meaningful during training phase (use case 1 above) as it is an analysis based on the training data which is not provided during a prediction-only phase.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 number , REAL8 RSquared \} )} --- DATASET(R2Rec) with one record per dependent variable, per work-item. The number field indicates the dependent variable and coresponds to the number field of the dependent (Y) variable to which it applies.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+AnovaRec}}
+
+\hypertarget{ecldoc:linearregression.ols.anovarec}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{AnovaRec} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{number}} ||| UNSIGNED4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{error\_ss}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{total\_df}} ||| UNSIGNED8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{total\_ms}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{error\_df}} ||| UNSIGNED8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{error\_ms}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{model\_ms}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{model\_ss}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{wi}} ||| UNSIGNED2 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{model\_f}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{total\_ss}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{model\_df}} ||| UNSIGNED8 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} TRANSFORM}
+calcAnova}}
+
+\hypertarget{ecldoc:linearregression.ols.calcanova}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} AnovaRec} & \textbf{calcAnova} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (tmpRec le)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{le}} ||| ROW ( tmpRec ) --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{AnovaRec} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Anova}}
+
+\hypertarget{ecldoc:linearregression.ols.anova}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Anova} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+ANOVA (Analysis of Variance) report Analyzes the sources of variance. Basic ANOVA equality: Model + Error = Total Determines how much of the variance of Y is explained by the regression model, versus how much is due to the error term (i.e. unexplained variance). This attribute is only meaningful during the training phase. Provides one record per work-item. Each record provides the following statistics: - Total\_SS -- Total Sum of Squares (SS) variance of the dependent data - Model\_SS -- The SS variance represented within the model - Error\_SS -- The SS variance not reflected by the model (i.e. Total\_SS - Error\_SS) - Total\_DF -- The total degrees of freedom within the dependent data - Model\_DF -- Degrees of freedom of the model - Error\_DF -- Degrees of freedom of the error component - Total\_MS -- The Mean Square (MS) variance of the dependent data - Model\_MS -- The Mean Square (MS) variance represented within the model - Error\_MS -- The MS variance not reflected by the model - Model\_F -- The F-Test statistic: Model\_MS / Error\_MS
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 number , REAL8 Total\_SS , REAL8 Model\_SS , REAL8 Error\_SS , UNSIGNED8 Total\_DF , UNSIGNED8 Model\_DF , UNSIGNED8 Error\_DF , REAL8 Total\_MS , REAL8 Model\_MS , REAL8 Error\_MS , REAL8 Model\_F \} )} --- DATASET(AnovaRec), one per work-item per dependent (Y) variable The number field indicates the dependent variable to which the analysis applies.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+SE}}
+
+\hypertarget{ecldoc:linearregression.ols.se}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(NumericField)} & \textbf{SE} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Standard Error of the Regression Coefficients Describes the variability of the regression error for each coefficient. Only meaningful during the training phase.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- DATASET(NumericField), one record per Beta coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The 'number' field indicates the dependent variable to which the coefficient applies.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+TStat}}
+
+\hypertarget{ecldoc:linearregression.ols.tstat}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(NumericField)} & \textbf{TStat} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+T-Statistic The T-statistic identifies the significance of the value of each regression coefficient. Its calculation is simply the value of the coefficient divided by the Standard Error of the coefficient. A larger absolute value of the T-statistic indicates that the coefficient is more significant. Only meaningful during the training phase.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- DATSET(NumericField), one record per Beta coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The number field indicates the dependent variable to which the coefficient applies.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+AdjRSquared}}
+
+\hypertarget{ecldoc:linearregression.ols.adjrsquared}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(R2Rec)} & \textbf{AdjRSquared} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Adjusted R2 Calculate Adjusted R Squared which is a scaled version of R Squared that does not arbitrarily increase with the number of features. Adjusted R2, rather than R2 should always be used when trying to determine the best set of features to include in a model. When adding features, R2 will always increase, whether or not it improves the predictive power of the model. Adjusted R2, however, will only increase with the predictive power of the model.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 number , REAL8 RSquared \} )} --- DATASET(R2Rec), one record per dependent variable per work-item. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+AICRec}}
+
+\hypertarget{ecldoc:linearregression.ols.aicrec}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{AICRec} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{number}} ||| UNSIGNED4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{aic}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{wi}} ||| UNSIGNED2 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+AIC}}
+
+\hypertarget{ecldoc:linearregression.ols.aic}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(AICRec)} & \textbf{AIC} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Akaike Information Criterion (AIC) Information theory based criterion for assessing Goodness of Fit (GOF). Lower values mean better fit.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 number , REAL8 AIC \} )} --- DATASET(AICRec), one record per dependent variable per work-item. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+RangeVec}}
+
+\hypertarget{ecldoc:linearregression.ols.rangevec}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RangeVec} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{p}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{rangenumber}} ||| UNSIGNED8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{rangehigh}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{rangelow}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+DistributionBase}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{DistributionBase} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_Count Nranges = 10000)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{nranges}} ||| UNSIGNED8 --- No Doc
+\end{description}
+
+
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.low}{Low}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.high}{High}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.density}{Density}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.rangewidth}{RangeWidth}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.densityv}{DensityV}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.cumulativev}{CumulativeV}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.cumulative}{Cumulative}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.ntile}{NTile}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.invdensity}{InvDensity}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.discrete}{Discrete}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Low}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.low}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Low} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+High}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.high}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{High} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Density}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.density}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{Density} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal t)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{t}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+RangeWidth}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.rangewidth}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RangeWidth} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DensityV}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.densityv}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(RangeVec)} & \textbf{DensityV} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P \} )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CumulativeV}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.cumulativev}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{CumulativeV} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P \} )} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Cumulative}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.cumulative}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{Cumulative} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal t)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{t}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+NTile}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.ntile}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{NTile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal Pc)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{pc}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+InvDensity}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.invdensity}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{InvDensity} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal delta)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{delta}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Discrete}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.discrete}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.distributionbase}{DistributionBase} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Discrete} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+TDistribution}}
+
+\hypertarget{ecldoc:linearregression.ols.tdistribution}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{TDistribution} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_Discrete v\_in,t\_Count NRanges = 10000)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{nranges}} ||| UNSIGNED8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{v\_in}} ||| INTEGER4 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARENT}}}] \textbf{linearregression.ols.distributionbase} <OLS.ecl.tex>
+\end{description}
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.densityv}{DensityV}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.ntile}{NTile}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.discrete}{Discrete}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.tdistribution.invdensity}{InvDensity}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.tdistribution.high}{High}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.tdistribution.low}{Low}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.tdistribution.rangewidth}{RangeWidth}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.tdistribution.density}{Density}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.tdistribution.cumulativev}{CumulativeV}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.tdistribution.cumulative}{Cumulative}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DensityV}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.densityv}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(RangeVec)} & \textbf{DensityV} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P \} )} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+NTile}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.ntile}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{NTile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal Pc)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{pc}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Discrete}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.discrete}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Discrete} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITED}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+InvDensity}}
+
+\hypertarget{ecldoc:linearregression.ols.tdistribution.invdensity}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{InvDensity} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal delta)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{delta}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+High}}
+
+\hypertarget{ecldoc:linearregression.ols.tdistribution.high}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{High} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Low}}
+
+\hypertarget{ecldoc:linearregression.ols.tdistribution.low}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Low} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITED}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+RangeWidth}}
+
+\hypertarget{ecldoc:linearregression.ols.tdistribution.rangewidth}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RangeWidth} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Density}}
+
+\hypertarget{ecldoc:linearregression.ols.tdistribution.density}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{Density} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal t)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{t}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CumulativeV}}
+
+\hypertarget{ecldoc:linearregression.ols.tdistribution.cumulativev}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{CumulativeV} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P \} )} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Cumulative}}
+
+\hypertarget{ecldoc:linearregression.ols.tdistribution.cumulative}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.tdistribution}{TDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{Cumulative} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal t)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{t}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+FDistribution}}
+
+\hypertarget{ecldoc:linearregression.ols.fdistribution}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{FDistribution} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_Discrete d1\_in, t\_Discrete d2\_in, t\_Count NRanges = 10000)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{d1\_in}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{d2\_in}} ||| INTEGER4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{nranges}} ||| UNSIGNED8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARENT}}}] \textbf{linearregression.ols.distributionbase} <OLS.ecl.tex>
+\end{description}
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.densityv}{DensityV}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.cumulativev}{CumulativeV}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.cumulative}{Cumulative}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.ntile}{NTile}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.invdensity}{InvDensity}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.discrete}{Discrete}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.fdistribution.low}{Low}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.fdistribution.high}{High}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.fdistribution.rangewidth}{RangeWidth}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.fdistribution.density}{Density}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DensityV}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.densityv}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(RangeVec)} & \textbf{DensityV} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P \} )} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CumulativeV}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.cumulativev}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{CumulativeV} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P \} )} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Cumulative}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.cumulative}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{Cumulative} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal t)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{t}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+NTile}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.ntile}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{NTile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal Pc)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{pc}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+InvDensity}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.invdensity}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{InvDensity} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal delta)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{delta}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITED}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Discrete}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.discrete}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Discrete} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITED}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Low}}
+
+\hypertarget{ecldoc:linearregression.ols.fdistribution.low}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Low} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITED}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+High}}
+
+\hypertarget{ecldoc:linearregression.ols.fdistribution.high}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{High} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+RangeWidth}}
+
+\hypertarget{ecldoc:linearregression.ols.fdistribution.rangewidth}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RangeWidth} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Density}}
+
+\hypertarget{ecldoc:linearregression.ols.fdistribution.density}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.fdistribution}{FDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{Density} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal t)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{t}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+NormalDistribution}}
+
+\hypertarget{ecldoc:linearregression.ols.normaldistribution}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{NormalDistribution} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_Count NRanges)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{nranges}} ||| UNSIGNED8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARENT}}}] \textbf{linearregression.ols.distributionbase} <OLS.ecl.tex>
+\end{description}
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.low}{Low}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.high}{High}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.rangewidth}{RangeWidth}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.densityv}{DensityV}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.cumulativev}{CumulativeV}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.cumulative}{Cumulative}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.ntile}{NTile}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.invdensity}{InvDensity}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.distributionbase.discrete}{Discrete}
+: No Documentation Found
+\item \hyperlink{ecldoc:linearregression.ols.normaldistribution.density}{Density}
+: No Documentation Found
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Low}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.low}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Low} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITED}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+High}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.high}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{High} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{INTEGER8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITED}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+RangeWidth}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.rangewidth}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{RangeWidth} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DensityV}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.densityv}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(RangeVec)} & \textbf{DensityV} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P \} )} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+CumulativeV}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.cumulativev}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{CumulativeV} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} ()}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED8 RangeNumber , REAL8 RangeLow , REAL8 RangeHigh , REAL8 P \} )} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Cumulative}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.cumulative}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{Cumulative} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal t)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{t}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+NTile}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.ntile}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{NTile} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal Pc)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{pc}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+InvDensity}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.invdensity}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{InvDensity} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal delta)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{delta}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITED}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+Discrete}}
+
+\hypertarget{ecldoc:linearregression.ols.distributionbase.discrete}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{Discrete} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{INHERITED}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Density}}
+
+\hypertarget{ecldoc:linearregression.ols.normaldistribution.density}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols.normaldistribution}{NormalDistribution} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} t\_FieldReal} & \textbf{Density} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (t\_FieldReal t)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{t}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{REAL8} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{OVERRIDE}}}] 
+\end{description}
+
+
+
+\rule{\linewidth}{0.5pt}
+
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+pVal}}
+
+\hypertarget{ecldoc:linearregression.ols.pval}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{pVal} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+P-Value Calculate the P-value for each coefficient, which is the probability that the coefficient is insignificant (i.e. actually zero). A low P-value (e.g. .05) provides evidence that the coefficient is significant in the model. A high P-value indicates that the coefficient value should, in fact, be zero. P-value is related to the T-Statistic, and can be thought of as a normalized version of the T-Statistic. Only meaningful during the training phase.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 value \} )} --- DATSET(NumericField), one record per Beta coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+ConfintRec}}
+
+\hypertarget{ecldoc:linearregression.ols.confintrec}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ConfintRec} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{number}} ||| UNSIGNED4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{upperint}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{wi}} ||| UNSIGNED2 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{lowerint}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{id}} ||| UNSIGNED8 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ConfInt}}
+
+\hypertarget{ecldoc:linearregression.ols.confint}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{ConfInt} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (Types.t\_fieldReal level)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Confidence Interval The Confidence Interval determines the upper and lower bounds of each estimated coefficient given a confidence level (level) that is required. For example, one could say that there is a 95\% probability (level) that the coefficient of the first independent variable is between 2.05 and 3.62. This allows error margins to be determined with the desired confidence level. If the confidence interval spans zero, it implies that the coefficient may not be significant at the specified confidence level.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{level}} ||| REAL8 --- The level of confidence required, expressed as a percentage from 0.0 to 100.0
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 LowerInt , REAL8 UpperInt \} )} --- DATASET(ConfintRec) with one record per coefficient per dependent variable per work-item. The 'id' field is the coefficient number, with 1 being the Y intercept, 2 being the coefficient for the first feature, etc. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} RECORD}
+FTestRec}}
+
+\hypertarget{ecldoc:linearregression.ols.ftestrec}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{FTestRec} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+No Documentation Found
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{number}} ||| UNSIGNED4 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{wi}} ||| UNSIGNED2 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{pvalue}} ||| REAL8 --- No Doc
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{FIELD}}}] \textbf{\underline{model\_f}} ||| REAL8 --- No Doc
+\end{description}
+
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} ATTRIBUTE}
+FTest}}
+
+\hypertarget{ecldoc:linearregression.ols.ftest}{}
+\hspace{0pt} \hyperlink{ecldoc:linearregression.ols}{OLS} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(FTestRec)} & \textbf{FTest} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+F-Test Calculate the P-value for the full regression, which is the probability that all of the coefficients are insignificant (i.e. actually zero). A low P-value (e.g. .05) provides evidence that at least one coefficient is significant. A high P-value indicates that all the coefficient values should in fact be zero, implying that the regression has no statistically significant predictive power. P-value is related to the ANOVA F-Statistic, and can be thought of as a standardized version of the ANOVA F-Statistic. The F-Test and T-Test are similar, except that the T-test is used to test the significance of each coefficient, while the F-Test is used to test the significance of the entire regression. For simple linear regression (i.e. only one independent variable, the T-Test and F-Test are equivalent.
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 number , REAL8 Model\_F , REAL8 pValue \} )} --- DATASET(FTestRec), one record per dependent variable per work-item. The number field indicates the dependent variable and corresponds to the number field of the dependent (Y) variable to which it applies.
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

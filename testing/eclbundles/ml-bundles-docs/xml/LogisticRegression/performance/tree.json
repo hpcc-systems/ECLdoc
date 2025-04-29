@@ -1,0 +1,11 @@
+{
+    "include_path": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/performance",
+    "input_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles",
+    "output_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs",
+    "tree": {
+        "runbinomial": {
+            "key": "RunBinomial.ecl",
+            "tree": "LogisticRegression/performance/RunBinomial.ecl"
+        }
+    }
+}

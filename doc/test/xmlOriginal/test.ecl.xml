@@ -1,0 +1,18 @@
+<Meta>
+ <Source name="test" sourcePath="/home/tetrapod/source/ecldoc/testing/test/test.ecl">
+  <Definition body="36"
+              end="49"
+              exported="1"
+              fullname="test"
+              inherittype="local"
+              line="5"
+              name="test"
+              start="22"
+              type="module">
+   <Documentation>
+    <content>&#10;* test module&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

@@ -1,0 +1,67 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+ExtractReport
+}
+\hypertarget{ecldoc:toc:LogisticRegression.ExtractReport}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Types |
+LogisticRegression |
+LogisticRegression.Types |
+LogisticRegression.Constants |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+ExtractReport}}
+
+\hypertarget{ecldoc:logisticregression.extractreport}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Model\_Report)} & \textbf{ExtractReport} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Core\_Types.Layout\_Model) mod\_ds)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Extract Report records from model
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{mod\_ds}} ||| TABLE ( Layout\_Model ) --- the model dataset
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 max\_iterations , REAL8 epsilon , UNSIGNED4 dep\_vars , UNSIGNED4 ind\_vars , UNSIGNED8 obs , UNSIGNED2 builder , TABLE ( Classifier\_Stats ) stats \} )} --- the model report dataset
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

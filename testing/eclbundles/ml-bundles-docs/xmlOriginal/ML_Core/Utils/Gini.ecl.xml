@@ -1,0 +1,38 @@
+<Meta>
+ <Source name="ML_Core.Utils.Gini" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Utils/Gini.ecl">
+  <Definition body="464"
+              end="1514"
+              exported="1"
+              fullname="ml_core.utils.gini"
+              inherittype="local"
+              line="10"
+              name="Gini"
+              start="413"
+              type="macro">
+   <Type type="boolean"/>
+   <Documentation>
+    <content>&#10;&#32;* Creates a file of pivot/target pairs with a Gini impurity value.
+ *@param infile the input file, any type with a work item field
+ *@param pivot  the name of the pivot field
+ *@param target the name of the field used as the target
+ *@param wi_name the name of the work item field, default is &quot;wi&quot;
+ *return        A table by Work Item and Pivot value giving count and
+ *              Gini impurity value&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="infile">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="pivot">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="target">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="wi_name">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+</Meta>

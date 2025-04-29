@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../Types.ecl.xml"/><Source name="ML_Core.Utils.Fat" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Utils/Fat.ecl" target="Fat.ecl.xml">
+  <Definition exported="1" fullname="ml_core.utils.fat" inherittype="local" line="9" name="Fat" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="id">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="number">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="value">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Will take a potentially sparse file d and fill in the missing with value v for Numeric Field datasets</content><return>A full Numeric Field dataset with every field populated</return><param>d0 They myriad format Numeric Field dataset to be filled</param><param>v The value to assign missing records</param><firstline>Will take a potentially sparse file d and fill in the missing</firstline></Documentation>
+   <Signature name="Fat" ret="DATASET(Types.NumericField)" param="(DATASET(Types.NumericField) d0, Types.t_FieldReal v=0)" hlen="31">DATASET(Types.NumericField) Fat(DATASET(Types.NumericField) d0, Types.t_FieldReal v=0)</Signature><Params>
+    <Param name="d0">
+     <Type type="table">
+      <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+    <Param name="v">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Import name="Types" ref="ML_Core.Types" target="../Types.ecl.xml"/>
+ <Documentation>
+    <content>Will take a potentially sparse file d and fill in the missing with value v for Numeric Field datasets</content><return>A full Numeric Field dataset with every field populated</return><param>d0 They myriad format Numeric Field dataset to be filled</param><param>v The value to assign missing records</param><firstline>Will take a potentially sparse file d and fill in the missing</firstline></Documentation>
+   </Source>
+</Meta>

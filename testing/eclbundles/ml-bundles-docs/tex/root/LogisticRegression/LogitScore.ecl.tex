@@ -1,0 +1,67 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+LogitScore
+}
+\hypertarget{ecldoc:toc:LogisticRegression.LogitScore}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Types |
+LogisticRegression |
+LogisticRegression.Types |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+LogitScore}}
+
+\hypertarget{ecldoc:logisticregression.logitscore}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Raw\_Prediction)} & \textbf{LogitScore} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Model\_Coef) coef, DATASET(NumericField) independents)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Calculate the score using the logit function and the the supplied beta coefficients.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{coef}} ||| TABLE ( Model\_Coef ) --- the model beta coefficients
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{independents}} ||| TABLE ( NumericField ) --- the observations
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4 number , REAL8 raw \} )} --- the raw prediction value
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

@@ -1,0 +1,268 @@
+<Meta>
+ <Source name="example" sourcePath="/media/sarthak/Data/ecldoc/testing/test/example.ecl">
+  <Definition body="136"
+              end="1157"
+              exported="1"
+              fullname="example"
+              inherittype="local"
+              line="8"
+              name="example"
+              start="119"
+              type="module">
+   <Definition body="161"
+               end="201"
+               exported="1"
+               fullname="example.rec_1"
+               inherittype="local"
+               line="9"
+               name="rec_1"
+               start="146"
+               type="record">
+    <Field name="f">
+     <Type type="real8"/>
+    </Field>
+    <Field name="g">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="220"
+               end="277"
+               exported="1"
+               fullname="example.rec_2"
+               inherittype="local"
+               line="14"
+               name="rec_2"
+               start="205"
+               type="record">
+    <Field name="a">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="b">
+     <Type type="real8"/>
+    </Field>
+    <Field name="g">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="303"
+               end="387"
+               exported="1"
+               fullname="example.interface_ex"
+               inherittype="local"
+               line="20"
+               name="interface_ex"
+               start="281"
+               type="interface">
+    <Definition body="345"
+                end="344"
+                fullname="example.interface_ex.iface_v1"
+                inherittype="local"
+                line="21"
+                name="iface_v1"
+                shared="1"
+                start="317"
+                type="attribute">
+     <Type type="unsigned4"/>
+    </Definition>
+    <Definition body="376"
+                end="380"
+                exported="1"
+                fullname="example.interface_ex.iface_v3"
+                inherittype="local"
+                line="22"
+                name="iface_v3"
+                start="348"
+                type="attribute">
+     <Type type="string25"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Definition body="428"
+               end="462"
+               exported="1"
+               fullname="example.func_1"
+               inherittype="local"
+               line="25"
+               name="func_1"
+               start="391"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+     <Param name="y">
+      <Type type="string25"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="500"
+               end="605"
+               fullname="example.trans_1"
+               inherittype="local"
+               line="29"
+               name="trans_1"
+               shared="1"
+               start="466"
+               type="transform">
+    <Type fullname="example.rec_2" name="rec_2" type="record"/>
+    <Params>
+     <Param name="rec">
+      <Type type="row">
+       <Type fullname="example.rec_1" name="rec_1" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="658"
+               end="711"
+               exported="1"
+               fullname="example.func_2"
+               inherittype="local"
+               line="35"
+               name="func_2"
+               start="609"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="a">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="b">
+       <Type type="real8"/>
+      </Field>
+      <Field name="g">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Params>
+     <Param name="d">
+      <Type type="table">
+       <Type fullname="example.rec_1" name="rec_1" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="739"
+               end="776"
+               exported="1"
+               fullname="example.mod_1"
+               inherittype="local"
+               line="39"
+               name="mod_1"
+               start="715"
+               type="module">
+    <Definition body="764"
+                end="769"
+                exported="1"
+                fullname="example.mod_1.pi_w"
+                inherittype="local"
+                line="40"
+                name="pi_w"
+                start="750"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Params>
+     <Param name="a">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+    <Parents/>
+   </Definition>
+   <Definition body="795"
+               end="834"
+               exported="1"
+               fullname="example.mod_2"
+               inherittype="local"
+               line="43"
+               name="mod_2"
+               start="780"
+               type="module">
+    <Definition body="822"
+                end="827"
+                exported="1"
+                fullname="example.mod_2.pi_wo"
+                inherittype="local"
+                line="44"
+                name="pi_wo"
+                start="807"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Definition body="873"
+               end="893"
+               exported="1"
+               fullname="example.cpp_1"
+               inherittype="local"
+               line="48"
+               name="cpp_1"
+               start="839"
+               type="embed">
+    <Type type="data"/>
+    <Params>
+     <Param name="varcpp">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="923"
+               end="999"
+               exported="1"
+               fullname="example.funcmacro_1"
+               inherittype="local"
+               line="52"
+               name="funcmacro_1"
+               start="897"
+               type="macro">
+    <Type type="boolean"/>
+    <Params>
+     <Param name="num">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1034"
+               end="1090"
+               exported="1"
+               fullname="example.macro_1"
+               inherittype="local"
+               line="57"
+               name="macro_1"
+               start="1003"
+               type="macro">
+    <Type type=""/>
+    <Params>
+     <Param name="num_1">
+      <Type type="integer8"/>
+     </Param>
+     <Param name="num_2">
+      <Type type="integer8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1111"
+               end="1152"
+               exported="1"
+               fullname="example.macro_2"
+               inherittype="local"
+               line="61"
+               name="macro_2"
+               start="1094"
+               type="macro">
+    <Type type=""/>
+    <Params/>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Basic Example with :
+* records, interface, function,
+* modules, transform, embed,
+* macros and functionmacro&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

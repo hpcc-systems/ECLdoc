@@ -1,0 +1,275 @@
+<Meta>
+ <Source name="intest.example_5" sourcePath="/home/tetrapod/source/ecldoc/testing/test/intest/example_5.ecl">
+  <Definition body="133"
+              end="167"
+              fullname="intest.rec_1"
+              inherittype="local"
+              line="6"
+              name="rec_1"
+              start="125"
+              type="record">
+   <Field name="f">
+    <Type type="real8"/>
+   </Field>
+   <Field name="g">
+    <Type type="real8"/>
+   </Field>
+   <Documentation>
+    <content>&#10;* Basic ECL file : without enclosing module
+* Demos records, interfcae, functions, modules, embed, transform, macros&#10;</content>
+   </Documentation>
+  </Definition>
+  <Definition body="177"
+              end="226"
+              fullname="intest.rec_2"
+              inherittype="local"
+              line="11"
+              name="rec_2"
+              start="169"
+              type="record">
+   <Field name="a">
+    <Type type="unsigned4"/>
+   </Field>
+   <Field name="b">
+    <Type type="real8"/>
+   </Field>
+   <Field name="g">
+    <Type type="real8"/>
+   </Field>
+  </Definition>
+  <Definition body="243"
+              end="321"
+              fullname="intest.interface_ex"
+              inherittype="local"
+              line="17"
+              name="interface_ex"
+              start="228"
+              type="interface">
+   <Definition body="283"
+               end="282"
+               fullname="intest.interface_ex.iface_v1"
+               inherittype="local"
+               line="18"
+               name="iface_v1"
+               shared="1"
+               start="255"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="312"
+               end="316"
+               exported="1"
+               fullname="intest.interface_ex.iface_v3"
+               inherittype="local"
+               line="19"
+               name="iface_v3"
+               start="284"
+               type="attribute">
+    <Type type="string25"/>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Definition body="353"
+              end="383"
+              fullname="intest.func_1"
+              inherittype="local"
+              line="22"
+              name="func_1"
+              start="323"
+              type="function">
+   <Type type="real8"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="y">
+     <Type type="string25"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="412"
+              end="509"
+              fullname="intest.trans_1"
+              inherittype="local"
+              line="26"
+              name="trans_1"
+              start="385"
+              type="transform">
+   <Type fullname="intest.rec_2" name="rec_2" type="record"/>
+   <Params>
+    <Param name="rec">
+     <Type type="row">
+      <Type fullname="intest.rec_1" name="rec_1" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="553"
+              end="602"
+              fullname="intest.func_2"
+              inherittype="local"
+              line="32"
+              name="func_2"
+              start="511"
+              type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="a">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="b">
+      <Type type="real8"/>
+     </Field>
+     <Field name="g">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Params>
+    <Param name="d">
+     <Type type="table">
+      <Type fullname="intest.rec_1" name="rec_1" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="621"
+              end="654"
+              fullname="intest.mod_1"
+              inherittype="local"
+              line="36"
+              name="mod_1"
+              start="604"
+              type="module">
+   <Definition body="644"
+               end="649"
+               exported="1"
+               fullname="intest.mod_1.pi_w"
+               inherittype="local"
+               line="37"
+               name="pi_w"
+               start="630"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Params>
+    <Param name="a">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+   <Parents/>
+  </Definition>
+  <Definition body="664"
+              end="699"
+              fullname="intest.mod_2"
+              inherittype="local"
+              line="40"
+              name="mod_2"
+              start="656"
+              type="module">
+   <Definition body="689"
+               end="694"
+               exported="1"
+               fullname="intest.mod_2.pi_wo"
+               inherittype="local"
+               line="41"
+               name="pi_wo"
+               start="674"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Definition body="729"
+              end="747"
+              fullname="intest.cpp_1"
+              inherittype="local"
+              line="45"
+              name="cpp_1"
+              start="702"
+              type="embed">
+   <Type type="data"/>
+   <Params>
+    <Param name="varcpp">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="768"
+              end="838"
+              fullname="intest.funcmacro_1"
+              inherittype="local"
+              line="49"
+              name="funcmacro_1"
+              start="749"
+              type="macro">
+   <Type type="boolean"/>
+   <Params>
+    <Param name="num">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="864"
+              end="916"
+              fullname="intest.macro_1"
+              inherittype="local"
+              line="54"
+              name="macro_1"
+              start="840"
+              type="macro">
+   <Type type=""/>
+   <Params>
+    <Param name="num_1">
+     <Type type="integer8"/>
+    </Param>
+    <Param name="num_2">
+     <Type type="integer8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="928"
+              end="965"
+              fullname="intest.macro_2"
+              inherittype="local"
+              line="58"
+              name="macro_2"
+              start="918"
+              type="macro">
+   <Type type=""/>
+   <Params/>
+  </Definition>
+  <Definition body="971"
+              end="990"
+              fullname="intest.a"
+              inherittype="local"
+              line="62"
+              name="a"
+              start="967"
+              type="attribute">
+   <Type type="real8"/>
+  </Definition>
+  <Definition body="1007"
+              end="1047"
+              fullname="intest.b"
+              inherittype="local"
+              line="65"
+              name="b"
+              start="1003"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="a">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="b">
+      <Type type="real8"/>
+     </Field>
+     <Field name="g">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+ </Source>
+</Meta>

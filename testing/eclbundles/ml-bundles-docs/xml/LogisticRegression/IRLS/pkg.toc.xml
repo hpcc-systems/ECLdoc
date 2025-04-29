@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="IRLS">
+  <file name="GetModel_global.ecl.xml">LogisticRegression/IRLS/GetModel_global.ecl</file>
+  <file name="GetModel_local.ecl.xml">LogisticRegression/IRLS/GetModel_local.ecl</file>
+  <file name="GetModel.ecl.xml">LogisticRegression/IRLS/GetModel.ecl</file>
+</folder>

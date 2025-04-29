@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Source name="intest.in1intest.example_8" sourcePath="/home/tetrapod/source/ecldoc/testing/test/intest/in1intest/example_8.ecl" target="example_8.ecl.xml">
+  <Definition exported="1" fullname="intest.in1intest.example_8" inherittype="local" line="12" name="example_8" type="module">
+   <Definition exported="1" fullname="intest.in1intest.example_8.mod_1" inherittype="local" line="13" name="mod_1" type="module">
+    <Definition exported="1" fullname="intest.in1intest.example_8.mod_1.rec_1" inherittype="local" line="14" name="rec_1" type="record">
+     <Signature name="rec_1" ret="" param="" hlen="5">rec_1</Signature><Field name="a">
+      <Type type="real8"/>
+     </Field>
+    </Definition>
+    <Definition exported="1" fullname="intest.in1intest.example_8.mod_1.mod_11" inherittype="local" line="17" name="mod_11" type="module">
+     <Definition exported="1" fullname="intest.in1intest.example_8.mod_1.mod_11.v1_m11" inherittype="local" line="18" name="v1_m11" type="attribute">
+      <Signature name="v1_m11" ret="" param="" hlen="6">v1_m11</Signature><Type type="table">
+       <Type fullname="intest.in1intest.example_8.mod_1.rec_1" name="rec_1" type="record"/>
+      </Type>
+     </Definition>
+     <Signature name="mod_11" ret="" param="" hlen="6">mod_11</Signature><Parents/>
+    </Definition>
+    <Signature name="mod_1" ret="" param="" hlen="5">mod_1</Signature><Parents/>
+   </Definition>
+   <Definition exported="1" fullname="intest.in1intest.example_8.mod_2" inherittype="local" line="22" name="mod_2" type="module">
+    <Definition exported="1" fullname="intest.in1intest.example_8.mod_1.mod_11.v1_m11" inherittype="inherited" line="18" name="v1_m11" type="attribute">
+     <Signature name="v1_m11" ret="" param="" hlen="6">v1_m11</Signature><Type type="table">
+      <Type fullname="intest.in1intest.example_8.mod_1.rec_1" name="rec_1" type="record"/>
+     </Type>
+    </Definition>
+    <Definition exported="1" fullname="intest.in1intest.example_8.mod_2.rec_2" inherittype="local" line="23" name="rec_2" type="record">
+     <Signature name="rec_2" ret="" param="" hlen="5">rec_2</Signature><Field name="b">
+      <Type type="real8"/>
+     </Field>
+    </Definition>
+    <Definition exported="1" fullname="intest.in1intest.example_8.mod_2.v1_m2" inherittype="local" line="26" name="v1_m2" type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="b">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Signature name="v1_m2" ret="" param="(REAL8 ag_1)" hlen="5">v1_m2(REAL8 ag_1)</Signature><Params>
+      <Param name="ag_1">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Signature name="mod_2" ret="" param="" hlen="5">mod_2</Signature><Parents>
+     <Parent name="mod_11" ref="intest.in1intest.example_8.mod_1.mod_11" target="example_8.ecl.xml"/>
+    </Parents>
+   </Definition>
+   <Documentation>
+    <firstline>Three level Hierarchy Example</firstline><content>Three level Hierarchy Example . Inheritance across Hierarchy . Problems with Type System -- PROJECT Expression does not maintain record typename (rec_2) but do maintain record structure . IE mod_2.v1_m2 should be &lt;table of="" rec_2=""&gt; but shown &lt;table of="" unnamed=""&gt; . &lt;unnamed&gt; has same structure as record &lt;rec_2&gt; .&lt;/rec_2&gt;&lt;/unnamed&gt;&lt;/table&gt;&lt;/table&gt;</content></Documentation>
+   <Signature name="example_8" ret="" param="" hlen="9">example_8</Signature><Parents/>
+  </Definition>
+ <Documentation>
+    <firstline>Three level Hierarchy Example</firstline><content>Three level Hierarchy Example . Inheritance across Hierarchy . Problems with Type System -- PROJECT Expression does not maintain record typename (rec_2) but do maintain record structure . IE mod_2.v1_m2 should be &lt;table of="" rec_2=""&gt; but shown &lt;table of="" unnamed=""&gt; . &lt;unnamed&gt; has same structure as record &lt;rec_2&gt; .&lt;/rec_2&gt;&lt;/unnamed&gt;&lt;/table&gt;&lt;/table&gt;</content></Documentation>
+   </Source>
+</Meta>

@@ -1,0 +1,327 @@
+<Meta>
+ <Source sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/python.ecllib"/>
+ <Source name="ML_Core.Math.gamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/gamma.ecl">
+  <Definition body="209"
+              end="281"
+              exported="1"
+              fullname="ml_core.math.gamma"
+              inherittype="local"
+              line="7"
+              name="gamma"
+              start="179"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of gamma function of real number x
+ * A wrapper for the standard C tgamma function.
+ *@param x the input x
+ *@return the value of GAMMA evaluated at x&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.log_gamma" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/log_gamma.ecl">
+  <Definition body="371"
+              end="449"
+              exported="1"
+              fullname="ml_core.math.log_gamma"
+              inherittype="local"
+              line="10"
+              name="log_gamma"
+              start="337"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of the log gamma function of the absolute value
+ * of X.
+ * A wrapper for the standard C lgamma function.  Avoids the race
+ * condition found on some platforms by taking the absolute value of the
+ * of the input argument.
+ *@param x the input x
+ *@return the value of the log of the GAMMA evaluated at ABS(x)&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Math.Beta" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Math/Beta.ecl">
+  <Import body="0"
+          end="7"
+          fullname="ML_Core.Math"
+          inherittype="local"
+          line="1"
+          name="Math"
+          ref="ML_Core.Math"
+          remotescope="1"
+          start="7"/>
+  <Definition body="27"
+              end="39"
+              fullname="ml_core.math.gamma"
+              inherittype="local"
+              line="2"
+              name="gamma"
+              start="19"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of gamma function of real number x
+ * A wrapper for the standard C tgamma function.
+ *@param x the input x
+ *@return the value of GAMMA evaluated at x&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="52"
+              end="68"
+              fullname="ml_core.math.log_gamma"
+              inherittype="local"
+              line="3"
+              name="log_gamma"
+              start="40"
+              type="embed">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the value of the log gamma function of the absolute value
+ * of X.
+ * A wrapper for the standard C lgamma function.  Avoids the race
+ * condition found on some platforms by taking the absolute value of the
+ * of the input argument.
+ *@param x the input x
+ *@return the value of the log of the GAMMA evaluated at ABS(x)&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="78"
+              end="83"
+              fullname="ml_core.math.maxgam"
+              inherittype="local"
+              line="4"
+              name="MAXGAM"
+              start="69"
+              type="attribute">
+   <Type type="integer8"/>
+  </Definition>
+  <Definition body="92"
+              end="101"
+              fullname="ml_core.math.asymp"
+              inherittype="local"
+              line="5"
+              name="ASYMP"
+              start="84"
+              type="attribute">
+   <Type type="integer8"/>
+  </Definition>
+  <Definition body="323"
+              end="1698"
+              exported="1"
+              fullname="ml_core.math.beta"
+              inherittype="local"
+              line="12"
+              name="Beta"
+              start="291"
+              type="function">
+   <Type type="real8"/>
+   <Documentation>
+    <content>&#10;&#32;* Return the beta value of two positive real numbers, x and y
+ *@param x  the value of the first number
+ *@param y  the value of the second number
+ *@return   the beta value&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="y">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Tests.Validate_Betas" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Tests/Validate_Betas.ecl">
+  <Import body="0"
+          end="194"
+          fullname="ML_Core"
+          inherittype="local"
+          line="4"
+          name="ML_Core"
+          ref="ML_Core"
+          start="194"/>
+  <Import body="0"
+          end="210"
+          fullname="ML_Core.Math"
+          inherittype="local"
+          line="5"
+          name="Math"
+          ref="ML_Core.Math"
+          remotescope="1"
+          start="210"/>
+  <Import body="0"
+          end="231"
+          fullname="python"
+          inherittype="local"
+          line="6"
+          name="python"
+          ref="python"
+          remotescope="1"
+          start="231"/>
+  <Definition body="276"
+              end="374"
+              fullname="ml_core.tests.scipy_beta"
+              inherittype="local"
+              line="7"
+              name="scipy_beta"
+              start="239"
+              type="embed">
+   <Type type="real8"/>
+   <Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="y">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="791"
+              end="848"
+              fullname="ml_core.tests.layout_test_values"
+              inherittype="local"
+              line="22"
+              name="Layout_Test_Values"
+              start="770"
+              type="record">
+   <Field name="x">
+    <Type type="real8"/>
+   </Field>
+   <Field name="y">
+    <Type type="real8"/>
+   </Field>
+   <Field name="test_case">
+    <Type type="unsigned1"/>
+   </Field>
+  </Definition>
+  <Definition body="860"
+              end="2276"
+              fullname="ml_core.tests.test_set"
+              inherittype="local"
+              line="27"
+              name="test_set"
+              start="849"
+              type="attribute">
+   <Type type="table">
+    <Type fullname="ml_core.tests.layout_test_values" name="Layout_Test_Values" type="record"/>
+   </Type>
+  </Definition>
+  <Definition body="2293"
+              end="2303"
+              fullname="ml_core.tests.epsilon"
+              inherittype="local"
+              line="50"
+              name="epsilon"
+              start="2277"
+              type="attribute">
+   <Type type="real8"/>
+  </Definition>
+  <Definition body="2325"
+              end="2436"
+              fullname="ml_core.tests.layout_test_result"
+              inherittype="local"
+              line="51"
+              name="Layout_Test_Result"
+              start="2304"
+              type="record">
+   <Field name="ecl_value">
+    <Type type="real8"/>
+   </Field>
+   <Field name="sci_value">
+    <Type type="real8"/>
+   </Field>
+   <Field name="pass">
+    <Type type="boolean"/>
+   </Field>
+   <Field name="test_case">
+    <Type type="unsigned1"/>
+   </Field>
+   <Field name="x">
+    <Type type="real8"/>
+   </Field>
+   <Field name="y">
+    <Type type="real8"/>
+   </Field>
+  </Definition>
+  <Definition body="2491"
+              end="2843"
+              fullname="ml_core.tests.test_func"
+              inherittype="local"
+              line="59"
+              name="test_func"
+              start="2437"
+              type="transform">
+   <Type fullname="ml_core.tests.layout_test_result" name="Layout_Test_Result" type="record"/>
+   <Params>
+    <Param name="tv">
+     <Type type="row">
+      <Type fullname="ml_core.tests.layout_test_values" name="Layout_Test_Values" type="record"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+  <Definition body="2851"
+              end="2887"
+              fullname="ml_core.tests.rslt"
+              inherittype="local"
+              line="69"
+              name="rslt"
+              start="2844"
+              type="attribute">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="ecl_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="sci_value">
+      <Type type="real8"/>
+     </Field>
+     <Field name="pass">
+      <Type type="boolean"/>
+     </Field>
+     <Field name="test_case">
+      <Type type="unsigned1"/>
+     </Field>
+     <Field name="x">
+      <Type type="real8"/>
+     </Field>
+     <Field name="y">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+  </Definition>
+  <Definition body="2913"
+              end="2927"
+              exported="1"
+              fullname="ml_core.tests.validate_betas"
+              inherittype="local"
+              line="71"
+              name="Validate_Betas"
+              start="2889"
+              type="attribute">
+   <Type type=""/>
+  </Definition>
+ </Source>
+</Meta>

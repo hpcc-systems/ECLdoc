@@ -1,0 +1,379 @@
+<Meta>
+ <Source name="ML_Core.Types" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/./ML_Core/Types.ecl">
+  <Definition body="37"
+              end="3074"
+              exported="1"
+              fullname="ML_Core.Types"
+              inherittype="local"
+              line="2"
+              name="Types"
+              start="22"
+              type="module">
+   <Definition body="944"
+               end="955"
+               exported="1"
+               fullname="ml_core.types.t_recordid"
+               inherittype="local"
+               line="22"
+               name="t_RecordID"
+               start="924"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="981"
+               end="992"
+               exported="1"
+               fullname="ml_core.types.t_fieldnumber"
+               inherittype="local"
+               line="23"
+               name="t_FieldNumber"
+               start="958"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="1016"
+               end="1023"
+               exported="1"
+               fullname="ml_core.types.t_fieldreal"
+               inherittype="local"
+               line="24"
+               name="t_FieldReal"
+               start="995"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="1047"
+               end="1057"
+               exported="1"
+               fullname="ml_core.types.t_fieldsign"
+               inherittype="local"
+               line="25"
+               name="t_FieldSign"
+               start="1026"
+               type="attribute">
+    <Type type="integer1"/>
+   </Definition>
+   <Definition body="1080"
+               end="1090"
+               exported="1"
+               fullname="ml_core.types.t_discrete"
+               inherittype="local"
+               line="26"
+               name="t_Discrete"
+               start="1060"
+               type="attribute">
+    <Type type="integer4"/>
+   </Definition>
+   <Definition body="1109"
+               end="1120"
+               exported="1"
+               fullname="ml_core.types.t_item"
+               inherittype="local"
+               line="27"
+               name="t_Item"
+               start="1093"
+               type="attribute">
+    <Type type="unsigned4"/>
+   </Definition>
+   <Definition body="1188"
+               end="1200"
+               exported="1"
+               fullname="ml_core.types.t_count"
+               inherittype="local"
+               line="28"
+               name="t_Count"
+               start="1171"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="1258"
+               end="1269"
+               exported="1"
+               fullname="ml_core.types.t_work_item"
+               inherittype="local"
+               line="29"
+               name="t_Work_Item"
+               start="1237"
+               type="attribute">
+    <Type type="unsigned2"/>
+   </Definition>
+   <Definition body="1391"
+               end="1600"
+               exported="1"
+               fullname="ml_core.types.anyfield"
+               inherittype="local"
+               line="32"
+               name="AnyField"
+               start="1369"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+   </Definition>
+   <Definition body="1673"
+               end="1720"
+               exported="1"
+               fullname="ml_core.types.numericfield"
+               inherittype="local"
+               line="39"
+               name="NumericField"
+               start="1651"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="1797"
+               end="1843"
+               exported="1"
+               fullname="ml_core.types.discretefield"
+               inherittype="local"
+               line="44"
+               name="DiscreteField"
+               start="1774"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+   </Definition>
+   <Definition body="1953"
+               end="2200"
+               exported="1"
+               fullname="ml_core.types.layout_model"
+               inherittype="local"
+               line="49"
+               name="Layout_Model"
+               start="1931"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2261"
+               end="2336"
+               exported="1"
+               fullname="ml_core.types.classify_result"
+               inherittype="local"
+               line="57"
+               name="Classify_Result"
+               start="2236"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2357"
+               end="2410"
+               exported="1"
+               fullname="ml_core.types.l_result"
+               inherittype="local"
+               line="60"
+               name="l_result"
+               start="2339"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+    <Field name="number">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="value">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="conf">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="2440"
+               end="2639"
+               exported="1"
+               fullname="ml_core.types.confusion_detail"
+               inherittype="local"
+               line="62"
+               name="Confusion_Detail"
+               start="2414"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="classifier">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="actual_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="predict_class">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="occurs">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="correct">
+     <Type type="boolean"/>
+    </Field>
+   </Definition>
+   <Definition body="2711"
+               end="2782"
+               exported="1"
+               fullname="ml_core.types.itemelement"
+               inherittype="local"
+               line="72"
+               name="ItemElement"
+               start="2690"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="value">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="id">
+     <Type type="unsigned8"/>
+    </Field>
+   </Definition>
+   <Definition body="2848"
+               end="2858"
+               exported="1"
+               fullname="ml_core.types.t_node"
+               inherittype="local"
+               line="79"
+               name="t_node"
+               start="2831"
+               type="attribute">
+    <Type type="integer4"/>
+   </Definition>
+   <Definition body="2942"
+               end="2953"
+               exported="1"
+               fullname="ml_core.types.t_level"
+               inherittype="local"
+               line="80"
+               name="t_level"
+               start="2925"
+               type="attribute">
+    <Type type="unsigned2"/>
+   </Definition>
+   <Definition body="2995"
+               end="3069"
+               exported="1"
+               fullname="ml_core.types.nodeid"
+               inherittype="local"
+               line="81"
+               name="NodeID"
+               start="2978"
+               type="record">
+    <Field name="wi">
+     <Type type="unsigned2"/>
+    </Field>
+    <Field name="node_id">
+     <Type type="integer4"/>
+    </Field>
+    <Field name="level">
+     <Type type="unsigned2"/>
+    </Field>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+ <Source name="ML_Core.Utils.Fat" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Utils/Fat.ecl">
+  <Definition body="437"
+              end="1400"
+              exported="1"
+              fullname="ml_core.utils.fat"
+              inherittype="local"
+              line="9"
+              name="Fat"
+              start="323"
+              type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="id">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="number">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="value">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>&#10;&#32;* Will take a potentially sparse file d and fill in the missing
+ * with value v for Numeric Field datasets
+ *@param d0 They myriad format Numeric Field dataset to be filled
+ *@param v  The value to assign missing records
+ *@return A full Numeric Field dataset with every field populated&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="d0">
+     <Type type="table">
+      <Type fullname="ml_core.types.numericfield" name="NumericField" type="record"/>
+     </Type>
+    </Param>
+    <Param name="v">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Import body="0"
+          end="7"
+          fullname="ML_Core.Types"
+          inherittype="local"
+          line="1"
+          name="Types"
+          ref="ML_Core.Types"
+          start="7"/>
+ </Source>
+</Meta>

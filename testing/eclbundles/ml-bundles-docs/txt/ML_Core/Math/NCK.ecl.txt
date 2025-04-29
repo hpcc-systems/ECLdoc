@@ -1,0 +1,21 @@
+IMPORTS
+=======
+
+
+ML_Core.Math </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/Math/pkg.toc.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : REAL8 NCK(INTEGER2 N, INTEGER2 K)
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+Parameter : k INTEGER2 --- No Doc
+
+Parameter : n INTEGER2 --- No Doc
+
+Return : REAL8
+

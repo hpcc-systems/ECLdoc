@@ -1,0 +1,20 @@
+IMPORTS
+=======
+
+
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+EMBED : REAL8 upperGamma(REAL8 x, REAL8 y)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Return the upper incomplete gamma value of two real numbers, x and y.
+
+Parameter : y REAL8 --- the value of the second number
+
+Parameter : x REAL8 --- the value of the first number
+
+Return : REAL8 the upper incomplete gamma value
+

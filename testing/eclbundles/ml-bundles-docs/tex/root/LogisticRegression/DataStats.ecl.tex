@@ -1,0 +1,79 @@
+\chapter*{\color{headfile}
+{\large LogisticRegression\slash\hspace{0pt}}
+ \\
+DataStats
+}
+\hypertarget{ecldoc:toc:LogisticRegression.DataStats}{}
+\hyperlink{ecldoc:toc:root/LogisticRegression}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+ML\_Core.Types |
+LogisticRegression |
+LogisticRegression.Types |
+LogisticRegression.Constants |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+DataStats}}
+
+\hypertarget{ecldoc:logisticregression.datastats}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Types.Data\_Info)} & \textbf{DataStats} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Core\_Types.NumericField) indep, DATASET(Core\_Types.DiscreteField) dep, BOOLEAN field\_details=FALSE)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Information about the datasets. Without details the range for the x and y (independent and dependent) columns. Note that a column of all zero values cannot be distinguished from a missing column. When details are requested, the cardinality, minimum, and maximum values are returned. A zero cardinality is returned when the field cardinality exceeds the Constants.limit\_card value.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{field\_details}} ||| BOOLEAN --- Boolean directive to provide field level info
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{dep}} ||| TABLE ( DiscreteField ) --- data set of dependent variables
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{indep}} ||| TABLE ( NumericField ) --- data set of independent variables
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi , UNSIGNED4 dependent\_fields , UNSIGNED4 dependent\_records , UNSIGNED4 independent\_fields , UNSIGNED4 independent\_records , UNSIGNED4 dependent\_count , UNSIGNED4 independent\_count , TABLE ( Field\_Desc ) dependent\_stats , TABLE ( Field\_Desc ) independent\_stats \} )} --- 
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURNS}}}] a data set of information on each work item
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}

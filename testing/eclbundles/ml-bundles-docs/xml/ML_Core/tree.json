@@ -1,0 +1,167 @@
+{
+    "include_path": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core",
+    "input_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles",
+    "output_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs",
+    "tree": {
+        "appendid": {
+            "key": "AppendID.ecl",
+            "tree": "ML_Core/AppendID.ecl"
+        },
+        "appendseqid": {
+            "key": "AppendSeqID.ecl",
+            "tree": "ML_Core/AppendSeqID.ecl"
+        },
+        "bundle": {
+            "key": "bundle.ecl",
+            "tree": "ML_Core/Bundle.ecl"
+        },
+        "config": {
+            "key": "Config.ecl",
+            "tree": "ML_Core/Config.ecl"
+        },
+        "constants": {
+            "key": "Constants.ecl",
+            "tree": "ML_Core/Constants.ecl"
+        },
+        "fieldaggregates": {
+            "key": "FieldAggregates.ecl",
+            "tree": "ML_Core/FieldAggregates.ecl"
+        },
+        "fromfield": {
+            "key": "FromField.ecl",
+            "tree": "ML_Core/FromField.ecl"
+        },
+        "generate": {
+            "key": "Generate.ecl",
+            "tree": "ML_Core/Generate.ecl"
+        },
+        "interfaces": {
+            "key": "Interfaces",
+            "tree": {
+                "iclassify": {
+                    "key": "IClassify.ecl",
+                    "tree": "ML_Core/Interfaces/IClassify.ecl"
+                },
+                "iregression": {
+                    "key": "IRegression.ecl",
+                    "tree": "ML_Core/Interfaces/IRegression.ecl"
+                }
+            }
+        },
+        "math": {
+            "key": "Math",
+            "tree": {
+                "beta": {
+                    "key": "Beta.ecl",
+                    "tree": "ML_Core/Math/Beta.ecl"
+                },
+                "distributions": {
+                    "key": "Distributions.ecl",
+                    "tree": "ML_Core/Math/Distributions.ecl"
+                },
+                "doublefac": {
+                    "key": "DoubleFac.ecl",
+                    "tree": "ML_Core/Math/DoubleFac.ecl"
+                },
+                "fac": {
+                    "key": "Fac.ecl",
+                    "tree": "ML_Core/Math/Fac.ecl"
+                },
+                "gamma": {
+                    "key": "gamma.ecl",
+                    "tree": "ML_Core/Math/gamma.ecl"
+                },
+                "log_gamma": {
+                    "key": "log_gamma.ecl",
+                    "tree": "ML_Core/Math/log_gamma.ecl"
+                },
+                "lowergamma": {
+                    "key": "lowerGamma.ecl",
+                    "tree": "ML_Core/Math/lowerGamma.ecl"
+                },
+                "nck": {
+                    "key": "NCK.ecl",
+                    "tree": "ML_Core/Math/NCK.ecl"
+                },
+                "poly": {
+                    "key": "Poly.ecl",
+                    "tree": "ML_Core/Math/Poly.ecl"
+                },
+                "stirlingformula": {
+                    "key": "StirlingFormula.ecl",
+                    "tree": "ML_Core/Math/StirlingFormula.ecl"
+                },
+                "uppergamma": {
+                    "key": "upperGamma.ecl",
+                    "tree": "ML_Core/Math/upperGamma.ecl"
+                }
+            }
+        },
+        "tests": {
+            "key": "Tests",
+            "tree": {
+                "check_dist": {
+                    "key": "Check_Dist.ecl",
+                    "tree": "ML_Core/Tests/Check_Dist.ecl"
+                },
+                "field_aggregates": {
+                    "key": "field_aggregates.ecl",
+                    "tree": "ML_Core/Tests/field_aggregates.ecl"
+                },
+                "generate": {
+                    "key": "generate.ecl",
+                    "tree": "ML_Core/Tests/generate.ecl"
+                },
+                "test_appends": {
+                    "key": "test_appends.ecl",
+                    "tree": "ML_Core/Tests/test_appends.ecl"
+                },
+                "test_discrete": {
+                    "key": "test_discrete.ecl",
+                    "tree": "ML_Core/Tests/test_discrete.ecl"
+                },
+                "to_from": {
+                    "key": "to_from.ecl",
+                    "tree": "ML_Core/Tests/to_from.ecl"
+                },
+                "validate_betas": {
+                    "key": "Validate_Betas.ecl",
+                    "tree": "ML_Core/Tests/Validate_Betas.ecl"
+                },
+                "validate_gammas": {
+                    "key": "Validate_Gammas.ecl",
+                    "tree": "ML_Core/Tests/Validate_Gammas.ecl"
+                }
+            }
+        },
+        "tofield": {
+            "key": "ToField.ecl",
+            "tree": "ML_Core/ToField.ecl"
+        },
+        "types": {
+            "key": "Types.ecl",
+            "tree": "ML_Core/Types.ecl"
+        },
+        "utils": {
+            "key": "Utils",
+            "tree": {
+                "fat": {
+                    "key": "Fat.ecl",
+                    "tree": "ML_Core/Utils/Fat.ecl"
+                },
+                "fatd": {
+                    "key": "FatD.ecl",
+                    "tree": "ML_Core/Utils/FatD.ecl"
+                },
+                "gini": {
+                    "key": "Gini.ecl",
+                    "tree": "ML_Core/Utils/Gini.ecl"
+                },
+                "sequenceinfield": {
+                    "key": "SequenceInField.ecl",
+                    "tree": "ML_Core/Utils/SequenceInField.ecl"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
++++++++++
+  Utils
++++++++++
+
+
+
+CONTENTS
+========
+
+file : Fat.ecl <Fat.ecl.txt>    Will take a potentially sparse file d and fill in the missing
+
+file : FatD.ecl <FatD.ecl.txt>    Will take a potentially sparse file d and fill in the missing
+
+file : Gini.ecl <Gini.ecl.txt>    Creates a file of pivot/target pairs with a Gini impurity value
+
+file : SequenceInField.ecl <SequenceInField.ecl.txt>    Given a file which is sorted by the work item identifier and INFIELD (and possibly other values), add sequence numbers within the range of each infield
+

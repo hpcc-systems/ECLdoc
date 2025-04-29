@@ -1,0 +1,133 @@
+<Meta>
+ <Source name="example_8" sourcePath="/media/sarthak/Data/ecldoc/testing/test/example_8.ecl">
+  <Definition body="352"
+              end="696"
+              exported="1"
+              fullname="example_8"
+              inherittype="local"
+              line="12"
+              name="example_8"
+              start="333"
+              type="module">
+   <Definition body="376"
+               end="511"
+               exported="1"
+               fullname="example_8.mod_1"
+               inherittype="local"
+               line="13"
+               name="mod_1"
+               start="361"
+               type="module">
+    <Definition body="401"
+                end="427"
+                exported="1"
+                fullname="example_8.mod_1.rec_1"
+                inherittype="local"
+                line="14"
+                name="rec_1"
+                start="386"
+                type="record">
+     <Field name="a">
+      <Type type="real8"/>
+     </Field>
+    </Definition>
+    <Definition body="446"
+                end="505"
+                exported="1"
+                fullname="example_8.mod_1.mod_11"
+                inherittype="local"
+                line="17"
+                name="mod_11"
+                start="430"
+                type="module">
+     <Definition body="473"
+                 end="498"
+                 exported="1"
+                 fullname="example_8.mod_1.mod_11.v1_m11"
+                 inherittype="local"
+                 line="18"
+                 name="v1_m11"
+                 start="457"
+                 type="attribute">
+      <Type type="table">
+       <Type fullname="example_8.mod_1.rec_1" name="rec_1" type="record"/>
+      </Type>
+     </Definition>
+     <Parents/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Definition body="529"
+               end="690"
+               exported="1"
+               fullname="example_8.mod_2"
+               inherittype="local"
+               line="22"
+               name="mod_2"
+               start="514"
+               type="module">
+    <Definition body="473"
+                end="498"
+                exported="1"
+                fullname="example_8.mod_1.mod_11.v1_m11"
+                inherittype="inherited"
+                line="18"
+                name="v1_m11"
+                start="457"
+                type="attribute">
+     <Type type="table">
+      <Type fullname="example_8.mod_1.rec_1" name="rec_1" type="record"/>
+     </Type>
+    </Definition>
+    <Definition body="568"
+                end="594"
+                exported="1"
+                fullname="example_8.mod_2.rec_2"
+                inherittype="local"
+                line="23"
+                name="rec_2"
+                start="553"
+                type="record">
+     <Field name="b">
+      <Type type="real8"/>
+     </Field>
+    </Definition>
+    <Definition body="624"
+                end="684"
+                exported="1"
+                fullname="example_8.mod_2.v1_m2"
+                inherittype="local"
+                line="26"
+                name="v1_m2"
+                start="597"
+                type="function">
+     <Type type="table">
+      <Type type="record" unnamed="1">
+       <Field name="b">
+        <Type type="real8"/>
+       </Field>
+      </Type>
+     </Type>
+     <Params>
+      <Param name="ag_1">
+       <Type type="real8"/>
+      </Param>
+     </Params>
+    </Definition>
+    <Parents>
+     <Parent name="mod_11" ref="example_8.mod_1.mod_11"/>
+    </Parents>
+   </Definition>
+   <Documentation>
+    <content>&#10;* Three level Hierarchy Example .
+* Inheritance across Hierarchy .
+* Problems with Type System --
+* PROJECT Expression does not maintain record typename (rec_2)
+* but do maintain record structure .
+* IE mod_2.v1_m2 should be &lt;Table of rec_2&gt; but shown &lt;Table of unnamed&gt; .
+* &lt;unnamed&gt; has same structure as record &lt;rec_2&gt; .&#10;</content>
+   </Documentation>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

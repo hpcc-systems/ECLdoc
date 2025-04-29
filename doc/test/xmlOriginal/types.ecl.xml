@@ -1,0 +1,777 @@
+<Meta>
+ <Source name="types" sourcePath="/home/tetrapod/source/ecldoc/testing/test/types.ecl">
+  <Definition body="15"
+              end="2511"
+              exported="1"
+              fullname="types"
+              inherittype="local"
+              line="1"
+              name="types"
+              start="0"
+              type="module">
+   <Definition body="36"
+               end="71"
+               exported="1"
+               fullname="types.v1"
+               inherittype="local"
+               line="2"
+               name="v1"
+               start="24"
+               type="record">
+    <Field name="u">
+     <Type type="real8"/>
+    </Field>
+    <Field name="v">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="101"
+               end="298"
+               exported="1"
+               fullname="types.mod_1"
+               inherittype="local"
+               line="7"
+               name="mod_1"
+               start="74"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="u">
+       <Type type="real8"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="338"
+               end="341"
+               exported="1"
+               fullname="types.mod_1_1"
+               inherittype="local"
+               line="15"
+               name="mod_1_1"
+               start="304"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="u">
+       <Type type="real8"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Params>
+     <Param name="x">
+      <Type type="table">
+       <Type type="record" unnamed="1">
+        <Field name="u">
+         <Type type="real8"/>
+        </Field>
+        <Field name="v">
+         <Type type="real8"/>
+        </Field>
+       </Type>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="381"
+               end="408"
+               exported="1"
+               fullname="types.mod_2"
+               inherittype="local"
+               line="17"
+               name="mod_2"
+               start="344"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="a">
+       <Type type="string20"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="426"
+               end="455"
+               exported="1"
+               inherittype="local"
+               line="19"
+               name="mod_3"
+               start="411"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="473"
+               end="480"
+               exported="1"
+               inherittype="local"
+               line="21"
+               name="mod_4"
+               start="458"
+               type="attribute">
+    <Type type="unsigned8"/>
+   </Definition>
+   <Definition body="499"
+               end="533"
+               exported="1"
+               fullname="types.mod_41"
+               inherittype="local"
+               line="23"
+               name="mod_41"
+               start="483"
+               type="module">
+    <Definition body="522"
+                end="527"
+                exported="1"
+                fullname="types.mod_41.v41"
+                inherittype="local"
+                line="24"
+                name="v41"
+                start="509"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Definition body="628"
+               end="663"
+               exported="1"
+               fullname="types.mod_5"
+               inherittype="local"
+               line="32"
+               name="mod_5"
+               start="604"
+               type="module">
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+    <Parents/>
+    <Definition body="650"
+                end="657"
+                exported="1"
+                fullname="types.mod_5.v6"
+                inherittype="local"
+                line="33"
+                name="v6"
+                start="638"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Documentation>
+     <content>&#10;&#32;&#32;&#32;&#32;* mod_5
+    * @param x abcd
+    * @return module&#10;&#32;&#32;&#32;&#32;</content>
+    </Documentation>
+   </Definition>
+   <Definition body="690"
+               end="700"
+               exported="1"
+               fullname="types.mod_6"
+               inherittype="local"
+               line="36"
+               name="mod_6"
+               start="666"
+               type="module">
+    <Definition body="650"
+                end="657"
+                exported="1"
+                fullname="types.mod_5.v6"
+                inherittype="local"
+                line="33"
+                name="v6"
+                start="638"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Params>
+     <Param name="x">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+    <Parents/>
+   </Definition>
+   <Definition body="736"
+               end="775"
+               exported="1"
+               fullname="types.mod_7"
+               inherittype="local"
+               line="38"
+               name="mod_7"
+               start="703"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="y">
+      <Type type="function">
+       <Type fullname="types.mod_5" name="mod_5" type="module"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+     <Param name="z">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="803"
+               end="811"
+               exported="1"
+               fullname="types.mod_8"
+               inherittype="local"
+               line="42"
+               name="mod_8"
+               start="778"
+               type="function">
+    <Type type="integer8"/>
+    <Params>
+     <Param name="a1">
+      <Type type="unsigned8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="838"
+               end="853"
+               exported="1"
+               fullname="types.mod_9"
+               inherittype="local"
+               line="44"
+               name="mod_9"
+               start="814"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="function">
+         <Type fullname="types.mod_5" name="mod_5" type="module"/>
+         <Params>
+          <Type type="real8"/>
+         </Params>
+        </Type>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="884"
+               end="924"
+               exported="1"
+               fullname="types.mod_90"
+               inherittype="local"
+               line="46"
+               name="mod_90"
+               start="859"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="z">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1092"
+               end="1136"
+               exported="1"
+               fullname="types.mod_10"
+               inherittype="local"
+               line="55"
+               name="mod_10"
+               start="1076"
+               type="record">
+    <Field name="u">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="1177"
+               end="1180"
+               exported="1"
+               fullname="types.mod_11"
+               inherittype="local"
+               line="59"
+               name="mod_11"
+               start="1142"
+               type="function">
+    <Type type="table">
+     <Type fullname="types.mod_10" name="mod_10" type="record"/>
+    </Type>
+    <Params>
+     <Param name="y">
+      <Type type="table">
+       <Type fullname="types.mod_10" name="mod_10" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1198"
+               end="1256"
+               exported="1"
+               fullname="types.d1"
+               inherittype="local"
+               line="61"
+               name="D1"
+               start="1186"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="F1">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="f2">
+       <Type type="real8"/>
+      </Field>
+      <Field name="f3">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="1278"
+               end="1335"
+               exported="1"
+               fullname="types.mod_12"
+               inherittype="local"
+               line="63"
+               name="mod_12"
+               start="1262"
+               type="record">
+    <Field name="F1">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="gcount">
+     <Type type="integer8"/>
+    </Field>
+   </Definition>
+   <Definition body="1357"
+               end="1380"
+               exported="1"
+               fullname="types.mod_13"
+               inherittype="local"
+               line="68"
+               name="mod_13"
+               start="1341"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="F1">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="gcount">
+       <Type type="integer8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Definition body="1398"
+               end="1471"
+               exported="1"
+               fullname="types.v2"
+               inherittype="local"
+               line="70"
+               name="v2"
+               start="1386"
+               type="record">
+    <Field name="w1">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w2">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w3">
+     <Type type="unsigned4"/>
+    </Field>
+   </Definition>
+   <Definition body="1502"
+               end="1590"
+               exported="1"
+               fullname="types.v1tov2"
+               inherittype="local"
+               line="76"
+               name="v1tov2"
+               start="1477"
+               type="transform">
+    <Type fullname="types.v2" name="v2" type="record"/>
+    <Params>
+     <Param name="x">
+      <Type type="row">
+       <Type fullname="types.v1" name="v1" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1626"
+               end="1649"
+               exported="1"
+               fullname="types.mod_14"
+               inherittype="local"
+               line="82"
+               name="mod_14"
+               start="1596"
+               type="attribute">
+    <Type type="table">
+     <Type fullname="types.v1" name="v1" type="record"/>
+    </Type>
+   </Definition>
+   <Definition body="1724"
+               end="1744"
+               exported="1"
+               fullname="types.mod_15"
+               inherittype="local"
+               line="87"
+               name="mod_15"
+               start="1696"
+               type="attribute">
+    <Type type="table">
+     <Type fullname="types.v3" name="v3" type="record"/>
+    </Type>
+   </Definition>
+   <Definition body="1762"
+               end="1797"
+               exported="1"
+               fullname="types.v4"
+               inherittype="local"
+               line="89"
+               name="v4"
+               start="1750"
+               type="record">
+    <Field name="w1">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w2">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w3">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w4">
+     <Type type="real8"/>
+    </Field>
+   </Definition>
+   <Definition body="1815"
+               end="1882"
+               exported="1"
+               fullname="types.v5"
+               inherittype="local"
+               line="93"
+               name="v5"
+               start="1803"
+               type="record">
+    <Field name="u">
+     <Type type="real8"/>
+    </Field>
+    <Field name="v">
+     <Type type="real8"/>
+    </Field>
+    <Field name="w1">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w2">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w3">
+     <Type type="unsigned4"/>
+    </Field>
+    <Field name="w4">
+     <Type type="real8"/>
+    </Field>
+    <Field name="w5">
+     <Type type="table">
+      <Type fullname="types.v2" name="v2" type="record"/>
+     </Type>
+    </Field>
+   </Definition>
+   <Definition body="1928"
+               end="1931"
+               exported="1"
+               fullname="types.v5_1"
+               inherittype="local"
+               line="99"
+               name="v5_1"
+               start="1888"
+               type="function">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="u">
+       <Type type="real8"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+      <Field name="w1">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="w2">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="w3">
+       <Type type="unsigned4"/>
+      </Field>
+      <Field name="w4">
+       <Type type="real8"/>
+      </Field>
+      <Field name="w5">
+       <Type type="table">
+        <Type fullname="types.v2" name="v2" type="record"/>
+       </Type>
+      </Field>
+      <Field name="y">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+    <Params>
+     <Param name="x">
+      <Type type="table">
+       <Type type="record" unnamed="1">
+        <Field name="u">
+         <Type type="real8"/>
+        </Field>
+        <Field name="v">
+         <Type type="real8"/>
+        </Field>
+        <Field name="w1">
+         <Type type="unsigned4"/>
+        </Field>
+        <Field name="w2">
+         <Type type="unsigned4"/>
+        </Field>
+        <Field name="w3">
+         <Type type="unsigned4"/>
+        </Field>
+        <Field name="w4">
+         <Type type="real8"/>
+        </Field>
+        <Field name="w5">
+         <Type type="table">
+          <Type fullname="types.v2" name="v2" type="record"/>
+         </Type>
+        </Field>
+        <Field name="y">
+         <Type type="real8"/>
+        </Field>
+       </Type>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="1971"
+               end="2010"
+               exported="1"
+               fullname="types.mod_17"
+               inherittype="local"
+               line="101"
+               name="mod_17"
+               start="1937"
+               type="transform">
+    <Type type="record" unnamed="1">
+     <Field name="a">
+      <Type type="real8"/>
+     </Field>
+    </Type>
+    <Params>
+     <Param name="x">
+      <Type type="row">
+       <Type fullname="types.v1" name="v1" type="record"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2059"
+               end="2095"
+               exported="1"
+               fullname="types.mod_18"
+               inherittype="local"
+               line="105"
+               name="mod_18"
+               start="2016"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+     <Param name="y">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2126"
+               end="2133"
+               exported="1"
+               fullname="types.mod_19"
+               inherittype="local"
+               line="109"
+               name="mod_19"
+               start="2101"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="w">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2165"
+               end="2181"
+               exported="1"
+               fullname="types.mod_20"
+               inherittype="local"
+               line="111"
+               name="mod_20"
+               start="2139"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2203"
+               end="2219"
+               exported="1"
+               fullname="types.mod_21"
+               inherittype="local"
+               line="113"
+               name="mod_21"
+               start="2187"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="2250"
+               end="2259"
+               exported="1"
+               fullname="types.mod_22"
+               inherittype="local"
+               line="115"
+               name="mod_22"
+               start="2225"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="w">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2281"
+               end="2297"
+               exported="1"
+               fullname="types.mod_23"
+               inherittype="local"
+               line="117"
+               name="mod_23"
+               start="2265"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="2364"
+               end="2370"
+               exported="1"
+               fullname="types.mod_24"
+               inherittype="local"
+               line="119"
+               name="mod_24"
+               start="2303"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="y">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="function">
+         <Type type="real8"/>
+         <Params>
+          <Type type="real8"/>
+         </Params>
+        </Type>
+       </Params>
+      </Type>
+     </Param>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2416"
+               end="2424"
+               exported="1"
+               fullname="types.mod_25"
+               inherittype="local"
+               line="121"
+               name="mod_25"
+               start="2376"
+               type="function">
+    <Type type="real8"/>
+    <Params>
+     <Param name="x">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2446"
+               end="2470"
+               exported="1"
+               fullname="types.mod_26"
+               inherittype="local"
+               line="123"
+               name="mod_26"
+               start="2430"
+               type="attribute">
+    <Type type="real8"/>
+   </Definition>
+   <Definition body="2498"
+               end="2505"
+               exported="1"
+               fullname="types.mod_27"
+               inherittype="local"
+               line="125"
+               name="mod_27"
+               start="2476"
+               type="attribute">
+    <Type type="table">
+     <Type type="record" unnamed="1">
+      <Field name="u">
+       <Type type="real8"/>
+      </Field>
+      <Field name="v">
+       <Type type="real8"/>
+      </Field>
+     </Type>
+    </Type>
+   </Definition>
+   <Parents/>
+  </Definition>
+ </Source>
+</Meta>

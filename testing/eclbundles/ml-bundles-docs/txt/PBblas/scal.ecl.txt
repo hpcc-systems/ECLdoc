@@ -1,0 +1,29 @@
+IMPORTS
+=======
+
+
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Layout_Cell) scal(value_t alpha, DATASET(Layout_Cell) X)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Scale a matrix by a constant Result is alpha * X This supports a "myriad"
+style interface in that X may be a set of independent matrices separated by
+different work-item ids.
+
+Parameter : alpha REAL8 --- A scalar multiplier
+
+Parameter : X TABLE ( Layout_Cell ) --- The matrix(es) to be
+              scaled in Layout_Cell format
+
+Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+         UNSIGNED4 y , REAL8 v } ) Matrix in Layout_Cell
+         form, of the same shape as X
+
+See : PBblas/Types.Layout_Cell
+

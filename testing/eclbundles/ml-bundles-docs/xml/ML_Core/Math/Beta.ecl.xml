@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/gamma.ecl" name="ML_Core.Math.gamma" target="gamma.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/log_gamma.ecl" name="ML_Core.Math.log_gamma" target="log_gamma.ecl.xml"/><Source name="ML_Core.Math.Beta" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Math/Beta.ecl" target="Beta.ecl.xml">
+  <Import name="Math" ref="ML_Core.Math" target="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/$$_ECLDOC-FORM_$$/ML_Core/Math/pkg.toc.xml"/>
+  <Definition exported="1" fullname="ml_core.math.beta" inherittype="local" line="12" name="Beta" type="function">
+   <Type type="real8"/>
+   <Documentation>
+    <content>Return the beta value of two positive real numbers, x and y</content><return>the beta value</return><param>x the value of the first number</param><param>y the value of the second number</param><firstline>Return the beta value of two positive real numbers, x and y</firstline></Documentation>
+   <Signature name="Beta" ret="" param="(REAL8 x, REAL8 y)" hlen="4">Beta(REAL8 x, REAL8 y)</Signature><Params>
+    <Param name="x">
+     <Type type="real8"/>
+    </Param>
+    <Param name="y">
+     <Type type="real8"/>
+    </Param>
+   </Params>
+  </Definition>
+ <Documentation>
+    <content>Return the beta value of two positive real numbers, x and y</content><return>the beta value</return><param>x the value of the first number</param><param>y the value of the second number</param><firstline>Return the beta value of two positive real numbers, x and y</firstline></Documentation>
+   </Source>
+</Meta>

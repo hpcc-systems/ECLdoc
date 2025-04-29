@@ -1,0 +1,830 @@
+<Meta>
+ <Source sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/plugins/lib_eclblas.ecllib"/>
+ <Source name="std.BLAS" sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl">
+  <Definition body="853"
+              end="11458"
+              exported="1"
+              fullname="std.blas"
+              inherittype="local"
+              line="19"
+              name="BLAS"
+              start="839"
+              type="module">
+   <Definition body="947"
+               end="1456"
+               exported="1"
+               fullname="std.BLAS.Types"
+               inherittype="local"
+               line="21"
+               name="Types"
+               start="932"
+               type="module">
+    <Definition body="982"
+                end="1008"
+                exported="1"
+                fullname="std.blas.types.value_t"
+                inherittype="local"
+                line="22"
+                name="value_t"
+                start="960"
+                type="attribute">
+     <Type type="real8"/>
+    </Definition>
+    <Definition body="1049"
+                end="1079"
+                exported="1"
+                fullname="std.blas.types.dimension_t"
+                inherittype="local"
+                line="23"
+                name="dimension_t"
+                start="1027"
+                type="attribute">
+     <Type type="unsigned4"/>
+    </Definition>
+    <Definition body="1120"
+                end="1147"
+                exported="1"
+                fullname="std.blas.types.matrix_t"
+                inherittype="local"
+                line="24"
+                name="matrix_t"
+                start="1098"
+                type="attribute">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Definition>
+    <Definition body="1193"
+                end="1220"
+                exported="1"
+                inherittype="local"
+                line="25"
+                name="Triangle"
+                start="1171"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="1287"
+                end="1314"
+                exported="1"
+                inherittype="local"
+                line="26"
+                name="Diagonal"
+                start="1265"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Definition body="1388"
+                end="1411"
+                exported="1"
+                inherittype="local"
+                line="27"
+                name="Side"
+                start="1366"
+                type="attribute">
+     <Type type="unsigned1"/>
+    </Definition>
+    <Parents/>
+   </Definition>
+   <Definition body="1799"
+               end="1802"
+               exported="1"
+               fullname="std.blas.icellfunc"
+               inherittype="local"
+               line="37"
+               name="ICellFunc"
+               start="1639"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Function prototype for Apply2Cell.
+   * @param v the value
+   * @param r the row ordinal
+   * @param c the column ordinal
+   * @return the updated value&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="v">
+      <Type type="real8"/>
+     </Param>
+     <Param name="r">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="c">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="2237"
+               end="2557"
+               exported="1"
+               fullname="std.blas.apply2cells"
+               inherittype="local"
+               line="49"
+               name="Apply2Cells"
+               start="2017"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Iterate matrix and apply function to each cell
+   *@param m number of rows
+   *@param n number of columns
+   *@param x matrix
+   *@param f function to apply
+   *@return updated matrix&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="f">
+      <Type type="function">
+       <Type type="real8"/>
+       <Params>
+        <Type type="real8"/>
+        <Type type="unsigned4"/>
+        <Type type="unsigned4"/>
+       </Params>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3082"
+               end="3130"
+               exported="1"
+               fullname="std.blas.dasum"
+               inherittype="local"
+               line="73"
+               name="dasum"
+               start="2934"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Absolute sum, the 1 norm of a vector.
+   *@param m the number of entries
+   *@param x the column major matrix holding the vector
+   *@param incx the increment for x, 1 in the case of an actual vector
+   *@param skipped default is zero, the number of entries stepped over
+   * to get to the first entry
+   *@return the sum of the absolute values&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="incx">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="skipped">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="3887"
+               end="3964"
+               exported="1"
+               fullname="std.blas.daxpy"
+               inherittype="local"
+               line="90"
+               name="daxpy"
+               start="3626"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;* alpha*X + Y
+ * @param N number of elements in vector
+ * @param alpha the scalar multiplier
+ * @param X the column major matrix holding the vector X
+ * @param incX the increment or stride for the vector
+ * @param Y the column major matrix holding the vector Y
+ * @param incY the increment or stride of Y
+ * @param x_skipped number of entries skipped to get to the first X
+ * @param y_skipped number of entries skipped to get to the first Y
+ * @return the updated matrix&#13;&#10;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="X">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="incX">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="Y">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="incY">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x_skipped">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="y_skipped">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="4764"
+               end="4846"
+               exported="1"
+               fullname="std.blas.dgemm"
+               inherittype="local"
+               line="109"
+               name="dgemm"
+               start="4465"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* alpha*op(A) op(B) + beta*C where op() is transpose
+   * @param transposeA true when transpose of A is used
+   * @param transposeB true when transpose of B is used
+   * @param M number of rows in product
+   * @param N number of columns in product
+   * @param K number of columns/rows for the multiplier/multiplicand
+   * @param alpha scalar used on A
+   * @param A matrix A
+   * @param B matrix B
+   * @param beta scalar for matrix C
+   * @param C matrix C or empty&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="transposeA">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="transposeB">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="M">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="K">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="A">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="B">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="beta">
+      <Type type="real8"/>
+     </Param>
+     <Param name="C">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="5261"
+               end="5298"
+               exported="1"
+               fullname="std.blas.dgetf2"
+               inherittype="local"
+               line="124"
+               name="dgetf2"
+               start="5153"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Compute LU Factorization of matrix A.
+   * @param m number of rows of A
+   * @param n number of columns of A
+   * @return composite matrix of factors, lower triangle has an
+   *         implied diagonal of ones.  Upper triangle has the diagonal of the
+   *         composite.&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="a">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6087"
+               end="6133"
+               exported="1"
+               fullname="std.blas.dpotf2"
+               inherittype="local"
+               line="143"
+               name="dpotf2"
+               start="5934"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* DPOTF2 computes the Cholesky factorization of a real symmetric
+   * positive definite matrix A.
+   *The factorization has the form
+   * A = U**T * U ,  if UPLO = &apos;U&apos;, or
+   * A = L  * L**T,  if UPLO = &apos;L&apos;,
+   * where U is an upper triangular matrix and L is lower triangular.
+   * This is the unblocked version of the algorithm, calling Level 2 BLAS.
+   * @param tri indicate whether upper or lower triangle is used
+   * @param r number of rows/columns in the square matrix
+   * @param A the square matrix
+   * @param clear clears the unused triangle
+   * @return the triangular matrix requested.&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="tri">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="r">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="A">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="clear">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="6683"
+               end="6738"
+               exported="1"
+               fullname="std.blas.dscal"
+               inherittype="local"
+               line="157"
+               name="dscal"
+               start="6507"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Scale a vector alpha
+   * @param N number of elements in the vector
+   * @param alpha the scaling factor
+   * @param X the column major matrix holding the vector
+   * @param incX the stride to get to the next element in the vector
+   * @param skipped the number of elements skipped to get to the first element
+   * @return the updated matrix&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="X">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="incX">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="skipped">
+      <Type type="unsigned4"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="7689"
+               end="7765"
+               exported="1"
+               fullname="std.blas.dsyrk"
+               inherittype="local"
+               line="177"
+               name="dsyrk"
+               start="7415"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Implements symmetric rank update C &lt;- alpha A**T A + beta C or
+   * c &lt;- alpha A A**T + beta C.  C is N x N.
+   * @param tri update upper or lower triangle
+   * @param transposeA Transpose the A matrix to be NxK
+   * @param N number of rows
+   * @param K number of columns in the update matrix or transpose
+   * @param alpha the alpha scalar
+   * @param A the update matrix, either NxK or KxN
+   * @param beta the beta scalar
+   * @param C the matrix to update
+   * @param clear clear the triangle that is not updated.  BLAS assumes
+   * that symmetric matrices have only one of the triangles and this
+   * option lets you make that true.&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="tri">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="transposeA">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="K">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="A">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="beta">
+      <Type type="real8"/>
+     </Param>
+     <Param name="C">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="clear">
+      <Type type="boolean"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="8753"
+               end="8833"
+               exported="1"
+               fullname="std.blas.dtrsm"
+               inherittype="local"
+               line="199"
+               name="dtrsm"
+               start="8458"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Triangular matrix solver.  op(A) X = alpha B or X op(A) = alpha B
+   * where op is Transpose, X and B is MxN
+   * @param side side for A, Side.Ax is op(A) X = alpha B
+   * @param tri Says whether A is Upper or Lower triangle
+   * @param transposeA is op(A) the transpose of A
+   * @param diag is the diagonal an implied unit diagonal or supplied
+   * @param M number of rows
+   * @param N number of columns
+   * @param lda the leading dimension of the A matrix, either M or N
+   * @param alpha the scalar multiplier for B
+   * @param A a triangular matrix
+   * @param B the matrix of values for the solve
+   * @return the matrix of coefficients to get B.&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="side">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="tri">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="transposeA">
+      <Type type="boolean"/>
+     </Param>
+     <Param name="diag">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="M">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="N">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="lda">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="alpha">
+      <Type type="real8"/>
+     </Param>
+     <Param name="A">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+     <Param name="B">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="9216"
+               end="9529"
+               exported="1"
+               fullname="std.blas.extract_diag"
+               inherittype="local"
+               line="213"
+               name="extract_diag"
+               start="9043"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Extract the diagonal of he matrix
+   * @param m number of rows
+   * @param n number of columns
+   * @param x matrix from which to extract the diagonal
+   * @return diagonal matrix&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="10129"
+               end="10180"
+               exported="1"
+               fullname="std.blas.extract_tri"
+               inherittype="local"
+               line="236"
+               name="extract_tri"
+               start="9932"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Extract the upper or lower triangle.  Diagonal can be actual or implied
+   * unit diagonal.
+   * @param m number of rows
+   * @param n number of columns
+   * @param tri Upper or Lower specifier, Triangle.Lower or Triangle.Upper
+   * @param dt Use Diagonal.NotUnitTri or Diagonal.UnitTri
+   * @param a Matrix, usually a composite from factoring
+   * @return the triangle&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="tri">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="dt">
+      <Type type="unsigned1"/>
+     </Param>
+     <Param name="a">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="10545"
+               end="10585"
+               exported="1"
+               fullname="std.blas.make_diag"
+               inherittype="local"
+               line="249"
+               name="make_diag"
+               start="10418"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Generate a diagonal matrix.
+   * @param m number of diagonal entries
+   * @param v option value, defaults to 1
+   * @param X optional input of diagonal values, multiplied by v.
+   * @return a diagonal matrix&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="v">
+      <Type type="real8"/>
+     </Param>
+     <Param name="X">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="11071"
+               end="11098"
+               exported="1"
+               fullname="std.blas.make_vector"
+               inherittype="local"
+               line="268"
+               name="make_vector"
+               start="10967"
+               type="function">
+    <Type type="set">
+     <Type type="real8"/>
+    </Type>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* Make a vector of dimension m
+   * @param m number of elements
+   * @param v the values, defaults to 1
+   * @return the vector&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="v">
+      <Type type="real8"/>
+     </Param>
+    </Params>
+   </Definition>
+   <Definition body="11426"
+               end="11452"
+               exported="1"
+               fullname="std.blas.trace"
+               inherittype="local"
+               line="279"
+               name="trace"
+               start="11297"
+               type="function">
+    <Type type="real8"/>
+    <Documentation>
+     <content>&#13;&#10;&#32;&#32;&#32;* The trace of the input matrix
+   * @param m number of rows
+   * @param n number of columns
+   * @param x the matrix
+   * @return the trace (sum of the diagonal entries)&#13;&#10;&#32;&#32;&#32;</content>
+    </Documentation>
+    <Params>
+     <Param name="m">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="n">
+      <Type type="unsigned4"/>
+     </Param>
+     <Param name="x">
+      <Type type="set">
+       <Type type="real8"/>
+      </Type>
+     </Param>
+    </Params>
+   </Definition>
+   <Parents/>
+  </Definition>
+  <Import body="0"
+          end="808"
+          fullname="lib_eclblas"
+          inherittype="local"
+          line="17"
+          name="LIB_ECLBLAS"
+          ref="lib_eclblas"
+          remotescope="1"
+          start="808"/>
+ </Source>
+ <Source name="LogisticRegression.dimm" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression/dimm.ecl">
+  <Definition body="1031"
+              end="2194"
+              exported="1"
+              fullname="logisticregression.dimm"
+              inherittype="local"
+              line="21"
+              name="dimm"
+              start="698"
+              type="embed">
+   <Type type="set">
+    <Type type="real8"/>
+   </Type>
+   <Documentation>
+    <content>&#10;&#32;* Matrix multiply when either A or B is a diagonal and is passed
+ * as a vector.
+ * alpha*op(A) op(B) + beta*C where op() is transpose
+ * @param transposeA true when transpose of A is used
+ * @param transposeB true when transpose of B is used
+ * @param diagonalA true when A is the diagonal matrix
+ * @param diagonalB true when B is the diagonal matrix
+ * @param m number of rows in product
+ * @param n number of columns in product
+ * @param k number of columns/rows for the multiplier/multiplicand
+ * @param alpha scalar used on A
+ * @param A matrix A
+ * @param B matrix B
+ * @param beta scalar for matrix C
+ * @param C matrix C or empty&#10;&#32;</content>
+   </Documentation>
+   <Params>
+    <Param name="transposeA">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="transposeB">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="diagonalA">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="diagonalB">
+     <Type type="boolean"/>
+    </Param>
+    <Param name="m">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="n">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="k">
+     <Type type="unsigned4"/>
+    </Param>
+    <Param name="alpha">
+     <Type type="real8"/>
+    </Param>
+    <Param name="A">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Param>
+    <Param name="B">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Param>
+    <Param name="beta">
+     <Type type="real8"/>
+    </Param>
+    <Param name="C">
+     <Type type="set">
+      <Type type="real8"/>
+     </Type>
+    </Param>
+   </Params>
+  </Definition>
+  <Import body="0"
+          end="7"
+          fullname="logisticregression.blas"
+          inherittype="local"
+          line="1"
+          name="BLAS"
+          ref="std.blas"
+          start="7"/>
+  <Import body="0"
+          end="24"
+          fullname="std.BLAS.Types"
+          inherittype="local"
+          line="2"
+          name="Types"
+          ref="std.BLAS.Types"
+          start="24"/>
+ </Source>
+</Meta>

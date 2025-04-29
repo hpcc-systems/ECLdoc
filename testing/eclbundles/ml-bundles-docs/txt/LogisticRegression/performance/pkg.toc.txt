@@ -1,0 +1,11 @@
++++++++++++++++
+  performance
++++++++++++++++
+
+
+
+CONTENTS
+========
+
+file : RunBinomial.ecl <RunBinomial.ecl.txt>    
+

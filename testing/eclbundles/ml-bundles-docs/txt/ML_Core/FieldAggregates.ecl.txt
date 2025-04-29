@@ -1,0 +1,134 @@
+IMPORTS
+=======
+
+
+ML_Core </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/pkg.toc.txt>
+ML_Core.Types <Types.ecl.txt>
+ML_Core.Utils </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/ML_Core/Utils/pkg.toc.txt>
+std.system.ThorLib </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MODULE : FieldAggregates(DATASET(Types.NumericField) d)
+----------------------------------------------------------------------------------------------------------------------------------
+
+No Documentation Found
+
+Parameter : d TABLE ( NumericField ) --- No Doc
+
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Simple
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8
+  |          minval , REAL8 maxval , REAL8 sumval , REAL8
+  |          countval , REAL8 mean , REAL8 var , REAL8 sd } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : SimpleRanked
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value , UNSIGNED8 Pos } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Medians
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8
+  |          median } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : MinMedNext
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8
+  |          median , REAL8 nextval , REAL8 minval , REAL8
+  |          maxval , REAL8 sumval , REAL8 countval , REAL8
+  |          mean , REAL8 var , REAL8 sd } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : Buckets(Types.t_Discrete n)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : n INTEGER4 --- No Doc
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value , UNSIGNED8 Pos , INTEGER4
+  |          bucket } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : BucketRanges(Types.t_Discrete n)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : n INTEGER4 --- No Doc
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number ,
+  |          INTEGER4 bucket , REAL8 Min , REAL8 Max ,
+  |          UNSIGNED8 cnt } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Modes
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number , REAL8
+  |          mode , UNSIGNED8 cnt } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : Cardinality
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number ,
+  |          UNSIGNED8 cardinality } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | ATTRIBUTE : RankedInput
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value , REAL8 Pos } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : NTiles(Types.t_Discrete n)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : n INTEGER4 --- No Doc
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED8 id , UNSIGNED4
+  |          number , REAL8 value , REAL8 Pos , INTEGER4 ntile
+  |          } )
+  | 
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | FUNCTION : NTileRanges(Types.t_Discrete n)
+  | ----------------------------------------------------------------------------------------------------------------------------------
+  | 
+  | No Documentation Found
+  | 
+  | Parameter : n INTEGER4 --- No Doc
+  | 
+  | Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 number ,
+  |          INTEGER4 ntile , REAL8 Min , REAL8 Max , UNSIGNED8
+  |          cnt } )
+  | 

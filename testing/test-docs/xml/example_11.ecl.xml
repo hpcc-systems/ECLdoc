@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/test/example_3.ecl" name="example_3" target="example_3.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/test/intest/example_3.ecl" name="intest.example_3" target="intest/example_3.ecl.xml"/><Depends sourcePath="lib_stringlib" target="lib_stringlib"/><Depends sourcePath="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/Str.ecl" name="std.str" target="/home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/Str.ecl"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/test/intest/inintest/example_3.ecl" name="intest.inintest.example_3" target="intest/inintest/example_3.ecl.xml"/><Depends sourcePath="/media/sarthak/Data/ecldoc/testing/test/Inintest/Example_3.ecl" name="Inintest.example_3" target="Inintest/Example_3.ecl.xml"/><Source name="example_11" sourcePath="/media/sarthak/Data/ecldoc/testing/test/example_11.ecl" target="example_11.ecl.xml">
+  <Import name="Inintest" ref="Inintest" remotescope="1" target="/media/sarthak/Data/ecldoc/testing/test-docs/$$_ECLDOC-FORM_$$/Inintest/pkg.toc.xml"/>
+  <Import name="ex_3" ref="Example_3" target="example_3.ecl.xml">
+   </Import>
+  <Import name="ex_33" ref="intest.Example_3" target="intest/example_3.ecl.xml">
+   </Import>
+  <Import name="ex_333" ref="intest.inintest.Example_3" target="intest/inintest/example_3.ecl.xml">
+   </Import>
+  <Import name="ex_3333" ref="Inintest.Example_3" target="Inintest/Example_3.ecl.xml"/>
+  <Definition exported="1" fullname="example_11" inherittype="local" line="10" name="example_11" type="module">
+   <Definition exported="1" fullname="Inintest.Example_3" inherittype="inherited" line="1" name="Example_3" type="module" target="Inintest/Example_3.ecl.xml">
+    <Signature name="Example_3" ret="" param="" hlen="9">Example_3</Signature><Parents/>
+   </Definition>
+   <Signature name="example_11" ret="" param="" hlen="10">example_11</Signature><Parents>
+    <Parent name="Inintest" ref="Inintest" target="/media/sarthak/Data/ecldoc/testing/test-docs/$$_ECLDOC-FORM_$$/Inintest/pkg.toc.xml"/>
+   </Parents>
+  </Definition>
+ <Documentation><content> </content></Documentation></Source>
+</Meta>

@@ -1,0 +1,27 @@
+IMPORTS
+=======
+
+
+LogisticRegression </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/LogisticRegression/pkg.toc.txt>
+LogisticRegression.Types <Types.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Types.AOD_Record) Deviance_Analysis(DATASET(Types.Deviance_Record) proposed,
+                                                      DATASET(Types.Deviance_Record) base)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Compare deviance information for an analysis of deviance.
+
+Parameter : proposed TABLE ( Deviance_Record ) --- the proposed model
+
+Parameter : base TABLE ( Deviance_Record ) --- the base model for
+                 comparison
+
+Return : TABLE ( { UNSIGNED2 wi , UNSIGNED4 classifier ,
+         UNSIGNED8 residual_df , UNSIGNED8 df , REAL8
+         residual_dev , REAL8 deviance , REAL8 p_value } )
+         the comparison of the deviance between the models
+

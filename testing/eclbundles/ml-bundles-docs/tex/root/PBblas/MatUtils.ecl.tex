@@ -1,0 +1,241 @@
+\chapter*{\color{headfile}
+{\large PBblas\slash\hspace{0pt}}
+ \\
+MatUtils
+}
+\hypertarget{ecldoc:toc:PBblas.MatUtils}{}
+\hyperlink{ecldoc:toc:root/PBblas}{Go Up}
+
+\section*{\underline{\textsf{IMPORTS}}}
+\begin{doublespace}
+{\large
+PBblas |
+PBblas.Types |
+PBblas.internal |
+PBblas.internal.Types |
+PBblas.internal.MatDims |
+}
+\end{doublespace}
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MODULE}
+MatUtils}}
+
+\hypertarget{ecldoc:PBblas.MatUtils}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{MatUtils} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Provides various utility attributes for manipulating cell-based matrixes
+
+
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] Std/PBblas/Types.Layout\_Cell
+\end{description}
+
+
+
+
+\textbf{Children}
+\begin{enumerate}
+\item \hyperlink{ecldoc:pbblas.matutils.getworkitems}{GetWorkItems}
+: Get a list of work-item ids from a matrix containing one or more work items
+\item \hyperlink{ecldoc:pbblas.matutils.insertcols}{InsertCols}
+: Insert one or more columns of a fixed value into a matrix
+\item \hyperlink{ecldoc:pbblas.matutils.transpose}{Transpose}
+: Transpose a matrix This attribute supports the myriad interface
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+GetWorkItems}}
+
+\hypertarget{ecldoc:pbblas.matutils.getworkitems}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.MatUtils}{MatUtils} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_WI\_ID)} & \textbf{GetWorkItems} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Layout\_Cell) cells)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Get a list of work-item ids from a matrix containing one or more work items
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{cells}} ||| TABLE ( Layout\_Cell ) --- A matrix in Layout\_Cell format
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id \} )} --- DATASET(Layout\_WI\_ID), one record per work-item
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_Cell
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_WI\_ID
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+InsertCols}}
+
+\hypertarget{ecldoc:pbblas.matutils.insertcols}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.MatUtils}{MatUtils} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{InsertCols} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Layout\_Cell) M, UNSIGNED cols\_to\_insert=1, value\_t insert\_val=1)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Insert one or more columns of a fixed value into a matrix. Columns are inserted before the first original column. This attribute supports the myriad interface. Multiple independent matrixes can be represented by M.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{M}} ||| TABLE ( Layout\_Cell ) --- the input matrix
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{insert\_val}} ||| REAL8 --- the value for each cell of the new column(s), default 0
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{cols\_to\_insert}} ||| UNSIGNED8 --- the number of columns to insert, default 1
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- matrix in Layout\_Cell format with additional column(s)
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} FUNCTION}
+Transpose}}
+
+\hypertarget{ecldoc:pbblas.matutils.transpose}{}
+\hspace{0pt} \hyperlink{ecldoc:PBblas.MatUtils}{MatUtils} \textbackslash 
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} DATASET(Layout\_Cell)} & \textbf{Transpose} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (DATASET(Layout\_Cell) M)}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Transpose a matrix This attribute supports the myriad interface. Multiple independent matrixes can be represented by M.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{M}} ||| TABLE ( Layout\_Cell ) --- A matrix represented as DATASET(Layout\_Cell)
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{TABLE ( \{ UNSIGNED2 wi\_id , UNSIGNED4 x , UNSIGNED4 y , REAL8 v \} )} --- Transposed matrix in Layout\_Cell format
+\end{description}
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{SEE}}}] PBblas/Types.Layout\_Cell
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
+
+

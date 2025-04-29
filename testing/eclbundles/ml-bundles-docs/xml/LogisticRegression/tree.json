@@ -1,0 +1,139 @@
+{
+    "include_path": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/LogisticRegression",
+    "input_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles",
+    "output_root": "/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs",
+    "tree": {
+        "binomialconfusion": {
+            "key": "BinomialConfusion.ecl",
+            "tree": "LogisticRegression/BinomialConfusion.ecl"
+        },
+        "binomiallogisticregression": {
+            "key": "BinomialLogisticRegression.ecl",
+            "tree": "LogisticRegression/BinomialLogisticRegression.ecl"
+        },
+        "bundle": {
+            "key": "bundle.ecl",
+            "tree": "LogisticRegression/Bundle.ecl"
+        },
+        "confusion": {
+            "key": "Confusion.ecl",
+            "tree": "LogisticRegression/Confusion.ecl"
+        },
+        "constants": {
+            "key": "Constants.ecl",
+            "tree": "LogisticRegression/Constants.ecl"
+        },
+        "datastats": {
+            "key": "DataStats.ecl",
+            "tree": "LogisticRegression/DataStats.ecl"
+        },
+        "deviance_analysis": {
+            "key": "Deviance_Analysis.ecl",
+            "tree": "LogisticRegression/Deviance_Analysis.ecl"
+        },
+        "deviance_detail": {
+            "key": "Deviance_Detail.ecl",
+            "tree": "LogisticRegression/Deviance_Detail.ecl"
+        },
+        "dimm": {
+            "key": "dimm.ecl",
+            "tree": "LogisticRegression/dimm.ecl"
+        },
+        "distributions": {
+            "key": "Distributions.ecl",
+            "tree": "LogisticRegression/Distributions.ecl"
+        },
+        "extractbeta": {
+            "key": "ExtractBeta.ecl",
+            "tree": "LogisticRegression/ExtractBeta.ecl"
+        },
+        "extractbeta_ci": {
+            "key": "ExtractBeta_CI.ecl",
+            "tree": "LogisticRegression/ExtractBeta_CI.ecl"
+        },
+        "extractbeta_pval": {
+            "key": "ExtractBeta_pval.ecl",
+            "tree": "LogisticRegression/ExtractBeta_pval.ecl"
+        },
+        "extractreport": {
+            "key": "ExtractReport.ecl",
+            "tree": "LogisticRegression/ExtractReport.ecl"
+        },
+        "irls": {
+            "key": "IRLS",
+            "tree": {
+                "getmodel": {
+                    "key": "GetModel.ecl",
+                    "tree": "LogisticRegression/IRLS/GetModel.ecl"
+                },
+                "getmodel_global": {
+                    "key": "GetModel_global.ecl",
+                    "tree": "LogisticRegression/IRLS/GetModel_global.ecl"
+                },
+                "getmodel_local": {
+                    "key": "GetModel_local.ecl",
+                    "tree": "LogisticRegression/IRLS/GetModel_local.ecl"
+                }
+            }
+        },
+        "logitpredict": {
+            "key": "LogitPredict.ecl",
+            "tree": "LogisticRegression/LogitPredict.ecl"
+        },
+        "logitscore": {
+            "key": "LogitScore.ecl",
+            "tree": "LogisticRegression/LogitScore.ecl"
+        },
+        "model_deviance": {
+            "key": "Model_Deviance.ecl",
+            "tree": "LogisticRegression/Model_Deviance.ecl"
+        },
+        "null_deviance": {
+            "key": "Null_Deviance.ecl",
+            "tree": "LogisticRegression/Null_Deviance.ecl"
+        },
+        "performance": {
+            "key": "performance",
+            "tree": {
+                "runbinomial": {
+                    "key": "RunBinomial.ecl",
+                    "tree": "LogisticRegression/performance/RunBinomial.ecl"
+                }
+            }
+        },
+        "tests": {
+            "key": "Tests",
+            "tree": {
+                "check_dist": {
+                    "key": "Check_Dist.ecl",
+                    "tree": "LogisticRegression/Tests/Check_Dist.ecl"
+                }
+            }
+        },
+        "types": {
+            "key": "Types.ecl",
+            "tree": "LogisticRegression/Types.ecl"
+        },
+        "validation": {
+            "key": "validation",
+            "tree": {
+                "binomialregression": {
+                    "key": "BinomialRegression.ecl",
+                    "tree": "LogisticRegression/validation/BinomialRegression.ecl"
+                },
+                "discrete_germands": {
+                    "key": "discrete_GermanDS.ecl",
+                    "tree": "LogisticRegression/validation/discrete_GermanDS.ecl"
+                },
+                "irisds": {
+                    "key": "IrisDS.ecl",
+                    "tree": "LogisticRegression/validation/IrisDS.ecl"
+                },
+                "unit_test_dimm": {
+                    "key": "unit_test_dimm.ecl",
+                    "tree": "LogisticRegression/validation/unit_test_dimm.ecl"
+                }
+            }
+        }
+    }
+}

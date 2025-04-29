@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="Interfaces">
+  <file name="IClassify.ecl.xml">ML_Core/Interfaces/IClassify.ecl</file>
+  <file name="IRegression.ecl.xml">ML_Core/Interfaces/IRegression.ecl</file>
+</folder>

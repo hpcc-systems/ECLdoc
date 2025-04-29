@@ -1,0 +1,54 @@
+IMPORTS
+=======
+
+
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+PBblas.Types <Types.ecl.txt>
+PBblas.internal <internal/pkg.toc.txt>
+PBblas.internal.Types <internal/Types.ecl.txt>
+std.blas </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl>
+PBblas.internal.MatDims <internal/MatDims.ecl.txt>
+std.system.Thorlib </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/system/Thorlib.ecl>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Layout_Cell) getrf(DATASET(Layout_Cell) A)
+----------------------------------------------------------------------------------------------------------------------------------
+
+LU Factorization Splits a matrix into Lower and Upper triangular factors
+Produces composite LU matrix for the diagonal blocks. Iterates through the
+matrix a row of blocks and column of blocks at a time. Partition A into M
+block rows and N block columns. The A11 cell is a single block. A12 is a
+single row of blocks with N-1 columns. A21 is a single column of blocks
+with M-1 rows. A22 is a sub-matrix of M-1 x N-1 blocks. | A11 A12 | | L11 0
+| | U11 U12 | | A21 A22 | == | L21 L22 | * | 0 U22 | | L11*U11 L11*U12 | ==
+| L21*U11 L21*U12 + L22*U22 | Based upon PB-BLAS: A set of parallel block
+basic linear algebra subprograms by Choi and Dongarra This module supports
+the "Myriad" style interface, allowing many independent problems to be
+worked on at once. The A matrix can contain multiple matrixes to be
+factored, indicated by different values for work-item id (wi_id). Note: The
+returned matrix includes both the upper and lower factors. This matrix can
+be used directly by trsm which will only use the part indicated by trsm's
+'triangle' parameter (i.e. upper or lower). To extract the upper or lower
+triangle explicitly for other purposes, use the ExtractTri function. When
+passing the Lower matrix to the triangle solver (trsm), set the "Diagonal"
+parameter to "UnitTri". This is necessary because both triangular matrixes
+returned from this function are packed into a square matrix with only one
+diagonal. By convention, The Lower triangle is assumed to be a Unit
+Triangle (diagonal all ones), so the diagonal contained in the returned
+matrix is for the Upper factor and must be ignored (i.e. assumed to be all
+ones) when referencing the Lower triangle.
+
+Parameter : A TABLE ( Layout_Cell ) --- The input matrix in
+              Types.Layout_Cell format
+
+Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+         UNSIGNED4 y , REAL8 v } ) Resulting factored
+         matrix in Layout_Cell format
+
+See : Types.Layout_Cell
+
+See : ExtractTri
+

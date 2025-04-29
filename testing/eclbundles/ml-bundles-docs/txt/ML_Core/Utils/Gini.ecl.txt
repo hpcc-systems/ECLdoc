@@ -1,0 +1,28 @@
+IMPORTS
+=======
+
+
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+MACRO : Gini(infile, pivot, target, wi_name='wi')
+----------------------------------------------------------------------------------------------------------------------------------
+
+Creates a file of pivot/target pairs with a Gini impurity value.
+
+Parameter : target INTEGER8 --- the name of the field used as the
+                   target
+
+Parameter : wi_name INTEGER8 --- the name of the work item field,
+                    default is "wi" return A table by Work Item and
+                    Pivot value giving count and Gini impurity value
+
+Parameter : pivot INTEGER8 --- the name of the pivot field
+
+Parameter : infile INTEGER8 --- the input file, any type with a work
+                   item field
+
+Return : BOOLEAN
+

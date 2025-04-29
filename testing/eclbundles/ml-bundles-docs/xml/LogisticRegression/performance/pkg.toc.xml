@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<folder name="performance">
+  <file name="RunBinomial.ecl.xml">LogisticRegression/performance/RunBinomial.ecl</file>
+</folder>

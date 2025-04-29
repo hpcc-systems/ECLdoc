@@ -1,0 +1,38 @@
+IMPORTS
+=======
+
+
+PBblas </media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles-docs/txt/PBblas/pkg.toc.txt>
+std.blas </home/sarthak/runtime/opt/HPCCSystems/6.5.0/clienttools/share/ecllibrary/std/BLAS.ecl>
+PBblas.Types <Types.ecl.txt>
+PBblas.internal <internal/pkg.toc.txt>
+PBblas.internal.Types <internal/Types.ecl.txt>
+PBblas.internal.MatDims <internal/MatDims.ecl.txt>
+PBblas.internal.Converted <internal/Converted.ecl.txt>
+
+DESCRIPTIONS
+============
+
+----------------------------------------------------------------------------------------------------------------------------------
+FUNCTION : DATASET(Layout_Cell) ExtractTri(Triangle tri, Diagonal dt, DATASET(Layout_Cell) A)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Extract the upper or lower triangle from the composite output from getrf
+(LU Factorization).
+
+Parameter : tri UNSIGNED1 --- Triangle type: Upper or Lower (see
+                Types.Triangle)
+
+Parameter : A TABLE ( Layout_Cell ) --- Matrix of cells. See
+              Types.Layout_Cell
+
+Parameter : dt UNSIGNED1 --- Diagonal type: Unit or non unit (see
+               Types.Diagonal)
+
+Return : TABLE ( { UNSIGNED2 wi_id , UNSIGNED4 x ,
+         UNSIGNED4 y , REAL8 v } ) Matrix of cells in
+         Layout_Cell format representing a triangular
+         matrix (upper or lower)
+
+See : Std.PBblas.Types
+

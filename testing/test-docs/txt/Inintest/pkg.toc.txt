@@ -1,0 +1,11 @@
+++++++++++++
+  Inintest
+++++++++++++
+
+
+
+CONTENTS
+========
+
+file : Example_3.ecl <Example_3.ecl.txt>    
+

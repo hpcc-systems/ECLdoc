@@ -1,0 +1,14 @@
+<Meta>
+ <Source sourcePath="lib_auditlib"/>
+ <Source name="Audit" sourcePath="/media/sarthak/Data/ecldoc/testing/ecllibrary/std/Audit.ecl">
+  <Import body="0"
+          end="252"
+          fullname="lib_auditlib"
+          inherittype="local"
+          line="6"
+          name="lib_auditlib"
+          ref="lib_auditlib"
+          remotescope="1"
+          start="252"/>
+ </Source>
+</Meta>

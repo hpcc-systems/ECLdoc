@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Meta>
+ <Depends sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Types.ecl" name="ML_Core.Types" target="../Types.ecl.xml"/><Source name="ML_Core.Utils.FatD" sourcePath="/media/sarthak/Data/ecldoc/testing/eclbundles/ml-bundles/ML_Core/Utils/FatD.ecl" target="FatD.ecl.xml">
+  <Definition exported="1" fullname="ml_core.utils.fatd" inherittype="local" line="9" name="FatD" type="function">
+   <Type type="table">
+    <Type type="record" unnamed="1">
+     <Field name="wi">
+      <Type type="unsigned2"/>
+     </Field>
+     <Field name="id">
+      <Type type="unsigned8"/>
+     </Field>
+     <Field name="number">
+      <Type type="unsigned4"/>
+     </Field>
+     <Field name="value">
+      <Type type="integer4"/>
+     </Field>
+    </Type>
+   </Type>
+   <Documentation>
+    <content>Will take a potentially sparse file d and fill in the missing with value v for Discrete Field datasets</content><return>A full Discrete Field dataset with every field populated</return><param>d0 They myriad format Discrete Field dataset to be filled</param><param>v The value to assign missing records</param><firstline>Will take a potentially sparse file d and fill in the missing</firstline></Documentation>
+   <Signature name="FatD" ret="DATASET(Types.DiscreteField)" param="(DATASET(Types.DiscreteField) d0, Types.t_Discrete v=0)" hlen="33">DATASET(Types.DiscreteField) FatD(DATASET(Types.DiscreteField) d0, Types.t_Discrete v=0)</Signature><Params>
+    <Param name="d0">
+     <Type type="table">
+      <Type fullname="ml_core.types.discretefield" name="DiscreteField" type="record"/>
+     </Type>
+    </Param>
+    <Param name="v">
+     <Type type="integer4"/>
+    </Param>
+   </Params>
+  </Definition>
+  <Import name="Types" ref="ML_Core.Types" target="../Types.ecl.xml"/>
+ <Documentation>
+    <content>Will take a potentially sparse file d and fill in the missing with value v for Discrete Field datasets</content><return>A full Discrete Field dataset with every field populated</return><param>d0 They myriad format Discrete Field dataset to be filled</param><param>v The value to assign missing records</param><firstline>Will take a potentially sparse file d and fill in the missing</firstline></Documentation>
+   </Source>
+</Meta>

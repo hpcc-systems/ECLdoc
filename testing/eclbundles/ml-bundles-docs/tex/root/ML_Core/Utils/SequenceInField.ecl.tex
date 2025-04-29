@@ -1,0 +1,62 @@
+\chapter*{\color{headfile}
+{\large ML\_Core\slash\hspace{0pt}}
+{\large Utils\slash\hspace{0pt}}
+ \\
+SequenceInField
+}
+\hypertarget{ecldoc:toc:ML_Core.Utils.SequenceInField}{}
+\hyperlink{ecldoc:toc:root/ML_Core/Utils}{Go Up}
+
+
+\section*{\underline{\textsf{DESCRIPTIONS}}}
+\subsection*{\textsf{\colorbox{headtoc}{\color{white} MACRO}
+SequenceInField}}
+
+\hypertarget{ecldoc:ml_core.utils.sequenceinfield}{}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}l|X|}
+\hline
+\hspace{0pt}\mytexttt{\color{red} } & \textbf{SequenceInField} \\
+\hline
+\multicolumn{2}{|>{\raggedright\arraybackslash}X|}{\hspace{0pt}\mytexttt{\color{param} (infile,infield,seq,wi\_name='wi')}} \\
+\hline
+\end{tabularx}
+}
+
+\par
+
+
+
+
+
+Given a file which is sorted by the work item identifier and INFIELD (and possibly other values), add sequence numbers within the range of each infield. Slighly elaborate code is to avoid having to partition the data to one value of infield per node and to work with very large numbers of records where a global count project would be inappropriate. This is useful for assigning rank positions with the groupings.
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{wi\_name}} ||| INTEGER8 --- work item field name, default is wi
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{infield}} ||| INTEGER8 --- field name of grouping field
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{seq}} ||| INTEGER8 --- name of the field to receive the sequence number
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{PARAMETER}}}] \textbf{\underline{infile}} ||| INTEGER8 --- the input file, any type
+\end{description}
+
+
+
+
+
+
+
+\par
+\begin{description}
+\item [\colorbox{tagtype}{\color{white} \textbf{\textsf{RETURN}}}] \textbf{BOOLEAN} --- a file of the same type with sequence numbers applied
+\end{description}
+
+
+
+
+\rule{\linewidth}{0.5pt}
