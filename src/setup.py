@@ -14,7 +14,7 @@ setup(
     name="ecldoc",
     version="1.0",
     packages=find_packages(),
-    install_requires=['Jinja2==2.11.3', 'lxml==3.8.0'],
+    install_requires=['Jinja2==2.11.3', 'lxml==4.9.1'],
     package_data={'': extra_files},
    	scripts=['bin/ecldoc']
 )
